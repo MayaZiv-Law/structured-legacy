@@ -36,16 +36,19 @@ const MethodologySection = () => {
           </p>
         </div>
 
-        {/* Asymmetric Background Container */}
+        {/* Asymmetric Layout Container */}
         <div className="relative max-w-6xl mx-auto">
-          {/* Offset background block */}
+          {/* Offset background block - visible on left side */}
           <div className={cn(
-            "absolute top-8 bottom-8 w-[85%] bg-secondary/50 -z-0",
-            isRTL ? "right-0 -mr-8 lg:-mr-16" : "left-0 -ml-8 lg:-ml-16"
+            "absolute top-0 h-full w-[60%] bg-secondary/50",
+            isRTL ? "right-0" : "left-0 -ml-8 lg:-ml-16"
           )} />
 
-          {/* Content Grid on white background */}
-          <div className="relative z-10 py-12 lg:py-16 bg-background shadow-sm">
+          {/* Content Grid on white background - offset to the right */}
+          <div className={cn(
+            "relative z-10 py-12 lg:py-16 bg-background shadow-sm w-[92%] mt-12",
+            isRTL ? "mr-auto ml-0" : "ml-auto mr-0"
+          )}>
             <div className={cn(
               "grid grid-cols-1 md:grid-cols-3 gap-8 lg:gap-12 px-6 lg:px-12",
               isRTL && "font-hebrew"
