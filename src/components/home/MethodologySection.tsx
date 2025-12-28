@@ -44,10 +44,10 @@ const MethodologySection = () => {
             isRTL ? "right-0 -mr-8 lg:-mr-16" : "left-0 -ml-8 lg:-ml-16"
           )} />
 
-          {/* Content Grid */}
-          <div className="relative z-10 py-12 lg:py-16">
+          {/* Content Grid on white background */}
+          <div className="relative z-10 py-12 lg:py-16 bg-background shadow-sm">
             <div className={cn(
-              "grid grid-cols-1 md:grid-cols-3 gap-8 lg:gap-12 px-4 lg:px-8",
+              "grid grid-cols-1 md:grid-cols-3 gap-8 lg:gap-12 px-6 lg:px-12",
               isRTL && "font-hebrew"
             )}>
               {pillars.map((pillar, index) => (
