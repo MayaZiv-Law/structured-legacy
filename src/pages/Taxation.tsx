@@ -174,8 +174,8 @@ const Taxation = () => {
       {/* Who We Serve */}
       <section className="py-16 bg-background">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <div className={cn("max-w-4xl", isRTL && "font-hebrew text-right mr-auto")}>
-            <div className="w-16 h-1 bg-accent mb-6" />
+          <div className={cn("max-w-4xl mx-auto text-center", isRTL && "font-hebrew")}>
+            <div className="w-16 h-1 bg-accent mb-6 mx-auto" />
             <h2 className="text-2xl sm:text-3xl font-display font-semibold mb-6">
               {t('tax.serve.title')}
             </h2>
