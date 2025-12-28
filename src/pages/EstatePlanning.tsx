@@ -84,21 +84,21 @@ const EstatePlanning = () => {
         </div>
       </section>
 
-      {/* Cards Section with Dark Background Overlay */}
-      <section className="relative">
-        {/* Dark background strip */}
+      {/* Cards Section with Cream Background Overlay */}
+      <section className="relative py-8">
+        {/* Background that spans across sections */}
         <div className="absolute inset-0 top-0 h-1/2 bg-background" />
         <div className="absolute inset-0 top-1/2 h-1/2 gradient-stone" />
         
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10 -mt-20">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="max-w-4xl mx-auto">
-            <div className="bg-primary/95 rounded-xl p-8 shadow-xl">
-              <div className="grid md:grid-cols-3 gap-6">
+            <div className="bg-[hsl(40,30%,94%)] rounded-xl shadow-lg overflow-hidden">
+              <div className="grid md:grid-cols-3 divide-x divide-border/50">
                 {willsFocusAreas.map((area, i) => (
-                  <div key={i} className={cn("p-6", isRTL && "font-hebrew text-right")}>
+                  <div key={i} className={cn("p-8", isRTL && "font-hebrew text-right")}>
                     <area.icon className="h-6 w-6 text-accent mb-4" />
-                    <h3 className="font-medium mb-2 text-primary-foreground">{area.title}</h3>
-                    <p className="text-sm text-primary-foreground/70">{area.desc}</p>
+                    <h3 className="font-medium mb-2 text-foreground">{area.title}</h3>
+                    <p className="text-sm text-muted-foreground">{area.desc}</p>
                   </div>
                 ))}
               </div>
