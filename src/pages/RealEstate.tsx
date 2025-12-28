@@ -6,37 +6,39 @@ import { Building2, AlertTriangle, Globe, ArrowRight, ArrowLeft } from 'lucide-r
 import { Button } from '@/components/ui/button';
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/components/ui/accordion';
 import { Helmet } from 'react-helmet-async';
+import { useScrollAnimation } from '@/hooks/useScrollAnimation';
 import dueDiligenceImage from '@/assets/real-estate-due-diligence.webp';
 import remoteTransactionImage from '@/assets/remote-transaction.webp';
 import realEstateHeroBg from '@/assets/real-estate-hero-bg.webp';
+
 const RealEstate = () => {
-  const {
-    t,
-    isRTL,
-    language
-  } = useLanguage();
+  const { t, isRTL, language } = useLanguage();
   const Arrow = isRTL ? ArrowLeft : ArrowRight;
-  const risks = [{
-    titleKey: 'realestate.risk.liabilities.title',
-    descKey: 'realestate.risk.liabilities.desc'
-  }, {
-    titleKey: 'realestate.risk.planning.title',
-    descKey: 'realestate.risk.planning.desc'
-  }, {
-    titleKey: 'realestate.risk.tax.title',
-    descKey: 'realestate.risk.tax.desc'
-  }];
-  const faqs = [{
-    qKey: 'realestate.faq.q1',
-    aKey: 'realestate.faq.a1'
-  }, {
-    qKey: 'realestate.faq.q2',
-    aKey: 'realestate.faq.a2'
-  }, {
-    qKey: 'realestate.faq.q3',
-    aKey: 'realestate.faq.a3'
-  }];
-  return <Layout>
+
+  const risks = [
+    { titleKey: 'realestate.risk.liabilities.title', descKey: 'realestate.risk.liabilities.desc' },
+    { titleKey: 'realestate.risk.planning.title', descKey: 'realestate.risk.planning.desc' },
+    { titleKey: 'realestate.risk.tax.title', descKey: 'realestate.risk.tax.desc' },
+  ];
+
+  const faqs = [
+    { qKey: 'realestate.faq.q1', aKey: 'realestate.faq.a1' },
+    { qKey: 'realestate.faq.q2', aKey: 'realestate.faq.a2' },
+    { qKey: 'realestate.faq.q3', aKey: 'realestate.faq.a3' },
+  ];
+
+  // Scroll animations
+  const heroAnim = useScrollAnimation();
+  const approachAnim = useScrollAnimation();
+  const riskAnim = useScrollAnimation();
+  const taxAnim = useScrollAnimation();
+  const dueDiligenceAnim = useScrollAnimation();
+  const remoteAnim = useScrollAnimation();
+  const faqAnim = useScrollAnimation();
+  const ctaAnim = useScrollAnimation();
+
+  return (
+    <Layout>
       <Helmet>
         <title>{language === 'he' ? 'עורכת דין נדל"ן בתל אביב | רכישת נכס בישראל' : 'Real Estate Lawyer in Tel Aviv | Buying Property in Israel (Tax & Due Diligence)'}</title>
         <meta name="description" content={language === 'he' ? 'ייעוץ משפטי לרכישת נכס בישראל. בדיקת נאותות, תכנון מס רכישה וייצוג מרחוק לתושבי חוץ ומשקיעים.' : 'Legal counsel for buying property in Israel. Due diligence, purchase tax planning, and remote representation for foreign residents and investors.'} />
@@ -49,7 +51,13 @@ const RealEstate = () => {
           <img src={realEstateHeroBg} alt="" className="w-full h-full object-cover" />
           <div className="absolute inset-0 bg-gradient-to-b from-primary/30 via-primary/40 to-primary/70" />
         </div>
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+        <div 
+          ref={heroAnim.ref}
+          className={cn(
+            "container mx-auto px-4 sm:px-6 lg:px-8 relative z-10 transition-all duration-700",
+            heroAnim.isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
+          )}
+        >
           <div className={cn("max-w-4xl", isRTL && "font-hebrew text-right mr-auto")}>
             <div className={cn("flex items-center gap-3 mb-6", isRTL && "flex-row-reverse")}>
               <Building2 className="h-8 w-8 text-accent" strokeWidth={1.5} />
@@ -69,7 +77,14 @@ const RealEstate = () => {
       {/* The Approach Section */}
       <section className="py-20 gradient-stone">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <div className={cn("max-w-4xl mx-auto", isRTL && "font-hebrew text-right")}>
+          <div 
+            ref={approachAnim.ref}
+            className={cn(
+              "max-w-4xl mx-auto transition-all duration-700",
+              isRTL && "font-hebrew text-right",
+              approachAnim.isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
+            )}
+          >
             <h2 className="text-3xl sm:text-4xl font-display font-semibold text-foreground mb-6">
               {t('realestate.approach.title')}
             </h2>
@@ -89,7 +104,14 @@ const RealEstate = () => {
       {/* Risk Map Section */}
       <section className="py-20 bg-background">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <div className={cn("max-w-4xl mx-auto", isRTL && "font-hebrew text-right")}>
+          <div 
+            ref={riskAnim.ref}
+            className={cn(
+              "max-w-4xl mx-auto transition-all duration-700",
+              isRTL && "font-hebrew text-right",
+              riskAnim.isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
+            )}
+          >
             <h2 className="text-3xl sm:text-4xl font-display font-semibold text-foreground mb-6">
               {t('realestate.risk.title')}
             </h2>
@@ -99,7 +121,16 @@ const RealEstate = () => {
             </p>
             
             <div className="grid grid-cols-1 md:grid-cols-3 gap-12 lg:gap-16">
-              {risks.map((risk, index) => <div key={index} className={cn("flex flex-col items-center text-center", isRTL && "font-hebrew")}>
+              {risks.map((risk, index) => (
+                <div 
+                  key={index} 
+                  className={cn(
+                    "flex flex-col items-center text-center transition-all duration-500",
+                    isRTL && "font-hebrew",
+                    riskAnim.isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
+                  )}
+                  style={{ transitionDelay: riskAnim.isVisible ? `${index * 150}ms` : '0ms' }}
+                >
                   {/* Icon with outlined circle */}
                   <div className="w-14 h-14 rounded-full border border-accent flex items-center justify-center mb-5">
                     <AlertTriangle className="h-6 w-6 text-accent" strokeWidth={1.5} />
@@ -114,7 +145,8 @@ const RealEstate = () => {
                   <p className="text-muted-foreground leading-relaxed text-sm">
                     {t(risk.descKey)}
                   </p>
-                </div>)}
+                </div>
+              ))}
             </div>
           </div>
         </div>
@@ -123,7 +155,14 @@ const RealEstate = () => {
       {/* Tax Planning Section */}
       <section className="py-20 gradient-stone">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <div className={cn("max-w-4xl mx-auto", isRTL && "font-hebrew text-right")}>
+          <div 
+            ref={taxAnim.ref}
+            className={cn(
+              "max-w-4xl mx-auto transition-all duration-700",
+              isRTL && "font-hebrew text-right",
+              taxAnim.isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
+            )}
+          >
             <h2 className="text-3xl sm:text-4xl font-display font-semibold text-foreground mb-6">
               {t('realestate.tax.title')}
             </h2>
@@ -143,14 +182,26 @@ const RealEstate = () => {
       {/* Due Diligence Section - Asymmetric Design */}
       <section className="relative z-20 py-20 bg-background overflow-visible">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="relative max-w-6xl mx-auto">
+          <div 
+            ref={dueDiligenceAnim.ref}
+            className={cn(
+              "relative max-w-6xl mx-auto transition-all duration-700",
+              dueDiligenceAnim.isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
+            )}
+          >
             {/* Offset beige background */}
             <div className={cn("absolute -top-8 w-[60%] bg-secondary", "h-[calc(100%+4rem)]", isRTL ? "right-0 -mr-8 lg:-mr-16" : "left-0 -ml-8 lg:-ml-16")} />
             
             {/* Content grid */}
             <div className={cn("relative z-10 grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center", isRTL && "lg:grid-flow-dense")}>
               {/* Text content in white card */}
-              <div className={cn("bg-background py-10 px-8 lg:py-14 lg:px-12 shadow-sm", isRTL ? "lg:col-start-2" : "lg:col-start-1")}>
+              <div 
+                className={cn(
+                  "bg-background py-10 px-8 lg:py-14 lg:px-12 shadow-sm transition-all duration-700 delay-200",
+                  isRTL ? "lg:col-start-2" : "lg:col-start-1",
+                  dueDiligenceAnim.isVisible ? "opacity-100 translate-x-0" : isRTL ? "opacity-0 translate-x-8" : "opacity-0 -translate-x-8"
+                )}
+              >
                 <div className={cn(isRTL && "font-hebrew text-right")}>
                   <h2 className="text-2xl sm:text-3xl font-display font-semibold text-foreground mb-6">
                     {t('realestate.diligence.title')}
@@ -167,7 +218,13 @@ const RealEstate = () => {
               </div>
 
               {/* Image */}
-              <div className={cn("relative", isRTL ? "lg:col-start-1" : "lg:col-start-2")}>
+              <div 
+                className={cn(
+                  "relative transition-all duration-700 delay-300",
+                  isRTL ? "lg:col-start-1" : "lg:col-start-2",
+                  dueDiligenceAnim.isVisible ? "opacity-100 translate-x-0" : isRTL ? "opacity-0 -translate-x-8" : "opacity-0 translate-x-8"
+                )}
+              >
                 <div className="aspect-[3/4] max-w-sm mx-auto lg:mx-0 overflow-hidden rounded-sm shadow-premium">
                   <img src={dueDiligenceImage} alt="Real estate due diligence" className="w-full h-full object-cover" />
                 </div>
@@ -180,21 +237,39 @@ const RealEstate = () => {
       {/* Remote Execution Section - Same layout as Due Diligence */}
       <section className="relative z-20 py-20 bg-background overflow-visible">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="relative max-w-6xl mx-auto">
+          <div 
+            ref={remoteAnim.ref}
+            className={cn(
+              "relative max-w-6xl mx-auto transition-all duration-700",
+              remoteAnim.isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
+            )}
+          >
             {/* Offset beige background - same position as Due Diligence */}
             <div className={cn("absolute -top-8 w-[60%] bg-secondary", "h-[calc(100%+4rem)]", isRTL ? "right-0 -mr-8 lg:-mr-16" : "left-0 -ml-8 lg:-ml-16")} />
             
             {/* Content grid */}
             <div className={cn("relative z-10 grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-8 items-center", isRTL && "lg:grid-flow-dense")}>
               {/* Image - on left */}
-              <div className={cn("relative", isRTL ? "lg:col-start-2" : "lg:col-start-1")}>
+              <div 
+                className={cn(
+                  "relative transition-all duration-700 delay-200",
+                  isRTL ? "lg:col-start-2" : "lg:col-start-1",
+                  remoteAnim.isVisible ? "opacity-100 translate-x-0" : isRTL ? "opacity-0 translate-x-8" : "opacity-0 -translate-x-8"
+                )}
+              >
                 <div className="aspect-[3/4] max-w-sm mx-auto lg:mx-0 overflow-hidden rounded-sm shadow-premium">
                   <img alt="Remote real estate transaction" className="w-full h-full object-cover" src="/lovable-uploads/b4f1d315-d122-495e-bf2b-e2629dfb57b4.webp" />
                 </div>
               </div>
 
               {/* Text content in white card - on right */}
-              <div className={cn("bg-background py-10 px-8 lg:py-14 lg:px-12 shadow-sm", isRTL ? "lg:col-start-1" : "lg:col-start-2")}>
+              <div 
+                className={cn(
+                  "bg-background py-10 px-8 lg:py-14 lg:px-12 shadow-sm transition-all duration-700 delay-300",
+                  isRTL ? "lg:col-start-1" : "lg:col-start-2",
+                  remoteAnim.isVisible ? "opacity-100 translate-x-0" : isRTL ? "opacity-0 -translate-x-8" : "opacity-0 translate-x-8"
+                )}
+              >
                 <div className={cn(isRTL && "font-hebrew text-right")}>
                   <h2 className="text-2xl sm:text-3xl font-display font-semibold text-foreground mb-6">
                     {t('realestate.remote.title')}
@@ -217,7 +292,14 @@ const RealEstate = () => {
       {/* FAQ Section */}
       <section className="py-20 bg-background">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-3xl">
-          <div className={cn("text-center mb-12", isRTL && "font-hebrew")}>
+          <div 
+            ref={faqAnim.ref}
+            className={cn(
+              "text-center mb-12 transition-all duration-700",
+              isRTL && "font-hebrew",
+              faqAnim.isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
+            )}
+          >
             <h2 className="text-3xl sm:text-4xl font-display font-semibold text-foreground mb-4">
               {t('service.faq')}
             </h2>
@@ -225,14 +307,24 @@ const RealEstate = () => {
           </div>
           
           <Accordion type="single" collapsible className="w-full">
-            {faqs.map((faq, i) => <AccordionItem key={i} value={`item-${i}`}>
+            {faqs.map((faq, i) => (
+              <AccordionItem 
+                key={i} 
+                value={`item-${i}`}
+                className={cn(
+                  "transition-all duration-500",
+                  faqAnim.isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
+                )}
+                style={{ transitionDelay: faqAnim.isVisible ? `${i * 100}ms` : '0ms' }}
+              >
                 <AccordionTrigger className={cn("text-left", isRTL && "font-hebrew text-right")}>
                   {t(faq.qKey)}
                 </AccordionTrigger>
                 <AccordionContent className={cn(isRTL && "font-hebrew text-right")}>
                   {t(faq.aKey)}
                 </AccordionContent>
-              </AccordionItem>)}
+              </AccordionItem>
+            ))}
           </Accordion>
         </div>
       </section>
@@ -240,7 +332,14 @@ const RealEstate = () => {
       {/* CTA Section */}
       <section className="py-24 bg-primary">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <div className={cn("max-w-3xl mx-auto text-center", isRTL && "font-hebrew")}>
+          <div 
+            ref={ctaAnim.ref}
+            className={cn(
+              "max-w-3xl mx-auto text-center transition-all duration-700",
+              isRTL && "font-hebrew",
+              ctaAnim.isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
+            )}
+          >
             <div className="w-16 h-0.5 bg-accent mx-auto mb-8" />
             
             <h2 className="text-3xl sm:text-4xl lg:text-5xl font-display font-semibold text-primary-foreground mb-6">
@@ -260,6 +359,8 @@ const RealEstate = () => {
           </div>
         </div>
       </section>
-    </Layout>;
+    </Layout>
+  );
 };
+
 export default RealEstate;

@@ -5,6 +5,7 @@ import { cn } from '@/lib/utils';
 import { FileCheck, Clock, MessageCircle, ArrowRight, ArrowLeft } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Helmet } from 'react-helmet-async';
+import { useScrollAnimation } from '@/hooks/useScrollAnimation';
 import mayaPortrait from '@/assets/maya-portrait.webp';
 import aboutHeroBg from '@/assets/about-hero-bg.webp';
 
@@ -30,6 +31,14 @@ const About = () => {
     },
   ];
 
+  // Scroll animations
+  const heroAnim = useScrollAnimation();
+  const philosophyAnim = useScrollAnimation();
+  const attorneyAnim = useScrollAnimation();
+  const serveAnim = useScrollAnimation();
+  const expectAnim = useScrollAnimation();
+  const ctaAnim = useScrollAnimation();
+
   return (
     <Layout>
       <Helmet>
@@ -51,7 +60,13 @@ const About = () => {
           />
           <div className="absolute inset-0 bg-gradient-to-b from-primary/30 via-primary/40 to-primary/70" />
         </div>
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+        <div 
+          ref={heroAnim.ref}
+          className={cn(
+            "container mx-auto px-4 sm:px-6 lg:px-8 relative z-10 transition-all duration-700",
+            heroAnim.isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
+          )}
+        >
           <div className={cn("max-w-4xl", isRTL && "font-hebrew text-right mr-auto")}>
             <div className={cn("w-16 h-1 bg-accent mb-8", isRTL && "mr-0")} />
             <h1 className="text-4xl sm:text-5xl lg:text-6xl font-display font-semibold text-primary-foreground mb-6">
@@ -67,7 +82,14 @@ const About = () => {
       {/* Philosophy Section */}
       <section className="py-20 gradient-stone">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <div className={cn("max-w-4xl mx-auto", isRTL && "font-hebrew text-right")}>
+          <div 
+            ref={philosophyAnim.ref}
+            className={cn(
+              "max-w-4xl mx-auto transition-all duration-700",
+              isRTL && "font-hebrew text-right",
+              philosophyAnim.isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
+            )}
+          >
             <h2 className="text-3xl sm:text-4xl font-display font-semibold text-foreground mb-6">
               {t('about.philosophy.title')}
             </h2>
@@ -87,12 +109,22 @@ const About = () => {
       {/* Attorney Section */}
       <section className="py-20 bg-background">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <div className={cn(
-            "grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center",
-            isRTL && "lg:grid-flow-dense"
-          )}>
+          <div 
+            ref={attorneyAnim.ref}
+            className={cn(
+              "grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center transition-all duration-700",
+              isRTL && "lg:grid-flow-dense",
+              attorneyAnim.isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
+            )}
+          >
             {/* Image */}
-            <div className={cn("max-w-md mx-auto", isRTL ? "lg:col-start-2 lg:ml-0 lg:mr-auto" : "lg:col-start-1 lg:mr-0 lg:ml-auto")}>
+            <div 
+              className={cn(
+                "max-w-md mx-auto transition-all duration-700 delay-200",
+                isRTL ? "lg:col-start-2 lg:ml-0 lg:mr-auto" : "lg:col-start-1 lg:mr-0 lg:ml-auto",
+                attorneyAnim.isVisible ? "opacity-100 translate-x-0" : isRTL ? "opacity-0 translate-x-8" : "opacity-0 -translate-x-8"
+              )}
+            >
               <div className="relative">
                 <div className="aspect-[3/4] overflow-hidden rounded-sm shadow-premium">
                   <img
@@ -110,7 +142,13 @@ const About = () => {
             </div>
 
             {/* Content */}
-            <div className={cn(isRTL && "lg:col-start-1 font-hebrew text-right")}>
+            <div 
+              className={cn(
+                "transition-all duration-700 delay-300",
+                isRTL && "lg:col-start-1 font-hebrew text-right",
+                attorneyAnim.isVisible ? "opacity-100 translate-x-0" : isRTL ? "opacity-0 -translate-x-8" : "opacity-0 translate-x-8"
+              )}
+            >
               <h2 className="text-3xl sm:text-4xl font-display font-semibold text-foreground mb-6">
                 {t('about.attorney.title')}
               </h2>
@@ -131,7 +169,13 @@ const About = () => {
       {/* Who We Serve Section - Bridges between sections */}
       <section className="relative z-20 pb-0 pt-20 bg-background overflow-visible">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="relative max-w-6xl mx-auto">
+          <div 
+            ref={serveAnim.ref}
+            className={cn(
+              "relative max-w-6xl mx-auto transition-all duration-700",
+              serveAnim.isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
+            )}
+          >
             {/* Offset beige background that extends down into next section */}
             <div className={cn(
               "absolute -top-12 w-[95%] bg-secondary",
@@ -165,7 +209,14 @@ const About = () => {
       {/* What to Expect Section */}
       <section className="pt-40 lg:pt-52 pb-16 lg:pb-24 bg-secondary/30 -mt-16">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <div className={cn("text-center mb-12", isRTL && "font-hebrew")}>
+          <div 
+            ref={expectAnim.ref}
+            className={cn(
+              "text-center mb-12 transition-all duration-700",
+              isRTL && "font-hebrew",
+              expectAnim.isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
+            )}
+          >
             <h2 className="text-3xl sm:text-4xl font-display font-semibold text-foreground">
               {t('about.expect.title')}
             </h2>
@@ -176,9 +227,11 @@ const About = () => {
               <div
                 key={index}
                 className={cn(
-                  "flex flex-col items-center text-center",
-                  isRTL && "font-hebrew"
+                  "flex flex-col items-center text-center transition-all duration-500",
+                  isRTL && "font-hebrew",
+                  expectAnim.isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
                 )}
+                style={{ transitionDelay: expectAnim.isVisible ? `${index * 150}ms` : '0ms' }}
               >
                 {/* Icon with outlined circle */}
                 <div className="w-12 h-12 rounded-full border border-accent flex items-center justify-center mb-4">
@@ -203,10 +256,14 @@ const About = () => {
       {/* CTA Section */}
       <section className="py-24 bg-primary">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <div className={cn(
-            "max-w-3xl mx-auto text-center",
-            isRTL && "font-hebrew"
-          )}>
+          <div 
+            ref={ctaAnim.ref}
+            className={cn(
+              "max-w-3xl mx-auto text-center transition-all duration-700",
+              isRTL && "font-hebrew",
+              ctaAnim.isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
+            )}
+          >
             <div className="w-16 h-0.5 bg-accent mx-auto mb-8" />
             
             <h2 className="text-3xl sm:text-4xl lg:text-5xl font-display font-semibold text-primary-foreground mb-6">
