@@ -200,10 +200,20 @@ const Taxation = () => {
       </section>
 
       {/* Cross-Border Alignment */}
-      <section className="py-16 gradient-stone">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <div className={cn("max-w-4xl", isRTL && "font-hebrew text-right mr-auto")}>
-            <div className="w-16 h-1 bg-accent mb-6" />
+      <section className="py-24 bg-background overflow-hidden">
+        <div className="container relative max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+          {/* Background beige layer - absolute positioned */}
+          <div className={cn(
+            "absolute -top-12 h-[calc(100%+9rem)] w-[95%] bg-secondary/50 rounded-sm",
+            isRTL ? "-right-8 lg:-right-16" : "-left-8 lg:-left-16"
+          )} />
+          
+          {/* White content card - relative z-10 */}
+          <div className={cn(
+            "relative z-10 max-w-[92%] mt-8 bg-background shadow-sm rounded-lg p-8 md:p-12",
+            isRTL ? "mr-auto text-right font-hebrew" : "ml-auto"
+          )}>
+            <div className={cn("w-16 h-1 bg-accent mb-6", isRTL && "mr-0")} />
             <h2 className="text-2xl sm:text-3xl font-display font-semibold mb-6">
               {t('tax.crossBorder.title')}
             </h2>
