@@ -47,7 +47,7 @@ const Header = () => {
             <DropdownMenu>
               <DropdownMenuTrigger className={cn(
                 "flex items-center gap-1 text-sm font-medium transition-colors hover:text-accent",
-                ['/real-estate', '/taxation', '/estate-planning'].some(p => isActive(p))
+                ['/real-estate', '/taxation', '/estate-planning', '/olim-residents'].some(p => isActive(p))
                   ? 'text-accent'
                   : 'text-foreground/80'
               )}>
@@ -68,6 +68,11 @@ const Header = () => {
                 <DropdownMenuItem asChild>
                   <Link to="/estate-planning" className="w-full cursor-pointer">
                     {t('nav.estate')}
+                  </Link>
+                </DropdownMenuItem>
+                <DropdownMenuItem asChild>
+                  <Link to="/olim-residents" className="w-full cursor-pointer">
+                    {t('nav.olim')}
                   </Link>
                 </DropdownMenuItem>
               </DropdownMenuContent>
@@ -138,6 +143,13 @@ const Header = () => {
                 onClick={() => setIsMenuOpen(false)}
               >
                 {t('nav.estate')}
+              </Link>
+              <Link
+                to="/olim-residents"
+                className={navLinkClass('/olim-residents')}
+                onClick={() => setIsMenuOpen(false)}
+              >
+                {t('nav.olim')}
               </Link>
               <Link
                 to="/insights"

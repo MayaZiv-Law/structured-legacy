@@ -9,6 +9,7 @@ import About from "./pages/About";
 import RealEstate from "./pages/RealEstate";
 import Taxation from "./pages/Taxation";
 import EstatePlanning from "./pages/EstatePlanning";
+import OlimResidents from "./pages/OlimResidents";
 import Insights from "./pages/Insights";
 import Contact from "./pages/Contact";
 import NotFound from "./pages/NotFound";
@@ -28,6 +29,7 @@ const App = () => (
             <Route path="/real-estate" element={<RealEstate />} />
             <Route path="/taxation" element={<Taxation />} />
             <Route path="/estate-planning" element={<EstatePlanning />} />
+            <Route path="/olim-residents" element={<OlimResidents />} />
             <Route path="/insights" element={<Insights />} />
             <Route path="/contact" element={<Contact />} />
             <Route path="*" element={<NotFound />} />
