@@ -73,47 +73,51 @@ const Taxation = () => {
       </section>
 
       {/* Real Estate Tax Planning - Asymmetric Design */}
-      <section className="relative z-20 pt-0 pb-20 bg-background overflow-visible">
+      <section className="py-24 bg-background overflow-hidden">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+          {/* Centered title above the layout */}
+          <div className={cn("text-center mb-12", isRTL && "font-hebrew")}>
+            <div className="w-16 h-1 bg-accent mx-auto mb-6" />
+            <h2 className="text-3xl md:text-4xl font-display font-semibold text-foreground mb-4">
+              {t('tax.realEstate.title')}
+            </h2>
+            <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+              {t('tax.realEstate.body')}
+            </p>
+          </div>
+
+          {/* Asymmetric layout */}
           <div className="relative max-w-6xl mx-auto">
-            {/* Offset beige background on left - attached to top */}
+            {/* Beige background - 60% width, extends above/below */}
             <div className={cn(
-              "absolute top-0 bg-secondary",
-              "h-full w-[70%]",
+              "absolute -top-8 h-[calc(100%+4rem)] w-[60%] bg-secondary/50 rounded-sm",
               isRTL ? "right-0 -mr-8 lg:-mr-16" : "left-0 -ml-8 lg:-ml-16"
             )} />
             
-            {/* Content with white background */}
-            <div className="relative z-10 bg-background py-12 px-8 lg:py-16 lg:px-12 mt-12 shadow-sm">
-              <div className={cn("max-w-5xl", isRTL && "font-hebrew text-right mr-auto")}>
-                <div className="w-16 h-1 bg-accent mb-6" />
-                <h2 className="text-2xl sm:text-3xl font-display font-semibold mb-6">
-                  {t('tax.realEstate.title')}
-                </h2>
-                <p className="text-muted-foreground mb-10 leading-relaxed max-w-3xl">
-                  {t('tax.realEstate.body')}
-                </p>
-                
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-10 lg:gap-14">
-                  {realEstateServices.map((service, i) => (
-                    <div key={i} className={cn("flex flex-col", isRTL && "text-right")}>
-                      {/* Icon with filled circle */}
-                      <div className="w-12 h-12 rounded-full bg-accent flex items-center justify-center mb-5">
-                        <service.icon className="h-5 w-5 text-accent-foreground" strokeWidth={1.5} />
-                      </div>
-                      
-                      {/* Title */}
-                      <h3 className="text-xl font-display font-medium text-foreground mb-3">
-                        {service.title}
-                      </h3>
-                      
-                      {/* Description */}
-                      <p className="text-muted-foreground leading-relaxed text-sm">
-                        {service.desc}
-                      </p>
+            {/* White card - 92% width, offset, z-10 */}
+            <div className={cn(
+              "relative z-10 max-w-[92%] mt-8 bg-background shadow-sm rounded-lg p-8 md:p-12",
+              isRTL ? "mr-auto" : "ml-auto"
+            )}>
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+                {realEstateServices.map((service, i) => (
+                  <div key={i} className={cn("flex flex-col items-center text-center", isRTL && "font-hebrew")}>
+                    {/* Icon with filled circle */}
+                    <div className="w-16 h-16 rounded-full bg-accent/20 flex items-center justify-center mb-4">
+                      <service.icon className="h-6 w-6 text-accent" strokeWidth={1.5} />
                     </div>
-                  ))}
-                </div>
+                    
+                    {/* Title */}
+                    <h3 className="text-lg font-display font-medium text-foreground mb-2">
+                      {service.title}
+                    </h3>
+                    
+                    {/* Description */}
+                    <p className="text-muted-foreground text-sm leading-relaxed">
+                      {service.desc}
+                    </p>
+                  </div>
+                ))}
               </div>
             </div>
           </div>
