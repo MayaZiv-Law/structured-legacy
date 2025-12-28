@@ -2,10 +2,11 @@ import { Link } from 'react-router-dom';
 import Layout from '@/components/layout/Layout';
 import { useLanguage } from '@/contexts/LanguageContext';
 import { cn } from '@/lib/utils';
-import { Building2, AlertTriangle, FileSearch, Globe, ArrowRight, ArrowLeft } from 'lucide-react';
+import { Building2, AlertTriangle, Globe, ArrowRight, ArrowLeft } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/components/ui/accordion';
 import { Helmet } from 'react-helmet-async';
+import dueDiligenceImage from '@/assets/real-estate-due-diligence.webp';
 
 const RealEstate = () => {
   const { t, isRTL, language } = useLanguage();
@@ -135,33 +136,54 @@ const RealEstate = () => {
         </div>
       </section>
 
-      {/* Due Diligence Section */}
-      <section className="py-20 bg-background">
+      {/* Due Diligence Section - Asymmetric Design */}
+      <section className="relative z-20 py-20 bg-background overflow-visible">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <div className={cn(
-            "grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center max-w-6xl mx-auto",
-            isRTL && "lg:grid-flow-dense"
-          )}>
-            {/* Icon/Visual */}
-            <div className={cn("flex justify-center", isRTL && "lg:col-start-2")}>
-              <div className="w-48 h-48 rounded-full bg-secondary flex items-center justify-center">
-                <FileSearch className="h-24 w-24 text-accent" strokeWidth={1} />
+          <div className="relative max-w-6xl mx-auto">
+            {/* Offset beige background */}
+            <div className={cn(
+              "absolute -top-8 w-[60%] bg-secondary",
+              "h-[calc(100%+4rem)]",
+              isRTL ? "right-0 -mr-8 lg:-mr-16" : "left-0 -ml-8 lg:-ml-16"
+            )} />
+            
+            {/* Content grid */}
+            <div className={cn(
+              "relative z-10 grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center",
+              isRTL && "lg:grid-flow-dense"
+            )}>
+              {/* Text content in white card */}
+              <div className={cn(
+                "bg-background py-10 px-8 lg:py-14 lg:px-12 shadow-sm",
+                isRTL ? "lg:col-start-2" : "lg:col-start-1"
+              )}>
+                <div className={cn(isRTL && "font-hebrew text-right")}>
+                  <h2 className="text-2xl sm:text-3xl font-display font-semibold text-foreground mb-6">
+                    {t('realestate.diligence.title')}
+                  </h2>
+                  <div className="space-y-4">
+                    <p className="text-muted-foreground leading-relaxed">
+                      {t('realestate.diligence.body')}
+                    </p>
+                    <p className="text-muted-foreground leading-relaxed">
+                      {t('realestate.diligence.body2')}
+                    </p>
+                  </div>
+                </div>
               </div>
-            </div>
 
-            {/* Content */}
-            <div className={cn(isRTL && "lg:col-start-1 font-hebrew text-right")}>
-              <h2 className="text-3xl sm:text-4xl font-display font-semibold text-foreground mb-6">
-                {t('realestate.diligence.title')}
-              </h2>
-              <div className={cn("w-16 h-0.5 bg-accent mb-8", isRTL && "mr-0 ml-auto")} />
-              <div className="space-y-6">
-                <p className="text-lg text-muted-foreground leading-relaxed">
-                  {t('realestate.diligence.body')}
-                </p>
-                <p className="text-lg text-muted-foreground leading-relaxed">
-                  {t('realestate.diligence.body2')}
-                </p>
+              {/* Image */}
+              <div className={cn(
+                "relative",
+                isRTL ? "lg:col-start-1" : "lg:col-start-2"
+              )}>
+                <div className="aspect-[3/4] max-w-sm mx-auto lg:mx-0 overflow-hidden rounded-sm shadow-premium">
+                  <img
+                    src={dueDiligenceImage}
+                    alt="Real estate due diligence"
+                    className="w-full h-full object-cover"
+                  />
+                </div>
               </div>
             </div>
           </div>
