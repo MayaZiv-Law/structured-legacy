@@ -63,7 +63,7 @@ const GuideSection = () => {
           {/* Image - Positioned to touch the card */}
           <div className={cn("lg:absolute lg:top-10 lg:w-[48%] lg:h-[calc(100%+2rem)] z-20", isRTL ? "lg:left-0" : "lg:right-0")}>
             <div className="h-full min-h-[350px] lg:min-h-full">
-              <img src={mayaPortrait} alt="Maya Ziv - Attorney" className="w-full h-full object-cover object-top" />
+              <img src="/lovable-uploads/a50b3ae0-2451-4322-bcc9-b89b82add8d4.webp" alt="Maya Ziv - Attorney" className="w-full h-full object-cover object-top" />
             </div>
           </div>
         </div>
