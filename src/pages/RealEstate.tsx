@@ -186,8 +186,15 @@ const RealEstate = () => {
             
             {/* Content grid */}
             <div className={cn("relative z-10 grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center", isRTL && "lg:grid-flow-dense")}>
-              {/* Text content in white card - on left */}
-              <div className={cn("bg-background py-10 px-8 lg:py-14 lg:px-12 shadow-sm", isRTL ? "lg:col-start-2" : "lg:col-start-1")}>
+              {/* Image - on left */}
+              <div className={cn("relative", isRTL ? "lg:col-start-2" : "lg:col-start-1")}>
+                <div className="aspect-[3/4] max-w-sm mx-auto lg:mx-0 overflow-hidden rounded-sm shadow-premium">
+                  <img alt="Remote real estate transaction" className="w-full h-full object-cover" src="/lovable-uploads/b4f1d315-d122-495e-bf2b-e2629dfb57b4.webp" />
+                </div>
+              </div>
+
+              {/* Text content in white card - on right */}
+              <div className={cn("bg-background py-10 px-8 lg:py-14 lg:px-12 shadow-sm", isRTL ? "lg:col-start-1" : "lg:col-start-2")}>
                 <div className={cn(isRTL && "font-hebrew text-right")}>
                   <h2 className="text-2xl sm:text-3xl font-display font-semibold text-foreground mb-6">
                     {t('realestate.remote.title')}
@@ -200,13 +207,6 @@ const RealEstate = () => {
                       {t('realestate.remote.body2')}
                     </p>
                   </div>
-                </div>
-              </div>
-
-              {/* Image - on right */}
-              <div className={cn("relative", isRTL ? "lg:col-start-1" : "lg:col-start-2")}>
-                <div className="aspect-[3/4] max-w-sm mx-auto lg:mx-0 overflow-hidden rounded-sm shadow-premium">
-                  <img alt="Remote real estate transaction" className="w-full h-full object-cover" src="/lovable-uploads/b4f1d315-d122-495e-bf2b-e2629dfb57b4.webp" />
                 </div>
               </div>
             </div>
