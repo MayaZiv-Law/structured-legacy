@@ -137,40 +137,35 @@ const About = () => {
           </div>
         </div>
       </section>
-
       {/* What to Expect Section */}
-      <section className="py-20 bg-background">
+      <section className="py-20 bg-secondary/30">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <div className={cn("text-center mb-12", isRTL && "font-hebrew")}>
-            <h2 className="text-3xl sm:text-4xl font-display font-semibold text-foreground mb-4">
+          <div className={cn("text-center mb-16", isRTL && "font-hebrew")}>
+            <h2 className="text-4xl sm:text-5xl font-display font-semibold text-foreground">
               {t('about.expect.title')}
             </h2>
-            <div className="w-16 h-0.5 bg-accent mx-auto mb-6" />
-            <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
-              {t('about.expect.intro')}
-            </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl mx-auto">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-12 max-w-6xl mx-auto">
             {expectations.map((item, index) => (
               <div
                 key={index}
                 className={cn(
-                  "bg-card p-8 rounded-sm border border-border hover:border-accent/50 transition-colors",
-                  isRTL && "font-hebrew text-right"
+                  "flex flex-col items-center text-center",
+                  isRTL && "font-hebrew"
                 )}
               >
-                <div className={cn(
-                  "flex items-center gap-4 mb-4",
-                  isRTL && "flex-row-reverse"
-                )}>
-                  <div className="w-12 h-12 rounded-full bg-secondary flex items-center justify-center">
-                    <item.icon className="h-6 w-6 text-accent" strokeWidth={1.5} />
-                  </div>
-                  <h3 className="text-lg font-display font-medium text-foreground">
-                    {t(item.titleKey)}
-                  </h3>
+                {/* Icon with outlined circle */}
+                <div className="w-16 h-16 rounded-full border-2 border-accent flex items-center justify-center mb-6">
+                  <item.icon className="h-7 w-7 text-accent" strokeWidth={1.5} />
                 </div>
+                
+                {/* Title */}
+                <h3 className="text-2xl font-display font-medium text-foreground mb-4 italic">
+                  {t(item.titleKey)}
+                </h3>
+                
+                {/* Description */}
                 <p className="text-muted-foreground leading-relaxed">
                   {t(item.descKey)}
                 </p>
