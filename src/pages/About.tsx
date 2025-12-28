@@ -138,15 +138,15 @@ const About = () => {
         </div>
       </section>
       {/* What to Expect Section */}
-      <section className="py-20 bg-secondary/30">
+      <section className="py-16 lg:py-24 bg-secondary/30">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <div className={cn("text-center mb-16", isRTL && "font-hebrew")}>
-            <h2 className="text-4xl sm:text-5xl font-display font-semibold text-foreground">
+          <div className={cn("text-center mb-12", isRTL && "font-hebrew")}>
+            <h2 className="text-3xl sm:text-4xl font-display font-semibold text-foreground">
               {t('about.expect.title')}
             </h2>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-12 max-w-6xl mx-auto">
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-8 lg:gap-16 max-w-5xl mx-auto">
             {expectations.map((item, index) => (
               <div
                 key={index}
@@ -156,17 +156,17 @@ const About = () => {
                 )}
               >
                 {/* Icon with outlined circle */}
-                <div className="w-16 h-16 rounded-full border-2 border-accent flex items-center justify-center mb-6">
-                  <item.icon className="h-7 w-7 text-accent" strokeWidth={1.5} />
+                <div className="w-12 h-12 rounded-full border border-accent flex items-center justify-center mb-4">
+                  <item.icon className="h-5 w-5 text-accent" strokeWidth={1.5} />
                 </div>
                 
                 {/* Title */}
-                <h3 className="text-2xl font-display font-medium text-foreground mb-4 italic">
+                <h3 className="text-xl font-display font-medium text-foreground mb-3 italic">
                   {t(item.titleKey)}
                 </h3>
                 
                 {/* Description */}
-                <p className="text-muted-foreground leading-relaxed">
+                <p className="text-muted-foreground leading-relaxed text-sm">
                   {t(item.descKey)}
                 </p>
               </div>
