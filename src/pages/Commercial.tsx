@@ -1,0 +1,156 @@
+import Layout from '@/components/layout/Layout';
+import { useLanguage } from '@/contexts/LanguageContext';
+import { cn } from '@/lib/utils';
+import { Briefcase, FileText, Shield, Scale, Globe, Users, ArrowRight } from 'lucide-react';
+import { Button } from '@/components/ui/button';
+import { Link } from 'react-router-dom';
+import { Helmet } from 'react-helmet-async';
+import commercialHeroBg from '@/assets/commercial-hero-bg.webp';
+
+const Commercial = () => {
+  const { t, isRTL, language } = useLanguage();
+
+  const coreServices = [
+    { 
+      title: t('commercial.services.contracts.title'), 
+      desc: t('commercial.services.contracts.desc'), 
+      icon: FileText 
+    },
+    { 
+      title: t('commercial.services.negotiation.title'), 
+      desc: t('commercial.services.negotiation.desc'), 
+      icon: Scale 
+    },
+    { 
+      title: t('commercial.services.dispute.title'), 
+      desc: t('commercial.services.dispute.desc'), 
+      icon: Shield 
+    },
+    { 
+      title: t('commercial.services.crossborder.title'), 
+      desc: t('commercial.services.crossborder.desc'), 
+      icon: Globe 
+    },
+  ];
+
+  return (
+    <Layout>
+      <Helmet>
+        <title>{language === 'he' ? 'עורך דין מסחרי בתל אביב | חוזים ויישוב סכסוכים בישראל' : 'Commercial Lawyer Tel Aviv | Contracts & Dispute Resolution Israel'}</title>
+        <meta name="description" content={language === 'he' ? 'ייעוץ משפטי מסחרי בתל אביב. ניסוח חוזים, הסכמי שותפות וניהול סכסוכים עסקיים חוצי גבולות ללקוחות בינלאומיים.' : 'Commercial legal counsel in Tel Aviv. Drafting contracts, partnership agreements, and managing cross-border business disputes for international clients.'} />
+      </Helmet>
+
+      {/* Hero Section */}
+      <section 
+        className="relative pt-32 pb-20 bg-cover bg-center bg-no-repeat"
+        style={{ backgroundImage: `url(${commercialHeroBg})` }}
+      >
+        <div className="absolute inset-0 bg-black/60" />
+        <div className="container relative z-10 mx-auto px-4 sm:px-6 lg:px-8">
+          <div className={cn("max-w-4xl mx-auto", isRTL && "font-hebrew text-right")}>
+            <div className="w-16 h-1 bg-accent mb-8" />
+            <h1 className="text-4xl sm:text-5xl font-display font-semibold text-white mb-6">
+              {t('commercial.hero.title')}
+            </h1>
+            <p className="text-xl text-white/80 leading-relaxed">
+              {t('commercial.hero.subtitle')}
+            </p>
+          </div>
+        </div>
+      </section>
+
+      {/* Philosophy Section */}
+      <section className="py-16 gradient-stone">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+          <div className={cn("max-w-4xl mx-auto", isRTL && "font-hebrew text-right")}>
+            <h2 className="text-2xl sm:text-3xl font-display font-semibold mb-6">
+              {t('commercial.philosophy.title')}
+            </h2>
+            <p className="text-muted-foreground mb-4 leading-relaxed">
+              {t('commercial.philosophy.body')}
+            </p>
+            <p className="text-muted-foreground leading-relaxed">
+              {t('commercial.philosophy.body2')}
+            </p>
+          </div>
+        </div>
+      </section>
+
+      {/* Core Services Section */}
+      <section className="py-16 bg-background">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+          <div className={cn("max-w-4xl mx-auto mb-10", isRTL && "font-hebrew text-right")}>
+            <h2 className="text-2xl sm:text-3xl font-display font-semibold mb-6">
+              {t('commercial.services.title')}
+            </h2>
+          </div>
+          <div className="grid md:grid-cols-2 gap-6 max-w-4xl mx-auto">
+            {coreServices.map((service, i) => (
+              <div key={i} className={cn("p-6 bg-card rounded-lg border border-border", isRTL && "font-hebrew text-right")}>
+                <service.icon className="h-6 w-6 text-accent mb-4" />
+                <h3 className="font-medium mb-2">{service.title}</h3>
+                <p className="text-sm text-muted-foreground">{service.desc}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Cross-Border Section */}
+      <section className="py-16 bg-background">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="max-w-5xl mx-auto relative">
+            <div className={cn(
+              "relative z-10 max-w-2xl p-8 sm:p-10 bg-card rounded-2xl shadow-lg border border-border/50",
+              isRTL ? "font-hebrew text-right mr-auto" : "ml-0"
+            )}>
+              <h2 className="text-2xl sm:text-3xl font-display font-semibold mb-6 text-foreground">
+                {t('commercial.crossborder.title')}
+              </h2>
+              <p className="text-muted-foreground mb-4 leading-relaxed">
+                {t('commercial.crossborder.body')}
+              </p>
+              <p className="text-muted-foreground leading-relaxed">
+                {t('commercial.crossborder.body2')}
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Who We Work With Section */}
+      <section className="py-16 gradient-stone">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+          <div className={cn("max-w-4xl mx-auto", isRTL && "font-hebrew text-right")}>
+            <h2 className="text-2xl sm:text-3xl font-display font-semibold mb-6">
+              {t('commercial.clients.title')}
+            </h2>
+            <p className="text-muted-foreground leading-relaxed">
+              {t('commercial.clients.body')}
+            </p>
+          </div>
+        </div>
+      </section>
+
+      {/* CTA Section */}
+      <section className="py-20 bg-primary text-primary-foreground">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          <h2 className={cn("text-2xl sm:text-3xl font-display font-semibold mb-4", isRTL && "font-hebrew")}>
+            {t('commercial.cta.title')}
+          </h2>
+          <p className={cn("text-primary-foreground/80 mb-8 max-w-xl mx-auto", isRTL && "font-hebrew")}>
+            {t('commercial.cta.body')}
+          </p>
+          <Button asChild size="lg" variant="secondary" className="group">
+            <Link to="/contact">
+              {t('commercial.cta.button')}
+              <ArrowRight className={cn("ml-2 h-4 w-4 transition-transform group-hover:translate-x-1", isRTL && "rotate-180 mr-2 ml-0")} />
+            </Link>
+          </Button>
+        </div>
+      </section>
+    </Layout>
+  );
+};
+
+export default Commercial;
