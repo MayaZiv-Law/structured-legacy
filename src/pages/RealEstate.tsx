@@ -228,7 +228,7 @@ const RealEstate = () => {
               {/* Image - now on left (or right in RTL) */}
               <div className={cn(
                 "relative",
-                isRTL ? "lg:col-start-2 lg:mr-0 lg:ml-auto" : "lg:col-start-1 lg:ml-0 lg:mr-auto"
+                isRTL ? "lg:col-start-2" : "lg:col-start-1"
               )}>
                 <div className="aspect-[3/4] max-w-sm mx-auto lg:mx-0 overflow-hidden rounded-sm shadow-premium">
                   <img
