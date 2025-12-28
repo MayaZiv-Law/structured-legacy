@@ -18,47 +18,53 @@ const GuideSection = () => {
           </h2>
         </div>
 
-        {/* Two Column Layout */}
-        <div className={cn(
-          "grid grid-cols-1 lg:grid-cols-2 gap-0 items-stretch max-w-6xl mx-auto",
-          isRTL && "lg:grid-flow-dense"
-        )}>
-          {/* Content Card */}
+        {/* Asymmetric Two Column Layout */}
+        <div className="relative max-w-6xl mx-auto">
           <div className={cn(
-            "bg-secondary/50 p-8 sm:p-12 lg:p-16 flex flex-col justify-center",
-            isRTL ? "lg:col-start-2" : "lg:col-start-1"
+            "grid grid-cols-1 lg:grid-cols-12 gap-0",
+            isRTL && "lg:grid-flow-dense"
           )}>
-            <div className={cn(isRTL && "text-right font-hebrew")}>
-              <p className="text-muted-foreground leading-relaxed mb-6 text-lg">
-                {t('guide.bio')}
-              </p>
-
-              {/* Punchline */}
-              <p className={cn(
-                "text-foreground font-medium text-lg italic mb-0",
-                isRTL ? "border-r-2 border-accent pr-4" : "border-l-2 border-accent pl-4"
+            {/* Content Card - Takes 7 columns (wider) */}
+            <div className={cn(
+              "lg:col-span-7 relative z-10",
+              isRTL ? "lg:col-start-6" : "lg:col-start-1"
+            )}>
+              <div className={cn(
+                "bg-secondary/50 p-8 sm:p-12 lg:p-16",
+                isRTL && "text-right font-hebrew"
               )}>
-                {t('guide.punchline')}
-              </p>
-            </div>
-          </div>
+                <p className="text-muted-foreground leading-relaxed mb-6 text-lg">
+                  {t('guide.bio')}
+                </p>
 
-          {/* Image */}
-          <div className={cn(
-            isRTL ? "lg:col-start-1" : "lg:col-start-2"
-          )}>
-            <div className="h-full min-h-[400px] lg:min-h-full">
-              <img
-                src={mayaPortrait}
-                alt="Maya Ziv - Attorney"
-                className="w-full h-full object-cover object-top"
-              />
+                {/* Punchline */}
+                <p className={cn(
+                  "text-foreground font-medium text-lg italic",
+                  isRTL ? "border-r-2 border-accent pr-4" : "border-l-2 border-accent pl-4"
+                )}>
+                  {t('guide.punchline')}
+                </p>
+              </div>
+            </div>
+
+            {/* Image - Takes 6 columns with offset */}
+            <div className={cn(
+              "lg:col-span-6 lg:absolute lg:top-12 lg:h-[calc(100%+4rem)]",
+              isRTL ? "lg:left-0" : "lg:right-0"
+            )}>
+              <div className="h-full min-h-[350px] lg:min-h-full">
+                <img
+                  src={mayaPortrait}
+                  alt="Maya Ziv - Attorney"
+                  className="w-full h-full object-cover object-top"
+                />
+              </div>
             </div>
           </div>
         </div>
 
         {/* Centered CTA Link */}
-        <div className="text-center mt-12">
+        <div className="text-center mt-16">
           <Link
             to="/about"
             className={cn(
