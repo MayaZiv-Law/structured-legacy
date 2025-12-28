@@ -1,66 +1,261 @@
+import { Link } from 'react-router-dom';
 import Layout from '@/components/layout/Layout';
 import { useLanguage } from '@/contexts/LanguageContext';
 import { cn } from '@/lib/utils';
-import { Building2, CheckCircle, Users } from 'lucide-react';
-import CTASection from '@/components/home/CTASection';
+import { Building2, AlertTriangle, FileSearch, Globe, ArrowRight, ArrowLeft } from 'lucide-react';
+import { Button } from '@/components/ui/button';
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/components/ui/accordion';
+import { Helmet } from 'react-helmet-async';
 
 const RealEstate = () => {
   const { t, isRTL, language } = useLanguage();
+  const Arrow = isRTL ? ArrowLeft : ArrowRight;
 
-  const features = [
-    language === 'he' ? 'בדיקת נאותות מקיפה של הנכס' : 'Comprehensive property due diligence',
-    language === 'he' ? 'סקירת חוזה וניהול משא ומתן' : 'Contract review and negotiation',
-    language === 'he' ? 'רישום בטאבו ורשויות מקרקעין' : 'Land registry and title registration',
-    language === 'he' ? 'תכנון מס ואופטימיזציה' : 'Tax planning and optimization',
-    language === 'he' ? 'תאום עם בנקים וגורמים פיננסיים' : 'Bank and financial coordination',
-    language === 'he' ? 'ייצוג בעסקאות מרחוק' : 'Remote transaction representation',
-  ];
-
-  const forWhom = [
-    { title: language === 'he' ? 'תושבי חוץ' : 'Foreign Residents', desc: language === 'he' ? 'רוכשי נכסים מחו"ל' : 'Purchasing property from abroad' },
-    { title: language === 'he' ? 'משקיעים' : 'Investors', desc: language === 'he' ? 'נדל"ן מניב ויוקרה' : 'Income and luxury real estate' },
-    { title: language === 'he' ? 'עולים חדשים' : 'New Immigrants', desc: language === 'he' ? 'רכישת בית ראשון' : 'First home purchase' },
+  const risks = [
+    {
+      titleKey: 'realestate.risk.liabilities.title',
+      descKey: 'realestate.risk.liabilities.desc',
+    },
+    {
+      titleKey: 'realestate.risk.planning.title',
+      descKey: 'realestate.risk.planning.desc',
+    },
+    {
+      titleKey: 'realestate.risk.tax.title',
+      descKey: 'realestate.risk.tax.desc',
+    },
   ];
 
   const faqs = [
-    { q: language === 'he' ? 'האם אני צריך להיות בישראל לחתימה?' : 'Do I need to be in Israel for signing?', a: language === 'he' ? 'לא, אנחנו מציעים תהליכים מרחוק מלאים דרך הקונסוליות.' : 'No, we offer full remote processes through consulates.' },
-    { q: language === 'he' ? 'כמה זמן לוקח התהליך?' : 'How long does the process take?', a: language === 'he' ? 'בדרך כלל 60-90 יום מחתימה ועד רישום.' : 'Typically 60-90 days from signing to registration.' },
-    { q: language === 'he' ? 'מה לגבי מיסוי?' : 'What about taxation?', a: language === 'he' ? 'אנחנו מתכננים את העסקה למיצוי כל הטבות המס הרלוונטיות.' : 'We structure transactions to maximize all relevant tax benefits.' },
+    { qKey: 'realestate.faq.q1', aKey: 'realestate.faq.a1' },
+    { qKey: 'realestate.faq.q2', aKey: 'realestate.faq.a2' },
+    { qKey: 'realestate.faq.q3', aKey: 'realestate.faq.a3' },
   ];
 
   return (
     <Layout>
+      <Helmet>
+        <title>{language === 'he' ? 'עורכת דין נדל"ן בתל אביב | רכישת נכס בישראל' : 'Real Estate Lawyer in Tel Aviv | Buying Property in Israel (Tax & Due Diligence)'}</title>
+        <meta name="description" content={language === 'he' 
+          ? 'ייעוץ משפטי לרכישת נכס בישראל. בדיקת נאותות, תכנון מס רכישה וייצוג מרחוק לתושבי חוץ ומשקיעים.'
+          : 'Legal counsel for buying property in Israel. Due diligence, purchase tax planning, and remote representation for foreign residents and investors.'
+        } />
+      </Helmet>
+
+      {/* Hero Section */}
       <section className="pt-32 pb-20 bg-background">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className={cn("max-w-4xl", isRTL && "font-hebrew text-right mr-auto")}>
-            <div className="flex items-center gap-3 mb-6"><Building2 className="h-8 w-8 text-accent" /><span className="text-accent font-medium">{t('nav.realEstate')}</span></div>
-            <h1 className="text-4xl sm:text-5xl font-display font-semibold text-foreground mb-6">{language === 'he' ? 'עסקאות נדל"ן יוקרתי' : 'Luxury Real Estate Transactions'}</h1>
-            <p className="text-xl text-muted-foreground leading-relaxed">{language === 'he' ? 'בדיקת נאותות מלאה והערכת סיכונים לרכישות נדל"ן בישראל, עם דגש על לקוחות בינלאומיים.' : 'Full due diligence and risk assessment for Israeli property purchases, with emphasis on international clients.'}</p>
+            <div className={cn("flex items-center gap-3 mb-6", isRTL && "flex-row-reverse")}>
+              <Building2 className="h-8 w-8 text-accent" strokeWidth={1.5} />
+              <span className="text-accent font-medium">{t('nav.realEstate')}</span>
+            </div>
+            <div className={cn("w-16 h-1 bg-accent mb-8", isRTL && "mr-0")} />
+            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-display font-semibold text-foreground mb-6">
+              {t('realestate.hero.title')}
+            </h1>
+            <p className="text-xl text-muted-foreground leading-relaxed">
+              {t('realestate.hero.subtitle')}
+            </p>
           </div>
         </div>
       </section>
-      <section className="py-16 gradient-stone">
+
+      {/* The Approach Section */}
+      <section className="py-20 gradient-stone">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid md:grid-cols-2 gap-12">
-            <div className={cn(isRTL && "font-hebrew text-right")}>
-              <h2 className="text-2xl font-display font-semibold mb-6">{t('service.overview')}</h2>
-              <ul className="space-y-3">{features.map((f,i) => <li key={i} className="flex items-center gap-3"><CheckCircle className="h-5 w-5 text-accent flex-shrink-0" /><span>{f}</span></li>)}</ul>
-            </div>
-            <div className={cn(isRTL && "font-hebrew text-right")}>
-              <h2 className="text-2xl font-display font-semibold mb-6">{t('service.forWhom')}</h2>
-              <div className="space-y-4">{forWhom.map((w,i) => <div key={i} className="flex items-start gap-3 p-4 bg-card rounded border border-border"><Users className="h-5 w-5 text-accent mt-1" /><div><h3 className="font-medium">{w.title}</h3><p className="text-sm text-muted-foreground">{w.desc}</p></div></div>)}</div>
+          <div className={cn("max-w-4xl mx-auto", isRTL && "font-hebrew text-right")}>
+            <h2 className="text-3xl sm:text-4xl font-display font-semibold text-foreground mb-6">
+              {t('realestate.approach.title')}
+            </h2>
+            <div className={cn("w-16 h-0.5 bg-accent mb-8", isRTL && "mr-0 ml-auto")} />
+            <div className="space-y-6">
+              <p className="text-lg text-muted-foreground leading-relaxed">
+                {t('realestate.approach.body')}
+              </p>
+              <p className="text-lg text-muted-foreground leading-relaxed">
+                {t('realestate.approach.body2')}
+              </p>
             </div>
           </div>
         </div>
       </section>
-      <section className="py-16 bg-background">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-3xl">
-          <h2 className={cn("text-2xl font-display font-semibold mb-8 text-center", isRTL && "font-hebrew")}>{t('service.faq')}</h2>
-          <Accordion type="single" collapsible className="w-full">{faqs.map((faq,i) => <AccordionItem key={i} value={`item-${i}`}><AccordionTrigger className={cn(isRTL && "font-hebrew text-right")}>{faq.q}</AccordionTrigger><AccordionContent className={cn(isRTL && "font-hebrew text-right")}>{faq.a}</AccordionContent></AccordionItem>)}</Accordion>
+
+      {/* Risk Map Section */}
+      <section className="py-20 bg-background">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+          <div className={cn("max-w-4xl mx-auto", isRTL && "font-hebrew text-right")}>
+            <h2 className="text-3xl sm:text-4xl font-display font-semibold text-foreground mb-6">
+              {t('realestate.risk.title')}
+            </h2>
+            <div className={cn("w-16 h-0.5 bg-accent mb-8", isRTL && "mr-0 ml-auto")} />
+            <p className="text-lg text-muted-foreground leading-relaxed mb-10">
+              {t('realestate.risk.intro')}
+            </p>
+            
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+              {risks.map((risk, index) => (
+                <div
+                  key={index}
+                  className="bg-card p-6 rounded-sm border border-border hover:border-accent/50 transition-colors"
+                >
+                  <div className={cn("flex items-center gap-3 mb-4", isRTL && "flex-row-reverse")}>
+                    <AlertTriangle className="h-5 w-5 text-accent" strokeWidth={1.5} />
+                    <h3 className="font-display font-medium text-foreground">
+                      {t(risk.titleKey)}
+                    </h3>
+                  </div>
+                  <p className="text-muted-foreground text-sm leading-relaxed">
+                    {t(risk.descKey)}
+                  </p>
+                </div>
+              ))}
+            </div>
+          </div>
         </div>
       </section>
-      <CTASection />
+
+      {/* Tax Planning Section */}
+      <section className="py-20 gradient-stone">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+          <div className={cn("max-w-4xl mx-auto", isRTL && "font-hebrew text-right")}>
+            <h2 className="text-3xl sm:text-4xl font-display font-semibold text-foreground mb-6">
+              {t('realestate.tax.title')}
+            </h2>
+            <div className={cn("w-16 h-0.5 bg-accent mb-8", isRTL && "mr-0 ml-auto")} />
+            <div className="space-y-6">
+              <p className="text-lg text-muted-foreground leading-relaxed">
+                {t('realestate.tax.body')}
+              </p>
+              <p className="text-lg text-muted-foreground leading-relaxed">
+                {t('realestate.tax.body2')}
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Due Diligence Section */}
+      <section className="py-20 bg-background">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+          <div className={cn(
+            "grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center max-w-6xl mx-auto",
+            isRTL && "lg:grid-flow-dense"
+          )}>
+            {/* Icon/Visual */}
+            <div className={cn("flex justify-center", isRTL && "lg:col-start-2")}>
+              <div className="w-48 h-48 rounded-full bg-secondary flex items-center justify-center">
+                <FileSearch className="h-24 w-24 text-accent" strokeWidth={1} />
+              </div>
+            </div>
+
+            {/* Content */}
+            <div className={cn(isRTL && "lg:col-start-1 font-hebrew text-right")}>
+              <h2 className="text-3xl sm:text-4xl font-display font-semibold text-foreground mb-6">
+                {t('realestate.diligence.title')}
+              </h2>
+              <div className={cn("w-16 h-0.5 bg-accent mb-8", isRTL && "mr-0 ml-auto")} />
+              <div className="space-y-6">
+                <p className="text-lg text-muted-foreground leading-relaxed">
+                  {t('realestate.diligence.body')}
+                </p>
+                <p className="text-lg text-muted-foreground leading-relaxed">
+                  {t('realestate.diligence.body2')}
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Remote Execution Section */}
+      <section className="py-20 gradient-stone">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+          <div className={cn(
+            "grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center max-w-6xl mx-auto",
+            isRTL && "lg:grid-flow-dense"
+          )}>
+            {/* Content */}
+            <div className={cn(isRTL && "font-hebrew text-right")}>
+              <h2 className="text-3xl sm:text-4xl font-display font-semibold text-foreground mb-6">
+                {t('realestate.remote.title')}
+              </h2>
+              <div className={cn("w-16 h-0.5 bg-accent mb-8", isRTL && "mr-0 ml-auto")} />
+              <div className="space-y-6">
+                <p className="text-lg text-muted-foreground leading-relaxed">
+                  {t('realestate.remote.body')}
+                </p>
+                <p className="text-lg text-muted-foreground leading-relaxed">
+                  {t('realestate.remote.body2')}
+                </p>
+              </div>
+            </div>
+
+            {/* Icon/Visual */}
+            <div className={cn("flex justify-center", isRTL && "lg:col-start-1")}>
+              <div className="w-48 h-48 rounded-full bg-secondary flex items-center justify-center">
+                <Globe className="h-24 w-24 text-accent" strokeWidth={1} />
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* FAQ Section */}
+      <section className="py-20 bg-background">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-3xl">
+          <div className={cn("text-center mb-12", isRTL && "font-hebrew")}>
+            <h2 className="text-3xl sm:text-4xl font-display font-semibold text-foreground mb-4">
+              {t('service.faq')}
+            </h2>
+            <div className="w-16 h-0.5 bg-accent mx-auto" />
+          </div>
+          
+          <Accordion type="single" collapsible className="w-full">
+            {faqs.map((faq, i) => (
+              <AccordionItem key={i} value={`item-${i}`}>
+                <AccordionTrigger className={cn("text-left", isRTL && "font-hebrew text-right")}>
+                  {t(faq.qKey)}
+                </AccordionTrigger>
+                <AccordionContent className={cn(isRTL && "font-hebrew text-right")}>
+                  {t(faq.aKey)}
+                </AccordionContent>
+              </AccordionItem>
+            ))}
+          </Accordion>
+        </div>
+      </section>
+
+      {/* CTA Section */}
+      <section className="py-24 bg-primary">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+          <div className={cn(
+            "max-w-3xl mx-auto text-center",
+            isRTL && "font-hebrew"
+          )}>
+            <div className="w-16 h-0.5 bg-accent mx-auto mb-8" />
+            
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-display font-semibold text-primary-foreground mb-6">
+              {t('realestate.cta.title')}
+            </h2>
+            
+            <p className="text-primary-foreground/80 text-lg mb-10 max-w-xl mx-auto">
+              {t('realestate.cta.body')}
+            </p>
+
+            <Button
+              asChild
+              size="lg"
+              className="bg-accent hover:bg-accent/90 text-accent-foreground font-medium px-10 py-6 text-base group"
+            >
+              <Link to="/contact" className={cn("flex items-center gap-2", isRTL && "flex-row-reverse")}>
+                {t('realestate.cta.button')}
+                <Arrow className="h-4 w-4 transition-transform group-hover:translate-x-1" />
+              </Link>
+            </Button>
+          </div>
+        </div>
+      </section>
     </Layout>
   );
 };
