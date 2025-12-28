@@ -82,7 +82,7 @@ const About = () => {
             isRTL && "lg:grid-flow-dense"
           )}>
             {/* Image */}
-            <div className={cn(isRTL && "lg:col-start-2", "max-w-md mx-auto lg:mx-0")}>
+            <div className={cn("max-w-md mx-auto", isRTL ? "lg:col-start-2 lg:ml-0 lg:mr-auto" : "lg:col-start-1 lg:mr-0 lg:ml-auto")}>
               <div className="relative">
                 <div className="aspect-[3/4] overflow-hidden rounded-sm shadow-premium">
                   <img
