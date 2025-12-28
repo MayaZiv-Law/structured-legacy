@@ -209,15 +209,15 @@ const RealEstate = () => {
         </div>
       </section>
 
-      {/* Remote Execution Section - Asymmetric Design (Mirrored) */}
+      {/* Remote Execution Section - Same layout as Due Diligence */}
       <section className="relative z-20 py-20 bg-background overflow-visible">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="relative max-w-6xl mx-auto">
-            {/* Offset beige background - mirrored position */}
+            {/* Offset beige background - same position as Due Diligence */}
             <div className={cn(
               "absolute -top-8 w-[60%] bg-secondary",
               "h-[calc(100%+4rem)]",
-              isRTL ? "left-0 -ml-8 lg:-ml-16" : "right-0 -mr-8 lg:-mr-16"
+              isRTL ? "right-0 -mr-8 lg:-mr-16" : "left-0 -ml-8 lg:-ml-16"
             )} />
             
             {/* Content grid */}
@@ -225,24 +225,10 @@ const RealEstate = () => {
               "relative z-10 grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center",
               isRTL && "lg:grid-flow-dense"
             )}>
-              {/* Image - now on left (or right in RTL) */}
-              <div className={cn(
-                "relative",
-                isRTL ? "lg:col-start-2" : "lg:col-start-1"
-              )}>
-                <div className="aspect-[3/4] max-w-sm mx-auto lg:mx-0 overflow-hidden rounded-sm shadow-premium">
-                  <img
-                    src={remoteTransactionImage}
-                    alt="Remote real estate transaction"
-                    className="w-full h-full object-cover"
-                  />
-                </div>
-              </div>
-
-              {/* Text content in white card - now on right (or left in RTL) */}
+              {/* Text content in white card - on left */}
               <div className={cn(
                 "bg-background py-10 px-8 lg:py-14 lg:px-12 shadow-sm",
-                isRTL ? "lg:col-start-1" : "lg:col-start-2"
+                isRTL ? "lg:col-start-2" : "lg:col-start-1"
               )}>
                 <div className={cn(isRTL && "font-hebrew text-right")}>
                   <h2 className="text-2xl sm:text-3xl font-display font-semibold text-foreground mb-6">
@@ -256,6 +242,20 @@ const RealEstate = () => {
                       {t('realestate.remote.body2')}
                     </p>
                   </div>
+                </div>
+              </div>
+
+              {/* Image - on right */}
+              <div className={cn(
+                "relative",
+                isRTL ? "lg:col-start-1" : "lg:col-start-2"
+              )}>
+                <div className="aspect-[3/4] max-w-sm mx-auto lg:mx-0 overflow-hidden rounded-sm shadow-premium">
+                  <img
+                    src={remoteTransactionImage}
+                    alt="Remote real estate transaction"
+                    className="w-full h-full object-cover"
+                  />
                 </div>
               </div>
             </div>
