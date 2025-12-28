@@ -42,17 +42,14 @@ const EstatePlanning = () => {
         className="relative pt-32 pb-20 bg-cover bg-center bg-no-repeat"
         style={{ backgroundImage: `url(${estateHeroBg})` }}
       >
-        <div className="absolute inset-0 bg-background/70" />
+        <div className="absolute inset-0 bg-black/60" />
         <div className="container relative z-10 mx-auto px-4 sm:px-6 lg:px-8">
           <div className={cn("max-w-4xl mx-auto", isRTL && "font-hebrew text-right")}>
-            <div className="flex items-center gap-3 mb-6">
-              <FileText className="h-8 w-8 text-accent" />
-              <span className="text-accent font-medium">{t('nav.estate')}</span>
-            </div>
-            <h1 className="text-4xl sm:text-5xl font-display font-semibold text-foreground mb-6">
+            <div className="w-16 h-1 bg-accent mb-8" />
+            <h1 className="text-4xl sm:text-5xl font-display font-semibold text-white mb-6">
               {t('estate.hero.title')}
             </h1>
-            <p className="text-xl text-muted-foreground leading-relaxed">
+            <p className="text-xl text-white/80 leading-relaxed">
               {t('estate.hero.subtitle')}
             </p>
           </div>
