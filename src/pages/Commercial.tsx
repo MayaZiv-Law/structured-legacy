@@ -5,6 +5,7 @@ import { Briefcase, FileText, Shield, Scale, Globe, Users, ArrowRight } from 'lu
 import { Button } from '@/components/ui/button';
 import { Link } from 'react-router-dom';
 import { Helmet } from 'react-helmet-async';
+import { useScrollAnimation } from '@/hooks/useScrollAnimation';
 import commercialHeroBg from '@/assets/commercial-hero-bg.webp';
 import crossBorderImage from '@/assets/cross-border-business.webp';
 
@@ -33,6 +34,12 @@ const Commercial = () => {
       icon: Globe 
     },
   ];
+
+  const philosophyAnim = useScrollAnimation();
+  const servicesAnim = useScrollAnimation();
+  const crossBorderAnim = useScrollAnimation();
+  const clientsAnim = useScrollAnimation();
+  const ctaAnim = useScrollAnimation();
 
   return (
     <Layout>
@@ -63,7 +70,14 @@ const Commercial = () => {
       {/* Philosophy Section */}
       <section className="py-16 gradient-stone">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <div className={cn("max-w-4xl mx-auto", isRTL && "font-hebrew text-right")}>
+          <div 
+            ref={philosophyAnim.ref}
+            className={cn(
+              "max-w-4xl mx-auto transition-all duration-700",
+              isRTL && "font-hebrew text-right",
+              philosophyAnim.isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
+            )}
+          >
             <h2 className="text-2xl sm:text-3xl font-display font-semibold mb-6">
               {t('commercial.philosophy.title')}
             </h2>
@@ -80,14 +94,29 @@ const Commercial = () => {
       {/* Core Services Section */}
       <section className="py-16 bg-background">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <div className={cn("max-w-4xl mx-auto mb-10", isRTL && "font-hebrew text-right")}>
+          <div 
+            ref={servicesAnim.ref}
+            className={cn(
+              "max-w-4xl mx-auto mb-10 transition-all duration-700",
+              isRTL && "font-hebrew text-right",
+              servicesAnim.isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
+            )}
+          >
             <h2 className="text-2xl sm:text-3xl font-display font-semibold mb-6">
               {t('commercial.services.title')}
             </h2>
           </div>
           <div className="grid md:grid-cols-2 gap-6 max-w-4xl mx-auto">
             {coreServices.map((service, i) => (
-              <div key={i} className={cn("p-6 bg-card rounded-lg border border-border", isRTL && "font-hebrew text-right")}>
+              <div 
+                key={i} 
+                className={cn(
+                  "p-6 bg-card rounded-lg border border-border transition-all duration-500",
+                  isRTL && "font-hebrew text-right",
+                  servicesAnim.isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
+                )}
+                style={{ transitionDelay: servicesAnim.isVisible ? `${i * 100}ms` : '0ms' }}
+              >
                 <service.icon className="h-6 w-6 text-accent mb-4" />
                 <h3 className="font-medium mb-2">{service.title}</h3>
                 <p className="text-sm text-muted-foreground">{service.desc}</p>
@@ -100,7 +129,13 @@ const Commercial = () => {
       {/* Cross-Border Section */}
       <section className="relative z-20 py-20 bg-background overflow-visible">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="relative max-w-6xl mx-auto">
+          <div 
+            ref={crossBorderAnim.ref}
+            className={cn(
+              "relative max-w-6xl mx-auto transition-all duration-700",
+              crossBorderAnim.isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
+            )}
+          >
             {/* Offset beige background */}
             <div className={cn(
               "absolute -top-8 w-[60%] bg-secondary h-[calc(100%+4rem)]",
@@ -149,7 +184,14 @@ const Commercial = () => {
       {/* Who We Work With Section */}
       <section className="py-16 gradient-stone">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <div className={cn("max-w-4xl mx-auto", isRTL && "font-hebrew text-right")}>
+          <div 
+            ref={clientsAnim.ref}
+            className={cn(
+              "max-w-4xl mx-auto transition-all duration-700",
+              isRTL && "font-hebrew text-right",
+              clientsAnim.isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
+            )}
+          >
             <h2 className="text-2xl sm:text-3xl font-display font-semibold mb-6">
               {t('commercial.clients.title')}
             </h2>
@@ -162,7 +204,13 @@ const Commercial = () => {
 
       {/* CTA Section */}
       <section className="py-20 bg-primary text-primary-foreground">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8 text-center">
+        <div 
+          ref={ctaAnim.ref}
+          className={cn(
+            "container mx-auto px-4 sm:px-6 lg:px-8 text-center transition-all duration-700",
+            ctaAnim.isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
+          )}
+        >
           <h2 className={cn("text-2xl sm:text-3xl font-display font-semibold mb-4", isRTL && "font-hebrew")}>
             {t('commercial.cta.title')}
           </h2>
