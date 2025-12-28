@@ -58,7 +58,7 @@ const Taxation = () => {
       {/* The Context Section */}
       <section className="py-16 gradient-stone">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <div className={cn("max-w-3xl", isRTL && "font-hebrew text-right mr-auto")}>
+          <div className={cn("max-w-4xl mx-auto", isRTL && "font-hebrew text-right")}>
             <h2 className="text-2xl sm:text-3xl font-display font-semibold mb-6">
               {t('tax.context.title')}
             </h2>
