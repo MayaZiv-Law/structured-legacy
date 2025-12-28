@@ -21,7 +21,7 @@ const GuideSection = () => {
         {/* Mobile Layout: Image first, then text */}
         <div className="lg:hidden flex flex-col items-center">
           {/* Image - Mobile */}
-          <div className="w-[85%] mb-10">
+          <div className="w-[85%] relative z-10">
             <img
               src={mayaPortrait}
               alt="Maya Ziv - Attorney"
@@ -29,8 +29,8 @@ const GuideSection = () => {
             />
           </div>
 
-          {/* Text Content - Mobile (centered) */}
-          <div className={cn("text-center px-4", isRTL && "font-hebrew")}>
+          {/* Text Content - Mobile (centered, with negative margin to overlap) */}
+          <div className={cn("text-center px-6 pt-12 -mt-6 bg-background relative", isRTL && "font-hebrew")}>
             <p className="text-muted-foreground leading-relaxed mb-6 text-lg">
               {t('guide.bio')}
             </p>
