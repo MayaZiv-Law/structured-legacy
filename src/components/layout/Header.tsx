@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { Menu, X, ChevronDown } from 'lucide-react';
+import logo from '@/assets/logo.png';
 import { Button } from '@/components/ui/button';
 import { useLanguage } from '@/contexts/LanguageContext';
 import {
@@ -31,12 +32,11 @@ const Header = () => {
         <div className="flex items-center justify-between h-20">
           {/* Logo */}
           <Link to="/" className="flex items-center">
-            <span className={cn(
-              "text-2xl font-display font-semibold tracking-wide text-foreground",
-              isRTL && "font-hebrew"
-            )}>
-              {isRTL ? 'מאיה זיו עו"ד' : 'MAYA ZIV LAW'}
-            </span>
+            <img 
+              src={logo} 
+              alt="Maya Ziv Law" 
+              className="h-12 w-auto"
+            />
           </Link>
 
           {/* Desktop Navigation */}
