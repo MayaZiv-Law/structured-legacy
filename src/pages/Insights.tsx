@@ -35,12 +35,42 @@ const Insights = () => {
 
   return (
     <Layout>
+      {/* Hero Section */}
       <section className="pt-32 pb-20 bg-background">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className={cn("max-w-4xl", isRTL && "font-hebrew text-right mr-auto")}>
             <div className="w-16 h-1 bg-accent mb-8" />
-            <h1 className="text-4xl sm:text-5xl font-display font-semibold text-foreground mb-6">{t('insights.title')}</h1>
-            <p className="text-xl text-muted-foreground">{t('insights.subtitle')}</p>
+            <h1 className="text-4xl sm:text-5xl font-display font-semibold text-foreground mb-6">
+              {language === 'he' ? 'תובנות משפטיות ופרשנות אסטרטגית' : 'Legal Insights & Strategic Commentary'}
+            </h1>
+            <p className="text-xl text-muted-foreground">
+              {language === 'he' 
+                ? 'הנחיות מעשיות בנושאי נדל"ן בישראל, מיסוי חוצה גבולות, ציות ותכנון מורשת.' 
+                : 'Practical guidance on Israeli real estate, cross-border taxation, compliance, and legacy planning.'}
+            </p>
+          </div>
+        </div>
+      </section>
+
+      {/* Philosophy Section */}
+      <section className="py-16 bg-muted/30">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+          <div className={cn("max-w-3xl mx-auto", isRTL && "font-hebrew text-right")}>
+            <h2 className="text-3xl sm:text-4xl font-display font-semibold text-foreground mb-6">
+              {language === 'he' ? 'בהירות להחלטות חוצות גבולות' : 'Clarity for Cross-Border Decisions'}
+            </h2>
+            <div className="space-y-4 text-lg text-muted-foreground leading-relaxed">
+              <p>
+                {language === 'he' 
+                  ? 'ההחלטות החשובות ביותר בישראל מעוצבות לעתים קרובות על ידי תיעוד, תזמון ופרשנות רגולטורית—במיוחד כאשר נכסים, תושבות או מוטבים משתרעים על פני מספר תחומי שיפוט.'
+                  : "The decisions that matter most in Israel are often shaped by documentation, timing, and regulatory interpretation—especially when assets, residency, or beneficiaries span multiple jurisdictions."}
+              </p>
+              <p>
+                {language === 'he' 
+                  ? 'התובנות שלנו נכתבות להיות מעשיות: הסברים מובנים, שיקולים מרכזיים ומלכודות נפוצות לסימון מוקדם. המטרה היא לעזור לכם לשאול שאלות טובות יותר ולהבין את המפה המשפטית לפני התחייבות לעסקה.'
+                  : 'Our insights are written to be practical: structured explanations, key considerations, and common pitfalls to flag early. The goal is to help you ask better questions and understand the legal roadmap before committing to a transaction.'}
+              </p>
+            </div>
           </div>
         </div>
       </section>
