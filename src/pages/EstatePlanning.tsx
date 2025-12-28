@@ -94,10 +94,13 @@ const EstatePlanning = () => {
       </section>
 
       {/* Enduring Power of Attorney Section */}
-      <section className="py-16 gradient-stone">
+      <section className="py-16 bg-background">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <div className={cn("max-w-4xl mx-auto", isRTL && "font-hebrew text-right")}>
-            <h2 className="text-2xl sm:text-3xl font-display font-semibold mb-6">
+          <div className={cn(
+            "max-w-4xl mx-auto p-8 sm:p-10 bg-card rounded-2xl shadow-lg border border-border/50",
+            isRTL && "font-hebrew text-right"
+          )}>
+            <h2 className="text-2xl sm:text-3xl font-display font-semibold mb-6 text-foreground">
               {t('estate.epa.title')}
             </h2>
             <p className="text-muted-foreground mb-4 leading-relaxed">
