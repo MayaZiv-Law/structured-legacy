@@ -95,19 +95,27 @@ const RealEstate = () => {
               {t('realestate.risk.intro')}
             </p>
             
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-12 lg:gap-16">
               {risks.map((risk, index) => (
                 <div
                   key={index}
-                  className="bg-card p-6 rounded-sm border border-border hover:border-accent/50 transition-colors"
+                  className={cn(
+                    "flex flex-col items-center text-center",
+                    isRTL && "font-hebrew"
+                  )}
                 >
-                  <div className={cn("flex items-center gap-3 mb-4", isRTL && "flex-row-reverse")}>
-                    <AlertTriangle className="h-5 w-5 text-accent" strokeWidth={1.5} />
-                    <h3 className="font-display font-medium text-foreground">
-                      {t(risk.titleKey)}
-                    </h3>
+                  {/* Icon with outlined circle */}
+                  <div className="w-14 h-14 rounded-full border border-accent flex items-center justify-center mb-5">
+                    <AlertTriangle className="h-6 w-6 text-accent" strokeWidth={1.5} />
                   </div>
-                  <p className="text-muted-foreground text-sm leading-relaxed">
+                  
+                  {/* Title */}
+                  <h3 className="text-xl font-display font-medium text-foreground mb-4">
+                    {t(risk.titleKey)}
+                  </h3>
+                  
+                  {/* Description */}
+                  <p className="text-muted-foreground leading-relaxed text-sm">
                     {t(risk.descKey)}
                   </p>
                 </div>
