@@ -9,7 +9,7 @@ const GuideSection = () => {
   const Arrow = isRTL ? ArrowLeft : ArrowRight;
 
   return (
-    <section className="py-24 bg-background">
+    <section className="py-24 bg-background overflow-hidden">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         {/* Centered Title */}
         <div className={cn("text-center mb-16", isRTL && "font-hebrew")}>
@@ -19,46 +19,42 @@ const GuideSection = () => {
         </div>
 
         {/* Asymmetric Two Column Layout */}
-        <div className="relative max-w-6xl mx-auto">
+        <div className="relative max-w-6xl mx-auto mb-8">
+          {/* Content Card */}
           <div className={cn(
-            "grid grid-cols-1 lg:grid-cols-12 gap-0",
-            isRTL && "lg:grid-flow-dense"
+            "relative z-10 lg:w-[55%]",
+            isRTL ? "lg:ml-auto" : "lg:mr-auto"
           )}>
-            {/* Content Card - Takes 7 columns (wider) */}
             <div className={cn(
-              "lg:col-span-7 relative z-10",
-              isRTL ? "lg:col-start-6" : "lg:col-start-1"
+              "bg-secondary/50 p-8 sm:p-12 lg:py-16 lg:px-12",
+              isRTL && "text-right font-hebrew"
             )}>
-              <div className={cn(
-                "bg-secondary/50 p-8 sm:p-12 lg:p-16",
-                isRTL && "text-right font-hebrew"
+              <p className="text-muted-foreground leading-relaxed mb-6 text-lg">
+                {t('guide.bio')}
+              </p>
+
+              {/* Punchline */}
+              <p className={cn(
+                "text-foreground font-medium text-lg italic",
+                isRTL ? "border-r-2 border-accent pr-4" : "border-l-2 border-accent pl-4"
               )}>
-                <p className="text-muted-foreground leading-relaxed mb-6 text-lg">
-                  {t('guide.bio')}
-                </p>
-
-                {/* Punchline */}
-                <p className={cn(
-                  "text-foreground font-medium text-lg italic",
-                  isRTL ? "border-r-2 border-accent pr-4" : "border-l-2 border-accent pl-4"
-                )}>
-                  {t('guide.punchline')}
-                </p>
-              </div>
+                {t('guide.punchline')}
+              </p>
             </div>
+          </div>
 
-            {/* Image - Takes 6 columns with offset */}
-            <div className={cn(
-              "lg:col-span-6 lg:absolute lg:top-12 lg:h-[calc(100%+4rem)]",
-              isRTL ? "lg:left-0" : "lg:right-0"
-            )}>
-              <div className="h-full min-h-[350px] lg:min-h-full">
-                <img
-                  src={mayaPortrait}
-                  alt="Maya Ziv - Attorney"
-                  className="w-full h-full object-cover object-top"
-                />
-              </div>
+          {/* Image - Positioned to touch the card */}
+          <div className={cn(
+            "lg:absolute lg:top-10 lg:w-[48%] lg:h-[calc(100%+2rem)]",
+            isRTL ? "lg:left-0" : "lg:right-0",
+            "mt-0 lg:mt-0"
+          )}>
+            <div className="h-full min-h-[350px] lg:min-h-full">
+              <img
+                src={mayaPortrait}
+                alt="Maya Ziv - Attorney"
+                className="w-full h-full object-cover object-top"
+              />
             </div>
           </div>
         </div>
