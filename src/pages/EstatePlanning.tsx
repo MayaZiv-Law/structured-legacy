@@ -38,7 +38,7 @@ const EstatePlanning = () => {
       {/* Hero Section */}
       <section className="pt-32 pb-20 bg-background">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <div className={cn("max-w-4xl", isRTL && "font-hebrew text-right mr-auto")}>
+          <div className={cn("max-w-4xl mx-auto", isRTL && "font-hebrew text-right")}>
             <div className="flex items-center gap-3 mb-6">
               <FileText className="h-8 w-8 text-accent" />
               <span className="text-accent font-medium">{t('nav.estate')}</span>
@@ -56,7 +56,7 @@ const EstatePlanning = () => {
       {/* The Challenge Section */}
       <section className="py-16 gradient-stone">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <div className={cn("max-w-3xl", isRTL && "font-hebrew text-right mr-auto")}>
+          <div className={cn("max-w-4xl mx-auto", isRTL && "font-hebrew text-right")}>
             <h2 className="text-2xl sm:text-3xl font-display font-semibold mb-6">
               {t('estate.challenge.title')}
             </h2>
@@ -73,7 +73,7 @@ const EstatePlanning = () => {
       {/* Cross-Border Wills Section */}
       <section className="py-16 bg-background">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <div className={cn("max-w-4xl mb-10", isRTL && "font-hebrew text-right mr-auto")}>
+          <div className={cn("max-w-4xl mx-auto mb-10", isRTL && "font-hebrew text-right")}>
             <h2 className="text-2xl sm:text-3xl font-display font-semibold mb-6">
               {t('estate.wills.title')}
             </h2>
@@ -81,7 +81,7 @@ const EstatePlanning = () => {
               {t('estate.wills.body')}
             </p>
           </div>
-          <div className="grid md:grid-cols-3 gap-6 max-w-4xl">
+          <div className="grid md:grid-cols-3 gap-6 max-w-4xl mx-auto">
             {willsFocusAreas.map((area, i) => (
               <div key={i} className={cn("p-6 bg-card rounded-lg border border-border", isRTL && "font-hebrew text-right")}>
                 <area.icon className="h-6 w-6 text-accent mb-4" />
@@ -96,7 +96,7 @@ const EstatePlanning = () => {
       {/* Enduring Power of Attorney Section */}
       <section className="py-16 gradient-stone">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <div className={cn("max-w-3xl", isRTL && "font-hebrew text-right mr-auto")}>
+          <div className={cn("max-w-4xl mx-auto", isRTL && "font-hebrew text-right")}>
             <h2 className="text-2xl sm:text-3xl font-display font-semibold mb-6">
               {t('estate.epa.title')}
             </h2>
@@ -113,7 +113,7 @@ const EstatePlanning = () => {
       {/* The Process Section */}
       <section className="py-16 bg-background">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <div className={cn("max-w-4xl", isRTL && "font-hebrew text-right mr-auto")}>
+          <div className={cn("max-w-4xl mx-auto", isRTL && "font-hebrew text-right")}>
             <h2 className="text-2xl sm:text-3xl font-display font-semibold mb-10">
               {t('estate.process.title')}
             </h2>
@@ -140,7 +140,7 @@ const EstatePlanning = () => {
       {/* Tax Considerations Section */}
       <section className="py-16 gradient-stone">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <div className={cn("max-w-3xl", isRTL && "font-hebrew text-right mr-auto")}>
+          <div className={cn("max-w-4xl mx-auto", isRTL && "font-hebrew text-right")}>
             <h2 className="text-2xl sm:text-3xl font-display font-semibold mb-6">
               {t('estate.tax.title')}
             </h2>
@@ -157,7 +157,7 @@ const EstatePlanning = () => {
       {/* Financial Agreements Section */}
       <section className="py-12 bg-background">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <div className={cn("max-w-3xl p-6 bg-card rounded-lg border border-border", isRTL && "font-hebrew text-right mr-auto")}>
+          <div className={cn("max-w-4xl mx-auto p-6 bg-card rounded-lg border border-border", isRTL && "font-hebrew text-right")}>
             <h3 className="text-lg font-display font-medium mb-3">
               {t('estate.financial.title')}
             </h3>
