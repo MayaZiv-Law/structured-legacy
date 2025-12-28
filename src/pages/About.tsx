@@ -6,6 +6,7 @@ import { FileCheck, Clock, MessageCircle, ArrowRight, ArrowLeft } from 'lucide-r
 import { Button } from '@/components/ui/button';
 import { Helmet } from 'react-helmet-async';
 import mayaPortrait from '@/assets/maya-portrait.webp';
+import aboutHeroBg from '@/assets/about-hero-bg.webp';
 
 const About = () => {
   const { t, isRTL, language } = useLanguage();
@@ -40,14 +41,23 @@ const About = () => {
       </Helmet>
 
       {/* Hero Section */}
-      <section className="pt-32 pb-20 bg-background">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+      <section className="relative pt-32 pb-20 min-h-[60vh] flex items-center">
+        {/* Background Image */}
+        <div className="absolute inset-0 z-0">
+          <img 
+            src={aboutHeroBg} 
+            alt="" 
+            className="w-full h-full object-cover"
+          />
+          <div className="absolute inset-0 bg-primary/70" />
+        </div>
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className={cn("max-w-4xl", isRTL && "font-hebrew text-right mr-auto")}>
             <div className={cn("w-16 h-1 bg-accent mb-8", isRTL && "mr-0")} />
-            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-display font-semibold text-foreground mb-6">
+            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-display font-semibold text-primary-foreground mb-6">
               {t('about.hero.title')}
             </h1>
-            <p className="text-xl text-muted-foreground leading-relaxed">
+            <p className="text-xl text-primary-foreground/80 leading-relaxed">
               {t('about.hero.subtitle')}
             </p>
           </div>
