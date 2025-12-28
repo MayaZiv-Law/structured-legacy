@@ -154,11 +154,15 @@ const Taxation = () => {
               {t('tax.serve.body')}
             </p>
             
-            <div className="grid md:grid-cols-2 gap-4">
+            <div className="grid md:grid-cols-2 gap-12 max-w-3xl mx-auto">
               {serveItems.map((item, i) => (
-                <div key={i} className="p-5 bg-card rounded-lg border border-border">
-                  <h3 className="font-medium text-foreground mb-2">{item.title}</h3>
-                  <p className="text-sm text-muted-foreground">{item.desc}</p>
+                <div key={i} className="flex flex-col items-center text-center">
+                  {/* Circular icon */}
+                  <div className="w-16 h-16 rounded-full bg-accent flex items-center justify-center mb-5">
+                    <div className="w-6 h-6 border-2 border-accent-foreground rounded-sm" />
+                  </div>
+                  <h3 className="text-xl font-display font-medium text-foreground mb-3">{item.title}</h3>
+                  <p className="text-muted-foreground leading-relaxed">{item.desc}</p>
                 </div>
               ))}
             </div>
