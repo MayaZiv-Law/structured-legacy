@@ -13,6 +13,7 @@ import EstatePlanning from "./pages/EstatePlanning";
 import OlimResidents from "./pages/OlimResidents";
 import Commercial from "./pages/Commercial";
 import Insights from "./pages/Insights";
+import Article from "./pages/Article";
 import Contact from "./pages/Contact";
 import NotFound from "./pages/NotFound";
 
@@ -35,6 +36,7 @@ const App = () => (
             <Route path="/olim-residents" element={<OlimResidents />} />
             <Route path="/commercial" element={<Commercial />} />
             <Route path="/insights" element={<Insights />} />
+            <Route path="/insights/:slug" element={<Article />} />
             <Route path="/contact" element={<Contact />} />
             <Route path="*" element={<NotFound />} />
           </Routes>

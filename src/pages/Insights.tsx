@@ -78,10 +78,11 @@ const Insights = () => {
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
             {articles.map((article, i) => (
-              <article 
+              <Link
+                to={`/insights/${article.slug}`}
                 key={i} 
                 className={cn(
-                  "group bg-card border border-border rounded-xl overflow-hidden hover:border-accent/50 transition-all hover:shadow-lg",
+                  "group bg-card border border-border rounded-xl overflow-hidden hover:border-accent/50 transition-all hover:shadow-lg block",
                   isRTL && "font-hebrew text-right"
                 )}
               >
@@ -111,15 +112,15 @@ const Insights = () => {
                   <p className="text-muted-foreground text-sm mb-4 line-clamp-2">
                     {article.excerpt}
                   </p>
-                  <button className={cn(
-                    "flex items-center gap-2 text-accent font-medium text-sm hover:gap-3 transition-all",
+                  <span className={cn(
+                    "flex items-center gap-2 text-accent font-medium text-sm group-hover:gap-3 transition-all",
                     isRTL && "flex-row-reverse"
                   )}>
                     {t('insights.readMore')}
                     <ArrowRight className={cn("h-4 w-4", isRTL && "rotate-180")} />
-                  </button>
+                  </span>
                 </div>
-              </article>
+              </Link>
             ))}
           </div>
         </div>
