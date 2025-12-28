@@ -124,20 +124,49 @@ const Taxation = () => {
         </div>
       </section>
 
-      {/* Banking & AML Compliance */}
-      <section className="py-16 gradient-stone">
+      {/* Banking & AML Compliance - Asymmetric Design with Image */}
+      <section className="py-24 bg-background overflow-hidden">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <div className={cn("max-w-4xl", isRTL && "font-hebrew text-right mr-auto")}>
-            <div className="w-16 h-1 bg-accent mb-6" />
-            <h2 className="text-2xl sm:text-3xl font-display font-semibold mb-6">
+          {/* Centered title above the layout */}
+          <div className={cn("text-center mb-16", isRTL && "font-hebrew")}>
+            <h2 className="text-3xl md:text-4xl font-display font-semibold text-foreground">
               {t('tax.banking.title')}
             </h2>
-            <p className="text-muted-foreground mb-4 leading-relaxed">
-              {t('tax.banking.body')}
-            </p>
-            <p className="text-muted-foreground leading-relaxed">
-              {t('tax.banking.body2')}
-            </p>
+          </div>
+
+          {/* Asymmetric layout */}
+          <div className="relative max-w-6xl mx-auto">
+            <div className={cn(
+              "flex flex-col lg:flex-row items-center gap-8",
+              isRTL && "lg:flex-row-reverse"
+            )}>
+              {/* Beige card with text */}
+              <div className={cn(
+                "relative z-10 w-full lg:w-[55%] bg-secondary/50 p-8 md:p-12 shadow-sm",
+                isRTL ? "lg:-mr-16" : "lg:-ml-0"
+              )}>
+                <div className={cn(isRTL && "font-hebrew text-right")}>
+                  <p className="text-muted-foreground mb-4 leading-relaxed">
+                    {t('tax.banking.body')}
+                  </p>
+                  <p className="text-muted-foreground leading-relaxed">
+                    {t('tax.banking.body2')}
+                  </p>
+                </div>
+              </div>
+              
+              {/* Image that overlaps */}
+              <div className={cn(
+                "relative w-full lg:w-[55%] lg:absolute lg:top-1/2 lg:-translate-y-1/2",
+                isRTL ? "lg:left-0" : "lg:right-0"
+              )}>
+                <img 
+                  src="/placeholder.svg" 
+                  alt="Banking compliance" 
+                  className="w-full h-64 lg:h-80 object-cover shadow-lg"
+                />
+              </div>
+            </div>
           </div>
         </div>
       </section>
