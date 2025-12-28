@@ -113,8 +113,8 @@ const EstatePlanning = () => {
               </p>
             </div>
             <div className={cn(
-              "hidden lg:block absolute top-1/2 -translate-y-1/2 w-[400px] h-[350px] rounded-xl overflow-hidden shadow-xl",
-              isRTL ? "left-0" : "right-0"
+              "hidden lg:block absolute w-[420px] h-[380px] rounded-xl overflow-hidden shadow-xl",
+              isRTL ? "-left-8 top-8" : "-right-8 top-8"
             )}>
               <img 
                 src={epaImage} 
