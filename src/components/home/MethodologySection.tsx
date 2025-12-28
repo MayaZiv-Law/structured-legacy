@@ -24,45 +24,61 @@ const MethodologySection = () => {
   ];
 
   return (
-    <section className="py-24 bg-background">
+    <section className="py-24 bg-background overflow-hidden">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+        {/* Centered Title */}
         <div className={cn("text-center mb-16", isRTL && "font-hebrew")}>
-          <h2 className="text-3xl sm:text-4xl font-display font-semibold text-foreground mb-4">
+          <h2 className="text-4xl sm:text-5xl font-display font-semibold text-foreground mb-4">
             {t('method.title')}
           </h2>
           <p className="text-muted-foreground text-lg max-w-3xl mx-auto">
             {t('method.subtitle')}
           </p>
-          <div className="w-16 h-0.5 bg-accent mx-auto mt-6" />
         </div>
 
-        {/* Core Pillars */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 lg:gap-12">
-          {pillars.map((pillar, index) => (
-            <div
-              key={index}
-              className={cn(
-                "relative bg-card p-8 rounded-sm border border-border hover:border-accent/50 transition-all duration-300 group",
-                isRTL && "font-hebrew text-right"
-              )}
-            >
-              <div className={cn(
-                "flex items-center gap-4 mb-4",
-                isRTL && "flex-row-reverse"
-              )}>
-                <div className="w-12 h-12 rounded-full bg-secondary flex items-center justify-center group-hover:bg-accent/10 transition-colors">
-                  <pillar.icon className="h-6 w-6 text-accent" strokeWidth={1.5} />
-                </div>
-                <h3 className="text-xl font-display font-medium text-foreground">
-                  {t(pillar.titleKey)}
-                </h3>
-              </div>
+        {/* Asymmetric Background Container */}
+        <div className="relative max-w-6xl mx-auto">
+          {/* Offset background block */}
+          <div className={cn(
+            "absolute top-8 bottom-8 w-[85%] bg-secondary/50 -z-0",
+            isRTL ? "right-0 -mr-8 lg:-mr-16" : "left-0 -ml-8 lg:-ml-16"
+          )} />
 
-              <p className="text-muted-foreground leading-relaxed">
-                {t(pillar.descKey)}
-              </p>
+          {/* Content Grid */}
+          <div className="relative z-10 py-12 lg:py-16">
+            <div className={cn(
+              "grid grid-cols-1 md:grid-cols-3 gap-8 lg:gap-12 px-4 lg:px-8",
+              isRTL && "font-hebrew"
+            )}>
+              {pillars.map((pillar, index) => (
+                <div
+                  key={index}
+                  className={cn(
+                    "flex flex-col",
+                    isRTL && "text-right"
+                  )}
+                >
+                  {/* Icon */}
+                  <div className={cn(
+                    "w-12 h-12 rounded-full bg-accent flex items-center justify-center mb-4",
+                    isRTL && "mr-0 ml-auto"
+                  )}>
+                    <pillar.icon className="h-5 w-5 text-accent-foreground" strokeWidth={1.5} />
+                  </div>
+
+                  {/* Title */}
+                  <h3 className="text-2xl font-display font-medium text-foreground mb-3">
+                    {t(pillar.titleKey)}
+                  </h3>
+
+                  {/* Description */}
+                  <p className="text-muted-foreground leading-relaxed">
+                    {t(pillar.descKey)}
+                  </p>
+                </div>
+              ))}
             </div>
-          ))}
+          </div>
         </div>
       </div>
     </section>
