@@ -13,6 +13,7 @@ import { cn } from '@/lib/utils';
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [isExpertiseOpen, setIsExpertiseOpen] = useState(false);
   const { language, setLanguage, t, isRTL } = useLanguage();
   const location = useLocation();
 
@@ -128,41 +129,63 @@ const Header = () => {
               >
                 {t('nav.firm')}
               </Link>
-              <Link
-                to="/real-estate"
-                className={navLinkClass('/real-estate')}
-                onClick={() => setIsMenuOpen(false)}
-              >
-                {t('nav.realEstate')}
-              </Link>
-              <Link
-                to="/taxation"
-                className={navLinkClass('/taxation')}
-                onClick={() => setIsMenuOpen(false)}
-              >
-                {t('nav.taxation')}
-              </Link>
-              <Link
-                to="/estate-planning"
-                className={navLinkClass('/estate-planning')}
-                onClick={() => setIsMenuOpen(false)}
-              >
-                {t('nav.estate')}
-              </Link>
-              <Link
-                to="/olim-residents"
-                className={navLinkClass('/olim-residents')}
-                onClick={() => setIsMenuOpen(false)}
-              >
-                {t('nav.olim')}
-              </Link>
-              <Link
-                to="/commercial"
-                className={navLinkClass('/commercial')}
-                onClick={() => setIsMenuOpen(false)}
-              >
-                {t('nav.commercial')}
-              </Link>
+              
+              {/* Expertise Collapsible Section */}
+              <div>
+                <button
+                  onClick={() => setIsExpertiseOpen(!isExpertiseOpen)}
+                  className={cn(
+                    "flex items-center justify-between w-full text-sm font-medium transition-colors hover:text-accent",
+                    ['/real-estate', '/taxation', '/estate-planning', '/olim-residents', '/commercial'].some(p => isActive(p))
+                      ? 'text-accent'
+                      : 'text-foreground/80'
+                  )}
+                >
+                  {t('nav.expertise')}
+                  <ChevronDown className={cn("h-4 w-4 transition-transform", isExpertiseOpen && "rotate-180")} />
+                </button>
+                
+                {isExpertiseOpen && (
+                  <div className={cn("flex flex-col gap-3 mt-3 border-border", isRTL ? "pr-4 border-r" : "pl-4 border-l")}>
+                    <Link
+                      to="/real-estate"
+                      className={navLinkClass('/real-estate')}
+                      onClick={() => setIsMenuOpen(false)}
+                    >
+                      {t('nav.realEstate')}
+                    </Link>
+                    <Link
+                      to="/taxation"
+                      className={navLinkClass('/taxation')}
+                      onClick={() => setIsMenuOpen(false)}
+                    >
+                      {t('nav.taxation')}
+                    </Link>
+                    <Link
+                      to="/estate-planning"
+                      className={navLinkClass('/estate-planning')}
+                      onClick={() => setIsMenuOpen(false)}
+                    >
+                      {t('nav.estate')}
+                    </Link>
+                    <Link
+                      to="/olim-residents"
+                      className={navLinkClass('/olim-residents')}
+                      onClick={() => setIsMenuOpen(false)}
+                    >
+                      {t('nav.olim')}
+                    </Link>
+                    <Link
+                      to="/commercial"
+                      className={navLinkClass('/commercial')}
+                      onClick={() => setIsMenuOpen(false)}
+                    >
+                      {t('nav.commercial')}
+                    </Link>
+                  </div>
+                )}
+              </div>
+
               <Link
                 to="/insights"
                 className={navLinkClass('/insights')}
