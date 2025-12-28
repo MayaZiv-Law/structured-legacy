@@ -1,0 +1,70 @@
+import { Link } from 'react-router-dom';
+import { Button } from '@/components/ui/button';
+import { useLanguage } from '@/contexts/LanguageContext';
+import { cn } from '@/lib/utils';
+import { ArrowRight, ArrowLeft } from 'lucide-react';
+
+const HeroSection = () => {
+  const { t, isRTL } = useLanguage();
+  const Arrow = isRTL ? ArrowLeft : ArrowRight;
+
+  return (
+    <section className="relative min-h-[90vh] flex items-center justify-center overflow-hidden">
+      {/* Background Image with Overlay */}
+      <div
+        className="absolute inset-0 bg-cover bg-center bg-no-repeat"
+        style={{
+          backgroundImage: `url('https://images.unsplash.com/photo-1541535650810-10d26f5c2ab3?q=80&w=2076&auto=format&fit=crop')`,
+        }}
+      >
+        <div className="absolute inset-0 bg-gradient-to-r from-primary/90 via-primary/70 to-primary/50" />
+      </div>
+
+      {/* Content */}
+      <div className="relative container mx-auto px-4 sm:px-6 lg:px-8 py-20">
+        <div className={cn(
+          "max-w-3xl",
+          isRTL ? "mr-auto text-right" : "ml-0"
+        )}>
+          {/* Gold accent line */}
+          <div className={cn(
+            "w-16 h-1 bg-accent mb-8 opacity-0 animate-fade-in-up",
+            isRTL && "mr-0 ml-auto"
+          )} />
+
+          <h1 className={cn(
+            "text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-display font-semibold text-primary-foreground leading-tight mb-6 opacity-0 animate-fade-in-up delay-100",
+            isRTL && "font-hebrew"
+          )}>
+            {t('hero.title')}
+          </h1>
+
+          <p className={cn(
+            "text-lg sm:text-xl text-primary-foreground/80 leading-relaxed mb-10 max-w-2xl opacity-0 animate-fade-in-up delay-200",
+            isRTL && "font-hebrew"
+          )}>
+            {t('hero.subtitle')}
+          </p>
+
+          <div className="opacity-0 animate-fade-in-up delay-300">
+            <Button
+              asChild
+              size="lg"
+              className="bg-accent hover:bg-accent/90 text-accent-foreground font-medium px-8 py-6 text-base group"
+            >
+              <Link to="/contact" className="flex items-center gap-2">
+                {t('hero.cta')}
+                <Arrow className="h-4 w-4 transition-transform group-hover:translate-x-1" />
+              </Link>
+            </Button>
+          </div>
+        </div>
+      </div>
+
+      {/* Bottom gradient fade */}
+      <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-background to-transparent" />
+    </section>
+  );
+};
+
+export default HeroSection;
