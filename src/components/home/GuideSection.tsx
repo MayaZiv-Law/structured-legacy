@@ -45,7 +45,7 @@ const GuideSection = () => {
 
           {/* Image - Positioned to touch the card */}
           <div className={cn(
-            "lg:absolute lg:top-10 lg:w-[48%] lg:h-[calc(100%+2rem)]",
+            "lg:absolute lg:top-10 lg:w-[48%] lg:h-[calc(100%+2rem)] z-20",
             isRTL ? "lg:left-0" : "lg:right-0",
             "mt-0 lg:mt-0"
           )}>
