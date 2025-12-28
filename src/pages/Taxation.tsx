@@ -144,7 +144,7 @@ const Taxation = () => {
           <div className="relative max-w-6xl mx-auto">
             <div className={cn("flex flex-col lg:flex-row items-center gap-8", isRTL && "lg:flex-row-reverse")}>
               {/* Beige card with text */}
-              <div className={cn("relative z-10 w-full lg:w-[55%] bg-secondary/50 p-8 md:p-12 shadow-sm", isRTL ? "lg:-mr-16" : "lg:-ml-0")}>
+              <div className={cn("relative z-10 w-full lg:w-[55%] bg-secondary p-8 md:p-12 shadow-sm", isRTL ? "lg:-mr-16" : "lg:-ml-0")}>
                 <div className={cn(isRTL && "font-hebrew text-right")}>
                   <p className="text-muted-foreground mb-4 leading-relaxed">
                     {t('tax.banking.body')}
