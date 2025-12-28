@@ -75,39 +75,51 @@ const Taxation = () => {
         </div>
       </section>
 
-      {/* Real Estate Tax Planning */}
-      <section className="py-16 bg-background">
+      {/* Real Estate Tax Planning - Asymmetric Design */}
+      <section className="relative z-20 py-20 bg-background overflow-visible">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <div className={cn("max-w-4xl", isRTL && "font-hebrew text-right mr-auto")}>
-            <div className="flex items-center gap-3 mb-6">
-              <Building2 className="h-6 w-6 text-accent" />
-              <h2 className="text-2xl sm:text-3xl font-display font-semibold">
-                {t('tax.realEstate.title')}
-              </h2>
-            </div>
-            <p className="text-muted-foreground mb-8 leading-relaxed">
-              {t('tax.realEstate.body')}
-            </p>
+          <div className="relative max-w-6xl mx-auto">
+            {/* Offset beige background on left */}
+            <div className={cn(
+              "absolute -top-8 bg-secondary/50",
+              "h-[calc(100%+4rem)] w-[70%]",
+              isRTL ? "right-0 -mr-8 lg:-mr-16" : "left-0 -ml-8 lg:-ml-16"
+            )} />
             
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-8 lg:gap-12">
-              {realEstateServices.map((service, i) => (
-                <div key={i} className={cn("flex flex-col", isRTL && "text-right")}>
-                  {/* Icon with filled circle */}
-                  <div className="w-12 h-12 rounded-full bg-accent flex items-center justify-center mb-5">
-                    <service.icon className="h-5 w-5 text-accent-foreground" strokeWidth={1.5} />
-                  </div>
-                  
-                  {/* Title */}
-                  <h3 className="text-xl font-display font-medium text-foreground mb-3">
-                    {service.title}
-                  </h3>
-                  
-                  {/* Description */}
-                  <p className="text-muted-foreground leading-relaxed text-sm">
-                    {service.desc}
-                  </p>
+            {/* Content */}
+            <div className="relative z-10 py-12 px-8 lg:py-16 lg:px-12">
+              <div className={cn("max-w-5xl", isRTL && "font-hebrew text-right mr-auto")}>
+                <div className={cn("flex items-center gap-3 mb-6", isRTL && "flex-row-reverse")}>
+                  <Building2 className="h-6 w-6 text-accent" />
+                  <h2 className="text-2xl sm:text-3xl font-display font-semibold">
+                    {t('tax.realEstate.title')}
+                  </h2>
                 </div>
-              ))}
+                <p className="text-muted-foreground mb-10 leading-relaxed max-w-3xl">
+                  {t('tax.realEstate.body')}
+                </p>
+                
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-10 lg:gap-14">
+                  {realEstateServices.map((service, i) => (
+                    <div key={i} className={cn("flex flex-col", isRTL && "text-right")}>
+                      {/* Icon with filled circle */}
+                      <div className="w-12 h-12 rounded-full bg-accent flex items-center justify-center mb-5">
+                        <service.icon className="h-5 w-5 text-accent-foreground" strokeWidth={1.5} />
+                      </div>
+                      
+                      {/* Title */}
+                      <h3 className="text-xl font-display font-medium text-foreground mb-3">
+                        {service.title}
+                      </h3>
+                      
+                      {/* Description */}
+                      <p className="text-muted-foreground leading-relaxed text-sm">
+                        {service.desc}
+                      </p>
+                    </div>
+                  ))}
+                </div>
+              </div>
             </div>
           </div>
         </div>
