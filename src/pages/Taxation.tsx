@@ -76,18 +76,18 @@ const Taxation = () => {
       </section>
 
       {/* Real Estate Tax Planning - Asymmetric Design */}
-      <section className="relative z-20 py-20 bg-background overflow-visible">
+      <section className="relative z-20 pt-0 pb-20 bg-background overflow-visible">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="relative max-w-6xl mx-auto">
-            {/* Offset beige background on left */}
+            {/* Offset beige background on left - attached to top */}
             <div className={cn(
-              "absolute -top-8 bg-secondary/50",
-              "h-[calc(100%+4rem)] w-[70%]",
+              "absolute top-0 bg-secondary",
+              "h-full w-[70%]",
               isRTL ? "right-0 -mr-8 lg:-mr-16" : "left-0 -ml-8 lg:-ml-16"
             )} />
             
-            {/* Content */}
-            <div className="relative z-10 py-12 px-8 lg:py-16 lg:px-12">
+            {/* Content with white background */}
+            <div className="relative z-10 bg-background py-12 px-8 lg:py-16 lg:px-12 mt-12 shadow-sm">
               <div className={cn("max-w-5xl", isRTL && "font-hebrew text-right mr-auto")}>
                 <div className={cn("flex items-center gap-3 mb-6", isRTL && "flex-row-reverse")}>
                   <Building2 className="h-6 w-6 text-accent" />
