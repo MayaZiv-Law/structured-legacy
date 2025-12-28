@@ -402,7 +402,16 @@ const translations: Record<Language, Record<string, string>> = {
   },
 };
 
-const LanguageContext = createContext<LanguageContextType | undefined>(undefined);
+// NOTE: Keep a stable Context instance across hot-reloads to avoid "must be used within a Provider" errors.
+// This is especially important in development, since we frequently edit translations.
+const _global = globalThis as unknown as {
+  __mayaLanguageContext?: React.Context<LanguageContextType | undefined>;
+};
+
+const LanguageContext =
+  _global.__mayaLanguageContext ?? createContext<LanguageContextType | undefined>(undefined);
+
+_global.__mayaLanguageContext = LanguageContext;
 
 export const LanguageProvider = ({ children }: { children: ReactNode }) => {
   const [language, setLanguage] = useState<Language>(() => {
