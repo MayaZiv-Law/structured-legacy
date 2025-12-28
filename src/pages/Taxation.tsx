@@ -1,7 +1,7 @@
 import Layout from '@/components/layout/Layout';
 import { useLanguage } from '@/contexts/LanguageContext';
 import { cn } from '@/lib/utils';
-import { CheckCircle, Building2, FileText } from 'lucide-react';
+import { CheckCircle, Building2, FileText, ShieldCheck, Footprints } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Link } from 'react-router-dom';
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/components/ui/accordion';
@@ -17,8 +17,8 @@ const Taxation = () => {
   ];
 
   const serveItems = [
-    { title: t('tax.serve.compliance'), desc: t('tax.serve.compliance.desc') },
-    { title: t('tax.serve.firstStep'), desc: t('tax.serve.firstStep.desc') },
+    { title: t('tax.serve.compliance'), desc: t('tax.serve.compliance.desc'), icon: ShieldCheck },
+    { title: t('tax.serve.firstStep'), desc: t('tax.serve.firstStep.desc'), icon: Footprints },
   ];
 
   const faqs = [
@@ -159,7 +159,7 @@ const Taxation = () => {
                 <div key={i} className="flex flex-col items-center text-center">
                   {/* Circular icon */}
                   <div className="w-16 h-16 rounded-full bg-accent flex items-center justify-center mb-5">
-                    <div className="w-6 h-6 border-2 border-accent-foreground rounded-sm" />
+                    <item.icon className="w-7 h-7 text-accent-foreground" strokeWidth={1.5} />
                   </div>
                   <h3 className="text-xl font-display font-medium text-foreground mb-3">{item.title}</h3>
                   <p className="text-muted-foreground leading-relaxed">{item.desc}</p>
