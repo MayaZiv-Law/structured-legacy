@@ -1,15 +1,11 @@
+import { Link } from 'react-router-dom';
 import { useLanguage } from '@/contexts/LanguageContext';
 import { cn } from '@/lib/utils';
-import { GraduationCap, LineChart, Languages } from 'lucide-react';
+import { ArrowRight, ArrowLeft } from 'lucide-react';
 
 const GuideSection = () => {
   const { t, isRTL } = useLanguage();
-
-  const credentials = [
-    { icon: GraduationCap, text: t('guide.credential1') },
-    { icon: LineChart, text: t('guide.credential2') },
-    { icon: Languages, text: t('guide.credential3') },
-  ];
+  const Arrow = isRTL ? ArrowLeft : ArrowRight;
 
   return (
     <section className="py-24 gradient-stone">
@@ -43,42 +39,30 @@ const GuideSection = () => {
               isRTL && "mr-0 ml-auto"
             )} />
             
-            <h2 className="text-3xl sm:text-4xl font-display font-semibold text-foreground mb-2">
+            <h2 className="text-3xl sm:text-4xl font-display font-semibold text-foreground mb-6">
               {t('guide.title')}
             </h2>
             
-            <p className="text-accent font-medium mb-6">
-              {t('guide.role')}
-            </p>
-            
-            <p className="text-muted-foreground leading-relaxed mb-8">
+            <p className="text-muted-foreground leading-relaxed mb-6">
               {t('guide.bio')}
             </p>
 
-            {/* Credentials */}
-            <div className="space-y-4">
-              {credentials.map((cred, index) => (
-                <div
-                  key={index}
-                  className={cn(
-                    "flex items-center gap-4",
-                    isRTL && "flex-row-reverse"
-                  )}
-                >
-                  <div className="flex-shrink-0 w-10 h-10 rounded-full bg-secondary flex items-center justify-center">
-                    <cred.icon className="h-5 w-5 text-accent" strokeWidth={1.5} />
-                  </div>
-                  <span className="text-foreground font-medium">{cred.text}</span>
-                </div>
-              ))}
-            </div>
+            {/* Punchline */}
+            <p className="text-foreground font-medium text-lg italic border-l-2 border-accent pl-4 mb-8">
+              {t('guide.punchline')}
+            </p>
 
-            {/* Signature */}
-            <div className={cn("mt-10", isRTL && "text-right")}>
-              <p className="font-display text-xl italic text-foreground">
-                {isRTL ? 'מאיה זיו' : 'Maya Ziv'}
-              </p>
-            </div>
+            {/* CTA Link */}
+            <Link
+              to="/about"
+              className={cn(
+                "inline-flex items-center gap-2 text-accent font-medium hover:gap-3 transition-all",
+                isRTL && "flex-row-reverse"
+              )}
+            >
+              {t('guide.cta')}
+              <Arrow className="h-4 w-4" />
+            </Link>
           </div>
         </div>
       </div>

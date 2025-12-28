@@ -26,24 +26,42 @@ const HeroSection = () => {
           "max-w-3xl",
           isRTL ? "mr-auto text-right" : "ml-0"
         )}>
+          {/* Tagline */}
+          <p className={cn(
+            "text-accent font-display text-lg sm:text-xl italic mb-4 opacity-0 animate-fade-in-up",
+            isRTL && "font-hebrew"
+          )}>
+            {t('hero.tagline')}
+          </p>
+
           {/* Gold accent line */}
           <div className={cn(
-            "w-16 h-1 bg-accent mb-8 opacity-0 animate-fade-in-up",
+            "w-16 h-1 bg-accent mb-8 opacity-0 animate-fade-in-up delay-100",
             isRTL && "mr-0 ml-auto"
           )} />
 
+          {/* H1 - Main Title */}
           <h1 className={cn(
-            "text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-display font-semibold text-primary-foreground leading-tight mb-6 opacity-0 animate-fade-in-up delay-100",
+            "text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-display font-semibold text-primary-foreground leading-tight mb-6 opacity-0 animate-fade-in-up delay-150",
             isRTL && "font-hebrew"
           )}>
             {t('hero.title')}
           </h1>
 
+          {/* Sub-headline Line 1 - Context */}
           <p className={cn(
-            "text-lg sm:text-xl text-primary-foreground/80 leading-relaxed mb-10 max-w-2xl opacity-0 animate-fade-in-up delay-200",
+            "text-xl sm:text-2xl text-primary-foreground/90 font-medium mb-4 opacity-0 animate-fade-in-up delay-200",
             isRTL && "font-hebrew"
           )}>
-            {t('hero.subtitle')}
+            {t('hero.subtitle1')}
+          </p>
+
+          {/* Sub-headline Line 2 - The Promise */}
+          <p className={cn(
+            "text-lg sm:text-xl text-primary-foreground/70 leading-relaxed mb-10 max-w-2xl opacity-0 animate-fade-in-up delay-250",
+            isRTL && "font-hebrew"
+          )}>
+            {t('hero.subtitle2')}
           </p>
 
           <div className="opacity-0 animate-fade-in-up delay-300">

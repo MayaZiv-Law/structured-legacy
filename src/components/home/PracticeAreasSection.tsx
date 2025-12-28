@@ -1,13 +1,13 @@
 import { Link } from 'react-router-dom';
 import { useLanguage } from '@/contexts/LanguageContext';
 import { cn } from '@/lib/utils';
-import { Building2, Globe, FileText, ArrowRight, ArrowLeft } from 'lucide-react';
+import { Building2, Globe, FileText, ArrowRight, ArrowLeft, Users, Briefcase } from 'lucide-react';
 
 const PracticeAreasSection = () => {
   const { t, isRTL } = useLanguage();
   const Arrow = isRTL ? ArrowLeft : ArrowRight;
 
-  const areas = [
+  const mainAreas = [
     {
       icon: Building2,
       titleKey: 'practice.realEstate.title',
@@ -31,6 +31,19 @@ const PracticeAreasSection = () => {
     },
   ];
 
+  const additionalAreas = [
+    {
+      icon: Users,
+      titleKey: 'practice.additional.olim',
+      link: '/contact',
+    },
+    {
+      icon: Briefcase,
+      titleKey: 'practice.additional.commercial',
+      link: '/contact',
+    },
+  ];
+
   return (
     <section className="py-24 gradient-stone">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
@@ -38,14 +51,12 @@ const PracticeAreasSection = () => {
           <h2 className="text-3xl sm:text-4xl font-display font-semibold text-foreground mb-4">
             {t('practice.title')}
           </h2>
-          <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
-            {t('practice.subtitle')}
-          </p>
           <div className="w-16 h-0.5 bg-accent mx-auto mt-6" />
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-          {areas.map((area, index) => (
+        {/* Main Practice Areas - Prominent Cards */}
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
+          {mainAreas.map((area, index) => (
             <Link
               key={index}
               to={area.link}
@@ -86,6 +97,27 @@ const PracticeAreasSection = () => {
                   <Arrow className="h-4 w-4" />
                 </div>
               </div>
+            </Link>
+          ))}
+        </div>
+
+        {/* Additional Focus Areas - Text Links */}
+        <div className={cn(
+          "flex flex-wrap justify-center gap-8",
+          isRTL && "font-hebrew"
+        )}>
+          {additionalAreas.map((area, index) => (
+            <Link
+              key={index}
+              to={area.link}
+              className={cn(
+                "flex items-center gap-3 text-muted-foreground hover:text-accent transition-colors group",
+                isRTL && "flex-row-reverse"
+              )}
+            >
+              <area.icon className="h-5 w-5 text-accent/70 group-hover:text-accent" strokeWidth={1.5} />
+              <span className="font-medium">{t(area.titleKey)}</span>
+              <Arrow className="h-4 w-4 opacity-0 group-hover:opacity-100 transition-opacity" />
             </Link>
           ))}
         </div>
