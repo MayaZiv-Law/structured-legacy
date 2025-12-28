@@ -5,6 +5,7 @@ import { cn } from '@/lib/utils';
 import { FileCheck, Clock, MessageCircle, ArrowRight, ArrowLeft } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Helmet } from 'react-helmet-async';
+import mayaPortrait from '@/assets/maya-portrait.webp';
 
 const About = () => {
   const { t, isRTL, language } = useLanguage();
@@ -85,9 +86,9 @@ const About = () => {
               <div className="relative">
                 <div className="aspect-[3/4] overflow-hidden rounded-sm shadow-premium">
                   <img
-                    src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?q=80&w=1976&auto=format&fit=crop"
+                    src={mayaPortrait}
                     alt="Maya Ziv - Attorney & Notary"
-                    className="w-full h-full object-cover object-center"
+                    className="w-full h-full object-cover object-top"
                   />
                 </div>
                 {/* Decorative accent */}
