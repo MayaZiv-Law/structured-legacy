@@ -71,7 +71,7 @@ const EstatePlanning = () => {
       </section>
 
       {/* Cross-Border Wills Section */}
-      <section className="py-16 bg-background">
+      <section className="pt-16 pb-32 bg-background relative">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className={cn("max-w-4xl mx-auto mb-10", isRTL && "font-hebrew text-right")}>
             <h2 className="text-2xl sm:text-3xl font-display font-semibold mb-6">
@@ -81,14 +81,28 @@ const EstatePlanning = () => {
               {t('estate.wills.body')}
             </p>
           </div>
-          <div className="grid md:grid-cols-3 gap-6 max-w-4xl mx-auto">
-            {willsFocusAreas.map((area, i) => (
-              <div key={i} className={cn("p-6 bg-card rounded-lg border border-border", isRTL && "font-hebrew text-right")}>
-                <area.icon className="h-6 w-6 text-accent mb-4" />
-                <h3 className="font-medium mb-2">{area.title}</h3>
-                <p className="text-sm text-muted-foreground">{area.desc}</p>
+        </div>
+      </section>
+
+      {/* Cards Section with Dark Background Overlay */}
+      <section className="relative">
+        {/* Dark background strip */}
+        <div className="absolute inset-0 top-0 h-1/2 bg-background" />
+        <div className="absolute inset-0 top-1/2 h-1/2 gradient-stone" />
+        
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10 -mt-20">
+          <div className="max-w-4xl mx-auto">
+            <div className="bg-primary/95 rounded-xl p-8 shadow-xl">
+              <div className="grid md:grid-cols-3 gap-6">
+                {willsFocusAreas.map((area, i) => (
+                  <div key={i} className={cn("p-6", isRTL && "font-hebrew text-right")}>
+                    <area.icon className="h-6 w-6 text-accent mb-4" />
+                    <h3 className="font-medium mb-2 text-primary-foreground">{area.title}</h3>
+                    <p className="text-sm text-primary-foreground/70">{area.desc}</p>
+                  </div>
+                ))}
               </div>
-            ))}
+            </div>
           </div>
         </div>
       </section>
