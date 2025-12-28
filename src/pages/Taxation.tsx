@@ -89,14 +89,23 @@ const Taxation = () => {
               {t('tax.realEstate.body')}
             </p>
             
-            <div className="space-y-4">
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-8 lg:gap-12">
               {realEstateServices.map((service, i) => (
-                <div key={i} className="flex items-start gap-4 p-5 bg-card rounded-lg border border-border">
-                  <service.icon className="h-5 w-5 text-accent mt-1 flex-shrink-0" />
-                  <div>
-                    <h3 className="font-medium text-foreground mb-1">{service.title}</h3>
-                    <p className="text-sm text-muted-foreground">{service.desc}</p>
+                <div key={i} className={cn("flex flex-col", isRTL && "text-right")}>
+                  {/* Icon with filled circle */}
+                  <div className="w-12 h-12 rounded-full bg-accent flex items-center justify-center mb-5">
+                    <service.icon className="h-5 w-5 text-accent-foreground" strokeWidth={1.5} />
                   </div>
+                  
+                  {/* Title */}
+                  <h3 className="text-xl font-display font-medium text-foreground mb-3">
+                    {service.title}
+                  </h3>
+                  
+                  {/* Description */}
+                  <p className="text-muted-foreground leading-relaxed text-sm">
+                    {service.desc}
+                  </p>
                 </div>
               ))}
             </div>
