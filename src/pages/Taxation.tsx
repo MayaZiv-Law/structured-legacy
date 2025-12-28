@@ -1,7 +1,7 @@
 import Layout from '@/components/layout/Layout';
 import { useLanguage } from '@/contexts/LanguageContext';
 import { cn } from '@/lib/utils';
-import { Scale, CheckCircle, Building2, Landmark, Users, FileText, Globe } from 'lucide-react';
+import { CheckCircle, Building2, FileText } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Link } from 'react-router-dom';
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/components/ui/accordion';
@@ -44,10 +44,7 @@ const Taxation = () => {
       <section className="pt-32 pb-20 bg-background">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className={cn("max-w-4xl", isRTL && "font-hebrew text-right mr-auto")}>
-            <div className="flex items-center gap-3 mb-6">
-              <Scale className="h-8 w-8 text-accent" />
-              <span className="text-accent font-medium">{t('nav.taxation')}</span>
-            </div>
+            <div className="w-16 h-1 bg-accent mb-8" />
             <h1 className="text-4xl sm:text-5xl font-display font-semibold text-foreground mb-6">
               {t('tax.hero.title')}
             </h1>
@@ -89,12 +86,10 @@ const Taxation = () => {
             {/* Content with white background */}
             <div className="relative z-10 bg-background py-12 px-8 lg:py-16 lg:px-12 mt-12 shadow-sm">
               <div className={cn("max-w-5xl", isRTL && "font-hebrew text-right mr-auto")}>
-                <div className={cn("flex items-center gap-3 mb-6", isRTL && "flex-row-reverse")}>
-                  <Building2 className="h-6 w-6 text-accent" />
-                  <h2 className="text-2xl sm:text-3xl font-display font-semibold">
-                    {t('tax.realEstate.title')}
-                  </h2>
-                </div>
+                <div className="w-16 h-1 bg-accent mb-6" />
+                <h2 className="text-2xl sm:text-3xl font-display font-semibold mb-6">
+                  {t('tax.realEstate.title')}
+                </h2>
                 <p className="text-muted-foreground mb-10 leading-relaxed max-w-3xl">
                   {t('tax.realEstate.body')}
                 </p>
@@ -129,12 +124,10 @@ const Taxation = () => {
       <section className="py-16 gradient-stone">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className={cn("max-w-4xl", isRTL && "font-hebrew text-right mr-auto")}>
-            <div className="flex items-center gap-3 mb-6">
-              <Landmark className="h-6 w-6 text-accent" />
-              <h2 className="text-2xl sm:text-3xl font-display font-semibold">
-                {t('tax.banking.title')}
-              </h2>
-            </div>
+            <div className="w-16 h-1 bg-accent mb-6" />
+            <h2 className="text-2xl sm:text-3xl font-display font-semibold mb-6">
+              {t('tax.banking.title')}
+            </h2>
             <p className="text-muted-foreground mb-4 leading-relaxed">
               {t('tax.banking.body')}
             </p>
@@ -149,12 +142,10 @@ const Taxation = () => {
       <section className="py-16 bg-background">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className={cn("max-w-4xl", isRTL && "font-hebrew text-right mr-auto")}>
-            <div className="flex items-center gap-3 mb-6">
-              <Users className="h-6 w-6 text-accent" />
-              <h2 className="text-2xl sm:text-3xl font-display font-semibold">
-                {t('tax.serve.title')}
-              </h2>
-            </div>
+            <div className="w-16 h-1 bg-accent mb-6" />
+            <h2 className="text-2xl sm:text-3xl font-display font-semibold mb-6">
+              {t('tax.serve.title')}
+            </h2>
             <p className="text-muted-foreground mb-8 leading-relaxed">
               {t('tax.serve.body')}
             </p>
@@ -175,12 +166,10 @@ const Taxation = () => {
       <section className="py-16 gradient-stone">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className={cn("max-w-4xl", isRTL && "font-hebrew text-right mr-auto")}>
-            <div className="flex items-center gap-3 mb-6">
-              <Globe className="h-6 w-6 text-accent" />
-              <h2 className="text-2xl sm:text-3xl font-display font-semibold">
-                {t('tax.crossBorder.title')}
-              </h2>
-            </div>
+            <div className="w-16 h-1 bg-accent mb-6" />
+            <h2 className="text-2xl sm:text-3xl font-display font-semibold mb-6">
+              {t('tax.crossBorder.title')}
+            </h2>
             <p className="text-muted-foreground mb-4 leading-relaxed">
               {t('tax.crossBorder.body')}
             </p>
