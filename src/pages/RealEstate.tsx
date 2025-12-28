@@ -185,7 +185,7 @@ const RealEstate = () => {
             <div className={cn("absolute -top-8 w-[60%] bg-secondary", "h-[calc(100%+4rem)]", isRTL ? "right-0 -mr-8 lg:-mr-16" : "left-0 -ml-8 lg:-ml-16")} />
             
             {/* Content grid */}
-            <div className={cn("relative z-10 grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center", isRTL && "lg:grid-flow-dense")}>
+            <div className={cn("relative z-10 grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-8 items-center", isRTL && "lg:grid-flow-dense")}>
               {/* Image - on left */}
               <div className={cn("relative", isRTL ? "lg:col-start-2" : "lg:col-start-1")}>
                 <div className="aspect-[3/4] max-w-sm mx-auto lg:mx-0 overflow-hidden rounded-sm shadow-premium">
