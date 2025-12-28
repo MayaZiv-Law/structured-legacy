@@ -95,7 +95,7 @@ const GuideSection = () => {
         </div>
 
         {/* Centered CTA Link - Desktop only */}
-        <div className="hidden lg:block text-center mt-16">
+        <div className="hidden lg:block text-center mt-24">
           <Link
             to="/about"
             className={cn(
