@@ -1,37 +1,226 @@
 import Layout from '@/components/layout/Layout';
 import { useLanguage } from '@/contexts/LanguageContext';
 import { cn } from '@/lib/utils';
-import { Globe, CheckCircle, Users } from 'lucide-react';
-import CTASection from '@/components/home/CTASection';
+import { Scale, CheckCircle, Building2, Landmark, Users, FileText, Globe } from 'lucide-react';
+import { Button } from '@/components/ui/button';
+import { Link } from 'react-router-dom';
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/components/ui/accordion';
+import { Helmet } from 'react-helmet-async';
 
 const Taxation = () => {
   const { t, isRTL, language } = useLanguage();
-  const features = [language === 'he' ? 'תכנון מס חוצה גבולות' : 'Cross-border tax planning', language === 'he' ? 'עמידה ב-FATCA ו-CRS' : 'FATCA and CRS compliance', language === 'he' ? 'מניעת כפל מס' : 'Double taxation prevention', language === 'he' ? 'הטבות מס לעולים' : 'New immigrant tax benefits', language === 'he' ? 'דיווח ותיאום עם רשויות' : 'Reporting and authority coordination'];
-  const forWhom = [{ title: language === 'he' ? 'אמריקאים בישראל' : 'Americans in Israel', desc: language === 'he' ? 'עמידה בדרישות IRS' : 'IRS compliance requirements' }, { title: language === 'he' ? 'עולים חדשים' : 'New Immigrants', desc: language === 'he' ? 'מיצוי הטבות 10 שנים' : 'Maximizing 10-year benefits' }];
-  const faqs = [{ q: language === 'he' ? 'מה זה FATCA?' : 'What is FATCA?', a: language === 'he' ? 'חוק אמריקאי המחייב דיווח על נכסים פיננסיים בחו"ל.' : 'US law requiring reporting of foreign financial assets.' }, { q: language === 'he' ? 'האם אני חייב במס בשתי המדינות?' : 'Am I taxed in both countries?', a: language === 'he' ? 'תלוי באמנות המס - אנחנו מתכננים למניעת כפל.' : 'Depends on tax treaties - we plan to prevent double taxation.' }];
+
+  const realEstateServices = [
+    { title: t('tax.realEstate.assessment.title'), desc: t('tax.realEstate.assessment.desc'), icon: FileText },
+    { title: t('tax.realEstate.ownership.title'), desc: t('tax.realEstate.ownership.desc'), icon: Building2 },
+    { title: t('tax.realEstate.filing.title'), desc: t('tax.realEstate.filing.desc'), icon: CheckCircle },
+  ];
+
+  const serveItems = [
+    { title: t('tax.serve.compliance'), desc: t('tax.serve.compliance.desc') },
+    { title: t('tax.serve.firstStep'), desc: t('tax.serve.firstStep.desc') },
+  ];
+
+  const faqs = [
+    { q: t('tax.faq.q1'), a: t('tax.faq.a1') },
+    { q: t('tax.faq.q2'), a: t('tax.faq.a2') },
+    { q: t('tax.faq.q3'), a: t('tax.faq.a3') },
+  ];
 
   return (
     <Layout>
+      <Helmet>
+        <title>{language === 'he' ? 'מיסוי ורגולציה בנקאית בישראל | תל אביב (חוצה גבולות ונדל"ן)' : 'Israeli Tax & Banking Compliance | Tel Aviv (Cross-Border & Real Estate)'}</title>
+        <meta 
+          name="description" 
+          content={language === 'he' 
+            ? 'ייעוץ משפטי למיסוי ורגולציה בנקאית בישראל. תכנון מס רכישה, תאימות מקור כספים והלבנת הון, ותיאום חוצה גבולות.' 
+            : 'Legal counsel for Israeli taxation and banking regulation. Purchase tax planning, source of funds compliance (AML), and cross-border alignment.'
+          } 
+        />
+      </Helmet>
+
+      {/* Hero Section */}
       <section className="pt-32 pb-20 bg-background">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className={cn("max-w-4xl", isRTL && "font-hebrew text-right mr-auto")}>
-            <div className="flex items-center gap-3 mb-6"><Globe className="h-8 w-8 text-accent" /><span className="text-accent font-medium">{t('nav.taxation')}</span></div>
-            <h1 className="text-4xl sm:text-5xl font-display font-semibold text-foreground mb-6">{language === 'he' ? 'מיסוי בינלאומי' : 'International Taxation'}</h1>
-            <p className="text-xl text-muted-foreground">{language === 'he' ? 'תכנון מס אסטרטגי למניעת כפל מס ועמידה ברגולציה בינלאומית.' : 'Strategic tax planning to prevent double taxation and ensure international compliance.'}</p>
+            <div className="flex items-center gap-3 mb-6">
+              <Scale className="h-8 w-8 text-accent" />
+              <span className="text-accent font-medium">{t('nav.taxation')}</span>
+            </div>
+            <h1 className="text-4xl sm:text-5xl font-display font-semibold text-foreground mb-6">
+              {t('tax.hero.title')}
+            </h1>
+            <p className="text-xl text-muted-foreground leading-relaxed">
+              {t('tax.hero.subtitle')}
+            </p>
           </div>
         </div>
       </section>
+
+      {/* The Context Section */}
       <section className="py-16 gradient-stone">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid md:grid-cols-2 gap-12">
-            <div className={cn(isRTL && "font-hebrew text-right")}><h2 className="text-2xl font-display font-semibold mb-6">{t('service.overview')}</h2><ul className="space-y-3">{features.map((f,i) => <li key={i} className="flex items-center gap-3"><CheckCircle className="h-5 w-5 text-accent" /><span>{f}</span></li>)}</ul></div>
-            <div className={cn(isRTL && "font-hebrew text-right")}><h2 className="text-2xl font-display font-semibold mb-6">{t('service.forWhom')}</h2><div className="space-y-4">{forWhom.map((w,i) => <div key={i} className="flex items-start gap-3 p-4 bg-card rounded border border-border"><Users className="h-5 w-5 text-accent mt-1" /><div><h3 className="font-medium">{w.title}</h3><p className="text-sm text-muted-foreground">{w.desc}</p></div></div>)}</div></div>
+          <div className={cn("max-w-3xl", isRTL && "font-hebrew text-right mr-auto")}>
+            <h2 className="text-2xl sm:text-3xl font-display font-semibold mb-6">
+              {t('tax.context.title')}
+            </h2>
+            <p className="text-muted-foreground mb-4 leading-relaxed">
+              {t('tax.context.body')}
+            </p>
+            <p className="text-muted-foreground leading-relaxed">
+              {t('tax.context.body2')}
+            </p>
           </div>
         </div>
       </section>
-      <section className="py-16 bg-background"><div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-3xl"><h2 className={cn("text-2xl font-display font-semibold mb-8 text-center", isRTL && "font-hebrew")}>{t('service.faq')}</h2><Accordion type="single" collapsible>{faqs.map((faq,i) => <AccordionItem key={i} value={`item-${i}`}><AccordionTrigger className={cn(isRTL && "font-hebrew text-right")}>{faq.q}</AccordionTrigger><AccordionContent className={cn(isRTL && "font-hebrew text-right")}>{faq.a}</AccordionContent></AccordionItem>)}</Accordion></div></section>
-      <CTASection />
+
+      {/* Real Estate Tax Planning */}
+      <section className="py-16 bg-background">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+          <div className={cn("max-w-4xl", isRTL && "font-hebrew text-right mr-auto")}>
+            <div className="flex items-center gap-3 mb-6">
+              <Building2 className="h-6 w-6 text-accent" />
+              <h2 className="text-2xl sm:text-3xl font-display font-semibold">
+                {t('tax.realEstate.title')}
+              </h2>
+            </div>
+            <p className="text-muted-foreground mb-8 leading-relaxed">
+              {t('tax.realEstate.body')}
+            </p>
+            
+            <div className="space-y-4">
+              {realEstateServices.map((service, i) => (
+                <div key={i} className="flex items-start gap-4 p-5 bg-card rounded-lg border border-border">
+                  <service.icon className="h-5 w-5 text-accent mt-1 flex-shrink-0" />
+                  <div>
+                    <h3 className="font-medium text-foreground mb-1">{service.title}</h3>
+                    <p className="text-sm text-muted-foreground">{service.desc}</p>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Banking & AML Compliance */}
+      <section className="py-16 gradient-stone">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+          <div className={cn("max-w-4xl", isRTL && "font-hebrew text-right mr-auto")}>
+            <div className="flex items-center gap-3 mb-6">
+              <Landmark className="h-6 w-6 text-accent" />
+              <h2 className="text-2xl sm:text-3xl font-display font-semibold">
+                {t('tax.banking.title')}
+              </h2>
+            </div>
+            <p className="text-muted-foreground mb-4 leading-relaxed">
+              {t('tax.banking.body')}
+            </p>
+            <p className="text-muted-foreground leading-relaxed">
+              {t('tax.banking.body2')}
+            </p>
+          </div>
+        </div>
+      </section>
+
+      {/* Who We Serve */}
+      <section className="py-16 bg-background">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+          <div className={cn("max-w-4xl", isRTL && "font-hebrew text-right mr-auto")}>
+            <div className="flex items-center gap-3 mb-6">
+              <Users className="h-6 w-6 text-accent" />
+              <h2 className="text-2xl sm:text-3xl font-display font-semibold">
+                {t('tax.serve.title')}
+              </h2>
+            </div>
+            <p className="text-muted-foreground mb-8 leading-relaxed">
+              {t('tax.serve.body')}
+            </p>
+            
+            <div className="grid md:grid-cols-2 gap-4">
+              {serveItems.map((item, i) => (
+                <div key={i} className="p-5 bg-card rounded-lg border border-border">
+                  <h3 className="font-medium text-foreground mb-2">{item.title}</h3>
+                  <p className="text-sm text-muted-foreground">{item.desc}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Cross-Border Alignment */}
+      <section className="py-16 gradient-stone">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+          <div className={cn("max-w-4xl", isRTL && "font-hebrew text-right mr-auto")}>
+            <div className="flex items-center gap-3 mb-6">
+              <Globe className="h-6 w-6 text-accent" />
+              <h2 className="text-2xl sm:text-3xl font-display font-semibold">
+                {t('tax.crossBorder.title')}
+              </h2>
+            </div>
+            <p className="text-muted-foreground mb-4 leading-relaxed">
+              {t('tax.crossBorder.body')}
+            </p>
+            <p className="text-muted-foreground leading-relaxed">
+              {t('tax.crossBorder.body2')}
+            </p>
+          </div>
+        </div>
+      </section>
+
+      {/* Olim Planning */}
+      <section className="py-16 bg-background">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+          <div className={cn("max-w-4xl", isRTL && "font-hebrew text-right mr-auto")}>
+            <h2 className="text-2xl sm:text-3xl font-display font-semibold mb-6">
+              {t('tax.olim.title')}
+            </h2>
+            <p className="text-muted-foreground leading-relaxed">
+              {t('tax.olim.body')}
+            </p>
+          </div>
+        </div>
+      </section>
+
+      {/* FAQ Section */}
+      <section className="py-16 gradient-stone">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-3xl">
+          <h2 className={cn("text-2xl sm:text-3xl font-display font-semibold mb-8 text-center", isRTL && "font-hebrew")}>
+            {t('service.faq')}
+          </h2>
+          <Accordion type="single" collapsible className="w-full">
+            {faqs.map((faq, i) => (
+              <AccordionItem key={i} value={`item-${i}`}>
+                <AccordionTrigger className={cn("text-left", isRTL && "font-hebrew text-right")}>
+                  {faq.q}
+                </AccordionTrigger>
+                <AccordionContent className={cn(isRTL && "font-hebrew text-right")}>
+                  {faq.a}
+                </AccordionContent>
+              </AccordionItem>
+            ))}
+          </Accordion>
+        </div>
+      </section>
+
+      {/* CTA Section */}
+      <section className="py-20 bg-background">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+          <div className={cn("max-w-2xl mx-auto text-center", isRTL && "font-hebrew")}>
+            <h2 className="text-3xl sm:text-4xl font-display font-semibold mb-4">
+              {t('tax.cta.title')}
+            </h2>
+            <p className="text-lg text-muted-foreground mb-8">
+              {t('tax.cta.body')}
+            </p>
+            <Button asChild size="lg" className="px-8">
+              <Link to="/contact">{t('tax.cta.button')}</Link>
+            </Button>
+          </div>
+        </div>
+      </section>
     </Layout>
   );
 };
