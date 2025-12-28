@@ -125,7 +125,7 @@ const About = () => {
             {/* Offset beige background that extends down into next section */}
             <div className={cn(
               "absolute top-0 w-[95%] bg-secondary",
-              "h-[calc(100%+10rem)]",
+              "h-[calc(100%+14rem)]",
               isRTL ? "left-0 -ml-8 lg:-ml-16" : "right-0 -mr-8 lg:-mr-16"
             )} />
             
@@ -153,7 +153,7 @@ const About = () => {
       </section>
 
       {/* What to Expect Section */}
-      <section className="pt-32 lg:pt-40 pb-16 lg:pb-24 bg-secondary/30 -mt-16">
+      <section className="pt-40 lg:pt-52 pb-16 lg:pb-24 bg-secondary/30 -mt-16">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className={cn("text-center mb-12", isRTL && "font-hebrew")}>
             <h2 className="text-3xl sm:text-4xl font-display font-semibold text-foreground">
