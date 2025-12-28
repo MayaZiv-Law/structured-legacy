@@ -38,9 +38,10 @@ const MethodologySection = () => {
 
         {/* Asymmetric Layout Container */}
         <div className="relative max-w-6xl mx-auto">
-          {/* Offset background block - visible on left side */}
+          {/* Offset background block - taller than content */}
           <div className={cn(
-            "absolute top-0 h-full w-[60%] bg-secondary/50",
+            "absolute -top-8 w-[60%] bg-secondary/50",
+            "h-[calc(100%+4rem)]",
             isRTL ? "right-0" : "left-0 -ml-8 lg:-ml-16"
           )} />
 
