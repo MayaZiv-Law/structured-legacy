@@ -9,17 +9,53 @@ const GuideSection = () => {
   const Arrow = isRTL ? ArrowLeft : ArrowRight;
 
   return (
-    <section className="py-24 bg-background overflow-hidden">
+    <section className="py-16 lg:py-24 bg-background overflow-hidden">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         {/* Centered Title */}
-        <div className={cn("text-center mb-16", isRTL && "font-hebrew")}>
+        <div className={cn("text-center mb-10 lg:mb-16", isRTL && "font-hebrew")}>
           <h2 className="text-4xl sm:text-5xl font-display font-semibold text-foreground">
             {t('guide.title')}
           </h2>
         </div>
 
-        {/* Asymmetric Two Column Layout */}
-        <div className="relative max-w-6xl mx-auto mb-8">
+        {/* Mobile Layout: Image first, then text */}
+        <div className="lg:hidden flex flex-col items-center">
+          {/* Image - Mobile */}
+          <div className="w-[85%] mb-10">
+            <img
+              src={mayaPortrait}
+              alt="Maya Ziv - Attorney"
+              className="w-full h-auto object-cover object-top"
+            />
+          </div>
+
+          {/* Text Content - Mobile (centered) */}
+          <div className={cn("text-center px-4", isRTL && "font-hebrew")}>
+            <p className="text-muted-foreground leading-relaxed mb-6 text-lg">
+              {t('guide.bio')}
+            </p>
+
+            {/* Punchline */}
+            <p className="text-foreground font-medium text-lg italic mb-8">
+              {t('guide.punchline')}
+            </p>
+
+            {/* CTA Link */}
+            <Link
+              to="/about"
+              className={cn(
+                "inline-flex items-center gap-2 text-accent font-medium hover:gap-3 transition-all text-lg",
+                isRTL && "flex-row-reverse"
+              )}
+            >
+              {t('guide.cta')}
+              <Arrow className="h-5 w-5" />
+            </Link>
+          </div>
+        </div>
+
+        {/* Desktop Layout: Asymmetric with offset */}
+        <div className="hidden lg:block relative max-w-6xl mx-auto mb-8">
           {/* Content Card */}
           <div className={cn(
             "relative z-10 lg:w-[55%]",
@@ -46,8 +82,7 @@ const GuideSection = () => {
           {/* Image - Positioned to touch the card */}
           <div className={cn(
             "lg:absolute lg:top-10 lg:w-[48%] lg:h-[calc(100%+2rem)] z-20",
-            isRTL ? "lg:left-0" : "lg:right-0",
-            "mt-0 lg:mt-0"
+            isRTL ? "lg:left-0" : "lg:right-0"
           )}>
             <div className="h-full min-h-[350px] lg:min-h-full">
               <img
@@ -59,8 +94,8 @@ const GuideSection = () => {
           </div>
         </div>
 
-        {/* Centered CTA Link */}
-        <div className="text-center mt-16">
+        {/* Centered CTA Link - Desktop only */}
+        <div className="hidden lg:block text-center mt-16">
           <Link
             to="/about"
             className={cn(
