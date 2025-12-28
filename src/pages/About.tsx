@@ -118,19 +118,20 @@ const About = () => {
         </div>
       </section>
 
-      {/* Who We Serve Section */}
-      <section className="py-20 bg-background overflow-hidden">
+      {/* Who We Serve Section - Bridges between sections */}
+      <section className="relative z-20 pb-0 pt-20 bg-background overflow-visible">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="relative max-w-6xl mx-auto">
-            {/* Offset beige background */}
+            {/* Offset beige background that extends down */}
             <div className={cn(
-              "absolute top-0 h-full w-[95%] bg-secondary/50",
+              "absolute top-0 w-[95%] bg-secondary/50",
+              "h-[calc(100%+6rem)]",
               isRTL ? "left-0 -ml-8 lg:-ml-16" : "right-0 -mr-8 lg:-mr-16"
             )} />
             
-            {/* White content card */}
+            {/* White content card - overlaps next section */}
             <div className={cn(
-              "relative z-10 bg-background py-12 px-8 lg:py-16 lg:px-12 w-[92%] my-8",
+              "relative z-10 bg-background py-12 px-8 lg:py-16 lg:px-12 w-[92%] shadow-sm",
               isRTL ? "mr-auto ml-0" : "ml-auto mr-0"
             )}>
               <div className={cn(isRTL && "font-hebrew text-right")}>
@@ -150,8 +151,9 @@ const About = () => {
           </div>
         </div>
       </section>
+
       {/* What to Expect Section */}
-      <section className="py-16 lg:py-24 bg-secondary/30">
+      <section className="pt-24 lg:pt-32 pb-16 lg:pb-24 bg-secondary/30 -mt-12">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className={cn("text-center mb-12", isRTL && "font-hebrew")}>
             <h2 className="text-3xl sm:text-4xl font-display font-semibold text-foreground">
