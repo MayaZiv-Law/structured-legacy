@@ -1,12 +1,11 @@
 import Layout from '@/components/layout/Layout';
 import { useLanguage } from '@/contexts/LanguageContext';
 import { cn } from '@/lib/utils';
-import { CheckCircle, Building2, FileText, ArrowRight, ArrowLeft } from 'lucide-react';
+import { CheckCircle, Building2, FileText } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Link } from 'react-router-dom';
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/components/ui/accordion';
 import { Helmet } from 'react-helmet-async';
-import realEstateDueDiligence from '@/assets/real-estate-due-diligence.webp';
 
 const Taxation = () => {
   const { t, isRTL, language } = useLanguage();
@@ -74,126 +73,49 @@ const Taxation = () => {
       </section>
 
       {/* Real Estate Tax Planning - Asymmetric Design */}
-      <section className="py-16 lg:py-24 bg-background overflow-hidden">
+      <section className="relative z-20 pt-0 pb-20 bg-background overflow-visible">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          
-          {/* Centered Title */}
-          <div className={cn("text-center mb-10 lg:mb-16", isRTL && "font-hebrew")}>
-            <div className="w-16 h-1 bg-accent mx-auto mb-6" />
-            <h2 className="text-3xl sm:text-4xl font-display font-semibold text-foreground">
-              {t('tax.realEstate.title')}
-            </h2>
-          </div>
-
-          {/* Mobile Layout */}
-          <div className="lg:hidden flex flex-col items-center">
-            <div className="w-[85%] relative z-10">
-              <img 
-                src={realEstateDueDiligence} 
-                alt="Real estate due diligence" 
-                className="w-full h-auto object-cover"
-              />
-            </div>
+          <div className="relative max-w-6xl mx-auto">
+            {/* Offset beige background on left - attached to top */}
             <div className={cn(
-              "bg-secondary/50 px-6 py-10 -mt-6 relative w-full",
-              isRTL && "font-hebrew text-right"
-            )}>
-              <p className="text-muted-foreground mb-8 leading-relaxed">
-                {t('tax.realEstate.body')}
-              </p>
-              
-              <div className="space-y-6">
-                {realEstateServices.map((service, i) => (
-                  <div key={i} className={cn("flex flex-col", isRTL && "text-right")}>
-                    <div className="w-10 h-10 rounded-full bg-accent flex items-center justify-center mb-3">
-                      <service.icon className="h-4 w-4 text-accent-foreground" strokeWidth={1.5} />
-                    </div>
-                    <h3 className="text-lg font-display font-medium text-foreground mb-2">
-                      {service.title}
-                    </h3>
-                    <p className="text-muted-foreground leading-relaxed text-sm">
-                      {service.desc}
-                    </p>
-                  </div>
-                ))}
-              </div>
-            </div>
-          </div>
-
-          {/* Desktop Layout - Asymmetric */}
-          <div className="hidden lg:block relative max-w-6xl mx-auto">
-            {/* Content Card - 55% */}
-            <div className={cn(
-              "relative z-10 lg:w-[55%]",
-              isRTL ? "lg:ml-auto" : "lg:mr-auto"
-            )}>
-              <div className={cn(
-                "bg-secondary/50 p-8 lg:py-16 lg:px-12",
-                isRTL && "font-hebrew text-right"
-              )}>
-                <p className="text-muted-foreground mb-10 leading-relaxed">
+              "absolute top-0 bg-secondary",
+              "h-full w-[70%]",
+              isRTL ? "right-0 -mr-8 lg:-mr-16" : "left-0 -ml-8 lg:-ml-16"
+            )} />
+            
+            {/* Content with white background */}
+            <div className="relative z-10 bg-background py-12 px-8 lg:py-16 lg:px-12 mt-12 shadow-sm">
+              <div className={cn("max-w-5xl", isRTL && "font-hebrew text-right mr-auto")}>
+                <div className="w-16 h-1 bg-accent mb-6" />
+                <h2 className="text-2xl sm:text-3xl font-display font-semibold mb-6">
+                  {t('tax.realEstate.title')}
+                </h2>
+                <p className="text-muted-foreground mb-10 leading-relaxed max-w-3xl">
                   {t('tax.realEstate.body')}
                 </p>
                 
-                {/* Highlighted Quote */}
-                <div className={cn(
-                  "mb-10",
-                  isRTL ? "border-r-2 border-accent pr-6" : "border-l-2 border-accent pl-6"
-                )}>
-                  <p className="text-foreground font-display text-lg italic">
-                    {t('tax.realEstate.punchline') || t('tax.realEstate.body')}
-                  </p>
-                </div>
-                
-                <div className="grid grid-cols-1 gap-8">
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-10 lg:gap-14">
                   {realEstateServices.map((service, i) => (
-                    <div key={i} className={cn("flex gap-4", isRTL && "flex-row-reverse text-right")}>
-                      <div className="w-12 h-12 rounded-full bg-accent flex items-center justify-center flex-shrink-0">
+                    <div key={i} className={cn("flex flex-col", isRTL && "text-right")}>
+                      {/* Icon with filled circle */}
+                      <div className="w-12 h-12 rounded-full bg-accent flex items-center justify-center mb-5">
                         <service.icon className="h-5 w-5 text-accent-foreground" strokeWidth={1.5} />
                       </div>
-                      <div>
-                        <h3 className="text-xl font-display font-medium text-foreground mb-2">
-                          {service.title}
-                        </h3>
-                        <p className="text-muted-foreground leading-relaxed text-sm">
-                          {service.desc}
-                        </p>
-                      </div>
+                      
+                      {/* Title */}
+                      <h3 className="text-xl font-display font-medium text-foreground mb-3">
+                        {service.title}
+                      </h3>
+                      
+                      {/* Description */}
+                      <p className="text-muted-foreground leading-relaxed text-sm">
+                        {service.desc}
+                      </p>
                     </div>
                   ))}
                 </div>
               </div>
             </div>
-
-            {/* Image - 48%, overlapping with offset */}
-            <div className={cn(
-              "lg:absolute lg:top-10 lg:w-[48%] lg:h-[calc(100%+2rem)] z-20",
-              isRTL ? "lg:left-0" : "lg:right-0"
-            )}>
-              <img 
-                src={realEstateDueDiligence} 
-                alt="Real estate due diligence" 
-                className="w-full h-full object-cover"
-              />
-            </div>
-          </div>
-
-          {/* Centered CTA */}
-          <div className={cn("text-center mt-12 lg:mt-16", isRTL && "font-hebrew")}>
-            <Link 
-              to="/contact" 
-              className={cn(
-                "inline-flex items-center gap-2 text-accent hover:text-accent/80 font-medium transition-colors group",
-                isRTL && "flex-row-reverse"
-              )}
-            >
-              {t('tax.realEstate.cta') || t('cta.schedule')}
-              {isRTL ? (
-                <ArrowLeft className="h-4 w-4 group-hover:-translate-x-1 transition-transform" />
-              ) : (
-                <ArrowRight className="h-4 w-4 group-hover:translate-x-1 transition-transform" />
-              )}
-            </Link>
           </div>
         </div>
       </section>
