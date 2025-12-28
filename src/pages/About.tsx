@@ -119,20 +119,33 @@ const About = () => {
       </section>
 
       {/* Who We Serve Section */}
-      <section className="py-20 gradient-stone">
+      <section className="py-20 bg-background overflow-hidden">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <div className={cn("max-w-4xl mx-auto", isRTL && "font-hebrew text-right")}>
-            <h2 className="text-3xl sm:text-4xl font-display font-semibold text-foreground mb-6">
-              {t('about.serve.title')}
-            </h2>
-            <div className={cn("w-16 h-0.5 bg-accent mb-8", isRTL && "mr-0 ml-auto")} />
-            <div className="space-y-6">
-              <p className="text-lg text-muted-foreground leading-relaxed">
-                {t('about.serve.body')}
-              </p>
-              <p className="text-lg text-muted-foreground leading-relaxed">
-                {t('about.serve.body2')}
-              </p>
+          <div className="relative max-w-6xl mx-auto">
+            {/* Offset beige background */}
+            <div className={cn(
+              "absolute top-0 h-full w-[95%] bg-secondary/50",
+              isRTL ? "left-0 -ml-8 lg:-ml-16" : "right-0 -mr-8 lg:-mr-16"
+            )} />
+            
+            {/* White content card */}
+            <div className={cn(
+              "relative z-10 bg-background py-12 px-8 lg:py-16 lg:px-12 w-[92%] my-8",
+              isRTL ? "mr-auto ml-0" : "ml-auto mr-0"
+            )}>
+              <div className={cn(isRTL && "font-hebrew text-right")}>
+                <h2 className="text-2xl sm:text-3xl font-display font-semibold text-foreground mb-6">
+                  {t('about.serve.title')}
+                </h2>
+                <div className="space-y-4">
+                  <p className="text-muted-foreground leading-relaxed">
+                    {t('about.serve.body')}
+                  </p>
+                  <p className="text-muted-foreground leading-relaxed">
+                    {t('about.serve.body2')}
+                  </p>
+                </div>
+              </div>
             </div>
           </div>
         </div>
