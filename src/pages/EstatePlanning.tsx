@@ -6,6 +6,7 @@ import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/
 import { Button } from '@/components/ui/button';
 import { Link } from 'react-router-dom';
 import { Helmet } from 'react-helmet-async';
+import epaImage from '@/assets/epa-section-image.webp';
 
 const EstatePlanning = () => {
   const { t, isRTL, language } = useLanguage();
@@ -94,21 +95,33 @@ const EstatePlanning = () => {
       </section>
 
       {/* Enduring Power of Attorney Section */}
-      <section className="py-16 bg-background">
+      <section className="py-16 bg-background overflow-visible">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <div className={cn(
-            "max-w-4xl mx-auto p-8 sm:p-10 bg-card rounded-2xl shadow-lg border border-border/50",
-            isRTL && "font-hebrew text-right"
-          )}>
-            <h2 className="text-2xl sm:text-3xl font-display font-semibold mb-6 text-foreground">
-              {t('estate.epa.title')}
-            </h2>
-            <p className="text-muted-foreground mb-4 leading-relaxed">
-              {t('estate.epa.body')}
-            </p>
-            <p className="text-muted-foreground leading-relaxed">
-              {t('estate.epa.body2')}
-            </p>
+          <div className="max-w-5xl mx-auto relative">
+            <div className={cn(
+              "relative z-10 max-w-2xl p-8 sm:p-10 bg-card rounded-2xl shadow-lg border border-border/50",
+              isRTL ? "font-hebrew text-right mr-auto" : "ml-0"
+            )}>
+              <h2 className="text-2xl sm:text-3xl font-display font-semibold mb-6 text-foreground">
+                {t('estate.epa.title')}
+              </h2>
+              <p className="text-muted-foreground mb-4 leading-relaxed">
+                {t('estate.epa.body')}
+              </p>
+              <p className="text-muted-foreground leading-relaxed">
+                {t('estate.epa.body2')}
+              </p>
+            </div>
+            <div className={cn(
+              "hidden lg:block absolute top-1/2 -translate-y-1/2 w-[400px] h-[350px] rounded-xl overflow-hidden shadow-xl",
+              isRTL ? "left-0" : "right-0"
+            )}>
+              <img 
+                src={epaImage} 
+                alt="Estate planning documents" 
+                className="w-full h-full object-cover"
+              />
+            </div>
           </div>
         </div>
       </section>
