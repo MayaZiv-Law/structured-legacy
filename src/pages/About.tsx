@@ -124,7 +124,7 @@ const About = () => {
           <div className="relative max-w-6xl mx-auto">
             {/* Offset beige background that extends down into next section */}
             <div className={cn(
-              "absolute -top-8 w-[95%] bg-secondary",
+              "absolute -top-12 w-[95%] bg-secondary",
               "h-[calc(100%+9rem)]",
               isRTL ? "left-0 -ml-8 lg:-ml-16" : "right-0 -mr-8 lg:-mr-16"
             )} />
