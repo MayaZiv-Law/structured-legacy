@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import Layout from '@/components/layout/Layout';
 import { useLanguage } from '@/contexts/LanguageContext';
 import { cn } from '@/lib/utils';
@@ -11,21 +12,24 @@ const Insights = () => {
   const { t, isRTL, language } = useLanguage();
   const articles = [
     { 
-      title: language === 'he' ? 'השלכות FATCA על עולים חדשים' : 'FATCA Implications for New Immigrants', 
+      slug: 'buying-property-foreign-resident',
+      title: language === 'he' ? 'רכישת נכס בישראל כתושב חוץ: יסודות משפטיים ומיסויים' : 'Buying Property in Israel as a Foreign Resident: Legal and Tax Essentials', 
       excerpt: language === 'he' ? 'הבנת חובות הדיווח כאמריקאי בישראל.' : 'Understanding reporting obligations as a US person in Israel.', 
       date: '2024-01-15', 
       category: language === 'he' ? 'מיסוי' : 'Taxation',
       image: insightFatca
     },
     { 
-      title: language === 'he' ? 'בדיקת נאותות בנדל"ן' : 'Real Estate Due Diligence', 
+      slug: 'domestic-buyers-legal-checks',
+      title: language === 'he' ? 'רכישת נכס בישראל: בדיקות משפטיות חיוניות לקונים מקומיים' : 'Buying Property in Israel: Essential Legal Checks for Domestic Buyers', 
       excerpt: language === 'he' ? 'שלבים חיוניים לפני רכישת נכס.' : 'Essential steps before property purchase.', 
       date: '2024-01-08', 
       category: language === 'he' ? 'נדל"ן' : 'Real Estate',
       image: insightRealEstate
     },
     { 
-      title: language === 'he' ? 'תכנון עיזבון חוצה גבולות' : 'Cross-Border Estate Planning', 
+      slug: 'wills-inheritance-cross-border',
+      title: language === 'he' ? 'צוואות וירושה בישראל: הבטחת תוקף חוצה גבולות' : 'Wills and Inheritance in Israel: Ensuring Cross-Border Validity', 
       excerpt: language === 'he' ? 'הבטחת תוקף צוואה בכמה מדינות.' : 'Ensuring will validity across jurisdictions.', 
       date: '2024-01-02', 
       category: language === 'he' ? 'ירושות' : 'Estate',
