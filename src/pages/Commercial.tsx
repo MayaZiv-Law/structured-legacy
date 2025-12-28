@@ -6,6 +6,7 @@ import { Button } from '@/components/ui/button';
 import { Link } from 'react-router-dom';
 import { Helmet } from 'react-helmet-async';
 import commercialHeroBg from '@/assets/commercial-hero-bg.webp';
+import crossBorderImage from '@/assets/cross-border-business.webp';
 
 const Commercial = () => {
   const { t, isRTL, language } = useLanguage();
@@ -97,22 +98,49 @@ const Commercial = () => {
       </section>
 
       {/* Cross-Border Section */}
-      <section className="py-16 bg-background">
+      <section className="relative z-20 py-20 bg-background overflow-visible">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="max-w-5xl mx-auto relative">
+          <div className="relative max-w-6xl mx-auto">
+            {/* Offset beige background */}
             <div className={cn(
-              "relative z-10 max-w-2xl p-8 sm:p-10 bg-card rounded-2xl shadow-lg border border-border/50",
-              isRTL ? "font-hebrew text-right mr-auto" : "ml-0"
+              "absolute -top-8 w-[60%] bg-secondary h-[calc(100%+4rem)]",
+              isRTL ? "right-0 -mr-8 lg:-mr-16" : "left-0 -ml-8 lg:-ml-16"
+            )} />
+            
+            {/* Content grid */}
+            <div className={cn(
+              "relative z-10 grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center",
+              isRTL && "direction-rtl"
             )}>
-              <h2 className="text-2xl sm:text-3xl font-display font-semibold mb-6 text-foreground">
-                {t('commercial.crossborder.title')}
-              </h2>
-              <p className="text-muted-foreground mb-4 leading-relaxed">
-                {t('commercial.crossborder.body')}
-              </p>
-              <p className="text-muted-foreground leading-relaxed">
-                {t('commercial.crossborder.body2')}
-              </p>
+              {/* Text content in white card */}
+              <div className={cn(
+                "bg-background py-10 px-8 lg:py-14 lg:px-12 shadow-sm",
+                isRTL && "font-hebrew text-right"
+              )}>
+                <h2 className="text-2xl sm:text-3xl font-display font-semibold mb-6 text-foreground">
+                  {t('commercial.crossborder.title')}
+                </h2>
+                <p className="text-muted-foreground mb-4 leading-relaxed">
+                  {t('commercial.crossborder.body')}
+                </p>
+                <p className="text-muted-foreground leading-relaxed">
+                  {t('commercial.crossborder.body2')}
+                </p>
+              </div>
+
+              {/* Image */}
+              <div className={cn(
+                "relative",
+                isRTL ? "lg:order-first" : ""
+              )}>
+                <div className="aspect-[3/4] max-w-sm mx-auto lg:mx-0 overflow-hidden rounded-sm shadow-premium">
+                  <img 
+                    src={crossBorderImage} 
+                    alt={language === 'he' ? 'עסקים חוצי גבולות' : 'Cross-border business'}
+                    className="w-full h-full object-cover"
+                  />
+                </div>
+              </div>
             </div>
           </div>
         </div>
