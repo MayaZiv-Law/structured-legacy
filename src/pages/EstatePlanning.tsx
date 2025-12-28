@@ -7,6 +7,7 @@ import { Button } from '@/components/ui/button';
 import { Link } from 'react-router-dom';
 import { Helmet } from 'react-helmet-async';
 import epaImage from '@/assets/epa-section-image.webp';
+import estateHeroBg from '@/assets/estate-hero-bg.webp';
 
 const EstatePlanning = () => {
   const { t, isRTL, language } = useLanguage();
@@ -37,8 +38,12 @@ const EstatePlanning = () => {
       </Helmet>
 
       {/* Hero Section */}
-      <section className="pt-32 pb-20 bg-background">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+      <section 
+        className="relative pt-32 pb-20 bg-cover bg-center bg-no-repeat"
+        style={{ backgroundImage: `url(${estateHeroBg})` }}
+      >
+        <div className="absolute inset-0 bg-background/70" />
+        <div className="container relative z-10 mx-auto px-4 sm:px-6 lg:px-8">
           <div className={cn("max-w-4xl mx-auto", isRTL && "font-hebrew text-right")}>
             <div className="flex items-center gap-3 mb-6">
               <FileText className="h-8 w-8 text-accent" />
