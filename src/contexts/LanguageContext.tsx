@@ -214,8 +214,8 @@ const translations: Record<Language, Record<string, string>> = {
     'realestate.cta.button': 'Schedule a Consultation',
 
     // Taxation Page
-    'tax.hero.title': 'Israeli Tax & Banking Compliance Lawyer in Tel Aviv',
-    'tax.hero.subtitle': 'Cross-border reporting, real estate tax planning, and AML compliance for international clients.',
+    'tax.hero.title': 'Tax and Compliance',
+    'tax.hero.subtitle': '',
     'tax.context.title': 'A Financial Lens on Legal Strategy',
     'tax.context.body': 'Today, tax and compliance shape whether transactions are approved, funded, and completed. Whether purchasing property or transferring funds, every transaction carries implications in Israel and potentially abroad.',
     'tax.context.body2': 'We approach every case with financial discipline. By integrating tax planning into the legal process from day one, we aim to minimize regulatory friction, support full compliance, and support your standing with financial institutions.',
@@ -500,8 +500,8 @@ const translations: Record<Language, Record<string, string>> = {
     'realestate.cta.button': 'לתיאום פגישת ייעוץ',
 
     // Taxation Page
-    'tax.hero.title': 'עורכת דין מיסוי ורגולציה בנקאית בתל אביב',
-    'tax.hero.subtitle': 'דיווח חוצה גבולות, תכנון מס נדל"ן ותאימות הלבנת הון ללקוחות בינלאומיים.',
+    'tax.hero.title': 'Tax and Compliance',
+    'tax.hero.subtitle': '',
     'tax.context.title': 'עדשה פיננסית על אסטרטגיה משפטית',
     'tax.context.body': 'כיום, מס ותאימות קובעים האם עסקאות מאושרות, ממומנות ומושלמות. בין אם רוכשים נכס או מעבירים כספים, כל עסקה נושאת השלכות בישראל ואולי גם בחו"ל.',
     'tax.context.body2': 'אנחנו ניגשים לכל מקרה עם משמעת פיננסית. על ידי שילוב תכנון מס בתהליך המשפטי מהיום הראשון, אנחנו שואפים למזער חיכוך רגולטורי, לתמוך בתאימות מלאה ולתמוך במעמדכם מול מוסדות פיננסיים.',
