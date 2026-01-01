@@ -1,11 +1,11 @@
 import { useLanguage } from '@/contexts/LanguageContext';
 import { cn } from '@/lib/utils';
-
 const ConflictSection = () => {
-  const { t, isRTL } = useLanguage();
-
-  return (
-    <section className="pt-40 sm:pt-48 pb-24 bg-background">
+  const {
+    t,
+    isRTL
+  } = useLanguage();
+  return <section className="pt-40 sm:pt-48 pb-24 bg-background">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className={cn("max-w-4xl mx-auto", isRTL && "font-hebrew text-right")}>
           {/* Title */}
@@ -19,14 +19,10 @@ const ConflictSection = () => {
             <p className="text-lg text-muted-foreground leading-relaxed">
               {t('conflict.body')}
             </p>
-            <p className="text-lg text-muted-foreground leading-relaxed">
-              {t('conflict.body2')}
-            </p>
+            
           </div>
         </div>
       </div>
-    </section>
-  );
+    </section>;
 };
-
 export default ConflictSection;
