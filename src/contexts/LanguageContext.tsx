@@ -121,7 +121,7 @@ const translations: Record<Language, Record<string, string>> = {
     'about.attorney.body2': 'We prioritize prevention and structure. Our work is designed to reduce friction, protect positions early, and prevent disputes before they arise. By anticipating regulatory hurdles and structuring transactions correctly from the outset, the goal is to create stability-ensuring that your legal arrangements serve your financial and personal legacy for the long term.',
     'about.serve.title': 'Who We Serve',
     'about.serve.body': 'Our practice suits clients who prioritize clarity, diligence and lasting results over quick fixes. We partner with international investors, returning residents, and families who require a high level of involvement and a "zero-surprise" policy. We seize opportunities to innovate and grow.',
-    'about.serve.body2': 'Whether you are managing high-value real estate, complex inheritance matters, or cross-border assets, our approach is designed for those who seek a disciplined, methodical, and secure legal process.',
+    'about.serve.body2': 'Whether the matter is commercial or personal, local or cross border, we provide clear legal guidance focused on practical and reliable outcomes.',
     'about.expect.title': 'What Clients Can Expect',
     'about.expect.intro': 'Engagement with the firm follows a defined, transparent path. We believe that clarity is the antidote to stress, especially when managing affairs remotely.',
     'about.expect.doc.title': 'Documentation-First Approach',
