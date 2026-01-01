@@ -54,7 +54,7 @@ const RealEstate = () => {
       </Helmet>
 
       {/* Hero Section */}
-      <PageHero backgroundImage={realEstateHeroBg} title={t('realestate.hero.title')} subtitle={t('realestate.hero.subtitle')} />
+      <PageHero backgroundImage={realEstateHeroBg} title={t('realestate.hero.title')} />
 
       {/* The Approach Section */}
       <section className="pt-40 sm:pt-48 pb-20 gradient-stone">
