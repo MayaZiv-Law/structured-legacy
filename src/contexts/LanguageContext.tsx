@@ -194,7 +194,7 @@ const translations: Record<Language, Record<string, string>> = {
     'realestate.risk.planning.desc': 'Verifying that the property is built legally and matches municipal permits to prevent future devaluation or fines.',
     'realestate.risk.tax.title': 'Tax Exposure',
     'realestate.risk.tax.desc': 'Identifying timing issues or residency classifications that could trigger unnecessary tax liabilities.',
-    'realestate.tax.title': 'Tax Planning as Part of the Deal',
+    'realestate.tax.title': 'Regulatory and Tax Considerations',
     'realestate.tax.body': 'Purchase tax in Israel is dynamic. Foreign residents are generally subject to different tax brackets compared to new immigrants (Olim) or returning residents.',
     'realestate.tax.body2': 'We treat tax planning as an integral part of the contract. Drawing on deep familiarity with Israeli tax regulation, we assess your status before the transaction structure is finalized. The firm prepares and submits filings to ensure you benefit from all lawful exemptions and avoid unnecessary exposure.',
     'realestate.diligence.title': 'Rigorous Due Diligence',
