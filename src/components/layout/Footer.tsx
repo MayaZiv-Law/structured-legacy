@@ -55,13 +55,13 @@ const Footer = () => {
               <li className="flex items-start gap-3">
                 <MapPin className="h-4 w-4 mt-1 text-accent flex-shrink-0" />
                 <span className="text-primary-foreground/70 text-sm">
-                  {isRTL ? 'רוטשילד 45, תל אביב' : '45 Rothschild Blvd, Tel Aviv'}
+                  {isRTL ? 'משה סנה 18, תל אביב' : '18 Moshe Sneh, Tel Aviv Israel'}
                 </span>
               </li>
               <li className="flex items-center gap-3">
                 <Phone className="h-4 w-4 text-accent flex-shrink-0" />
-                <a href="tel:+97236123456" className="text-primary-foreground/70 hover:text-accent transition-colors text-sm">
-                  +972-3-612-3456
+                <a href="tel:+972544943597" className="text-primary-foreground/70 hover:text-accent transition-colors text-sm">
+                  +972.544943597
                 </a>
               </li>
               <li className="flex items-center gap-3">
