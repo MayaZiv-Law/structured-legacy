@@ -14,6 +14,72 @@ export type Database = {
   }
   public: {
     Tables: {
+      articles: {
+        Row: {
+          author_en: string
+          author_he: string
+          category_en: string
+          category_he: string
+          content_en: string[]
+          content_he: string[]
+          created_at: string
+          excerpt_en: string
+          excerpt_he: string
+          id: string
+          image_url: string | null
+          is_published: boolean
+          published_at: string | null
+          read_time_en: string
+          read_time_he: string
+          slug: string
+          title_en: string
+          title_he: string
+          updated_at: string
+        }
+        Insert: {
+          author_en?: string
+          author_he?: string
+          category_en: string
+          category_he: string
+          content_en?: string[]
+          content_he?: string[]
+          created_at?: string
+          excerpt_en: string
+          excerpt_he: string
+          id?: string
+          image_url?: string | null
+          is_published?: boolean
+          published_at?: string | null
+          read_time_en?: string
+          read_time_he?: string
+          slug: string
+          title_en: string
+          title_he: string
+          updated_at?: string
+        }
+        Update: {
+          author_en?: string
+          author_he?: string
+          category_en?: string
+          category_he?: string
+          content_en?: string[]
+          content_he?: string[]
+          created_at?: string
+          excerpt_en?: string
+          excerpt_he?: string
+          id?: string
+          image_url?: string | null
+          is_published?: boolean
+          published_at?: string | null
+          read_time_en?: string
+          read_time_he?: string
+          slug?: string
+          title_en?: string
+          title_he?: string
+          updated_at?: string
+        }
+        Relationships: []
+      }
       contact_submissions: {
         Row: {
           created_at: string
