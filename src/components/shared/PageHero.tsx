@@ -31,17 +31,17 @@ const PageHero = ({ backgroundImage, title, subtitle, icon, iconLabel }: PageHer
       <div className="flex-grow" />
 
       {/* Content Box at Bottom */}
-      <div className="relative z-10 container mx-auto px-4 sm:px-6 lg:px-8 pb-12">
+      <div className="relative z-10 container mx-auto px-4 sm:px-6 lg:px-8 pb-6">
         <div
           ref={heroAnim.ref}
           className={cn(
-            "max-w-3xl mx-auto transition-all duration-700",
+            "max-w-5xl mx-auto transition-all duration-700",
             heroAnim.isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
           )}
         >
-          {/* Text Box - leaves edges visible */}
+          {/* Text Box - wider and narrower */}
           <div className={cn(
-            "bg-primary/95 backdrop-blur-sm px-8 py-10 sm:px-12 sm:py-12 shadow-2xl",
+            "bg-primary/95 backdrop-blur-sm px-8 py-6 sm:px-12 sm:py-8 shadow-2xl",
             isRTL && "font-hebrew text-right"
           )}>
             {/* Icon and Label */}
@@ -53,7 +53,7 @@ const PageHero = ({ backgroundImage, title, subtitle, icon, iconLabel }: PageHer
             )}
 
             {/* Gold accent line */}
-            <div className={cn("w-16 h-1 bg-accent mb-6", isRTL && "mr-0 ml-auto")} />
+            <div className={cn("w-16 h-1 bg-accent mb-4", isRTL && "mr-0 ml-auto")} />
 
             {/* Title */}
             <h1 className="text-3xl sm:text-4xl lg:text-5xl font-display font-semibold text-primary-foreground mb-4 leading-tight">
