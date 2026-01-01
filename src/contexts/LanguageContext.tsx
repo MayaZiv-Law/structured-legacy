@@ -187,7 +187,7 @@ const translations: Record<Language, Record<string, string>> = {
     'realestate.approach.body': 'For many clients, acquiring property in Israel represents more than an investment. It is a personal milestone and a strategic decision with long term financial implications. The firm provides seamless legal guidance throughout the entire acquisition process, including due diligence, contract review, and registration with the Israel Land Registry. Each stage is handled with clarity, discipline, and foresight, ensuring a smooth and secure transaction.',
     'realestate.approach.body2': 'We provide structured legal guidance designed to secure the asset. From preliminary checks to registration with the Israel Land Registry (Tabu), each stage is handled with clarity, discipline, and foresight to ensure a compliant transfer of ownership.',
     'realestate.risk.title': 'Reducing Exposure in a Complex Market',
-    'realestate.risk.intro': 'Israeli real estate law places the burden of verification on the buyer ("Caveat Emptor"). Our due diligence is designed to detect and neutralize risks before you sign:',
+    'realestate.risk.intro': 'Israeli real estate law places the burden of verification on the buyer. Our due diligence is designed to detect and neutralize risks before you sign:',
     'realestate.risk.liabilities.title': 'Hidden Liabilities',
     'realestate.risk.liabilities.desc': 'Detecting existing liens, debts, or mortgages attached to the title.',
     'realestate.risk.planning.title': 'Planning & Zoning',
