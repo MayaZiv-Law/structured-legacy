@@ -6,6 +6,7 @@ import { FileCheck, Clock, MessageCircle, ArrowRight, ArrowLeft } from 'lucide-r
 import { Button } from '@/components/ui/button';
 import { Helmet } from 'react-helmet-async';
 import { useScrollAnimation } from '@/hooks/useScrollAnimation';
+import PageHero from '@/components/shared/PageHero';
 import mayaPortrait from '@/assets/maya-portrait.webp';
 import aboutHeroBg from '@/assets/about-hero-bg.webp';
 
@@ -32,7 +33,6 @@ const About = () => {
   ];
 
   // Scroll animations
-  const heroAnim = useScrollAnimation();
   const philosophyAnim = useScrollAnimation();
   const attorneyAnim = useScrollAnimation();
   const serveAnim = useScrollAnimation();
@@ -50,34 +50,11 @@ const About = () => {
       </Helmet>
 
       {/* Hero Section */}
-      <section className="relative pt-32 pb-20 min-h-[60vh] flex items-center">
-        {/* Background Image */}
-        <div className="absolute inset-0 z-0">
-          <img 
-            src={aboutHeroBg} 
-            alt="" 
-            className="w-full h-full object-cover"
-          />
-          <div className="absolute inset-0 bg-gradient-to-b from-primary/30 via-primary/40 to-primary/70" />
-        </div>
-        <div 
-          ref={heroAnim.ref}
-          className={cn(
-            "container mx-auto px-4 sm:px-6 lg:px-8 relative z-10 transition-all duration-700",
-            heroAnim.isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
-          )}
-        >
-          <div className={cn("max-w-4xl", isRTL && "font-hebrew text-right mr-auto")}>
-            <div className={cn("w-16 h-1 bg-accent mb-8", isRTL && "mr-0")} />
-            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-display font-semibold text-primary-foreground mb-6">
-              {t('about.hero.title')}
-            </h1>
-            <p className="text-xl text-primary-foreground/80 leading-relaxed">
-              {t('about.hero.subtitle')}
-            </p>
-          </div>
-        </div>
-      </section>
+      <PageHero
+        backgroundImage={aboutHeroBg}
+        title={t('about.hero.title')}
+        subtitle={t('about.hero.subtitle')}
+      />
 
       {/* Philosophy Section */}
       <section className="py-20 gradient-stone">

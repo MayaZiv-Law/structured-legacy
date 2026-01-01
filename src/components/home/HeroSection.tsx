@@ -10,62 +10,68 @@ const HeroSection = () => {
   const Arrow = isRTL ? ArrowLeft : ArrowRight;
 
   return (
-    <section className="relative min-h-[90vh] flex items-center justify-center overflow-hidden">
-      {/* Background Image with Overlay */}
-      <div
-        className="absolute inset-0 bg-cover bg-center bg-no-repeat"
-        style={{
-          backgroundImage: `url(${heroImage})`,
-        }}
-      >
-        <div className="absolute inset-0 bg-gradient-to-r from-primary/90 via-primary/70 to-primary/50" />
+    <section className="relative min-h-[90vh] flex flex-col">
+      {/* Full Background Image - No overlay, sharp and sparkling */}
+      <div className="absolute inset-0 z-0">
+        <img 
+          src={heroImage} 
+          alt="" 
+          className="w-full h-full object-cover"
+        />
       </div>
 
-      {/* Content */}
-      <div className="relative container mx-auto px-4 sm:px-6 lg:px-8 py-20">
+      {/* Spacer to push content box to bottom */}
+      <div className="flex-grow" />
+
+      {/* Content Box at Bottom */}
+      <div className="relative z-10 container mx-auto px-4 sm:px-6 lg:px-8 pb-16">
         <div className={cn(
-          "max-w-3xl",
-          isRTL ? "mr-auto text-right" : "ml-0"
+          "max-w-3xl transition-all duration-700 opacity-0 animate-fade-in-up",
+          isRTL ? "mr-auto ml-8 lg:ml-16" : "ml-auto mr-8 lg:mr-16"
         )}>
-          {/* Tagline */}
-          <p className={cn(
-            "text-accent font-display text-lg sm:text-xl italic mb-4 opacity-0 animate-fade-in-up",
-            isRTL && "font-hebrew"
-          )}>
-            {t('hero.tagline')}
-          </p>
-
-          {/* Gold accent line */}
+          {/* Text Box - leaves edges visible */}
           <div className={cn(
-            "w-16 h-1 bg-accent mb-8 opacity-0 animate-fade-in-up delay-100",
-            isRTL && "mr-0 ml-auto"
-          )} />
-
-          {/* H1 - Main Title */}
-          <h1 className={cn(
-            "text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-display font-semibold text-primary-foreground leading-tight mb-6 opacity-0 animate-fade-in-up delay-150",
-            isRTL && "font-hebrew"
+            "bg-primary/95 backdrop-blur-sm px-8 py-10 sm:px-12 sm:py-14 shadow-2xl",
+            isRTL && "font-hebrew text-right"
           )}>
-            {t('hero.title')}
-          </h1>
+            {/* Tagline */}
+            <p className={cn(
+              "text-accent font-display text-lg sm:text-xl italic mb-4",
+              isRTL && "font-hebrew"
+            )}>
+              {t('hero.tagline')}
+            </p>
 
-          {/* Sub-headline Line 1 - Context */}
-          <p className={cn(
-            "text-xl sm:text-2xl text-primary-foreground/90 font-medium mb-4 opacity-0 animate-fade-in-up delay-200",
-            isRTL && "font-hebrew"
-          )}>
-            {t('hero.subtitle1')}
-          </p>
+            {/* Gold accent line */}
+            <div className={cn(
+              "w-16 h-1 bg-accent mb-6",
+              isRTL && "mr-0 ml-auto"
+            )} />
 
-          {/* Sub-headline Line 2 - The Promise */}
-          <p className={cn(
-            "text-lg sm:text-xl text-primary-foreground/70 leading-relaxed mb-10 max-w-2xl opacity-0 animate-fade-in-up delay-250",
-            isRTL && "font-hebrew"
-          )}>
-            {t('hero.subtitle2')}
-          </p>
+            {/* H1 - Main Title */}
+            <h1 className={cn(
+              "text-3xl sm:text-4xl lg:text-5xl xl:text-6xl font-display font-semibold text-primary-foreground leading-tight mb-4",
+              isRTL && "font-hebrew"
+            )}>
+              {t('hero.title')}
+            </h1>
 
-          <div className="opacity-0 animate-fade-in-up delay-300">
+            {/* Sub-headline Line 1 - Context */}
+            <p className={cn(
+              "text-lg sm:text-xl text-primary-foreground/90 font-medium mb-3",
+              isRTL && "font-hebrew"
+            )}>
+              {t('hero.subtitle1')}
+            </p>
+
+            {/* Sub-headline Line 2 - The Promise */}
+            <p className={cn(
+              "text-base sm:text-lg text-primary-foreground/70 leading-relaxed mb-8",
+              isRTL && "font-hebrew"
+            )}>
+              {t('hero.subtitle2')}
+            </p>
+
             <Button
               asChild
               size="lg"
@@ -79,9 +85,6 @@ const HeroSection = () => {
           </div>
         </div>
       </div>
-
-      {/* Bottom gradient fade */}
-      <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-background to-transparent" />
     </section>
   );
 };

@@ -7,6 +7,7 @@ import { Button } from '@/components/ui/button';
 import { Link } from 'react-router-dom';
 import { Helmet } from 'react-helmet-async';
 import { useScrollAnimation } from '@/hooks/useScrollAnimation';
+import PageHero from '@/components/shared/PageHero';
 import epaImage from '@/assets/epa-section-image.webp';
 import estateHeroBg from '@/assets/estate-hero-bg.webp';
 
@@ -32,7 +33,6 @@ const EstatePlanning = () => {
   ];
 
   // Scroll animations
-  const heroAnim = useScrollAnimation();
   const challengeAnim = useScrollAnimation();
   const willsAnim = useScrollAnimation();
   const epaAnim = useScrollAnimation();
@@ -50,29 +50,11 @@ const EstatePlanning = () => {
       </Helmet>
 
       {/* Hero Section */}
-      <section 
-        className="relative pt-32 pb-20 bg-cover bg-center bg-no-repeat"
-        style={{ backgroundImage: `url(${estateHeroBg})` }}
-      >
-        <div className="absolute inset-0 bg-black/60" />
-        <div 
-          ref={heroAnim.ref}
-          className={cn(
-            "container relative z-10 mx-auto px-4 sm:px-6 lg:px-8 transition-all duration-700",
-            heroAnim.isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
-          )}
-        >
-          <div className={cn("max-w-4xl mx-auto", isRTL && "font-hebrew text-right")}>
-            <div className="w-16 h-1 bg-accent mb-8" />
-            <h1 className="text-4xl sm:text-5xl font-display font-semibold text-white mb-6">
-              {t('estate.hero.title')}
-            </h1>
-            <p className="text-xl text-white/80 leading-relaxed">
-              {t('estate.hero.subtitle')}
-            </p>
-          </div>
-        </div>
-      </section>
+      <PageHero
+        backgroundImage={estateHeroBg}
+        title={t('estate.hero.title')}
+        subtitle={t('estate.hero.subtitle')}
+      />
 
       {/* The Challenge Section */}
       <section className="py-16 gradient-stone">

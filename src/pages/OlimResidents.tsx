@@ -6,6 +6,7 @@ import { Button } from '@/components/ui/button';
 import { Link } from 'react-router-dom';
 import { Helmet } from 'react-helmet-async';
 import { useScrollAnimation } from '@/hooks/useScrollAnimation';
+import PageHero from '@/components/shared/PageHero';
 import olimHeroBg from '@/assets/olim-hero-bg.webp';
 import taxPositioningImage from '@/assets/tax-positioning-olim.webp';
 
@@ -24,7 +25,6 @@ const OlimResidents = () => {
     t('olim.expect.item3'),
   ];
 
-  const heroAnim = useScrollAnimation();
   const contextAnim = useScrollAnimation();
   const frameworkAnim = useScrollAnimation();
   const taxAnim = useScrollAnimation();
@@ -39,16 +39,12 @@ const OlimResidents = () => {
         <meta name="description" content={language === 'he' ? 'מסגרת משפטית מובנית למעבר לישראל: מיצוב מס, רכישת נכס ושילוב נכסים לעולים ותושבים חוזרים.' : 'A structured legal framework for your transition to Israel: Tax positioning, property acquisition, and asset integration for Olim and Returning Residents.'} />
       </Helmet>
 
-      <section className="relative pt-32 pb-20 bg-cover bg-center bg-no-repeat" style={{ backgroundImage: `url(${olimHeroBg})` }}>
-        <div className="absolute inset-0 bg-black/60" />
-        <div ref={heroAnim.ref} className={cn("container relative z-10 mx-auto px-4 sm:px-6 lg:px-8 transition-all duration-700", heroAnim.isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8")}>
-          <div className={cn("max-w-4xl mx-auto", isRTL && "font-hebrew text-right")}>
-            <div className="w-16 h-1 bg-accent mb-8" />
-            <h1 className="text-4xl sm:text-5xl font-display font-semibold text-white mb-6">{t('olim.hero.title')}</h1>
-            <p className="text-xl text-white/80 leading-relaxed">{t('olim.hero.subtitle')}</p>
-          </div>
-        </div>
-      </section>
+      {/* Hero Section */}
+      <PageHero
+        backgroundImage={olimHeroBg}
+        title={t('olim.hero.title')}
+        subtitle={t('olim.hero.subtitle')}
+      />
 
       <section className="py-16 gradient-stone">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
