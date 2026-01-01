@@ -10,7 +10,7 @@ const HeroSection = () => {
   const Arrow = isRTL ? ArrowLeft : ArrowRight;
 
   return (
-    <section className="relative min-h-[90vh] flex flex-col">
+    <section className="relative min-h-[90vh] flex flex-col overflow-visible">
       {/* Full Background Image - No overlay, sharp and sparkling */}
       <div className="absolute inset-0 z-0">
         <img 
@@ -23,8 +23,8 @@ const HeroSection = () => {
       {/* Spacer to push content box to bottom */}
       <div className="flex-grow" />
 
-      {/* Content Box at Bottom */}
-      <div className="relative z-10 container mx-auto px-4 sm:px-6 lg:px-8 pb-6">
+      {/* Content Box - Overflows into next section */}
+      <div className="relative z-10 container mx-auto px-4 sm:px-6 lg:px-8 translate-y-16 sm:translate-y-20">
         <div className={cn(
           "max-w-5xl transition-all duration-700 opacity-0 animate-fade-in-up",
           isRTL ? "mr-auto ml-4 lg:ml-8" : "ml-auto mr-4 lg:mr-8"
