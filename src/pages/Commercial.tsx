@@ -6,6 +6,7 @@ import { Button } from '@/components/ui/button';
 import { Link } from 'react-router-dom';
 import { Helmet } from 'react-helmet-async';
 import { useScrollAnimation } from '@/hooks/useScrollAnimation';
+import PageHero from '@/components/shared/PageHero';
 import commercialHeroBg from '@/assets/commercial-hero-bg.webp';
 import crossBorderImage from '@/assets/cross-border-business.webp';
 
@@ -49,23 +50,11 @@ const Commercial = () => {
       </Helmet>
 
       {/* Hero Section */}
-      <section 
-        className="relative pt-32 pb-20 bg-cover bg-center bg-no-repeat"
-        style={{ backgroundImage: `url(${commercialHeroBg})` }}
-      >
-        <div className="absolute inset-0 bg-black/60" />
-        <div className="container relative z-10 mx-auto px-4 sm:px-6 lg:px-8">
-          <div className={cn("max-w-4xl mx-auto", isRTL && "font-hebrew text-right")}>
-            <div className="w-16 h-1 bg-accent mb-8" />
-            <h1 className="text-4xl sm:text-5xl font-display font-semibold text-white mb-6">
-              {t('commercial.hero.title')}
-            </h1>
-            <p className="text-xl text-white/80 leading-relaxed">
-              {t('commercial.hero.subtitle')}
-            </p>
-          </div>
-        </div>
-      </section>
+      <PageHero
+        backgroundImage={commercialHeroBg}
+        title={t('commercial.hero.title')}
+        subtitle={t('commercial.hero.subtitle')}
+      />
 
       {/* Philosophy Section */}
       <section className="py-16 gradient-stone">

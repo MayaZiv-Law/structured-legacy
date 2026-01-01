@@ -7,6 +7,7 @@ import { Button } from '@/components/ui/button';
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/components/ui/accordion';
 import { Helmet } from 'react-helmet-async';
 import { useScrollAnimation } from '@/hooks/useScrollAnimation';
+import PageHero from '@/components/shared/PageHero';
 import dueDiligenceImage from '@/assets/real-estate-due-diligence.webp';
 import remoteTransactionImage from '@/assets/remote-transaction.webp';
 import realEstateHeroBg from '@/assets/real-estate-hero-bg.webp';
@@ -28,7 +29,6 @@ const RealEstate = () => {
   ];
 
   // Scroll animations
-  const heroAnim = useScrollAnimation();
   const approachAnim = useScrollAnimation();
   const riskAnim = useScrollAnimation();
   const taxAnim = useScrollAnimation();
@@ -45,34 +45,13 @@ const RealEstate = () => {
       </Helmet>
 
       {/* Hero Section */}
-      <section className="relative pt-32 pb-20 min-h-[60vh] flex items-center">
-        {/* Background Image */}
-        <div className="absolute inset-0 z-0">
-          <img src={realEstateHeroBg} alt="" className="w-full h-full object-cover" />
-          <div className="absolute inset-0 bg-gradient-to-b from-primary/30 via-primary/40 to-primary/70" />
-        </div>
-        <div 
-          ref={heroAnim.ref}
-          className={cn(
-            "container mx-auto px-4 sm:px-6 lg:px-8 relative z-10 transition-all duration-700",
-            heroAnim.isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
-          )}
-        >
-          <div className={cn("max-w-4xl", isRTL && "font-hebrew text-right mr-auto")}>
-            <div className={cn("flex items-center gap-3 mb-6", isRTL && "flex-row-reverse")}>
-              <Building2 className="h-8 w-8 text-accent" strokeWidth={1.5} />
-              <span className="text-accent font-medium">{t('nav.realEstate')}</span>
-            </div>
-            <div className={cn("w-16 h-1 bg-accent mb-8", isRTL && "mr-0")} />
-            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-display font-semibold text-primary-foreground mb-6">
-              {t('realestate.hero.title')}
-            </h1>
-            <p className="text-xl text-primary-foreground/80 leading-relaxed">
-              {t('realestate.hero.subtitle')}
-            </p>
-          </div>
-        </div>
-      </section>
+      <PageHero
+        backgroundImage={realEstateHeroBg}
+        title={t('realestate.hero.title')}
+        subtitle={t('realestate.hero.subtitle')}
+        icon={<Building2 className="h-8 w-8 text-accent" strokeWidth={1.5} />}
+        iconLabel={t('nav.realEstate')}
+      />
 
       {/* The Approach Section */}
       <section className="py-20 gradient-stone">

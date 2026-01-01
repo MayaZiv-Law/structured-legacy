@@ -7,6 +7,7 @@ import { Link } from 'react-router-dom';
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/components/ui/accordion';
 import { Helmet } from 'react-helmet-async';
 import { useScrollAnimation } from '@/hooks/useScrollAnimation';
+import PageHero from '@/components/shared/PageHero';
 import taxationHeroBg from '@/assets/taxation-hero-bg.webp';
 
 const Taxation = () => {
@@ -30,7 +31,6 @@ const Taxation = () => {
   ];
 
   // Scroll animations
-  const heroAnim = useScrollAnimation();
   const contextAnim = useScrollAnimation();
   const realEstateAnim = useScrollAnimation();
   const bankingAnim = useScrollAnimation();
@@ -48,26 +48,11 @@ const Taxation = () => {
       </Helmet>
 
       {/* Hero Section */}
-      <section className="relative pt-32 pb-20 bg-cover bg-center bg-no-repeat" style={{ backgroundImage: `url(${taxationHeroBg})` }}>
-        <div className="absolute inset-0 bg-black/60" />
-        <div 
-          ref={heroAnim.ref}
-          className={cn(
-            "container relative z-10 mx-auto px-4 sm:px-6 lg:px-8 transition-all duration-700",
-            heroAnim.isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
-          )}
-        >
-          <div className={cn("max-w-4xl mx-auto", isRTL && "font-hebrew text-right")}>
-            <div className="w-16 h-1 bg-accent mb-8" />
-            <h1 className="text-4xl sm:text-5xl font-display font-semibold text-white mb-6">
-              {t('tax.hero.title')}
-            </h1>
-            <p className="text-xl text-white/80 leading-relaxed">
-              {t('tax.hero.subtitle')}
-            </p>
-          </div>
-        </div>
-      </section>
+      <PageHero
+        backgroundImage={taxationHeroBg}
+        title={t('tax.hero.title')}
+        subtitle={t('tax.hero.subtitle')}
+      />
 
       {/* The Context Section */}
       <section className="py-16 gradient-stone">
