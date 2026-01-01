@@ -41,7 +41,7 @@ const translations: Record<Language, Record<string, string>> = {
     'guide.cta': 'More About the Firm',
 
     // Methodology
-    'method.title': 'A Structured Process — From Verification to Execution',
+    'method.title': 'A Structured Process - From Verification to Execution',
     'method.subtitle': 'Clients receive a defined process, clear timelines, and rigorous due diligence - with confidentiality and precision at every stage.',
     'method.step1.title': 'Verified Ownership & Status',
     'method.step1.desc': 'Title, encumbrances, planning, and zoning review before commitment.',
