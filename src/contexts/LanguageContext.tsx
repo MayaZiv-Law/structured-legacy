@@ -36,7 +36,7 @@ const translations: Record<Language, Record<string, string>> = {
 
     // Guide Section
     'guide.title': 'About the Firm',
-    'guide.bio': 'Maya Ziv Law is built around a hybrid advantage: legal strategy informed by financial discipline. The practice serves clients in Israel and abroad with bilingual counsel and a structured, documentation-driven approach designed to support long-term security.',
+    'guide.bio': 'Maya Ziv Law is built on a combined legal and financial perspective, bringing analytical discipline into every matter. The practice serves clients in Israel and overseas with bilingual counsel on domestic and cross border issues, focused on clear structure and long term security for their business, assets, and personal plans.',
     'guide.punchline': 'We treat every legal step as a financial decision with long-term consequences.',
     'guide.cta': 'More About the Firm',
 
