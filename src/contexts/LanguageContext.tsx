@@ -270,7 +270,7 @@ const translations: Record<Language, Record<string, string>> = {
     'olim.tax.title': 'Tax Positioning for Olim & Returning Residents',
     'olim.tax.body': 'Olim (new immigrants) and Returning Residents (Toshav Hozer Vatik) may be eligible for specific tax and reporting reliefs, subject to eligibility rules and classification. Correct timing and documentation are critical to securing these benefits.',
     'olim.tax.body2': 'We help clients map their status, flag relevant considerations, and coordinate with tax professionals where needed to support a compliant transition and reduce avoidable exposure.',
-    'olim.clients.title': 'Who We Typically Work With',
+    'olim.clients.title': 'Our Clients Trust Us',
     'olim.clients.body': 'This page is designed for individuals and families relocating to Israel who value a structured, compliance first process especially where significant assets, foreign income, or cross border beneficiaries are involved.',
     'olim.expect.title': 'What to Expect',
     'olim.expect.body': 'Engagement begins with a documentation checklist, status mapping (residency & tax profile), and a coordinated roadmap with defined next steps.',
