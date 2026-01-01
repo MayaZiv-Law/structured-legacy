@@ -231,7 +231,7 @@ const translations: Record<Language, Record<string, string>> = {
     'tax.banking.body': 'Transferring funds to or from Israel requires strict adherence to banking regulations and anti money laundering standards. Every transaction is managed in coordination with Israeli financial institutions to ensure compliance with FATCA, AML requirements, and local banking guidelines.',
     'tax.banking.body2': 'The firm also assists in preparing and submitting ongoing tax declarations, aligning Israeli reporting with international obligations and relevant treaties, reducing the risk of double taxation and supporting long term financial and legal stability across jurisdiction.',
     'tax.serve.title': 'Is This Service Right for You?',
-    'tax.serve.body': 'This service is designed for clients who prioritize a documented, transparent process. We partner with international investors and residents who understand that compliance is the key to asset safety.',
+    'tax.serve.body': 'This service is designed for clients who prioritize a documented, transparent process. We partner with international investors and privet clients who understand that compliance is the key to asset safety.',
     'tax.serve.compliance': 'Compliance-First',
     'tax.serve.compliance.desc': 'We do not engage in undocumented transfers or strategies intended to bypass regulation.',
     'tax.serve.firstStep': 'First Step',
