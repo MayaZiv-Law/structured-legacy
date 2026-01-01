@@ -159,7 +159,7 @@ const RealEstate = () => {
               {/* Image */}
               <div className={cn("relative transition-all duration-700 delay-300", isRTL ? "lg:col-start-1" : "lg:col-start-2", dueDiligenceAnim.isVisible ? "opacity-100 translate-x-0" : isRTL ? "opacity-0 -translate-x-8" : "opacity-0 translate-x-8")}>
                 <div className="aspect-[3/4] max-w-sm mx-auto lg:mx-0 overflow-hidden rounded-sm shadow-premium">
-                  <img src={dueDiligenceImage} alt="Real estate due diligence" className="w-full h-full object-cover" />
+                  <img alt="Real estate due diligence" className="w-full h-full object-cover" src="/lovable-uploads/81459920-5f87-4bcb-8430-47c1c2edc6e4.png" />
                 </div>
               </div>
             </div>
