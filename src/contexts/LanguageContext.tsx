@@ -176,7 +176,7 @@ const translations: Record<Language, Record<string, string>> = {
     'estate.faq.q2': 'Can I appoint a foreign resident as my executor?',
     'estate.faq.a2': 'Yes, though it requires specific procedural steps. We guide clients on the practical implications of appointing executors who reside outside Israel.',
     'estate.cta.title': 'Plan for the Future',
-    'estate.cta.body': "Secure your family's interests with a structured, legally sound estate plan.",
+    'estate.cta.body': 'Clear legal planning that supports your interests today and over time.',
     'estate.cta.button': 'Request a Confidential Consultation',
     'estate.cta.note': 'Response within 1 2 business days',
 
