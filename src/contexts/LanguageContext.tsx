@@ -47,7 +47,7 @@ const translations: Record<Language, Record<string, string>> = {
     'method.step1.desc': 'Title, encumbrances, planning, and zoning review before commitment.',
     'method.step2.title': 'Tax & Long-Term Structuring',
     'method.step2.desc': 'Early planning to reduce exposure and support compliance.',
-    'method.step3.title': 'Remote Execution & Coordination',
+    'method.step3.title': 'The Role of Legal Counsel in Cross Border Transactions',
     'method.step3.desc': 'Matters can be managed from abroad, including structured documentation and cross-border coordination when required.',
 
     // Practice Areas
