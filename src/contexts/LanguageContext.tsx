@@ -214,7 +214,7 @@ const translations: Record<Language, Record<string, string>> = {
     'realestate.cta.button': 'Schedule a Consultation',
 
     // Taxation Page
-    'tax.hero.title': 'Tax and Compliance',
+    'tax.hero.title': '',
     'tax.hero.subtitle': '',
     'tax.context.title': 'A Financial Lens on Legal Strategy',
     'tax.context.body': 'Today, tax and compliance shape whether transactions are approved, funded, and completed. Whether purchasing property or transferring funds, every transaction carries implications in Israel and potentially abroad.',
@@ -500,7 +500,7 @@ const translations: Record<Language, Record<string, string>> = {
     'realestate.cta.button': 'לתיאום פגישת ייעוץ',
 
     // Taxation Page
-    'tax.hero.title': 'Tax and Compliance',
+    'tax.hero.title': '',
     'tax.hero.subtitle': '',
     'tax.context.title': 'עדשה פיננסית על אסטרטגיה משפטית',
     'tax.context.body': 'כיום, מס ותאימות קובעים האם עסקאות מאושרות, ממומנות ומושלמות. בין אם רוכשים נכס או מעבירים כספים, כל עסקה נושאת השלכות בישראל ואולי גם בחו"ל.',
