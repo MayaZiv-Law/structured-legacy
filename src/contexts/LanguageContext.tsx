@@ -221,7 +221,7 @@ const translations: Record<Language, Record<string, string>> = {
     'tax.context.body2': 'We approach every case with financial discipline. By integrating tax planning into the legal process, we minimize regulatory friction, support full compliance, and support your standing with financial institutions.',
     'tax.realEstate.title': 'Real Estate Tax Planning',
     'tax.realEstate.body': "Tax assessment is the first step of any property transaction. Israel's tax brackets for Purchase Tax (Mas Rechisha) and Capital Gains Tax (Mas Shevach) vary based on residency and status.",
-    'tax.realEstate.assessment.title': 'Pre-Contract Assessment',
+    'tax.realEstate.assessment.title': 'Pre Contract Assessment',
     'tax.realEstate.assessment.desc': 'Calculating projected liabilities and checking eligibility for relevant exemptions where applicable before you sign.',
     'tax.realEstate.ownership.title': 'Ownership Planning',
     'tax.realEstate.ownership.desc': 'We help you evaluate ownership and registration options early, aligned with your status and long-term goals.',
