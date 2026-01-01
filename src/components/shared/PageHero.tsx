@@ -16,7 +16,7 @@ const PageHero = ({ backgroundImage, title, subtitle, icon, iconLabel }: PageHer
   const heroAnim = useScrollAnimation();
 
   return (
-    <section className="relative min-h-[70vh] flex flex-col">
+    <section className="relative min-h-[70vh] flex flex-col overflow-visible">
       {/* Full Background Image - No overlay, sharp and sparkling */}
       <div className="absolute inset-0 z-0">
         <img 
@@ -30,8 +30,8 @@ const PageHero = ({ backgroundImage, title, subtitle, icon, iconLabel }: PageHer
       {/* Spacer to push content box to bottom */}
       <div className="flex-grow" />
 
-      {/* Content Box at Bottom */}
-      <div className="relative z-10 container mx-auto px-4 sm:px-6 lg:px-8 pb-6">
+      {/* Content Box - Overflows into next section */}
+      <div className="relative z-10 container mx-auto px-4 sm:px-6 lg:px-8 translate-y-16 sm:translate-y-20">
         <div
           ref={heroAnim.ref}
           className={cn(
