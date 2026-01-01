@@ -18,6 +18,8 @@ import Contact from "./pages/Contact";
 import NotFound from "./pages/NotFound";
 import ArticlesList from "./pages/admin/ArticlesList";
 import ArticleEditor from "./pages/admin/ArticleEditor";
+import AdminLogin from "./pages/AdminLogin";
+import ProtectedRoute from "./components/ProtectedRoute";
 
 const queryClient = new QueryClient();
 
@@ -40,9 +42,10 @@ const App = () => (
             <Route path="/insights" element={<Insights />} />
             <Route path="/insights/:slug" element={<Article />} />
             <Route path="/contact" element={<Contact />} />
-            <Route path="/admin/articles" element={<ArticlesList />} />
-            <Route path="/admin/articles/new" element={<ArticleEditor />} />
-            <Route path="/admin/articles/:id" element={<ArticleEditor />} />
+            <Route path="/admin/login" element={<AdminLogin />} />
+            <Route path="/admin/articles" element={<ProtectedRoute><ArticlesList /></ProtectedRoute>} />
+            <Route path="/admin/articles/new" element={<ProtectedRoute><ArticleEditor /></ProtectedRoute>} />
+            <Route path="/admin/articles/:id" element={<ProtectedRoute><ArticleEditor /></ProtectedRoute>} />
             <Route path="*" element={<NotFound />} />
           </Routes>
         </BrowserRouter>

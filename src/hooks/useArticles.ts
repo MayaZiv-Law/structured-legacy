@@ -180,9 +180,26 @@ export const useDeleteArticle = () => {
   });
 };
 
-// Upload article image
+// Upload article image with validation
 export const uploadArticleImage = async (file: File): Promise<string> => {
-  const fileExt = file.name.split('.').pop();
+  // Validate file type
+  const allowedTypes = ['image/jpeg', 'image/png', 'image/webp', 'image/gif'];
+  if (!allowedTypes.includes(file.type)) {
+    throw new Error('Invalid file type. Only JPEG, PNG, WebP, and GIF allowed.');
+  }
+  
+  // Validate file size (max 5MB)
+  const maxSize = 5 * 1024 * 1024;
+  if (file.size > maxSize) {
+    throw new Error('File too large. Maximum size is 5MB.');
+  }
+
+  const fileExt = file.name.split('.').pop()?.toLowerCase();
+  const allowedExtensions = ['jpg', 'jpeg', 'png', 'webp', 'gif'];
+  if (!fileExt || !allowedExtensions.includes(fileExt)) {
+    throw new Error('Invalid file extension.');
+  }
+
   const fileName = `${Date.now()}-${Math.random().toString(36).substring(7)}.${fileExt}`;
   
   const { error } = await supabase.storage
