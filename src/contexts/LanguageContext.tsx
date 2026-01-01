@@ -216,9 +216,9 @@ const translations: Record<Language, Record<string, string>> = {
     // Taxation Page
     'tax.hero.title': '',
     'tax.hero.subtitle': '',
-    'tax.context.title': 'A Financial Lens on Legal Strategy',
-    'tax.context.body': 'Today, tax and compliance shape whether transactions are approved, funded, and completed. Whether purchasing property or transferring funds, every transaction carries implications in Israel and potentially abroad.',
-    'tax.context.body2': 'We approach every case with financial discipline. By integrating tax planning into the legal process from day one, we aim to minimize regulatory friction, support full compliance, and support your standing with financial institutions.',
+    'tax.context.title': '',
+    'tax.context.body': 'Tax and compliance shape whether transactions are approved, funded, and completed. Whether purchasing property or transferring funds, every transaction carries implications in Israel and potentially abroad.',
+    'tax.context.body2': 'We approach every case with financial discipline. By integrating tax planning into the legal process, we aim to minimize regulatory friction, support full compliance, and support your standing with financial institutions.',
     'tax.realEstate.title': 'Real Estate Tax Planning',
     'tax.realEstate.body': "Tax assessment is the first step of any property transaction. Israel's tax brackets for Purchase Tax (Mas Rechisha) and Capital Gains Tax (Mas Shevach) vary based on residency and status.",
     'tax.realEstate.assessment.title': 'Pre-Contract Assessment',
