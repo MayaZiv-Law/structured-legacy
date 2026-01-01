@@ -162,7 +162,7 @@ const translations: Record<Language, Record<string, string>> = {
     'estate.process.step2.title': 'Strategy & Structure',
     'estate.process.step2.desc': 'We propose a structure (documents and coordination steps) aligned with your goals and jurisdictions.',
     'estate.process.step3.title': 'Drafting & Execution',
-    'estate.process.step3.desc': 'Documents are drafted bilingually and signed in the appropriate form in Israel or abroad to meet evidentiary requirements.',
+    'estate.process.step3.desc': 'If needed, documents are drafted bilingually and signed in the appropriate form in Israel or abroad to meet evidentiary requirements.',
     'estate.process.step4.title': 'Safe Keeping & Guidance',
     'estate.process.step4.desc': 'We provide instructions for storage and guidance for your executors on future activation.',
     'estate.process.note': 'Clear scope, defined next steps, and documentation requirements are established from the outset.',
