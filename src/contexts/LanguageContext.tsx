@@ -235,7 +235,7 @@ const translations: Record<Language, Record<string, string>> = {
     'tax.serve.compliance': 'Compliance-First',
     'tax.serve.compliance.desc': 'We give our clients a clear legal focused point of view based on a solid understanding their needs.',
     'tax.serve.firstStep': 'First Step',
-    'tax.serve.firstStep.desc': 'Engagement begins with a document checklist and a risk assessment to identify potential red flags early.',
+    'tax.serve.firstStep.desc': 'Engagement begins with a clear and focused point of view based on a solid understanding of data needs.',
     'tax.crossBorder.title': 'Coordination with International Obligations',
     'tax.crossBorder.body': "Israel's treaty network may affect how certain income and reporting obligations are treated, depending on your jurisdiction.",
     'tax.crossBorder.body2': 'We flag potential treaty-related considerations and coordinate with your foreign tax advisors. While we do not file foreign tax returns, we ensure that your Israeli legal actions are communicated clearly to your global team to maintain a consistent tax position.',
