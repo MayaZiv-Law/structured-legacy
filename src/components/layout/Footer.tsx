@@ -22,10 +22,9 @@ const Footer = () => {
             <div className="w-12 h-0.5 bg-accent" />
           </div>
 
-          {/* Services Column */}
           <div>
             <h4 className={cn("font-display text-sm font-semibold uppercase tracking-wider mb-6", isRTL && "font-hebrew")}>
-              {t('footer.services')}
+              {isRTL ? 'תחומי התמחות' : 'Expertise'}
             </h4>
             <ul className="space-y-3">
               <li>
@@ -41,6 +40,16 @@ const Footer = () => {
               <li>
                 <Link to="/estate-planning" className="text-primary-foreground/70 hover:text-accent transition-colors text-sm">
                   {t('nav.estate')}
+                </Link>
+              </li>
+              <li>
+                <Link to="/olim-residents" className="text-primary-foreground/70 hover:text-accent transition-colors text-sm">
+                  {t('nav.olim')}
+                </Link>
+              </li>
+              <li>
+                <Link to="/commercial" className="text-primary-foreground/70 hover:text-accent transition-colors text-sm">
+                  {t('nav.commercial')}
                 </Link>
               </li>
             </ul>
