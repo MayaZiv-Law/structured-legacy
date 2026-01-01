@@ -119,14 +119,15 @@ const OlimResidents = () => {
         </div>
       </section>
 
-      <section className="py-20 bg-primary text-primary-foreground">
+      <section className="py-24 bg-[#faf8f5]">
         <div ref={ctaAnim.ref} className={cn("container mx-auto px-4 sm:px-6 lg:px-8 text-center transition-all duration-700", ctaAnim.isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8")}>
-          <h2 className={cn("text-2xl sm:text-3xl font-display font-semibold mb-4", isRTL && "font-hebrew")}>{t('olim.cta.title')}</h2>
-          <p className={cn("text-primary-foreground/80 mb-8 max-w-xl mx-auto", isRTL && "font-hebrew")}>{t('olim.cta.body')}</p>
-          <Button asChild size="lg" variant="secondary" className="group">
-            <Link to="/contact">
+          <div className="w-16 h-0.5 bg-accent mx-auto mb-8" />
+          <h2 className={cn("text-3xl sm:text-4xl lg:text-5xl font-display font-semibold mb-6 text-primary", isRTL && "font-hebrew")}>{t('olim.cta.title')}</h2>
+          <p className={cn("text-lg mb-10 max-w-xl mx-auto text-primary", isRTL && "font-hebrew")}>{t('olim.cta.body')}</p>
+          <Button asChild size="lg" className="bg-accent hover:bg-accent/90 text-accent-foreground font-medium px-10 py-6 text-base group">
+            <Link to="/contact" className={cn("flex items-center gap-2", isRTL && "flex-row-reverse")}>
               {t('olim.cta.button')}
-              <ArrowRight className={cn("ml-2 h-4 w-4 transition-transform group-hover:translate-x-1", isRTL && "rotate-180 mr-2 ml-0")} />
+              <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
             </Link>
           </Button>
         </div>
