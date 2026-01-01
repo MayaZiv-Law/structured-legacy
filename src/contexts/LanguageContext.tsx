@@ -214,7 +214,7 @@ const translations: Record<Language, Record<string, string>> = {
     'realestate.cta.button': 'Schedule a Consultation',
 
     // Taxation Page
-    'tax.hero.title': '',
+    'tax.hero.title': 'Tax and Compliance',
     'tax.hero.subtitle': '',
     'tax.context.title': 'A Financial Lens on Legal Strategy',
     'tax.context.body': 'Tax and compliance shape whether transactions are approved, funded, and completed. Whether purchasing property or transferring funds, every transaction carries implications in Israel and potentially abroad.',
