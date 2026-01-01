@@ -11,6 +11,14 @@ const Article = () => {
   const { language, isRTL } = useLanguage();
   const { data: article, isLoading, error } = useArticle(slug);
 
+  // Safe function to render bold text without dangerouslySetInnerHTML
+  const renderBoldText = (text: string) => {
+    const parts = text.split(/\*\*(.*?)\*\*/g);
+    return parts.map((part, i) => 
+      i % 2 === 1 ? <strong key={i} className="text-foreground">{part}</strong> : part
+    );
+  };
+
   const renderContent = (content: string[]) => {
     return content.map((paragraph, index) => {
       // H1 heading
@@ -49,7 +57,7 @@ const Article = () => {
       if (paragraph.startsWith('- ') || paragraph.startsWith('• ')) {
         return (
           <li key={index} className="text-muted-foreground leading-relaxed ml-4 mb-2">
-            <span dangerouslySetInnerHTML={{ __html: paragraph.replace(/^[-•]\s*/, '').replace(/\*\*(.*?)\*\*/g, '<strong class="text-foreground">$1</strong>') }} />
+            {renderBoldText(paragraph.replace(/^[-•]\s*/, ''))}
           </li>
         );
       }
@@ -57,7 +65,7 @@ const Article = () => {
       if (paragraph.match(/^\d+\./)) {
         return (
           <li key={index} className="text-muted-foreground leading-relaxed ml-4 mb-2 list-decimal">
-            {paragraph.replace(/^\d+\.\s*/, '')}
+            {renderBoldText(paragraph.replace(/^\d+\.\s*/, ''))}
           </li>
         );
       }
@@ -73,7 +81,7 @@ const Article = () => {
       if (paragraph.includes('**')) {
         return (
           <p key={index} className="text-muted-foreground leading-relaxed mb-4">
-            <span dangerouslySetInnerHTML={{ __html: paragraph.replace(/\*\*(.*?)\*\*/g, '<strong class="text-foreground">$1</strong>') }} />
+            {renderBoldText(paragraph)}
           </p>
         );
       }
