@@ -203,7 +203,7 @@ const About = () => {
             </h2>
           </div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-3 gap-8 lg:gap-16 max-w-5xl mx-auto">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-10 max-w-6xl mx-auto">
             {expectations.map((item, index) => (
               <div
                 key={index}
