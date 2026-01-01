@@ -140,7 +140,7 @@ const translations: Record<Language, Record<string, string>> = {
     'service.faq': 'Common Questions',
 
     // Estate Planning Page
-    'estate.hero.title': 'Inheritance & Estate Planning in Israel for International Families',
+    'estate.hero.title': 'Inheritance & Estate Planning',
     'estate.hero.subtitle': 'Legal strategies for cross border wealth transfer, bilingual wills, and Enduring Power of Attorney (Israel).',
     'estate.challenge.title': 'Managing Family Wealth Across Jurisdictions',
     'estate.challenge.body': 'Families with assets in Israel and ties abroad face a unique legal landscape. Israeli inheritance procedures often interact with foreign laws, creating potential conflicts regarding jurisdiction and tax liability. A standard Israeli will is rarely sufficient for a multi national estate.',
