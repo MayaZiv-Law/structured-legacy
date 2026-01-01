@@ -82,12 +82,22 @@ const Footer = () => {
             </ul>
           </div>
 
-          {/* Legal Column */}
+          {/* Links Column */}
           <div>
             <h4 className={cn("font-display text-sm font-semibold uppercase tracking-wider mb-6", isRTL && "font-hebrew")}>
-              {t('footer.legal')}
+              {isRTL ? 'קישורים' : 'Links'}
             </h4>
             <ul className="space-y-3">
+              <li>
+                <Link to="/about" className="text-primary-foreground/70 hover:text-accent transition-colors text-sm">
+                  {t('nav.about')}
+                </Link>
+              </li>
+              <li>
+                <Link to="/insights" className="text-primary-foreground/70 hover:text-accent transition-colors text-sm">
+                  {t('nav.insights')}
+                </Link>
+              </li>
               <li>
                 <Link to="/privacy" className="text-primary-foreground/70 hover:text-accent transition-colors text-sm">
                   {t('footer.privacy')}
