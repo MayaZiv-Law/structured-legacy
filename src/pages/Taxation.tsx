@@ -55,7 +55,7 @@ const Taxation = () => {
       />
 
       {/* The Context Section */}
-      <section className="py-16 gradient-stone">
+      <section className="pt-40 sm:pt-48 pb-16 gradient-stone">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div 
             ref={contextAnim.ref}
