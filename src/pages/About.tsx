@@ -53,7 +53,6 @@ const About = () => {
       <PageHero
         backgroundImage={aboutHeroBg}
         title={t('about.hero.title')}
-        subtitle={t('about.hero.subtitle')}
       />
 
       {/* Philosophy Section */}

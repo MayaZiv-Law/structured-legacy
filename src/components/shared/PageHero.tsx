@@ -20,7 +20,7 @@ const PageHero = ({
     isRTL
   } = useLanguage();
   const heroAnim = useScrollAnimation();
-  return <section className="relative min-h-[70vh] flex flex-col overflow-visible">
+  return <section className="relative min-h-[85vh] flex flex-col overflow-visible">
       {/* Full Background Image - No overlay, sharp and sparkling */}
       <div className="absolute inset-0 z-0">
         <img src={backgroundImage} alt="" className="w-full h-full object-cover" style={{
