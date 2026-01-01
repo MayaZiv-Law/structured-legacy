@@ -101,7 +101,7 @@ const RealEstate = () => {
                   </h3>
                   
                   {/* Description */}
-                  <p className="text-muted-foreground leading-relaxed text-sm">
+                  <p className="text-muted-foreground leading-relaxed text-base">
                     {t(risk.descKey)}
                   </p>
                 </div>)}
