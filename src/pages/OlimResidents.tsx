@@ -1,7 +1,7 @@
 import Layout from '@/components/layout/Layout';
 import { useLanguage } from '@/contexts/LanguageContext';
 import { cn } from '@/lib/utils';
-import { Users, FileCheck, Home, Building, Clock, CheckCircle, ArrowRight } from 'lucide-react';
+import { Users, FileCheck, Home, Building, Clock, CheckCircle, ArrowRight, Shield } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Link } from 'react-router-dom';
 import { Helmet } from 'react-helmet-async';
@@ -17,6 +17,7 @@ const OlimResidents = () => {
     { title: t('olim.framework.planning.title'), desc: t('olim.framework.planning.desc'), icon: Clock },
     { title: t('olim.framework.property.title'), desc: t('olim.framework.property.desc'), icon: Home },
     { title: t('olim.framework.banking.title'), desc: t('olim.framework.banking.desc'), icon: Building },
+    { title: t('olim.framework.peace.title'), desc: t('olim.framework.peace.desc'), icon: Shield },
   ];
 
   const expectItems = [
