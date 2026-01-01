@@ -79,6 +79,26 @@ export const useArticle = (slug: string | undefined) => {
   });
 };
 
+// Fetch a single article by ID (for admin editing)
+export const useArticleById = (id: string | undefined) => {
+  return useQuery({
+    queryKey: ['article', 'id', id],
+    queryFn: async () => {
+      if (!id) return null;
+      
+      const { data, error } = await supabase
+        .from('articles')
+        .select('*')
+        .eq('id', id)
+        .maybeSingle();
+
+      if (error) throw error;
+      return data as Article | null;
+    },
+    enabled: !!id,
+  });
+};
+
 // Fetch latest published articles
 export const useLatestArticles = (limit: number = 3) => {
   return useQuery({

@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import { useParams, useNavigate, Link } from 'react-router-dom';
-import { useArticle, useCreateArticle, useUpdateArticle, uploadArticleImage, ArticleInsert, ArticleUpdate } from '@/hooks/useArticles';
+import { useArticleById, useCreateArticle, useUpdateArticle, uploadArticleImage, ArticleInsert, ArticleUpdate } from '@/hooks/useArticles';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
@@ -15,7 +15,7 @@ const ArticleEditor = () => {
   const navigate = useNavigate();
   const isNew = id === 'new';
   
-  const { data: existingArticle, isLoading: loadingArticle } = useArticle(
+  const { data: existingArticle, isLoading: loadingArticle } = useArticleById(
     isNew ? undefined : id
   );
   
