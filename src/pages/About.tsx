@@ -247,7 +247,7 @@ const About = () => {
           >
             <div className="w-16 h-0.5 bg-accent mx-auto mb-8" />
             
-            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-display font-semibold text-primary-foreground mb-6">
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-body font-semibold text-primary-foreground mb-6">
               {t('about.cta.title')}
             </h2>
             
