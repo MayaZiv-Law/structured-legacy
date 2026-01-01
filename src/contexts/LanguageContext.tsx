@@ -153,7 +153,7 @@ const translations: Record<Language, Record<string, string>> = {
     'estate.wills.probate.desc': 'Representing heirs in obtaining Succession Orders (Yerusha) or Probate Orders (Kiyum Tzava\'a) efficiently.',
     'estate.wills.conflict.title': 'Conflict Reduction',
     'estate.wills.conflict.desc': 'Clear, unambiguous drafting intended to minimize interpretation disputes among beneficiaries.',
-    'estate.epa.title': 'Enduring Power of Attorney (Israel)',
+    'estate.epa.title': 'Enduring Power of Attorney',
     'estate.epa.body': 'An Enduring Power of Attorney (EPA) is a tool for retaining control. It allows you to appoint trusted representatives to manage your personal and financial affairs in Israel, should you be unable to do so in the future.',
     'estate.epa.body2': 'Unlike a court-appointed guardianship, an EPA allows you to define the scope of authority in advance. We prepare comprehensive documents that preserve your autonomy and define clear instructions for asset management.',
     'estate.process.title': 'How We Work: The Planning Process',
