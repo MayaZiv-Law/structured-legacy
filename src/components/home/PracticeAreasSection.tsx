@@ -73,7 +73,7 @@ const PracticeAreasSection = () => {
 
               {/* Bottom Label Card - Offset below image, top-aligned */}
               <div className={cn(
-                "absolute top-[calc(100%-4rem)] left-1/2 -translate-x-1/2 w-[90%] bg-background shadow-md py-3 px-4 text-center",
+                "absolute top-[calc(100%-5.5rem)] left-1/2 -translate-x-1/2 w-[90%] bg-background shadow-md py-3 px-4 text-center",
                 isRTL && "font-hebrew"
               )}>
                 <p className="text-muted-foreground text-xs mb-1">
