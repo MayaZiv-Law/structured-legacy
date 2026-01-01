@@ -31,7 +31,7 @@ const translations: Record<Language, Record<string, string>> = {
 
     // Conflict Section
     'conflict.title': 'Clarity Where Details Decide Outcomes',
-    'conflict.body': 'In Israel, major decisions often depend on registration, tax exposure, and compliance — not only on the contract itself. For international clients, the risk increases when legal steps must align with foreign reporting, banking requirements, and cross-border family structures.',
+    'conflict.body': 'For our clients in Israel and overseas, we bring an international perspective shaped by financial training abroad and legal practice in Israel, anchored in clear local insight. This allows us to offer bilingual counsel on domestic and cross border matters that stays close to client needs, builds strong relationships and turns complex situations into focused, confident decisions.',
     'conflict.body2': 'We begin with verification and documentation — so decisions are made with facts, not assumptions. Our role is to turn complex requirements into clear, structured decisions that protect your assets.',
 
     // Guide Section
