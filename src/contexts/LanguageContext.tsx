@@ -181,7 +181,7 @@ const translations: Record<Language, Record<string, string>> = {
     'estate.cta.note': 'Response within 1-2 business days',
 
     // Real Estate Page
-    'realestate.hero.title': 'Real Estate Lawyer in Tel Aviv for Property Purchase in Israel',
+    'realestate.hero.title': 'Real Estate',
     'realestate.hero.subtitle': 'Comprehensive counsel for international buyers: Due diligence, tax strategy, and secure registration.',
     'realestate.approach.title': 'More Than a Transaction—A Strategic Investment',
     'realestate.approach.body': 'For many clients, acquiring property in Israel represents more than a real estate transaction; it is a personal milestone and a significant capital deployment with long-term financial implications.',
