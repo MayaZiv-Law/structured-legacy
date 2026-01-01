@@ -16,11 +16,6 @@ const MethodologySection = () => {
       titleKey: 'method.step2.title',
       descKey: 'method.step2.desc',
     },
-    {
-      icon: Globe,
-      titleKey: 'method.step3.title',
-      descKey: 'method.step3.desc',
-    },
   ];
 
   return (
