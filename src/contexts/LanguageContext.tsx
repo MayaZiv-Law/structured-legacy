@@ -200,7 +200,7 @@ const translations: Record<Language, Record<string, string>> = {
     'realestate.diligence.title': 'Rigorous Due Diligence',
     'realestate.diligence.body': 'A secure transaction begins with verification. Before any commitment is made, we conduct a comprehensive legal audit of the property. This includes verifying title ownership, checking for encumbrances, and reviewing the planning status.',
     'realestate.diligence.body2': 'This structured analysis allows you to make an informed decision based on documented facts, ensuring the asset you view is the asset you legally acquire.',
-    'realestate.remote.title': 'Managing the Transaction from Abroad',
+    'realestate.remote.title': 'Representation for Clients Abroad',
     'realestate.remote.body': 'Clients residing outside Israel can typically manage the purchase process remotely. Representation is executed through a specific power of attorney signed at an Israeli consulate or before a local notary with an apostille.',
     'realestate.remote.body2': 'This enables us to manage the transaction on your behalf—from negotiation to final registration—allowing you to complete the acquisition securely while remaining overseas.',
     'realestate.faq.q1': 'When should tax planning begin?',
