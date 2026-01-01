@@ -233,7 +233,7 @@ const translations: Record<Language, Record<string, string>> = {
     'tax.serve.title': 'Is This Service Right for You?',
     'tax.serve.body': 'This service is designed for clients who prioritize a documented, transparent process. We partner with international investors and privet clients who understand that compliance is the key to asset safety.',
     'tax.serve.compliance': 'Compliance-First',
-    'tax.serve.compliance.desc': 'We do not engage in undocumented transfers or strategies intended to bypass regulation.',
+    'tax.serve.compliance.desc': 'We give our clients a clear legal focused point of view based on a solid understanding their needs.',
     'tax.serve.firstStep': 'First Step',
     'tax.serve.firstStep.desc': 'Engagement begins with a document checklist and a risk assessment to identify potential red flags early.',
     'tax.crossBorder.title': 'Coordination with International Obligations',
