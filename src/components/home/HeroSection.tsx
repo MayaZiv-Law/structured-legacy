@@ -25,9 +25,9 @@ const HeroSection = () => {
           {/* Text Box - wider and narrower */}
           <div className={cn("bg-primary/95 backdrop-blur-sm px-8 py-6 sm:px-12 sm:py-8 shadow-2xl", isRTL && "font-hebrew text-right")}>
             {/* Tagline */}
-            <p className={cn("text-accent font-display text-lg sm:text-xl italic mb-4", isRTL && "font-hebrew")}>
+            <h1 className={cn("text-3xl sm:text-4xl lg:text-5xl font-display font-semibold text-primary-foreground mb-4 leading-tight", isRTL && "font-hebrew")}>
               {t('hero.tagline')}
-            </p>
+            </h1>
 
             {/* Gold accent line */}
             <div className={cn("w-16 h-1 bg-accent mb-6", isRTL && "mr-0 ml-auto")} />
