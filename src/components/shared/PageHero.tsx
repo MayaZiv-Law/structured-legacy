@@ -31,7 +31,7 @@ const PageHero = ({ backgroundImage, title, subtitle, icon, iconLabel }: PageHer
       <div className="flex-grow" />
 
       {/* Content Box - Overflows into next section */}
-      <div className="relative z-10 container mx-auto px-4 sm:px-6 lg:px-8 translate-y-16 sm:translate-y-20">
+      <div className="relative z-10 container mx-auto px-4 sm:px-6 lg:px-8 translate-y-24 sm:translate-y-32">
         <div
           ref={heroAnim.ref}
           className={cn(
