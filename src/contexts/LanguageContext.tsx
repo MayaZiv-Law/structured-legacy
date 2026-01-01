@@ -287,7 +287,7 @@ const translations: Record<Language, Record<string, string>> = {
     'commercial.hero.subtitle': 'Protecting business interests through disciplined contracts and Israel based representation for cross border matters.',
     'commercial.philosophy.title': 'Precision Before Disputes',
     'commercial.philosophy.body': 'In commercial engagements, the strength of your position depends on the precision of your contracts. Whether drafting a partnership agreement or negotiating an exit, we evaluate each matter through three lenses: contractual rights, financial exposure, and future enforcement.',
-    'commercial.philosophy.body2': 'Our approach is preventative. We draft agreements designed to define clear mechanisms for decision-making and profit-sharing, aiming to minimize the risk of future conflict before it starts.',
+    'commercial.philosophy.body2': 'The firm provides disciplined legal analysis in contractual and business disputes. Each matter is evaluated through contractual rights, financial exposure, and available remedies. Clients receive structured guidance that supports negotiation, dispute resolution, or formal legal proceedings when required.',
     'commercial.services.title': 'Core Services',
     'commercial.services.contracts.title': 'Contract Drafting & Review',
     'commercial.services.contracts.desc': "Structuring shareholders' agreements, partnerships, commercial leases, and service agreements with precise definitions.",
