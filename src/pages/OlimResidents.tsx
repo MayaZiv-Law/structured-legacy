@@ -62,7 +62,7 @@ const OlimResidents = () => {
           <div ref={frameworkAnim.ref} className={cn("max-w-4xl mx-auto mb-10 transition-all duration-700", isRTL && "font-hebrew text-right", frameworkAnim.isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8")}>
             <h2 className="text-2xl sm:text-3xl font-display font-semibold mb-6">{t('olim.framework.title')}</h2>
           </div>
-          <div className="grid md:grid-cols-3 gap-6 max-w-4xl mx-auto">
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-6xl mx-auto">
             {frameworkItems.map((item, i) => (
               <div key={i} className={cn("p-6 bg-card rounded-lg border border-border transition-all duration-500", isRTL && "font-hebrew text-right", frameworkAnim.isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8")} style={{ transitionDelay: frameworkAnim.isVisible ? `${i * 150}ms` : '0ms' }}>
                 <item.icon className="h-6 w-6 text-accent mb-4" />
