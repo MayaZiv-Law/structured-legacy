@@ -45,12 +45,6 @@ const HeroSection = () => {
               {t('hero.subtitle2')}
             </p>
 
-            <Button asChild size="lg" className="bg-accent hover:bg-accent/90 text-accent-foreground font-medium px-8 py-6 text-base group">
-              <Link to="/contact" className="flex items-center gap-2">
-                {t('hero.cta')}
-                <Arrow className="h-4 w-4 transition-transform group-hover:translate-x-1" />
-              </Link>
-            </Button>
           </div>
         </div>
       </div>
