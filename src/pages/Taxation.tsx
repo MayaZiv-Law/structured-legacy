@@ -249,17 +249,20 @@ const Taxation = () => {
       </section>
 
       {/* CTA Section */}
-      <section className="py-20 bg-background">
+      <section className="py-24 bg-[#faf8f5]">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <div ref={ctaAnim.ref} className={cn("max-w-2xl mx-auto text-center transition-all duration-700", isRTL && "font-hebrew", ctaAnim.isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8")}>
-            <h2 className="text-3xl sm:text-4xl font-display font-semibold mb-4">
+          <div ref={ctaAnim.ref} className={cn("max-w-3xl mx-auto text-center transition-all duration-700", isRTL && "font-hebrew", ctaAnim.isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8")}>
+            <div className="w-16 h-0.5 bg-accent mx-auto mb-8" />
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-display font-semibold mb-6 text-primary">
               {t('tax.cta.title')}
             </h2>
-            <p className="text-lg text-muted-foreground mb-8">
+            <p className="text-lg mb-10 max-w-xl mx-auto text-primary">
               {t('tax.cta.body')}
             </p>
-            <Button asChild size="lg" className="px-8">
-              <Link to="/contact">{t('tax.cta.button')}</Link>
+            <Button asChild size="lg" className="bg-accent hover:bg-accent/90 text-accent-foreground font-medium px-10 py-6 text-base group">
+              <Link to="/contact" className={cn("flex items-center gap-2", isRTL && "flex-row-reverse")}>
+                {t('tax.cta.button')}
+              </Link>
             </Button>
           </div>
         </div>
