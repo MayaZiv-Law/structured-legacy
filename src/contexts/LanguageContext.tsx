@@ -224,7 +224,7 @@ const translations: Record<Language, Record<string, string>> = {
     'tax.realEstate.assessment.title': 'Pre Contract Assessment',
     'tax.realEstate.assessment.desc': 'Calculating projected liabilities and checking eligibility for relevant exemptions where applicable before you sign.',
     'tax.realEstate.ownership.title': 'Ownership Planning',
-    'tax.realEstate.ownership.desc': 'We help you evaluate ownership and registration options early, aligned with your status and long-term goals.',
+    'tax.realEstate.ownership.desc': 'Evaluate ownership and registration options early, aligned with your status and long-term goals.',
     'tax.realEstate.filing.title': 'Filing & Reporting',
     'tax.realEstate.filing.desc': 'Managing submissions to the Israel Tax Authority with careful documentation to reduce errors and delays.',
     'tax.banking.title': 'Banking Regulation & Source of Funds',
