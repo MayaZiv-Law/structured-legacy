@@ -71,9 +71,9 @@ const PracticeAreasSection = () => {
                 />
               </div>
 
-              {/* Bottom Label Card - Positioned at bottom */}
+              {/* Bottom Label Card - Offset below card */}
               <div className={cn(
-                "absolute bottom-4 left-1/2 -translate-x-1/2 w-[90%] bg-background/95 backdrop-blur-sm shadow-md py-3 px-4 text-center",
+                "absolute -bottom-8 left-1/2 -translate-x-1/2 w-[90%] bg-background shadow-md py-3 px-4 text-center",
                 isRTL && "font-hebrew"
               )}>
                 <p className="text-muted-foreground text-xs mb-1">
@@ -86,7 +86,10 @@ const PracticeAreasSection = () => {
             </Link>
           ))}
         </div>
-      </div>
+        </div>
+
+        {/* Spacer for offset cards */}
+        <div className="h-12" />
     </section>
   );
 };
