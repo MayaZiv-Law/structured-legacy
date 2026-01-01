@@ -60,7 +60,7 @@ const PracticeAreasSection = () => {
             <Link
               key={index}
               to={area.link}
-              className="group relative block"
+              className="group relative block pb-16"
             >
               {/* Image Container */}
               <div className="aspect-[4/5] overflow-hidden">
@@ -71,9 +71,9 @@ const PracticeAreasSection = () => {
                 />
               </div>
 
-              {/* Bottom Label Card - Offset below card */}
+              {/* Bottom Label Card - Offset below image, top-aligned */}
               <div className={cn(
-                "absolute -bottom-8 left-1/2 -translate-x-1/2 w-[90%] bg-background shadow-md py-3 px-4 text-center",
+                "absolute top-[calc(100%-4rem)] left-1/2 -translate-x-1/2 w-[90%] bg-background shadow-md py-3 px-4 text-center",
                 isRTL && "font-hebrew"
               )}>
                 <p className="text-muted-foreground text-xs mb-1">
@@ -89,7 +89,7 @@ const PracticeAreasSection = () => {
         </div>
 
         {/* Spacer for offset cards */}
-        <div className="h-12" />
+        <div className="h-16" />
     </section>
   );
 };
