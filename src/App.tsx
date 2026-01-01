@@ -16,6 +16,8 @@ import Insights from "./pages/Insights";
 import Article from "./pages/Article";
 import Contact from "./pages/Contact";
 import NotFound from "./pages/NotFound";
+import ArticlesList from "./pages/admin/ArticlesList";
+import ArticleEditor from "./pages/admin/ArticleEditor";
 
 const queryClient = new QueryClient();
 
@@ -38,6 +40,9 @@ const App = () => (
             <Route path="/insights" element={<Insights />} />
             <Route path="/insights/:slug" element={<Article />} />
             <Route path="/contact" element={<Contact />} />
+            <Route path="/admin/articles" element={<ArticlesList />} />
+            <Route path="/admin/articles/new" element={<ArticleEditor />} />
+            <Route path="/admin/articles/:id" element={<ArticleEditor />} />
             <Route path="*" element={<NotFound />} />
           </Routes>
         </BrowserRouter>
