@@ -1,13 +1,6 @@
 import { Link } from 'react-router-dom';
 import { useLanguage } from '@/contexts/LanguageContext';
 import { cn } from '@/lib/utils';
-import {
-  Carousel,
-  CarouselContent,
-  CarouselItem,
-  CarouselPrevious,
-  CarouselNext,
-} from '@/components/ui/carousel';
 
 // Import hero images
 import realEstateHero from '@/assets/real-estate-hero-bg.webp';
@@ -61,64 +54,38 @@ const PracticeAreasSection = () => {
           </h2>
         </div>
 
-        {/* Carousel */}
-        <div className="max-w-6xl mx-auto px-8">
-          <Carousel
-            opts={{
-              align: 'start',
-              loop: true,
-              direction: isRTL ? 'rtl' : 'ltr',
-            }}
-            className="w-full"
-          >
-            <CarouselContent className="-ml-4">
-              {areas.map((area, index) => (
-                <CarouselItem
-                  key={index}
-                  className="pl-4 basis-full sm:basis-1/2 lg:basis-1/3"
-                >
-                  <Link
-                    to={area.link}
-                    className="group relative block"
-                  >
-                    {/* Image Container */}
-                    <div className="aspect-[4/5] overflow-hidden">
-                      <img
-                        src={area.image}
-                        alt={t(area.titleKey)}
-                        className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
-                      />
-                    </div>
+        {/* Cards Grid */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-6 max-w-7xl mx-auto">
+          {areas.map((area, index) => (
+            <Link
+              key={index}
+              to={area.link}
+              className="group relative block"
+            >
+              {/* Image Container */}
+              <div className="aspect-[4/5] overflow-hidden">
+                <img
+                  src={area.image}
+                  alt={t(area.titleKey)}
+                  className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                />
+              </div>
 
-                    {/* Bottom Label Card - Overlapping */}
-                    <div className={cn(
-                      "absolute bottom-0 left-1/2 -translate-x-1/2 translate-y-6 w-[85%] bg-background shadow-md py-4 px-6 text-center",
-                      isRTL && "font-hebrew"
-                    )}>
-                      <p className="text-muted-foreground text-sm mb-1">
-                        {t(area.descKey)}
-                      </p>
-                      <h3 className="text-xl font-display font-medium text-foreground">
-                        {t(area.titleKey)}
-                      </h3>
-                    </div>
-                  </Link>
-                </CarouselItem>
-              ))}
-            </CarouselContent>
-            <CarouselPrevious className={cn(
-              "hidden sm:flex -left-4",
-              isRTL && "-right-4 left-auto"
-            )} />
-            <CarouselNext className={cn(
-              "hidden sm:flex -right-4",
-              isRTL && "-left-4 right-auto"
-            )} />
-          </Carousel>
+              {/* Bottom Label Card - Positioned at bottom */}
+              <div className={cn(
+                "absolute bottom-4 left-1/2 -translate-x-1/2 w-[90%] bg-background/95 backdrop-blur-sm shadow-md py-3 px-4 text-center",
+                isRTL && "font-hebrew"
+              )}>
+                <p className="text-muted-foreground text-xs mb-1">
+                  {t(area.descKey)}
+                </p>
+                <h3 className="text-base font-display font-medium text-foreground">
+                  {t(area.titleKey)}
+                </h3>
+              </div>
+            </Link>
+          ))}
         </div>
-
-        {/* Spacer for overlapping cards */}
-        <div className="h-12" />
       </div>
     </section>
   );
