@@ -19,25 +19,25 @@ const Insights = () => {
   const articlesAnim = useScrollAnimation();
   const articles = [{
     slug: 'buying-property-foreign-resident',
-    title: language === 'he' ? 'רכישת נכס בישראל כתושב חוץ: יסודות משפטיים ומיסויים' : 'Buying Property in Israel as a Foreign Resident: Legal and Tax Essentials',
-    excerpt: language === 'he' ? 'הבנת חובות הדיווח כאמריקאי בישראל.' : 'Understanding reporting obligations as a US person in Israel.',
+    title: language === 'he' ? 'רכישת נכס בישראל כתושב חוץ: יסודות משפטיים ומיסויים' : 'Buying Property in Israel as a Foreign Resident Legal and Tax Essentials',
+    excerpt: language === 'he' ? 'תושבי חוץ חייבים להתמודד עם דרישות משפטיות, מיסויות ורישומיות ייחודיות בעת רכישת נכס בישראל. בדיקת נאותות ברורה ותכנון מובנה מבטיחים עסקה תואמת ומאובטחת.' : 'Foreign residents must address unique legal tax and registration requirements when purchasing property in Israel. Clear due diligence and structured planning ensure a compliant and secure transaction.',
     date: '2024-01-15',
-    category: language === 'he' ? 'מיסוי' : 'Taxation',
+    category: language === 'he' ? 'נדל"ן' : 'Real Estate',
     image: insightFatca
   }, {
-    slug: 'domestic-buyers-legal-checks',
-    title: language === 'he' ? 'רכישת נכס בישראל: בדיקות משפטיות חיוניות לקונים מקומיים' : 'Buying Property in Israel: Essential Legal Checks for Domestic Buyers',
-    excerpt: language === 'he' ? 'שלבים חיוניים לפני רכישת נכס.' : 'Essential steps before property purchase.',
+    slug: 'wills-inheritance-cross-border',
+    title: language === 'he' ? 'צוואות וירושה בישראל: הבטחת תוקף חוצה גבולות' : 'Wills and Inheritance in Israel Ensuring Cross Border Validity',
+    excerpt: language === 'he' ? 'משפחות חוצות גבולות חייבות להתאים הליכי ירושה ישראליים לצוואות זרות וכללי פרובייט בחו"ל. תכנון מתואם מבטיח אכיפות ומונע סכסוכים משפטיים מיותרים.' : 'Cross border families must align Israeli inheritance procedures with foreign wills and overseas probate rules. Coordinated planning ensures enforceability and prevents unnecessary legal conflicts.',
     date: '2024-01-08',
+    category: language === 'he' ? 'תכנון עיזבון' : 'Estate Planning',
+    image: insightEstate
+  }, {
+    slug: 'domestic-buyers-legal-checks',
+    title: language === 'he' ? 'רכישת נכס בישראל: בדיקות משפטיות חיוניות לקונים מקומיים' : 'Buying Property in Israel Essential Legal Checks for Domestic Buyers',
+    excerpt: language === 'he' ? 'קונים מקומיים חייבים לאמת זכויות בעלות, מצב תכנוני והגנות חוזיות לפני התחייבות לרכישת נכס. בדיקות משפטיות מובנות מפחיתות חשיפה ותומכות בעסקה שקופה ותואמת.' : 'Domestic buyers must verify ownership rights planning status and contractual protections before committing to a property purchase. Structured legal checks reduce exposure and support a transparent and compliant transaction.',
+    date: '2024-01-02',
     category: language === 'he' ? 'נדל"ן' : 'Real Estate',
     image: insightRealEstate
-  }, {
-    slug: 'wills-inheritance-cross-border',
-    title: language === 'he' ? 'צוואות וירושה בישראל: הבטחת תוקף חוצה גבולות' : 'Wills and Inheritance in Israel: Ensuring Cross-Border Validity',
-    excerpt: language === 'he' ? 'הבטחת תוקף צוואה בכמה מדינות.' : 'Ensuring will validity across jurisdictions.',
-    date: '2024-01-02',
-    category: language === 'he' ? 'ירושות' : 'Estate',
-    image: insightEstate
   }];
   return <Layout>
       <section className="pt-32 pb-20 bg-background">
