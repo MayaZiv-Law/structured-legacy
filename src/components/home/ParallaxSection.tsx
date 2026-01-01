@@ -1,7 +1,7 @@
 import { useEffect, useRef, useState } from 'react';
 import { useLanguage } from '@/contexts/LanguageContext';
 import { cn } from '@/lib/utils';
-import telAvivHero from '@/assets/tel-aviv-hero.webp';
+import telAvivHero from '@/assets/tel-aviv-night.png';
 const ParallaxSection = () => {
   const {
     isRTL
