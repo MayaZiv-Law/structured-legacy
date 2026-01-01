@@ -248,7 +248,7 @@ const translations: Record<Language, Record<string, string>> = {
     'tax.faq.q3': 'When do I become a tax resident of Israel?',
     'tax.faq.a3': 'Residency is determined by a "Center of Life" test, not just citizenship. We advise on the legal criteria and how your presence in Israel affects your status.',
     'tax.cta.title': 'Strategic Compliance',
-    'tax.cta.body': 'Start with a documented plan that banks and authorities can review.',
+    'tax.cta.body': 'Start with clarity, a plan that turns uncertainty into realty.',
     'tax.cta.button': 'Request a Confidential Consultation',
 
     // Olim & Returning Residents Page
