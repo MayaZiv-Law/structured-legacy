@@ -301,7 +301,7 @@ const translations: Record<Language, Record<string, string>> = {
     'commercial.crossborder.body': 'We manage commercial matters with international components, acting as the local legal arm for for our clients investors and businesses. This structured approach supports clients who reside abroad but maintain active interests in Israel.',
     'commercial.crossborder.body2': 'Whether enforcing a foreign contract in Israel or protecting a local shareholder interest while overseas, we provide practical on the ground representation for civil matters with international dimensions. The practice coordinates Israeli legal requirements with foreign counsel and cross border strategy, supporting clients who reside abroad or maintain legal and financial ties across multiple jurisdictions.',
     'commercial.clients.title': 'Who We Typically Work With',
-    'commercial.clients.body': 'Our commercial practice is focused on contracts, asset protection, and complex disputes. It is best suited for business owners, investors, and executives seeking ongoing legal counsel or strategic resolution for significant matters, rather than administrative small claims.',
+    'commercial.clients.body': 'Our commercial practice focuses on contracts, asset protection, and complex disputes, and serves both businesses and private individuals. We work with business owners, investors, executives, and private clients who require ongoing legal counsel or strategic resolution for significant commercial and civil matters,',
     'commercial.cta.title': 'Protect Your Commercial Interests',
     'commercial.cta.body': 'Start with a contract review or a dispute strategy assessment—confidential and documented.',
     'commercial.cta.button': 'Request a Confidential Consultation',
