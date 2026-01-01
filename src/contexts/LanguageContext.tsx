@@ -25,7 +25,7 @@ const translations: Record<Language, Record<string, string>> = {
     // Hero
     'hero.tagline': 'The Future Favors the Prepared',
     'hero.title': 'Attorney & Notary in Tel Aviv',
-    'hero.subtitle1': 'Cross-Border Legal Matters for International Clients in Israel',
+    'hero.subtitle1': 'Guiding Every Client with Clarity, Insight, and Strategic Confidence',
     'hero.subtitle2': 'Real estate, taxation, and estate planning — delivered with clarity, structure, and financial foresight.',
     'hero.cta': 'Schedule a Consultation',
 
