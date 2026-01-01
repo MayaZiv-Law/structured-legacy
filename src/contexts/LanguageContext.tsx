@@ -48,7 +48,7 @@ const translations: Record<Language, Record<string, string>> = {
     'method.step2.title': 'Tax & Long-Term Structuring',
     'method.step2.desc': 'Early planning to reduce exposure and support compliance.',
     'method.step3.title': 'The Role of Legal Counsel in Cross Border Transactions',
-    'method.step3.desc': 'Matters can be managed from abroad, including structured documentation and cross-border coordination when required.',
+    'method.step3.desc': 'Accurate drafting, regulatory oversight, and coordinated execution ensure secure cross border property transfers and financial transactions for clients residing in Israel or overseas.',
 
     // Practice Areas
     'practice.title': 'Areas of Practice',
