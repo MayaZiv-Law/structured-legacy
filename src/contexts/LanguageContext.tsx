@@ -73,7 +73,7 @@ const translations: Record<Language, Record<string, string>> = {
     'insights.readMore': 'Continue Reading',
     'insights.viewAll': 'View All Insights',
     'insights.article1.title': 'Buying Property in Israel as a Foreign Resident',
-    'insights.article1.snippet': 'Legal, tax, and registration essentials — with due diligence that supports compliant ownership.',
+    'insights.article1.snippet': 'Legal, tax, and registration essentials - with due diligence that supports compliant ownership.',
     'insights.article2.title': 'Wills and Inheritance in Israel for Cross-Border Families',
     'insights.article2.snippet': 'Coordination between jurisdictions to ensure enforceability and reduce conflict and delays.',
     'insights.article3.title': 'Legal Due Diligence Before Buying Property in Israel',
