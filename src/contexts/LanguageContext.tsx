@@ -15,8 +15,10 @@ const translations: Record<Language, Record<string, string>> = {
     'nav.firm': 'The Firm',
     'nav.expertise': 'Expertise',
     'nav.realEstate': 'Real Estate',
-    'nav.taxation': 'International Taxation',
-    'nav.estate': 'Estate Planning',
+    'nav.taxation': 'Tax and Compliance',
+    'nav.estate': 'Family and Legacy',
+    'nav.olim': 'Olim Hadashim and Returning Residents',
+    'nav.commercial': 'Commercial and Civil',
     'nav.insights': 'Insights',
     'nav.globalClients': 'Global Clients',
     'nav.contact': 'Contact',
@@ -252,7 +254,6 @@ const translations: Record<Language, Record<string, string>> = {
     'tax.cta.button': 'Request a Confidential Consultation',
 
     // Olim & Returning Residents Page
-    'nav.olim': 'Olim & Returning Residents',
     'olim.hero.title': 'Legal Counsel for Olim & Returning Residents',
     'olim.hero.subtitle': 'A structured legal framework for your transition to Israel: Tax positioning, property acquisition, and asset integration.',
     'olim.context.title': 'A New Chapter Structured from Day One',
@@ -282,7 +283,6 @@ const translations: Record<Language, Record<string, string>> = {
     'olim.cta.button': 'Request a Confidential Consultation',
 
     // Commercial & Civil Page
-    'nav.commercial': 'Commercial & Civil',
     'commercial.hero.title': 'Commercial & Civil Lawyer in Tel Aviv Contracts and Disputes',
     'commercial.hero.subtitle': 'Protecting business interests through disciplined contracts and Israel based representation for cross border matters.',
     'commercial.philosophy.title': 'Precision Before Disputes',
@@ -311,8 +311,10 @@ const translations: Record<Language, Record<string, string>> = {
     'nav.firm': 'המשרד',
     'nav.expertise': 'תחומי התמחות',
     'nav.realEstate': 'נדל"ן',
-    'nav.taxation': 'מיסוי בינלאומי',
-    'nav.estate': 'ירושות וצוואות',
+    'nav.taxation': 'מיסוי ותאימות',
+    'nav.estate': 'משפחה ומורשת',
+    'nav.olim': 'עולים חדשים ותושבים חוזרים',
+    'nav.commercial': 'מסחרי ואזרחי',
     'nav.insights': 'מאמרים',
     'nav.globalClients': 'לקוחות בינלאומיים',
     'nav.contact': 'צור קשר',
@@ -540,7 +542,6 @@ const translations: Record<Language, Record<string, string>> = {
     'tax.cta.button': 'בקשו ייעוץ חסוי',
 
     // Olim & Returning Residents Page
-    'nav.olim': 'עולים ותושבים חוזרים',
     'olim.hero.title': 'ייעוץ משפטי לעולים ותושבים חוזרים',
     'olim.hero.subtitle': 'מסגרת משפטית מובנית למעבר לישראל: מיצוב מס, רכישת נכס ושילוב נכסים.',
     'olim.context.title': 'פרק חדש — מובנה מהיום הראשון',
@@ -570,7 +571,6 @@ const translations: Record<Language, Record<string, string>> = {
     'olim.cta.button': 'בקשו ייעוץ חסוי',
 
     // Commercial & Civil Page
-    'nav.commercial': 'מסחרי ואזרחי',
     'commercial.hero.title': 'עורך דין מסחרי בתל אביב (חוזים ויישוב סכסוכים)',
     'commercial.hero.subtitle': 'הגנה על אינטרסים עסקיים באמצעות חוזים ממושמעים וייצוג מקומי בישראל לעניינים חוצי גבולות.',
     'commercial.philosophy.title': 'דיוק לפני סכסוכים',
