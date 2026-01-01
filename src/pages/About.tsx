@@ -2,7 +2,7 @@ import { Link } from 'react-router-dom';
 import Layout from '@/components/layout/Layout';
 import { useLanguage } from '@/contexts/LanguageContext';
 import { cn } from '@/lib/utils';
-import { FileCheck, Clock, MessageCircle, ArrowRight, ArrowLeft } from 'lucide-react';
+import { FileCheck, Clock, MessageCircle, ArrowRight, ArrowLeft, Target } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Helmet } from 'react-helmet-async';
 import { useScrollAnimation } from '@/hooks/useScrollAnimation';
@@ -29,6 +29,11 @@ const About = () => {
       icon: MessageCircle,
       titleKey: 'about.expect.comm.title',
       descKey: 'about.expect.comm.desc',
+    },
+    {
+      icon: Target,
+      titleKey: 'about.expect.foresight.title',
+      descKey: 'about.expect.foresight.desc',
     },
   ];
 
