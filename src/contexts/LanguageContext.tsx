@@ -167,7 +167,7 @@ const translations: Record<Language, Record<string, string>> = {
     'estate.process.step4.desc': 'We provide instructions for storage and guidance for your executors on future activation.',
     'estate.process.note': 'Clear scope, defined next steps, and documentation requirements are established from the outset.',
     'estate.tax.title': 'Tax Considerations for Cross Border Estates',
-    'estate.tax.body': "Israel's tax regime regarding inheritance and transfers differs from many Western jurisdictions. Transferring assets whether during your lifetime or after requires careful timing to avoid unnecessary tax events.",
+    'estate.tax.body': "Israel's tax regime regarding inheritance and transfers differs from many western jurisdictions. Transferring assets whether during ones lifetime or after requires careful timing to avoid unnecessary tax events.",
     'estate.tax.body2': 'We flag potential tax touchpoints in Israel and coordinate with relevant advisors where needed. Our goal is to assess the structure of your estate to reduce avoidable exposure and protect the value of the legacy passing to the next generation.',
     'estate.financial.title': 'Complementary Service: Financial Agreements',
     'estate.financial.body': 'For couples with significant assets, we draft bilingual Prenuptial and Postnuptial Agreements. These agreements provide financial clarity and are validated by the relevant court or notary to strengthen enforceability.',
