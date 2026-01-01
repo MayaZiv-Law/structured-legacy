@@ -9,43 +9,44 @@ import { useScrollAnimation } from '@/hooks/useScrollAnimation';
 import PageHero from '@/components/shared/PageHero';
 import olimHeroBg from '@/assets/olim-hero-new.png';
 import taxPositioningImage from '@/assets/tax-positioning-olim.webp';
-
 const OlimResidents = () => {
-  const { t, isRTL, language } = useLanguage();
-
-  const frameworkItems = [
-    { title: t('olim.framework.planning.title'), desc: t('olim.framework.planning.desc'), icon: Clock },
-    { title: t('olim.framework.property.title'), desc: t('olim.framework.property.desc'), icon: Home },
-    { title: t('olim.framework.banking.title'), desc: t('olim.framework.banking.desc'), icon: Building },
-    { title: t('olim.framework.peace.title'), desc: t('olim.framework.peace.desc'), icon: Shield },
-  ];
-
-  const expectItems = [
-    t('olim.expect.item1'),
-    t('olim.expect.item2'),
-    t('olim.expect.item3'),
-  ];
-
+  const {
+    t,
+    isRTL,
+    language
+  } = useLanguage();
+  const frameworkItems = [{
+    title: t('olim.framework.planning.title'),
+    desc: t('olim.framework.planning.desc'),
+    icon: Clock
+  }, {
+    title: t('olim.framework.property.title'),
+    desc: t('olim.framework.property.desc'),
+    icon: Home
+  }, {
+    title: t('olim.framework.banking.title'),
+    desc: t('olim.framework.banking.desc'),
+    icon: Building
+  }, {
+    title: t('olim.framework.peace.title'),
+    desc: t('olim.framework.peace.desc'),
+    icon: Shield
+  }];
+  const expectItems = [t('olim.expect.item1'), t('olim.expect.item2'), t('olim.expect.item3')];
   const contextAnim = useScrollAnimation();
   const frameworkAnim = useScrollAnimation();
   const taxAnim = useScrollAnimation();
   const clientsAnim = useScrollAnimation();
   const expectAnim = useScrollAnimation();
   const ctaAnim = useScrollAnimation();
-
-  return (
-    <Layout>
+  return <Layout>
       <Helmet>
         <title>{language === 'he' ? 'עורך דין לעולים ותושבים חוזרים בתל אביב | מאיה זיו' : 'Legal Counsel for Olim & Returning Residents in Tel Aviv | Maya Ziv Law'}</title>
         <meta name="description" content={language === 'he' ? 'מסגרת משפטית מובנית למעבר לישראל: מיצוב מס, רכישת נכס ושילוב נכסים לעולים ותושבים חוזרים.' : 'A structured legal framework for your transition to Israel: Tax positioning, property acquisition, and asset integration for Olim and Returning Residents.'} />
       </Helmet>
 
       {/* Hero Section */}
-      <PageHero
-        backgroundImage={olimHeroBg}
-        title={t('olim.hero.title')}
-        subtitle={t('olim.hero.subtitle')}
-      />
+      <PageHero backgroundImage={olimHeroBg} title={t('olim.hero.title')} subtitle={t('olim.hero.subtitle')} />
 
       <section className="pt-40 sm:pt-48 pb-16 gradient-stone">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
@@ -63,13 +64,13 @@ const OlimResidents = () => {
             <h2 className="text-2xl sm:text-3xl font-display font-semibold mb-6">{t('olim.framework.title')}</h2>
           </div>
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-6xl mx-auto">
-            {frameworkItems.map((item, i) => (
-              <div key={i} className={cn("p-6 bg-card rounded-lg border border-border transition-all duration-500", isRTL && "font-hebrew text-right", frameworkAnim.isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8")} style={{ transitionDelay: frameworkAnim.isVisible ? `${i * 150}ms` : '0ms' }}>
+            {frameworkItems.map((item, i) => <div key={i} className={cn("p-6 bg-card rounded-lg border border-border transition-all duration-500", isRTL && "font-hebrew text-right", frameworkAnim.isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8")} style={{
+            transitionDelay: frameworkAnim.isVisible ? `${i * 150}ms` : '0ms'
+          }}>
                 <item.icon className="h-6 w-6 text-accent mb-4" />
                 <h3 className="font-medium mb-2">{item.title}</h3>
                 <p className="text-sm text-muted-foreground">{item.desc}</p>
-              </div>
-            ))}
+              </div>)}
           </div>
         </div>
       </section>
@@ -86,7 +87,7 @@ const OlimResidents = () => {
               </div>
               <div className={cn("relative", isRTL ? "lg:order-first" : "")}>
                 <div className="aspect-[3/4] max-w-sm mx-auto lg:mx-0 overflow-hidden rounded-sm shadow-premium">
-                  <img src={taxPositioningImage} alt={language === 'he' ? 'תכנון מס לעולים' : 'Tax positioning for Olim'} className="w-full h-full object-cover" />
+                  <img alt={language === 'he' ? 'תכנון מס לעולים' : 'Tax positioning for Olim'} className="w-full h-full object-cover" src="/lovable-uploads/8883ef4e-474d-45c3-bf10-74ce4eabdba0.png" />
                 </div>
               </div>
             </div>
@@ -109,12 +110,12 @@ const OlimResidents = () => {
             <h2 className="text-2xl sm:text-3xl font-display font-semibold mb-6">{t('olim.expect.title')}</h2>
             <p className="text-muted-foreground mb-6 leading-relaxed">{t('olim.expect.body')}</p>
             <ul className="space-y-3">
-              {expectItems.map((item, i) => (
-                <li key={i} className={cn("flex items-start gap-3 transition-all duration-500", expectAnim.isVisible ? "opacity-100 translate-x-0" : "opacity-0 -translate-x-4")} style={{ transitionDelay: expectAnim.isVisible ? `${i * 100}ms` : '0ms' }}>
+              {expectItems.map((item, i) => <li key={i} className={cn("flex items-start gap-3 transition-all duration-500", expectAnim.isVisible ? "opacity-100 translate-x-0" : "opacity-0 -translate-x-4")} style={{
+              transitionDelay: expectAnim.isVisible ? `${i * 100}ms` : '0ms'
+            }}>
                   <CheckCircle className="h-5 w-5 text-accent flex-shrink-0 mt-0.5" />
                   <span className="text-muted-foreground">{item}</span>
-                </li>
-              ))}
+                </li>)}
             </ul>
           </div>
         </div>
@@ -133,8 +134,6 @@ const OlimResidents = () => {
           </Button>
         </div>
       </section>
-    </Layout>
-  );
+    </Layout>;
 };
-
 export default OlimResidents;
