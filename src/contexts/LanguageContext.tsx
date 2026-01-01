@@ -81,7 +81,7 @@ const translations: Record<Language, Record<string, string>> = {
 
     // CTA
     'cta.title': 'Your Interests Deserve Personal Attention',
-    'cta.subtitle': 'Each inquiry is handled with confidentiality, structured guidance, and precise legal strategy — whether you are based in Israel or abroad.',
+    'cta.subtitle': 'Each client, each decision, and each detail receives dedicated care and thoughtful attention.',
     'cta.button': 'Send a Confidential Inquiry',
 
     // Footer
@@ -367,7 +367,7 @@ const translations: Record<Language, Record<string, string>> = {
 
     // CTA
     'cta.title': 'האינטרסים שלכם ראויים לתשומת לב אישית',
-    'cta.subtitle': 'כל פנייה מטופלת בסודיות, הכוונה מובנית ואסטרטגיה משפטית מדויקת — בין אם אתם בישראל או בחו"ל.',
+    'cta.subtitle': 'כל לקוח, כל החלטה וכל פרט מקבלים טיפול מסור ותשומת לב מחושבת.',
     'cta.button': 'שלחו פנייה חסויה',
 
     // Footer
