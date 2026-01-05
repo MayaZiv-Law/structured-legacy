@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { Menu, X, ChevronDown } from 'lucide-react';
 import logo from '@/assets/logo.png';
@@ -15,8 +15,20 @@ import { cn } from '@/lib/utils';
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isExpertiseOpen, setIsExpertiseOpen] = useState(false);
+  const [isScrolled, setIsScrolled] = useState(false);
   const { language, setLanguage, t, isRTL } = useLanguage();
   const location = useLocation();
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setIsScrolled(window.scrollY > 10);
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    handleScroll(); // Check initial scroll position
+    
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
 
   const isActive = (path: string) => location.pathname === path;
 
@@ -27,7 +39,12 @@ const Header = () => {
     );
 
   return (
-    <header className="fixed top-0 left-0 right-0 z-50 bg-background/95 backdrop-blur-sm border-b border-border">
+    <header className={cn(
+      "fixed top-0 left-0 right-0 z-50 transition-all duration-300",
+      isScrolled 
+        ? "bg-background/80 backdrop-blur-md border-b border-border/50 shadow-sm" 
+        : "bg-transparent border-b border-transparent"
+    )}>
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-20">
           {/* Logo */}
