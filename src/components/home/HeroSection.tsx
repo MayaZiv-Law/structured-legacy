@@ -10,10 +10,10 @@ const HeroSection = () => {
     isRTL
   } = useLanguage();
   const Arrow = isRTL ? ArrowLeft : ArrowRight;
-  return <section className="relative min-h-[90vh] flex flex-col overflow-visible">
-      {/* Full Background Image - No overlay, sharp and sparkling */}
+  return <section className="relative -mt-20 pt-20 min-h-[90vh] flex flex-col overflow-visible">
+      {/* Full Background Image */}
       <div className="absolute inset-0 z-0">
-        <img src={heroImage} alt="" className="w-full h-full object-cover" />
+        <img src={heroImage} alt="Tel Aviv skyline and coastline at dusk" className="w-full h-full object-cover" />
       </div>
 
       {/* Spacer to push content box to bottom */}

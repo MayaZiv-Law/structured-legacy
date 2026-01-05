@@ -21,12 +21,13 @@ const Header = () => {
 
   useEffect(() => {
     const handleScroll = () => {
-      setIsScrolled(window.scrollY > 10);
+      // keep header fully transparent until a meaningful scroll
+      setIsScrolled(window.scrollY > 64);
     };
 
-    window.addEventListener('scroll', handleScroll);
-    handleScroll(); // Check initial scroll position
-    
+    window.addEventListener('scroll', handleScroll, { passive: true });
+    handleScroll();
+
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
@@ -35,18 +36,23 @@ const Header = () => {
   const navLinkClass = (path: string) =>
     cn(
       'text-sm font-medium transition-colors',
-      isScrolled 
+      isScrolled
         ? cn('hover:text-accent', isActive(path) ? 'text-accent' : 'text-foreground/80')
-        : cn('hover:text-white/80', isActive(path) ? 'text-white' : 'text-white/90')
+        : cn(
+            'hover:text-primary-foreground/80',
+            isActive(path) ? 'text-primary-foreground' : 'text-primary-foreground/90'
+          )
     );
 
   return (
-    <header className={cn(
-      "fixed top-0 left-0 right-0 z-50 transition-all duration-500",
-      isScrolled 
-        ? "bg-white/70 backdrop-blur-xl border-b border-white/20 shadow-lg" 
-        : "bg-transparent"
-    )}>
+    <header
+      className={cn(
+        "fixed top-0 left-0 right-0 z-50 transition-all duration-500",
+        isScrolled
+          ? "bg-card/75 backdrop-blur-xl border-b border-border/60 shadow-premium"
+          : "bg-transparent backdrop-blur-none border-b border-transparent shadow-none"
+      )}
+    >
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-20">
           {/* Logo */}
@@ -65,12 +71,28 @@ const Header = () => {
             </Link>
 
             <DropdownMenu>
-              <DropdownMenuTrigger className={cn(
-                "flex items-center gap-1 text-sm font-medium transition-colors",
-                isScrolled
-                  ? cn('hover:text-accent', ['/real-estate', '/taxation', '/estate-planning', '/olim-residents', '/commercial'].some(p => isActive(p)) ? 'text-accent' : 'text-foreground/80')
-                  : cn('hover:text-white/80', ['/real-estate', '/taxation', '/estate-planning', '/olim-residents', '/commercial'].some(p => isActive(p)) ? 'text-white' : 'text-white/90')
-              )}>
+              <DropdownMenuTrigger
+                className={cn(
+                  "flex items-center gap-1 text-sm font-medium transition-colors",
+                  isScrolled
+                    ? cn(
+                        'hover:text-accent',
+                        ['/real-estate', '/taxation', '/estate-planning', '/olim-residents', '/commercial'].some(p =>
+                          isActive(p)
+                        )
+                          ? 'text-accent'
+                          : 'text-foreground/80'
+                      )
+                    : cn(
+                        'hover:text-primary-foreground/80',
+                        ['/real-estate', '/taxation', '/estate-planning', '/olim-residents', '/commercial'].some(p =>
+                          isActive(p)
+                        )
+                          ? 'text-primary-foreground'
+                          : 'text-primary-foreground/90'
+                      )
+                )}
+              >
                 {t('nav.expertise')}
                 <ChevronDown className="h-4 w-4" />
               </DropdownMenuTrigger>
@@ -119,22 +141,29 @@ const Header = () => {
               onClick={() => setLanguage(language === 'en' ? 'he' : 'en')}
               className={cn(
                 "text-sm font-medium transition-colors px-3 py-1.5 rounded border",
-                isScrolled 
+                isScrolled
                   ? "text-foreground/70 hover:text-foreground border-border hover:border-accent"
-                  : "text-white/90 hover:text-white border-white/30 hover:border-white/50"
+                  : "text-primary-foreground/90 hover:text-primary-foreground border-primary-foreground/30 hover:border-primary-foreground/50"
               )}
             >
               {language === 'en' ? 'עב' : 'EN'}
             </button>
 
-            <Button asChild variant="default" className="bg-primary hover:bg-primary/90">
+            <Button
+              asChild
+              variant={isScrolled ? "default" : "outline"}
+              className={cn(
+                !isScrolled &&
+                  "!bg-transparent !text-primary-foreground border-primary-foreground/40 hover:bg-primary-foreground/10 hover:text-primary-foreground"
+              )}
+            >
               <Link to="/contact">{t('nav.schedule')}</Link>
             </Button>
           </div>
 
           {/* Mobile Menu Button */}
           <button
-            className={cn("lg:hidden p-2", isScrolled ? "text-foreground" : "text-white")}
+            className={cn("lg:hidden p-2", isScrolled ? "text-foreground" : "text-primary-foreground")}
             onClick={() => setIsMenuOpen(!isMenuOpen)}
             aria-label="Toggle menu"
           >
