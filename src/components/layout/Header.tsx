@@ -34,8 +34,10 @@ const Header = () => {
 
   const navLinkClass = (path: string) =>
     cn(
-      'text-sm font-medium transition-colors hover:text-accent',
-      isActive(path) ? 'text-accent' : 'text-foreground/80'
+      'text-sm font-medium transition-colors',
+      isScrolled 
+        ? cn('hover:text-accent', isActive(path) ? 'text-accent' : 'text-foreground/80')
+        : cn('hover:text-white/80', isActive(path) ? 'text-white' : 'text-white/90')
     );
 
   return (
@@ -64,10 +66,10 @@ const Header = () => {
 
             <DropdownMenu>
               <DropdownMenuTrigger className={cn(
-                "flex items-center gap-1 text-sm font-medium transition-colors hover:text-accent",
-                ['/real-estate', '/taxation', '/estate-planning', '/olim-residents', '/commercial'].some(p => isActive(p))
-                  ? 'text-accent'
-                  : 'text-foreground/80'
+                "flex items-center gap-1 text-sm font-medium transition-colors",
+                isScrolled
+                  ? cn('hover:text-accent', ['/real-estate', '/taxation', '/estate-planning', '/olim-residents', '/commercial'].some(p => isActive(p)) ? 'text-accent' : 'text-foreground/80')
+                  : cn('hover:text-white/80', ['/real-estate', '/taxation', '/estate-planning', '/olim-residents', '/commercial'].some(p => isActive(p)) ? 'text-white' : 'text-white/90')
               )}>
                 {t('nav.expertise')}
                 <ChevronDown className="h-4 w-4" />
@@ -115,7 +117,12 @@ const Header = () => {
             {/* Language Toggle */}
             <button
               onClick={() => setLanguage(language === 'en' ? 'he' : 'en')}
-              className="text-sm font-medium text-foreground/70 hover:text-foreground transition-colors px-3 py-1.5 rounded border border-border hover:border-accent"
+              className={cn(
+                "text-sm font-medium transition-colors px-3 py-1.5 rounded border",
+                isScrolled 
+                  ? "text-foreground/70 hover:text-foreground border-border hover:border-accent"
+                  : "text-white/90 hover:text-white border-white/30 hover:border-white/50"
+              )}
             >
               {language === 'en' ? 'עב' : 'EN'}
             </button>
@@ -127,7 +134,7 @@ const Header = () => {
 
           {/* Mobile Menu Button */}
           <button
-            className="lg:hidden p-2"
+            className={cn("lg:hidden p-2", isScrolled ? "text-foreground" : "text-white")}
             onClick={() => setIsMenuOpen(!isMenuOpen)}
             aria-label="Toggle menu"
           >
