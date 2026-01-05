@@ -41,9 +41,7 @@ const HeroSection = () => {
             </p>
 
             {/* Sub-headline Line 2 - The Promise */}
-            <p className={cn("text-base sm:text-lg text-primary-foreground/70 leading-relaxed mb-8", isRTL && "font-hebrew")}>
-              {t('hero.subtitle2')}
-            </p>
+            
 
           </div>
         </div>
