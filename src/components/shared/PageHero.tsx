@@ -8,13 +8,15 @@ interface PageHeroProps {
   subtitle?: string;
   icon?: ReactNode;
   iconLabel?: string;
+  imagePosition?: string;
 }
 const PageHero = ({
   backgroundImage,
   title,
   subtitle,
   icon,
-  iconLabel
+  iconLabel,
+  imagePosition = 'center'
 }: PageHeroProps) => {
   const {
     isRTL
@@ -23,7 +25,7 @@ const PageHero = ({
   return <section className="relative min-h-[60vh] sm:min-h-[65vh] flex flex-col overflow-visible">
       {/* Full Background Image - No overlay, sharp and sparkling */}
       <div className="absolute inset-0 z-0">
-        <img src={backgroundImage} alt="" className="w-full h-full object-cover" />
+        <img src={backgroundImage} alt="" className="w-full h-full object-cover" style={{ objectPosition: imagePosition }} />
       </div>
 
       {/* Spacer to push content box to bottom */}
