@@ -504,7 +504,7 @@ const translations: Record<Language, Record<string, string>> = {
     'realestate.cta.button': 'לתיאום פגישת ייעוץ',
 
     // Taxation Page
-    'tax.hero.title': '',
+    'tax.hero.title': 'מיסוי ותאימות',
     'tax.hero.subtitle': '',
     'tax.context.title': 'עדשה פיננסית על אסטרטגיה משפטית',
     'tax.context.body': 'כיום, מס ותאימות קובעים האם עסקאות מאושרות, ממומנות ומושלמות. בין אם רוכשים נכס או מעבירים כספים, כל עסקה נושאת השלכות בישראל ואולי גם בחו"ל.',
