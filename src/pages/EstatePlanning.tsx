@@ -9,7 +9,7 @@ import { Helmet } from 'react-helmet-async';
 import { useScrollAnimation } from '@/hooks/useScrollAnimation';
 import PageHero from '@/components/shared/PageHero';
 import epaImage from '@/assets/epa-section-image.webp';
-import estateHeroBg from '@/assets/estate-hero-bg.webp';
+import estateHeroBg from '@/assets/estate-hero-new.png';
 const EstatePlanning = () => {
   const {
     t,
