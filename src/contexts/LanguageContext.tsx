@@ -283,7 +283,7 @@ const translations: Record<Language, Record<string, string>> = {
     'olim.cta.button': 'Request a Confidential Consultation',
 
     // Commercial & Civil Page
-    'commercial.hero.title': 'Commercial & Civil Lawyer in Tel Aviv Contracts and Disputes',
+    'commercial.hero.title': 'Contractual and Business Disputes',
     'commercial.hero.subtitle': 'Protecting business interests through disciplined contracts and Israel based representation for cross border matters.',
     'commercial.philosophy.title': 'Precision Before Disputes',
     'commercial.philosophy.body': 'In commercial engagements, the strength of your position depends on the precision of your contracts. Whether drafting a partnership agreement or negotiating an exit, we evaluate each matter through three lenses: contractual rights, financial exposure, and future enforcement.',
