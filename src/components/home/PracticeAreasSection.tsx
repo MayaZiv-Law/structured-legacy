@@ -5,7 +5,7 @@ import { cn } from '@/lib/utils';
 // Import hero images
 import realEstateHero from '@/assets/real-estate-hero-bg.webp';
 import taxationHero from '@/assets/taxation-hero-bg.webp';
-import estateHero from '@/assets/estate-hero-new.png';
+import estateHero from '@/assets/estate-hero-new.webp';
 import olimHero from '@/assets/olim-hero-welcome.png';
 import commercialHero from '@/assets/commercial-hero-new.jpg';
 const PracticeAreasSection = () => {
