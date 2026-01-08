@@ -46,7 +46,7 @@ const OlimResidents = () => {
       </Helmet>
 
       {/* Hero Section */}
-      <PageHero backgroundImage={olimHeroBg} title={t('olim.hero.title')} subtitle={t('olim.hero.subtitle')} />
+      <PageHero backgroundImage={olimHeroBg} title={t('olim.hero.title')} />
 
       <section className="pt-40 sm:pt-48 pb-16 gradient-stone">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">

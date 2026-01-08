@@ -64,7 +64,7 @@ const Taxation = () => {
       </Helmet>
 
       {/* Hero Section */}
-      <PageHero backgroundImage={taxationHeroBg} title={t('tax.hero.title')} subtitle={t('tax.hero.subtitle')} />
+      <PageHero backgroundImage={taxationHeroBg} title={t('tax.hero.title')} />
 
       {/* The Context Section */}
       <section className="pt-40 sm:pt-48 pb-16 gradient-stone">

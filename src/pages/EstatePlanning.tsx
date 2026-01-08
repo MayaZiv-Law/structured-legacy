@@ -70,7 +70,7 @@ const EstatePlanning = () => {
       </Helmet>
 
       {/* Hero Section */}
-      <PageHero backgroundImage={estateHeroBg} title={t('estate.hero.title')} subtitle={t('estate.hero.subtitle')} />
+      <PageHero backgroundImage={estateHeroBg} title={t('estate.hero.title')} />
 
       {/* The Challenge Section */}
       <section className="pt-40 sm:pt-48 pb-16 gradient-stone">
