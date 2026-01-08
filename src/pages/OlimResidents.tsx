@@ -7,7 +7,7 @@ import { Link } from 'react-router-dom';
 import { Helmet } from 'react-helmet-async';
 import { useScrollAnimation } from '@/hooks/useScrollAnimation';
 import PageHero from '@/components/shared/PageHero';
-import olimHeroBg from '@/assets/olim-hero-new.png';
+import olimHeroBg from '@/assets/olim-hero-welcome.png';
 import taxPositioningImage from '@/assets/tax-positioning-olim.webp';
 const OlimResidents = () => {
   const {
