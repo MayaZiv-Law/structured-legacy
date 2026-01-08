@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { Menu, X, ChevronDown } from 'lucide-react';
 import logo from '@/assets/logo.png';
@@ -15,21 +15,8 @@ import { cn } from '@/lib/utils';
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isExpertiseOpen, setIsExpertiseOpen] = useState(false);
-  const [isScrolled, setIsScrolled] = useState(false);
   const { language, setLanguage, t, isRTL } = useLanguage();
   const location = useLocation();
-
-  useEffect(() => {
-    const handleScroll = () => {
-      // keep header fully transparent until a meaningful scroll
-      setIsScrolled(window.scrollY > 64);
-    };
-
-    window.addEventListener('scroll', handleScroll, { passive: true });
-    handleScroll();
-
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
 
   const isActive = (path: string) => location.pathname === path;
 
