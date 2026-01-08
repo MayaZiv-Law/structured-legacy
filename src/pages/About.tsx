@@ -4,11 +4,11 @@ import { useLanguage } from '@/contexts/LanguageContext';
 import { cn } from '@/lib/utils';
 import { FileCheck, Clock, MessageCircle, ArrowRight, ArrowLeft, Target } from 'lucide-react';
 import { Button } from '@/components/ui/button';
-import { Helmet } from 'react-helmet-async';
 import { useScrollAnimation } from '@/hooks/useScrollAnimation';
 import PageHero from '@/components/shared/PageHero';
 import mayaPortrait from '@/assets/maya-portrait.webp';
 import aboutHeroBg from '@/assets/about-hero-bg.png';
+import { SEO, attorneySchema } from '@/components/SEO';
 
 const About = () => {
   const { t, isRTL, language } = useLanguage();
@@ -46,13 +46,14 @@ const About = () => {
 
   return (
     <Layout>
-      <Helmet>
-        <title>{language === 'he' ? 'אודות משרד מאיה זיו | עורכת דין ונוטריון בתל אביב' : 'About Maya Ziv Law | Attorney & Notary in Tel Aviv'}</title>
-        <meta name="description" content={language === 'he' 
-          ? 'משרד מאיה זיו משלב מומחיות משפטית עם משמעת פיננסית. ייצוג לקוחות בינלאומיים בישראל עם בהירות, מבניות וראייה חוצת גבולות.'
-          : 'Maya Ziv Law combines legal expertise with financial discipline. Representing international clients in Israel with clarity, structure, and cross-border foresight.'
-        } />
-      </Helmet>
+      <SEO
+        titleEn="About Maya Ziv Law | Attorney & Notary in Tel Aviv"
+        titleHe="אודות משרד מאיה זיו | עורכת דין ונוטריון בתל אביב"
+        descriptionEn="Maya Ziv Law combines legal expertise with financial discipline. Representing international clients in Israel with clarity, structure, and cross-border foresight."
+        descriptionHe="משרד מאיה זיו משלב מומחיות משפטית עם משמעת פיננסית. ייצוג לקוחות בינלאומיים בישראל עם בהירות, מבניות וראייה חוצת גבולות."
+        path="/about"
+        schema={attorneySchema}
+      />
 
       {/* Hero Section */}
       <PageHero

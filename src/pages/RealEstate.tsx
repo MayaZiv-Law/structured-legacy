@@ -5,12 +5,13 @@ import { cn } from '@/lib/utils';
 import { Building2, AlertTriangle, Globe, ArrowRight, ArrowLeft } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/components/ui/accordion';
-import { Helmet } from 'react-helmet-async';
 import { useScrollAnimation } from '@/hooks/useScrollAnimation';
 import PageHero from '@/components/shared/PageHero';
 import dueDiligenceImage from '@/assets/real-estate-due-diligence.webp';
 import remoteTransactionImage from '@/assets/remote-transaction.webp';
 import realEstateHeroBg from '@/assets/real-estate-hero-bg.webp';
+import { SEO, createServiceSchema } from '@/components/SEO';
+
 const RealEstate = () => {
   const {
     t,
@@ -47,12 +48,21 @@ const RealEstate = () => {
   const remoteAnim = useScrollAnimation();
   const faqAnim = useScrollAnimation();
   const ctaAnim = useScrollAnimation();
-  return <Layout>
-      <Helmet>
-        <title>{language === 'he' ? 'עורכת דין נדל"ן בתל אביב | רכישת נכס בישראל' : 'Real Estate Lawyer in Tel Aviv | Buying Property in Israel (Tax & Due Diligence)'}</title>
-        <meta name="description" content={language === 'he' ? 'ייעוץ משפטי לרכישת נכס בישראל. בדיקת נאותות, תכנון מס רכישה וייצוג מרחוק לתושבי חוץ ומשקיעים.' : 'Legal counsel for buying property in Israel. Due diligence, purchase tax planning, and remote representation for foreign residents and investors.'} />
-      </Helmet>
+  const realEstateSchema = createServiceSchema({
+    name: 'Real Estate Legal Services',
+    description: 'Legal counsel for buying property in Israel. Due diligence, purchase tax planning, and remote representation for foreign residents and investors.',
+    url: 'https://mayaziv.law/real-estate',
+  });
 
+  return <Layout>
+      <SEO
+        titleEn="Real Estate Lawyer in Tel Aviv | Buying Property in Israel"
+        titleHe="עורכת דין נדל״ן בתל אביב | רכישת נכס בישראל"
+        descriptionEn="Legal counsel for buying property in Israel. Due diligence, purchase tax planning, and remote representation for foreign residents and investors."
+        descriptionHe="ייעוץ משפטי לרכישת נכס בישראל. בדיקת נאותות, תכנון מס רכישה וייצוג מרחוק לתושבי חוץ ומשקיעים."
+        path="/real-estate"
+        schema={realEstateSchema}
+      />
       {/* Hero Section */}
       <PageHero backgroundImage={realEstateHeroBg} title={t('realestate.hero.title')} />
 

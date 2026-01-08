@@ -1,4 +1,4 @@
-import { ReactNode } from 'react';
+import { ReactNode, useEffect } from 'react';
 import Header from './Header';
 import Footer from './Footer';
 import { useLanguage } from '@/contexts/LanguageContext';
@@ -9,7 +9,13 @@ interface LayoutProps {
 }
 
 const Layout = ({ children }: LayoutProps) => {
-  const { isRTL } = useLanguage();
+  const { isRTL, language } = useLanguage();
+
+  // Update HTML lang and dir attributes dynamically
+  useEffect(() => {
+    document.documentElement.lang = language;
+    document.documentElement.dir = isRTL ? 'rtl' : 'ltr';
+  }, [language, isRTL]);
 
   return (
     <div className={cn("min-h-screen flex flex-col", isRTL && "font-hebrew")}>

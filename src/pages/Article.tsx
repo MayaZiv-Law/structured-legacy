@@ -5,6 +5,7 @@ import { cn } from '@/lib/utils';
 import { Calendar, ArrowLeft, Clock, User, Loader2 } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { useArticle } from '@/hooks/useArticles';
+import { SEO, createArticleSchema } from '@/components/SEO';
 
 const Article = () => {
   const { slug } = useParams<{ slug: string }>();
@@ -130,8 +131,31 @@ const Article = () => {
   const author = language === 'he' ? article.author_he : article.author_en;
   const readTime = language === 'he' ? article.read_time_he : article.read_time_en;
 
+  const articleSchema = createArticleSchema({
+    title,
+    description: excerpt,
+    image: article.image_url || undefined,
+    publishedTime: article.published_at || article.created_at,
+    author,
+    url: `https://mayaziv.law/insights/${article.slug}`,
+  });
+
   return (
     <Layout>
+      <SEO
+        titleEn={`${article.title_en} | Maya Ziv Law`}
+        titleHe={`${article.title_he} | משרד מאיה זיו`}
+        descriptionEn={article.excerpt_en}
+        descriptionHe={article.excerpt_he}
+        path={`/insights/${article.slug}`}
+        image={article.image_url || undefined}
+        type="article"
+        article={{
+          publishedTime: article.published_at || article.created_at,
+          author,
+        }}
+        schema={articleSchema}
+      />
       {/* Hero Section */}
       <section className="pt-32 pb-12 bg-background">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">

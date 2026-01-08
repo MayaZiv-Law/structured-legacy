@@ -4,11 +4,12 @@ import { cn } from '@/lib/utils';
 import { Users, FileCheck, Home, Building, Clock, CheckCircle, ArrowRight, Shield } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Link } from 'react-router-dom';
-import { Helmet } from 'react-helmet-async';
 import { useScrollAnimation } from '@/hooks/useScrollAnimation';
 import PageHero from '@/components/shared/PageHero';
 import olimHeroBg from '@/assets/olim-hero-welcome.png';
 import taxPositioningImage from '@/assets/tax-positioning-olim.webp';
+import { SEO, createServiceSchema } from '@/components/SEO';
+
 const OlimResidents = () => {
   const {
     t,
@@ -39,12 +40,21 @@ const OlimResidents = () => {
   const clientsAnim = useScrollAnimation();
   const expectAnim = useScrollAnimation();
   const ctaAnim = useScrollAnimation();
-  return <Layout>
-      <Helmet>
-        <title>{language === 'he' ? 'עורך דין לעולים ותושבים חוזרים בתל אביב | מאיה זיו' : 'Legal Counsel for Olim & Returning Residents in Tel Aviv | Maya Ziv Law'}</title>
-        <meta name="description" content={language === 'he' ? 'מסגרת משפטית מובנית למעבר לישראל: מיצוב מס, רכישת נכס ושילוב נכסים לעולים ותושבים חוזרים.' : 'A structured legal framework for your transition to Israel: Tax positioning, property acquisition, and asset integration for Olim and Returning Residents.'} />
-      </Helmet>
+  const olimSchema = createServiceSchema({
+    name: 'Legal Services for Olim & Returning Residents',
+    description: 'A structured legal framework for your transition to Israel: Tax positioning, property acquisition, and asset integration for Olim and Returning Residents.',
+    url: 'https://mayaziv.law/olim-returning-residents',
+  });
 
+  return <Layout>
+      <SEO
+        titleEn="Legal Counsel for Olim & Returning Residents | Tel Aviv"
+        titleHe="עורך דין לעולים ותושבים חוזרים בתל אביב"
+        descriptionEn="A structured legal framework for your transition to Israel: Tax positioning, property acquisition, and asset integration for Olim and Returning Residents."
+        descriptionHe="מסגרת משפטית מובנית למעבר לישראל: מיצוב מס, רכישת נכס ושילוב נכסים לעולים ותושבים חוזרים."
+        path="/olim-returning-residents"
+        schema={olimSchema}
+      />
       {/* Hero Section */}
       <PageHero backgroundImage={olimHeroBg} title={t('olim.hero.title')} />
 
