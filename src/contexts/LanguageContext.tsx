@@ -571,7 +571,7 @@ const translations: Record<Language, Record<string, string>> = {
     'olim.cta.button': 'בקשו ייעוץ חסוי',
 
     // Commercial & Civil Page
-    'commercial.hero.title': 'עורך דין מסחרי בתל אביב (חוזים ויישוב סכסוכים)',
+    'commercial.hero.title': 'סכסוכים חוזיים ועסקיים',
     'commercial.hero.subtitle': 'הגנה על אינטרסים עסקיים באמצעות חוזים ממושמעים וייצוג מקומי בישראל לעניינים חוצי גבולות.',
     'commercial.philosophy.title': 'דיוק לפני סכסוכים',
     'commercial.philosophy.body': 'בהתקשרויות מסחריות, חוזק העמדה שלכם תלוי בדיוק החוזים שלכם. בין אם מנסחים הסכם שותפות או מנהלים משא ומתן על יציאה, אנחנו מעריכים כל עניין דרך שלושה עדשות: זכויות חוזיות, חשיפה פיננסית ואכיפה עתידית.',
