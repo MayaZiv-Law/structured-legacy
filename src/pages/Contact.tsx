@@ -10,6 +10,7 @@ import { useToast } from '@/hooks/use-toast';
 import { supabase } from '@/integrations/supabase/client';
 import { Mail, Phone, MapPin } from 'lucide-react';
 import { useScrollAnimation } from '@/hooks/useScrollAnimation';
+import { SEO } from '@/components/SEO';
 
 const Contact = () => {
   const { t, isRTL, language } = useLanguage();
@@ -44,6 +45,13 @@ const Contact = () => {
 
   return (
     <Layout>
+      <SEO
+        titleEn="Contact Maya Ziv Law | Schedule a Consultation"
+        titleHe="צור קשר | משרד מאיה זיו עו״ד"
+        descriptionEn="Contact Maya Ziv Law for legal consultation on real estate, taxation, estate planning, and cross-border matters in Israel."
+        descriptionHe="צרו קשר עם משרד מאיה זיו לייעוץ משפטי בנדל״ן, מיסוי, תכנון עיזבון ועסקאות בינלאומיות בישראל."
+        path="/contact"
+      />
       <section className="pt-32 pb-16 bg-background">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div ref={heroAnim.ref} className={cn("max-w-4xl transition-all duration-700", isRTL && "font-hebrew text-right mr-auto", heroAnim.isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8")}>

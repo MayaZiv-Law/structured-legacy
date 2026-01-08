@@ -5,10 +5,11 @@ import { CheckCircle, Building2, FileText, ShieldCheck, Footprints } from 'lucid
 import { Button } from '@/components/ui/button';
 import { Link } from 'react-router-dom';
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/components/ui/accordion';
-import { Helmet } from 'react-helmet-async';
 import { useScrollAnimation } from '@/hooks/useScrollAnimation';
 import PageHero from '@/components/shared/PageHero';
 import taxationHeroBg from '@/assets/taxation-hero-bg.webp';
+import { SEO, createServiceSchema } from '@/components/SEO';
+
 const Taxation = () => {
   const {
     t,
@@ -57,12 +58,21 @@ const Taxation = () => {
   const olimAnim = useScrollAnimation();
   const faqAnim = useScrollAnimation();
   const ctaAnim = useScrollAnimation();
-  return <Layout>
-      <Helmet>
-        <title>{language === 'he' ? 'מיסוי ורגולציה בנקאית בישראל | תל אביב (חוצה גבולות ונדל"ן)' : 'Israeli Tax & Banking Compliance | Tel Aviv (Cross-Border & Real Estate)'}</title>
-        <meta name="description" content={language === 'he' ? 'ייעוץ משפטי למיסוי ורגולציה בנקאית בישראל. תכנון מס רכישה, תאימות מקור כספים והלבנת הון, ותיאום חוצה גבולות.' : 'Legal counsel for Israeli taxation and banking regulation. Purchase tax planning, source of funds compliance (AML), and cross-border alignment.'} />
-      </Helmet>
+  const taxationSchema = createServiceSchema({
+    name: 'Taxation & Compliance Legal Services',
+    description: 'Legal counsel for Israeli taxation and banking regulation. Purchase tax planning, source of funds compliance (AML), and cross-border alignment.',
+    url: 'https://mayaziv.law/taxation',
+  });
 
+  return <Layout>
+      <SEO
+        titleEn="Israeli Tax & Banking Compliance | Tel Aviv"
+        titleHe="מיסוי ורגולציה בנקאית בישראל | תל אביב"
+        descriptionEn="Legal counsel for Israeli taxation and banking regulation. Purchase tax planning, source of funds compliance (AML), and cross-border alignment."
+        descriptionHe="ייעוץ משפטי למיסוי ורגולציה בנקאית בישראל. תכנון מס רכישה, תאימות מקור כספים והלבנת הון, ותיאום חוצה גבולות."
+        path="/taxation"
+        schema={taxationSchema}
+      />
       {/* Hero Section */}
       <PageHero backgroundImage={taxationHeroBg} title={t('tax.hero.title')} />
 

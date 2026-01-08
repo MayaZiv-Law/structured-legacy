@@ -6,6 +6,7 @@ import { Calendar, ArrowRight, Loader2 } from 'lucide-react';
 import CTASection from '@/components/home/CTASection';
 import { useScrollAnimation } from '@/hooks/useScrollAnimation';
 import { useArticles } from '@/hooks/useArticles';
+import { SEO } from '@/components/SEO';
 
 const Insights = () => {
   const { t, isRTL, language } = useLanguage();
@@ -17,6 +18,13 @@ const Insights = () => {
 
   return (
     <Layout>
+      <SEO
+        titleEn="Legal Insights & Articles | Maya Ziv Law"
+        titleHe="תובנות משפטיות ומאמרים | משרד מאיה זיו"
+        descriptionEn="Practical guidance on Israeli real estate, cross-border taxation, compliance, and legacy planning from Maya Ziv Law."
+        descriptionHe="הנחיות מעשיות בנושאי נדל״ן בישראל, מיסוי חוצה גבולות, ציות ותכנון מורשת ממשרד מאיה זיו."
+        path="/insights"
+      />
       <section className="pt-32 pb-20 bg-background">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div 

@@ -4,11 +4,11 @@ import { cn } from '@/lib/utils';
 import { Briefcase, FileText, Shield, Scale, Globe, Users, ArrowRight } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Link } from 'react-router-dom';
-import { Helmet } from 'react-helmet-async';
 import { useScrollAnimation } from '@/hooks/useScrollAnimation';
 import PageHero from '@/components/shared/PageHero';
 import commercialHeroBg from '@/assets/commercial-hero-new.jpg';
 import crossBorderImage from '@/assets/cross-border-business.webp';
+import { SEO, createServiceSchema } from '@/components/SEO';
 
 const Commercial = () => {
   const { t, isRTL, language } = useLanguage();
@@ -42,17 +42,21 @@ const Commercial = () => {
   const clientsAnim = useScrollAnimation();
   const ctaAnim = useScrollAnimation();
 
+  const commercialSchema = createServiceSchema({
+    name: 'Commercial Legal Services',
+    description: 'Commercial legal counsel in Tel Aviv. Drafting contracts, partnership agreements, and managing cross-border business disputes for international clients.',
+    url: 'https://mayaziv.law/commercial',
+  });
+
   return (
     <Layout>
-      <Helmet>
-        <title>{language === 'he' ? 'עורך דין מסחרי בתל אביב | חוזים ויישוב סכסוכים בישראל' : 'Commercial Lawyer Tel Aviv | Contracts & Dispute Resolution Israel'}</title>
-        <meta name="description" content={language === 'he' ? 'ייעוץ משפטי מסחרי בתל אביב. ניסוח חוזים, הסכמי שותפות וניהול סכסוכים עסקיים חוצי גבולות ללקוחות בינלאומיים.' : 'Commercial legal counsel in Tel Aviv. Drafting contracts, partnership agreements, and managing cross-border business disputes for international clients.'} />
-      </Helmet>
-
-      {/* Hero Section */}
-      <PageHero
-        backgroundImage={commercialHeroBg}
-        title={t('commercial.hero.title')}
+      <SEO
+        titleEn="Commercial Lawyer Tel Aviv | Contracts & Dispute Resolution"
+        titleHe="עורך דין מסחרי בתל אביב | חוזים ויישוב סכסוכים"
+        descriptionEn="Commercial legal counsel in Tel Aviv. Drafting contracts, partnership agreements, and managing cross-border business disputes for international clients."
+        descriptionHe="ייעוץ משפטי מסחרי בתל אביב. ניסוח חוזים, הסכמי שותפות וניהול סכסוכים עסקיים חוצי גבולות ללקוחות בינלאומיים."
+        path="/commercial"
+        schema={commercialSchema}
       />
 
       {/* Philosophy Section */}
