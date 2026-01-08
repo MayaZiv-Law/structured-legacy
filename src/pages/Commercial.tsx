@@ -53,7 +53,6 @@ const Commercial = () => {
       <PageHero
         backgroundImage={commercialHeroBg}
         title={t('commercial.hero.title')}
-        subtitle={t('commercial.hero.subtitle')}
       />
 
       {/* Philosophy Section */}
