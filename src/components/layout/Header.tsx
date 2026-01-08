@@ -35,22 +35,15 @@ const Header = () => {
 
   const navLinkClass = (path: string) =>
     cn(
-      'text-sm font-medium transition-colors',
-      isScrolled
-        ? cn('hover:text-accent', isActive(path) ? 'text-accent' : 'text-foreground/80')
-        : cn(
-            'hover:text-primary-foreground/80',
-            isActive(path) ? 'text-primary-foreground' : 'text-primary-foreground/90'
-          )
+      'text-sm font-medium transition-colors hover:text-accent',
+      isActive(path) ? 'text-accent' : 'text-foreground/80'
     );
 
   return (
     <header
       className={cn(
         "fixed top-0 left-0 right-0 z-50 transition-all duration-500",
-        isScrolled
-          ? "bg-card/75 backdrop-blur-xl border-b border-border/60 shadow-premium"
-          : "bg-transparent backdrop-blur-none border-b border-transparent shadow-none"
+        "bg-white/75 backdrop-blur-xl border-b border-border/30 shadow-sm"
       )}
     >
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
@@ -73,24 +66,12 @@ const Header = () => {
             <DropdownMenu>
               <DropdownMenuTrigger
                 className={cn(
-                  "flex items-center gap-1 text-sm font-medium transition-colors",
-                  isScrolled
-                    ? cn(
-                        'hover:text-accent',
-                        ['/real-estate', '/taxation', '/estate-planning', '/olim-residents', '/commercial'].some(p =>
-                          isActive(p)
-                        )
-                          ? 'text-accent'
-                          : 'text-foreground/80'
-                      )
-                    : cn(
-                        'hover:text-primary-foreground/80',
-                        ['/real-estate', '/taxation', '/estate-planning', '/olim-residents', '/commercial'].some(p =>
-                          isActive(p)
-                        )
-                          ? 'text-primary-foreground'
-                          : 'text-primary-foreground/90'
-                      )
+                  "flex items-center gap-1 text-sm font-medium transition-colors hover:text-accent",
+                  ['/real-estate', '/taxation', '/estate-planning', '/olim-residents', '/commercial'].some(p =>
+                    isActive(p)
+                  )
+                    ? 'text-accent'
+                    : 'text-foreground/80'
                 )}
               >
                 {t('nav.expertise')}
@@ -139,31 +120,19 @@ const Header = () => {
             {/* Language Toggle */}
             <button
               onClick={() => setLanguage(language === 'en' ? 'he' : 'en')}
-              className={cn(
-                "text-sm font-medium transition-colors px-3 py-1.5 rounded border",
-                isScrolled
-                  ? "text-foreground/70 hover:text-foreground border-border hover:border-accent"
-                  : "text-primary-foreground/90 hover:text-primary-foreground border-primary-foreground/30 hover:border-primary-foreground/50"
-              )}
+              className="text-sm font-medium transition-colors px-3 py-1.5 rounded border text-foreground/70 hover:text-foreground border-border hover:border-accent"
             >
               {language === 'en' ? 'עב' : 'EN'}
             </button>
 
-            <Button
-              asChild
-              variant={isScrolled ? "default" : "outline"}
-              className={cn(
-                !isScrolled &&
-                  "!bg-transparent !text-primary-foreground border-primary-foreground/40 hover:bg-primary-foreground/10 hover:text-primary-foreground"
-              )}
-            >
+            <Button asChild variant="default">
               <Link to="/contact">{t('nav.schedule')}</Link>
             </Button>
           </div>
 
           {/* Mobile Menu Button */}
           <button
-            className={cn("lg:hidden p-2", isScrolled ? "text-foreground" : "text-primary-foreground")}
+            className="lg:hidden p-2 text-foreground"
             onClick={() => setIsMenuOpen(!isMenuOpen)}
             aria-label="Toggle menu"
           >
