@@ -7,7 +7,7 @@ import { Link } from 'react-router-dom';
 import { Helmet } from 'react-helmet-async';
 import { useScrollAnimation } from '@/hooks/useScrollAnimation';
 import PageHero from '@/components/shared/PageHero';
-import commercialHeroBg from '@/assets/commercial-hero-bg.webp';
+import commercialHeroBg from '@/assets/commercial-hero-new.jpg';
 import crossBorderImage from '@/assets/cross-border-business.webp';
 
 const Commercial = () => {
