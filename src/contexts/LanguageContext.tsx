@@ -42,6 +42,9 @@ const translations: Record<Language, Record<string, string>> = {
     'guide.punchline': 'We think ahead for our clients, using insight and inventive judgment to guide their decisions and anticipate their needs.',
     'guide.cta': 'More About the Firm',
 
+    // Parallax Quote
+    'parallax.quote': 'We align legal execution with financial consequences, from day one.',
+
     // Methodology
     'method.title': 'A Structured Process From Verification to Execution',
     'method.subtitle': 'Clients receive a defined process, clear timelines, and rigorous due diligence with confidentiality and precision at every stage.',
@@ -338,6 +341,9 @@ const translations: Record<Language, Record<string, string>> = {
     'guide.bio': 'משרד מאיה זיו הוא משרד בוטיק המגשר בין המשפט הישראלי לסטנדרטים העסקיים של חו"ל. אנו מביאים לשולחן רקע ייחודי בפיננסים וחשבונאות, המאפשר לנו לנתח כל תיק לא רק משפטית, אלא גם דרך שורת הרווח וההשלכות המיסויות.',
     'guide.punchline': 'אנו מקדימים מחשבה למעשה. השילוב של תובנות מקצועיות ופתרונות יצירתיים מאפשר לנו לצפות את האתגרים מראש ולהוביל אתכם בבטחה בכל צומת החלטה.',
     'guide.cta': 'עוד על המשרד',
+
+    // Parallax Quote
+    'parallax.quote': 'אנו מסנכרנים בין המהלכים המשפטיים להשלכות הפיננסיות שלהם, כבר מהיום הראשון.',
 
     // Methodology
     'method.title': 'תהליך עבודה סדור: מאימות ועד ביצוע',
