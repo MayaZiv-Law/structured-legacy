@@ -94,7 +94,7 @@ const About = () => {
           <div 
             ref={attorneyAnim.ref}
             className={cn(
-              "grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center transition-all duration-700",
+              "grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center transition-all duration-700",
               isRTL && "lg:grid-flow-dense",
               attorneyAnim.isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
             )}
