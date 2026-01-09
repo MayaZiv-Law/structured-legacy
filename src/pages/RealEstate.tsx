@@ -81,7 +81,9 @@ const RealEstate = () => {
               <p className="text-lg text-muted-foreground leading-relaxed">
                 {t('realestate.approach.body')}
               </p>
-              
+              <p className="text-lg text-muted-foreground leading-relaxed">
+                {t('realestate.approach.body2')}
+              </p>
             </div>
           </div>
         </div>
@@ -143,21 +145,35 @@ const RealEstate = () => {
         </div>
       </section>
 
-      {/* Banking & AML Section */}
+      {/* Fund Protection & Escrow Section */}
       <section className="py-20 bg-background">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div ref={dueDiligenceAnim.ref} className={cn("max-w-4xl mx-auto transition-all duration-700", isRTL && "font-hebrew text-right", dueDiligenceAnim.isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8")}>
             <h2 className="text-3xl sm:text-4xl font-display font-semibold text-foreground mb-6">
-              {t('realestate.banking.title')}
+              {t('realestate.escrow.title')}
             </h2>
             <div className={cn("w-16 h-0.5 bg-accent mb-8", isRTL && "mr-0 ml-auto")} />
-            <div className="space-y-6">
-              <p className="text-lg text-muted-foreground leading-relaxed">
-                {t('realestate.banking.body')}
-              </p>
-              <p className="text-lg text-muted-foreground leading-relaxed">
-                {t('realestate.banking.body2')}
-              </p>
+            <p className="text-lg text-muted-foreground leading-relaxed mb-10">
+              {t('realestate.escrow.body')}
+            </p>
+            
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+              <div className={cn("p-6 bg-muted/30 rounded-lg", isRTL && "text-right")}>
+                <h3 className="text-xl font-display font-medium text-foreground mb-3">
+                  {t('realestate.escrow.escrow.title')}
+                </h3>
+                <p className="text-muted-foreground leading-relaxed">
+                  {t('realestate.escrow.escrow.desc')}
+                </p>
+              </div>
+              <div className={cn("p-6 bg-muted/30 rounded-lg", isRTL && "text-right")}>
+                <h3 className="text-xl font-display font-medium text-foreground mb-3">
+                  {t('realestate.escrow.milestones.title')}
+                </h3>
+                <p className="text-muted-foreground leading-relaxed">
+                  {t('realestate.escrow.milestones.desc')}
+                </p>
+              </div>
             </div>
           </div>
         </div>
@@ -171,40 +187,9 @@ const RealEstate = () => {
               {t('realestate.remote.title')}
             </h2>
             <div className={cn("w-16 h-0.5 bg-accent mb-8", isRTL && "mr-0 ml-auto")} />
-            <div className="space-y-6">
-              <p className="text-lg text-muted-foreground leading-relaxed">
-                {t('realestate.remote.body')}
-              </p>
-              <p className="text-lg text-muted-foreground leading-relaxed">
-                {t('realestate.remote.body2')}
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Requirements Section */}
-      <section className="py-20 bg-background">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <div className={cn("max-w-4xl mx-auto", isRTL && "font-hebrew text-right")}>
-            <h2 className="text-2xl sm:text-3xl font-display font-semibold text-foreground mb-6">
-              {t('realestate.requirements.title')}
-            </h2>
-            <div className={cn("w-16 h-0.5 bg-accent mb-8", isRTL && "mr-0 ml-auto")} />
-            <ul className={cn("space-y-4 text-lg text-muted-foreground", isRTL ? "pr-6" : "pl-6")}>
-              <li className="flex items-start gap-3">
-                <span className="text-accent mt-1">•</span>
-                <span>{t('realestate.requirements.item1')}</span>
-              </li>
-              <li className="flex items-start gap-3">
-                <span className="text-accent mt-1">•</span>
-                <span>{t('realestate.requirements.item2')}</span>
-              </li>
-              <li className="flex items-start gap-3">
-                <span className="text-accent mt-1">•</span>
-                <span>{t('realestate.requirements.item3')}</span>
-              </li>
-            </ul>
+            <p className="text-lg text-muted-foreground leading-relaxed">
+              {t('realestate.remote.body')}
+            </p>
           </div>
         </div>
       </section>
