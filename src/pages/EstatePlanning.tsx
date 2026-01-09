@@ -148,9 +148,11 @@ const EstatePlanning = () => {
               <p className="text-muted-foreground mb-4 leading-relaxed">
                 {t('estate.epa.body')}
               </p>
-              <p className="text-muted-foreground leading-relaxed">
-                {t('estate.epa.body2')}
-              </p>
+              {t('estate.epa.body2') && (
+                <p className="text-muted-foreground leading-relaxed">
+                  {t('estate.epa.body2')}
+                </p>
+              )}
             </div>
             <div className={cn("hidden lg:block absolute w-[420px] h-[380px] rounded-xl overflow-hidden shadow-xl transition-all duration-700 delay-200", isRTL ? "-left-8 top-8" : "-right-8 top-8", epaAnim.isVisible ? "opacity-100 translate-x-0" : isRTL ? "opacity-0 -translate-x-8" : "opacity-0 translate-x-8")}>
               <img src={epaImage} alt="Estate planning documents" className="w-full h-full object-cover" />
@@ -254,9 +256,11 @@ const EstatePlanning = () => {
               <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
             </Link>
           </Button>
-          <p className={cn("text-sm text-primary/60 mt-4", isRTL && "font-hebrew")}>
-            {t('estate.cta.note')}
-          </p>
+          {t('estate.cta.note') && (
+            <p className={cn("text-sm text-primary/60 mt-4", isRTL && "font-hebrew")}>
+              {t('estate.cta.note')}
+            </p>
+          )}
         </div>
       </section>
     </Layout>;

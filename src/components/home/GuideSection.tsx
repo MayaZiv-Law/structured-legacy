@@ -52,9 +52,11 @@ const GuideSection = () => {
               </p>
 
               {/* Punchline */}
-              <p className={cn("text-foreground font-medium text-lg italic", isRTL ? "border-r-2 border-accent pr-4" : "border-l-2 border-accent pl-4")}>
-                {t('guide.punchline')}
-              </p>
+              {t('guide.punchline') && (
+                <p className={cn("text-foreground font-medium text-lg italic", isRTL ? "border-r-2 border-accent pr-4" : "border-l-2 border-accent pl-4")}>
+                  {t('guide.punchline')}
+                </p>
+              )}
             </div>
           </div>
 

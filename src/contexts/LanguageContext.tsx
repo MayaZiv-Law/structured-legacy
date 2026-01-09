@@ -674,7 +674,8 @@ export const LanguageProvider = ({ children }: { children: ReactNode }) => {
   }, [language, isRTL]);
 
   const t = (key: string): string => {
-    return translations[language][key] || key;
+    const value = translations[language][key];
+    return value !== undefined ? value : key;
   };
 
   return (
