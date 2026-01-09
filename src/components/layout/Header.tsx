@@ -64,28 +64,28 @@ const Header = () => {
                 {t('nav.expertise')}
                 <ChevronDown className="h-4 w-4" />
               </DropdownMenuTrigger>
-              <DropdownMenuContent align={isRTL ? "end" : "center"} className="w-56">
-                <DropdownMenuItem asChild>
+              <DropdownMenuContent align={isRTL ? "end" : "center"} className={cn("w-56", isRTL && "text-right")}>
+                <DropdownMenuItem asChild className={isRTL ? "justify-end" : ""}>
                   <Link to="/real-estate" className="w-full cursor-pointer">
                     {t('nav.realEstate')}
                   </Link>
                 </DropdownMenuItem>
-                <DropdownMenuItem asChild>
+                <DropdownMenuItem asChild className={isRTL ? "justify-end" : ""}>
                   <Link to="/taxation" className="w-full cursor-pointer">
                     {t('nav.taxation')}
                   </Link>
                 </DropdownMenuItem>
-                <DropdownMenuItem asChild>
+                <DropdownMenuItem asChild className={isRTL ? "justify-end" : ""}>
                   <Link to="/estate-planning" className="w-full cursor-pointer">
                     {t('nav.estate')}
                   </Link>
                 </DropdownMenuItem>
-                <DropdownMenuItem asChild>
+                <DropdownMenuItem asChild className={isRTL ? "justify-end" : ""}>
                   <Link to="/olim-residents" className="w-full cursor-pointer">
                     {t('nav.olim')}
                   </Link>
                 </DropdownMenuItem>
-                <DropdownMenuItem asChild>
+                <DropdownMenuItem asChild className={isRTL ? "justify-end" : ""}>
                   <Link to="/commercial" className="w-full cursor-pointer">
                     {t('nav.commercial')}
                   </Link>
