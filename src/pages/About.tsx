@@ -103,7 +103,7 @@ const About = () => {
             <div 
               className={cn(
                 "max-w-md mx-auto transition-all duration-700 delay-200",
-                isRTL ? "lg:col-start-2 lg:ml-0 lg:mr-auto" : "lg:col-start-1 lg:mr-0 lg:ml-auto",
+                isRTL ? "lg:col-start-2 lg:mr-0 lg:ml-auto" : "lg:col-start-1 lg:ml-0 lg:mr-auto",
                 attorneyAnim.isVisible ? "opacity-100 translate-x-0" : isRTL ? "opacity-0 translate-x-8" : "opacity-0 -translate-x-8"
               )}
             >
