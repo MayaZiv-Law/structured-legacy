@@ -89,37 +89,53 @@ const RealEstate = () => {
         </div>
       </section>
 
-      {/* Risk Map Section */}
-      <section className="py-20 bg-background">
+      {/* Due Diligence Section */}
+      <section className="py-20 gradient-stone">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <div ref={riskAnim.ref} className={cn("max-w-4xl mx-auto transition-all duration-700", isRTL && "font-hebrew text-right", riskAnim.isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8")}>
-            <h2 className="text-3xl sm:text-4xl font-display font-semibold text-foreground mb-6">
-              {t('realestate.risk.title')}
-            </h2>
-            <div className={cn("w-16 h-0.5 bg-accent mb-8", isRTL && "mr-0 ml-auto")} />
-            <p className="text-lg text-muted-foreground leading-relaxed mb-10">
-              {t('realestate.risk.intro')}
-            </p>
+          <div 
+            ref={riskAnim.ref} 
+            className={cn(
+              "max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center transition-all duration-700",
+              riskAnim.isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
+            )}
+          >
+            {/* Image */}
+            <div className={cn(
+              "transition-all duration-700",
+              isRTL ? "lg:order-2" : "lg:order-1"
+            )}>
+              <img 
+                src={dueDiligenceImage} 
+                alt={t('realestate.risk.title')} 
+                className="w-full h-auto rounded-lg shadow-lg"
+              />
+            </div>
             
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-12 lg:gap-16">
-              {risks.map((risk, index) => <div key={index} className={cn("flex flex-col items-center text-center transition-all duration-500", isRTL && "font-hebrew", riskAnim.isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8")} style={{
-              transitionDelay: riskAnim.isVisible ? `${index * 150}ms` : '0ms'
-            }}>
-                  {/* Icon with outlined circle */}
-                  <div className="w-14 h-14 rounded-full border border-accent flex items-center justify-center mb-5">
-                    <AlertTriangle className="h-6 w-6 text-accent" strokeWidth={1.5} />
+            {/* White Text Box */}
+            <div className={cn(
+              "bg-white p-8 lg:p-10 rounded-lg shadow-md",
+              isRTL ? "lg:order-1 font-hebrew text-right" : "lg:order-2"
+            )}>
+              <h2 className={cn(
+                "text-3xl sm:text-4xl font-display font-semibold text-foreground mb-6",
+                isRTL && "font-hebrew"
+              )}>
+                {t('realestate.risk.title')}
+              </h2>
+              <div className={cn("w-16 h-0.5 bg-accent mb-8", isRTL && "mr-0 ml-auto")} />
+              
+              <div className="space-y-6">
+                {risks.map((risk, index) => (
+                  <div key={index}>
+                    <h3 className="text-xl font-display font-medium text-foreground mb-2">
+                      {t(risk.titleKey)}
+                    </h3>
+                    <p className="text-muted-foreground leading-relaxed">
+                      {t(risk.descKey)}
+                    </p>
                   </div>
-                  
-                  {/* Title */}
-                  <h3 className="text-xl font-display font-medium text-foreground mb-4">
-                    {t(risk.titleKey)}
-                  </h3>
-                  
-                  {/* Description */}
-                  <p className="text-muted-foreground leading-relaxed text-base">
-                    {t(risk.descKey)}
-                  </p>
-                </div>)}
+                ))}
+              </div>
             </div>
           </div>
         </div>
