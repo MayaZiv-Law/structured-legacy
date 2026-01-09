@@ -1,45 +1,47 @@
 import Layout from '@/components/layout/Layout';
 import { useLanguage } from '@/contexts/LanguageContext';
 import { cn } from '@/lib/utils';
-import { Briefcase, FileText, Shield, Scale, Globe, Users, ArrowRight } from 'lucide-react';
+import { FileText, Scale, Globe, Users, ArrowRight, CheckCircle } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Link } from 'react-router-dom';
 import { useScrollAnimation } from '@/hooks/useScrollAnimation';
-import PageHero from '@/components/shared/PageHero';
-import commercialHeroBg from '@/assets/commercial-hero-new.jpg';
 import crossBorderImage from '@/assets/cross-border-business.webp';
 import { SEO, createServiceSchema } from '@/components/SEO';
+import {
+  Accordion,
+  AccordionContent,
+  AccordionItem,
+  AccordionTrigger,
+} from "@/components/ui/accordion";
 
 const Commercial = () => {
   const { t, isRTL, language } = useLanguage();
 
-  const coreServices = [
-    { 
-      title: t('commercial.services.contracts.title'), 
-      desc: t('commercial.services.contracts.desc'), 
-      icon: FileText 
-    },
-    { 
-      title: t('commercial.services.negotiation.title'), 
-      desc: t('commercial.services.negotiation.desc'), 
-      icon: Scale 
-    },
-    { 
-      title: t('commercial.services.dispute.title'), 
-      desc: t('commercial.services.dispute.desc'), 
-      icon: Shield 
-    },
-    { 
-      title: t('commercial.services.crossborder.title'), 
-      desc: t('commercial.services.crossborder.desc'), 
-      icon: Globe 
-    },
+  const contractItems = [
+    { text: t('commercial.contracts.founders'), icon: FileText },
+    { text: t('commercial.contracts.localization'), icon: Globe },
+    { text: t('commercial.contracts.transactions'), icon: Scale },
+  ];
+
+  const deliverables = [
+    t('commercial.deliverables.item1'),
+    t('commercial.deliverables.item2'),
+    t('commercial.deliverables.item3'),
+  ];
+
+  const faqs = [
+    { q: t('commercial.faq.q1'), a: t('commercial.faq.a1') },
+    { q: t('commercial.faq.q2'), a: t('commercial.faq.a2') },
+    { q: t('commercial.faq.q3'), a: t('commercial.faq.a3') },
   ];
 
   const philosophyAnim = useScrollAnimation();
-  const servicesAnim = useScrollAnimation();
+  const contractsAnim = useScrollAnimation();
+  const disputeAnim = useScrollAnimation();
   const crossBorderAnim = useScrollAnimation();
+  const deliverablesAnim = useScrollAnimation();
   const clientsAnim = useScrollAnimation();
+  const faqAnim = useScrollAnimation();
   const ctaAnim = useScrollAnimation();
 
   const commercialSchema = createServiceSchema({
@@ -52,9 +54,9 @@ const Commercial = () => {
     <Layout>
       <SEO
         titleEn="Commercial Lawyer Tel Aviv | Contracts & Dispute Resolution"
-        titleHe="עורך דין מסחרי בתל אביב | חוזים ויישוב סכסוכים"
+        titleHe="עורכת דין מסחרית בתל אביב | חוזים ויישוב סכסוכים"
         descriptionEn="Commercial legal counsel in Tel Aviv. Drafting contracts, partnership agreements, and managing cross-border business disputes for international clients."
-        descriptionHe="ייעוץ משפטי מסחרי בתל אביב. ניסוח חוזים, הסכמי שותפות וניהול סכסוכים עסקיים חוצי גבולות ללקוחות בינלאומיים."
+        descriptionHe="הגנה על אינטרסים עסקיים: ניסוח חוזים, אסטרטגיית סכסוכים וייצוג חברות ומשקיעים זרים בישראל."
         path="/commercial"
         schema={commercialSchema}
       />
@@ -83,37 +85,62 @@ const Commercial = () => {
         </div>
       </section>
 
-      {/* Core Services Section */}
+      {/* Contracts Section */}
       <section className="py-16 bg-background">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div 
-            ref={servicesAnim.ref}
+            ref={contractsAnim.ref}
             className={cn(
-              "max-w-4xl mx-auto mb-10 transition-all duration-700",
+              "max-w-4xl mx-auto transition-all duration-700",
               isRTL && "font-hebrew text-right",
-              servicesAnim.isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
+              contractsAnim.isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
             )}
           >
             <h2 className="text-2xl sm:text-3xl font-display font-semibold mb-6">
-              {t('commercial.services.title')}
+              {t('commercial.contracts.title')}
             </h2>
+            <p className="text-muted-foreground mb-8 leading-relaxed">
+              {t('commercial.contracts.body')}
+            </p>
+            <div className="space-y-4">
+              {contractItems.map((item, i) => (
+                <div 
+                  key={i}
+                  className={cn(
+                    "flex items-start gap-4 p-4 bg-card rounded-lg border border-border",
+                    isRTL && "flex-row-reverse text-right"
+                  )}
+                  style={{ transitionDelay: contractsAnim.isVisible ? `${i * 100}ms` : '0ms' }}
+                >
+                  <item.icon className="h-5 w-5 text-accent mt-0.5 flex-shrink-0" />
+                  <p className="text-muted-foreground text-sm">{item.text}</p>
+                </div>
+              ))}
+            </div>
           </div>
-          <div className="grid md:grid-cols-2 gap-6 max-w-4xl mx-auto">
-            {coreServices.map((service, i) => (
-              <div 
-                key={i} 
-                className={cn(
-                  "p-6 bg-card rounded-lg border border-border transition-all duration-500",
-                  isRTL && "font-hebrew text-right",
-                  servicesAnim.isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
-                )}
-                style={{ transitionDelay: servicesAnim.isVisible ? `${i * 100}ms` : '0ms' }}
-              >
-                <service.icon className="h-6 w-6 text-accent mb-4" />
-                <h3 className="font-medium mb-2">{service.title}</h3>
-                <p className="text-sm text-muted-foreground">{service.desc}</p>
-              </div>
-            ))}
+        </div>
+      </section>
+
+      {/* Dispute Resolution Section */}
+      <section className="py-16 gradient-stone">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+          <div 
+            ref={disputeAnim.ref}
+            className={cn(
+              "max-w-4xl mx-auto transition-all duration-700",
+              isRTL && "font-hebrew text-right",
+              disputeAnim.isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
+            )}
+          >
+            <h2 className="text-2xl sm:text-3xl font-display font-semibold mb-6">
+              {t('commercial.dispute.title')}
+            </h2>
+            <p className="text-muted-foreground mb-4 leading-relaxed">
+              {t('commercial.dispute.body')}
+            </p>
+            <p className="text-muted-foreground leading-relaxed">
+              {t('commercial.dispute.body2')}
+            </p>
           </div>
         </div>
       </section>
@@ -173,6 +200,38 @@ const Commercial = () => {
         </div>
       </section>
 
+      {/* Deliverables Section */}
+      <section className="py-16 bg-background">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+          <div 
+            ref={deliverablesAnim.ref}
+            className={cn(
+              "max-w-4xl mx-auto transition-all duration-700",
+              isRTL && "font-hebrew text-right",
+              deliverablesAnim.isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
+            )}
+          >
+            <h2 className="text-2xl sm:text-3xl font-display font-semibold mb-8">
+              {t('commercial.deliverables.title')}
+            </h2>
+            <div className="space-y-4">
+              {deliverables.map((item, i) => (
+                <div 
+                  key={i}
+                  className={cn(
+                    "flex items-center gap-4",
+                    isRTL && "flex-row-reverse"
+                  )}
+                >
+                  <CheckCircle className="h-5 w-5 text-accent flex-shrink-0" />
+                  <p className="text-muted-foreground">{item}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Who We Work With Section */}
       <section className="py-16 gradient-stone">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
@@ -187,9 +246,42 @@ const Commercial = () => {
             <h2 className="text-2xl sm:text-3xl font-display font-semibold mb-6">
               {t('commercial.clients.title')}
             </h2>
-            <p className="text-muted-foreground leading-relaxed">
+            <p className="text-muted-foreground mb-4 leading-relaxed">
               {t('commercial.clients.body')}
             </p>
+            <p className="text-sm text-muted-foreground/80 italic">
+              {t('commercial.clients.filter')}
+            </p>
+          </div>
+        </div>
+      </section>
+
+      {/* FAQ Section */}
+      <section className="py-16 bg-background">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+          <div 
+            ref={faqAnim.ref}
+            className={cn(
+              "max-w-4xl mx-auto transition-all duration-700",
+              isRTL && "font-hebrew text-right",
+              faqAnim.isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
+            )}
+          >
+            <h2 className="text-2xl sm:text-3xl font-display font-semibold mb-8">
+              {t('commercial.faq.title')}
+            </h2>
+            <Accordion type="single" collapsible className="w-full">
+              {faqs.map((faq, i) => (
+                <AccordionItem key={i} value={`item-${i}`}>
+                  <AccordionTrigger className={cn("text-right", isRTL && "font-hebrew")}>
+                    {faq.q}
+                  </AccordionTrigger>
+                  <AccordionContent className={cn(isRTL && "font-hebrew text-right")}>
+                    {faq.a}
+                  </AccordionContent>
+                </AccordionItem>
+              ))}
+            </Accordion>
           </div>
         </div>
       </section>
