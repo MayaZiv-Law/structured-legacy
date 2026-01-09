@@ -30,13 +30,13 @@ const Taxation = () => {
     icon: CheckCircle
   }];
   const serveItems = [{
-    title: t('tax.serve.compliance'),
-    desc: t('tax.serve.compliance.desc'),
-    icon: ShieldCheck
-  }, {
     title: t('tax.serve.firstStep'),
     desc: t('tax.serve.firstStep.desc'),
     icon: Footprints
+  }, {
+    title: t('tax.serve.compliance'),
+    desc: t('tax.serve.compliance.desc'),
+    icon: ShieldCheck
   }];
   const faqs = [{
     q: t('tax.faq.q1'),
@@ -216,8 +216,11 @@ const Taxation = () => {
             <p className="text-muted-foreground mb-4 leading-relaxed">
               {t('tax.crossBorder.body')}
             </p>
-            <p className="text-muted-foreground leading-relaxed">
+            <p className="text-muted-foreground mb-4 leading-relaxed">
               {t('tax.crossBorder.body2')}
+            </p>
+            <p className="text-muted-foreground leading-relaxed italic text-sm">
+              {t('tax.crossBorder.disclaimer')}
             </p>
           </div>
         </div>
@@ -226,13 +229,18 @@ const Taxation = () => {
       {/* Olim Planning */}
       <section className="py-16 bg-background">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <div ref={olimAnim.ref} className={cn("max-w-4xl mx-auto text-center transition-all duration-700", isRTL && "font-hebrew", olimAnim.isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8")}>
+          <div ref={olimAnim.ref} className={cn("max-w-4xl mx-auto transition-all duration-700", isRTL && "font-hebrew text-right", olimAnim.isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8")}>
             <h2 className="text-2xl sm:text-3xl font-display font-semibold mb-6">
               {t('tax.olim.title')}
             </h2>
-            <p className="text-muted-foreground leading-relaxed">
-              {t('tax.olim.body')}
-            </p>
+            <div className="space-y-4">
+              <p className="text-muted-foreground leading-relaxed">
+                {t('tax.olim.body')}
+              </p>
+              <p className="text-muted-foreground leading-relaxed">
+                {t('tax.olim.body2')}
+              </p>
+            </div>
           </div>
         </div>
       </section>
