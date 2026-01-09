@@ -1,7 +1,7 @@
 import Layout from '@/components/layout/Layout';
 import { useLanguage } from '@/contexts/LanguageContext';
 import { cn } from '@/lib/utils';
-import { Clock, FileCheck, Home, Building, CheckCircle, ArrowRight, ChevronDown } from 'lucide-react';
+import { Clock, Home, Building, Heart, CheckCircle, ArrowRight } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Link } from 'react-router-dom';
 import { useScrollAnimation } from '@/hooks/useScrollAnimation';
@@ -34,6 +34,10 @@ const OlimResidents = () => {
     title: t('olim.framework.banking.title'),
     desc: t('olim.framework.banking.desc'),
     icon: Building
+  }, {
+    title: t('olim.framework.peace.title'),
+    desc: t('olim.framework.peace.desc'),
+    icon: Heart
   }];
   
   const expectItems = [t('olim.expect.item1'), t('olim.expect.item2'), t('olim.expect.item3')];
@@ -81,14 +85,13 @@ const OlimResidents = () => {
         </div>
       </section>
 
-      {/* Tax Framework Section */}
+      {/* Framework Section - 4 Cards */}
       <section className="py-16 bg-background">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div ref={frameworkAnim.ref} className={cn("max-w-4xl mx-auto mb-10 transition-all duration-700", isRTL && "font-hebrew text-right", frameworkAnim.isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8")}>
             <h2 className="text-2xl sm:text-3xl font-display font-semibold mb-4">{t('olim.framework.title')}</h2>
-            <p className="text-muted-foreground mb-8 leading-relaxed">{t('olim.framework.body')}</p>
           </div>
-          <div className="grid md:grid-cols-3 gap-6 max-w-5xl mx-auto">
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-6xl mx-auto">
             {frameworkItems.map((item, i) => <div key={i} className={cn("p-6 bg-card rounded-lg border border-border transition-all duration-500", isRTL && "font-hebrew text-right", frameworkAnim.isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8")} style={{
             transitionDelay: frameworkAnim.isVisible ? `${i * 150}ms` : '0ms'
           }}>
@@ -100,7 +103,7 @@ const OlimResidents = () => {
         </div>
       </section>
 
-      {/* Real Estate Benefits Section */}
+      {/* Tax Positioning Section */}
       <section className="relative z-20 py-20 bg-background overflow-visible">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div ref={realestateAnim.ref} className={cn("relative max-w-6xl mx-auto transition-all duration-700", realestateAnim.isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8")}>
@@ -113,7 +116,7 @@ const OlimResidents = () => {
               </div>
               <div className={cn("relative", isRTL ? "lg:order-first" : "")}>
                 <div className="aspect-[3/4] max-w-sm mx-auto lg:mx-0 overflow-hidden rounded-sm shadow-premium">
-                  <img alt={language === 'he' ? 'הטבות מס רכישה לעולים' : 'Purchase tax benefits for Olim'} className="w-full h-full object-cover" src="/lovable-uploads/8883ef4e-474d-45c3-bf10-74ce4eabdba0.png" />
+                  <img alt={language === 'he' ? 'תכנון סטטוס וזכויות לעולים' : 'Tax positioning for Olim'} className="w-full h-full object-cover" src="/lovable-uploads/8883ef4e-474d-45c3-bf10-74ce4eabdba0.png" />
                 </div>
               </div>
             </div>
