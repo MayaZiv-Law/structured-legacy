@@ -53,6 +53,9 @@ const EstatePlanning = () => {
   }, {
     q: t('estate.faq.q2'),
     a: t('estate.faq.a2')
+  }, {
+    q: t('estate.faq.q3'),
+    a: t('estate.faq.a3')
   }];
 
   // Scroll animations
@@ -102,22 +105,24 @@ const EstatePlanning = () => {
       {/* Cross-Border Wills Section */}
       <section className="py-16 bg-background">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <div ref={willsAnim.ref} className={cn("max-w-4xl mx-auto mb-10 transition-all duration-700", isRTL && "font-hebrew text-right", willsAnim.isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8")}>
+          <div ref={willsAnim.ref} className={cn("max-w-4xl mx-auto transition-all duration-700", isRTL && "font-hebrew text-right", willsAnim.isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8")}>
             <h2 className="text-2xl sm:text-3xl font-display font-semibold mb-6">
               {t('estate.wills.title')}
             </h2>
-            <p className="text-muted-foreground leading-relaxed">
-              {t('estate.wills.body')}
-            </p>
-          </div>
-          <div className="grid md:grid-cols-3 gap-6 max-w-4xl mx-auto">
-            {willsFocusAreas.map((area, i) => <div key={i} className={cn("p-6 bg-card rounded-lg border border-border transition-all duration-500", isRTL && "font-hebrew text-right", willsAnim.isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8")} style={{
-            transitionDelay: willsAnim.isVisible ? `${i * 150}ms` : '0ms'
-          }}>
-                <area.icon className="h-6 w-6 text-accent mb-4" />
-                <h3 className="font-medium mb-2">{area.title}</h3>
-                <p className="text-sm text-muted-foreground">{area.desc}</p>
-              </div>)}
+            <div className="space-y-6">
+              <p className="text-muted-foreground leading-relaxed">
+                {t('estate.wills.body')}
+              </p>
+              <p className="text-muted-foreground leading-relaxed">
+                {t('estate.wills.concurrent')}
+              </p>
+              <p className="text-muted-foreground leading-relaxed italic bg-accent/5 p-4 rounded-lg border-l-2 border-accent">
+                {t('estate.wills.warning')}
+              </p>
+              <p className="text-muted-foreground leading-relaxed">
+                {t('estate.wills.remote')}
+              </p>
+            </div>
           </div>
         </div>
       </section>
