@@ -80,7 +80,9 @@ const OlimResidents = () => {
           <div ref={contextAnim.ref} className={cn("max-w-4xl mx-auto transition-all duration-700", isRTL && "font-hebrew text-right", contextAnim.isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8")}>
             <h2 className="text-2xl sm:text-3xl font-display font-semibold mb-6">{t('olim.context.title')}</h2>
             <p className="text-muted-foreground mb-4 leading-relaxed">{t('olim.context.body')}</p>
-            <p className="text-muted-foreground leading-relaxed">{t('olim.context.body2')}</p>
+            {t('olim.context.body2') && (
+              <p className="text-muted-foreground leading-relaxed">{t('olim.context.body2')}</p>
+            )}
           </div>
         </div>
       </section>
