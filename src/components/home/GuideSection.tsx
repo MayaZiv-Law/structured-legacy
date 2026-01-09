@@ -32,9 +32,7 @@ const GuideSection = () => {
             </p>
 
             {/* Punchline */}
-            <p className="text-foreground font-medium text-lg italic mb-8">
-              {t('guide.punchline')}
-            </p>
+            
 
             {/* CTA Link */}
             <Link to="/about" className={cn("inline-flex items-center gap-2 text-accent font-medium hover:gap-3 transition-all text-lg", isRTL && "flex-row-reverse")}>
