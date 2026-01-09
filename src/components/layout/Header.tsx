@@ -64,7 +64,7 @@ const Header = () => {
                 {t('nav.expertise')}
                 <ChevronDown className="h-4 w-4" />
               </DropdownMenuTrigger>
-              <DropdownMenuContent align="center" className="w-56">
+              <DropdownMenuContent align={isRTL ? "end" : "center"} className="w-56">
                 <DropdownMenuItem asChild>
                   <Link to="/real-estate" className="w-full cursor-pointer">
                     {t('nav.realEstate')}
