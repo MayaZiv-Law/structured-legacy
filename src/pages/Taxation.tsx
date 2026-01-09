@@ -55,7 +55,7 @@ const Taxation = () => {
   const bankingAnim = useScrollAnimation();
   const serveAnim = useScrollAnimation();
   const crossBorderAnim = useScrollAnimation();
-  const olimAnim = useScrollAnimation();
+  
   const faqAnim = useScrollAnimation();
   const ctaAnim = useScrollAnimation();
   const taxationSchema = createServiceSchema({
@@ -226,24 +226,6 @@ const Taxation = () => {
         </div>
       </section>
 
-      {/* Olim Planning */}
-      <section className="py-16 bg-background">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <div ref={olimAnim.ref} className={cn("max-w-4xl mx-auto transition-all duration-700", isRTL && "font-hebrew text-right", olimAnim.isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8")}>
-            <h2 className="text-2xl sm:text-3xl font-display font-semibold mb-6">
-              {t('tax.olim.title')}
-            </h2>
-            <div className="space-y-4">
-              <p className="text-muted-foreground leading-relaxed">
-                {t('tax.olim.body')}
-              </p>
-              <p className="text-muted-foreground leading-relaxed">
-                {t('tax.olim.body2')}
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
 
       {/* FAQ Section */}
       <section className="py-16 gradient-stone">
