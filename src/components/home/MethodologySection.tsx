@@ -39,11 +39,9 @@ const MethodologySection = () => {
           <h2 className="text-4xl sm:text-5xl font-display font-semibold text-foreground mb-4">
             {t('method.title')}
           </h2>
-          {t('method.subtitle') && (
-            <p className="text-muted-foreground text-lg max-w-3xl mx-auto">
-              {t('method.subtitle')}
-            </p>
-          )}
+          <p className="text-muted-foreground text-lg max-w-3xl mx-auto">
+            {t('method.subtitle')}
+          </p>
         </div>
 
         {/* 6 Cards Grid */}

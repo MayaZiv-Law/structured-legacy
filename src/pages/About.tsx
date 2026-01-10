@@ -94,7 +94,7 @@ const About = () => {
           <div 
             ref={attorneyAnim.ref}
             className={cn(
-              "grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center transition-all duration-700",
+              "grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center transition-all duration-700",
               isRTL && "lg:grid-flow-dense",
               attorneyAnim.isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
             )}
@@ -103,7 +103,7 @@ const About = () => {
             <div 
               className={cn(
                 "max-w-md mx-auto transition-all duration-700 delay-200",
-                isRTL ? "lg:col-start-2 lg:mr-0 lg:ml-auto" : "lg:col-start-1 lg:ml-0 lg:mr-auto",
+                isRTL ? "lg:col-start-2 lg:ml-0 lg:mr-auto" : "lg:col-start-1 lg:mr-0 lg:ml-auto",
                 attorneyAnim.isVisible ? "opacity-100 translate-x-0" : isRTL ? "opacity-0 translate-x-8" : "opacity-0 -translate-x-8"
               )}
             >

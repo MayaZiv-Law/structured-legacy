@@ -6,7 +6,6 @@ import ParallaxSection from '@/components/home/ParallaxSection';
 import MethodologySection from '@/components/home/MethodologySection';
 import PracticeAreasSection from '@/components/home/PracticeAreasSection';
 import InsightsSection from '@/components/home/InsightsSection';
-import FAQSection from '@/components/home/FAQSection';
 import CTASection from '@/components/home/CTASection';
 import { SEO, organizationSchema } from '@/components/SEO';
 
@@ -28,7 +27,6 @@ const Index = () => {
       <MethodologySection />
       <PracticeAreasSection />
       <InsightsSection />
-      <FAQSection />
       <CTASection />
     </Layout>
   );

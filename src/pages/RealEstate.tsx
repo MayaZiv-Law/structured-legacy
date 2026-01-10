@@ -38,9 +38,6 @@ const RealEstate = () => {
   }, {
     qKey: 'realestate.faq.q3',
     aKey: 'realestate.faq.a3'
-  }, {
-    qKey: 'realestate.faq.q4',
-    aKey: 'realestate.faq.a4'
   }];
 
   // Scroll animations
@@ -81,61 +78,43 @@ const RealEstate = () => {
               <p className="text-lg text-muted-foreground leading-relaxed">
                 {t('realestate.approach.body')}
               </p>
-              <p className="text-lg text-muted-foreground leading-relaxed">
-                {t('realestate.approach.body2')}
-              </p>
+              
             </div>
           </div>
         </div>
       </section>
 
-      {/* Due Diligence Section */}
-      <section className="py-20 gradient-stone">
+      {/* Risk Map Section */}
+      <section className="py-20 bg-background">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <div 
-            ref={riskAnim.ref} 
-            className={cn(
-              "max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center transition-all duration-700",
-              riskAnim.isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
-            )}
-          >
-            {/* Image */}
-            <div className={cn(
-              "transition-all duration-700",
-              isRTL ? "lg:order-2" : "lg:order-1"
-            )}>
-              <img 
-                src={dueDiligenceImage} 
-                alt={t('realestate.risk.title')} 
-                className="w-full h-auto rounded-lg shadow-lg"
-              />
-            </div>
+          <div ref={riskAnim.ref} className={cn("max-w-4xl mx-auto transition-all duration-700", isRTL && "font-hebrew text-right", riskAnim.isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8")}>
+            <h2 className="text-3xl sm:text-4xl font-display font-semibold text-foreground mb-6">
+              {t('realestate.risk.title')}
+            </h2>
+            <div className={cn("w-16 h-0.5 bg-accent mb-8", isRTL && "mr-0 ml-auto")} />
+            <p className="text-lg text-muted-foreground leading-relaxed mb-10">
+              {t('realestate.risk.intro')}
+            </p>
             
-            {/* White Text Box */}
-            <div className={cn(
-              "bg-white p-8 lg:p-10 rounded-lg shadow-md",
-              isRTL ? "lg:order-1 font-hebrew text-right" : "lg:order-2"
-            )}>
-              <h2 className={cn(
-                "text-3xl sm:text-4xl font-display font-semibold text-foreground mb-6",
-                isRTL && "font-hebrew"
-              )}>
-                {t('realestate.risk.title')}
-              </h2>
-              <div className={cn("w-16 h-0.5 bg-accent mb-8", isRTL && "mr-0 ml-auto")} />
-              
-              <div className="space-y-6">
-                {risks.map((risk, index) => (
-                  <div key={index}>
-                    <h3 className="text-xl font-display font-medium text-foreground mb-2">
-                      {t(risk.titleKey)}
-                    </h3>
-                    <p className="text-muted-foreground leading-relaxed">
-                      {t(risk.descKey)}
-                    </p>
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-12 lg:gap-16">
+              {risks.map((risk, index) => <div key={index} className={cn("flex flex-col items-center text-center transition-all duration-500", isRTL && "font-hebrew", riskAnim.isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8")} style={{
+              transitionDelay: riskAnim.isVisible ? `${index * 150}ms` : '0ms'
+            }}>
+                  {/* Icon with outlined circle */}
+                  <div className="w-14 h-14 rounded-full border border-accent flex items-center justify-center mb-5">
+                    <AlertTriangle className="h-6 w-6 text-accent" strokeWidth={1.5} />
                   </div>
-                ))}
-              </div>
+                  
+                  {/* Title */}
+                  <h3 className="text-xl font-display font-medium text-foreground mb-4">
+                    {t(risk.titleKey)}
+                  </h3>
+                  
+                  {/* Description */}
+                  <p className="text-muted-foreground leading-relaxed text-base">
+                    {t(risk.descKey)}
+                  </p>
+                </div>)}
             </div>
           </div>
         </div>
@@ -161,51 +140,76 @@ const RealEstate = () => {
         </div>
       </section>
 
-      {/* Fund Protection & Escrow Section */}
-      <section className="py-20 bg-background">
+      {/* Due Diligence Section - Asymmetric Design */}
+      <section className="relative z-20 py-20 bg-background overflow-visible">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <div ref={dueDiligenceAnim.ref} className={cn("max-w-4xl mx-auto transition-all duration-700", isRTL && "font-hebrew text-right", dueDiligenceAnim.isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8")}>
-            <h2 className="text-3xl sm:text-4xl font-display font-semibold text-foreground mb-6">
-              {t('realestate.escrow.title')}
-            </h2>
-            <div className={cn("w-16 h-0.5 bg-accent mb-8", isRTL && "mr-0 ml-auto")} />
-            <p className="text-lg text-muted-foreground leading-relaxed mb-10">
-              {t('realestate.escrow.body')}
-            </p>
+          <div ref={dueDiligenceAnim.ref} className={cn("relative max-w-6xl mx-auto transition-all duration-700", dueDiligenceAnim.isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8")}>
+            {/* Offset beige background */}
+            <div className={cn("absolute -top-8 w-[60%] bg-secondary", "h-[calc(100%+4rem)]", isRTL ? "right-0 -mr-8 lg:-mr-16" : "left-0 -ml-8 lg:-ml-16")} />
             
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-              <div className={cn("p-6 bg-muted/30 rounded-lg", isRTL && "text-right")}>
-                <h3 className="text-xl font-display font-medium text-foreground mb-3">
-                  {t('realestate.escrow.escrow.title')}
-                </h3>
-                <p className="text-muted-foreground leading-relaxed">
-                  {t('realestate.escrow.escrow.desc')}
-                </p>
+            {/* Content grid */}
+            <div className={cn("relative z-10 grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center", isRTL && "lg:grid-flow-dense")}>
+              {/* Text content in white card */}
+              <div className={cn("bg-background py-10 px-8 lg:py-14 lg:px-12 shadow-sm transition-all duration-700 delay-200", isRTL ? "lg:col-start-2" : "lg:col-start-1", dueDiligenceAnim.isVisible ? "opacity-100 translate-x-0" : isRTL ? "opacity-0 translate-x-8" : "opacity-0 -translate-x-8")}>
+                <div className={cn(isRTL && "font-hebrew text-right")}>
+                  <h2 className="text-2xl sm:text-3xl font-display font-semibold text-foreground mb-6">
+                    {t('realestate.diligence.title')}
+                  </h2>
+                  <div className="space-y-4">
+                    <p className="text-muted-foreground leading-relaxed">
+                      {t('realestate.diligence.body')}
+                    </p>
+                    <p className="text-muted-foreground leading-relaxed">
+                      {t('realestate.diligence.body2')}
+                    </p>
+                  </div>
+                </div>
               </div>
-              <div className={cn("p-6 bg-muted/30 rounded-lg", isRTL && "text-right")}>
-                <h3 className="text-xl font-display font-medium text-foreground mb-3">
-                  {t('realestate.escrow.milestones.title')}
-                </h3>
-                <p className="text-muted-foreground leading-relaxed">
-                  {t('realestate.escrow.milestones.desc')}
-                </p>
+
+              {/* Image */}
+              <div className={cn("relative transition-all duration-700 delay-300", isRTL ? "lg:col-start-1" : "lg:col-start-2", dueDiligenceAnim.isVisible ? "opacity-100 translate-x-0" : isRTL ? "opacity-0 -translate-x-8" : "opacity-0 translate-x-8")}>
+                <div className="aspect-[3/4] max-w-sm mx-auto lg:mx-0 overflow-hidden rounded-sm shadow-premium">
+                  <img alt="Real estate due diligence" className="w-full h-full object-cover" src="/lovable-uploads/81459920-5f87-4bcb-8430-47c1c2edc6e4.png" />
+                </div>
               </div>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Remote Execution Section */}
-      <section className="py-20 gradient-stone">
+      {/* Remote Execution Section - Same layout as Due Diligence */}
+      <section className="relative z-20 py-20 bg-background overflow-visible">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <div ref={remoteAnim.ref} className={cn("max-w-4xl mx-auto transition-all duration-700", isRTL && "font-hebrew text-right", remoteAnim.isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8")}>
-            <h2 className="text-3xl sm:text-4xl font-display font-semibold text-foreground mb-6">
-              {t('realestate.remote.title')}
-            </h2>
-            <div className={cn("w-16 h-0.5 bg-accent mb-8", isRTL && "mr-0 ml-auto")} />
-            <p className="text-lg text-muted-foreground leading-relaxed">
-              {t('realestate.remote.body')}
-            </p>
+          <div ref={remoteAnim.ref} className={cn("relative max-w-6xl mx-auto transition-all duration-700", remoteAnim.isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8")}>
+            {/* Offset beige background - same position as Due Diligence */}
+            <div className={cn("absolute -top-8 w-[60%] bg-secondary", "h-[calc(100%+4rem)]", isRTL ? "right-0 -mr-8 lg:-mr-16" : "left-0 -ml-8 lg:-ml-16")} />
+            
+            {/* Content grid */}
+            <div className={cn("relative z-10 grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-8 items-center", isRTL && "lg:grid-flow-dense")}>
+              {/* Image - on left */}
+              <div className={cn("relative transition-all duration-700 delay-200", isRTL ? "lg:col-start-2" : "lg:col-start-1", remoteAnim.isVisible ? "opacity-100 translate-x-0" : isRTL ? "opacity-0 translate-x-8" : "opacity-0 -translate-x-8")}>
+                <div className="aspect-[3/4] max-w-sm mx-auto lg:mx-0 overflow-hidden rounded-sm shadow-premium">
+                  <img alt="Remote real estate transaction" className="w-full h-full object-cover" src="/lovable-uploads/ba3c3a72-3db5-4141-9459-1f85fc39e53f.png" />
+                </div>
+              </div>
+
+              {/* Text content in white card - on right */}
+              <div className={cn("bg-background py-10 px-8 lg:py-14 lg:px-12 shadow-sm transition-all duration-700 delay-300", isRTL ? "lg:col-start-1" : "lg:col-start-2", remoteAnim.isVisible ? "opacity-100 translate-x-0" : isRTL ? "opacity-0 -translate-x-8" : "opacity-0 translate-x-8")}>
+                <div className={cn(isRTL && "font-hebrew text-right")}>
+                  <h2 className="text-2xl sm:text-3xl font-display font-semibold text-foreground mb-6">
+                    {t('realestate.remote.title')}
+                  </h2>
+                  <div className="space-y-4">
+                    <p className="text-muted-foreground leading-relaxed">
+                      {t('realestate.remote.body')}
+                    </p>
+                    <p className="text-muted-foreground leading-relaxed">
+                      {t('realestate.remote.body2')}
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </section>

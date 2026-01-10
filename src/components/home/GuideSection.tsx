@@ -32,7 +32,9 @@ const GuideSection = () => {
             </p>
 
             {/* Punchline */}
-            
+            <p className="text-foreground font-medium text-lg italic mb-8">
+              {t('guide.punchline')}
+            </p>
 
             {/* CTA Link */}
             <Link to="/about" className={cn("inline-flex items-center gap-2 text-accent font-medium hover:gap-3 transition-all text-lg", isRTL && "flex-row-reverse")}>
@@ -52,11 +54,9 @@ const GuideSection = () => {
               </p>
 
               {/* Punchline */}
-              {t('guide.punchline') && (
-                <p className={cn("text-foreground font-medium text-lg italic", isRTL ? "border-r-2 border-accent pr-4" : "border-l-2 border-accent pl-4")}>
-                  {t('guide.punchline')}
-                </p>
-              )}
+              <p className={cn("text-foreground font-medium text-lg italic", isRTL ? "border-r-2 border-accent pr-4" : "border-l-2 border-accent pl-4")}>
+                {t('guide.punchline')}
+              </p>
             </div>
           </div>
 

@@ -53,12 +53,6 @@ const EstatePlanning = () => {
   }, {
     q: t('estate.faq.q2'),
     a: t('estate.faq.a2')
-  }, {
-    q: t('estate.faq.q3'),
-    a: t('estate.faq.a3')
-  }, {
-    q: t('estate.faq.q4'),
-    a: t('estate.faq.a4')
   }];
 
   // Scroll animations
@@ -105,34 +99,25 @@ const EstatePlanning = () => {
         </div>
       </section>
 
-      {/* Cross-Border Wills Section - Now with 3 cards */}
+      {/* Cross-Border Wills Section */}
       <section className="py-16 bg-background">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <div ref={willsAnim.ref} className={cn("max-w-4xl mx-auto transition-all duration-700", isRTL && "font-hebrew text-right", willsAnim.isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8")}>
-            <h2 className="text-2xl sm:text-3xl font-display font-semibold mb-8">
+          <div ref={willsAnim.ref} className={cn("max-w-4xl mx-auto mb-10 transition-all duration-700", isRTL && "font-hebrew text-right", willsAnim.isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8")}>
+            <h2 className="text-2xl sm:text-3xl font-display font-semibold mb-6">
               {t('estate.wills.title')}
             </h2>
-            
-            {/* 3 Cards */}
-            <div className="grid md:grid-cols-3 gap-6 mb-8">
-              {willsFocusAreas.map((area, i) => (
-                <div key={i} className={cn(
-                  "p-6 bg-card rounded-lg border border-border transition-all duration-500 hover:shadow-lg",
-                  willsAnim.isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
-                )} style={{ transitionDelay: willsAnim.isVisible ? `${i * 100}ms` : '0ms' }}>
-                  <div className="w-10 h-10 rounded-full bg-accent/10 flex items-center justify-center mb-4">
-                    <area.icon className="h-5 w-5 text-accent" />
-                  </div>
-                  <h3 className="font-medium mb-2">{area.title}</h3>
-                  <p className="text-sm text-muted-foreground">{area.desc}</p>
-                </div>
-              ))}
-            </div>
-            
-            {/* Strategic Insight */}
-            <p className="text-muted-foreground leading-relaxed italic bg-accent/5 p-4 rounded-lg border-l-2 border-accent">
-              {t('estate.wills.concurrent')}
+            <p className="text-muted-foreground leading-relaxed">
+              {t('estate.wills.body')}
             </p>
+          </div>
+          <div className="grid md:grid-cols-3 gap-6 max-w-4xl mx-auto">
+            {willsFocusAreas.map((area, i) => <div key={i} className={cn("p-6 bg-card rounded-lg border border-border transition-all duration-500", isRTL && "font-hebrew text-right", willsAnim.isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8")} style={{
+            transitionDelay: willsAnim.isVisible ? `${i * 150}ms` : '0ms'
+          }}>
+                <area.icon className="h-6 w-6 text-accent mb-4" />
+                <h3 className="font-medium mb-2">{area.title}</h3>
+                <p className="text-sm text-muted-foreground">{area.desc}</p>
+              </div>)}
           </div>
         </div>
       </section>
@@ -148,11 +133,9 @@ const EstatePlanning = () => {
               <p className="text-muted-foreground mb-4 leading-relaxed">
                 {t('estate.epa.body')}
               </p>
-              {t('estate.epa.body2') && (
-                <p className="text-muted-foreground leading-relaxed">
-                  {t('estate.epa.body2')}
-                </p>
-              )}
+              <p className="text-muted-foreground leading-relaxed">
+                {t('estate.epa.body2')}
+              </p>
             </div>
             <div className={cn("hidden lg:block absolute w-[420px] h-[380px] rounded-xl overflow-hidden shadow-xl transition-all duration-700 delay-200", isRTL ? "-left-8 top-8" : "-right-8 top-8", epaAnim.isVisible ? "opacity-100 translate-x-0" : isRTL ? "opacity-0 -translate-x-8" : "opacity-0 translate-x-8")}>
               <img src={epaImage} alt="Estate planning documents" className="w-full h-full object-cover" />
@@ -256,11 +239,9 @@ const EstatePlanning = () => {
               <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
             </Link>
           </Button>
-          {t('estate.cta.note') && (
-            <p className={cn("text-sm text-primary/60 mt-4", isRTL && "font-hebrew")}>
-              {t('estate.cta.note')}
-            </p>
-          )}
+          <p className={cn("text-sm text-primary/60 mt-4", isRTL && "font-hebrew")}>
+            {t('estate.cta.note')}
+          </p>
         </div>
       </section>
     </Layout>;
