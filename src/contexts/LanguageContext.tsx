@@ -13,6 +13,7 @@ const translations: Record<Language, Record<string, string>> = {
   en: {
     // Navigation
     'nav.firm': 'The Firm',
+    'nav.about': 'About',
     'nav.expertise': 'Expertise',
     'nav.realEstate': 'Real Estate',
     'nav.taxation': 'Tax and Compliance',
@@ -324,6 +325,7 @@ const translations: Record<Language, Record<string, string>> = {
   he: {
     // Navigation
     'nav.firm': 'המשרד',
+    'nav.about': 'אודות',
     'nav.expertise': 'תחומי התמחות',
     'nav.realEstate': 'נדל"ן',
     'nav.taxation': 'מיסוי ותאימות',
