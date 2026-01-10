@@ -8,6 +8,20 @@
    Colors: Gold accents, cream/stone backgrounds, elegant darks
 */
 
+/* Critical CSS - Inline above-the-fold styles for faster FCP */
+@layer base {
+  /* Prevent FOUT (Flash of Unstyled Text) */
+  .font-display {
+    font-display: swap;
+  }
+  
+  /* Reduce CLS with aspect ratio for hero images */
+  .hero-image-container {
+    aspect-ratio: 16 / 9;
+    contain: layout style paint;
+  }
+}
+
 @layer base {
   :root {
     /* Cream/Stone Background Palette */

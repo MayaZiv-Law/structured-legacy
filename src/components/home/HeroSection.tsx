@@ -1,8 +1,5 @@
-import { Link } from 'react-router-dom';
-import { Button } from '@/components/ui/button';
 import { useLanguage } from '@/contexts/LanguageContext';
 import { cn } from '@/lib/utils';
-import { ArrowRight, ArrowLeft } from 'lucide-react';
 import heroImage from '@/assets/tel-aviv-hero-new.webp';
 
 const HeroSection = () => {
@@ -10,9 +7,9 @@ const HeroSection = () => {
     t,
     isRTL
   } = useLanguage();
-  const Arrow = isRTL ? ArrowLeft : ArrowRight;
+  
   return <section className="relative -mt-20 pt-20 min-h-[90vh] flex flex-col overflow-visible">
-      {/* Full Background Image */}
+      {/* Full Background Image - optimized with responsive sizing */}
       <div className="absolute inset-0 z-0">
         <img 
           alt="Tel Aviv skyline and coastline at dusk" 
@@ -21,9 +18,10 @@ const HeroSection = () => {
           fetchPriority="high" 
           loading="eager" 
           decoding="async"
-          sizes="100vw"
+          sizes="(max-width: 768px) 100vw, (max-width: 1200px) 100vw, 1920px"
           width={1920} 
-          height={1080} 
+          height={1080}
+          style={{ contentVisibility: 'auto' }}
         />
       </div>
 
