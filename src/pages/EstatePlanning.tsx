@@ -53,12 +53,6 @@ const EstatePlanning = () => {
   }, {
     q: t('estate.faq.q2'),
     a: t('estate.faq.a2')
-  }, {
-    q: t('estate.faq.q3'),
-    a: t('estate.faq.a3')
-  }, {
-    q: t('estate.faq.q4'),
-    a: t('estate.faq.a4')
   }];
 
   // Scroll animations
@@ -86,7 +80,7 @@ const EstatePlanning = () => {
         schema={estateSchema}
       />
       {/* Hero Section */}
-      <PageHero backgroundImage={estateHeroBg} title={t('estate.hero.title')} subtitle={t('estate.hero.subtitle')} imagePosition="center 70%" />
+      <PageHero backgroundImage={estateHeroBg} title={t('estate.hero.title')} imagePosition="center 70%" />
 
       {/* The Challenge Section */}
       <section className="pt-40 sm:pt-48 pb-16 gradient-stone">
