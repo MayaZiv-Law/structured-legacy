@@ -131,20 +131,24 @@ const EstatePlanning = () => {
       {/* Enduring Power of Attorney Section */}
       <section className="py-16 bg-background overflow-visible">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <div ref={epaAnim.ref} className={cn("max-w-5xl mx-auto relative transition-all duration-700", epaAnim.isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8")}>
-            <div className={cn("relative z-10 max-w-2xl p-8 sm:p-10 bg-card rounded-2xl shadow-lg border border-border/50", isRTL ? "font-hebrew text-right mr-auto" : "ml-0")}>
-              <h2 className="text-2xl sm:text-3xl font-display font-semibold mb-6 text-foreground">
-                {t('estate.epa.title')}
-              </h2>
-              <p className="text-muted-foreground mb-4 leading-relaxed">
-                {t('estate.epa.body')}
-              </p>
-              <p className="text-muted-foreground leading-relaxed">
-                {t('estate.epa.body2')}
-              </p>
-            </div>
-            <div className={cn("hidden lg:block absolute w-[420px] h-[380px] rounded-xl overflow-hidden shadow-xl transition-all duration-700 delay-200", isRTL ? "-left-8 top-8" : "-right-8 top-8", epaAnim.isVisible ? "opacity-100 translate-x-0" : isRTL ? "opacity-0 -translate-x-8" : "opacity-0 translate-x-8")}>
-              <img src={epaImage} alt="Estate planning documents" className="w-full h-full object-cover" />
+          <div ref={epaAnim.ref} className={cn("max-w-6xl mx-auto transition-all duration-700", epaAnim.isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8")}>
+            <div className={cn("grid grid-cols-1 lg:grid-cols-2 gap-8 items-stretch", isRTL && "direction-rtl")}>
+              {/* Text card */}
+              <div className={cn("p-8 sm:p-10 bg-card rounded-2xl shadow-lg border border-border/50", isRTL ? "font-hebrew text-right order-1" : "order-1")}>
+                <h2 className="text-2xl sm:text-3xl font-display font-semibold mb-6 text-foreground">
+                  {t('estate.epa.title')}
+                </h2>
+                <p className="text-muted-foreground mb-4 leading-relaxed">
+                  {t('estate.epa.body')}
+                </p>
+                <p className="text-muted-foreground leading-relaxed">
+                  {t('estate.epa.body2')}
+                </p>
+              </div>
+              {/* Image */}
+              <div className={cn("hidden lg:block rounded-xl overflow-hidden shadow-xl transition-all duration-700 delay-200", isRTL ? "order-2" : "order-2", epaAnim.isVisible ? "opacity-100 translate-x-0" : isRTL ? "opacity-0 -translate-x-8" : "opacity-0 translate-x-8")}>
+                <img src={epaImage} alt="Estate planning documents" className="w-full h-full object-cover" />
+              </div>
             </div>
           </div>
         </div>
