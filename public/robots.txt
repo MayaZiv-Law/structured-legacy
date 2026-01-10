@@ -13,4 +13,4 @@ Allow: /
 User-agent: *
 Allow: /
 
-Sitemap: https://mayaziv.law/sitemap.xml
+Sitemap: https://mayaziv-law.com/sitemap.xml

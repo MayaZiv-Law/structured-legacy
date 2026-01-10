@@ -7,7 +7,7 @@ import { Button } from '@/components/ui/button';
 import { useScrollAnimation } from '@/hooks/useScrollAnimation';
 import PageHero from '@/components/shared/PageHero';
 import mayaPortrait from '@/assets/maya-portrait.webp';
-import aboutHeroBg from '@/assets/about-hero-bg.png';
+import aboutHeroBg from '@/assets/about-hero-bg.webp';
 import { SEO, attorneySchema } from '@/components/SEO';
 
 const About = () => {
