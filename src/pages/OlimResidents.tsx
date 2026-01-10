@@ -56,7 +56,7 @@ const OlimResidents = () => {
         schema={olimSchema}
       />
       {/* Hero Section */}
-      <PageHero backgroundImage={olimHeroBg} title={t('olim.hero.title')} />
+      <PageHero backgroundImage={olimHeroBg} title={t('olim.hero.title')} imagePosition="center 30%" />
 
       <section className="pt-40 sm:pt-48 pb-16 gradient-stone">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
