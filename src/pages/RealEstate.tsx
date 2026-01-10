@@ -150,7 +150,7 @@ const RealEstate = () => {
             {/* Content grid */}
             <div className={cn("relative z-10 grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center", isRTL && "lg:grid-flow-dense")}>
               {/* Text content in white card */}
-              <div className={cn("bg-background py-10 px-8 lg:py-14 lg:px-12 shadow-sm transition-all duration-700 delay-200", isRTL ? "lg:col-start-2" : "lg:col-start-1", dueDiligenceAnim.isVisible ? "opacity-100 translate-x-0" : isRTL ? "opacity-0 translate-x-8" : "opacity-0 -translate-x-8")}>
+              <div className={cn("bg-background py-10 px-8 lg:py-14 lg:px-12 shadow-sm transition-all duration-700 delay-200", isRTL ? "lg:col-start-1" : "lg:col-start-1", dueDiligenceAnim.isVisible ? "opacity-100 translate-x-0" : isRTL ? "opacity-0 -translate-x-8" : "opacity-0 -translate-x-8")}>
                 <div className={cn(isRTL && "font-hebrew text-right")}>
                   <h2 className="text-2xl sm:text-3xl font-display font-semibold text-foreground mb-6">
                     {t('realestate.diligence.title')}
@@ -167,7 +167,7 @@ const RealEstate = () => {
               </div>
 
               {/* Image */}
-              <div className={cn("relative transition-all duration-700 delay-300", isRTL ? "lg:col-start-1" : "lg:col-start-2", dueDiligenceAnim.isVisible ? "opacity-100 translate-x-0" : isRTL ? "opacity-0 -translate-x-8" : "opacity-0 translate-x-8")}>
+              <div className={cn("relative transition-all duration-700 delay-300", isRTL ? "lg:col-start-2" : "lg:col-start-2", dueDiligenceAnim.isVisible ? "opacity-100 translate-x-0" : isRTL ? "opacity-0 translate-x-8" : "opacity-0 translate-x-8")}>
                 <div className="aspect-[3/4] max-w-sm mx-auto lg:mx-0 overflow-hidden rounded-sm shadow-premium">
                   <img alt="Real estate due diligence" className="w-full h-full object-cover" src="/lovable-uploads/81459920-5f87-4bcb-8430-47c1c2edc6e4.png" />
                 </div>
