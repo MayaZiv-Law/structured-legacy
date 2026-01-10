@@ -151,9 +151,9 @@ const Taxation = () => {
 
           {/* Asymmetric layout */}
           <div className={cn("relative max-w-6xl mx-auto transition-all duration-700", bankingAnim.isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8")}>
-            <div className={cn("flex flex-col lg:flex-row items-center gap-8", isRTL && "lg:flex-row-reverse")}>
+            <div className={cn("grid grid-cols-1 lg:grid-cols-2 gap-8 items-stretch", isRTL && "direction-rtl")}>
               {/* Beige card with text */}
-              <div className={cn("relative z-10 w-full lg:w-[55%] bg-secondary p-8 md:p-12 shadow-sm", isRTL ? "lg:-mr-16" : "lg:-ml-0")}>
+              <div className={cn("relative z-10 w-full bg-secondary p-8 md:p-12 shadow-sm", isRTL && "order-1")}>
                 <div className={cn(isRTL && "font-hebrew text-right")}>
                   <p className="text-muted-foreground mb-4 leading-relaxed">
                     {t('tax.banking.body')}
@@ -164,9 +164,9 @@ const Taxation = () => {
                 </div>
               </div>
               
-              {/* Image that overlaps */}
-              <div className={cn("relative w-full lg:w-[55%] lg:absolute lg:top-1/2 lg:-translate-y-1/2", isRTL ? "lg:left-0" : "lg:right-0")}>
-                <img alt="Banking compliance" className="w-full h-64 lg:h-80 object-cover shadow-lg" src="/lovable-uploads/10c05b41-4184-42a1-bdf3-3b49d016c9bb.png" />
+              {/* Image */}
+              <div className={cn("relative w-full", isRTL && "order-2")}>
+                <img alt="Banking compliance" className="w-full h-64 lg:h-full object-cover shadow-lg" src="/lovable-uploads/10c05b41-4184-42a1-bdf3-3b49d016c9bb.png" />
               </div>
             </div>
           </div>
