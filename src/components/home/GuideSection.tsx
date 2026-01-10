@@ -2,7 +2,6 @@ import { Link } from 'react-router-dom';
 import { useLanguage } from '@/contexts/LanguageContext';
 import { cn } from '@/lib/utils';
 import { ArrowRight, ArrowLeft } from 'lucide-react';
-import mayaPortrait from '@/assets/maya-portrait.webp';
 const GuideSection = () => {
   const {
     t,

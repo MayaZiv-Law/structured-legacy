@@ -18,7 +18,8 @@ const HeroSection = () => {
           src="/images/tel-aviv-hero.webp"
           fetchPriority="high" 
           loading="eager" 
-          decoding="async" 
+          decoding="async"
+          sizes="100vw"
           width={1920} 
           height={1080} 
         />
@@ -29,7 +30,7 @@ const HeroSection = () => {
 
       {/* Content Box - Overflows into next section */}
       <div className="relative z-10 container mx-auto px-4 sm:px-6 lg:px-8 translate-y-16 sm:translate-y-24">
-        <div className={cn("max-w-2xl transition-all duration-700 opacity-0 animate-fade-in-up", isRTL ? "ml-auto mr-4 lg:mr-8" : "mr-auto ml-4 lg:ml-8")}>
+        <div className={cn("max-w-2xl transition-all duration-700 animate-fade-in-up", isRTL ? "ml-auto mr-4 lg:mr-8" : "mr-auto ml-4 lg:ml-8")}>
           {/* Text Box - wider and narrower */}
           <div className={cn("bg-primary/95 backdrop-blur-sm px-8 py-6 sm:px-12 sm:py-8 shadow-2xl", isRTL && "font-hebrew text-right")}>
             {/* Tagline */}
