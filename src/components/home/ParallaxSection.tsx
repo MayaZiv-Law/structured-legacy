@@ -66,17 +66,24 @@ const ParallaxSection = () => {
       className="relative h-[50vh] md:h-[60vh] overflow-hidden flex items-center justify-center"
       style={{ contentVisibility: 'auto', containIntrinsicSize: '0 60vh' }}
     >
-      {/* Background image with parallax */}
+      {/* Background image with parallax - using img with lazy loading */}
       <div 
         className="absolute inset-0 w-full h-[130%] -top-[15%]" 
         style={{
-          backgroundImage: `url(${telAvivHero})`,
-          backgroundSize: 'cover',
-          backgroundPosition: 'center',
           transform: `translateY(${offsetY * 0.4}px)`,
           willChange: isVisible ? 'transform' : 'auto'
-        }} 
-      />
+        }}
+      >
+        <img 
+          src={telAvivHero} 
+          alt="" 
+          className="w-full h-full object-cover"
+          loading="lazy"
+          decoding="async"
+          width={1920}
+          height={1080}
+        />
+      </div>
       
       {/* Dark overlay for text readability */}
       <div className="absolute inset-0 bg-primary/60" />
