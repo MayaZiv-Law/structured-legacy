@@ -59,8 +59,15 @@ const Commercial = () => {
         schema={commercialSchema}
       />
 
+      {/* Hero Section */}
+      <PageHero
+        backgroundImage={commercialHeroBg}
+        title={t('commercial.hero.title')}
+        subtitle={t('commercial.hero.subtitle')}
+      />
+
       {/* Philosophy Section */}
-      <section className="pt-40 sm:pt-48 pb-16 gradient-stone">
+      <section className="pt-32 sm:pt-40 pb-16 gradient-stone">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div 
             ref={philosophyAnim.ref}
