@@ -52,7 +52,15 @@ const PracticeAreasSection = () => {
           {areas.map((area, index) => <Link key={index} to={area.link} className="group relative block pb-16">
               {/* Image Container */}
               <div className="aspect-[4/5] overflow-hidden">
-                <img src={area.image} alt={t(area.titleKey)} className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" />
+                <img 
+                  src={area.image} 
+                  alt={t(area.titleKey)} 
+                  className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                  loading="lazy"
+                  decoding="async"
+                  width={380}
+                  height={475}
+                />
               </div>
 
               {/* Bottom Label Card - Offset below image, top-aligned */}

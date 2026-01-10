@@ -41,6 +41,10 @@ const Header = () => {
               src={logo} 
               alt="Maya Ziv Law" 
               className="h-12 w-auto"
+              width={107}
+              height={48}
+              loading="eager"
+              decoding="async"
             />
           </Link>
 

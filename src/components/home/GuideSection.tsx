@@ -22,7 +22,15 @@ const GuideSection = () => {
         <div className="lg:hidden flex flex-col items-center">
           {/* Image - Mobile */}
           <div className="w-[85%] relative z-10">
-            <img alt="Maya Ziv - Attorney" className="w-full h-auto object-cover object-top" src="/lovable-uploads/a50b3ae0-2451-4322-bcc9-b89b82add8d4.webp" />
+            <img 
+              alt="Maya Ziv - Attorney" 
+              className="w-full h-auto object-cover object-top" 
+              src="/lovable-uploads/a50b3ae0-2451-4322-bcc9-b89b82add8d4.webp"
+              loading="lazy"
+              decoding="async"
+              width={565}
+              height={565}
+            />
           </div>
 
           {/* Text Content - Mobile (centered, with negative margin to overlap) */}
@@ -63,7 +71,15 @@ const GuideSection = () => {
           {/* Image - Positioned to touch the card */}
           <div className={cn("lg:absolute lg:top-10 lg:w-[48%] lg:h-[calc(100%+2rem)] z-20", isRTL ? "lg:left-0" : "lg:right-0")}>
             <div className="h-full min-h-[350px] lg:min-h-full">
-              <img src="/lovable-uploads/a50b3ae0-2451-4322-bcc9-b89b82add8d4.webp" alt="Maya Ziv - Attorney" className="w-full h-full object-cover object-top" />
+              <img 
+                src="/lovable-uploads/a50b3ae0-2451-4322-bcc9-b89b82add8d4.webp" 
+                alt="Maya Ziv - Attorney" 
+                className="w-full h-full object-cover object-top"
+                loading="lazy"
+                decoding="async"
+                width={565}
+                height={565}
+              />
             </div>
           </div>
         </div>
