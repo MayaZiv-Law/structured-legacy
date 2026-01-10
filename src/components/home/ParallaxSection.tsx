@@ -1,27 +1,64 @@
-import { useEffect, useRef, useState } from 'react';
+import { useEffect, useRef, useState, useCallback } from 'react';
 import { useLanguage } from '@/contexts/LanguageContext';
 import { cn } from '@/lib/utils';
 import telAvivHero from '@/assets/tel-aviv-night.png';
+
 const ParallaxSection = () => {
-  const {
-    isRTL,
-    t
-  } = useLanguage();
+  const { isRTL, t } = useLanguage();
   const sectionRef = useRef<HTMLDivElement>(null);
   const [offsetY, setOffsetY] = useState(0);
+  const [isVisible, setIsVisible] = useState(false);
+  const rafRef = useRef<number | null>(null);
+
+  // Use IntersectionObserver instead of scroll for visibility
   useEffect(() => {
-    const handleScroll = () => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        setIsVisible(entry.isIntersecting);
+      },
+      { threshold: 0, rootMargin: '100px' }
+    );
+
+    const currentRef = sectionRef.current;
+    if (currentRef) {
+      observer.observe(currentRef);
+    }
+
+    return () => {
+      if (currentRef) {
+        observer.unobserve(currentRef);
+      }
+    };
+  }, []);
+
+  // Only run scroll handler when section is visible
+  const handleScroll = useCallback(() => {
+    if (!isVisible || !sectionRef.current) return;
+    
+    if (rafRef.current) {
+      cancelAnimationFrame(rafRef.current);
+    }
+    
+    rafRef.current = requestAnimationFrame(() => {
       if (sectionRef.current) {
         const rect = sectionRef.current.getBoundingClientRect();
         const scrollProgress = -rect.top / window.innerHeight;
         setOffsetY(scrollProgress * 100);
       }
-    };
-    window.addEventListener('scroll', handleScroll, {
-      passive: true
     });
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
+  }, [isVisible]);
+
+  useEffect(() => {
+    if (!isVisible) return;
+    
+    window.addEventListener('scroll', handleScroll, { passive: true });
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+      if (rafRef.current) {
+        cancelAnimationFrame(rafRef.current);
+      }
+    };
+  }, [isVisible, handleScroll]);
   return <section ref={sectionRef} className="relative h-[50vh] md:h-[60vh] overflow-hidden flex items-center justify-center">
       {/* Background image with parallax */}
       <div className="absolute inset-0 w-full h-[130%] -top-[15%]" style={{
