@@ -7,8 +7,8 @@ import { useMemo } from 'react';
 import realEstateHero from '@/assets/real-estate-hero-bg.webp';
 import taxationHero from '@/assets/taxation-hero-bg.webp';
 import estateHero from '@/assets/estate-hero-new.webp';
-import olimHero from '@/assets/olim-hero-bg.webp';
-import commercialHero from '@/assets/commercial-hero-bg.webp';
+import olimHero from '@/assets/olim-hero-airport.webp';
+import commercialHero from '@/assets/commercial-hero-new.jpg';
 
 const PracticeAreasSection = () => {
   const { t, isRTL } = useLanguage();
