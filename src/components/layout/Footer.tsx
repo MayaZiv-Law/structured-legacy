@@ -119,9 +119,19 @@ const Footer = () => {
           <p className={cn("text-primary-foreground/50 text-xs leading-relaxed mb-4", isRTL && "font-hebrew")}>
             {t('footer.disclaimerText')}
           </p>
-          <p className={cn("text-primary-foreground/50 text-xs", isRTL && "font-hebrew")}>
-            {t('footer.copyright')}
-          </p>
+          <div className="flex flex-col sm:flex-row justify-between items-center gap-4">
+            <p className={cn("text-primary-foreground/50 text-xs", isRTL && "font-hebrew")}>
+              {t('footer.copyright')}
+            </p>
+            <a 
+              href="https://www.moonagency.ai" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="text-primary-foreground/50 hover:text-accent transition-colors text-xs flex items-center gap-1"
+            >
+              Made with ✨ by Moon Agency
+            </a>
+          </div>
         </div>
       </div>
     </footer>;
