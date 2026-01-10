@@ -15,8 +15,25 @@
     <!-- Preload LCP image -->
     <link rel="preload" as="image" href="/images/tel-aviv-hero.webp" type="image/webp" fetchpriority="high">
     
-    <!-- Fonts - non-blocking -->
-    <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700&family=Lora:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Heebo:wght@300;400;500;600;700&display=swap">
+    <!-- Critical inline CSS for above-the-fold content -->
+    <style>
+      body{margin:0;font-family:system-ui,-apple-system,sans-serif}
+      #root{min-height:100vh}
+      .min-h-screen{min-height:100vh}
+      .relative{position:relative}
+      .absolute{position:absolute}
+      .inset-0{inset:0}
+      .flex{display:flex}
+      .flex-col{flex-direction:column}
+      .items-center{align-items:center}
+      .justify-center{justify-content:center}
+      .w-full{width:100%}
+      .h-full{height:100%}
+      .object-cover{object-fit:cover}
+    </style>
+    
+    <!-- Fonts - loaded asynchronously -->
+    <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700&family=Lora:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Heebo:wght@300;400;500;600;700&display=swap" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700&family=Lora:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Heebo:wght@300;400;500;600;700&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
     <noscript><link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700&family=Lora:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Heebo:wght@300;400;500;600;700&display=swap" rel="stylesheet"></noscript>
 
