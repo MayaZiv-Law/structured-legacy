@@ -3,6 +3,8 @@ import { Button } from '@/components/ui/button';
 import { useLanguage } from '@/contexts/LanguageContext';
 import { cn } from '@/lib/utils';
 import { ArrowRight, ArrowLeft } from 'lucide-react';
+import heroImage from '@/assets/tel-aviv-hero-new.webp';
+
 const HeroSection = () => {
   const {
     t,
@@ -15,7 +17,7 @@ const HeroSection = () => {
         <img 
           alt="Tel Aviv skyline and coastline at dusk" 
           className="w-full h-full object-cover" 
-          src="/images/tel-aviv-hero.webp"
+          src={heroImage}
           fetchPriority="high" 
           loading="eager" 
           decoding="async"
