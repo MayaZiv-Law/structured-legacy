@@ -74,67 +74,69 @@ const Insights = () => {
 
       <section className="py-16 gradient-stone">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          {isLoading ? (
-            <div className="flex justify-center py-12">
-              <Loader2 className="h-8 w-8 animate-spin text-accent" />
-            </div>
-          ) : (
-            <div ref={articlesAnim.ref} className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
-              {articles?.map((article, i) => {
-                const title = language === 'he' ? article.title_he : article.title_en;
-                const excerpt = language === 'he' ? article.excerpt_he : article.excerpt_en;
-                const category = language === 'he' ? article.category_he : article.category_en;
-                
-                return (
-                  <Link 
-                    to={`/insights/${article.slug}`} 
-                    key={article.id} 
-                    className={cn(
-                      "group bg-card border border-border rounded-xl overflow-hidden hover:border-accent/50 transition-all hover:shadow-lg block duration-500", 
-                      isRTL && "font-hebrew text-right", 
-                      articlesAnim.isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
-                    )} 
-                    style={{ transitionDelay: articlesAnim.isVisible ? `${i * 150}ms` : '0ms' }}
-                  >
-                    <div className="relative h-52 overflow-hidden">
-                      {article.image_url && (
-                        <img 
-                          src={article.image_url} 
-                          alt={title} 
-                          className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105" 
-                        />
-                      )}
-                      <div className="absolute top-4 left-4">
-                        <span className="bg-accent text-accent-foreground text-xs font-medium px-3 py-1 rounded-full">
-                          {category}
+          <div ref={articlesAnim.ref}>
+            {isLoading ? (
+              <div className="flex justify-center py-12">
+                <Loader2 className="h-8 w-8 animate-spin text-accent" />
+              </div>
+            ) : (
+              <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
+                {articles?.map((article, i) => {
+                  const title = language === 'he' ? article.title_he : article.title_en;
+                  const excerpt = language === 'he' ? article.excerpt_he : article.excerpt_en;
+                  const category = language === 'he' ? article.category_he : article.category_en;
+                  
+                  return (
+                    <Link 
+                      to={`/insights/${article.slug}`} 
+                      key={article.id} 
+                      className={cn(
+                        "group bg-card border border-border rounded-xl overflow-hidden hover:border-accent/50 transition-all hover:shadow-lg block duration-500", 
+                        isRTL && "font-hebrew text-right", 
+                        articlesAnim.isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
+                      )} 
+                      style={{ transitionDelay: articlesAnim.isVisible ? `${i * 150}ms` : '0ms' }}
+                    >
+                      <div className="relative h-52 overflow-hidden">
+                        {article.image_url && (
+                          <img 
+                            src={article.image_url} 
+                            alt={title} 
+                            className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105" 
+                          />
+                        )}
+                        <div className="absolute top-4 left-4">
+                          <span className="bg-accent text-accent-foreground text-xs font-medium px-3 py-1 rounded-full">
+                            {category}
+                          </span>
+                        </div>
+                      </div>
+                      <div className="p-6">
+                        <div className={cn("flex items-center gap-2 text-muted-foreground text-sm mb-3", isRTL && "flex-row-reverse")}>
+                          <Calendar className="h-4 w-4" />
+                          <span>
+                            {article.published_at 
+                              ? new Date(article.published_at).toLocaleDateString(language === 'he' ? 'he-IL' : 'en-US')
+                              : ''}
+                          </span>
+                        </div>
+                        <h3 className="text-lg font-display font-medium text-foreground mb-3 line-clamp-2">
+                          {title}
+                        </h3>
+                        <p className="text-muted-foreground text-sm mb-4 line-clamp-2">
+                          {excerpt}
+                        </p>
+                        <span className={cn("flex items-center gap-2 text-accent font-medium text-sm group-hover:gap-3 transition-all", isRTL && "flex-row-reverse")}>
+                          {t('insights.readMore')}
+                          <ArrowRight className={cn("h-4 w-4", isRTL && "rotate-180")} />
                         </span>
                       </div>
-                    </div>
-                    <div className="p-6">
-                      <div className={cn("flex items-center gap-2 text-muted-foreground text-sm mb-3", isRTL && "flex-row-reverse")}>
-                        <Calendar className="h-4 w-4" />
-                        <span>
-                          {article.published_at 
-                            ? new Date(article.published_at).toLocaleDateString(language === 'he' ? 'he-IL' : 'en-US')
-                            : ''}
-                        </span>
-                      </div>
-                      <h3 className="text-lg font-display font-medium text-foreground mb-3 line-clamp-2">
-                        {title}
-                      </h3>
-                      <p className="text-muted-foreground text-sm mb-4 line-clamp-2">
-                        {excerpt}
-                      </p>
-                      <span className={cn("flex items-center gap-2 text-accent font-medium text-sm group-hover:gap-3 transition-all", isRTL && "flex-row-reverse")}>
-                        {t('insights.readMore')}
-                        <ArrowRight className={cn("h-4 w-4", isRTL && "rotate-180")} />
-                      </span>
-                    </div>
-                  </Link>
-                );
-              })}
-            </div>
-          )}
+                    </Link>
+                  );
+                })}
+              </div>
+            )}
+          </div>
         </div>
       </section>
       
