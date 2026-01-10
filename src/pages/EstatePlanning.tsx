@@ -53,6 +53,12 @@ const EstatePlanning = () => {
   }, {
     q: t('estate.faq.q2'),
     a: t('estate.faq.a2')
+  }, {
+    q: t('estate.faq.q3'),
+    a: t('estate.faq.a3')
+  }, {
+    q: t('estate.faq.q4'),
+    a: t('estate.faq.a4')
   }];
 
   // Scroll animations
