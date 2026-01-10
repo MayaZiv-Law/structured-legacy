@@ -1,7 +1,8 @@
 import { useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { Menu, X, ChevronDown } from 'lucide-react';
-import logo from '@/assets/logo.png';
+import logoEn from '@/assets/logo-en.webp';
+import logoHe from '@/assets/logo-he.webp';
 import { Button } from '@/components/ui/button';
 import { useLanguage } from '@/contexts/LanguageContext';
 import {
@@ -38,8 +39,8 @@ const Header = () => {
           {/* Logo */}
           <Link to="/" className="flex items-center">
             <img 
-              src={logo} 
-              alt="Maya Ziv Law" 
+              src={language === 'he' ? logoHe : logoEn} 
+              alt={language === 'he' ? 'מאיה זיו - משרד עורכי דין' : 'Maya Ziv Law'} 
               className="h-12 w-auto"
               width={107}
               height={48}
