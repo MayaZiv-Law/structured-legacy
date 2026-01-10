@@ -1,14 +1,21 @@
+import { lazy, Suspense } from 'react';
 import Layout from '@/components/layout/Layout';
 import HeroSection from '@/components/home/HeroSection';
 import ConflictSection from '@/components/home/ConflictSection';
 import GuideSection from '@/components/home/GuideSection';
-import ParallaxSection from '@/components/home/ParallaxSection';
-import MethodologySection from '@/components/home/MethodologySection';
-import PracticeAreasSection from '@/components/home/PracticeAreasSection';
-import InsightsSection from '@/components/home/InsightsSection';
-import FAQSection from '@/components/home/FAQSection';
-import CTASection from '@/components/home/CTASection';
 import { SEO, organizationSchema } from '@/components/SEO';
+
+// Lazy load below-the-fold sections to improve TTI
+const ParallaxSection = lazy(() => import('@/components/home/ParallaxSection'));
+const MethodologySection = lazy(() => import('@/components/home/MethodologySection'));
+const PracticeAreasSection = lazy(() => import('@/components/home/PracticeAreasSection'));
+const InsightsSection = lazy(() => import('@/components/home/InsightsSection'));
+const FAQSection = lazy(() => import('@/components/home/FAQSection'));
+const CTASection = lazy(() => import('@/components/home/CTASection'));
+
+const SectionLoader = () => (
+  <div className="min-h-[200px]" />
+);
 
 const Index = () => {
   return (
@@ -24,12 +31,24 @@ const Index = () => {
       <HeroSection />
       <ConflictSection />
       <GuideSection />
-      <ParallaxSection />
-      <MethodologySection />
-      <PracticeAreasSection />
-      <InsightsSection />
-      <FAQSection />
-      <CTASection />
+      <Suspense fallback={<SectionLoader />}>
+        <ParallaxSection />
+      </Suspense>
+      <Suspense fallback={<SectionLoader />}>
+        <MethodologySection />
+      </Suspense>
+      <Suspense fallback={<SectionLoader />}>
+        <PracticeAreasSection />
+      </Suspense>
+      <Suspense fallback={<SectionLoader />}>
+        <InsightsSection />
+      </Suspense>
+      <Suspense fallback={<SectionLoader />}>
+        <FAQSection />
+      </Suspense>
+      <Suspense fallback={<SectionLoader />}>
+        <CTASection />
+      </Suspense>
     </Layout>
   );
 };
