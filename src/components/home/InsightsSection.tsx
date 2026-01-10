@@ -57,9 +57,9 @@ const InsightsSection = () => {
                     className={cn(
                       "group bg-card border border-border rounded-xl overflow-hidden hover:border-accent/50 transition-all duration-500 hover:shadow-lg block", 
                       isRTL && "font-hebrew text-right", 
-                      sectionAnim.isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
+                      "opacity-100 translate-y-0 animate-fade-in"
                     )} 
-                    style={{ transitionDelay: sectionAnim.isVisible ? `${index * 150}ms` : '0ms' }}
+                    style={{ animationDelay: `${index * 150}ms` }}
                   >
                     {/* Image Container */}
                     <div className="relative h-48 overflow-hidden">
