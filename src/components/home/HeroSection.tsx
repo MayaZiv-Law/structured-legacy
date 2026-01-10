@@ -8,8 +8,8 @@ const HeroSection = () => {
     isRTL
   } = useLanguage();
   
-  return <section className="relative -mt-20 pt-20 min-h-[90vh] flex flex-col overflow-visible">
-      {/* Full Background Image - optimized with responsive sizing */}
+  return <section className="relative -mt-20 pt-20 min-h-[90vh] flex flex-col overflow-visible" style={{ contain: 'layout style paint' }}>
+      {/* Full Background Image - optimized for LCP */}
       <div className="absolute inset-0 z-0">
         <img 
           alt="Tel Aviv skyline and coastline at dusk" 
@@ -17,11 +17,10 @@ const HeroSection = () => {
           src={heroImage}
           fetchPriority="high" 
           loading="eager" 
-          decoding="async"
+          decoding="sync"
           sizes="(max-width: 768px) 100vw, (max-width: 1200px) 100vw, 1920px"
           width={1920} 
           height={1080}
-          style={{ contentVisibility: 'auto' }}
         />
       </div>
 
@@ -30,9 +29,9 @@ const HeroSection = () => {
 
       {/* Content Box - Overflows into next section */}
       <div className="relative z-10 container mx-auto px-4 sm:px-6 lg:px-8 translate-y-16 sm:translate-y-24">
-        <div className={cn("max-w-2xl transition-all duration-700 animate-fade-in-up", isRTL ? "ml-auto mr-4 lg:mr-8" : "mr-auto ml-4 lg:ml-8")}>
-          {/* Text Box - wider and narrower */}
-          <div className={cn("bg-primary/95 backdrop-blur-sm px-8 py-6 sm:px-12 sm:py-8 shadow-2xl", isRTL && "font-hebrew text-right")}>
+        <div className={cn("max-w-2xl", isRTL ? "ml-auto mr-4 lg:mr-8" : "mr-auto ml-4 lg:ml-8")}>
+          {/* Text Box - optimized for faster render */}
+          <div className={cn("bg-primary/95 px-8 py-6 sm:px-12 sm:py-8 shadow-2xl", isRTL && "font-hebrew text-right")}>
             {/* Tagline */}
             <h1 className={cn("text-3xl sm:text-4xl lg:text-5xl font-display font-semibold text-primary-foreground mb-4 leading-tight", isRTL && "font-hebrew")}>
               {t('hero.tagline')}
