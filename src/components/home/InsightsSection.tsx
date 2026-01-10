@@ -67,7 +67,9 @@ const InsightsSection = () => {
                         <img 
                           src={article.image_url} 
                           alt={title} 
-                          className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105" 
+                          className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
+                          loading="lazy"
+                          decoding="async"
                         />
                       )}
                       <div className={cn("absolute top-4", isRTL ? "right-4" : "left-4")}>
