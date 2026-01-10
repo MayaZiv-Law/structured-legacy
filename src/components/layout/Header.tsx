@@ -45,6 +45,7 @@ const Header = () => {
               height={48}
               loading="eager"
               decoding="async"
+              fetchPriority="high"
             />
           </Link>
 

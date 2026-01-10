@@ -25,7 +25,17 @@ const PageHero = ({
   return <section className="relative min-h-[70vh] sm:min-h-[75vh] flex flex-col overflow-visible -mt-20">
       {/* Full Background Image - No overlay, sharp and sparkling */}
       <div className="absolute inset-0 z-0">
-        <img src={backgroundImage} alt="" className="w-full h-full object-cover" style={{ objectPosition: imagePosition }} />
+        <img 
+          src={backgroundImage} 
+          alt="" 
+          className="w-full h-full object-cover" 
+          style={{ objectPosition: imagePosition }}
+          fetchPriority="high"
+          loading="eager"
+          decoding="async"
+          width={1920}
+          height={1080}
+        />
       </div>
 
       {/* Spacer to push content box to bottom */}
