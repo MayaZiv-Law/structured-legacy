@@ -65,27 +65,27 @@ const Header = () => {
                 <ChevronDown className="h-4 w-4" />
               </DropdownMenuTrigger>
               <DropdownMenuContent align="center" className={cn("w-56", isRTL && "text-right")}>
-                <DropdownMenuItem asChild>
+                <DropdownMenuItem asChild className={cn(isRTL && "justify-end")}>
                   <Link to="/real-estate" className="w-full cursor-pointer">
                     {t('nav.realEstate')}
                   </Link>
                 </DropdownMenuItem>
-                <DropdownMenuItem asChild>
+                <DropdownMenuItem asChild className={cn(isRTL && "justify-end")}>
                   <Link to="/taxation" className="w-full cursor-pointer">
                     {t('nav.taxation')}
                   </Link>
                 </DropdownMenuItem>
-                <DropdownMenuItem asChild>
+                <DropdownMenuItem asChild className={cn(isRTL && "justify-end")}>
                   <Link to="/estate-planning" className="w-full cursor-pointer">
                     {t('nav.estate')}
                   </Link>
                 </DropdownMenuItem>
-                <DropdownMenuItem asChild>
+                <DropdownMenuItem asChild className={cn(isRTL && "justify-end")}>
                   <Link to="/olim-residents" className="w-full cursor-pointer">
                     {t('nav.olim')}
                   </Link>
                 </DropdownMenuItem>
-                <DropdownMenuItem asChild>
+                <DropdownMenuItem asChild className={cn(isRTL && "justify-end")}>
                   <Link to="/commercial" className="w-full cursor-pointer">
                     {t('nav.commercial')}
                   </Link>
