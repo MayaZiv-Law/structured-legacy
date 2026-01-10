@@ -10,7 +10,6 @@ import PageHero from '@/components/shared/PageHero';
 import epaImage from '@/assets/epa-section-image.webp';
 import estateHeroBg from '@/assets/estate-hero-new.webp';
 import { SEO, createServiceSchema } from '@/components/SEO';
-
 const EstatePlanning = () => {
   const {
     t,
@@ -73,18 +72,10 @@ const EstatePlanning = () => {
   const estateSchema = createServiceSchema({
     name: 'Estate Planning & Inheritance Legal Services',
     description: 'Estate planning for international families in Israel. Drafting bilingual wills, probate orders, and Enduring Power of Attorney with cross-border validity.',
-    url: 'https://mayaziv.law/estate-planning',
+    url: 'https://mayaziv.law/estate-planning'
   });
-
   return <Layout>
-      <SEO
-        titleEn="Inheritance & Estate Planning in Tel Aviv | Cross-Border Wills"
-        titleHe="ירושות ותכנון עיזבון בתל אביב | צוואות חוצות גבולות"
-        descriptionEn="Estate planning for international families in Israel. Drafting bilingual wills, probate orders, and Enduring Power of Attorney with cross-border validity."
-        descriptionHe="תכנון עיזבון למשפחות בינלאומיות בישראל. ניסוח צוואות דו-לשוניות, צווי ירושה וייפוי כוח מתמשך עם תוקף חוצה גבולות."
-        path="/estate-planning"
-        schema={estateSchema}
-      />
+      <SEO titleEn="Inheritance & Estate Planning in Tel Aviv | Cross-Border Wills" titleHe="ירושות ותכנון עיזבון בתל אביב | צוואות חוצות גבולות" descriptionEn="Estate planning for international families in Israel. Drafting bilingual wills, probate orders, and Enduring Power of Attorney with cross-border validity." descriptionHe="תכנון עיזבון למשפחות בינלאומיות בישראל. ניסוח צוואות דו-לשוניות, צווי ירושה וייפוי כוח מתמשך עם תוקף חוצה גבולות." path="/estate-planning" schema={estateSchema} />
       {/* Hero Section */}
       <PageHero backgroundImage={estateHeroBg} title={t('estate.hero.title')} imagePosition="center 70%" />
 
@@ -146,8 +137,8 @@ const EstatePlanning = () => {
                 </p>
               </div>
               {/* Image */}
-              <div className={cn("rounded-xl overflow-hidden shadow-xl transition-all duration-700 delay-200", isRTL ? "order-2" : "order-2", epaAnim.isVisible ? "opacity-100 translate-x-0" : isRTL ? "opacity-0 -translate-x-8" : "opacity-0 translate-x-8")}>
-                <img src={epaImage} alt="Estate planning documents" className="w-full h-full object-cover" />
+              <div className={cn("hidden lg:block rounded-xl overflow-hidden shadow-xl transition-all duration-700 delay-200", isRTL ? "order-2" : "order-2", epaAnim.isVisible ? "opacity-100 translate-x-0" : isRTL ? "opacity-0 -translate-x-8" : "opacity-0 translate-x-8")}>
+                <img alt="Estate planning documents" className="w-full h-full object-cover" src="/lovable-uploads/e3b93eb0-b8af-4d3d-96e5-15a47306753b.webp" />
               </div>
             </div>
           </div>
