@@ -1,7 +1,7 @@
 import { useEffect, useRef, useState, useCallback } from 'react';
 import { useLanguage } from '@/contexts/LanguageContext';
 import { cn } from '@/lib/utils';
-import telAvivHero from '@/assets/tel-aviv-night.png';
+import telAvivHero from '@/assets/tel-aviv-night.webp';
 
 const ParallaxSection = () => {
   const { isRTL, t } = useLanguage();
@@ -61,7 +61,11 @@ const ParallaxSection = () => {
   }, [isVisible, handleScroll]);
 
   return (
-    <section ref={sectionRef} className="relative h-[50vh] md:h-[60vh] overflow-hidden flex items-center justify-center">
+    <section 
+      ref={sectionRef} 
+      className="relative h-[50vh] md:h-[60vh] overflow-hidden flex items-center justify-center"
+      style={{ contentVisibility: 'auto', containIntrinsicSize: '0 60vh' }}
+    >
       {/* Background image with parallax */}
       <div 
         className="absolute inset-0 w-full h-[130%] -top-[15%]" 

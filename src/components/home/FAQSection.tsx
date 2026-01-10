@@ -17,7 +17,10 @@ const FAQSection = () => {
   ];
 
   return (
-    <section className="py-24 bg-background">
+    <section 
+      className="py-24 bg-background"
+      style={{ contentVisibility: 'auto', containIntrinsicSize: '0 400px' }}
+    >
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className={cn("max-w-3xl mx-auto", isRTL && "font-hebrew")}>
           {/* Title */}

@@ -34,7 +34,10 @@ const MethodologySection = () => {
   ], []);
 
   return (
-    <section className="py-24 bg-secondary/30 overflow-hidden">
+    <section 
+      className="py-24 bg-secondary/30 overflow-hidden"
+      style={{ contentVisibility: 'auto', containIntrinsicSize: '0 600px' }}
+    >
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         {/* Centered Title */}
         <div className={cn("text-center mb-16", isRTL && "font-hebrew")}>
