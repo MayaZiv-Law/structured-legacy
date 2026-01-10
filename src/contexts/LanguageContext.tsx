@@ -41,6 +41,7 @@ const translations: Record<Language, Record<string, string>> = {
     'guide.bio': 'Maya Ziv Law is built on a combined legal and financial perspective, bringing analytical discipline into every matter. The practice serves clients in Israel and overseas with bilingual counsel on domestic and cross border issues, focused on clear structure and long term security for their business, assets, and personal plans.',
     'guide.punchline': 'We think ahead for our clients, using insight and inventive judgment to guide their decisions and anticipate their needs.',
     'guide.cta': 'More About the Firm',
+    'parallax.quote': 'We align legal execution with financial consequences, from day one.',
 
     // Methodology
     'method.title': 'A Structured Process From Verification to Execution',
@@ -348,6 +349,7 @@ const translations: Record<Language, Record<string, string>> = {
     'guide.bio': 'משרד מאיה זיו הוא משרד בוטיק המגשר בין המשפט הישראלי לסטנדרטים העסקיים של חו"ל. אנו מביאים לשולחן רקע ייחודי בפיננסים וחשבונאות, המאפשר לנו לנתח כל תיק לא רק משפטית, אלא גם דרך שורת הרווח וההשלכות המיסויות. המשרד משרת לקוחות בישראל ובחו"ל עם ייעוץ דו-לשוני וגישה מובנית מונעת תיעוד המיועדת לתמוך בביטחון לטווח ארוך.',
     'guide.punchline': 'אנחנו מתייחסים לכל צעד משפטי כהחלטה פיננסית עם השלכות ארוכות טווח.',
     'guide.cta': 'עוד על המשרד',
+    'parallax.quote': 'אנו מסנכרנים בין המהלכים המשפטיים להשלכות הפיננסיות שלהם, כבר מהיום הראשון.',
 
     // Methodology
     'method.title': 'תהליך עבודה סדור: מאימות ועד ביצוע',
