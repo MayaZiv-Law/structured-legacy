@@ -90,14 +90,14 @@ const OlimResidents = () => {
           <div ref={taxAnim.ref} className={cn("relative max-w-6xl mx-auto transition-all duration-700", taxAnim.isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8")}>
             <div className={cn("absolute -top-8 w-[60%] bg-secondary h-[calc(100%+4rem)]", isRTL ? "-right-8 lg:-right-16" : "left-0 -ml-8 lg:-ml-16")} />
             <div className={cn("relative z-10 grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center")}>
-              {/* Text card - always on the left in LTR, right in RTL */}
-              <div className={cn("bg-background py-10 px-8 lg:py-14 lg:px-12 shadow-sm", isRTL ? "font-hebrew text-right lg:order-2" : "lg:order-1")}>
+              {/* Text card */}
+              <div className={cn("bg-background py-10 px-8 lg:py-14 lg:px-12 shadow-sm", isRTL ? "font-hebrew text-right lg:order-1" : "lg:order-1")}>
                 <h2 className="text-2xl sm:text-3xl font-display font-semibold mb-6 text-foreground">{t('olim.tax.title')}</h2>
                 <p className="text-muted-foreground mb-4 leading-relaxed">{t('olim.tax.body')}</p>
                 <p className="text-muted-foreground leading-relaxed">{t('olim.tax.body2')}</p>
               </div>
-              {/* Image - always on the right in LTR, left in RTL */}
-              <div className={cn("relative", isRTL ? "lg:order-1" : "lg:order-2")}>
+              {/* Image */}
+              <div className={cn("relative", isRTL ? "lg:order-2" : "lg:order-2")}>
                 <div className="aspect-[3/4] max-w-sm mx-auto lg:mx-0 overflow-hidden rounded-sm shadow-premium">
                   <img alt={language === 'he' ? 'תכנון מס לעולים' : 'Tax positioning for Olim'} className="w-full h-full object-cover" src="/lovable-uploads/8883ef4e-474d-45c3-bf10-74ce4eabdba0.png" />
                 </div>
