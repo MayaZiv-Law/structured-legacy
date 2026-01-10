@@ -1,10 +1,12 @@
+import { useMemo } from 'react';
 import { useLanguage } from '@/contexts/LanguageContext';
 import { cn } from '@/lib/utils';
 
 const MethodologySection = () => {
   const { t, isRTL } = useLanguage();
 
-  const cards = [
+  // Memoize cards array to prevent recreating on each render
+  const cards = useMemo(() => [
     {
       titleKey: 'method.step1.title',
       descKey: 'method.step1.desc',
@@ -29,7 +31,7 @@ const MethodologySection = () => {
       titleKey: 'method.step6.title',
       descKey: 'method.step6.desc',
     },
-  ];
+  ], []);
 
   return (
     <section className="py-24 bg-secondary/30 overflow-hidden">
