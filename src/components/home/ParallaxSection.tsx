@@ -4,7 +4,8 @@ import { cn } from '@/lib/utils';
 import telAvivHero from '@/assets/tel-aviv-night.png';
 const ParallaxSection = () => {
   const {
-    isRTL
+    isRTL,
+    t
   } = useLanguage();
   const sectionRef = useRef<HTMLDivElement>(null);
   const [offsetY, setOffsetY] = useState(0);
@@ -39,9 +40,10 @@ const ParallaxSection = () => {
       transform: `translateY(${offsetY * 0.15}px)`,
       willChange: 'transform'
     }}>
-        <blockquote className={cn("text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-display font-medium text-primary-foreground leading-relaxed", isRTL && "font-hebrew")}>"
-          We align legal execution with financial consequences, from day one.
-          <span className="text-accent text-4xl md:text-5xl leading-none">"</span>
+        <blockquote className={cn("text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-display font-medium text-primary-foreground leading-relaxed", isRTL && "font-hebrew")}>
+          {isRTL ? '"' : '"'}
+          {t('parallax.quote')}
+          <span className="text-accent text-4xl md:text-5xl leading-none">{isRTL ? '"' : '"'}</span>
         </blockquote>
       </div>
     </section>;
