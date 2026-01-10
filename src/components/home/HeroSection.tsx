@@ -13,7 +13,16 @@ const HeroSection = () => {
   return <section className="relative -mt-20 pt-20 min-h-[90vh] flex flex-col overflow-visible">
       {/* Full Background Image */}
       <div className="absolute inset-0 z-0">
-        <img alt="Tel Aviv skyline and coastline at dusk" className="w-full h-full object-cover" src="/lovable-uploads/9856841d-6fb8-4303-8136-91c122cd2b6e.webp" fetchPriority="high" loading="eager" decoding="async" width={1920} height={1080} />
+        <img 
+          alt="Tel Aviv skyline and coastline at dusk" 
+          className="w-full h-full object-cover" 
+          src={heroImage}
+          fetchPriority="high" 
+          loading="eager" 
+          decoding="async" 
+          width={1920} 
+          height={1080} 
+        />
       </div>
 
       {/* Spacer to push content box to bottom */}
