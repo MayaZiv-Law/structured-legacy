@@ -9,7 +9,7 @@ const CTASection = () => {
     isRTL
   } = useLanguage();
   const Arrow = isRTL ? ArrowLeft : ArrowRight;
-  return <section className="py-24 bg-[#faf8f5]">
+  return <section className="py-24 bg-[#faf8f5]" style={{ contentVisibility: 'auto', containIntrinsicSize: '0 300px' }}>
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className={cn("max-w-3xl mx-auto text-center", isRTL && "font-hebrew")}>
           <div className="w-16 h-0.5 bg-accent mx-auto mb-8" />

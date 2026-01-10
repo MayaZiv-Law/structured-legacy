@@ -48,7 +48,10 @@ const PracticeAreasSection = () => {
   ], []);
 
   return (
-    <section className="py-24 bg-background">
+    <section 
+      className="py-24 bg-background"
+      style={{ contentVisibility: 'auto', containIntrinsicSize: '0 800px' }}
+    >
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className={cn("text-center mb-16", isRTL && "font-hebrew")}>
           <h2 className="text-4xl sm:text-5xl font-display font-semibold text-foreground mb-4">
