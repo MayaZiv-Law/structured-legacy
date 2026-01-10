@@ -71,8 +71,9 @@ const PracticeAreasSection = () => {
                   className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
                   loading="lazy"
                   decoding="async"
-                  width={380}
-                  height={475}
+                  sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 20vw"
+                  width={300}
+                  height={375}
                 />
               </div>
 

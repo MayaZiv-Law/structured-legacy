@@ -8,7 +8,13 @@ const ParallaxSection = () => {
   const sectionRef = useRef<HTMLDivElement>(null);
   const [offsetY, setOffsetY] = useState(0);
   const [isVisible, setIsVisible] = useState(false);
+  const [isMobile, setIsMobile] = useState(false);
   const rafRef = useRef<number | null>(null);
+
+  // Detect mobile on mount
+  useEffect(() => {
+    setIsMobile(window.matchMedia('(max-width: 768px)').matches);
+  }, []);
 
   // Use IntersectionObserver instead of scroll for visibility
   useEffect(() => {
@@ -70,8 +76,8 @@ const ParallaxSection = () => {
       <div 
         className="absolute inset-0 w-full h-[130%] -top-[15%]" 
         style={{
-          transform: `translateY(${offsetY * 0.4}px)`,
-          willChange: isVisible ? 'transform' : 'auto'
+          transform: isMobile ? 'none' : `translateY(${offsetY * 0.4}px)`,
+          willChange: isVisible && !isMobile ? 'transform' : 'auto'
         }}
       >
         <img 
@@ -80,8 +86,6 @@ const ParallaxSection = () => {
           className="w-full h-full object-cover"
           loading="lazy"
           decoding="async"
-          width={1920}
-          height={1080}
         />
       </div>
       
@@ -92,8 +96,8 @@ const ParallaxSection = () => {
       <div 
         className="relative z-10 text-center px-6 max-w-4xl mx-auto" 
         style={{
-          transform: `translateY(${offsetY * 0.15}px)`,
-          willChange: isVisible ? 'transform' : 'auto'
+          transform: isMobile ? 'none' : `translateY(${offsetY * 0.15}px)`,
+          willChange: isVisible && !isMobile ? 'transform' : 'auto'
         }}
       >
         <blockquote className={cn("text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-display font-medium text-primary-foreground leading-relaxed", isRTL && "font-hebrew")}>
