@@ -2,7 +2,8 @@ import { useEffect, useRef, useState, useCallback } from 'react';
 import { useLanguage } from '@/contexts/LanguageContext';
 import { cn } from '@/lib/utils';
 
-// Only import image for desktop - mobile uses CSS gradient
+import azrieliNight from '@/assets/azrieli-night.webp';
+
 const ParallaxSection = () => {
   const { isRTL, t } = useLanguage();
   const sectionRef = useRef<HTMLDivElement>(null);
@@ -17,11 +18,9 @@ const ParallaxSection = () => {
     const checkMobile = () => window.matchMedia('(max-width: 768px)').matches;
     setIsMobile(checkMobile());
     
-    // Only load image on desktop
+    // Image is imported, so always set as loaded on desktop
     if (!checkMobile()) {
-      const img = new Image();
-      img.onload = () => setImageLoaded(true);
-      img.src = '/images/tel-aviv-night-desktop.webp';
+      setImageLoaded(true);
     }
   }, []);
 
@@ -96,8 +95,8 @@ const ParallaxSection = () => {
         >
           {imageLoaded && (
             <img 
-              src="/images/tel-aviv-night-desktop.webp"
-              alt="" 
+              src={azrieliNight}
+              alt="Azrieli towers Tel Aviv at night" 
               className="w-full h-full object-cover"
               loading="lazy"
               decoding="async"
