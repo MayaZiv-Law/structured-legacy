@@ -8,7 +8,7 @@ const HeroSection = () => {
     isRTL
   } = useLanguage();
   
-  return <section className="relative z-10 -mt-20 pt-20 min-h-[90vh] flex flex-col overflow-visible" style={{ contain: 'layout style paint' }}>
+  return <section className="relative z-10 -mt-20 pt-20 min-h-[90vh] flex flex-col overflow-visible" style={{ contain: 'layout style' }}>
       {/* Full Background Image - optimized for LCP */}
       <div className="absolute inset-0 z-0">
         <img 
