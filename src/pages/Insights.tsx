@@ -21,7 +21,7 @@ const Insights = () => {
       <SEO
         titleEn="Legal Insights & Articles | Maya Ziv Law"
         titleHe="תובנות משפטיות ומאמרים | משרד מאיה זיו"
-        descriptionEn="Practical guidance on Israeli real estate, cross-border taxation, compliance, and legacy planning from Maya Ziv Law."
+        descriptionEn="Practical guidance on Israeli real estate, cross border taxation, compliance, and legacy planning from Maya Ziv Law."
         descriptionHe="הנחיות מעשיות בנושאי נדל״ן בישראל, מיסוי חוצה גבולות, ציות ותכנון מורשת ממשרד מאיה זיו."
         path="/insights"
       />
@@ -42,7 +42,7 @@ const Insights = () => {
             <p className="text-xl text-muted-foreground">
               {language === 'he' 
                 ? 'הנחיות מעשיות בנושאי נדל"ן בישראל, מיסוי חוצה גבולות, ציות ותכנון מורשת.' 
-                : 'Practical guidance on Israeli real estate, cross-border taxation, compliance, and legacy planning.'}
+                : 'Practical guidance on Israeli real estate, cross border taxation, compliance, and legacy planning.'}
             </p>
           </div>
         </div>
@@ -59,7 +59,7 @@ const Insights = () => {
             )}
           >
             <h2 className="text-3xl sm:text-4xl font-display font-semibold text-foreground mb-6">
-              {language === 'he' ? 'בהירות להחלטות חוצות גבולות' : 'Clarity for Cross-Border Decisions'}
+              {language === 'he' ? 'בהירות להחלטות חוצות גבולות' : 'Clarity for Cross Border Decisions'}
             </h2>
             <div className="space-y-4 text-lg text-muted-foreground leading-relaxed">
               <p>

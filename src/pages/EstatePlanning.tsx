@@ -71,11 +71,11 @@ const EstatePlanning = () => {
   const ctaAnim = useScrollAnimation();
   const estateSchema = createServiceSchema({
     name: 'Estate Planning & Inheritance Legal Services',
-    description: 'Estate planning for international families in Israel. Drafting bilingual wills, probate orders, and Enduring Power of Attorney with cross-border validity.',
+    description: 'Estate planning for international families in Israel. Drafting bilingual wills, probate orders, and Enduring Power of Attorney with cross border validity.',
     url: 'https://mayaziv.law/estate-planning'
   });
   return <Layout>
-      <SEO titleEn="Inheritance & Estate Planning in Tel Aviv | Cross-Border Wills" titleHe="ירושות ותכנון עיזבון בתל אביב | צוואות חוצות גבולות" descriptionEn="Estate planning for international families in Israel. Drafting bilingual wills, probate orders, and Enduring Power of Attorney with cross-border validity." descriptionHe="תכנון עיזבון למשפחות בינלאומיות בישראל. ניסוח צוואות דו-לשוניות, צווי ירושה וייפוי כוח מתמשך עם תוקף חוצה גבולות." path="/estate-planning" schema={estateSchema} />
+      <SEO titleEn="Inheritance & Estate Planning in Tel Aviv | Cross Border Wills" titleHe="ירושות ותכנון עיזבון בתל אביב | צוואות חוצות גבולות" descriptionEn="Estate planning for international families in Israel. Drafting bilingual wills, probate orders, and Enduring Power of Attorney with cross border validity." descriptionHe="תכנון עיזבון למשפחות בינלאומיות בישראל. ניסוח צוואות דו-לשוניות, צווי ירושה וייפוי כוח מתמשך עם תוקף חוצה גבולות." path="/estate-planning" schema={estateSchema} />
       {/* Hero Section */}
       <PageHero backgroundImage={estateHeroBg} title={t('estate.hero.title')} imagePosition="center 70%" />
 
@@ -131,9 +131,6 @@ const EstatePlanning = () => {
                 </h2>
                 <p className="text-muted-foreground mb-4 leading-relaxed">
                   {t('estate.epa.body')}
-                </p>
-                <p className="text-muted-foreground leading-relaxed">
-                  {t('estate.epa.body2')}
                 </p>
               </div>
               {/* Image */}
