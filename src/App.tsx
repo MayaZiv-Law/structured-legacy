@@ -18,6 +18,8 @@ const Commercial = lazy(() => import("./pages/Commercial"));
 const Insights = lazy(() => import("./pages/Insights"));
 const Article = lazy(() => import("./pages/Article"));
 const Contact = lazy(() => import("./pages/Contact"));
+const Privacy = lazy(() => import("./pages/Privacy"));
+const Terms = lazy(() => import("./pages/Terms"));
 const NotFound = lazy(() => import("./pages/NotFound"));
 const ArticlesList = lazy(() => import("./pages/admin/ArticlesList"));
 const ArticleEditor = lazy(() => import("./pages/admin/ArticleEditor"));
@@ -53,6 +55,8 @@ const App = () => (
               <Route path="/insights" element={<Insights />} />
               <Route path="/insights/:slug" element={<Article />} />
               <Route path="/contact" element={<Contact />} />
+              <Route path="/privacy" element={<Privacy />} />
+              <Route path="/terms" element={<Terms />} />
               <Route path="/admin/login" element={<AdminLogin />} />
               <Route path="/admin/articles" element={<ProtectedRoute><ArticlesList /></ProtectedRoute>} />
               <Route path="/admin/articles/new" element={<ProtectedRoute><ArticleEditor /></ProtectedRoute>} />

@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { Link } from 'react-router-dom';
 import Layout from '@/components/layout/Layout';
 import { useLanguage } from '@/contexts/LanguageContext';
 import { cn } from '@/lib/utils';
@@ -6,6 +7,7 @@ import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
+import { Checkbox } from '@/components/ui/checkbox';
 import { useToast } from '@/hooks/use-toast';
 import { supabase } from '@/integrations/supabase/client';
 import { Mail, Phone, MapPin } from 'lucide-react';
@@ -17,6 +19,7 @@ const Contact = () => {
   const { toast } = useToast();
   const [loading, setLoading] = useState(false);
   const [form, setForm] = useState({ name: '', email: '', phone: '', inquiry: '', message: '' });
+  const [consentGiven, setConsentGiven] = useState(false);
 
   const heroAnim = useScrollAnimation();
   const formAnim = useScrollAnimation();
@@ -36,6 +39,7 @@ const Contact = () => {
       if (error) throw error;
       toast({ title: language === 'he' ? 'הודעה נשלחה' : 'Message Sent', description: t('contact.form.success') });
       setForm({ name: '', email: '', phone: '', inquiry: '', message: '' });
+      setConsentGiven(false);
     } catch {
       toast({ title: 'Error', description: 'Failed to send message', variant: 'destructive' });
     } finally {
@@ -101,7 +105,40 @@ const Contact = () => {
                   <label className="block text-sm font-medium mb-2 text-muted-foreground">{t('contact.form.message')}</label>
                   <Textarea value={form.message} onChange={e => setForm({...form, message: e.target.value})} required rows={4} className={cn("border-border/50 focus:border-accent resize-none", isRTL && "text-right")} />
                 </div>
-                <Button type="submit" disabled={loading} className="w-full bg-accent hover:bg-accent/90 text-accent-foreground py-6 text-base font-medium">{t('contact.form.submit')}</Button>
+                
+                {/* Consent Checkbox - Amendment 13 Compliance */}
+                <div className={cn("flex items-start gap-3", isRTL && "flex-row-reverse")}>
+                  <Checkbox 
+                    id="consent" 
+                    checked={consentGiven}
+                    onCheckedChange={(checked) => setConsentGiven(checked === true)}
+                    className="mt-1"
+                  />
+                  <label 
+                    htmlFor="consent" 
+                    className={cn("text-sm text-muted-foreground leading-relaxed cursor-pointer", isRTL && "text-right")}
+                  >
+                    {language === 'he' ? (
+                      <>
+                        אני מסכים/ה לאיסוף ושימוש בפרטים שלי בהתאם ל
+                        <Link to="/privacy" className="text-accent hover:underline mx-1">מדיניות הפרטיות</Link>
+                        ול
+                        <Link to="/terms" className="text-accent hover:underline mx-1">תנאי השימוש</Link>
+                        של האתר. ידוע לי כי אוכל לחזור בי מהסכמה זו בכל עת.
+                      </>
+                    ) : (
+                      <>
+                        I agree to the collection and use of my information in accordance with the
+                        <Link to="/privacy" className="text-accent hover:underline mx-1">Privacy Policy</Link>
+                        and
+                        <Link to="/terms" className="text-accent hover:underline mx-1">Terms of Service</Link>.
+                        I understand I may withdraw this consent at any time.
+                      </>
+                    )}
+                  </label>
+                </div>
+
+                <Button type="submit" disabled={loading || !consentGiven} className="w-full bg-accent hover:bg-accent/90 text-accent-foreground py-6 text-base font-medium disabled:opacity-50">{t('contact.form.submit')}</Button>
               </form>
             </div>
 
