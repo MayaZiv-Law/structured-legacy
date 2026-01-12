@@ -7,7 +7,6 @@ import { SEO, organizationSchema } from '@/components/SEO';
 
 // Lazy load below-the-fold sections to improve TTI
 const ParallaxSection = lazy(() => import('@/components/home/ParallaxSection'));
-const MethodologySection = lazy(() => import('@/components/home/MethodologySection'));
 const PracticeAreasSection = lazy(() => import('@/components/home/PracticeAreasSection'));
 const InsightsSection = lazy(() => import('@/components/home/InsightsSection'));
 const FAQSection = lazy(() => import('@/components/home/FAQSection'));
@@ -33,9 +32,6 @@ const Index = () => {
       <GuideSection />
       <Suspense fallback={<SectionLoader />}>
         <ParallaxSection />
-      </Suspense>
-      <Suspense fallback={<SectionLoader />}>
-        <MethodologySection />
       </Suspense>
       <Suspense fallback={<SectionLoader />}>
         <PracticeAreasSection />
