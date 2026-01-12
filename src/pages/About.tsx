@@ -9,6 +9,7 @@ import PageHero from '@/components/shared/PageHero';
 import mayaPortrait from '@/assets/maya-portrait.webp';
 import aboutHeroBg from '@/assets/about-hero-globe.jpg';
 import { SEO, attorneySchema } from '@/components/SEO';
+import MethodologySection from '@/components/home/MethodologySection';
 
 const About = () => {
   const { t, isRTL, language } = useLanguage();
@@ -234,6 +235,9 @@ const About = () => {
           </div>
         </div>
       </section>
+
+      {/* Methodology Section */}
+      <MethodologySection />
 
       {/* CTA Section */}
       <section className="py-24 bg-primary">
