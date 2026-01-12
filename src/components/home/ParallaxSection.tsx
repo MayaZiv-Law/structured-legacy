@@ -77,38 +77,30 @@ const ParallaxSection = () => {
   return (
     <section 
       ref={sectionRef} 
-      className={cn(
-        "relative h-[50vh] md:h-[60vh] overflow-hidden flex items-center justify-center",
-        // Mobile: use gradient background instead of image
-        isMobile && "bg-gradient-to-br from-primary via-primary/95 to-primary/90"
-      )}
+      className="relative h-[50vh] md:h-[60vh] overflow-hidden flex items-center justify-center"
       style={{ contentVisibility: 'auto', containIntrinsicSize: '0 60vh' }}
     >
-      {/* Background image with parallax - only on desktop */}
-      {!isMobile && (
-        <div 
-          className="absolute inset-0 w-full h-[130%] -top-[15%]" 
-          style={{
-            transform: `translateY(${offsetY * 0.4}px)`,
-            willChange: isVisible ? 'transform' : 'auto'
-          }}
-        >
-          {imageLoaded && (
-            <img 
-              src={azrieliNight}
-              alt="Azrieli towers Tel Aviv at night" 
-              className="w-full h-full object-cover"
-              loading="lazy"
-              decoding="async"
-              width={1920}
-              height={1080}
-            />
-          )}
-        </div>
-      )}
+      {/* Background image with parallax on desktop, static on mobile */}
+      <div 
+        className="absolute inset-0 w-full h-full md:h-[130%] md:-top-[15%]" 
+        style={{
+          transform: !isMobile ? `translateY(${offsetY * 0.4}px)` : 'none',
+          willChange: isVisible && !isMobile ? 'transform' : 'auto'
+        }}
+      >
+        <img 
+          src={azrieliNight}
+          alt="Azrieli towers Tel Aviv at night" 
+          className="w-full h-full object-cover"
+          loading="lazy"
+          decoding="async"
+          width={1920}
+          height={1080}
+        />
+      </div>
       
-      {/* Dark overlay for text readability - only on desktop with image */}
-      {!isMobile && <div className="absolute inset-0 bg-primary/60" />}
+      {/* Dark overlay for text readability */}
+      <div className="absolute inset-0 bg-primary/60" />
       
       {/* Quote with parallax effect on desktop */}
       <div 
