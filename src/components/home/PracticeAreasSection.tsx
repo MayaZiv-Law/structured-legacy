@@ -4,7 +4,7 @@ import { cn } from '@/lib/utils';
 import { useMemo } from 'react';
 
 // Import hero images
-import realEstateHero from '@/assets/real-estate-hero-new.webp';
+import realEstateHero from '@/assets/real-estate-card.webp';
 import taxationHero from '@/assets/taxation-hero-bg.webp';
 import estateHero from '@/assets/estate-hero-new.webp';
 import olimHero from '@/assets/olim-hero-airport.webp';
