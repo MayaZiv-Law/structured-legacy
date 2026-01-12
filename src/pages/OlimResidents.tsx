@@ -6,7 +6,7 @@ import { Button } from '@/components/ui/button';
 import { Link } from 'react-router-dom';
 import { useScrollAnimation } from '@/hooks/useScrollAnimation';
 import PageHero from '@/components/shared/PageHero';
-import olimHeroBg from '@/assets/olim-hero-airport.webp';
+import olimHeroBg from '@/assets/olim-hero-new.webp';
 import taxPositioningImage from '@/assets/tax-positioning-olim.webp';
 import { SEO, createServiceSchema } from '@/components/SEO';
 
