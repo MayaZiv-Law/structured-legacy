@@ -7,7 +7,7 @@ import { useMemo } from 'react';
 import realEstateHero from '@/assets/real-estate-hero-new.webp';
 import taxationHero from '@/assets/taxation-hero-bg.webp';
 import estateHero from '@/assets/estate-hero-new.webp';
-import olimHero from '@/assets/olim-welcome-israel.webp';
+import olimHero from '@/assets/olim-hero-airport.webp';
 import commercialHero from '@/assets/commercial-hero-new.jpg';
 
 const PracticeAreasSection = () => {
