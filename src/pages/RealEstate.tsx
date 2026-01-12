@@ -9,7 +9,7 @@ import { useScrollAnimation } from '@/hooks/useScrollAnimation';
 import PageHero from '@/components/shared/PageHero';
 import dueDiligenceImage from '@/assets/real-estate-due-diligence.webp';
 import remoteTransactionImage from '@/assets/remote-transaction.webp';
-import realEstateHeroBg from '@/assets/real-estate-hero-bg.webp';
+import realEstateHeroBg from '@/assets/real-estate-hero-new.webp';
 import { SEO, createServiceSchema } from '@/components/SEO';
 
 const RealEstate = () => {
