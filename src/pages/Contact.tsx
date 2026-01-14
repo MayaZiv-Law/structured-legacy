@@ -148,7 +148,7 @@ const Contact = () => {
                 <div className="space-y-6">
                   <div className={cn("flex items-center gap-4", isRTL && "flex-row-reverse")}>
                     <Mail className="h-5 w-5 text-accent shrink-0" />
-                    <a href="mailto:info@mayaziv.law" className="text-foreground hover:text-accent transition-colors">info@mayaziv.law</a>
+                    <a href="mailto:info@mayaziv-law.com" className="text-foreground hover:text-accent transition-colors">info@mayaziv-law.com</a>
                   </div>
                   <div className={cn("flex items-center gap-4", isRTL && "flex-row-reverse")}>
                     <Phone className="h-5 w-5 text-accent shrink-0" />
