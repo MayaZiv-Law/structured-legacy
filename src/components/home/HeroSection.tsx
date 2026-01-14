@@ -33,7 +33,7 @@ const HeroSection = () => {
           {/* Text Box - optimized for faster render */}
           <div className={cn("bg-primary/95 px-8 py-6 sm:px-12 sm:py-8 shadow-2xl", isRTL && "font-hebrew text-right")}>
             {/* Tagline */}
-            <h1 className={cn("text-4xl sm:text-5xl lg:text-6xl font-display font-semibold text-primary-foreground mb-4 leading-tight", isRTL && "font-hebrew")}>
+            <h1 className={cn("text-3xl sm:text-4xl lg:text-5xl font-display font-semibold text-primary-foreground mb-4 leading-tight", isRTL && "font-hebrew")}>
               {t('hero.tagline')}
             </h1>
 
