@@ -49,16 +49,16 @@ const MethodologySection = () => {
 
   return (
     <section 
-      className="py-24 bg-secondary/30 overflow-hidden"
+      className="py-16 bg-secondary/30 overflow-hidden"
       style={{ contentVisibility: 'auto', containIntrinsicSize: '0 800px' }}
     >
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         {/* Centered Title */}
-        <div className={cn("text-center mb-16", isRTL && "font-hebrew")}>
-          <h2 className="text-4xl sm:text-5xl font-display font-semibold text-foreground mb-4">
+        <div className={cn("text-center mb-10", isRTL && "font-hebrew")}>
+          <h2 className="text-4xl sm:text-5xl lg:text-6xl font-display font-semibold text-foreground mb-4">
             {t('method.title')}
           </h2>
-          <p className="text-muted-foreground text-lg max-w-3xl mx-auto">
+          <p className="text-muted-foreground text-xl max-w-3xl mx-auto">
             {t('method.subtitle')}
           </p>
         </div>
@@ -89,12 +89,12 @@ const MethodologySection = () => {
               {/* Content */}
               <div className="p-6">
                 {/* Title */}
-                <h3 className="text-lg font-display font-semibold text-foreground mb-3 leading-tight group-hover:text-accent transition-colors">
+                <h3 className="text-xl font-display font-semibold text-foreground mb-3 leading-tight group-hover:text-accent transition-colors">
                   {t(card.titleKey)}
                 </h3>
 
                 {/* Description */}
-                <p className="text-muted-foreground font-serif leading-relaxed text-sm">
+                <p className="text-muted-foreground font-serif leading-relaxed text-base">
                   {t(card.descKey)}
                 </p>
               </div>

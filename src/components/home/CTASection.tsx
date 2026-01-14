@@ -9,16 +9,16 @@ const CTASection = () => {
     isRTL
   } = useLanguage();
   const Arrow = isRTL ? ArrowLeft : ArrowRight;
-  return <section className="py-24 bg-[#faf8f5]" style={{ contentVisibility: 'auto', containIntrinsicSize: '0 300px' }}>
+  return <section className="py-16 bg-[#faf8f5]" style={{ contentVisibility: 'auto', containIntrinsicSize: '0 300px' }}>
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className={cn("max-w-3xl mx-auto text-center", isRTL && "font-hebrew")}>
-          <div className="w-16 h-0.5 bg-accent mx-auto mb-8" />
+          <div className="w-16 h-0.5 bg-accent mx-auto mb-6" />
           
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-display font-semibold mb-6 text-primary">
+          <h2 className="text-4xl sm:text-5xl lg:text-6xl font-display font-semibold mb-5 text-primary">
             {t('cta.title')}
           </h2>
           
-          <p className="text-lg mb-10 max-w-xl mx-auto text-primary">
+          <p className="text-xl mb-8 max-w-xl mx-auto text-primary">
             {t('cta.subtitle')}
           </p>
 

@@ -18,16 +18,16 @@ const FAQSection = () => {
 
   return (
     <section 
-      className="py-24 bg-background"
+      className="py-16 bg-background"
       style={{ contentVisibility: 'auto', containIntrinsicSize: '0 400px' }}
     >
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className={cn("max-w-3xl mx-auto", isRTL && "font-hebrew")}>
           {/* Title */}
-          <h2 className="text-3xl sm:text-4xl font-display font-semibold text-foreground mb-10 text-center">
+          <h2 className="text-4xl sm:text-5xl font-display font-semibold text-foreground mb-8 text-center">
             {t('faq.title')}
           </h2>
-          <div className="w-16 h-0.5 bg-accent mx-auto mb-10" />
+          <div className="w-16 h-0.5 bg-accent mx-auto mb-8" />
 
           {/* FAQ Accordion */}
           <Accordion type="single" collapsible className="w-full">
@@ -35,7 +35,7 @@ const FAQSection = () => {
               <AccordionItem key={index} value={`item-${index}`} className="border-b border-border">
                 <AccordionTrigger 
                   className={cn(
-                    "text-left py-6 text-lg font-medium hover:no-underline",
+                    "text-left py-5 text-xl font-medium hover:no-underline",
                     isRTL && "text-right"
                   )}
                 >
@@ -43,7 +43,7 @@ const FAQSection = () => {
                 </AccordionTrigger>
                 <AccordionContent 
                   className={cn(
-                    "text-muted-foreground leading-relaxed pb-6",
+                    "text-muted-foreground leading-relaxed pb-5 text-lg",
                     isRTL && "text-right"
                   )}
                 >

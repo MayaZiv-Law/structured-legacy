@@ -63,7 +63,7 @@ const About = () => {
       />
 
       {/* Philosophy Section */}
-      <section className="pt-40 sm:pt-48 pb-20 gradient-stone">
+      <section className="pt-40 sm:pt-48 pb-12 gradient-stone">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div 
             ref={philosophyAnim.ref}
@@ -73,15 +73,15 @@ const About = () => {
               philosophyAnim.isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
             )}
           >
-            <h2 className="text-3xl sm:text-4xl font-display font-semibold text-foreground mb-6">
+            <h2 className="text-4xl sm:text-5xl font-display font-semibold text-foreground mb-5">
               {t('about.philosophy.title')}
             </h2>
-            <div className={cn("w-16 h-0.5 bg-accent mb-8", isRTL && "mr-0 ml-auto")} />
-            <div className="space-y-6">
-              <p className="text-lg text-muted-foreground leading-relaxed">
+            <div className={cn("w-16 h-0.5 bg-accent mb-6", isRTL && "mr-0 ml-auto")} />
+            <div className="space-y-5">
+              <p className="text-xl text-muted-foreground leading-relaxed">
                 {t('about.philosophy.body')}
               </p>
-              <p className="text-lg text-muted-foreground leading-relaxed">
+              <p className="text-xl text-muted-foreground leading-relaxed">
                 {t('about.philosophy.body2')}
               </p>
             </div>
@@ -90,7 +90,7 @@ const About = () => {
       </section>
 
       {/* Attorney Section */}
-      <section className="py-20 bg-background">
+      <section className="py-12 bg-background">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div 
             ref={attorneyAnim.ref}
@@ -132,15 +132,15 @@ const About = () => {
                 attorneyAnim.isVisible ? "opacity-100 translate-x-0" : isRTL ? "opacity-0 -translate-x-8" : "opacity-0 translate-x-8"
               )}
             >
-              <h2 className="text-3xl sm:text-4xl font-display font-semibold text-foreground mb-6">
+              <h2 className="text-4xl sm:text-5xl font-display font-semibold text-foreground mb-5">
                 {t('about.attorney.title')}
               </h2>
-              <div className={cn("w-16 h-0.5 bg-accent mb-8", isRTL && "mr-0 ml-auto")} />
-              <div className="space-y-6">
-                <p className="text-lg text-muted-foreground leading-relaxed">
+              <div className={cn("w-16 h-0.5 bg-accent mb-6", isRTL && "mr-0 ml-auto")} />
+              <div className="space-y-5">
+                <p className="text-xl text-muted-foreground leading-relaxed">
                   {t('about.attorney.body')}
                 </p>
-                <p className="text-lg text-muted-foreground leading-relaxed">
+                <p className="text-xl text-muted-foreground leading-relaxed">
                   {t('about.attorney.body2')}
                 </p>
               </div>
@@ -150,7 +150,7 @@ const About = () => {
       </section>
 
       {/* Who We Serve Section - Bridges between sections */}
-      <section className="relative z-20 pb-0 pt-20 bg-background overflow-visible">
+      <section className="relative z-20 pb-0 pt-12 bg-background overflow-visible">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div 
             ref={serveAnim.ref}
@@ -172,14 +172,14 @@ const About = () => {
               isRTL ? "mr-auto ml-0" : "ml-auto mr-0"
             )}>
               <div className={cn(isRTL && "font-hebrew text-right")}>
-                <h2 className="text-2xl sm:text-3xl font-display font-semibold text-foreground mb-6">
+                <h2 className="text-3xl sm:text-4xl font-display font-semibold text-foreground mb-5">
                   {t('about.serve.title')}
                 </h2>
                 <div className="space-y-4">
-                  <p className="text-muted-foreground leading-relaxed">
+                  <p className="text-muted-foreground leading-relaxed text-lg">
                     {t('about.serve.body')}
                   </p>
-                  <p className="text-muted-foreground leading-relaxed">
+                  <p className="text-muted-foreground leading-relaxed text-lg">
                     {t('about.serve.body2')}
                   </p>
                 </div>
@@ -190,22 +190,22 @@ const About = () => {
       </section>
 
       {/* What to Expect Section */}
-      <section className="pt-40 lg:pt-52 pb-16 lg:pb-24 bg-secondary/30 -mt-16">
+      <section className="pt-40 lg:pt-48 pb-12 lg:pb-16 bg-secondary/30 -mt-16">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div 
             ref={expectAnim.ref}
             className={cn(
-              "text-center mb-12 transition-all duration-700",
+              "text-center mb-10 transition-all duration-700",
               isRTL && "font-hebrew",
               expectAnim.isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
             )}
           >
-            <h2 className="text-3xl sm:text-4xl font-display font-semibold text-foreground">
+            <h2 className="text-4xl sm:text-5xl font-display font-semibold text-foreground">
               {t('about.expect.title')}
             </h2>
           </div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-10 max-w-6xl mx-auto">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8 max-w-6xl mx-auto">
             {expectations.map((item, index) => (
               <div
                 key={index}
@@ -222,12 +222,12 @@ const About = () => {
                 </div>
                 
                 {/* Title */}
-                <h3 className="text-xl font-display font-medium text-foreground mb-3 italic">
+                <h3 className="text-2xl font-display font-medium text-foreground mb-3 italic">
                   {t(item.titleKey)}
                 </h3>
                 
                 {/* Description */}
-                <p className="text-muted-foreground leading-relaxed text-sm">
+                <p className="text-muted-foreground leading-relaxed text-base">
                   {t(item.descKey)}
                 </p>
               </div>
@@ -240,7 +240,7 @@ const About = () => {
       <MethodologySection />
 
       {/* CTA Section */}
-      <section className="py-24 bg-primary">
+      <section className="py-16 bg-primary">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div 
             ref={ctaAnim.ref}
@@ -250,13 +250,13 @@ const About = () => {
               ctaAnim.isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
             )}
           >
-            <div className="w-16 h-0.5 bg-accent mx-auto mb-8" />
+            <div className="w-16 h-0.5 bg-accent mx-auto mb-6" />
             
-            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-body font-semibold text-primary-foreground mb-6">
+            <h2 className="text-4xl sm:text-5xl lg:text-6xl font-body font-semibold text-primary-foreground mb-5">
               {t('about.cta.title')}
             </h2>
             
-            <p className="text-primary-foreground/80 text-lg mb-10 max-w-xl mx-auto">
+            <p className="text-primary-foreground/80 text-xl mb-8 max-w-xl mx-auto">
               {t('about.cta.body')}
             </p>
 

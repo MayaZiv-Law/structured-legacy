@@ -14,7 +14,7 @@ const InsightsSection = () => {
   const { data: articles, isLoading } = useLatestArticles(3);
 
   return (
-    <section className="py-24 bg-background">
+    <section className="py-16 bg-background">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div 
           ref={sectionAnim.ref} 
@@ -23,9 +23,9 @@ const InsightsSection = () => {
             sectionAnim.isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
           )}
         >
-          <div className={cn("flex flex-col sm:flex-row justify-between items-start sm:items-center mb-12 gap-4", isRTL && "font-hebrew")}>
+          <div className={cn("flex flex-col sm:flex-row justify-between items-start sm:items-center mb-10 gap-4", isRTL && "font-hebrew")}>
             <div>
-              <h2 className="text-3xl sm:text-4xl font-display font-semibold text-foreground mb-2">
+              <h2 className="text-4xl sm:text-5xl font-display font-semibold text-foreground mb-2">
                 {t('insights.title')}
               </h2>
             </div>
@@ -37,7 +37,7 @@ const InsightsSection = () => {
             </Button>
           </div>
 
-          <div className="w-16 h-0.5 bg-accent mb-12" />
+          <div className="w-16 h-0.5 bg-accent mb-10" />
 
           {isLoading ? (
             <div className="flex justify-center py-12">
@@ -90,11 +90,11 @@ const InsightsSection = () => {
                         </span>
                       </div>
                       
-                      <h3 className="text-lg font-display font-medium text-foreground mb-3 group-hover:text-accent transition-colors line-clamp-2">
+                      <h3 className="text-xl font-display font-medium text-foreground mb-3 group-hover:text-accent transition-colors line-clamp-2">
                         {title}
                       </h3>
 
-                      <p className="text-muted-foreground leading-relaxed mb-4 line-clamp-2 text-base">
+                      <p className="text-muted-foreground leading-relaxed mb-4 line-clamp-2 text-lg">
                         {excerpt}
                       </p>
 

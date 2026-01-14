@@ -56,7 +56,7 @@ const PageHero = ({
             <div className={cn("w-16 h-1 bg-accent mb-4", isRTL && "mr-0 ml-auto")} />
 
             {/* Title */}
-            <h1 className="text-3xl sm:text-4xl lg:text-5xl font-display font-semibold text-primary-foreground mb-4 leading-tight">
+            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-display font-semibold text-primary-foreground mb-4 leading-tight">
               {title}
             </h1>
 
