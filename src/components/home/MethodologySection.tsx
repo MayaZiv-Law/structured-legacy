@@ -94,7 +94,7 @@ const MethodologySection = () => {
                 </h3>
 
                 {/* Description */}
-                <p className="text-muted-foreground font-serif leading-relaxed text-base">
+                <p className="text-muted-foreground font-serif leading-relaxed text-lg">
                   {t(card.descKey)}
                 </p>
               </div>

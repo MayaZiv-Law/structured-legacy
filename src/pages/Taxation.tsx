@@ -124,12 +124,12 @@ const Taxation = () => {
                     </div>
                     
                     {/* Title */}
-                    <h3 className="text-lg font-display font-medium text-foreground mb-2">
+                    <h3 className="text-xl font-display font-medium text-foreground mb-2">
                       {service.title}
                     </h3>
                     
                     {/* Description */}
-                    <p className="text-muted-foreground text-base leading-relaxed">
+                    <p className="text-muted-foreground text-lg leading-relaxed">
                       {service.desc}
                     </p>
                   </div>)}

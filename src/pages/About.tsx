@@ -227,7 +227,7 @@ const About = () => {
                 </h3>
                 
                 {/* Description */}
-                <p className="text-muted-foreground leading-relaxed text-base">
+                <p className="text-muted-foreground leading-relaxed text-lg">
                   {t(item.descKey)}
                 </p>
               </div>

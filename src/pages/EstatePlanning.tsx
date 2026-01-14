@@ -112,8 +112,8 @@ const EstatePlanning = () => {
             transitionDelay: willsAnim.isVisible ? `${i * 150}ms` : '0ms'
           }}>
                 <area.icon className="h-6 w-6 text-accent mb-4" />
-                <h3 className="font-medium mb-2 text-lg">{area.title}</h3>
-                <p className="text-base text-muted-foreground">{area.desc}</p>
+                <h3 className="font-medium mb-2 text-xl">{area.title}</h3>
+                <p className="text-lg text-muted-foreground">{area.desc}</p>
               </div>)}
           </div>
         </div>
@@ -173,8 +173,8 @@ const EstatePlanning = () => {
                     <span className="text-accent font-semibold">{step.num}</span>
                   </div>
                   <div className="pt-1">
-                    <h3 className="font-medium mb-1 text-lg">{step.title}</h3>
-                    <p className="text-base text-muted-foreground">{step.desc}</p>
+                    <h3 className="font-medium mb-1 text-xl">{step.title}</h3>
+                    <p className="text-lg text-muted-foreground">{step.desc}</p>
                   </div>
                 </div>)}
             </div>
