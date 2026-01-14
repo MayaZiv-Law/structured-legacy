@@ -156,9 +156,9 @@ const translations: Record<Language, Record<string, string>> = {
     // Estate Planning Page
     'estate.hero.title': 'Inheritance & Estate Planning',
     'estate.hero.subtitle': 'Legal strategies for cross border wealth transfer, bilingual wills, and Enduring Power of Attorney (Israel).',
-    'estate.challenge.title': 'Managing Family Wealth Across Jurisdictions',
-    'estate.challenge.body': 'Families with assets in Israel and ties abroad face a unique legal landscape. Israeli inheritance procedures often interact with foreign laws, creating potential conflicts regarding jurisdiction and tax liability. A standard Israeli will is rarely sufficient for a multinational estate.',
-    'estate.challenge.body2': 'The firm develops structured estate plans for Israeli and international clients to prevent disputes, avoid probate delays, and reduce exposure to double taxation. The process integrates Israeli inheritance law with relevant foreign legal frameworks, supporting clients residing in Israel or abroad who hold assets or family ties across multiple jurisdictions. This coordinated approach ensures that each inheritance is transferred efficiently and in line with the client\'s intent.',
+    'estate.challenge.title': 'Families with Assets in Israel and Ties Abroad',
+    'estate.challenge.body': 'The firm develops structured estate plans for Israeli and international clients to prevent disputes, avoid probate delays, and reduce exposure to double taxation. The process integrates Israeli inheritance law with relevant foreign legal frameworks, supporting clients residing in Israel or abroad who hold assets or family ties across multiple jurisdictions. This coordinated approach ensures that each inheritance is transferred efficiently and in line with the client\'s intent.',
+    'estate.challenge.body2': '',
     'estate.wills.title': 'Cross Border Wills & Probate Strategy',
     'estate.wills.body': 'The Firm drafts bilingual wills that meet strict Israeli legal standards while referencing your global estate structure. Where appropriate, we structure an Israel-focused will that aligns with an existing foreign will, aiming to reduce friction in Israeli procedures without conflicting with your primary estate plan abroad.',
     'estate.wills.compliance.title': 'Drafting for Compliance',
