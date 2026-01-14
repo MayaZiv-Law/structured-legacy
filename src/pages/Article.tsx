@@ -25,7 +25,7 @@ const Article = () => {
       // H1 heading
       if (paragraph.startsWith('# ') && !paragraph.startsWith('## ')) {
         return (
-          <h1 key={index} className="text-3xl font-display font-bold text-foreground mt-10 mb-6">
+          <h1 key={index} className="text-4xl font-display font-bold text-foreground mt-10 mb-6">
             {paragraph.replace('# ', '')}
           </h1>
         );
@@ -33,7 +33,7 @@ const Article = () => {
       // H2 heading
       if (paragraph.startsWith('## ')) {
         return (
-          <h2 key={index} className="text-2xl font-display font-semibold text-foreground mt-10 mb-4">
+          <h2 key={index} className="text-3xl font-display font-semibold text-foreground mt-10 mb-4">
             {paragraph.replace('## ', '')}
           </h2>
         );
@@ -41,7 +41,7 @@ const Article = () => {
       // H3 heading
       if (paragraph.startsWith('### ')) {
         return (
-          <h3 key={index} className="text-xl font-display font-medium text-foreground mt-8 mb-3">
+          <h3 key={index} className="text-2xl font-display font-medium text-foreground mt-8 mb-3">
             {paragraph.replace('### ', '')}
           </h3>
         );
@@ -49,7 +49,7 @@ const Article = () => {
       // Italic disclaimer
       if (paragraph.startsWith('*') && paragraph.endsWith('*') && !paragraph.startsWith('**')) {
         return (
-          <p key={index} className="text-muted-foreground italic text-sm border-l-2 border-accent/30 pl-4 my-6">
+          <p key={index} className="text-muted-foreground italic text-base border-l-2 border-accent/30 pl-4 my-6">
             {paragraph.slice(1, -1)}
           </p>
         );
@@ -57,7 +57,7 @@ const Article = () => {
       // Bullet list item
       if (paragraph.startsWith('- ') || paragraph.startsWith('• ')) {
         return (
-          <li key={index} className="text-muted-foreground leading-relaxed ml-4 mb-2">
+          <li key={index} className="text-lg text-muted-foreground leading-relaxed ml-4 mb-2">
             {renderBoldText(paragraph.replace(/^[-•]\s*/, ''))}
           </li>
         );
@@ -65,7 +65,7 @@ const Article = () => {
       // Numbered list
       if (paragraph.match(/^\d+\./)) {
         return (
-          <li key={index} className="text-muted-foreground leading-relaxed ml-4 mb-2 list-decimal">
+          <li key={index} className="text-lg text-muted-foreground leading-relaxed ml-4 mb-2 list-decimal">
             {renderBoldText(paragraph.replace(/^\d+\.\s*/, ''))}
           </li>
         );
@@ -73,7 +73,7 @@ const Article = () => {
       // Bold only paragraph
       if (paragraph.startsWith('**') && paragraph.endsWith('**')) {
         return (
-          <p key={index} className="text-foreground font-medium mt-6 mb-2">
+          <p key={index} className="text-lg text-foreground font-medium mt-6 mb-2">
             {paragraph.replace(/\*\*/g, '')}
           </p>
         );
@@ -81,14 +81,14 @@ const Article = () => {
       // Paragraph with inline bold
       if (paragraph.includes('**')) {
         return (
-          <p key={index} className="text-muted-foreground leading-relaxed mb-4">
+          <p key={index} className="text-lg text-muted-foreground leading-relaxed mb-4">
             {renderBoldText(paragraph)}
           </p>
         );
       }
       // Regular paragraph
       return (
-        <p key={index} className="text-muted-foreground leading-relaxed mb-4">
+        <p key={index} className="text-lg text-muted-foreground leading-relaxed mb-4">
           {paragraph}
         </p>
       );
@@ -234,13 +234,13 @@ const Article = () => {
       </section>
 
       {/* Related Articles CTA */}
-      <section className="py-16 bg-muted/30">
+      <section className="py-12 bg-muted/30">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className={cn("text-center", isRTL && "font-hebrew")}>
-            <h2 className="text-2xl font-display font-semibold text-foreground mb-4">
+            <h2 className="text-3xl font-display font-semibold text-foreground mb-4">
               {language === 'he' ? 'רוצים לקרוא עוד?' : 'Want to Read More?'}
             </h2>
-            <p className="text-muted-foreground mb-6">
+            <p className="text-lg text-muted-foreground mb-6">
               {language === 'he' 
                 ? 'חזרו לדף התובנות שלנו לעוד מאמרים ותכנים מקצועיים.'
                 : 'Return to our insights page for more articles and professional content.'}

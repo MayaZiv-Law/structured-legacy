@@ -70,9 +70,9 @@ const Contact = () => {
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div ref={formAnim.ref} className={cn("grid lg:grid-cols-5 overflow-hidden rounded-lg shadow-lg transition-all duration-700", formAnim.isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8")}>
             <div className="lg:col-span-3 bg-card p-8 lg:p-12">
-              <div className={cn(isRTL && "font-hebrew text-right")}>
-                <h2 className="text-3xl font-display font-semibold text-foreground mb-4">{language === 'he' ? 'האינטרסים שלך ראויים לתשומת לב אישית' : "Your Interests Deserve Personal Attention"}</h2>
-                <p className="text-muted-foreground mb-8">{language === 'he' ? 'מלאו את הטופס הקצר כדי שנוכל ליצור איתכם קשר בהקדם האפשרי ולהתחיל לתכנן את הפתרון המשפטי המתאים לכם.' : 'Please fill out this brief questionnaire so that we can contact you as soon as possible to begin planning the right legal solution for you.'}</p>
+            <div className={cn(isRTL && "font-hebrew text-right")}>
+                <h2 className="text-4xl font-display font-semibold text-foreground mb-4">{language === 'he' ? 'האינטרסים שלך ראויים לתשומת לב אישית' : "Your Interests Deserve Personal Attention"}</h2>
+                <p className="text-lg text-muted-foreground mb-8">{language === 'he' ? 'מלאו את הטופס הקצר כדי שנוכל ליצור איתכם קשר בהקדם האפשרי ולהתחיל לתכנן את הפתרון המשפטי המתאים לכם.' : 'Please fill out this brief questionnaire so that we can contact you as soon as possible to begin planning the right legal solution for you.'}</p>
               </div>
               <form onSubmit={handleSubmit} className={cn("space-y-5", isRTL && "font-hebrew")}>
                 <div>
@@ -144,7 +144,7 @@ const Contact = () => {
 
             <div className="lg:col-span-2 bg-muted/50 p-8 lg:p-12 flex flex-col justify-center">
               <div className={cn(isRTL && "font-hebrew text-right")}>
-                <h2 className="text-3xl font-display font-semibold text-foreground mb-8">{language === 'he' ? 'פרטי התקשרות' : 'Contact info'}</h2>
+                <h2 className="text-4xl font-display font-semibold text-foreground mb-8">{language === 'he' ? 'פרטי התקשרות' : 'Contact info'}</h2>
                 <div className="space-y-6">
                   <div className={cn("flex items-center gap-4", isRTL && "flex-row-reverse")}>
                     <Mail className="h-5 w-5 text-accent shrink-0" />
