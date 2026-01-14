@@ -89,9 +89,7 @@ const EstatePlanning = () => {
             <p className="text-muted-foreground mb-4 leading-relaxed text-lg">
               {t('estate.challenge.body')}
             </p>
-            <p className="text-muted-foreground leading-relaxed text-lg">
-              {t('estate.challenge.body2')}
-            </p>
+            
           </div>
         </div>
       </section>
@@ -112,8 +110,8 @@ const EstatePlanning = () => {
             transitionDelay: willsAnim.isVisible ? `${i * 150}ms` : '0ms'
           }}>
                 <area.icon className="h-6 w-6 text-accent mb-4" />
-                <h3 className="font-medium mb-2 text-xl">{area.title}</h3>
-                <p className="text-lg text-muted-foreground">{area.desc}</p>
+                <h3 className="font-medium mb-2 text-lg">{area.title}</h3>
+                <p className="text-base text-muted-foreground">{area.desc}</p>
               </div>)}
           </div>
         </div>
@@ -134,24 +132,8 @@ const EstatePlanning = () => {
                 </p>
               </div>
               {/* Image */}
-              <div
-                className={cn(
-                  "rounded-xl overflow-hidden shadow-xl transition-all duration-700 delay-200 h-64 sm:h-80 lg:h-full",
-                  isRTL ? "order-2" : "order-2",
-                  epaAnim.isVisible
-                    ? "opacity-100 translate-x-0"
-                    : isRTL
-                      ? "opacity-0 -translate-x-8"
-                      : "opacity-0 translate-x-8"
-                )}
-              >
-                <img
-                  alt="Estate planning documents"
-                  className="w-full h-full object-cover"
-                  src="/lovable-uploads/e3b93eb0-b8af-4d3d-96e5-15a47306753b.webp"
-                  loading="lazy"
-                  decoding="async"
-                />
+              <div className={cn("rounded-xl overflow-hidden shadow-xl transition-all duration-700 delay-200 h-64 sm:h-80 lg:h-full", isRTL ? "order-2" : "order-2", epaAnim.isVisible ? "opacity-100 translate-x-0" : isRTL ? "opacity-0 -translate-x-8" : "opacity-0 translate-x-8")}>
+                <img alt="Estate planning documents" className="w-full h-full object-cover" src="/lovable-uploads/e3b93eb0-b8af-4d3d-96e5-15a47306753b.webp" loading="lazy" decoding="async" />
               </div>
             </div>
           </div>
@@ -173,8 +155,8 @@ const EstatePlanning = () => {
                     <span className="text-accent font-semibold">{step.num}</span>
                   </div>
                   <div className="pt-1">
-                    <h3 className="font-medium mb-1 text-xl">{step.title}</h3>
-                    <p className="text-lg text-muted-foreground">{step.desc}</p>
+                    <h3 className="font-medium mb-1 text-lg">{step.title}</h3>
+                    <p className="text-base text-muted-foreground">{step.desc}</p>
                   </div>
                 </div>)}
             </div>
