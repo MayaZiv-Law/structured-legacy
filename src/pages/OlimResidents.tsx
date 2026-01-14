@@ -77,8 +77,8 @@ const OlimResidents = () => {
             transitionDelay: frameworkAnim.isVisible ? `${i * 150}ms` : '0ms'
           }}>
                 <item.icon className="h-6 w-6 text-accent mb-4" />
-                <h3 className="text-lg font-medium mb-2">{item.title}</h3>
-                <p className="text-base text-muted-foreground">{item.desc}</p>
+                <h3 className="text-xl font-medium mb-2">{item.title}</h3>
+                <p className="text-lg text-muted-foreground">{item.desc}</p>
               </div>)}
           </div>
         </div>

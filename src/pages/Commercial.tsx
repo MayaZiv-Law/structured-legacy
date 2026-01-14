@@ -116,8 +116,8 @@ const Commercial = () => {
                 style={{ transitionDelay: servicesAnim.isVisible ? `${i * 100}ms` : '0ms' }}
               >
                 <service.icon className="h-6 w-6 text-accent mb-4" />
-                <h3 className="text-lg font-medium mb-2">{service.title}</h3>
-                <p className="text-base text-muted-foreground">{service.desc}</p>
+                <h3 className="text-xl font-medium mb-2">{service.title}</h3>
+                <p className="text-lg text-muted-foreground">{service.desc}</p>
               </div>
             ))}
           </div>
