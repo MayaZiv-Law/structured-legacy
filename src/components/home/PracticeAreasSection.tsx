@@ -49,12 +49,12 @@ const PracticeAreasSection = () => {
 
   return (
     <section 
-      className="py-24 bg-background"
+      className="py-16 bg-background"
       style={{ contentVisibility: 'auto', containIntrinsicSize: '0 800px' }}
     >
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-        <div className={cn("text-center mb-16", isRTL && "font-hebrew")}>
-          <h2 className="text-4xl sm:text-5xl font-display font-semibold text-foreground mb-4">
+        <div className={cn("text-center mb-10", isRTL && "font-hebrew")}>
+          <h2 className="text-4xl sm:text-5xl lg:text-6xl font-display font-semibold text-foreground mb-4">
             {t('practice.title')}
           </h2>
         </div>
@@ -79,7 +79,7 @@ const PracticeAreasSection = () => {
 
               {/* Bottom Label Card - Offset below image, top-aligned */}
               <div className={cn("absolute top-[calc(100%-5.5rem)] left-1/2 -translate-x-1/2 w-[90%] bg-background shadow-md py-3 px-4 text-center", isRTL && "font-hebrew")}>
-                <h3 className="text-base font-display font-medium text-foreground">
+                <h3 className="text-lg font-display font-medium text-foreground">
                   {t(area.titleKey)}
                 </h3>
               </div>

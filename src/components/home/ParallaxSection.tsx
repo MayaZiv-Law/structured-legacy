@@ -110,10 +110,10 @@ const ParallaxSection = () => {
           willChange: isVisible && !isMobile ? 'transform' : 'auto'
         }}
       >
-        <blockquote className={cn("text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-display font-medium text-primary-foreground leading-relaxed", isRTL && "font-hebrew")}>
+        <blockquote className={cn("text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-display font-medium text-primary-foreground leading-relaxed", isRTL && "font-hebrew")}>
           {isRTL ? '"' : '"'}
           {t('parallax.quote')}
-          <span className="text-accent text-4xl md:text-5xl leading-none">{isRTL ? '"' : '"'}</span>
+          <span className="text-accent text-5xl md:text-6xl leading-none">{isRTL ? '"' : '"'}</span>
         </blockquote>
       </div>
     </section>
