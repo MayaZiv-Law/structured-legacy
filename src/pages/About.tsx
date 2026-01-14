@@ -7,7 +7,7 @@ import { Button } from '@/components/ui/button';
 import { useScrollAnimation } from '@/hooks/useScrollAnimation';
 import PageHero from '@/components/shared/PageHero';
 import mayaPortrait from '@/assets/maya-portrait.webp';
-import aboutHeroBg from '@/assets/about-hero-globe.jpg';
+import aboutHeroBg from '@/assets/about-hero-globe.webp';
 import { SEO, attorneySchema } from '@/components/SEO';
 import MethodologySection from '@/components/home/MethodologySection';
 
