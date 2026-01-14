@@ -201,3 +201,20 @@
   .delay-400 { animation-delay: 400ms; }
   .delay-500 { animation-delay: 500ms; }
 }
+
+/* Accessibility Styles */
+.high-contrast {
+  filter: contrast(1.25);
+}
+
+.high-contrast * {
+  border-color: currentColor !important;
+}
+
+.highlight-links a {
+  background-color: hsl(var(--accent)) !important;
+  color: hsl(var(--accent-foreground)) !important;
+  text-decoration: underline !important;
+  padding: 0.125rem 0.25rem !important;
+  border-radius: 0.125rem !important;
+}

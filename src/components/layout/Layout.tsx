@@ -1,6 +1,7 @@
 import { ReactNode, useEffect } from 'react';
 import Header from './Header';
 import Footer from './Footer';
+import AccessibilityWidget from '@/components/AccessibilityWidget';
 import { useLanguage } from '@/contexts/LanguageContext';
 import { cn } from '@/lib/utils';
 
@@ -22,6 +23,7 @@ const Layout = ({ children }: LayoutProps) => {
       <Header />
       <main className="flex-1 pt-20">{children}</main>
       <Footer />
+      <AccessibilityWidget />
     </div>
   );
 };
