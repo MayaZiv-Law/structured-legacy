@@ -80,13 +80,13 @@ const Taxation = () => {
       <section className="pt-40 sm:pt-48 pb-16 gradient-stone">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div ref={contextAnim.ref} className={cn("max-w-4xl mx-auto transition-all duration-700", isRTL && "font-hebrew text-right", contextAnim.isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8")}>
-            <h2 className="text-2xl sm:text-3xl font-display font-semibold mb-6">
+            <h2 className="text-3xl sm:text-4xl font-display font-semibold mb-6">
               {t('tax.context.title')}
             </h2>
-            <p className="text-muted-foreground mb-4 leading-relaxed">
+            <p className="text-lg text-muted-foreground mb-4 leading-relaxed">
               {t('tax.context.body')}
             </p>
-            <p className="text-muted-foreground leading-relaxed">
+            <p className="text-lg text-muted-foreground leading-relaxed">
               {t('tax.context.body2')}
             </p>
           </div>
@@ -94,15 +94,15 @@ const Taxation = () => {
       </section>
 
       {/* Real Estate Tax Planning - Asymmetric Design */}
-      <section className="py-24 bg-background overflow-hidden">
+      <section className="py-16 bg-background overflow-hidden">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           {/* Centered title above the layout */}
           <div ref={realEstateAnim.ref} className={cn("text-center mb-12 transition-all duration-700", isRTL && "font-hebrew", realEstateAnim.isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8")}>
             <div className="w-16 h-1 bg-accent mx-auto mb-6" />
-            <h2 className="text-3xl md:text-4xl font-display font-semibold text-foreground mb-4">
+            <h2 className="text-3xl sm:text-4xl font-display font-semibold text-foreground mb-4">
               {t('tax.realEstate.title')}
             </h2>
-            <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+            <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
               {t('tax.realEstate.body')}
             </p>
           </div>
@@ -129,7 +129,7 @@ const Taxation = () => {
                     </h3>
                     
                     {/* Description */}
-                    <p className="text-muted-foreground text-sm leading-relaxed">
+                    <p className="text-muted-foreground text-base leading-relaxed">
                       {service.desc}
                     </p>
                   </div>)}
@@ -140,11 +140,11 @@ const Taxation = () => {
       </section>
 
       {/* Banking & AML Compliance - Asymmetric Design with Image */}
-      <section className="py-24 bg-background overflow-hidden">
+      <section className="py-16 bg-background overflow-hidden">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           {/* Centered title above the layout */}
           <div ref={bankingAnim.ref} className={cn("text-center mb-16 transition-all duration-700", isRTL && "font-hebrew", bankingAnim.isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8")}>
-            <h2 className="text-3xl md:text-4xl font-display font-semibold text-foreground">
+            <h2 className="text-3xl sm:text-4xl font-display font-semibold text-foreground">
               {t('tax.banking.title')}
             </h2>
           </div>
@@ -155,10 +155,10 @@ const Taxation = () => {
               {/* Beige card with text */}
               <div className={cn("relative z-10 w-full bg-secondary p-8 md:p-12 shadow-sm", isRTL && "order-1")}>
                 <div className={cn(isRTL && "font-hebrew text-right")}>
-                  <p className="text-muted-foreground mb-4 leading-relaxed">
+                  <p className="text-lg text-muted-foreground mb-4 leading-relaxed">
                     {t('tax.banking.body')}
                   </p>
-                  <p className="text-muted-foreground leading-relaxed">
+                  <p className="text-lg text-muted-foreground leading-relaxed">
                     {t('tax.banking.body2')}
                   </p>
                 </div>
@@ -174,14 +174,14 @@ const Taxation = () => {
       </section>
 
       {/* Who We Serve */}
-      <section className="py-16 bg-background">
+      <section className="py-12 bg-background">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div ref={serveAnim.ref} className={cn("max-w-4xl mx-auto text-center transition-all duration-700", isRTL && "font-hebrew", serveAnim.isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8")}>
             <div className="w-16 h-1 bg-accent mb-6 mx-auto" />
-            <h2 className="text-2xl sm:text-3xl font-display font-semibold mb-6">
+            <h2 className="text-3xl sm:text-4xl font-display font-semibold mb-6">
               {t('tax.serve.title')}
             </h2>
-            <p className="text-muted-foreground mb-8 leading-relaxed">
+            <p className="text-lg text-muted-foreground mb-8 leading-relaxed">
               {t('tax.serve.body')}
             </p>
             
@@ -194,7 +194,7 @@ const Taxation = () => {
                     <item.icon className="w-7 h-7 text-accent-foreground" strokeWidth={1.5} />
                   </div>
                   <h3 className="text-xl font-display font-medium text-foreground mb-3">{item.title}</h3>
-                  <p className="text-muted-foreground leading-relaxed">{item.desc}</p>
+                  <p className="text-lg text-muted-foreground leading-relaxed">{item.desc}</p>
                 </div>)}
             </div>
           </div>
@@ -202,7 +202,7 @@ const Taxation = () => {
       </section>
 
       {/* Cross-Border Alignment */}
-      <section className="py-24 bg-background overflow-hidden">
+      <section className="py-16 bg-background overflow-hidden">
         <div className="container relative max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           {/* Background beige layer - absolute positioned */}
           <div className={cn("absolute -top-12 h-[calc(100%+9rem)] w-[95%] bg-secondary/50 rounded-sm", isRTL ? "-right-8 lg:-right-16" : "-left-8 lg:-left-16")} />
@@ -210,13 +210,13 @@ const Taxation = () => {
           {/* White content card - relative z-10 */}
           <div ref={crossBorderAnim.ref} className={cn("relative z-10 max-w-[92%] mt-8 bg-background shadow-sm rounded-lg p-8 md:p-12 transition-all duration-700", isRTL ? "mr-auto text-right font-hebrew" : "ml-auto", crossBorderAnim.isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8")}>
             <div className={cn("w-16 h-1 bg-accent mb-6", isRTL && "mr-0")} />
-            <h2 className="text-2xl sm:text-3xl font-display font-semibold mb-6">
+            <h2 className="text-3xl sm:text-4xl font-display font-semibold mb-6">
               {t('tax.crossBorder.title')}
             </h2>
-            <p className="text-muted-foreground mb-4 leading-relaxed">
+            <p className="text-lg text-muted-foreground mb-4 leading-relaxed">
               {t('tax.crossBorder.body')}
             </p>
-            <p className="text-muted-foreground leading-relaxed">
+            <p className="text-lg text-muted-foreground leading-relaxed">
               {t('tax.crossBorder.body2')}
             </p>
           </div>
@@ -224,13 +224,13 @@ const Taxation = () => {
       </section>
 
       {/* Olim Planning */}
-      <section className="py-16 bg-background">
+      <section className="py-12 bg-background">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div ref={olimAnim.ref} className={cn("max-w-4xl mx-auto text-center transition-all duration-700", isRTL && "font-hebrew", olimAnim.isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8")}>
-            <h2 className="text-2xl sm:text-3xl font-display font-semibold mb-6">
+            <h2 className="text-3xl sm:text-4xl font-display font-semibold mb-6">
               {t('tax.olim.title')}
             </h2>
-            <p className="text-muted-foreground leading-relaxed">
+            <p className="text-lg text-muted-foreground leading-relaxed">
               {t('tax.olim.body')}
             </p>
           </div>
@@ -238,9 +238,9 @@ const Taxation = () => {
       </section>
 
       {/* FAQ Section */}
-      <section className="py-16 gradient-stone">
+      <section className="py-12 gradient-stone">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-3xl">
-          <h2 ref={faqAnim.ref} className={cn("text-2xl sm:text-3xl font-display font-semibold mb-8 text-center transition-all duration-700", isRTL && "font-hebrew", faqAnim.isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8")}>
+          <h2 ref={faqAnim.ref} className={cn("text-3xl sm:text-4xl font-display font-semibold mb-8 text-center transition-all duration-700", isRTL && "font-hebrew", faqAnim.isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8")}>
             {t('service.faq')}
           </h2>
           <Accordion type="single" collapsible className="w-full">
@@ -259,14 +259,14 @@ const Taxation = () => {
       </section>
 
       {/* CTA Section */}
-      <section className="py-24 bg-[#faf8f5]">
+      <section className="py-16 bg-[#faf8f5]">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div ref={ctaAnim.ref} className={cn("max-w-3xl mx-auto text-center transition-all duration-700", isRTL && "font-hebrew", ctaAnim.isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8")}>
-            <div className="w-16 h-0.5 bg-accent mx-auto mb-8" />
-            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-display font-semibold mb-6 text-primary">
+            <div className="w-16 h-0.5 bg-accent mx-auto mb-6" />
+            <h2 className="text-4xl sm:text-5xl lg:text-6xl font-display font-semibold mb-5 text-primary">
               {t('tax.cta.title')}
             </h2>
-            <p className="text-lg mb-10 max-w-xl mx-auto text-primary">
+            <p className="text-xl mb-8 max-w-xl mx-auto text-primary">
               {t('tax.cta.body')}
             </p>
             <Button asChild size="lg" className="bg-accent hover:bg-accent/90 text-accent-foreground font-medium px-10 py-6 text-base group">

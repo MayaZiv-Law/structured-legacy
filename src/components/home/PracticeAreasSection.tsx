@@ -49,7 +49,7 @@ const PracticeAreasSection = () => {
 
   return (
     <section 
-      className="py-16 bg-background"
+      className="py-12 bg-background"
       style={{ contentVisibility: 'auto', containIntrinsicSize: '0 800px' }}
     >
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
@@ -89,7 +89,7 @@ const PracticeAreasSection = () => {
       </div>
 
       {/* Spacer for offset cards */}
-      <div className="h-16" />
+      <div className="h-8" />
     </section>
   );
 };

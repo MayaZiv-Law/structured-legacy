@@ -48,7 +48,7 @@ const Insights = () => {
         </div>
       </section>
 
-      <section className="py-16 bg-muted/30">
+      <section className="py-12 bg-muted/30">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div 
             ref={philosophyAnim.ref} 
@@ -58,10 +58,10 @@ const Insights = () => {
               philosophyAnim.isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
             )}
           >
-            <h2 className="text-3xl sm:text-4xl font-display font-semibold text-foreground mb-6">
+            <h2 className="text-4xl sm:text-5xl font-display font-semibold text-foreground mb-6">
               {language === 'he' ? 'בהירות להחלטות חוצות גבולות' : 'Clarity for Cross Border Decisions'}
             </h2>
-            <div className="space-y-4 text-lg text-muted-foreground leading-relaxed">
+            <div className="space-y-4 text-xl text-muted-foreground leading-relaxed">
               <p>
                 {language === 'he' 
                   ? 'התובנות שלנו נכתבות להיות מעשיות: הסברים מובנים, שיקולים מרכזיים ומלכודות נפוצות לסימון מוקדם. המטרה היא לעזור לכם לשאול שאלות טובות יותר ולהבין את המפה המשפטית לפני התחייבות לעסקה.' 
@@ -72,7 +72,7 @@ const Insights = () => {
         </div>
       </section>
 
-      <section className="py-16 gradient-stone">
+      <section className="py-12 gradient-stone">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div ref={articlesAnim.ref}>
             {isLoading ? (
@@ -120,10 +120,10 @@ const Insights = () => {
                               : ''}
                           </span>
                         </div>
-                        <h3 className="text-lg font-display font-medium text-foreground mb-3 line-clamp-2">
+                        <h3 className="text-xl font-display font-medium text-foreground mb-3 line-clamp-2">
                           {title}
                         </h3>
-                        <p className="text-muted-foreground text-sm mb-4 line-clamp-2">
+                        <p className="text-muted-foreground text-base mb-4 line-clamp-2">
                           {excerpt}
                         </p>
                         <span className={cn("flex items-center gap-2 text-accent font-medium text-sm group-hover:gap-3 transition-all", isRTL && "flex-row-reverse")}>
