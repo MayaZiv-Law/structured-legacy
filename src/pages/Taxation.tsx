@@ -269,8 +269,8 @@ const Taxation = () => {
             <p className="text-xl mb-8 max-w-xl mx-auto text-primary">
               {t('tax.cta.body')}
             </p>
-            <Button asChild size="lg" className="bg-accent hover:bg-accent/90 text-accent-foreground font-medium px-10 py-6 text-base group">
-              <Link to="/contact" className={cn("flex items-center gap-2", isRTL && "flex-row-reverse")}>
+            <Button asChild size="lg" className="bg-accent hover:bg-accent/90 text-accent-foreground font-medium px-6 sm:px-10 py-6 text-base group max-w-full">
+              <Link to="/contact" className={cn("flex items-center gap-2 whitespace-normal text-center", isRTL && "flex-row-reverse")}>
                 {t('tax.cta.button')}
               </Link>
             </Button>

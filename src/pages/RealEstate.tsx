@@ -253,10 +253,10 @@ const RealEstate = () => {
               {t('realestate.cta.body')}
             </p>
 
-            <Button asChild size="lg" className="bg-accent hover:bg-accent/90 text-accent-foreground font-medium px-10 py-6 text-base group">
-              <Link to="/contact" className={cn("flex items-center gap-2", isRTL && "flex-row-reverse")}>
+            <Button asChild size="lg" className="bg-accent hover:bg-accent/90 text-accent-foreground font-medium px-6 sm:px-10 py-6 text-base group max-w-full">
+              <Link to="/contact" className={cn("flex items-center gap-2 whitespace-normal text-center", isRTL && "flex-row-reverse")}>
                 {t('realestate.cta.button')}
-                <Arrow className="h-4 w-4 transition-transform group-hover:translate-x-1" />
+                <Arrow className="h-4 w-4 flex-shrink-0 transition-transform group-hover:translate-x-1" />
               </Link>
             </Button>
           </div>
