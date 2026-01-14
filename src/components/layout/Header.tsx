@@ -41,9 +41,9 @@ const Header = () => {
             <img 
               src={language === 'he' ? logoHe : logoEn} 
               alt={language === 'he' ? 'מאיה זיו - משרד עורכי דין' : 'Maya Ziv Law'} 
-              className={cn("w-auto", language === 'he' ? "h-16" : "h-12")}
-              width={language === 'he' ? 142 : 107}
-              height={language === 'he' ? 64 : 48}
+              className={cn("w-auto", language === 'he' ? "h-14" : "h-12")}
+              width={language === 'he' ? 180 : 107}
+              height={language === 'he' ? 56 : 48}
               loading="eager"
               decoding="async"
               fetchPriority="high"
