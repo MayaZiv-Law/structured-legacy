@@ -28,7 +28,7 @@ const HeroSection = () => {
       <div className="flex-grow" />
 
       {/* Content Box - Overflows into next section */}
-      <div className="relative z-20 container mx-auto px-4 sm:px-6 lg:px-8 translate-y-32 sm:translate-y-40">
+      <div className="relative z-20 container mx-auto px-4 sm:px-6 lg:px-8 translate-y-16 sm:translate-y-24">
         <div className={cn("max-w-2xl", isRTL ? "ml-auto mr-4 lg:mr-8" : "mr-auto ml-4 lg:ml-8")}>
           {/* Text Box - optimized for faster render */}
           <div className={cn("bg-primary/95 px-8 py-6 sm:px-12 sm:py-8 shadow-2xl", isRTL && "font-hebrew text-right")}>
