@@ -5,24 +5,21 @@ import { ArrowRight, ArrowLeft, Calendar, Loader2 } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { useScrollAnimation } from '@/hooks/useScrollAnimation';
 import { useLatestArticles } from '@/hooks/useArticles';
-
 const InsightsSection = () => {
-  const { t, isRTL, language } = useLanguage();
+  const {
+    t,
+    isRTL,
+    language
+  } = useLanguage();
   const Arrow = isRTL ? ArrowLeft : ArrowRight;
   const sectionAnim = useScrollAnimation();
-  
-  const { data: articles, isLoading } = useLatestArticles(3);
-
-  return (
-    <section className="py-16 bg-background">
+  const {
+    data: articles,
+    isLoading
+  } = useLatestArticles(3);
+  return <section className="bg-background py-0">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-        <div 
-          ref={sectionAnim.ref} 
-          className={cn(
-            "transition-all duration-700", 
-            sectionAnim.isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
-          )}
-        >
+        <div ref={sectionAnim.ref} className={cn("transition-all duration-700", sectionAnim.isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8")}>
           <div className={cn("flex flex-col sm:flex-row justify-between items-start sm:items-center mb-10 gap-4", isRTL && "font-hebrew")}>
             <div>
               <h2 className="text-4xl sm:text-5xl font-display font-semibold text-foreground mb-2">
@@ -39,39 +36,19 @@ const InsightsSection = () => {
 
           <div className="w-16 h-0.5 bg-accent mb-10" />
 
-          {isLoading ? (
-            <div className="flex justify-center py-12">
+          {isLoading ? <div className="flex justify-center py-12">
               <Loader2 className="h-8 w-8 animate-spin text-accent" />
-            </div>
-          ) : (
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            </div> : <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
               {articles?.map((article, index) => {
-                const title = language === 'he' ? article.title_he : article.title_en;
-                const excerpt = language === 'he' ? article.excerpt_he : article.excerpt_en;
-                const category = language === 'he' ? article.category_he : article.category_en;
-                
-                return (
-                  <Link
-                    to={`/insights/${article.slug}`}
-                    key={article.id} 
-                    className={cn(
-                      "group bg-card border border-border rounded-xl overflow-hidden hover:border-accent/50 transition-all duration-500 hover:shadow-lg block", 
-                      isRTL && "font-hebrew text-right", 
-                      "opacity-100 translate-y-0 animate-fade-in"
-                    )} 
-                    style={{ animationDelay: `${index * 150}ms` }}
-                  >
+            const title = language === 'he' ? article.title_he : article.title_en;
+            const excerpt = language === 'he' ? article.excerpt_he : article.excerpt_en;
+            const category = language === 'he' ? article.category_he : article.category_en;
+            return <Link to={`/insights/${article.slug}`} key={article.id} className={cn("group bg-card border border-border rounded-xl overflow-hidden hover:border-accent/50 transition-all duration-500 hover:shadow-lg block", isRTL && "font-hebrew text-right", "opacity-100 translate-y-0 animate-fade-in")} style={{
+              animationDelay: `${index * 150}ms`
+            }}>
                     {/* Image Container */}
                     <div className="relative h-48 overflow-hidden">
-                      {article.image_url && (
-                        <img 
-                          src={article.image_url} 
-                          alt={title} 
-                          className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
-                          loading="lazy"
-                          decoding="async"
-                        />
-                      )}
+                      {article.image_url && <img src={article.image_url} alt={title} className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105" loading="lazy" decoding="async" />}
                       <div className={cn("absolute top-4", isRTL ? "right-4" : "left-4")}>
                         <span className="bg-accent text-accent-foreground text-xs font-medium px-3 py-1 rounded-full">
                           {category}
@@ -84,9 +61,7 @@ const InsightsSection = () => {
                       <div className={cn("flex items-center gap-2 text-muted-foreground text-sm mb-3", isRTL && "flex-row-reverse")}>
                         <Calendar className="h-4 w-4" />
                         <span>
-                          {article.published_at 
-                            ? new Date(article.published_at).toLocaleDateString(language === 'he' ? 'he-IL' : 'en-US')
-                            : ''}
+                          {article.published_at ? new Date(article.published_at).toLocaleDateString(language === 'he' ? 'he-IL' : 'en-US') : ''}
                         </span>
                       </div>
                       
@@ -103,15 +78,11 @@ const InsightsSection = () => {
                         <Arrow className="h-4 w-4" />
                       </span>
                     </div>
-                  </Link>
-                );
-              })}
-            </div>
-          )}
+                  </Link>;
+          })}
+            </div>}
         </div>
       </div>
-    </section>
-  );
+    </section>;
 };
-
 export default InsightsSection;
