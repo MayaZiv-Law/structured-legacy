@@ -159,7 +159,7 @@ const translations: Record<Language, Record<string, string>> = {
     'estate.challenge.title': 'Families with Assets in Israel and Ties Abroad',
     'estate.challenge.body': 'The firm develops structured estate plans for Israeli and international clients to prevent disputes, avoid probate delays, and reduce exposure to double taxation. The process integrates Israeli inheritance law with relevant foreign legal frameworks, supporting clients residing in Israel or abroad who hold assets or family ties across multiple jurisdictions. This coordinated approach ensures that each inheritance is transferred efficiently and in line with the client\'s intent.',
     'estate.challenge.body2': '',
-    'estate.wills.title': 'Cross Border Wills & Probate Strategy',
+    'estate.wills.title': 'Families with Assets in Israel and Ties Abroad',
     'estate.wills.body': 'The firm develops structured estate plans for Israeli and international clients to prevent disputes, avoid probate delays, and reduce exposure to double taxation. The process integrates Israeli inheritance law with relevant foreign legal frameworks, supporting clients residing in Israel or abroad who hold assets or family ties across multiple jurisdictions. This coordinated approach ensures that each inheritance is transferred efficiently and in line with the client\'s intent.',
     'estate.wills.compliance.title': 'Drafting for Compliance',
     'estate.wills.compliance.desc': 'Preparing documents to meet Israeli formal requirements and evidentiary standards.',
