@@ -36,7 +36,7 @@ const Terms = () => {
           content: 'Maya Ziv Law shall not be liable for any damages arising from your use of this website or any information contained herein. This includes direct, indirect, incidental, punitive, and consequential damages.'
         },
         {
-          title: '7. Links to Third-Party Websites',
+          title: '7. Links to Third Party Websites',
           content: 'This website may contain links to third-party websites. We have no control over the content of these sites and are not responsible for their content or practices.'
         },
         {
