@@ -235,9 +235,7 @@ const EstatePlanning = () => {
               <ArrowRight className="h-4 w-4 flex-shrink-0 transition-transform group-hover:translate-x-1" />
             </Link>
           </Button>
-          <p className={cn("text-sm text-primary/60 mt-4", isRTL && "font-hebrew")}>
-            {t('estate.cta.note')}
-          </p>
+          
         </div>
       </section>
     </Layout>;
