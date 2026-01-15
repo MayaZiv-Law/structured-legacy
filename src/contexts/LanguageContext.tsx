@@ -95,7 +95,7 @@ const translations: Record<Language, Record<string, string>> = {
     // CTA
     'cta.title': 'Your Interests Deserve Personal Attention',
     'cta.subtitle': 'Each client, each decision, and each detail receives dedicated care and thoughtful attention.',
-    'cta.button': 'Send a Confidential Inquiry',
+    'cta.button': 'Schedule a Consultation',
     'cta.buttonSecondary': 'Initial Fit Assessment',
 
     // Footer
@@ -195,7 +195,7 @@ const translations: Record<Language, Record<string, string>> = {
     'estate.faq.a4': 'Yes. We handle the process with the Registrar and banks through a power of attorney, so you are not required to be present in Israel to obtain the order.',
     'estate.cta.title': 'Plan for the Future',
     'estate.cta.body': 'Clear legal planning that supports your interests today and over time.',
-    'estate.cta.button': 'Request a Confidential Consultation',
+    'estate.cta.button': 'Schedule a Consultation',
     'estate.cta.note': 'Response within 1 2 business days',
 
     // Real Estate Page
@@ -267,7 +267,7 @@ const translations: Record<Language, Record<string, string>> = {
     'tax.faq.a3': 'Residency is determined by a "Center of Life" test, not just citizenship. We advise on the legal criteria and how your presence in Israel affects your status.',
     'tax.cta.title': 'Strategic Compliance',
     'tax.cta.body': 'Start with clarity, a plan that turns uncertainty into realty.',
-    'tax.cta.button': 'Request a Confidential Consultation',
+    'tax.cta.button': 'Schedule a Consultation',
 
     // Olim & Returning Residents Page
     'olim.hero.title': 'Legal Counsel for Olim Hadashim and Returning Residents',
@@ -296,7 +296,7 @@ const translations: Record<Language, Record<string, string>> = {
     'olim.expect.item3': 'Coordinated roadmap with defined next steps',
     'olim.cta.title': 'Start Your Transition on Solid Ground',
     'olim.cta.body': 'Begin with a structured roadmap and a documentation checklist.',
-    'olim.cta.button': 'Request a Confidential Consultation',
+    'olim.cta.button': 'Schedule a Consultation',
 
     // Commercial & Civil Page
     'commercial.hero.title': 'Commercial and Civil',
@@ -320,7 +320,7 @@ const translations: Record<Language, Record<string, string>> = {
     'commercial.clients.body': 'Our commercial practice focuses on contracts, asset protection, and complex disputes, and serves both businesses and private individuals. We work with business owners, investors, executives, and private clients who require ongoing legal counsel or strategic resolution for significant commercial and civil matters.',
     'commercial.cta.title': 'Protect Your Commercial Interests',
     'commercial.cta.body': 'Start with a contract review or a dispute strategy assessment. Confidential and documented.',
-    'commercial.cta.button': 'Request a Confidential Consultation',
+    'commercial.cta.button': 'Schedule a Consultation',
   },
   he: {
     // Navigation
@@ -408,7 +408,7 @@ const translations: Record<Language, Record<string, string>> = {
     // CTA
     'cta.title': 'האינטרסים שלכם ראויים לתשומת לב אישית',
     'cta.subtitle': 'כל לקוח וכל פרט בתיק מקבלים מענה מקצועי, דיסקרטי ומחושב.',
-    'cta.button': 'בקשת ייעוץ חסוי',
+    'cta.button': 'תיאום שיחת ייעוץ',
     'cta.buttonSecondary': 'בדיקת התאמה ראשונית',
 
     // Footer
@@ -461,7 +461,7 @@ const translations: Record<Language, Record<string, string>> = {
     'about.expect.foresight.desc': 'ליווי אישי וזמין בעברית ובאנגלית, המאפשר לכם לקבל החלטות בביטחון ולנהל את הנכסים גם כשאתם בחו"ל.',
     'about.cta.title': 'התחילו ברגל ימין',
     'about.cta.body': 'תכנון נכון הוא המפתח להגנה על הנכסים והמורשת שלכם.',
-    'about.cta.button': 'בקשת ייעוץ חסוי',
+    'about.cta.button': 'תיאום שיחת ייעוץ',
 
     // Service Pages - General
     'service.faq': 'שאלות נפוצות',
@@ -508,7 +508,7 @@ const translations: Record<Language, Record<string, string>> = {
     'estate.faq.a4': 'כן. אנו מטפלים בהליך מול הרשם והבנקים באמצעות ייפוי כוח, כך שאינכם נדרשים לשהות בישראל לצורך קבלת הצו.',
     'estate.cta.title': 'להבטיח את העתיד, היום',
     'estate.cta.body': 'תכנון משפטי נכון מעניק שקט נפשי לכם וביטחון ליקרים לכם.',
-    'estate.cta.button': 'בקשת ייעוץ חסוי לירושות',
+    'estate.cta.button': 'תיאום שיחת ייעוץ',
     'estate.cta.note': '',
 
     // Real Estate Page
@@ -580,7 +580,7 @@ const translations: Record<Language, Record<string, string>> = {
     'tax.faq.a3': 'תושבות נקבעת על ידי מבחן "מרכז החיים", לא רק אזרחות. אנחנו מייעצים לגבי הקריטריונים המשפטיים וכיצד הנוכחות שלכם בישראל משפיעה על הסטטוס שלכם.',
     'tax.cta.title': 'תאימות אסטרטגית',
     'tax.cta.body': 'התחילו עם תוכנית מתועדת שבנקים ורשויות יכולים לבדוק.',
-    'tax.cta.button': 'בקשו ייעוץ חסוי',
+    'tax.cta.button': 'תיאום שיחת ייעוץ',
 
     // Olim & Returning Residents Page
     'olim.hero.title': 'ליווי משפטי לעולים ולתושבים חוזרים',
@@ -609,7 +609,7 @@ const translations: Record<Language, Record<string, string>> = {
     'olim.expect.item3': 'רשימת תיעוד: אפיון המסמכים הראשוניים הנדרשים להתנעת התהליך.',
     'olim.cta.title': 'התחילו ברגל ימין',
     'olim.cta.body': 'התחילו עם מפת דרכים מסודרת ורשימת תיעוד מותאמת למצבכם.',
-    'olim.cta.button': 'בקשת ייעוץ חסוי לעולים',
+    'olim.cta.button': 'תיאום שיחת ייעוץ',
 
     // Commercial & Civil Page
     'commercial.hero.title': 'עורכת דין מסחרית ויישוב סכסוכים',
@@ -633,7 +633,7 @@ const translations: Record<Language, Record<string, string>> = {
     'commercial.clients.body': 'הפרקטיקה המסחרית שלנו מתמקדת בתיקים בעלי מורכבות משפטית או אלמנט בינלאומי. השירות מיועד לבעלי עסקים, משקיעים, מנהלים בכירים ולקוחות פרטיים עם עניינים מסחריים משמעותיים. המשרד אינו מטפל בתביעות קטנות או בנושאים אדמיניסטרטיביים פשוטים.',
     'commercial.cta.title': 'הגנו על האינטרסים העסקיים שלכם',
     'commercial.cta.body': 'התחילו בסקירת חוזה או בבדיקת אסטרטגיית סכסוך - תהליך חסוי ומתועד.',
-    'commercial.cta.button': 'בקשת ייעוץ חסוי למסחרי',
+    'commercial.cta.button': 'תיאום שיחת ייעוץ',
   },
 };
 
