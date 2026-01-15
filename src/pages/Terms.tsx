@@ -37,7 +37,7 @@ const Terms = () => {
         },
         {
           title: '7. Links to Third Party Websites',
-          content: 'This website may contain links to third-party websites. We have no control over the content of these sites and are not responsible for their content or practices.'
+          content: 'This website may contain links to third party websites. We have no control over the content of these sites and are not responsible for their content or practices.'
         },
         {
           title: '8. Governing Law',
