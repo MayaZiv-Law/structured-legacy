@@ -154,7 +154,7 @@ const translations: Record<Language, Record<string, string>> = {
     'service.faq': 'Common Questions',
 
     // Estate Planning Page
-    'estate.hero.title': 'Inheritance & Estate Planning',
+    'estate.hero.title': 'Families with Assets in Israel and Ties Abroad',
     'estate.hero.subtitle': 'Legal strategies for cross border wealth transfer, bilingual wills, and Enduring Power of Attorney (Israel).',
     'estate.challenge.title': 'Families with Assets in Israel and Ties Abroad',
     'estate.challenge.body': 'The firm develops structured estate plans for Israeli and international clients to prevent disputes, avoid probate delays, and reduce exposure to double taxation. The process integrates Israeli inheritance law with relevant foreign legal frameworks, supporting clients residing in Israel or abroad who hold assets or family ties across multiple jurisdictions. This coordinated approach ensures that each inheritance is transferred efficiently and in line with the client\'s intent.',
