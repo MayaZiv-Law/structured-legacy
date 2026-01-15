@@ -82,13 +82,7 @@ const EstatePlanning = () => {
       {/* The Challenge Section */}
       <section className="pt-40 sm:pt-48 pb-12 gradient-stone">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <div ref={challengeAnim.ref} className={cn("max-w-4xl mx-auto transition-all duration-700", isRTL && "font-hebrew text-right", challengeAnim.isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8")}>
-            
-            <p className="text-muted-foreground mb-4 leading-relaxed text-lg">
-              {t('estate.challenge.body')}
-            </p>
-            
-          </div>
+          
         </div>
       </section>
 
