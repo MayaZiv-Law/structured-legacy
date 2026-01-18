@@ -23,15 +23,15 @@ const Header = () => {
 
   const navLinkClass = (path: string) =>
     cn(
-      'text-sm font-medium transition-colors hover:text-accent',
-      isActive(path) ? 'text-accent' : 'text-foreground/80'
+      'text-base font-semibold transition-colors hover:text-accent',
+      isActive(path) ? 'text-accent' : 'text-foreground'
     );
 
   return (
     <header
       className={cn(
         "fixed top-0 left-0 right-0 z-50 transition-all duration-500",
-        "bg-white/30 backdrop-blur-md border-b border-border/10"
+        "bg-white/90 backdrop-blur-md border-b border-border/20 shadow-sm"
       )}
     >
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
@@ -59,7 +59,7 @@ const Header = () => {
             <DropdownMenu>
               <DropdownMenuTrigger
                 className={cn(
-                  "flex items-center gap-1 text-sm font-medium transition-colors hover:text-accent",
+                  "flex items-center gap-1 text-base font-semibold transition-colors hover:text-accent",
                   ['/real-estate', '/taxation', '/estate-planning', '/olim-residents', '/commercial'].some(p =>
                     isActive(p)
                   )
@@ -108,19 +108,14 @@ const Header = () => {
             </Link>
           </nav>
 
-          {/* Right side - Language & CTA */}
+            {/* Right side - Language Toggle */}
           <div className="hidden lg:flex items-center gap-4">
-            {/* Language Toggle */}
             <button
               onClick={() => setLanguage(language === 'en' ? 'he' : 'en')}
-              className="text-sm font-medium transition-colors px-3 py-1.5 rounded border text-foreground/70 hover:text-foreground border-border hover:border-accent"
+              className="text-base font-semibold transition-colors px-3 py-1.5 rounded border text-foreground hover:text-accent border-border hover:border-accent"
             >
               {language === 'en' ? 'עב' : 'EN'}
             </button>
-
-            <Button asChild variant="default">
-              <Link to="/contact">{t('nav.schedule')}</Link>
-            </Button>
           </div>
 
           {/* Mobile Menu Button */}
@@ -219,15 +214,10 @@ const Header = () => {
               <div className="flex items-center gap-4 pt-4 border-t border-border">
                 <button
                   onClick={() => setLanguage(language === 'en' ? 'he' : 'en')}
-                  className="text-sm font-medium text-foreground/70 hover:text-foreground transition-colors px-3 py-1.5 rounded border border-border"
+                  className="text-base font-semibold text-foreground hover:text-accent transition-colors px-3 py-1.5 rounded border border-border"
                 >
                   {language === 'en' ? 'עב' : 'EN'}
                 </button>
-                <Button asChild variant="default" size="sm">
-                  <Link to="/contact" onClick={() => setIsMenuOpen(false)}>
-                    {t('nav.schedule')}
-                  </Link>
-                </Button>
               </div>
             </nav>
           </div>
