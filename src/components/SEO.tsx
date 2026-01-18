@@ -16,7 +16,7 @@ interface SEOProps {
   schema?: object;
 }
 
-const SITE_URL = 'https://mayaziv.law';
+const SITE_URL = 'https://mayaziv-law.com';
 const DEFAULT_IMAGE = '/lovable-uploads/ba3c3a72-3db5-4141-9459-1f85fc39e53f.png';
 
 export const SEO = ({
@@ -89,7 +89,7 @@ export const organizationSchema = {
   "@type": "LegalService",
   "name": "Maya Ziv Law",
   "description": "Attorney & Notary in Tel Aviv specializing in cross-border legal matters, real estate, taxation, and estate planning.",
-  "url": "https://mayaziv.law",
+  "url": "https://mayaziv-law.com",
   "logo": `${SITE_URL}/lovable-uploads/ba3c3a72-3db5-4141-9459-1f85fc39e53f.png`,
   "image": `${SITE_URL}/lovable-uploads/ba3c3a72-3db5-4141-9459-1f85fc39e53f.png`,
   "telephone": "+972544943597",
@@ -120,7 +120,7 @@ export const attorneySchema = {
   "@type": "Attorney",
   "name": "Maya Ziv",
   "jobTitle": "Attorney & Notary",
-  "url": "https://mayaziv.law/about",
+  "url": "https://mayaziv-law.com/about",
   "image": `${SITE_URL}/lovable-uploads/81459920-5f87-4bcb-8430-47c1c2edc6e4.png`,
   "worksFor": {
     "@type": "LegalService",

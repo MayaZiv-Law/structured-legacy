@@ -72,7 +72,7 @@ const EstatePlanning = () => {
   const estateSchema = createServiceSchema({
     name: 'Estate Planning & Inheritance Legal Services',
     description: 'Estate planning for international families in Israel. Drafting bilingual wills, probate orders, and Enduring Power of Attorney with cross border validity.',
-    url: 'https://mayaziv.law/estate-planning'
+    url: 'https://mayaziv-law.com/estate-planning'
   });
   return <Layout>
       <SEO titleEn="Inheritance & Estate Planning in Tel Aviv | Cross Border Wills" titleHe="ירושות ותכנון עיזבון בתל אביב | צוואות חוצות גבולות" descriptionEn="Estate planning for international families in Israel. Drafting bilingual wills, probate orders, and Enduring Power of Attorney with cross border validity." descriptionHe="תכנון עיזבון למשפחות בינלאומיות בישראל. ניסוח צוואות דו-לשוניות, צווי ירושה וייפוי כוח מתמשך עם תוקף חוצה גבולות." path="/estate-planning" schema={estateSchema} />

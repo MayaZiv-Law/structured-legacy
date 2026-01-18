@@ -43,7 +43,7 @@ const OlimResidents = () => {
   const olimSchema = createServiceSchema({
     name: 'Legal Services for Olim & Returning Residents',
     description: 'A structured legal framework for your transition to Israel: Tax positioning, property acquisition, and asset integration for Olim and Returning Residents.',
-    url: 'https://mayaziv.law/olim-returning-residents',
+    url: 'https://mayaziv-law.com/olim-returning-residents',
   });
 
   return <Layout>

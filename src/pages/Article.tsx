@@ -137,7 +137,7 @@ const Article = () => {
     image: article.image_url || undefined,
     publishedTime: article.published_at || article.created_at,
     author,
-    url: `https://mayaziv.law/insights/${article.slug}`,
+    url: `https://mayaziv-law.com/insights/${article.slug}`,
   });
 
   return (

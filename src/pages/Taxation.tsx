@@ -61,7 +61,7 @@ const Taxation = () => {
   const taxationSchema = createServiceSchema({
     name: 'Taxation & Compliance Legal Services',
     description: 'Legal counsel for Israeli taxation and banking regulation. Purchase tax planning, source of funds compliance (AML), and cross-border alignment.',
-    url: 'https://mayaziv.law/taxation',
+    url: 'https://mayaziv-law.com/taxation',
   });
 
   return <Layout>
