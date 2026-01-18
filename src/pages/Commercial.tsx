@@ -45,7 +45,7 @@ const Commercial = () => {
   const commercialSchema = createServiceSchema({
     name: 'Commercial Legal Services',
     description: 'Commercial legal counsel in Tel Aviv. Drafting contracts, partnership agreements, and managing cross-border business disputes for international clients.',
-    url: 'https://mayaziv.law/commercial',
+    url: 'https://mayaziv-law.com/commercial',
   });
 
   return (

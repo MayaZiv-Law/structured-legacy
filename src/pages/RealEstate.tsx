@@ -51,7 +51,7 @@ const RealEstate = () => {
   const realEstateSchema = createServiceSchema({
     name: 'Real Estate Legal Services',
     description: 'Legal counsel for buying property in Israel. Due diligence, purchase tax planning, and remote representation for foreign residents and investors.',
-    url: 'https://mayaziv.law/real-estate',
+    url: 'https://mayaziv-law.com/real-estate',
   });
 
   return <Layout>
