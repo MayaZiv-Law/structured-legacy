@@ -4,10 +4,15 @@ import { HelmetProvider } from "react-helmet-async";
 import App from "./App.tsx";
 import "./index.css";
 
-createRoot(document.getElementById("root")!).render(
+const container = document.getElementById("root")!;
+
+createRoot(container).render(
   <React.StrictMode>
     <HelmetProvider>
       <App />
     </HelmetProvider>
   </React.StrictMode>
 );
+
+// Signal to prerenderer that the page is ready
+document.dispatchEvent(new Event('render-event'));

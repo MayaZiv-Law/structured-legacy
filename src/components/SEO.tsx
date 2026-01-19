@@ -181,7 +181,7 @@ export const createServiceSchema = (service: {
   "provider": {
     "@type": "LegalService",
     "name": "Maya Ziv Law",
-    "url": "https://mayaziv.law"
+    "url": "https://mayaziv-law.com"
   },
   "url": service.url,
   "areaServed": ["Israel", "United States", "United Kingdom", "Europe"]
