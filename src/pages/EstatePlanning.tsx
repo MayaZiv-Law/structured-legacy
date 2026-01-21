@@ -61,7 +61,6 @@ const EstatePlanning = () => {
   }];
 
   // Scroll animations
-  const challengeAnim = useScrollAnimation();
   const willsAnim = useScrollAnimation();
   const epaAnim = useScrollAnimation();
   const processAnim = useScrollAnimation();
@@ -76,26 +75,12 @@ const EstatePlanning = () => {
   });
   return <Layout>
       <SEO titleEn="Inheritance & Estate Planning in Tel Aviv | Cross Border Wills" titleHe="ירושות ותכנון עיזבון בתל אביב | צוואות חוצות גבולות" descriptionEn="Estate planning for international families in Israel. Drafting bilingual wills, probate orders, and Enduring Power of Attorney with cross border validity." descriptionHe="תכנון עיזבון למשפחות בינלאומיות בישראל. ניסוח צוואות דו-לשוניות, צווי ירושה וייפוי כוח מתמשך עם תוקף חוצה גבולות." path="/estate-planning" schema={estateSchema} />
+
       {/* Hero Section */}
       <PageHero backgroundImage={estateHeroBg} title={t('estate.hero.title')} imagePosition="center 70%" />
 
-      {/* The Challenge Section */}
-      <section className="pt-40 sm:pt-48 pb-12 gradient-stone">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <div ref={challengeAnim.ref} className={cn("max-w-4xl mx-auto transition-all duration-700", isRTL && "font-hebrew text-right", challengeAnim.isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8")}>
-            <h2 className="text-3xl sm:text-4xl font-display font-semibold mb-5">
-              {t('estate.challenge.title')}
-            </h2>
-            <p className="text-muted-foreground mb-4 leading-relaxed text-lg">
-              {t('estate.challenge.body')}
-            </p>
-            
-          </div>
-        </div>
-      </section>
-
       {/* Cross-Border Wills Section */}
-      <section className="py-12 bg-background">
+      <section className="pt-40 sm:pt-48 pb-12 bg-background">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div ref={willsAnim.ref} className={cn("max-w-4xl mx-auto mb-8 transition-all duration-700", isRTL && "font-hebrew text-right", willsAnim.isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8")}>
             <h2 className="text-3xl sm:text-4xl font-display font-semibold mb-5">
