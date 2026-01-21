@@ -2,6 +2,7 @@ import { Link } from 'react-router-dom';
 import { useLanguage } from '@/contexts/LanguageContext';
 import { cn } from '@/lib/utils';
 import { Mail, Phone, MapPin } from 'lucide-react';
+import AccessibilityWidget from '@/components/AccessibilityWidget';
 const Footer = () => {
   const {
     t,
@@ -107,6 +108,9 @@ const Footer = () => {
                 <Link to="/terms" className="text-primary-foreground/70 hover:text-accent transition-colors text-sm">
                   {t('footer.terms')}
                 </Link>
+              </li>
+              <li>
+                <AccessibilityWidget />
               </li>
             </ul>
           </div>

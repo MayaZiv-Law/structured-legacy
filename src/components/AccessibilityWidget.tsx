@@ -67,16 +67,14 @@ const AccessibilityWidget = () => {
 
   return (
     <>
-      {/* Accessibility Button */}
+      {/* Accessibility Button - rendered in Footer */}
       <button
         onClick={() => setIsOpen(!isOpen)}
-        className={cn(
-          "fixed bottom-6 z-50 p-3 rounded-full bg-accent text-accent-foreground shadow-lg hover:bg-accent/90 transition-all duration-300",
-          isRTL ? "left-6" : "right-6"
-        )}
+        className="inline-flex items-center gap-2 text-primary-foreground/70 hover:text-accent transition-colors text-sm"
         aria-label={t.title}
       >
-        <Accessibility className="h-6 w-6" />
+        <Accessibility className="h-4 w-4" />
+        <span>{t.title}</span>
       </button>
 
       {/* Accessibility Panel */}
@@ -91,8 +89,8 @@ const AccessibilityWidget = () => {
           {/* Panel */}
           <div
             className={cn(
-              "fixed bottom-20 z-50 w-72 bg-background border border-border rounded-lg shadow-xl p-4",
-              isRTL ? "left-6" : "right-6"
+              "fixed bottom-16 z-50 w-72 bg-background border border-border rounded-lg shadow-xl p-4",
+              isRTL ? "left-4" : "right-4"
             )}
             dir={isRTL ? "rtl" : "ltr"}
           >
