@@ -20,10 +20,10 @@ const Index = () => {
   return (
     <Layout>
       <SEO
-        titleEn="Maya Ziv Law | Attorney & Notary in Tel Aviv for Cross-Border Matters"
-        titleHe="מאיה זיו עו״ד ונוטריון | ייצוג משפטי בינלאומי בתל אביב"
-        descriptionEn="Maya Ziv Law provides legal services for real estate, taxation, estate planning, and cross-border transactions in Israel. Attorney & Notary in Tel Aviv."
-        descriptionHe="משרד מאיה זיו מספק שירותים משפטיים בנדל״ן, מיסוי, תכנון עיזבון ועסקאות בינלאומיות בישראל. עורכת דין ונוטריון בתל אביב."
+        titleEn="Maya Ziv Law | Attorney in Israel for domestic and International Clients"
+        titleHe="מאיה זיו | עורכת דין בתל אביב לעסקאות בינלאומיות"
+        descriptionEn="Premium legal services for domestic clients and international clients in Israel and abroad. Attorney services, real estate, taxation, wills and estate planning, commercial and civil."
+        descriptionHe="שירותים משפטיים עבור לקוחות מקומיים ובינלאומיים בישראל ובחו״ל. עסקאות נדל״ן, מיסוי, צוואות ועיזבונות."
         path="/"
         schema={organizationSchema}
       />
