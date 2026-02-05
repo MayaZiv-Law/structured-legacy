@@ -1,182 +1,122 @@
 
+# תוכנית עדכון תרגומים עברית - ניתוח הבדלים
 
-# תוכנית שיפור SEO לאתר Maya Ziv Law
+## סיכום הממצאים
 
-## מצב נוכחי - סיכום
-
-### מה קיים ועובד טוב:
-- קומפוננטת SEO מרכזית (`src/components/SEO.tsx`) עם תמיכה ב:
-  - Meta tags בסיסיים (title, description, canonical)
-  - Open Graph ו-Twitter Cards
-  - Hreflang לתמיכה דו-לשונית
-  - Schema.org structured data
-- Sitemap סטטי ב-`public/sitemap.xml`
-- robots.txt מותאם לבוטים של מנועי חיפוש ו-AI
-- SEO מותאם לכל עמוד שירות
-
-### חולשות שזוהו:
-
-1. **Sitemap סטטי** - ללא `lastmod`, לא כולל מאמרים דינמיים
-2. **חסר FAQPage Schema** - לא מנצל FAQ sections לתוצאות עשירות
-3. **חסר BreadcrumbList Schema** - לניווט בתוצאות חיפוש
-4. **תמונות חסרות alt מותאם לשפה** - חלק מהתמונות ללא alt דינמי
-5. **חסר LocalBusiness Schema** - לתוצאות מפות גוגל
-6. **אין sitemap דינמי למאמרים** - מאמרים חדשים לא נכללים אוטומטית
-7. **חסר meta keywords** (פחות חשוב אבל עדיין רלוונטי)
-8. **חסר WebPage Schema** לעמודים ספציפיים
+ניתחתי את קובץ התרגום שהעלית מול הטקסט הנוכחי באתר. זיהיתי מספר הבדלים משמעותיים שדורשים עדכון:
 
 ---
 
-## תוכנית השיפורים
+## הבדלים עיקריים שזוהו
 
-### שלב 1: Schema.org מורחב
+### 1. עמוד הבית (Home Page)
 
-**1.1 הוספת FAQPage Schema**
-עמודים עם שאלות נפוצות (RealEstate, Taxation, EstatePlanning) יקבלו:
+| מפתח | באתר כעת | בקובץ החדש |
+|------|----------|-----------|
+| `guide.bio` | טקסט קיים | נוסח חדש מהקובץ: "המשרד הוקם כדי להעניק ללקוחות ליווי משפטי מקומי ובינלאומי, המבוסס על רקע אקדמי בהיר..." |
+| `guide.punchline` | "אנחנו חושבים קדימה..." | "אנחנו חושבים צעד אחד קדימה עבור לקוחותינו ומקבלים החלטות אסטרטגיות לחזות את אתגרי המחר" |
 
-```text
-{
-  "@context": "https://schema.org",
-  "@type": "FAQPage",
-  "mainEntity": [
-    {
-      "@type": "Question",
-      "name": "שאלה",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "תשובה"
-      }
-    }
-  ]
-}
-```
+### 2. עמוד אודות (About Page)
 
-**קבצים לעדכון:**
-- `src/components/SEO.tsx` - הוספת `createFAQSchema` function
-- `src/pages/RealEstate.tsx`
-- `src/pages/Taxation.tsx`
-- `src/pages/EstatePlanning.tsx`
+| מפתח | שינוי נדרש |
+|------|-----------|
+| `about.philosophy.body` | עדכון לנוסח: "המשרד הוקם כדי להעניק ללקוחות ליווי משפטי מקומי ובינלאומי..." |
+| `about.expect.doc.title` | "גישה מבוססת תיעוד" → לפי הקובץ |
+| `about.expect.timeline.title` | "מומחיות בינלאומית" (הקובץ מציין שם אחר) |
+| `about.expect.comm.title` | "שקיפות ובהירות" |
+| `about.expect.foresight.title` | "אסטרטגית חשיבה" |
+| `about.expect.foresight.desc` | "פתרונות עמידים בתכנון פיננסי..." |
+| הוספה חדשה | `about.commitment.title`: "מחויבות אישית" |
+| הוספה חדשה | `about.commitment.desc`: "לקוחותינו מקבלים מחויבות מלאה ומקצועית..." |
 
-**1.2 הוספת BreadcrumbList Schema**
+### 3. עמוד נדל"ן (Real Estate Page)
 
-```text
-{
-  "@context": "https://schema.org",
-  "@type": "BreadcrumbList",
-  "itemListElement": [
-    { "position": 1, "name": "Home", "item": "https://mayaziv-law.com/" },
-    { "position": 2, "name": "Real Estate", "item": "https://mayaziv-law.com/real-estate" }
-  ]
-}
-```
+| מפתח | שינוי נדרש |
+|------|-----------|
+| כותרות משנה | עדכון נוסח לחלק מהטקסטים |
+| `realestate.diligence` sections | נוסח מעודכן לפי הקובץ |
 
-**1.3 הוספת LocalBusiness Schema**
-לשיפור הופעה ב-Google Maps ותוצאות מקומיות:
+### 4. עמוד מיסוי (Taxation Page)
 
-```text
-{
-  "@context": "https://schema.org",
-  "@type": "LocalBusiness",
-  "name": "Maya Ziv Law",
-  "address": {...},
-  "geo": {...},
-  "openingHours": "Mo-Fr 09:00-18:00"
-}
-```
+| מפתח | שינוי נדרש |
+|------|-----------|
+| `tax.realEstate` | עדכון תיאור מס מקרקעין |
+| `tax.banking` | עדכון לפי רגולציה בנקאית וציות |
 
----
+### 5. שאלות נפוצות (FAQ) - עמוד 9 בקובץ
 
-### שלב 2: Sitemap דינמי
+הקובץ מכיל 9 שאלות נפוצות מעודכנות:
 
-**יצירת Edge Function לגנרציית sitemap:**
+1. מתי כדאי להתחיל בתכנון המס?
+2. כיצד מובטחת הגנה על כספי הרוכש במהלך העסקה?
+3. האם ניתן לרכוש נכס לפני ביצוע העלייה לישראל?
+4. האם אפשר לשלם מס רכישה ישראלי במטבע חוץ?
+5. האם הבנק הישראלי יקבל את ההעברה שלי אוטומטית?
+6. מתי אני הופך לתושב מס בישראל?
+7. האם צוואה זרה תקפה בישראל?
+8. האם ניתן למנות מנהל עיזבון המתגורר מחוץ לישראל?
+9. מה ההבדל בין צו ירושה לצו קיום צוואה?
 
-```text
-supabase/functions/sitemap/index.ts
-```
+### 6. מאמרים (Insights) - עמוד 6-8 בקובץ
 
-הפונקציה תעשה:
-1. שליפת כל המאמרים מ-DB עם `updated_at`
-2. גנרציית XML עם `lastmod` לכל URL
-3. החזרת sitemap מעודכן בזמן אמת
+הקובץ מכיל נוסח עדכני למאמרים:
+- מאמר 1: ניהול עזבונות, צוואות וירושה בישראל
+- מאמר 2: רכישת נכס בישראל לתושבי חוץ
+- מאמר 3: רכישת נכס בישראל - בדיקות חובה למקומיים
 
-**עדכון robots.txt:**
-```text
-Sitemap: https://mayaziv-law.com/api/sitemap.xml
-```
+### 7. עמוד פרטיות והודעה משפטית (Privacy/Legal)
+
+הקובץ מכיל טקסט מעודכן:
+- מידע כללי ופרטיות
+- ייעוץ משפטי ואחריות
+- פרטיות והגנת מידע
+- קישורים חיצוניים
+- קניין רוחני
+- סמכות שיפוט
 
 ---
 
-### שלב 3: שיפור Meta Tags
-
-**3.1 הוספת meta נוספים לקומפוננטת SEO:**
-
-```typescript
-// geo tags לתוצאות מקומיות
-<meta name="geo.region" content="IL-TA" />
-<meta name="geo.placename" content="Tel Aviv" />
-
-// author tag
-<meta name="author" content="Maya Ziv" />
-
-// robots עם max-snippet
-<meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large" />
-```
-
-**3.2 שיפור alt text דינמי לתמונות:**
-עדכון תמונות בעמודי השירות עם alt מותאם לשפה.
-
----
-
-### שלב 4: שיפור ביצועים (Core Web Vitals)
-
-**4.1 הוספת preload לתמונות קריטיות:**
-בכל עמוד שירות, preload לתמונת ה-hero.
-
-**4.2 Lazy loading מתקדם:**
-וידוא שכל התמונות מתחת ל-fold משתמשות ב-`loading="lazy"`.
-
----
-
-### שלב 5: Internal Linking מובנה
-
-**5.1 הוספת "Related Services" לעמודי שירות:**
-בסוף כל עמוד שירות, הוספת קישורים לשירותים קשורים.
-
-**5.2 הוספת קישורים במאמרים:**
-בקומפוננטת Article, הוספת קישורים אוטומטיים לעמודי שירות רלוונטיים.
-
----
-
-## סיכום השינויים
+## קבצים לעדכון
 
 | קובץ | סוג שינוי |
 |------|----------|
-| `src/components/SEO.tsx` | הרחבה - schemas חדשים |
-| `src/pages/RealEstate.tsx` | הוספת FAQ schema |
-| `src/pages/Taxation.tsx` | הוספת FAQ schema |
-| `src/pages/EstatePlanning.tsx` | הוספת FAQ schema |
-| `src/pages/Index.tsx` | הוספת LocalBusiness schema |
-| `supabase/functions/sitemap/index.ts` | יצירה חדשה |
-| `public/robots.txt` | עדכון sitemap URL |
-| `index.html` | הוספת geo meta tags |
+| `src/contexts/LanguageContext.tsx` | עדכון תרגומים עבריים קיימים + הוספת מפתחות חדשים |
+| `src/pages/Privacy.tsx` | עדכון תוכן עברי לפי הקובץ |
+| `src/pages/Terms.tsx` | עדכון תוכן עברי (אם רלוונטי) |
 
 ---
 
-## תועלות צפויות
+## פירוט השינויים
 
-1. **Rich Snippets** - שאלות נפוצות יופיעו ישירות בתוצאות גוגל
-2. **Breadcrumbs בתוצאות** - ניווט ברור בתוצאות חיפוש
-3. **Google Maps** - הופעה טובה יותר בחיפושים מקומיים
-4. **אינדוקס מהיר יותר** - sitemap דינמי עם lastmod
-5. **CTR גבוה יותר** - תוצאות עשירות מושכות יותר קליקים
+### A. עדכונים ב-LanguageContext.tsx (חלק עברית)
+
+**סה"כ ~30 שורות לעדכון:**
+
+1. עמוד הבית: `guide.bio`, `guide.punchline`
+2. עמוד אודות: `about.philosophy.body`, מספר כותרות ותיאורים
+3. שאלות נפוצות: חלק מהתשובות דורשות עדכון קל
+4. עמוד מיסוי: עדכוני נוסח
+5. הוספת מפתחות חדשים לאודות (אם חסרים)
+
+### B. עדכון עמוד פרטיות
+
+עדכון הטקסט העברי לפי הקובץ החדש
 
 ---
 
 ## עדיפות ביצוע
 
-1. **גבוהה**: FAQ Schema (תוצאה מיידית בתוצאות חיפוש)
-2. **גבוהה**: Sitemap דינמי (אינדוקס מאמרים)
-3. **בינונית**: LocalBusiness Schema (חיפושים מקומיים)
-4. **בינונית**: Breadcrumb Schema (UX בתוצאות)
-5. **נמוכה**: Geo meta tags ו-internal linking
+1. **גבוהה**: תרגומי עמוד הבית ואודות (הכי נראים)
+2. **גבוהה**: שאלות נפוצות (FAQ מעודכן)
+3. **בינונית**: עמודי שירות (נדל"ן, מיסוי, עזבונות)
+4. **נמוכה**: עמוד פרטיות והודעה משפטית
+
+---
+
+## הערות טכניות
+
+- כל השינויים הם בתוכן עברי בלבד - אין שינוי במבנה
+- אין הוספת קומפוננטות חדשות
+- אין שינוי בלוגיקה - רק עדכון טקסטים
+- זמן ביצוע משוער: ~15 דקות
 
