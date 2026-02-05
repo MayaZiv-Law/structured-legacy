@@ -8,7 +8,8 @@ import { useScrollAnimation } from '@/hooks/useScrollAnimation';
 import PageHero from '@/components/shared/PageHero';
 import olimHeroBg from '@/assets/olim-hero-airport.webp';
 import taxPositioningImage from '@/assets/tax-positioning-olim.webp';
-import { SEO, createServiceSchema } from '@/components/SEO';
+import { SEO, createServiceSchema, createBreadcrumbSchema } from '@/components/SEO';
+import RelatedServices from '@/components/shared/RelatedServices';
 
 const OlimResidents = () => {
   const {
@@ -43,8 +44,13 @@ const OlimResidents = () => {
   const olimSchema = createServiceSchema({
     name: 'Legal Services for Olim & Returning Residents',
     description: 'A structured legal framework for your transition to Israel: Tax positioning, property acquisition, and asset integration for Olim and Returning Residents.',
-    url: 'https://mayaziv-law.com/olim-returning-residents',
+    url: 'https://mayaziv-law.com/olim-residents',
   });
+
+  const breadcrumbSchema = createBreadcrumbSchema([
+    { name: language === 'he' ? 'בית' : 'Home', url: 'https://mayaziv-law.com/' },
+    { name: language === 'he' ? 'עולים ותושבים חוזרים' : 'Olim & Returning Residents', url: 'https://mayaziv-law.com/olim-residents' },
+  ]);
 
   return <Layout>
       <SEO
@@ -52,8 +58,8 @@ const OlimResidents = () => {
         titleHe="עורך דין לעולים ותושבים חוזרים בתל אביב"
         descriptionEn="A structured legal framework for your transition to Israel: Tax positioning, property acquisition, and asset integration for Olim and Returning Residents."
         descriptionHe="מסגרת משפטית מובנית למעבר לישראל: מיצוב מס, רכישת נכס ושילוב נכסים לעולים ותושבים חוזרים."
-        path="/olim-returning-residents"
-        schema={olimSchema}
+        path="/olim-residents"
+        schema={[olimSchema, breadcrumbSchema]}
       />
       {/* Hero Section */}
       <PageHero backgroundImage={olimHeroBg} title={t('olim.hero.title')} imagePosition="center 30%" />
@@ -131,6 +137,9 @@ const OlimResidents = () => {
           </div>
         </div>
       </section>
+
+      {/* Related Services */}
+      <RelatedServices currentPath="/olim-residents" />
 
       <section className="py-16 bg-[#faf8f5]">
         <div ref={ctaAnim.ref} className={cn("container mx-auto px-4 sm:px-6 lg:px-8 text-center transition-all duration-700", ctaAnim.isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8")}>

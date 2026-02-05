@@ -8,7 +8,8 @@ import { useScrollAnimation } from '@/hooks/useScrollAnimation';
 import PageHero from '@/components/shared/PageHero';
 import commercialHeroBg from '@/assets/commercial-hero-new.jpg';
 import crossBorderImage from '@/assets/cross-border-business.webp';
-import { SEO, createServiceSchema } from '@/components/SEO';
+import { SEO, createServiceSchema, createBreadcrumbSchema } from '@/components/SEO';
+import RelatedServices from '@/components/shared/RelatedServices';
 
 const Commercial = () => {
   const { t, isRTL, language } = useLanguage();
@@ -48,6 +49,11 @@ const Commercial = () => {
     url: 'https://mayaziv-law.com/commercial',
   });
 
+  const breadcrumbSchema = createBreadcrumbSchema([
+    { name: language === 'he' ? 'בית' : 'Home', url: 'https://mayaziv-law.com/' },
+    { name: language === 'he' ? 'מסחרי ואזרחי' : 'Commercial & Civil', url: 'https://mayaziv-law.com/commercial' },
+  ]);
+
   return (
     <Layout>
       <SEO
@@ -56,7 +62,7 @@ const Commercial = () => {
         descriptionEn="Commercial legal counsel in Tel Aviv. Drafting contracts, partnership agreements, and managing cross-border business disputes for international clients."
         descriptionHe="ייעוץ משפטי מסחרי בתל אביב. ניסוח חוזים, הסכמי שותפות וניהול סכסוכים עסקיים חוצי גבולות ללקוחות בינלאומיים."
         path="/commercial"
-        schema={commercialSchema}
+        schema={[commercialSchema, breadcrumbSchema]}
       />
 
       {/* Hero Section */}
@@ -199,6 +205,9 @@ const Commercial = () => {
           </div>
         </div>
       </section>
+
+      {/* Related Services */}
+      <RelatedServices currentPath="/commercial" />
 
       {/* CTA Section */}
       <section className="py-16 bg-[#faf8f5]">

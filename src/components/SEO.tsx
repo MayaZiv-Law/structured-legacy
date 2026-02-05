@@ -13,7 +13,7 @@ interface SEOProps {
     publishedTime?: string;
     author?: string;
   };
-  schema?: object;
+  schema?: object | object[];
 }
 
 const SITE_URL = 'https://mayaziv-law.com';
@@ -75,9 +75,17 @@ export const SEO = ({
       
       {/* Structured Data */}
       {schema && (
-        <script type="application/ld+json">
-          {JSON.stringify(schema)}
-        </script>
+        Array.isArray(schema) ? (
+          schema.map((s, i) => (
+            <script key={i} type="application/ld+json">
+              {JSON.stringify(s)}
+            </script>
+          ))
+        ) : (
+          <script type="application/ld+json">
+            {JSON.stringify(schema)}
+          </script>
+        )
       )}
     </Helmet>
   );
@@ -186,3 +194,68 @@ export const createServiceSchema = (service: {
   "url": service.url,
   "areaServed": ["Israel", "United States", "United Kingdom", "Europe"]
 });
+
+// FAQ Schema for rich snippets
+export const createFAQSchema = (faqs: { question: string; answer: string }[]) => ({
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": faqs.map(faq => ({
+    "@type": "Question",
+    "name": faq.question,
+    "acceptedAnswer": {
+      "@type": "Answer",
+      "text": faq.answer
+    }
+  }))
+});
+
+// Breadcrumb Schema for navigation
+export const createBreadcrumbSchema = (items: { name: string; url: string }[]) => ({
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": items.map((item, index) => ({
+    "@type": "ListItem",
+    "position": index + 1,
+    "name": item.name,
+    "item": item.url
+  }))
+});
+
+// LocalBusiness Schema for Google Maps
+export const localBusinessSchema = {
+  "@context": "https://schema.org",
+  "@type": "LocalBusiness",
+  "name": "Maya Ziv Law",
+  "image": `${SITE_URL}/lovable-uploads/ba3c3a72-3db5-4141-9459-1f85fc39e53f.png`,
+  "@id": "https://mayaziv-law.com",
+  "url": "https://mayaziv-law.com",
+  "telephone": "+972544943597",
+  "priceRange": "$$",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "18 Moshe Sneh",
+    "addressLocality": "Tel Aviv",
+    "postalCode": "6970251",
+    "addressCountry": "IL"
+  },
+  "geo": {
+    "@type": "GeoCoordinates",
+    "latitude": 32.0853,
+    "longitude": 34.7818
+  },
+  "openingHoursSpecification": [
+    {
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday"],
+      "opens": "09:00",
+      "closes": "18:00"
+    },
+    {
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": "Friday",
+      "opens": "09:00",
+      "closes": "14:00"
+    }
+  ],
+  "sameAs": []
+};

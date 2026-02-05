@@ -10,7 +10,8 @@ import PageHero from '@/components/shared/PageHero';
 import dueDiligenceImage from '@/assets/real-estate-due-diligence.webp';
 import remoteTransactionImage from '@/assets/remote-transaction.webp';
 import realEstateHeroBg from '@/assets/real-estate-hero-new.webp';
-import { SEO, createServiceSchema } from '@/components/SEO';
+import { SEO, createServiceSchema, createFAQSchema, createBreadcrumbSchema } from '@/components/SEO';
+import RelatedServices from '@/components/shared/RelatedServices';
 
 const RealEstate = () => {
   const {
@@ -54,6 +55,16 @@ const RealEstate = () => {
     url: 'https://mayaziv-law.com/real-estate',
   });
 
+  const faqSchema = createFAQSchema(faqs.map(faq => ({
+    question: t(faq.qKey),
+    answer: t(faq.aKey),
+  })));
+
+  const breadcrumbSchema = createBreadcrumbSchema([
+    { name: language === 'he' ? 'בית' : 'Home', url: 'https://mayaziv-law.com/' },
+    { name: language === 'he' ? 'נדל"ן' : 'Real Estate', url: 'https://mayaziv-law.com/real-estate' },
+  ]);
+
   return <Layout>
       <SEO
         titleEn="Real Estate Lawyer in Tel Aviv | Buying Property in Israel"
@@ -61,7 +72,7 @@ const RealEstate = () => {
         descriptionEn="Legal counsel for buying property in Israel. Due diligence, purchase tax planning, and remote representation for foreign residents and investors."
         descriptionHe="ייעוץ משפטי לרכישת נכס בישראל. בדיקת נאותות, תכנון מס רכישה וייצוג מרחוק לתושבי חוץ ומשקיעים."
         path="/real-estate"
-        schema={realEstateSchema}
+        schema={[realEstateSchema, faqSchema, breadcrumbSchema]}
       />
       {/* Hero Section */}
       <PageHero backgroundImage={realEstateHeroBg} title={t('realestate.hero.title')} />
@@ -238,6 +249,9 @@ const RealEstate = () => {
           </Accordion>
         </div>
       </section>
+
+      {/* Related Services */}
+      <RelatedServices currentPath="/real-estate" />
 
       {/* CTA Section */}
       <section className="py-16 text-primary bg-[#faf8f5]">
