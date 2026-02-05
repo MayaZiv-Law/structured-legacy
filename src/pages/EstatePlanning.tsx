@@ -9,7 +9,8 @@ import { useScrollAnimation } from '@/hooks/useScrollAnimation';
 import PageHero from '@/components/shared/PageHero';
 import epaImage from '@/assets/epa-section-image.webp';
 import estateHeroBg from '@/assets/estate-hero-new.webp';
-import { SEO, createServiceSchema } from '@/components/SEO';
+import { SEO, createServiceSchema, createFAQSchema, createBreadcrumbSchema } from '@/components/SEO';
+import RelatedServices from '@/components/shared/RelatedServices';
 const EstatePlanning = () => {
   const {
     t,
@@ -73,8 +74,19 @@ const EstatePlanning = () => {
     description: 'Estate planning for international families in Israel. Drafting bilingual wills, probate orders, and Enduring Power of Attorney with cross border validity.',
     url: 'https://mayaziv-law.com/estate-planning'
   });
+
+  const faqSchema = createFAQSchema(faqs.map(faq => ({
+    question: faq.q,
+    answer: faq.a,
+  })));
+
+  const breadcrumbSchema = createBreadcrumbSchema([
+    { name: language === 'he' ? 'בית' : 'Home', url: 'https://mayaziv-law.com/' },
+    { name: language === 'he' ? 'משפחה ומורשת' : 'Family & Legacy', url: 'https://mayaziv-law.com/estate-planning' },
+  ]);
+
   return <Layout>
-      <SEO titleEn="Inheritance & Estate Planning in Tel Aviv | Cross Border Wills" titleHe="ירושות ותכנון עיזבון בתל אביב | צוואות חוצות גבולות" descriptionEn="Estate planning for international families in Israel. Drafting bilingual wills, probate orders, and Enduring Power of Attorney with cross border validity." descriptionHe="תכנון עיזבון למשפחות בינלאומיות בישראל. ניסוח צוואות דו-לשוניות, צווי ירושה וייפוי כוח מתמשך עם תוקף חוצה גבולות." path="/estate-planning" schema={estateSchema} />
+      <SEO titleEn="Inheritance & Estate Planning in Tel Aviv | Cross Border Wills" titleHe="ירושות ותכנון עיזבון בתל אביב | צוואות חוצות גבולות" descriptionEn="Estate planning for international families in Israel. Drafting bilingual wills, probate orders, and Enduring Power of Attorney with cross border validity." descriptionHe="תכנון עיזבון למשפחות בינלאומיות בישראל. ניסוח צוואות דו-לשוניות, צווי ירושה וייפוי כוח מתמשך עם תוקף חוצה גבולות." path="/estate-planning" schema={[estateSchema, faqSchema, breadcrumbSchema]} />
 
       {/* Hero Section */}
       <PageHero backgroundImage={estateHeroBg} title={t('estate.hero.title')} imagePosition="center 70%" />
@@ -204,6 +216,9 @@ const EstatePlanning = () => {
         </div>
       </section>
 
+      {/* Related Services */}
+      <RelatedServices currentPath="/estate-planning" />
+
       {/* CTA Section */}
       <section className="py-16 bg-[#faf8f5]">
         <div ref={ctaAnim.ref} className={cn("container mx-auto px-4 sm:px-6 lg:px-8 text-center transition-all duration-700", ctaAnim.isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8")}>
@@ -220,7 +235,6 @@ const EstatePlanning = () => {
               <ArrowRight className="h-4 w-4 flex-shrink-0 transition-transform group-hover:translate-x-1" />
             </Link>
           </Button>
-          
         </div>
       </section>
     </Layout>;

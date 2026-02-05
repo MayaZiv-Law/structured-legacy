@@ -8,7 +8,8 @@ import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/
 import { useScrollAnimation } from '@/hooks/useScrollAnimation';
 import PageHero from '@/components/shared/PageHero';
 import taxationHeroBg from '@/assets/taxation-hero-bg.webp';
-import { SEO, createServiceSchema } from '@/components/SEO';
+import { SEO, createServiceSchema, createFAQSchema, createBreadcrumbSchema } from '@/components/SEO';
+import RelatedServices from '@/components/shared/RelatedServices';
 
 const Taxation = () => {
   const {
@@ -64,6 +65,16 @@ const Taxation = () => {
     url: 'https://mayaziv-law.com/taxation',
   });
 
+  const faqSchema = createFAQSchema(faqs.map(faq => ({
+    question: faq.q,
+    answer: faq.a,
+  })));
+
+  const breadcrumbSchema = createBreadcrumbSchema([
+    { name: language === 'he' ? 'בית' : 'Home', url: 'https://mayaziv-law.com/' },
+    { name: language === 'he' ? 'מיסוי ותאימות' : 'Tax & Compliance', url: 'https://mayaziv-law.com/taxation' },
+  ]);
+
   return <Layout>
       <SEO
         titleEn="Israeli Tax & Banking Compliance | Tel Aviv"
@@ -71,7 +82,7 @@ const Taxation = () => {
         descriptionEn="Legal counsel for Israeli taxation and banking regulation. Purchase tax planning, source of funds compliance (AML), and cross-border alignment."
         descriptionHe="ייעוץ משפטי למיסוי ורגולציה בנקאית בישראל. תכנון מס רכישה, תאימות מקור כספים והלבנת הון, ותיאום חוצה גבולות."
         path="/taxation"
-        schema={taxationSchema}
+        schema={[taxationSchema, faqSchema, breadcrumbSchema]}
       />
       {/* Hero Section */}
       <PageHero backgroundImage={taxationHeroBg} title={t('tax.hero.title')} />
@@ -257,6 +268,9 @@ const Taxation = () => {
           </Accordion>
         </div>
       </section>
+
+      {/* Related Services */}
+      <RelatedServices currentPath="/taxation" />
 
       {/* CTA Section */}
       <section className="py-16 bg-[#faf8f5]">
