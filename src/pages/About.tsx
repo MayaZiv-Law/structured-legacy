@@ -2,7 +2,7 @@ import { Link } from 'react-router-dom';
 import Layout from '@/components/layout/Layout';
 import { useLanguage } from '@/contexts/LanguageContext';
 import { cn } from '@/lib/utils';
-import { FileCheck, Clock, MessageCircle, ArrowRight, ArrowLeft, Target } from 'lucide-react';
+import { FileCheck, Clock, MessageCircle, ArrowRight, ArrowLeft, Target, Globe } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { useScrollAnimation } from '@/hooks/useScrollAnimation';
 import PageHero from '@/components/shared/PageHero';
@@ -20,6 +20,11 @@ const About = () => {
       icon: FileCheck,
       titleKey: 'about.expect.doc.title',
       descKey: 'about.expect.doc.desc',
+    },
+    {
+      icon: Globe,
+      titleKey: 'about.expect.intl.title',
+      descKey: 'about.expect.intl.desc',
     },
     {
       icon: Clock,
@@ -49,9 +54,9 @@ const About = () => {
     <Layout>
       <SEO
         titleEn="About Maya Ziv Law | Attorney & Notary in Tel Aviv"
-        titleHe="אודות משרד מאיה זיו | עורכת דין ונוטריון בתל אביב"
+        titleHe="מאיה זיו משרד עורכי דין | מקרקעין | מיסוי בינלאומי | ניהול עזבונות וצוואות"
         descriptionEn="Maya Ziv Law combines legal expertise with financial discipline. Representing international clients in Israel with clarity, structure, and cross-border foresight."
-        descriptionHe="משרד מאיה זיו משלב מומחיות משפטית עם משמעת פיננסית. ייצוג לקוחות בינלאומיים בישראל עם בהירות, מבניות וראייה חוצת גבולות."
+        descriptionHe="ניהול סיכונים משפטי ואסטרטגיית מיסוי עבור תושבי ישראל ולקוחות בזירה הגלובלית. התמחות בבדיקת נאותות למקרקעין, ציות בנקאי וניהול עזבונות חוצי גבולות."
         path="/about"
         schema={attorneySchema}
       />
@@ -73,10 +78,14 @@ const About = () => {
               philosophyAnim.isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
             )}
           >
-            <h2 className="text-4xl sm:text-5xl font-display font-semibold text-foreground mb-5">
-              {t('about.philosophy.title')}
-            </h2>
-            <div className={cn("w-16 h-0.5 bg-accent mb-6", isRTL && "mr-0 ml-auto")} />
+            {t('about.philosophy.title') && (
+              <>
+                <h2 className="text-4xl sm:text-5xl font-display font-semibold text-foreground mb-5">
+                  {t('about.philosophy.title')}
+                </h2>
+                <div className={cn("w-16 h-0.5 bg-accent mb-6", isRTL && "mr-0 ml-auto")} />
+              </>
+            )}
             <div className="space-y-5">
               <p className="text-xl text-muted-foreground leading-relaxed">
                 {t('about.philosophy.body')}
@@ -205,7 +214,7 @@ const About = () => {
             </h2>
           </div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8 max-w-6xl mx-auto">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-6 lg:gap-8 max-w-6xl mx-auto">
             {expectations.map((item, index) => (
               <div
                 key={index}
