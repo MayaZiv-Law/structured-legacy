@@ -352,7 +352,7 @@ const translations: Record<Language, Record<string, string>> = {
     // Hero
     'hero.tagline': 'העתיד מעדיף את המוכנים',
     'hero.title': 'מאיה זיו | עורכת דין ונוטריון בתל אביב',
-    'hero.subtitle1': 'מלווים כל לקוח בבהירות, בביטחון ובמצוינות',
+    'hero.subtitle1': 'מלווים כל לקוח בבהירות, בבטחון ובמצוינות',
     'hero.subtitle2': 'החלטות אסטרטגיות בעולם גלובאלי',
     'hero.cta': 'בקשת ייעוץ חסוי',
     'hero.ctaSecondary': 'איך עובד התהליך?',
@@ -365,8 +365,8 @@ const translations: Record<Language, Record<string, string>> = {
     // Guide Section
     'guide.title': 'אודות המשרד',
     'guide.bio': 'המשרד הוקם כדי להעניק ללקוחות ליווי משפטי מקומי ובינלאומי, המבוסס על רקע אקדמי בהיר. המשרד מביא ניסיון מקצועי ותקשורת פיננסית קפדנית, על מנת לתכנן משפטית וגלובלית בהתאם לסטנדרטים אנליטיים. לקוחות המשרד נהנים מליווי שקוף ומובנה בסוגיות תכנון נכסיהם, לטווח הארוך, תוך שמירה על ההחלטות האישיות והמשפחתיות שלהם.',
-    'guide.punchline': 'אנחנו חושבים צעד אחד קדימה עבור לקוחותינו ומקבלים החלטות אסטרטגיות לחזות את אתגרי המחר.',
-    'guide.cta': 'עוד על המשרד',
+    'guide.punchline': 'אנו חושבים צעד אחד קדימה עבור לקוחותינו ומקבלים החלטות אסטרטגיות לחזות את אתגרי המחר.',
+    'guide.cta': 'קראו עוד על המשרד',
     'parallax.quote': 'תכנון משפטי המעוגן בהשלכות כלכליות ארוכות טווח, מהיום הראשון.',
 
     // Methodology
@@ -386,21 +386,21 @@ const translations: Record<Language, Record<string, string>> = {
     'method.step6.desc': 'המבנה קובע את התוצאה. ההחלטה כיצד להחזיק בנכס (כאדם פרטי, כחברה או בנאמנות) תעצב את תוצאות המס, השמירה על הפרטיות ואופן ההורשה לטווח הארוך.',
 
     // Practice Areas
-    'practice.title': 'התמחויות הליבה',
+    'practice.title': 'תחומי עסוק',
     'practice.realEstate.title': 'נדל"ן והשקעות',
     'practice.realEstate.desc': 'ליווי רכישה ומכירה, בדיקות נאותות ורישום זכויות.',
-    'practice.taxation.title': 'מיסוי ותאימות',
+    'practice.taxation.title': 'מיסוי',
     'practice.taxation.desc': 'תכנון מס מקרקעין, ייעוץ תושבות ו-Compliance בנקאי.',
-    'practice.estate.title': 'הון משפחתי וירושות',
+    'practice.estate.title': 'תכנון עזבונות, ירושות וצוואות',
     'practice.estate.desc': 'עריכת צוואות, ייפוי כוח מתמשך וניהול עיזבונות.',
     'practice.learnMore': 'למידע נוסף',
-    'practice.additional.olim': 'עולים ותושבים חוזרים',
-    'practice.additional.commercial': 'משפט מסחרי ויישוב סכסוכים',
+    'practice.additional.olim': 'עולים חדשים ותושבים חוזרים',
+    'practice.additional.commercial': 'משפט מסחרי ואזרחי',
 
     // Insights
-    'insights.title': 'ידע מקצועי למשקיעים',
-    'insights.readMore': 'המשך קריאה',
-    'insights.viewAll': 'לכל המאמרים',
+    'insights.title': 'מאמרים נבחרים',
+    'insights.readMore': 'קרא עוד',
+    'insights.viewAll': 'קרא עוד',
     'insights.article1.title': 'רכישת נכס בישראל לתושב חוץ',
     'insights.article1.snippet': 'מדריך ליסודות המיסוי, העברת כספים ורישום בטוח בטאבו.',
     'insights.article2.title': 'ירושות וצוואות חוצות גבולות',
@@ -430,9 +430,9 @@ const translations: Record<Language, Record<string, string>> = {
     'faq.a9': 'צו קיום צוואה ניתן כאשר המנוח הותיר צוואה תקפה המסדירה את חלוקת רכושו. צו ירושה ניתן בהיעדר צוואה ואז חלוקת העיזבון מתבצעת לפי הוראות חוק הירושה הישראלי.',
 
     // CTA
-    'cta.title': 'האינטרסים שלכם ראויים לתשומת לב אישית',
-    'cta.subtitle': 'אנחנו מחויבים לליווי משפטי מדויק, בהירות מחשבתית וביטחון אסטרטגי בכל החלטה. הלקוחות שלנו חשובים לנו.',
-    'cta.button': 'תיאום שיחת ייעוץ',
+    'cta.title': 'הלקוחות שלנו חשובים לנו',
+    'cta.subtitle': 'אנחנו מחויבים לליווי משפטי מדויק, בהירות מחשבתית וביטחון אסטרטגי בכל החלטה',
+    'cta.button': 'צור קשר',
     'cta.buttonSecondary': 'בדיקת התאמה ראשונית',
 
     // Footer
