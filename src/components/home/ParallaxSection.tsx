@@ -78,7 +78,6 @@ const ParallaxSection = () => {
     <section 
       ref={sectionRef} 
       className="relative h-[50vh] md:h-[60vh] overflow-hidden flex items-center justify-center"
-      style={{ contentVisibility: 'auto', containIntrinsicSize: '0 60vh' }}
     >
       {/* Background image with parallax on desktop, static on mobile */}
       <div 

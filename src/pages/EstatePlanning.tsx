@@ -1,6 +1,7 @@
 import Layout from '@/components/layout/Layout';
 import { useLanguage } from '@/contexts/LanguageContext';
 import { cn } from '@/lib/utils';
+import { isPrerender } from '@/lib/isPrerender';
 import { FileText, CheckCircle, Map, FileCheck, Shield, Clock, Users, Scale, ArrowRight } from 'lucide-react';
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/components/ui/accordion';
 import { Button } from '@/components/ui/button';
@@ -201,6 +202,18 @@ const EstatePlanning = () => {
           <h2 ref={faqAnim.ref} className={cn("text-3xl sm:text-4xl font-display font-semibold mb-6 transition-all duration-700", isRTL && "font-hebrew text-right", faqAnim.isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8")}>
             {t('service.faq')}
           </h2>
+          {isPrerender() ? (
+          <Accordion type="multiple" defaultValue={faqs.map((_, i) => `item-${i}`)} className="space-y-4">
+            {faqs.map((faq, i) => <AccordionItem key={i} value={`item-${i}`} className="bg-card border border-border rounded-lg px-6">
+                <AccordionTrigger className={cn("hover:no-underline", isRTL && "font-hebrew text-right")}>
+                  {faq.q}
+                </AccordionTrigger>
+                <AccordionContent className={cn("text-muted-foreground", isRTL && "font-hebrew text-right")}>
+                  {faq.a}
+                </AccordionContent>
+              </AccordionItem>)}
+          </Accordion>
+          ) : (
           <Accordion type="single" collapsible className="space-y-4">
             {faqs.map((faq, i) => <AccordionItem key={i} value={`item-${i}`} className={cn("bg-card border border-border rounded-lg px-6 transition-all duration-500", faqAnim.isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4")} style={{
             transitionDelay: faqAnim.isVisible ? `${i * 100}ms` : '0ms'
@@ -213,6 +226,7 @@ const EstatePlanning = () => {
                 </AccordionContent>
               </AccordionItem>)}
           </Accordion>
+          )}
         </div>
       </section>
 

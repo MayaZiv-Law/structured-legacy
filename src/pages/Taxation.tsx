@@ -1,6 +1,7 @@
 import Layout from '@/components/layout/Layout';
 import { useLanguage } from '@/contexts/LanguageContext';
 import { cn } from '@/lib/utils';
+import { isPrerender } from '@/lib/isPrerender';
 import { CheckCircle, Building2, FileText, ShieldCheck, Footprints } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Link } from 'react-router-dom';
@@ -254,6 +255,18 @@ const Taxation = () => {
           <h2 ref={faqAnim.ref} className={cn("text-3xl sm:text-4xl font-display font-semibold mb-8 text-center transition-all duration-700", isRTL && "font-hebrew", faqAnim.isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8")}>
             {t('service.faq')}
           </h2>
+          {isPrerender() ? (
+          <Accordion type="multiple" defaultValue={faqs.map((_, i) => `item-${i}`)} className="w-full">
+            {faqs.map((faq, i) => <AccordionItem key={i} value={`item-${i}`}>
+                <AccordionTrigger className={cn("text-left", isRTL && "font-hebrew text-right")}>
+                  {faq.q}
+                </AccordionTrigger>
+                <AccordionContent className={cn(isRTL && "font-hebrew text-right")}>
+                  {faq.a}
+                </AccordionContent>
+              </AccordionItem>)}
+          </Accordion>
+          ) : (
           <Accordion type="single" collapsible className="w-full">
             {faqs.map((faq, i) => <AccordionItem key={i} value={`item-${i}`} className={cn("transition-all duration-500", faqAnim.isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4")} style={{
             transitionDelay: faqAnim.isVisible ? `${i * 100}ms` : '0ms'
@@ -266,6 +279,7 @@ const Taxation = () => {
                 </AccordionContent>
               </AccordionItem>)}
           </Accordion>
+          )}
         </div>
       </section>
 

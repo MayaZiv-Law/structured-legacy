@@ -17,9 +17,12 @@ const Layout = ({ children }: LayoutProps) => {
     document.documentElement.dir = isRTL ? 'rtl' : 'ltr';
   }, [language, isRTL]);
 
-  // Signal to prerender services that the page is fully rendered
+  // Signal to prerender services that the page is fully rendered (delayed for async content)
   useEffect(() => {
-    (window as any).prerenderReady = true;
+    const timer = setTimeout(() => {
+      (window as any).prerenderReady = true;
+    }, 3000);
+    return () => clearTimeout(timer);
   }, []);
 
   return (

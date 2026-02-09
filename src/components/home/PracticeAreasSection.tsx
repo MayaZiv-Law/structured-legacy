@@ -50,7 +50,6 @@ const PracticeAreasSection = () => {
   return (
     <section 
       className="py-12 bg-background"
-      style={{ contentVisibility: 'auto', containIntrinsicSize: '0 800px' }}
     >
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className={cn("text-center mb-10", isRTL && "font-hebrew")}>

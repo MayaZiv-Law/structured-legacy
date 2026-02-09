@@ -1,10 +1,13 @@
 import { useEffect, useRef, useState } from 'react';
+import { isPrerender } from '@/lib/isPrerender';
 
 export const useScrollAnimation = (threshold = 0.1) => {
   const ref = useRef<HTMLDivElement>(null);
-  const [isVisible, setIsVisible] = useState(false);
+  const [isVisible, setIsVisible] = useState(() => isPrerender());
 
   useEffect(() => {
+    if (isVisible) return; // Already visible (prerender or previously triggered)
+
     const observer = new IntersectionObserver(
       ([entry]) => {
         if (entry.isIntersecting) {
@@ -25,7 +28,7 @@ export const useScrollAnimation = (threshold = 0.1) => {
         observer.unobserve(currentRef);
       }
     };
-  }, [threshold]);
+  }, [threshold, isVisible]);
 
   return { ref, isVisible };
 };

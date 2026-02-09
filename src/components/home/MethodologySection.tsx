@@ -50,7 +50,6 @@ const MethodologySection = () => {
   return (
     <section 
       className="py-16 bg-secondary/30 overflow-hidden"
-      style={{ contentVisibility: 'auto', containIntrinsicSize: '0 800px' }}
     >
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         {/* Centered Title */}
