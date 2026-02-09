@@ -1,5 +1,6 @@
 import { useLanguage } from '@/contexts/LanguageContext';
 import { cn } from '@/lib/utils';
+import { isPrerender } from '@/lib/isPrerender';
 import {
   Accordion,
   AccordionContent,
@@ -9,6 +10,7 @@ import {
 
 const FAQSection = () => {
   const { t, isRTL } = useLanguage();
+  const isPrerenderEnv = isPrerender();
 
   const faqs = [
     { qKey: 'faq.q1', aKey: 'faq.a1' },
@@ -23,10 +25,7 @@ const FAQSection = () => {
   ];
 
   return (
-    <section 
-      className="py-16 bg-background"
-      style={{ contentVisibility: 'auto', containIntrinsicSize: '0 400px' }}
-    >
+    <section className="py-16 bg-background">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className={cn("max-w-3xl mx-auto", isRTL && "font-hebrew")}>
           {/* Title */}
@@ -36,6 +35,30 @@ const FAQSection = () => {
           <div className="w-16 h-0.5 bg-accent mx-auto mb-8" />
 
           {/* FAQ Accordion */}
+          {isPrerenderEnv ? (
+          <Accordion type="multiple" defaultValue={faqs.map((_, i) => `item-${i}`)} className="w-full">
+            {faqs.map((faq, index) => (
+              <AccordionItem key={index} value={`item-${index}`} className="border-b border-border">
+                <AccordionTrigger 
+                  className={cn(
+                    "text-left py-5 text-xl font-medium hover:no-underline",
+                    isRTL && "text-right"
+                  )}
+                >
+                  {t(faq.qKey)}
+                </AccordionTrigger>
+                <AccordionContent 
+                  className={cn(
+                    "text-muted-foreground leading-relaxed pb-5 text-lg",
+                    isRTL && "text-right"
+                  )}
+                >
+                  {t(faq.aKey)}
+                </AccordionContent>
+              </AccordionItem>
+            ))}
+          </Accordion>
+          ) : (
           <Accordion type="single" collapsible className="w-full">
             {faqs.map((faq, index) => (
               <AccordionItem key={index} value={`item-${index}`} className="border-b border-border">
@@ -58,6 +81,7 @@ const FAQSection = () => {
               </AccordionItem>
             ))}
           </Accordion>
+          )}
         </div>
       </div>
     </section>

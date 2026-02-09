@@ -2,6 +2,7 @@ import { Link } from 'react-router-dom';
 import Layout from '@/components/layout/Layout';
 import { useLanguage } from '@/contexts/LanguageContext';
 import { cn } from '@/lib/utils';
+import { isPrerender } from '@/lib/isPrerender';
 import { Building2, AlertTriangle, Globe, ArrowRight, ArrowLeft } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/components/ui/accordion';
@@ -235,6 +236,18 @@ const RealEstate = () => {
             <div className="w-16 h-0.5 bg-accent mx-auto" />
           </div>
           
+          {isPrerender() ? (
+          <Accordion type="multiple" defaultValue={faqs.map((_, i) => `item-${i}`)} className="w-full">
+            {faqs.map((faq, i) => <AccordionItem key={i} value={`item-${i}`}>
+                <AccordionTrigger className={cn("text-left", isRTL && "font-hebrew text-right")}>
+                  {t(faq.qKey)}
+                </AccordionTrigger>
+                <AccordionContent className={cn(isRTL && "font-hebrew text-right")}>
+                  {t(faq.aKey)}
+                </AccordionContent>
+              </AccordionItem>)}
+          </Accordion>
+          ) : (
           <Accordion type="single" collapsible className="w-full">
             {faqs.map((faq, i) => <AccordionItem key={i} value={`item-${i}`} className={cn("transition-all duration-500", faqAnim.isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4")} style={{
             transitionDelay: faqAnim.isVisible ? `${i * 100}ms` : '0ms'
@@ -247,6 +260,7 @@ const RealEstate = () => {
                 </AccordionContent>
               </AccordionItem>)}
           </Accordion>
+          )}
         </div>
       </section>
 
