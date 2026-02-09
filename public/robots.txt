@@ -36,6 +36,15 @@ Allow: /
 User-agent: Applebot-Extended
 Allow: /
 
+User-agent: Bytespider
+Allow: /
+
+User-agent: cohere-ai
+Allow: /
+
+User-agent: Amazonbot
+Allow: /
+
 # Social Media Crawlers
 User-agent: Twitterbot
 Allow: /
@@ -52,3 +61,7 @@ Allow: /
 
 Sitemap: https://mayaziv-law.com/sitemap.xml
 Sitemap: https://hqvagogzltdyacwocjhr.supabase.co/functions/v1/sitemap
+
+# LLM-readable site summary
+# See https://llmstxt.org for specification
+# https://mayaziv-law.com/llms.txt

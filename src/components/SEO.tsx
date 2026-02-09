@@ -44,6 +44,19 @@ export const SEO = ({
       <meta name="description" content={description} />
       <link rel="canonical" href={canonicalUrl} />
       
+      {/* AI Content Declaration */}
+      <meta name="ai-content-declaration" content="This content is authored by humans at Maya Ziv Law, a licensed Israeli law firm." />
+      
+      {/* Citation meta for articles */}
+      {type === 'article' && (
+        <>
+          <meta name="citation_title" content={title} />
+          <meta name="citation_author" content={article?.author || 'Maya Ziv'} />
+          {article?.publishedTime && <meta name="citation_date" content={article.publishedTime} />}
+          <meta name="citation_publisher" content="Maya Ziv Law" />
+        </>
+      )}
+      
       {/* Hreflang for multilingual support */}
       <link rel="alternate" hrefLang="en" href={canonicalUrl} />
       <link rel="alternate" hrefLang="he" href={canonicalUrl} />
@@ -149,6 +162,7 @@ export const createArticleSchema = (article: {
   description: string;
   image?: string;
   publishedTime: string;
+  modifiedTime?: string;
   author?: string;
   url: string;
 }) => ({
@@ -158,6 +172,7 @@ export const createArticleSchema = (article: {
   "description": article.description,
   "image": article.image || `${SITE_URL}${DEFAULT_IMAGE}`,
   "datePublished": article.publishedTime,
+  "dateModified": article.modifiedTime || article.publishedTime,
   "author": {
     "@type": "Person",
     "name": article.author || "Maya Ziv"
@@ -173,6 +188,10 @@ export const createArticleSchema = (article: {
   "mainEntityOfPage": {
     "@type": "WebPage",
     "@id": article.url
+  },
+  "speakable": {
+    "@type": "SpeakableSpecification",
+    "cssSelector": ["h1", ".article-content p:first-of-type"]
   }
 });
 
@@ -258,4 +277,18 @@ export const localBusinessSchema = {
     }
   ],
   "sameAs": []
+};
+
+// WebSite schema for site-level identity
+export const websiteSchema = {
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "name": "Maya Ziv Law",
+  "url": "https://mayaziv-law.com",
+  "description": "Attorney & Notary in Tel Aviv specializing in cross-border legal matters, real estate, taxation, and estate planning.",
+  "inLanguage": ["en", "he"],
+  "publisher": {
+    "@type": "LegalService",
+    "name": "Maya Ziv Law"
+  }
 };

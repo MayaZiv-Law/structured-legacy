@@ -17,6 +17,11 @@ const Layout = ({ children }: LayoutProps) => {
     document.documentElement.dir = isRTL ? 'rtl' : 'ltr';
   }, [language, isRTL]);
 
+  // Signal to prerender services that the page is fully rendered
+  useEffect(() => {
+    (window as any).prerenderReady = true;
+  }, []);
+
   return (
     <div className={cn("min-h-screen flex flex-col", isRTL && "font-hebrew")}>
       <Header />
