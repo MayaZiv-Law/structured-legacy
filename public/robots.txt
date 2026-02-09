@@ -59,7 +59,6 @@ Allow: /
 User-agent: *
 Allow: /
 
-Sitemap: https://mayaziv-law.com/sitemap.xml
 Sitemap: https://hqvagogzltdyacwocjhr.supabase.co/functions/v1/sitemap
 
 # LLM-readable site summary
