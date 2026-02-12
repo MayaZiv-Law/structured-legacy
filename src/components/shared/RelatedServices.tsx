@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom';
 import { useLanguage } from '@/contexts/LanguageContext';
+import { useLocalePath } from '@/hooks/useLocalePath';
 import { cn } from '@/lib/utils';
 import { ArrowRight } from 'lucide-react';
 
@@ -56,6 +57,7 @@ interface RelatedServicesProps {
 
 const RelatedServices = ({ currentPath, maxServices = 3 }: RelatedServicesProps) => {
   const { language, isRTL } = useLanguage();
+  const localePath = useLocalePath();
   
   const relatedServices = allServices
     .filter(service => service.path !== currentPath)
@@ -73,7 +75,7 @@ const RelatedServices = ({ currentPath, maxServices = 3 }: RelatedServicesProps)
             {relatedServices.map((service) => (
               <Link
                 key={service.path}
-                to={service.path}
+                to={localePath(service.path)}
                 className="group p-6 bg-background rounded-lg border border-border hover:border-accent/50 transition-all duration-300"
               >
                 <h3 className="text-lg font-medium text-foreground mb-2 group-hover:text-accent transition-colors">

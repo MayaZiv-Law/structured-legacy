@@ -14,19 +14,29 @@ Maya Ziv Law provides premium legal counsel at the intersection of Israeli and i
 - **Commercial & Civil Law**: Corporate structuring, commercial contracts, joint ventures, business licensing, partnership agreements.
 - **Services for New Immigrants (Olim)**: Tax benefits guidance, property acquisition, bank account setup, legal orientation for relocation to Israel.
 
-## Key Pages
+## Key Pages (English)
 
-- Home: https://mayaziv-law.com/
-- About: https://mayaziv-law.com/about
-- Real Estate: https://mayaziv-law.com/real-estate
-- Taxation: https://mayaziv-law.com/taxation
-- Estate Planning: https://mayaziv-law.com/estate-planning
-- Commercial Law: https://mayaziv-law.com/commercial
-- Services for Olim: https://mayaziv-law.com/olim-residents
-- Legal Insights & Articles: https://mayaziv-law.com/insights
-- Contact: https://mayaziv-law.com/contact
-- Privacy Policy: https://mayaziv-law.com/privacy
-- Terms of Use: https://mayaziv-law.com/terms
+- Home: https://mayaziv-law.com/en/
+- About: https://mayaziv-law.com/en/about
+- Real Estate: https://mayaziv-law.com/en/real-estate
+- Taxation: https://mayaziv-law.com/en/taxation
+- Estate Planning: https://mayaziv-law.com/en/estate-planning
+- Commercial Law: https://mayaziv-law.com/en/commercial
+- Services for Olim: https://mayaziv-law.com/en/olim-residents
+- Legal Insights & Articles: https://mayaziv-law.com/en/insights
+- Contact: https://mayaziv-law.com/en/contact
+
+## Key Pages (Hebrew)
+
+- דף הבית: https://mayaziv-law.com/he/
+- אודות: https://mayaziv-law.com/he/about
+- נדל"ן: https://mayaziv-law.com/he/real-estate
+- מיסוי: https://mayaziv-law.com/he/taxation
+- צוואות ועיזבונות: https://mayaziv-law.com/he/estate-planning
+- מסחרי ואזרחי: https://mayaziv-law.com/he/commercial
+- עולים ותושבים חוזרים: https://mayaziv-law.com/he/olim-residents
+- תובנות משפטיות: https://mayaziv-law.com/he/insights
+- צור קשר: https://mayaziv-law.com/he/contact
 
 ## Contact
 

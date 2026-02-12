@@ -677,15 +677,19 @@ const LanguageContext =
 _global.__mayaLanguageContext = LanguageContext;
 
 export const LanguageProvider = ({ children }: { children: ReactNode }) => {
-  const [language, setLanguage] = useState<Language>(() => {
+  const [language, setLanguageState] = useState<Language>(() => {
     const saved = localStorage.getItem('maya-ziv-lang');
     return (saved as Language) || 'en';
   });
 
   const isRTL = language === 'he';
 
+  const setLanguage = useCallback((lang: Language) => {
+    setLanguageState(lang);
+    localStorage.setItem('maya-ziv-lang', lang);
+  }, []);
+
   useEffect(() => {
-    localStorage.setItem('maya-ziv-lang', language);
     document.documentElement.dir = isRTL ? 'rtl' : 'ltr';
     document.documentElement.lang = language;
   }, [language, isRTL]);

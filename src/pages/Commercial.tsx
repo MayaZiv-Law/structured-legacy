@@ -4,6 +4,7 @@ import { cn } from '@/lib/utils';
 import { Briefcase, FileText, Shield, Scale, Globe, Users, ArrowRight } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Link } from 'react-router-dom';
+import { useLocalePath } from '@/hooks/useLocalePath';
 import { useScrollAnimation } from '@/hooks/useScrollAnimation';
 import PageHero from '@/components/shared/PageHero';
 import commercialHeroBg from '@/assets/commercial-hero-new.jpg';
@@ -13,6 +14,7 @@ import RelatedServices from '@/components/shared/RelatedServices';
 
 const Commercial = () => {
   const { t, isRTL, language } = useLanguage();
+  const localePath = useLocalePath();
 
   const coreServices = [
     { 
@@ -226,7 +228,7 @@ const Commercial = () => {
             {t('commercial.cta.body')}
           </p>
           <Button asChild size="lg" className="bg-accent hover:bg-accent/90 text-accent-foreground font-medium px-6 sm:px-10 py-6 text-base group max-w-full">
-            <Link to="/contact" className={cn("flex items-center gap-2 whitespace-normal text-center", isRTL && "flex-row-reverse")}>
+            <Link to={localePath('/contact')} className={cn("flex items-center gap-2 whitespace-normal text-center", isRTL && "flex-row-reverse")}>
               {t('commercial.cta.button')}
               <ArrowRight className="h-4 w-4 flex-shrink-0 transition-transform group-hover:translate-x-1" />
             </Link>

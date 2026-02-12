@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom';
 import { useLanguage } from '@/contexts/LanguageContext';
+import { useLocalePath } from '@/hooks/useLocalePath';
 import { cn } from '@/lib/utils';
 import { ArrowRight, ArrowLeft } from 'lucide-react';
 const GuideSection = () => {
@@ -7,6 +8,7 @@ const GuideSection = () => {
     t,
     isRTL
   } = useLanguage();
+  const localePath = useLocalePath();
   const Arrow = isRTL ? ArrowLeft : ArrowRight;
   return <section className="py-12 lg:py-16 bg-background overflow-hidden">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
@@ -44,7 +46,7 @@ const GuideSection = () => {
             </p>
 
             {/* CTA Link */}
-            <Link to="/about" className={cn("inline-flex items-center gap-2 text-accent font-medium hover:gap-3 transition-all text-xl", isRTL && "flex-row-reverse")}>
+            <Link to={localePath('/about')} className={cn("inline-flex items-center gap-2 text-accent font-medium hover:gap-3 transition-all text-xl", isRTL && "flex-row-reverse")}>
               {t('guide.cta')}
               <Arrow className="h-5 w-5" />
             </Link>
@@ -85,7 +87,7 @@ const GuideSection = () => {
 
         {/* Centered CTA Link - Desktop only */}
         <div className="hidden lg:block text-center mt-16">
-          <Link to="/about" className={cn("inline-flex items-center gap-2 text-accent font-medium hover:gap-3 transition-all text-xl", isRTL && "flex-row-reverse")}>
+          <Link to={localePath('/about')} className={cn("inline-flex items-center gap-2 text-accent font-medium hover:gap-3 transition-all text-xl", isRTL && "flex-row-reverse")}>
             {t('guide.cta')}
             <Arrow className="h-5 w-5" />
           </Link>

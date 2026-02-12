@@ -4,6 +4,7 @@ import { cn } from '@/lib/utils';
 import { Users, FileCheck, Home, Building, Clock, CheckCircle, ArrowRight, Shield } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Link } from 'react-router-dom';
+import { useLocalePath } from '@/hooks/useLocalePath';
 import { useScrollAnimation } from '@/hooks/useScrollAnimation';
 import PageHero from '@/components/shared/PageHero';
 import olimHeroBg from '@/assets/olim-hero-airport.webp';
@@ -17,6 +18,7 @@ const OlimResidents = () => {
     isRTL,
     language
   } = useLanguage();
+  const localePath = useLocalePath();
   const frameworkItems = [{
     title: t('olim.framework.planning.title'),
     desc: t('olim.framework.planning.desc'),
@@ -147,7 +149,7 @@ const OlimResidents = () => {
           <h2 className={cn("text-4xl sm:text-5xl lg:text-6xl font-display font-semibold mb-5 text-primary", isRTL && "font-hebrew")}>{t('olim.cta.title')}</h2>
           <p className={cn("text-xl mb-8 max-w-xl mx-auto text-primary", isRTL && "font-hebrew")}>{t('olim.cta.body')}</p>
           <Button asChild size="lg" className="bg-accent hover:bg-accent/90 text-accent-foreground font-medium px-6 sm:px-10 py-6 text-base group max-w-full">
-            <Link to="/contact" className={cn("flex items-center gap-2 whitespace-normal text-center", isRTL && "flex-row-reverse")}>
+            <Link to={localePath('/contact')} className={cn("flex items-center gap-2 whitespace-normal text-center", isRTL && "flex-row-reverse")}>
               {t('olim.cta.button')}
               <ArrowRight className="h-4 w-4 flex-shrink-0 transition-transform group-hover:translate-x-1" />
             </Link>

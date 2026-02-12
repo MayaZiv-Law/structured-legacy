@@ -3,6 +3,7 @@ import { useLanguage } from '@/contexts/LanguageContext';
 import { cn } from '@/lib/utils';
 import { isPrerender } from '@/lib/isPrerender';
 import { FileText, CheckCircle, Map, FileCheck, Shield, Clock, Users, Scale, ArrowRight } from 'lucide-react';
+import { useLocalePath } from '@/hooks/useLocalePath';
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/components/ui/accordion';
 import { Button } from '@/components/ui/button';
 import { Link } from 'react-router-dom';
@@ -18,6 +19,7 @@ const EstatePlanning = () => {
     isRTL,
     language
   } = useLanguage();
+  const localePath = useLocalePath();
   const willsFocusAreas = [{
     title: t('estate.wills.compliance.title'),
     desc: t('estate.wills.compliance.desc'),
@@ -244,7 +246,7 @@ const EstatePlanning = () => {
             {t('estate.cta.body')}
           </p>
           <Button asChild size="lg" className="bg-accent hover:bg-accent/90 text-accent-foreground font-medium px-6 sm:px-10 py-6 text-base group max-w-full">
-            <Link to="/contact" className={cn("flex items-center gap-2 whitespace-normal text-center", isRTL && "flex-row-reverse")}>
+            <Link to={localePath('/contact')} className={cn("flex items-center gap-2 whitespace-normal text-center", isRTL && "flex-row-reverse")}>
               {t('estate.cta.button')}
               <ArrowRight className="h-4 w-4 flex-shrink-0 transition-transform group-hover:translate-x-1" />
             </Link>

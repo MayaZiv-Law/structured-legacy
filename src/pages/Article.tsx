@@ -1,6 +1,7 @@
 import { useParams, Link } from 'react-router-dom';
 import Layout from '@/components/layout/Layout';
 import { useLanguage } from '@/contexts/LanguageContext';
+import { useLocalePath } from '@/hooks/useLocalePath';
 import { cn } from '@/lib/utils';
 import { Calendar, ArrowLeft, Clock, User, Loader2 } from 'lucide-react';
 import { Button } from '@/components/ui/button';
@@ -10,6 +11,7 @@ import { SEO, createArticleSchema } from '@/components/SEO';
 const Article = () => {
   const { slug } = useParams<{ slug: string }>();
   const { language, isRTL } = useLanguage();
+  const localePath = useLocalePath();
   const { data: article, isLoading, error } = useArticle(slug);
 
   // Safe function to render bold text without dangerouslySetInnerHTML
@@ -114,7 +116,7 @@ const Article = () => {
               {language === 'he' ? 'המאמר לא נמצא' : 'Article Not Found'}
             </h1>
             <Button asChild>
-              <Link to="/insights">
+              <Link to={localePath('/insights')}>
                 {language === 'he' ? 'חזרה למאמרים' : 'Back to Insights'}
               </Link>
             </Button>
@@ -137,7 +139,7 @@ const Article = () => {
     image: article.image_url || undefined,
     publishedTime: article.published_at || article.created_at,
     author,
-    url: `https://mayaziv-law.com/insights/${article.slug}`,
+    url: `https://mayaziv-law.com/${language}/insights/${article.slug}`,
   });
 
   return (
@@ -161,7 +163,7 @@ const Article = () => {
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className={cn("max-w-4xl mx-auto", isRTL && "font-hebrew text-right")}>
             <Link 
-              to="/insights" 
+              to={localePath('/insights')} 
               className={cn(
                 "inline-flex items-center gap-2 text-muted-foreground hover:text-accent transition-colors mb-8",
                 isRTL && "flex-row-reverse"
@@ -246,7 +248,7 @@ const Article = () => {
                 : 'Return to our insights page for more articles and professional content.'}
             </p>
             <Button asChild>
-              <Link to="/insights">
+              <Link to={localePath('/insights')}>
                 {language === 'he' ? 'כל המאמרים' : 'All Articles'}
               </Link>
             </Button>

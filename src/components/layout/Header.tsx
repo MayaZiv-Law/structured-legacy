@@ -1,10 +1,11 @@
 import { useState } from 'react';
-import { Link, useLocation } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { Menu, X, ChevronDown } from 'lucide-react';
 import logoEn from '@/assets/logo-en.webp';
 import logoHe from '@/assets/logo-he.webp';
 import { Button } from '@/components/ui/button';
 import { useLanguage } from '@/contexts/LanguageContext';
+import { useLocalePath } from '@/hooks/useLocalePath';
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -18,14 +19,25 @@ const Header = () => {
   const [isExpertiseOpen, setIsExpertiseOpen] = useState(false);
   const { language, setLanguage, t, isRTL } = useLanguage();
   const location = useLocation();
+  const navigate = useNavigate();
+  const localePath = useLocalePath();
 
-  const isActive = (path: string) => location.pathname === path;
+  const isActive = (path: string) => location.pathname === localePath(path);
 
   const navLinkClass = (path: string) =>
     cn(
       'text-base font-semibold transition-colors hover:text-accent',
       isActive(path) ? 'text-accent' : 'text-foreground'
     );
+
+  const switchLanguage = () => {
+    const newLang = language === 'en' ? 'he' : 'en';
+    // Replace current lang prefix with new one
+    const currentPath = location.pathname;
+    const pathWithoutLang = currentPath.replace(/^\/(en|he)/, '');
+    setLanguage(newLang);
+    navigate(`/${newLang}${pathWithoutLang || ''}`, { replace: true });
+  };
 
   return (
     <header
@@ -37,7 +49,7 @@ const Header = () => {
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-20">
           {/* Logo */}
-          <Link to="/" className="flex items-center">
+          <Link to={localePath('/')} className="flex items-center">
             <img 
               src={language === 'he' ? logoHe : logoEn} 
               alt={language === 'he' ? 'מאיה זיו - משרד עורכי דין' : 'Maya Ziv Law'} 
@@ -52,7 +64,7 @@ const Header = () => {
 
           {/* Desktop Navigation */}
           <nav className="hidden lg:flex items-center gap-8">
-            <Link to="/about" className={navLinkClass('/about')}>
+            <Link to={localePath('/about')} className={navLinkClass('/about')}>
               {t('nav.firm')}
             </Link>
 
@@ -72,38 +84,38 @@ const Header = () => {
               </DropdownMenuTrigger>
               <DropdownMenuContent align="center" className={cn("w-56", isRTL && "text-right")}>
                 <DropdownMenuItem asChild className={cn(isRTL && "justify-end")}>
-                  <Link to="/real-estate" className="w-full cursor-pointer">
+                  <Link to={localePath('/real-estate')} className="w-full cursor-pointer">
                     {t('nav.realEstate')}
                   </Link>
                 </DropdownMenuItem>
                 <DropdownMenuItem asChild className={cn(isRTL && "justify-end")}>
-                  <Link to="/taxation" className="w-full cursor-pointer">
+                  <Link to={localePath('/taxation')} className="w-full cursor-pointer">
                     {t('nav.taxation')}
                   </Link>
                 </DropdownMenuItem>
                 <DropdownMenuItem asChild className={cn(isRTL && "justify-end")}>
-                  <Link to="/estate-planning" className="w-full cursor-pointer">
+                  <Link to={localePath('/estate-planning')} className="w-full cursor-pointer">
                     {t('nav.estate')}
                   </Link>
                 </DropdownMenuItem>
                 <DropdownMenuItem asChild className={cn(isRTL && "justify-end")}>
-                  <Link to="/olim-residents" className="w-full cursor-pointer">
+                  <Link to={localePath('/olim-residents')} className="w-full cursor-pointer">
                     {t('nav.olim')}
                   </Link>
                 </DropdownMenuItem>
                 <DropdownMenuItem asChild className={cn(isRTL && "justify-end")}>
-                  <Link to="/commercial" className="w-full cursor-pointer">
+                  <Link to={localePath('/commercial')} className="w-full cursor-pointer">
                     {t('nav.commercial')}
                   </Link>
                 </DropdownMenuItem>
               </DropdownMenuContent>
             </DropdownMenu>
 
-            <Link to="/insights" className={navLinkClass('/insights')}>
+            <Link to={localePath('/insights')} className={navLinkClass('/insights')}>
               {t('nav.insights')}
             </Link>
 
-            <Link to="/contact" className={navLinkClass('/contact')}>
+            <Link to={localePath('/contact')} className={navLinkClass('/contact')}>
               {t('nav.contact')}
             </Link>
           </nav>
@@ -111,7 +123,7 @@ const Header = () => {
             {/* Right side - Language Toggle */}
           <div className="hidden lg:flex items-center gap-4">
             <button
-              onClick={() => setLanguage(language === 'en' ? 'he' : 'en')}
+              onClick={switchLanguage}
               className="text-base font-semibold transition-colors px-3 py-1.5 rounded border text-foreground hover:text-accent border-border hover:border-accent"
             >
               {language === 'en' ? 'עב' : 'EN'}
@@ -133,7 +145,7 @@ const Header = () => {
           <div className="lg:hidden py-4 border-t border-border/20 bg-white/80 backdrop-blur-xl -mx-4 px-4 sm:-mx-6 sm:px-6 shadow-lg">
             <nav className="flex flex-col gap-4">
               <Link
-                to="/about"
+                to={localePath('/about')}
                 className={navLinkClass('/about')}
                 onClick={() => setIsMenuOpen(false)}
               >
@@ -158,35 +170,35 @@ const Header = () => {
                 {isExpertiseOpen && (
                   <div className={cn("flex flex-col gap-3 mt-3 border-border", isRTL ? "pr-4 border-r" : "pl-4 border-l")}>
                     <Link
-                      to="/real-estate"
+                      to={localePath('/real-estate')}
                       className={navLinkClass('/real-estate')}
                       onClick={() => setIsMenuOpen(false)}
                     >
                       {t('nav.realEstate')}
                     </Link>
                     <Link
-                      to="/taxation"
+                      to={localePath('/taxation')}
                       className={navLinkClass('/taxation')}
                       onClick={() => setIsMenuOpen(false)}
                     >
                       {t('nav.taxation')}
                     </Link>
                     <Link
-                      to="/estate-planning"
+                      to={localePath('/estate-planning')}
                       className={navLinkClass('/estate-planning')}
                       onClick={() => setIsMenuOpen(false)}
                     >
                       {t('nav.estate')}
                     </Link>
                     <Link
-                      to="/olim-residents"
+                      to={localePath('/olim-residents')}
                       className={navLinkClass('/olim-residents')}
                       onClick={() => setIsMenuOpen(false)}
                     >
                       {t('nav.olim')}
                     </Link>
                     <Link
-                      to="/commercial"
+                      to={localePath('/commercial')}
                       className={navLinkClass('/commercial')}
                       onClick={() => setIsMenuOpen(false)}
                     >
@@ -197,14 +209,14 @@ const Header = () => {
               </div>
 
               <Link
-                to="/insights"
+                to={localePath('/insights')}
                 className={navLinkClass('/insights')}
                 onClick={() => setIsMenuOpen(false)}
               >
                 {t('nav.insights')}
               </Link>
               <Link
-                to="/contact"
+                to={localePath('/contact')}
                 className={navLinkClass('/contact')}
                 onClick={() => setIsMenuOpen(false)}
               >
@@ -213,7 +225,7 @@ const Header = () => {
 
               <div className="flex items-center gap-4 pt-4 border-t border-border">
                 <button
-                  onClick={() => setLanguage(language === 'en' ? 'he' : 'en')}
+                  onClick={switchLanguage}
                   className="text-base font-semibold text-foreground hover:text-accent transition-colors px-3 py-1.5 rounded border border-border"
                 >
                   {language === 'en' ? 'עב' : 'EN'}

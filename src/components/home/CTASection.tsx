@@ -1,6 +1,7 @@
 import { Link } from 'react-router-dom';
 import { Button } from '@/components/ui/button';
 import { useLanguage } from '@/contexts/LanguageContext';
+import { useLocalePath } from '@/hooks/useLocalePath';
 import { cn } from '@/lib/utils';
 import { ArrowRight, ArrowLeft } from 'lucide-react';
 const CTASection = () => {
@@ -8,6 +9,7 @@ const CTASection = () => {
     t,
     isRTL
   } = useLanguage();
+  const localePath = useLocalePath();
   const Arrow = isRTL ? ArrowLeft : ArrowRight;
   return <section className="py-16 bg-[#faf8f5]">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
@@ -23,7 +25,7 @@ const CTASection = () => {
           </p>
 
           <Button asChild size="lg" className="bg-accent hover:bg-accent/90 text-accent-foreground font-medium px-6 sm:px-10 py-6 text-base group max-w-full">
-            <Link to="/contact" className={cn("flex items-center gap-2 whitespace-normal text-center", isRTL && "flex-row-reverse")}>
+            <Link to={localePath('/contact')} className={cn("flex items-center gap-2 whitespace-normal text-center", isRTL && "flex-row-reverse")}>
               {t('cta.button')}
               <Arrow className="h-4 w-4 flex-shrink-0 transition-transform group-hover:translate-x-1" />
             </Link>

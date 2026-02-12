@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom';
 import { useLanguage } from '@/contexts/LanguageContext';
+import { useLocalePath } from '@/hooks/useLocalePath';
 import { cn } from '@/lib/utils';
 import { Mail, Phone, MapPin } from 'lucide-react';
 import AccessibilityWidget from '@/components/AccessibilityWidget';
@@ -8,13 +9,14 @@ const Footer = () => {
     t,
     isRTL
   } = useLanguage();
+  const localePath = useLocalePath();
   return <footer className="bg-primary text-primary-foreground">
       {/* Main Footer */}
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-12">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
           {/* Brand Column */}
           <div className="lg:col-span-1">
-            <Link to="/" className="inline-block mb-4">
+            <Link to={localePath('/')} className="inline-block mb-4">
               <span className={cn("text-xl font-display font-semibold tracking-wide", isRTL && "font-hebrew")}>
                 {isRTL ? 'מאיה זיו עו"ד' : 'MAYA ZIV LAW'}
               </span>
@@ -29,27 +31,27 @@ const Footer = () => {
             </h4>
             <ul className="space-y-3">
               <li>
-                <Link to="/real-estate" className="text-primary-foreground/70 hover:text-accent transition-colors text-sm">
+                <Link to={localePath('/real-estate')} className="text-primary-foreground/70 hover:text-accent transition-colors text-sm">
                   {t('nav.realEstate')}
                 </Link>
               </li>
               <li>
-                <Link to="/taxation" className="text-primary-foreground/70 hover:text-accent transition-colors text-sm">
+                <Link to={localePath('/taxation')} className="text-primary-foreground/70 hover:text-accent transition-colors text-sm">
                   {t('nav.taxation')}
                 </Link>
               </li>
               <li>
-                <Link to="/estate-planning" className="text-primary-foreground/70 hover:text-accent transition-colors text-sm">
+                <Link to={localePath('/estate-planning')} className="text-primary-foreground/70 hover:text-accent transition-colors text-sm">
                   {t('nav.estate')}
                 </Link>
               </li>
               <li>
-                <Link to="/olim-residents" className="text-primary-foreground/70 hover:text-accent transition-colors text-sm">
+                <Link to={localePath('/olim-residents')} className="text-primary-foreground/70 hover:text-accent transition-colors text-sm">
                   {t('nav.olim')}
                 </Link>
               </li>
               <li>
-                <Link to="/commercial" className="text-primary-foreground/70 hover:text-accent transition-colors text-sm">
+                <Link to={localePath('/commercial')} className="text-primary-foreground/70 hover:text-accent transition-colors text-sm">
                   {t('nav.commercial')}
                 </Link>
               </li>
@@ -90,22 +92,22 @@ const Footer = () => {
             </h4>
             <ul className="space-y-3">
               <li>
-                <Link to="/about" className="text-primary-foreground/70 hover:text-accent transition-colors text-sm">
+                <Link to={localePath('/about')} className="text-primary-foreground/70 hover:text-accent transition-colors text-sm">
                   {t('nav.about')}
                 </Link>
               </li>
               <li>
-                <Link to="/insights" className="text-primary-foreground/70 hover:text-accent transition-colors text-sm">
+                <Link to={localePath('/insights')} className="text-primary-foreground/70 hover:text-accent transition-colors text-sm">
                   {t('nav.insights')}
                 </Link>
               </li>
               <li>
-                <Link to="/privacy" className="text-primary-foreground/70 hover:text-accent transition-colors text-sm">
+                <Link to={localePath('/privacy')} className="text-primary-foreground/70 hover:text-accent transition-colors text-sm">
                   {t('footer.privacy')}
                 </Link>
               </li>
               <li>
-                <Link to="/terms" className="text-primary-foreground/70 hover:text-accent transition-colors text-sm">
+                <Link to={localePath('/terms')} className="text-primary-foreground/70 hover:text-accent transition-colors text-sm">
                   {t('footer.terms')}
                 </Link>
               </li>
