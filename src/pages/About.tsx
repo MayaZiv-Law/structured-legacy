@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom';
 import Layout from '@/components/layout/Layout';
+import { useLocalePath } from '@/hooks/useLocalePath';
 import { useLanguage } from '@/contexts/LanguageContext';
 import { cn } from '@/lib/utils';
 import { FileCheck, Clock, MessageCircle, ArrowRight, ArrowLeft, Target, Globe } from 'lucide-react';
@@ -13,6 +14,7 @@ import MethodologySection from '@/components/home/MethodologySection';
 
 const About = () => {
   const { t, isRTL, language } = useLanguage();
+  const localePath = useLocalePath();
   const Arrow = isRTL ? ArrowLeft : ArrowRight;
 
   const expectations = [
@@ -274,7 +276,7 @@ const About = () => {
               size="lg"
               className="bg-accent hover:bg-accent/90 text-accent-foreground font-medium px-6 sm:px-10 py-6 text-base group max-w-full"
             >
-              <Link to="/contact" className={cn("flex items-center gap-2 whitespace-normal text-center", isRTL && "flex-row-reverse")}>
+              <Link to={localePath('/contact')} className={cn("flex items-center gap-2 whitespace-normal text-center", isRTL && "flex-row-reverse")}>
                 {t('about.cta.button')}
                 <Arrow className="h-4 w-4 flex-shrink-0 transition-transform group-hover:translate-x-1" />
               </Link>

@@ -5,6 +5,7 @@ const corsHeaders = {
 }
 
 const SITE_URL = 'https://mayaziv-law.com'
+const LANGUAGES = ['en', 'he']
 
 const staticPages = [
   { path: '/', priority: '1.0', changefreq: 'weekly' },
@@ -30,16 +31,23 @@ Deno.serve(async (req) => {
     const today = new Date().toISOString().split('T')[0]
     
     let xml = `<?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">`
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:xhtml="http://www.w3.org/1999/xhtml">`
 
+    // Static pages - one entry per language with xhtml:link alternates
     for (const page of staticPages) {
-      xml += `
+      for (const lang of LANGUAGES) {
+        xml += `
   <url>
-    <loc>${SITE_URL}${page.path}</loc>
+    <loc>${SITE_URL}/${lang}${page.path}</loc>
     <lastmod>${today}</lastmod>
     <changefreq>${page.changefreq}</changefreq>
     <priority>${page.priority}</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="${SITE_URL}/en${page.path}" />
+    <xhtml:link rel="alternate" hreflang="he" href="${SITE_URL}/he${page.path}" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="${SITE_URL}/en${page.path}" />
   </url>`
+      }
     }
 
     // Fetch articles via REST API
@@ -60,13 +68,18 @@ Deno.serve(async (req) => {
           const lastmod = article.updated_at 
             ? new Date(article.updated_at).toISOString().split('T')[0]
             : today
-          xml += `
+          for (const lang of LANGUAGES) {
+            xml += `
   <url>
-    <loc>${SITE_URL}/insights/${article.slug}</loc>
+    <loc>${SITE_URL}/${lang}/insights/${article.slug}</loc>
     <lastmod>${lastmod}</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="${SITE_URL}/en/insights/${article.slug}" />
+    <xhtml:link rel="alternate" hreflang="he" href="${SITE_URL}/he/insights/${article.slug}" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="${SITE_URL}/en/insights/${article.slug}" />
   </url>`
+          }
         }
       }
     }

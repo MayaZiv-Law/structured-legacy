@@ -1,4 +1,5 @@
 import { Link } from 'react-router-dom';
+import { useLocalePath } from '@/hooks/useLocalePath';
 import Layout from '@/components/layout/Layout';
 import { useLanguage } from '@/contexts/LanguageContext';
 import { cn } from '@/lib/utils';
@@ -20,6 +21,7 @@ const RealEstate = () => {
     isRTL,
     language
   } = useLanguage();
+  const localePath = useLocalePath();
   const Arrow = isRTL ? ArrowLeft : ArrowRight;
   const risks = [{
     titleKey: 'realestate.risk.liabilities.title',
@@ -282,7 +284,7 @@ const RealEstate = () => {
             </p>
 
             <Button asChild size="lg" className="bg-accent hover:bg-accent/90 text-accent-foreground font-medium px-6 sm:px-10 py-6 text-base group max-w-full">
-              <Link to="/contact" className={cn("flex items-center gap-2 whitespace-normal text-center", isRTL && "flex-row-reverse")}>
+              <Link to={localePath('/contact')} className={cn("flex items-center gap-2 whitespace-normal text-center", isRTL && "flex-row-reverse")}>
                 {t('realestate.cta.button')}
                 <Arrow className="h-4 w-4 flex-shrink-0 transition-transform group-hover:translate-x-1" />
               </Link>

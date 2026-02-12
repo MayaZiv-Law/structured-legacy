@@ -1,6 +1,7 @@
 import { Link } from 'react-router-dom';
 import Layout from '@/components/layout/Layout';
 import { useLanguage } from '@/contexts/LanguageContext';
+import { useLocalePath } from '@/hooks/useLocalePath';
 import { cn } from '@/lib/utils';
 import { Calendar, ArrowRight, Loader2 } from 'lucide-react';
 import CTASection from '@/components/home/CTASection';
@@ -10,6 +11,7 @@ import { SEO } from '@/components/SEO';
 
 const Insights = () => {
   const { t, isRTL, language } = useLanguage();
+  const localePath = useLocalePath();
   const heroAnim = useScrollAnimation();
   const philosophyAnim = useScrollAnimation();
   const articlesAnim = useScrollAnimation();
@@ -88,7 +90,7 @@ const Insights = () => {
                   
                   return (
                     <Link 
-                      to={`/insights/${article.slug}`} 
+                      to={localePath(`/insights/${article.slug}`)} 
                       key={article.id} 
                       className={cn(
                         "group bg-card border border-border rounded-xl overflow-hidden hover:border-accent/50 transition-all hover:shadow-lg block duration-500", 

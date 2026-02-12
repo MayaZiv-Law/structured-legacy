@@ -6,6 +6,7 @@ import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { LanguageProvider } from "@/contexts/LanguageContext";
 import ScrollToTop from "@/components/ScrollToTop";
+import { LanguageRouter, RedirectToLang, LegacyRedirect } from "@/components/LanguageRouter";
 import Index from "./pages/Index";
 
 // Lazy load all non-critical pages
@@ -45,22 +46,42 @@ const App = () => (
           <ScrollToTop />
           <Suspense fallback={<PageLoader />}>
             <Routes>
-              <Route path="/" element={<Index />} />
-              <Route path="/about" element={<About />} />
-              <Route path="/real-estate" element={<RealEstate />} />
-              <Route path="/taxation" element={<Taxation />} />
-              <Route path="/estate-planning" element={<EstatePlanning />} />
-              <Route path="/olim-residents" element={<OlimResidents />} />
-              <Route path="/commercial" element={<Commercial />} />
-              <Route path="/insights" element={<Insights />} />
-              <Route path="/insights/:slug" element={<Article />} />
-              <Route path="/contact" element={<Contact />} />
-              <Route path="/privacy" element={<Privacy />} />
-              <Route path="/terms" element={<Terms />} />
+              {/* Root redirect */}
+              <Route path="/" element={<RedirectToLang />} />
+              
+              {/* Language-prefixed routes */}
+              <Route path="/:lang" element={<LanguageRouter><Index /></LanguageRouter>} />
+              <Route path="/:lang/about" element={<LanguageRouter><About /></LanguageRouter>} />
+              <Route path="/:lang/real-estate" element={<LanguageRouter><RealEstate /></LanguageRouter>} />
+              <Route path="/:lang/taxation" element={<LanguageRouter><Taxation /></LanguageRouter>} />
+              <Route path="/:lang/estate-planning" element={<LanguageRouter><EstatePlanning /></LanguageRouter>} />
+              <Route path="/:lang/olim-residents" element={<LanguageRouter><OlimResidents /></LanguageRouter>} />
+              <Route path="/:lang/commercial" element={<LanguageRouter><Commercial /></LanguageRouter>} />
+              <Route path="/:lang/insights" element={<LanguageRouter><Insights /></LanguageRouter>} />
+              <Route path="/:lang/insights/:slug" element={<LanguageRouter><Article /></LanguageRouter>} />
+              <Route path="/:lang/contact" element={<LanguageRouter><Contact /></LanguageRouter>} />
+              <Route path="/:lang/privacy" element={<LanguageRouter><Privacy /></LanguageRouter>} />
+              <Route path="/:lang/terms" element={<LanguageRouter><Terms /></LanguageRouter>} />
+              
+              {/* Admin routes - no language prefix */}
               <Route path="/admin/login" element={<AdminLogin />} />
               <Route path="/admin/articles" element={<ProtectedRoute><ArticlesList /></ProtectedRoute>} />
               <Route path="/admin/articles/new" element={<ProtectedRoute><ArticleEditor /></ProtectedRoute>} />
               <Route path="/admin/articles/:id" element={<ProtectedRoute><ArticleEditor /></ProtectedRoute>} />
+              
+              {/* Legacy redirects - old routes without language prefix */}
+              <Route path="/about" element={<LegacyRedirect />} />
+              <Route path="/real-estate" element={<LegacyRedirect />} />
+              <Route path="/taxation" element={<LegacyRedirect />} />
+              <Route path="/estate-planning" element={<LegacyRedirect />} />
+              <Route path="/olim-residents" element={<LegacyRedirect />} />
+              <Route path="/commercial" element={<LegacyRedirect />} />
+              <Route path="/insights" element={<LegacyRedirect />} />
+              <Route path="/insights/:slug" element={<LegacyRedirect />} />
+              <Route path="/contact" element={<LegacyRedirect />} />
+              <Route path="/privacy" element={<LegacyRedirect />} />
+              <Route path="/terms" element={<LegacyRedirect />} />
+              
               <Route path="*" element={<NotFound />} />
             </Routes>
           </Suspense>

@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom';
 import { useLanguage } from '@/contexts/LanguageContext';
+import { useLocalePath } from '@/hooks/useLocalePath';
 import { cn } from '@/lib/utils';
 import { useMemo } from 'react';
 
@@ -12,6 +13,7 @@ import commercialHero from '@/assets/commercial-hero-new.jpg';
 
 const PracticeAreasSection = () => {
   const { t, isRTL } = useLanguage();
+  const localePath = useLocalePath();
   
   // Memoize areas array to prevent recreating on each render
   const areas = useMemo(() => [
@@ -61,7 +63,7 @@ const PracticeAreasSection = () => {
         {/* Cards Grid */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-6 max-w-7xl mx-auto">
           {areas.map((area, index) => (
-            <Link key={index} to={area.link} className="group relative block pb-16">
+            <Link key={index} to={localePath(area.link)} className="group relative block pb-16">
               {/* Image Container */}
               <div className="aspect-[4/5] overflow-hidden">
                 <img 

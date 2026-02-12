@@ -34,7 +34,10 @@ export const SEO = ({
   
   const title = language === 'he' ? titleHe : titleEn;
   const description = language === 'he' ? descriptionHe : descriptionEn;
-  const canonicalUrl = `${SITE_URL}${path}`;
+  const langPath = path.startsWith('/') ? path : `/${path}`;
+  const canonicalUrl = `${SITE_URL}/${language}${langPath}`;
+  const enUrl = `${SITE_URL}/en${langPath}`;
+  const heUrl = `${SITE_URL}/he${langPath}`;
   const imageUrl = image.startsWith('http') ? image : `${SITE_URL}${image}`;
 
   return (
@@ -58,9 +61,9 @@ export const SEO = ({
       )}
       
       {/* Hreflang for multilingual support */}
-      <link rel="alternate" hrefLang="en" href={canonicalUrl} />
-      <link rel="alternate" hrefLang="he" href={canonicalUrl} />
-      <link rel="alternate" hrefLang="x-default" href={canonicalUrl} />
+      <link rel="alternate" hrefLang="en" href={enUrl} />
+      <link rel="alternate" hrefLang="he" href={heUrl} />
+      <link rel="alternate" hrefLang="x-default" href={enUrl} />
       
       {/* Open Graph */}
       <meta property="og:title" content={title} />

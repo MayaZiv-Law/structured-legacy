@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom';
 import { useLanguage } from '@/contexts/LanguageContext';
+import { useLocalePath } from '@/hooks/useLocalePath';
 import { cn } from '@/lib/utils';
 import { ArrowRight, ArrowLeft, Calendar, Loader2 } from 'lucide-react';
 import { Button } from '@/components/ui/button';
@@ -11,6 +12,7 @@ const InsightsSection = () => {
     isRTL,
     language
   } = useLanguage();
+  const localePath = useLocalePath();
   const Arrow = isRTL ? ArrowLeft : ArrowRight;
   const sectionAnim = useScrollAnimation();
   const {
@@ -27,7 +29,7 @@ const InsightsSection = () => {
               </h2>
             </div>
             <Button asChild variant="outline" className="border-accent text-accent hover:bg-accent hover:text-accent-foreground">
-              <Link to="/insights" className={cn("flex items-center gap-2", isRTL && "flex-row-reverse")}>
+              <Link to={localePath('/insights')} className={cn("flex items-center gap-2", isRTL && "flex-row-reverse")}>
                 {t('insights.viewAll')}
                 <Arrow className="h-4 w-4" />
               </Link>
@@ -43,7 +45,7 @@ const InsightsSection = () => {
             const title = language === 'he' ? article.title_he : article.title_en;
             const excerpt = language === 'he' ? article.excerpt_he : article.excerpt_en;
             const category = language === 'he' ? article.category_he : article.category_en;
-            return <Link to={`/insights/${article.slug}`} key={article.id} className={cn("group bg-card border border-border rounded-xl overflow-hidden hover:border-accent/50 transition-all duration-500 hover:shadow-lg block", isRTL && "font-hebrew text-right", "opacity-100 translate-y-0 animate-fade-in")} style={{
+            return <Link to={localePath(`/insights/${article.slug}`)} key={article.id} className={cn("group bg-card border border-border rounded-xl overflow-hidden hover:border-accent/50 transition-all duration-500 hover:shadow-lg block", isRTL && "font-hebrew text-right", "opacity-100 translate-y-0 animate-fade-in")} style={{
               animationDelay: `${index * 150}ms`
             }}>
                     {/* Image Container */}
