@@ -30,10 +30,7 @@ export const LanguageRouter = ({ children }: { children: React.ReactNode }) => {
  * Redirects from / to /en/ or /he/ based on localStorage preference or browser language.
  */
 export const RedirectToLang = () => {
-  const saved = localStorage.getItem('maya-ziv-lang');
-  const browserLang = navigator.language?.startsWith('he') ? 'he' : 'en';
-  const lang = saved === 'he' ? 'he' : saved === 'en' ? 'en' : browserLang;
-  return <Navigate to={`/${lang}`} replace />;
+  return <Navigate to="/en" replace />;
 };
 
 /**
@@ -41,7 +38,5 @@ export const RedirectToLang = () => {
  */
 export const LegacyRedirect = () => {
   const location = useLocation();
-  const saved = localStorage.getItem('maya-ziv-lang');
-  const lang = saved === 'he' || saved === 'en' ? saved : 'en';
-  return <Navigate to={`/${lang}${location.pathname}${location.search}${location.hash}`} replace />;
+  return <Navigate to={`/en${location.pathname}${location.search}${location.hash}`} replace />;
 };
