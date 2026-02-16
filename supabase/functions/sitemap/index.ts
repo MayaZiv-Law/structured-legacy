@@ -8,7 +8,7 @@ const SITE_URL = 'https://mayaziv-law.com'
 const LANGUAGES = ['en', 'he']
 
 const staticPages = [
-  { path: '/', priority: '1.0', changefreq: 'weekly' },
+  { path: '', priority: '1.0', changefreq: 'weekly' },
   { path: '/about', priority: '0.8', changefreq: 'monthly' },
   { path: '/real-estate', priority: '0.8', changefreq: 'monthly' },
   { path: '/taxation', priority: '0.8', changefreq: 'monthly' },
@@ -17,6 +17,8 @@ const staticPages = [
   { path: '/commercial', priority: '0.8', changefreq: 'monthly' },
   { path: '/insights', priority: '0.7', changefreq: 'weekly' },
   { path: '/contact', priority: '0.6', changefreq: 'monthly' },
+  { path: '/privacy', priority: '0.3', changefreq: 'yearly' },
+  { path: '/terms', priority: '0.3', changefreq: 'yearly' },
 ]
 
 Deno.serve(async (req) => {
