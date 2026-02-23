@@ -120,15 +120,6 @@ const Header = () => {
             </Link>
           </nav>
 
-            {/* Right side - Language Toggle */}
-          <div className="hidden lg:flex items-center gap-4">
-            <button
-              onClick={switchLanguage}
-              className="text-base font-semibold transition-colors px-3 py-1.5 rounded border text-foreground hover:text-accent border-border hover:border-accent"
-            >
-              {language === 'en' ? 'עב' : 'EN'}
-            </button>
-          </div>
 
           {/* Mobile Menu Button */}
           <button
@@ -223,14 +214,6 @@ const Header = () => {
                 {t('nav.contact')}
               </Link>
 
-              <div className="flex items-center gap-4 pt-4 border-t border-border">
-                <button
-                  onClick={switchLanguage}
-                  className="text-base font-semibold text-foreground hover:text-accent transition-colors px-3 py-1.5 rounded border border-border"
-                >
-                  {language === 'en' ? 'עב' : 'EN'}
-                </button>
-              </div>
             </nav>
           </div>
         )}
