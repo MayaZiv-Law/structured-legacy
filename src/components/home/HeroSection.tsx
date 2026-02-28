@@ -1,6 +1,6 @@
 import { useLanguage } from '@/contexts/LanguageContext';
 import { cn } from '@/lib/utils';
-import heroImage from '@/assets/tel-aviv-hero-new.webp';
+const heroImage = '/images/tel-aviv-hero-new.webp';
 
 const HeroSection = () => {
   const {
