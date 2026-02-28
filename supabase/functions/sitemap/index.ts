@@ -1,11 +1,11 @@
 const corsHeaders = {
   'Access-Control-Allow-Origin': '*',
   'Access-Control-Allow-Headers': 'authorization, x-client-info, apikey, content-type',
-  'Content-Type': 'application/xml',
 }
 
 const SITE_URL = 'https://mayaziv-law.com'
 const LANGUAGES = ['en', 'he']
+const STATIC_LASTMOD = '2025-02-28'
 
 const staticPages = [
   { path: '', priority: '1.0', changefreq: 'weekly' },
@@ -23,26 +23,23 @@ const staticPages = [
 
 Deno.serve(async (req) => {
   if (req.method === 'OPTIONS') {
-    return new Response('ok', { headers: corsHeaders })
+    return new Response(null, { status: 204, headers: corsHeaders })
   }
 
   try {
     const supabaseUrl = Deno.env.get('SUPABASE_URL')
     const supabaseKey = Deno.env.get('SUPABASE_ANON_KEY')
-    
-    const today = new Date().toISOString().split('T')[0]
-    
+
     let xml = `<?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
         xmlns:xhtml="http://www.w3.org/1999/xhtml">`
 
-    // Static pages - one entry per language with xhtml:link alternates
     for (const page of staticPages) {
       for (const lang of LANGUAGES) {
         xml += `
   <url>
     <loc>${SITE_URL}/${lang}${page.path}</loc>
-    <lastmod>${today}</lastmod>
+    <lastmod>${STATIC_LASTMOD}</lastmod>
     <changefreq>${page.changefreq}</changefreq>
     <priority>${page.priority}</priority>
     <xhtml:link rel="alternate" hreflang="en" href="${SITE_URL}/en${page.path}" />
@@ -52,7 +49,6 @@ Deno.serve(async (req) => {
       }
     }
 
-    // Fetch articles via REST API
     if (supabaseUrl && supabaseKey) {
       const response = await fetch(
         `${supabaseUrl}/rest/v1/articles?is_published=eq.true&select=slug,updated_at,published_at&order=published_at.desc`,
@@ -63,13 +59,13 @@ Deno.serve(async (req) => {
           },
         }
       )
-      
+
       if (response.ok) {
         const articles = await response.json()
         for (const article of articles) {
-          const lastmod = article.updated_at 
+          const lastmod = article.updated_at
             ? new Date(article.updated_at).toISOString().split('T')[0]
-            : today
+            : STATIC_LASTMOD
           for (const lang of LANGUAGES) {
             xml += `
   <url>
@@ -89,9 +85,19 @@ Deno.serve(async (req) => {
     xml += `
 </urlset>`
 
-    return new Response(xml, { headers: corsHeaders, status: 200 })
+    return new Response(xml, {
+      status: 200,
+      headers: {
+        ...corsHeaders,
+        'Content-Type': 'application/xml; charset=utf-8',
+        'Cache-Control': 'public, max-age=3600, s-maxage=86400',
+      },
+    })
   } catch (error) {
     console.error('Sitemap error:', error)
-    return new Response('Error generating sitemap', { status: 500 })
+    return new Response('Error generating sitemap', {
+      status: 500,
+      headers: corsHeaders,
+    })
   }
 })
