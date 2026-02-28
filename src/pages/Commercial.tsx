@@ -32,11 +32,6 @@ const Commercial = () => {
       desc: t('commercial.services.dispute.desc'), 
       icon: Shield 
     },
-    { 
-      title: t('commercial.services.crossborder.title'), 
-      desc: t('commercial.services.crossborder.desc'), 
-      icon: Globe 
-    },
   ];
 
   const philosophyAnim = useScrollAnimation();
