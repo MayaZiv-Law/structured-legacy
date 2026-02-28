@@ -352,7 +352,7 @@ const translations: Record<Language, Record<string, string>> = {
     'nav.schedule': 'תיאום פגישת ייעוץ',
 
     // Hero
-    'hero.tagline': 'העתיד מעדיף את המוכנים',
+    'hero.tagline': 'The Future Favors the Prepared',
     'hero.title': 'מאיה זיו | עורכת דין ונוטריון בתל אביב',
     'hero.subtitle1': 'מלווים כל לקוח בבהירות, בבטחון ובמצוינות',
     'hero.subtitle2': 'החלטות אסטרטגיות בעולם גלובאלי',
