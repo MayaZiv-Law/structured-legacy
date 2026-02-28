@@ -1,39 +1,43 @@
 
 
-# תיקון הפניה מ-`/` -- תמיד לגרסה האנגלית
+# עדכון Sitemap לתאימות Google Search Console
 
-## מצב נוכחי
+## בעיות נוכחיות
 
-כרגע שני רכיבים משתמשים בלוגיקה שבודקת localStorage ושפת הדפדפן כדי להחליט לאיזו שפה להפנות:
+1. **Content-Type מעורב עם CORS headers** -- ה-header של `Content-Type: application/xml` מוגדר בתוך `corsHeaders`, מה שאומר שגם תשובת OPTIONS מחזירה Content-Type של XML במקום שתחזיר ריק. GSC עלול לקבל headers לא נקיים.
 
-- **`RedirectToLang`** (שורה 32-37): מפנה מ-`/` ל-`/en` או `/he` לפי localStorage או שפת הדפדפן
-- **`LegacyRedirect`** (שורה 42-46): מפנה נתיבים ישנים (כמו `/about`) ל-`/en/about` או `/he/about` לפי localStorage
+2. **חסר charset** -- GSC מעדיף `application/xml; charset=utf-8` כדי לפרש נכון תווים בעברית.
 
-## השינוי הנדרש
+3. **lastmod דינמי מדי** -- עמודים סטטיים משתמשים ב-`today` בתור lastmod, מה שגורם לתאריך להשתנות כל יום. GSC עלול להתעלם מ-lastmod אם הוא משתנה ללא סיבה אמיתית.
 
-שני הרכיבים צריכים להפנות **תמיד** לגרסה האנגלית (`/en`), ללא תלות ב-localStorage או שפת הדפדפן.
+4. **חסר XML processing instruction** -- אין בעיה טכנית, אבל הכל תקין מבחינת מבנה.
 
-### קובץ: `src/components/LanguageRouter.tsx`
+## שינויים מתוכננים
 
-**`RedirectToLang`** -- פישוט ל:
-```tsx
-export const RedirectToLang = () => {
-  return <Navigate to="/en" replace />;
-};
+### קובץ: `supabase/functions/sitemap/index.ts`
+
+- **הפרדת CORS מ-Content-Type**: הגדרת `corsHeaders` נפרד ללא Content-Type, והוספת Content-Type רק בתשובה הסופית.
+- **הוספת charset=utf-8** ל-Content-Type.
+- **תאריכי lastmod קבועים לעמודים סטטיים**: שימוש בתאריך קבוע (למשל תאריך העדכון האחרון של האתר) במקום `today`, כך ש-GSC יתייחס ל-lastmod כאמין.
+- **תשובת OPTIONS נקייה**: החזרת status 204 (No Content) במקום 'ok' עם Content-Type של XML.
+
+### פירוט טכני
+
+```text
+corsHeaders (CORS בלבד):
+  Access-Control-Allow-Origin: *
+  Access-Control-Allow-Headers: ...
+
+Response headers (תשובה סופית):
+  ...corsHeaders
+  Content-Type: application/xml; charset=utf-8
+  Cache-Control: public, max-age=3600, s-maxage=86400
+
+OPTIONS response:
+  status: 204
+  headers: corsHeaders בלבד
 ```
 
-**`LegacyRedirect`** -- תמיד `/en/...`:
-```tsx
-export const LegacyRedirect = () => {
-  const location = useLocation();
-  return <Navigate to={`/en${location.pathname}${location.search}${location.hash}`} replace />;
-};
-```
-
-## השפעה
-
-- ויזואלית: ללא שינוי
-- כניסה ל-`/` תפנה תמיד ל-`/en`
-- נתיבים ישנים (למשל `/about`) יפנו תמיד ל-`/en/about`
-- משתמשים שכבר נמצאים ב-`/he/...` לא יושפעו -- ההפניה רלוונטית רק בכניסה ללא prefix שפה
+- הוספת `Cache-Control` header כדי ש-GSC ושרתי CDN יוכלו לשמור cache של ה-sitemap (שעה ל-browser, יום ל-CDN).
+- lastmod לעמודים סטטיים ישתנה לתאריך קבוע שניתן לעדכן ידנית בקוד כשיש שינוי אמיתי באתר.
 
