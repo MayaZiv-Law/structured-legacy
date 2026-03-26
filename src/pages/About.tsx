@@ -55,7 +55,7 @@ const About = () => {
   return (
     <Layout>
       <SEO
-        titleEn="About Maya Ziv | Attorney with Legal and Financial Expertise | Tel Aviv"
+        titleEn="About Maya Ziv | Attorney with Legal and Financial Expertise | Israel"
         titleHe="מאיה זיו משרד עורכי דין | מקרקעין | מיסוי בינלאומי | ניהול עזבונות וצוואות"
         descriptionEn="Maya Ziv holds an LLB and a BBA in Finance from Baruch College New York. Prior experience at Citi Innovation Lab and Vornado Realty Trust. Complex transactions where law and finance intersect."
         descriptionHe="ניהול סיכונים משפטי ואסטרטגיית מיסוי עבור תושבי ישראל ולקוחות בזירה הגלובלית. התמחות בבדיקת נאותות למקרקעין, ציות בנקאי וניהול עזבונות חוצי גבולות."
@@ -123,7 +123,7 @@ const About = () => {
                 <div className="aspect-[3/4] overflow-hidden rounded-sm shadow-premium">
                   <img
                     src={mayaPortrait}
-                    alt="Maya Ziv - Attorney and Notary"
+                    alt="Maya Ziv - Attorney"
                     className="w-full h-full object-cover object-top"
                   />
                 </div>

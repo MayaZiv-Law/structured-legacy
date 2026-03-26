@@ -27,7 +27,7 @@ const translations: Record<Language, Record<string, string>> = {
 
     // Hero
     'hero.tagline': 'Where Legal Precision Meets Financial Judgment',
-    'hero.title': 'Attorney and Notary in Tel Aviv',
+    'hero.title': 'Attorney in Israel',
     'hero.subtitle1': 'Complex transactions. Cross border matters. High stakes decisions. Advised with the legal depth and financial discipline they require.',
     'hero.subtitle2': 'Real estate, taxation, and estate planning delivered with clarity, structure, and financial foresight.',
     'hero.cta': 'Schedule a Consultation',
@@ -122,7 +122,7 @@ const translations: Record<Language, Record<string, string>> = {
     'cta.buttonSecondary': 'Initial Fit Assessment',
 
     // Footer
-    'footer.brand': 'Attorney and Notary in Tel Aviv',
+    'footer.brand': 'Attorney in Israel',
     'footer.services': 'Services',
     'footer.contact': 'Contact',
     'footer.legal': 'Legal',
@@ -364,7 +364,7 @@ const translations: Record<Language, Record<string, string>> = {
 
     // Hero
     'hero.tagline': 'The Future Favors the Prepared',
-    'hero.title': 'מאיה זיו | עורכת דין ונוטריון בתל אביב',
+    'hero.title': 'מאיה זיו | עורכת דין בישראל',
     'hero.subtitle1': 'מלווים כל לקוח בבהירות, בבטחון ובמצוינות',
     'hero.subtitle2': 'החלטות אסטרטגיות בעולם גלובאלי',
     'hero.cta': 'בקשת ייעוץ חסוי',
@@ -459,7 +459,7 @@ const translations: Record<Language, Record<string, string>> = {
     'cta.buttonSecondary': 'בדיקת התאמה ראשונית',
 
     // Footer
-    'footer.brand': 'עורכת דין ונוטריון בתל אביב',
+    'footer.brand': 'עורכת דין בישראל',
     'footer.services': 'שירותים',
     'footer.contact': 'צור קשר',
     'footer.legal': 'משפטי',

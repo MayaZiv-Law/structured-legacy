@@ -112,7 +112,7 @@ export const organizationSchema = {
   "@context": "https://schema.org",
   "@type": "LegalService",
   "name": "Maya Ziv Law",
-  "description": "Attorney and Notary in Tel Aviv specializing in cross border legal matters, real estate, taxation, and estate planning.",
+  "description": "Attorney in Israel specializing in cross border legal matters, real estate, taxation, and estate planning.",
   "url": "https://mayaziv-law.com",
   "logo": `${SITE_URL}/lovable-uploads/ba3c3a72-3db5-4141-9459-1f85fc39e53f.png`,
   "image": `${SITE_URL}/lovable-uploads/ba3c3a72-3db5-4141-9459-1f85fc39e53f.png`,
@@ -143,7 +143,7 @@ export const attorneySchema = {
   "@context": "https://schema.org",
   "@type": "Attorney",
   "name": "Maya Ziv",
-  "jobTitle": "Attorney and Notary",
+  "jobTitle": "Attorney",
   "url": "https://mayaziv-law.com/about",
   "image": `${SITE_URL}/lovable-uploads/81459920-5f87-4bcb-8430-47c1c2edc6e4.png`,
   "worksFor": {
@@ -288,7 +288,7 @@ export const websiteSchema = {
   "@type": "WebSite",
   "name": "Maya Ziv Law",
   "url": "https://mayaziv-law.com",
-  "description": "Attorney and Notary in Tel Aviv specializing in cross border legal matters, real estate, taxation, and estate planning.",
+  "description": "Attorney in Israel specializing in cross border legal matters, real estate, taxation, and estate planning.",
   "inLanguage": ["en", "he"],
   "publisher": {
     "@type": "LegalService",

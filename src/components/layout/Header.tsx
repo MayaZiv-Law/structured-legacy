@@ -118,6 +118,14 @@ const Header = () => {
             <Link to={localePath('/contact')} className={navLinkClass('/contact')}>
               {t('nav.contact')}
             </Link>
+
+            {/* Language Switcher - Desktop */}
+            <button
+              onClick={switchLanguage}
+              className="text-sm font-semibold border border-foreground/20 rounded px-3 py-1.5 hover:bg-accent hover:text-accent-foreground hover:border-accent transition-colors"
+            >
+              {language === 'en' ? 'עברית' : 'English'}
+            </button>
           </nav>
 
 
@@ -213,6 +221,14 @@ const Header = () => {
               >
                 {t('nav.contact')}
               </Link>
+
+              {/* Language Switcher - Mobile */}
+              <button
+                onClick={() => { switchLanguage(); setIsMenuOpen(false); }}
+                className="text-sm font-semibold border border-foreground/20 rounded px-3 py-2 hover:bg-accent hover:text-accent-foreground hover:border-accent transition-colors w-fit"
+              >
+                {language === 'en' ? 'עברית' : 'English'}
+              </button>
 
             </nav>
           </div>

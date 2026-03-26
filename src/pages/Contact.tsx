@@ -14,9 +14,9 @@ const Contact = () => {
   return (
     <Layout>
       <SEO
-        titleEn="Contact Maya Ziv Law | Attorney in Tel Aviv | Hebrew and English"
+        titleEn="Contact Maya Ziv Law | Attorney in Israel | Hebrew and English"
         titleHe="צור קשר | משרד מאיה זיו עו״ד"
-        descriptionEn="Reach Maya Ziv Law for inquiries about real estate, tax, estate planning and commercial matters. Based in Tel Aviv. Accepting clients in Israel and internationally."
+        descriptionEn="Reach Maya Ziv Law for inquiries about real estate, tax, estate planning and commercial matters. Based in Israel. Accepting clients in Israel and internationally."
         descriptionHe="צרו קשר עם משרד מאיה זיו לייעוץ משפטי בנדל״ן, מיסוי, תכנון עיזבון ועסקאות בינלאומיות בישראל."
         path="/contact"
       />
