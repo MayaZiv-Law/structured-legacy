@@ -2,7 +2,7 @@ import Layout from '@/components/layout/Layout';
 import { useLanguage } from '@/contexts/LanguageContext';
 import { cn } from '@/lib/utils';
 import { isPrerender } from '@/lib/isPrerender';
-import { FileText, CheckCircle, Map, FileCheck, Shield, Clock, Users, Scale, ArrowRight } from 'lucide-react';
+import { FileText, CheckCircle, Map, FileCheck, Shield, Clock, Users, Scale, ArrowRight, ArrowLeft } from 'lucide-react';
 import { useLocalePath } from '@/hooks/useLocalePath';
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/components/ui/accordion';
 import { Button } from '@/components/ui/button';
@@ -20,6 +20,7 @@ const EstatePlanning = () => {
     language
   } = useLanguage();
   const localePath = useLocalePath();
+  const Arrow = isRTL ? ArrowLeft : ArrowRight;
   const willsFocusAreas = [{
     title: t('estate.wills.compliance.title'),
     desc: t('estate.wills.compliance.desc'),
@@ -73,7 +74,7 @@ const EstatePlanning = () => {
   const faqAnim = useScrollAnimation();
   const ctaAnim = useScrollAnimation();
   const estateSchema = createServiceSchema({
-    name: 'Estate Planning & Inheritance Legal Services',
+    name: 'Estate Planning and Inheritance Legal Services',
     description: 'Estate planning for international families in Israel. Drafting bilingual wills, probate orders, and Enduring Power of Attorney with cross border validity.',
     url: 'https://mayaziv-law.com/estate-planning'
   });
@@ -85,19 +86,20 @@ const EstatePlanning = () => {
 
   const breadcrumbSchema = createBreadcrumbSchema([
     { name: language === 'he' ? 'בית' : 'Home', url: 'https://mayaziv-law.com/' },
-    { name: language === 'he' ? 'משפחה ומורשת' : 'Family & Legacy', url: 'https://mayaziv-law.com/estate-planning' },
+    { name: language === 'he' ? 'משפחה ומורשת' : 'Family and Legacy', url: 'https://mayaziv-law.com/estate-planning' },
   ]);
 
   return <Layout>
-      <SEO titleEn="Inheritance & Estate Planning in Tel Aviv | Cross Border Wills" titleHe="ירושות ותכנון עיזבון בתל אביב | צוואות חוצות גבולות" descriptionEn="Estate planning for international families in Israel. Drafting bilingual wills, probate orders, and Enduring Power of Attorney with cross border validity." descriptionHe="תכנון עיזבון למשפחות בינלאומיות בישראל. ניסוח צוואות דו-לשוניות, צווי ירושה וייפוי כוח מתמשך עם תוקף חוצה גבולות." path="/estate-planning" schema={[estateSchema, faqSchema, breadcrumbSchema]} />
+      <SEO titleEn="Estate Planning Lawyer Israel | Wills, Inheritance and Cross Border Succession" titleHe="ירושות ותכנון עיזבון בתל אביב | צוואות חוצות גבולות" descriptionEn="Drafting wills and inheritance plans with cross border validity. Advising Israeli and international families on estate structure and succession planning." descriptionHe="תכנון עיזבון למשפחות בינלאומיות בישראל. ניסוח צוואות דו-לשוניות, צווי ירושה וייפוי כוח מתמשך עם תוקף חוצה גבולות." path="/estate-planning" schema={[estateSchema, faqSchema, breadcrumbSchema]} />
 
       {/* Hero Section */}
       <PageHero backgroundImage={estateHeroBg} title={t('estate.hero.title')} imagePosition="center 70%" />
 
       {/* Cross-Border Wills Section */}
-      <section className="pt-40 sm:pt-48 pb-12 bg-background">
+      <section className="pt-24 sm:pt-28 pb-12 bg-background">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div ref={willsAnim.ref} className={cn("max-w-4xl mx-auto mb-8 transition-all duration-700", isRTL && "font-hebrew text-right", willsAnim.isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8")}>
+            <div className={cn("w-16 h-0.5 bg-accent mb-6", isRTL && "ml-auto")} />
             <h2 className="text-3xl sm:text-4xl font-display font-semibold mb-5">
               {t('estate.wills.title')}
             </h2>
@@ -121,9 +123,10 @@ const EstatePlanning = () => {
       <section className="py-12 bg-background overflow-visible">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div ref={epaAnim.ref} className={cn("max-w-6xl mx-auto transition-all duration-700", epaAnim.isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8")}>
-            <div className={cn("grid grid-cols-1 lg:grid-cols-2 gap-8 items-stretch", isRTL && "direction-rtl")}>
+            <div className={cn("grid grid-cols-1 lg:grid-cols-2 gap-8 items-stretch")}>
               {/* Text card */}
               <div className={cn("p-8 sm:p-10 bg-card rounded-2xl shadow-lg border border-border/50", isRTL ? "font-hebrew text-right order-1" : "order-1")}>
+                <div className={cn("w-16 h-0.5 bg-accent mb-6", isRTL && "ml-auto")} />
                 <h2 className="text-3xl sm:text-4xl font-display font-semibold mb-5 text-foreground">
                   {t('estate.epa.title')}
                 </h2>
@@ -144,6 +147,7 @@ const EstatePlanning = () => {
       <section className="py-12 bg-background">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div ref={processAnim.ref} className={cn("max-w-4xl mx-auto transition-all duration-700", isRTL && "font-hebrew text-right", processAnim.isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8")}>
+            <div className={cn("w-16 h-0.5 bg-accent mb-6", isRTL && "ml-auto")} />
             <h2 className="text-3xl sm:text-4xl font-display font-semibold mb-8">
               {t('estate.process.title')}
             </h2>
@@ -171,6 +175,7 @@ const EstatePlanning = () => {
       <section className="py-12 gradient-stone">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div ref={taxAnim.ref} className={cn("max-w-4xl mx-auto transition-all duration-700", isRTL && "font-hebrew text-right", taxAnim.isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8")}>
+            <div className={cn("w-16 h-0.5 bg-accent mb-6", isRTL && "ml-auto")} />
             <h2 className="text-3xl sm:text-4xl font-display font-semibold mb-5">
               {t('estate.tax.title')}
             </h2>
@@ -236,21 +241,23 @@ const EstatePlanning = () => {
       <RelatedServices currentPath="/estate-planning" />
 
       {/* CTA Section */}
-      <section className="py-16 bg-[#faf8f5]">
-        <div ref={ctaAnim.ref} className={cn("container mx-auto px-4 sm:px-6 lg:px-8 text-center transition-all duration-700", ctaAnim.isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8")}>
-          <div className="w-16 h-0.5 bg-accent mx-auto mb-6" />
-          <h2 className={cn("text-4xl sm:text-5xl lg:text-6xl font-display font-semibold mb-5 text-primary", isRTL && "font-hebrew")}>
-            {t('estate.cta.title')}
-          </h2>
-          <p className={cn("text-xl mb-8 max-w-xl mx-auto text-primary", isRTL && "font-hebrew")}>
-            {t('estate.cta.body')}
-          </p>
-          <Button asChild size="lg" className="bg-accent hover:bg-accent/90 text-accent-foreground font-medium px-6 sm:px-10 py-6 text-base group max-w-full">
-            <Link to={localePath('/contact')} className={cn("flex items-center gap-2 whitespace-normal text-center", isRTL && "flex-row-reverse")}>
-              {t('estate.cta.button')}
-              <ArrowRight className="h-4 w-4 flex-shrink-0 transition-transform group-hover:translate-x-1" />
-            </Link>
-          </Button>
+      <section className="py-12 bg-[#faf8f5]">
+        <div ref={ctaAnim.ref} className={cn("container mx-auto px-4 sm:px-6 lg:px-8 transition-all duration-700", ctaAnim.isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8")}>
+          <div className="max-w-3xl mx-auto text-center">
+            <div className="w-16 h-0.5 bg-accent mx-auto mb-6" />
+            <h2 className={cn("text-4xl sm:text-5xl lg:text-6xl font-display font-semibold mb-5 text-primary", isRTL && "font-hebrew")}>
+              {t('estate.cta.title')}
+            </h2>
+            <p className={cn("text-xl mb-8 max-w-xl mx-auto text-primary", isRTL && "font-hebrew")}>
+              {t('estate.cta.body')}
+            </p>
+            <Button asChild size="lg" className="bg-accent hover:bg-accent/90 text-accent-foreground font-medium px-6 sm:px-10 py-6 text-base group max-w-full">
+              <Link to={localePath('/contact')} className={cn("flex items-center gap-2 whitespace-normal text-center", isRTL && "flex-row-reverse")}>
+                {t('estate.cta.button')}
+                <Arrow className="h-4 w-4 flex-shrink-0 transition-transform group-hover:translate-x-1" />
+              </Link>
+            </Button>
+          </div>
         </div>
       </section>
     </Layout>;

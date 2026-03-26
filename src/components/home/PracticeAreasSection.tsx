@@ -63,7 +63,7 @@ const PracticeAreasSection = () => {
         {/* Cards Grid */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-6 max-w-7xl mx-auto">
           {areas.map((area, index) => (
-            <Link key={index} to={localePath(area.link)} className="group relative block pb-16">
+            <Link key={index} to={localePath(area.link)} className="group relative block pb-16 hover:shadow-lg transition-shadow duration-300">
               {/* Image Container */}
               <div className="aspect-[4/5] overflow-hidden">
                 <img 

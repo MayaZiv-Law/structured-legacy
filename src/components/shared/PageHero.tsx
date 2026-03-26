@@ -42,10 +42,10 @@ const PageHero = ({
       <div className="flex-grow" />
 
       {/* Content Box - Overflows into next section */}
-      <div className="relative z-10 container mx-auto px-4 sm:px-6 lg:px-8 translate-y-24 sm:translate-y-32">
+      <div className="relative z-10 container mx-auto px-4 sm:px-6 lg:px-8 translate-y-12 sm:translate-y-16 lg:translate-y-20">
         <div ref={heroAnim.ref} className={cn("max-w-5xl mx-auto transition-all duration-700", heroAnim.isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8")}>
           {/* Text Box - wider and narrower */}
-          <div className={cn("bg-primary/95 backdrop-blur-sm px-8 py-6 sm:px-12 sm:py-8 shadow-2xl", isRTL && "font-hebrew text-right")}>
+          <div className={cn("bg-primary/95 backdrop-blur-sm px-5 py-5 sm:px-8 sm:py-6 lg:px-12 lg:py-8 shadow-2xl", isRTL && "font-hebrew text-right")}>
             {/* Icon and Label */}
             {icon && iconLabel && <div className={cn("flex items-center gap-3 mb-4", isRTL && "flex-row-reverse")}>
                 {icon}

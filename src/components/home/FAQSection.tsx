@@ -25,7 +25,7 @@ const FAQSection = () => {
   ];
 
   return (
-    <section className="py-16 bg-background">
+    <section className="py-12 bg-background">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className={cn("max-w-3xl mx-auto", isRTL && "font-hebrew")}>
           {/* Title */}
@@ -41,7 +41,7 @@ const FAQSection = () => {
               <AccordionItem key={index} value={`item-${index}`} className="border-b border-border">
                 <AccordionTrigger 
                   className={cn(
-                    "text-left py-5 text-xl font-medium hover:no-underline",
+                    "text-left py-5 text-lg sm:text-xl font-medium hover:no-underline",
                     isRTL && "text-right"
                   )}
                 >
@@ -49,7 +49,7 @@ const FAQSection = () => {
                 </AccordionTrigger>
                 <AccordionContent 
                   className={cn(
-                    "text-muted-foreground leading-relaxed pb-5 text-lg",
+                    "text-muted-foreground leading-relaxed pb-5 text-base sm:text-lg",
                     isRTL && "text-right"
                   )}
                 >
@@ -64,7 +64,7 @@ const FAQSection = () => {
               <AccordionItem key={index} value={`item-${index}`} className="border-b border-border">
                 <AccordionTrigger 
                   className={cn(
-                    "text-left py-5 text-xl font-medium hover:no-underline",
+                    "text-left py-5 text-lg sm:text-xl font-medium hover:no-underline",
                     isRTL && "text-right"
                   )}
                 >
@@ -72,7 +72,7 @@ const FAQSection = () => {
                 </AccordionTrigger>
                 <AccordionContent 
                   className={cn(
-                    "text-muted-foreground leading-relaxed pb-5 text-lg",
+                    "text-muted-foreground leading-relaxed pb-5 text-base sm:text-lg",
                     isRTL && "text-right"
                   )}
                 >

@@ -19,10 +19,10 @@ const InsightsSection = () => {
     data: articles,
     isLoading
   } = useLatestArticles(3);
-  return <section className="bg-background py-0">
+  return <section className="bg-background py-12">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div ref={sectionAnim.ref} className={cn("transition-all duration-700", sectionAnim.isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8")}>
-          <div className={cn("flex flex-col sm:flex-row justify-between items-start sm:items-center mb-10 gap-4", isRTL && "font-hebrew")}>
+          <div className={cn("flex flex-col sm:flex-row justify-between items-start sm:items-center mb-6 gap-4", isRTL && "font-hebrew")}>
             <div>
               <h2 className="text-4xl sm:text-5xl font-display font-semibold text-foreground mb-2">
                 {t('insights.title')}
@@ -36,7 +36,7 @@ const InsightsSection = () => {
             </Button>
           </div>
 
-          <div className="w-16 h-0.5 bg-accent mb-10" />
+          <div className={cn("w-16 h-0.5 bg-accent mb-6", isRTL && "ml-auto")} />
 
           {isLoading ? <div className="flex justify-center py-12">
               <Loader2 className="h-8 w-8 animate-spin text-accent" />
@@ -71,7 +71,7 @@ const InsightsSection = () => {
                         {title}
                       </h3>
 
-                      <p className="text-muted-foreground leading-relaxed mb-4 line-clamp-2 text-lg">
+                      <p className="text-muted-foreground leading-relaxed mb-4 line-clamp-2 text-base">
                         {excerpt}
                       </p>
 

@@ -11,7 +11,7 @@ const CTASection = () => {
   } = useLanguage();
   const localePath = useLocalePath();
   const Arrow = isRTL ? ArrowLeft : ArrowRight;
-  return <section className="py-16 bg-[#faf8f5]">
+  return <section className="py-12 bg-secondary/30">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className={cn("max-w-3xl mx-auto text-center", isRTL && "font-hebrew")}>
           <div className="w-16 h-0.5 bg-accent mx-auto mb-6" />
@@ -25,9 +25,9 @@ const CTASection = () => {
           </p>
 
           <Button asChild size="lg" className="bg-accent hover:bg-accent/90 text-accent-foreground font-medium px-6 sm:px-10 py-6 text-base group max-w-full">
-            <Link to={localePath('/contact')} className={cn("flex items-center gap-2 whitespace-normal text-center", isRTL && "flex-row-reverse")}>
+            <Link to={localePath('/contact')} className={cn("flex items-center gap-2 whitespace-nowrap text-sm sm:text-base text-center", isRTL && "flex-row-reverse")}>
               {t('cta.button')}
-              <Arrow className="h-4 w-4 flex-shrink-0 transition-transform group-hover:translate-x-1" />
+              <Arrow className={cn("h-4 w-4 flex-shrink-0 transition-transform", isRTL ? "group-hover:-translate-x-1" : "group-hover:translate-x-1")} />
             </Link>
           </Button>
         </div>

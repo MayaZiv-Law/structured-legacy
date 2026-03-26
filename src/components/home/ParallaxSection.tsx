@@ -77,7 +77,7 @@ const ParallaxSection = () => {
   return (
     <section 
       ref={sectionRef} 
-      className="relative h-[50vh] md:h-[60vh] overflow-hidden flex items-center justify-center"
+      className="relative min-h-[50vh] md:min-h-[60vh] overflow-hidden flex items-center justify-center"
     >
       {/* Background image with parallax on desktop, static on mobile */}
       <div 
@@ -99,7 +99,7 @@ const ParallaxSection = () => {
       </div>
       
       {/* Dark overlay for text readability */}
-      <div className="absolute inset-0 bg-primary/60" />
+      <div className="absolute inset-0 bg-primary/50" />
       
       {/* Quote with parallax effect on desktop */}
       <div 
@@ -109,10 +109,10 @@ const ParallaxSection = () => {
           willChange: isVisible && !isMobile ? 'transform' : 'auto'
         }}
       >
-        <blockquote className={cn("text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-display font-medium text-primary-foreground leading-relaxed", isRTL && "font-hebrew")}>
+        <blockquote className={cn("text-xl sm:text-2xl md:text-4xl lg:text-5xl font-display font-medium text-primary-foreground leading-relaxed", isRTL && "font-hebrew")}>
           {isRTL ? '"' : '"'}
           {t('parallax.quote')}
-          <span className="text-accent text-5xl md:text-6xl leading-none">{isRTL ? '"' : '"'}</span>
+          <span className="text-accent text-3xl sm:text-4xl md:text-5xl lg:text-6xl leading-none">{isRTL ? '"' : '"'}</span>
         </blockquote>
       </div>
     </section>

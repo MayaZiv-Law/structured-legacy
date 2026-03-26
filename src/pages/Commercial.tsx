@@ -1,7 +1,7 @@
 import Layout from '@/components/layout/Layout';
 import { useLanguage } from '@/contexts/LanguageContext';
 import { cn } from '@/lib/utils';
-import { Briefcase, FileText, Shield, Scale, Globe, Users, ArrowRight } from 'lucide-react';
+import { Briefcase, FileText, Shield, Scale, Globe, Users, ArrowRight, ArrowLeft } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Link } from 'react-router-dom';
 import { useLocalePath } from '@/hooks/useLocalePath';
@@ -15,6 +15,7 @@ import RelatedServices from '@/components/shared/RelatedServices';
 const Commercial = () => {
   const { t, isRTL, language } = useLanguage();
   const localePath = useLocalePath();
+  const Arrow = isRTL ? ArrowLeft : ArrowRight;
 
   const coreServices = [
     { 
@@ -42,21 +43,21 @@ const Commercial = () => {
 
   const commercialSchema = createServiceSchema({
     name: 'Commercial Legal Services',
-    description: 'Commercial legal counsel in Tel Aviv. Drafting contracts, partnership agreements, and managing cross-border business disputes for international clients.',
+    description: 'Commercial legal counsel in Tel Aviv. Drafting contracts, partnership agreements, and managing cross border business disputes for international clients.',
     url: 'https://mayaziv-law.com/commercial',
   });
 
   const breadcrumbSchema = createBreadcrumbSchema([
     { name: language === 'he' ? 'בית' : 'Home', url: 'https://mayaziv-law.com/' },
-    { name: language === 'he' ? 'מסחרי ואזרחי' : 'Commercial & Civil', url: 'https://mayaziv-law.com/commercial' },
+    { name: language === 'he' ? 'מסחרי ואזרחי' : 'Commercial and Civil', url: 'https://mayaziv-law.com/commercial' },
   ]);
 
   return (
     <Layout>
       <SEO
-        titleEn="Commercial Lawyer Tel Aviv | Contracts & Dispute Resolution"
+        titleEn="Commercial Lawyer Israel | Contracts, Risk Allocation and Business Transactions"
         titleHe="עורך דין מסחרי בתל אביב | חוזים ויישוב סכסוכים"
-        descriptionEn="Commercial legal counsel in Tel Aviv. Drafting contracts, partnership agreements, and managing cross-border business disputes for international clients."
+        descriptionEn="Commercial legal advice for businesses in Israel and internationally. Contract drafting, risk allocation, and transaction structuring with financial discipline."
         descriptionHe="ייעוץ משפטי מסחרי בתל אביב. ניסוח חוזים, הסכמי שותפות וניהול סכסוכים עסקיים חוצי גבולות ללקוחות בינלאומיים."
         path="/commercial"
         schema={[commercialSchema, breadcrumbSchema]}
@@ -69,7 +70,7 @@ const Commercial = () => {
       />
 
       {/* Philosophy Section */}
-      <section className="pt-48 sm:pt-56 pb-12 gradient-stone">
+      <section className="pt-24 sm:pt-28 pb-12 gradient-stone">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div 
             ref={philosophyAnim.ref}
@@ -128,7 +129,7 @@ const Commercial = () => {
       </section>
 
       {/* Cross-Border Section */}
-      <section className="relative z-20 py-16 bg-background overflow-visible">
+      <section className="relative z-20 py-12 bg-background overflow-hidden">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div 
             ref={crossBorderAnim.ref}
@@ -145,12 +146,11 @@ const Commercial = () => {
             
             {/* Content grid */}
             <div className={cn(
-              "relative z-10 grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center",
-              isRTL && "direction-rtl"
+              "relative z-10 grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center"
             )}>
               {/* Text content in white card */}
               <div className={cn(
-                "bg-background py-10 px-8 lg:py-14 lg:px-12 shadow-sm",
+                "bg-background py-8 px-6 lg:py-10 lg:px-10 shadow-sm",
                 isRTL && "font-hebrew text-right"
               )}>
                 <h2 className="text-3xl sm:text-4xl font-display font-semibold mb-6 text-foreground">
@@ -170,10 +170,12 @@ const Commercial = () => {
                 isRTL ? "lg:order-first" : ""
               )}>
                 <div className="aspect-[3/4] max-w-sm mx-auto lg:mx-0 overflow-hidden rounded-sm shadow-premium">
-                  <img 
-                    src={crossBorderImage} 
-                    alt={language === 'he' ? 'עסקים חוצי גבולות' : 'Cross-border business'}
+                  <img
+                    src={crossBorderImage}
+                    alt={language === 'he' ? 'עסקים חוצי גבולות' : 'Cross border business'}
                     className="w-full h-full object-cover"
+                    loading="lazy"
+                    decoding="async"
                   />
                 </div>
               </div>
@@ -207,27 +209,29 @@ const Commercial = () => {
       <RelatedServices currentPath="/commercial" />
 
       {/* CTA Section */}
-      <section className="py-16 bg-[#faf8f5]">
-        <div 
+      <section className="py-12 bg-[#faf8f5]">
+        <div
           ref={ctaAnim.ref}
           className={cn(
-            "container mx-auto px-4 sm:px-6 lg:px-8 text-center transition-all duration-700",
+            "container mx-auto px-4 sm:px-6 lg:px-8 transition-all duration-700",
             ctaAnim.isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
           )}
         >
-          <div className="w-16 h-0.5 bg-accent mx-auto mb-6" />
-          <h2 className={cn("text-4xl sm:text-5xl lg:text-6xl font-display font-semibold mb-5 text-primary", isRTL && "font-hebrew")}>
-            {t('commercial.cta.title')}
-          </h2>
-          <p className={cn("text-xl mb-8 max-w-xl mx-auto text-primary", isRTL && "font-hebrew")}>
-            {t('commercial.cta.body')}
-          </p>
-          <Button asChild size="lg" className="bg-accent hover:bg-accent/90 text-accent-foreground font-medium px-6 sm:px-10 py-6 text-base group max-w-full">
-            <Link to={localePath('/contact')} className={cn("flex items-center gap-2 whitespace-normal text-center", isRTL && "flex-row-reverse")}>
-              {t('commercial.cta.button')}
-              <ArrowRight className="h-4 w-4 flex-shrink-0 transition-transform group-hover:translate-x-1" />
-            </Link>
-          </Button>
+          <div className="max-w-3xl mx-auto text-center">
+            <div className="w-16 h-0.5 bg-accent mx-auto mb-6" />
+            <h2 className={cn("text-4xl sm:text-5xl lg:text-6xl font-display font-semibold mb-5 text-primary", isRTL && "font-hebrew")}>
+              {t('commercial.cta.title')}
+            </h2>
+            <p className={cn("text-xl mb-8 max-w-xl mx-auto text-primary", isRTL && "font-hebrew")}>
+              {t('commercial.cta.body')}
+            </p>
+            <Button asChild size="lg" className="bg-accent hover:bg-accent/90 text-accent-foreground font-medium px-6 sm:px-10 py-6 text-base group max-w-full">
+              <Link to={localePath('/contact')} className={cn("flex items-center gap-2 whitespace-normal text-center", isRTL && "flex-row-reverse")}>
+                {t('commercial.cta.button')}
+                <Arrow className="h-4 w-4 flex-shrink-0 transition-transform group-hover:translate-x-1" />
+              </Link>
+            </Button>
+          </div>
         </div>
       </section>
     </Layout>

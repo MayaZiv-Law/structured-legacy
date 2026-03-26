@@ -17,12 +17,37 @@ const Layout = ({ children }: LayoutProps) => {
     document.documentElement.dir = isRTL ? 'rtl' : 'ltr';
   }, [language, isRTL]);
 
-  // Signal to prerender services that the page is fully rendered (delayed for async content)
+  // Signal to prerender services that the page is fully rendered
+  // Fires when key DOM elements exist, or after 5s max as fallback
   useEffect(() => {
-    const timer = setTimeout(() => {
+    const checkReady = () => {
+      const h1 = document.querySelector('h1');
+      const main = document.querySelector('main');
+      if (h1 && main && main.children.length > 1) {
+        (window as any).prerenderReady = true;
+        return true;
+      }
+      return false;
+    };
+
+    // Check immediately
+    if (checkReady()) return;
+
+    // Poll every 200ms
+    const interval = setInterval(() => {
+      if (checkReady()) clearInterval(interval);
+    }, 200);
+
+    // Maximum wait 5 seconds
+    const timeout = setTimeout(() => {
+      clearInterval(interval);
       (window as any).prerenderReady = true;
-    }, 3000);
-    return () => clearTimeout(timer);
+    }, 5000);
+
+    return () => {
+      clearInterval(interval);
+      clearTimeout(timeout);
+    };
   }, []);
 
   return (

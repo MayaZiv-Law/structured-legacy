@@ -9,7 +9,7 @@ const Privacy = () => {
   const content = {
     en: {
       title: 'Privacy Policy',
-      lastUpdated: 'Last Updated: January 2025',
+      lastUpdated: 'Last Updated March 2026',
       sections: [
         {
           title: '1. Introduction',
@@ -17,11 +17,11 @@ const Privacy = () => {
         },
         {
           title: '2. Information We Collect',
-          content: 'We may collect personal information that you voluntarily provide to us when you contact us through our website, including: full name, email address, phone number, and any other information you choose to provide in your message. We collect this information only with your explicit consent.'
+          content: 'We may collect personal information that you voluntarily provide to us when you contact us through our website, including full name, email address, phone number, and any other information you choose to provide in your message. We collect this information only with your explicit consent.'
         },
         {
           title: '3. How We Use Your Information',
-          content: 'We use the information we collect to: respond to your inquiries and provide legal services, communicate with you about our services, comply with legal obligations, and protect our legal rights. We do not sell, trade, or otherwise transfer your personal information to third parties without your consent, except as required by law.'
+          content: 'We use the information we collect to respond to your inquiries and provide legal services, communicate with you about our services, comply with legal obligations, and protect our legal rights. We do not sell, trade, or otherwise transfer your personal information to third parties without your consent, except as required by law.'
         },
         {
           title: '4. Data Security',
@@ -29,14 +29,14 @@ const Privacy = () => {
         },
         {
           title: '5. Your Rights Under Israeli Law (Amendment 13)',
-          content: 'In accordance with Amendment 13 to the Privacy Protection Law, 5741-1981, you have the right to: access your personal data held by us, request correction of inaccurate data, request deletion of your data, withdraw your consent at any time, and lodge a complaint with the Privacy Protection Authority. To exercise these rights, please contact us at info@mayaziv.law.'
+          content: 'In accordance with Amendment 13 to the Privacy Protection Law, 5741-1981, you have the right to access your personal data held by us, request correction of inaccurate data, request deletion of your data, withdraw your consent at any time, and lodge a complaint with the Privacy Protection Authority. To exercise these rights, please contact us at info@mayaziv-law.com.'
         },
         {
           title: '6. Cookies',
           content: 'Our website may use cookies and similar tracking technologies to enhance your browsing experience. You can set your browser to refuse cookies, but this may limit some features of our website.'
         },
         {
-          title: '7. Third-Party Links',
+          title: '7. Third Party Links',
           content: 'Our website may contain links to third-party websites. We are not responsible for the privacy practices of these external sites. We encourage you to read their privacy policies.'
         },
         {
@@ -45,13 +45,13 @@ const Privacy = () => {
         },
         {
           title: '9. Contact Us',
-          content: 'If you have questions about this Privacy Policy or wish to exercise your rights, please contact us at: info@mayaziv.law or +972.544943597.'
+          content: 'If you have questions about this Privacy Policy or wish to exercise your rights, please contact us at info@mayaziv-law.com or +972.544943597.'
         }
       ]
     },
     he: {
       title: 'הודעה משפטית ופרטיות',
-      lastUpdated: 'עדכון אחרון: פברואר 2026',
+      lastUpdated: 'עדכון אחרון מרץ 2026',
       sections: [
         {
           title: '1. מידע כללי',
@@ -79,7 +79,7 @@ const Privacy = () => {
         },
         {
           title: '7. צור קשר',
-          content: 'אם יש לכם שאלות בנוגע להודעה משפטית זו או למדיניות הפרטיות, אנא פנו אלינו בכתובת: info@mayaziv-law.com או בטלפון +972.544943597.'
+          content: 'אם יש לכם שאלות בנוגע להודעה משפטית זו או למדיניות הפרטיות, אנא פנו אלינו בכתובת info@mayaziv-law.com או בטלפון +972.544943597.'
         }
       ]
     }
@@ -97,14 +97,14 @@ const Privacy = () => {
         path="/privacy"
       />
 
-      <section className="pt-32 pb-20 bg-background">
+      <section className="pt-28 pb-12 bg-background">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className={cn("max-w-3xl mx-auto", isRTL && "font-hebrew text-right")}>
             <div className="w-16 h-1 bg-accent mb-8" />
             <h1 className="text-4xl sm:text-5xl font-display font-semibold text-foreground mb-4">
               {t.title}
             </h1>
-            <p className="text-muted-foreground mb-12">{t.lastUpdated}</p>
+            <p className="text-muted-foreground mb-8">{t.lastUpdated}</p>
 
             <div className="space-y-8">
               {t.sections.map((section, index) => (

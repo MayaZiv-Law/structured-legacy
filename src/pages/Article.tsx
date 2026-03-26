@@ -10,7 +10,7 @@ import { SEO, createArticleSchema } from '@/components/SEO';
 
 const Article = () => {
   const { slug } = useParams<{ slug: string }>();
-  const { language, isRTL } = useLanguage();
+  const { language, isRTL, t } = useLanguage();
   const localePath = useLocalePath();
   const { data: article, isLoading, error } = useArticle(slug);
 
@@ -113,11 +113,11 @@ const Article = () => {
         <div className="min-h-screen flex items-center justify-center">
           <div className="text-center">
             <h1 className="text-2xl font-display font-semibold mb-4">
-              {language === 'he' ? 'המאמר לא נמצא' : 'Article Not Found'}
+              {t('article.notFound')}
             </h1>
             <Button asChild>
               <Link to={localePath('/insights')}>
-                {language === 'he' ? 'חזרה למאמרים' : 'Back to Insights'}
+                {t('article.backToInsights')}
               </Link>
             </Button>
           </div>
@@ -159,7 +159,7 @@ const Article = () => {
         schema={articleSchema}
       />
       {/* Hero Section */}
-      <section className="pt-32 pb-12 bg-background">
+      <section className="pt-28 pb-8 bg-background">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className={cn("max-w-4xl mx-auto", isRTL && "font-hebrew text-right")}>
             <Link 
@@ -170,7 +170,7 @@ const Article = () => {
               )}
             >
               <ArrowLeft className={cn("h-4 w-4", isRTL && "rotate-180")} />
-              {language === 'he' ? 'חזרה למאמרים' : 'Back to Insights'}
+              {t('article.backToInsights')}
             </Link>
 
             <span className="inline-block bg-accent text-accent-foreground text-sm font-medium px-3 py-1 rounded-full mb-4">
@@ -224,10 +224,10 @@ const Article = () => {
       )}
 
       {/* Article Content */}
-      <section className="pb-20">
+      <section className="pb-12">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <article className={cn(
-            "max-w-3xl mx-auto prose prose-lg",
+            "max-w-4xl mx-auto prose prose-lg",
             isRTL && "font-hebrew text-right"
           )}>
             {renderContent(content)}
@@ -240,16 +240,14 @@ const Article = () => {
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className={cn("text-center", isRTL && "font-hebrew")}>
             <h2 className="text-3xl font-display font-semibold text-foreground mb-4">
-              {language === 'he' ? 'רוצים לקרוא עוד?' : 'Want to Read More?'}
+              {t('article.readMore')}
             </h2>
             <p className="text-lg text-muted-foreground mb-6">
-              {language === 'he' 
-                ? 'חזרו לדף התובנות שלנו לעוד מאמרים ותכנים מקצועיים.'
-                : 'Return to our insights page for more articles and professional content.'}
+              {t('article.readMoreBody')}
             </p>
             <Button asChild>
               <Link to={localePath('/insights')}>
-                {language === 'he' ? 'כל המאמרים' : 'All Articles'}
+                {t('article.allArticles')}
               </Link>
             </Button>
           </div>

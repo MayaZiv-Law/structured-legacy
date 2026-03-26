@@ -49,7 +49,7 @@ const MethodologySection = () => {
 
   return (
     <section 
-      className="py-16 bg-secondary/30 overflow-hidden"
+      className="py-12 bg-secondary/30 overflow-hidden"
     >
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         {/* Centered Title */}
@@ -64,7 +64,7 @@ const MethodologySection = () => {
 
         {/* 6 Cards Grid */}
         <div className={cn(
-          "grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto",
+          "grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto",
           isRTL && "font-hebrew"
         )}>
           {cards.map((card, index) => (
@@ -93,7 +93,7 @@ const MethodologySection = () => {
                 </h3>
 
                 {/* Description */}
-                <p className="text-muted-foreground font-serif leading-relaxed text-lg">
+                <p className="text-muted-foreground font-serif leading-relaxed text-base sm:text-lg">
                   {t(card.descKey)}
                 </p>
               </div>

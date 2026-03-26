@@ -22,28 +22,28 @@ const allServices: RelatedService[] = [
   },
   {
     path: '/taxation',
-    titleEn: 'Tax & Compliance',
+    titleEn: 'Tax and Compliance',
     titleHe: 'מיסוי ותאימות',
-    descEn: 'Cross-border tax planning',
+    descEn: 'Cross border tax planning',
     descHe: 'תכנון מס חוצה גבולות',
   },
   {
     path: '/estate-planning',
-    titleEn: 'Family & Legacy',
+    titleEn: 'Family and Legacy',
     titleHe: 'משפחה ומורשת',
     descEn: 'Wills and estate planning',
     descHe: 'צוואות ותכנון עיזבון',
   },
   {
     path: '/olim-residents',
-    titleEn: 'Olim & Returning Residents',
+    titleEn: 'Olim and Returning Residents',
     titleHe: 'עולים ותושבים חוזרים',
     descEn: 'Legal framework for your transition',
     descHe: 'מסגרת משפטית למעבר לישראל',
   },
   {
     path: '/commercial',
-    titleEn: 'Commercial & Civil',
+    titleEn: 'Commercial and Civil',
     titleHe: 'מסחרי ואזרחי',
     descEn: 'Contracts and dispute resolution',
     descHe: 'חוזים ויישוב סכסוכים',
@@ -71,7 +71,7 @@ const RelatedServices = ({ currentPath, maxServices = 3 }: RelatedServicesProps)
             {language === 'he' ? 'תחומי התמחות נוספים' : 'Related Practice Areas'}
           </h2>
           
-          <div className="grid md:grid-cols-3 gap-6">
+          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
             {relatedServices.map((service) => (
               <Link
                 key={service.path}

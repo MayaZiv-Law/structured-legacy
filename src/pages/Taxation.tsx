@@ -2,7 +2,7 @@ import Layout from '@/components/layout/Layout';
 import { useLanguage } from '@/contexts/LanguageContext';
 import { cn } from '@/lib/utils';
 import { isPrerender } from '@/lib/isPrerender';
-import { CheckCircle, Building2, FileText, ShieldCheck, Footprints } from 'lucide-react';
+import { CheckCircle, Building2, FileText, ShieldCheck, Footprints, ArrowRight, ArrowLeft } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Link } from 'react-router-dom';
 import { useLocalePath } from '@/hooks/useLocalePath';
@@ -20,6 +20,7 @@ const Taxation = () => {
     language
   } = useLanguage();
   const localePath = useLocalePath();
+  const Arrow = isRTL ? ArrowLeft : ArrowRight;
   const realEstateServices = [{
     title: t('tax.realEstate.assessment.title'),
     desc: t('tax.realEstate.assessment.desc'),
@@ -63,8 +64,8 @@ const Taxation = () => {
   const faqAnim = useScrollAnimation();
   const ctaAnim = useScrollAnimation();
   const taxationSchema = createServiceSchema({
-    name: 'Taxation & Compliance Legal Services',
-    description: 'Legal counsel for Israeli taxation and banking regulation. Purchase tax planning, source of funds compliance (AML), and cross-border alignment.',
+    name: 'Taxation and Compliance Legal Services',
+    description: 'Legal counsel for Israeli taxation and banking regulation. Purchase tax planning, source of funds compliance (AML), and cross border alignment.',
     url: 'https://mayaziv-law.com/taxation',
   });
 
@@ -75,14 +76,14 @@ const Taxation = () => {
 
   const breadcrumbSchema = createBreadcrumbSchema([
     { name: language === 'he' ? 'בית' : 'Home', url: 'https://mayaziv-law.com/' },
-    { name: language === 'he' ? 'מיסוי ותאימות' : 'Tax & Compliance', url: 'https://mayaziv-law.com/taxation' },
+    { name: language === 'he' ? 'מיסוי ותאימות' : 'Tax and Compliance', url: 'https://mayaziv-law.com/taxation' },
   ]);
 
   return <Layout>
       <SEO
-        titleEn="Israeli Tax & Banking Compliance | Tel Aviv"
+        titleEn="International Tax Lawyer Israel | Cross Border Tax Planning and Compliance"
         titleHe="מיסוי ורגולציה בנקאית בישראל | תל אביב"
-        descriptionEn="Legal counsel for Israeli taxation and banking regulation. Purchase tax planning, source of funds compliance (AML), and cross-border alignment."
+        descriptionEn="Tax planning and compliance for individuals and businesses with connections to Israel. Expertise in cross border tax matters, Israeli tax law, and international financial structures."
         descriptionHe="ייעוץ משפטי למיסוי ורגולציה בנקאית בישראל. תכנון מס רכישה, תאימות מקור כספים והלבנת הון, ותיאום חוצה גבולות."
         path="/taxation"
         schema={[taxationSchema, faqSchema, breadcrumbSchema]}
@@ -91,7 +92,7 @@ const Taxation = () => {
       <PageHero backgroundImage={taxationHeroBg} title={t('tax.hero.title')} />
 
       {/* The Context Section */}
-      <section className="pt-40 sm:pt-48 pb-16 gradient-stone">
+      <section className="pt-24 sm:pt-28 pb-12 gradient-stone">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div ref={contextAnim.ref} className={cn("max-w-4xl mx-auto transition-all duration-700", isRTL && "font-hebrew text-right", contextAnim.isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8")}>
             <h2 className="text-3xl sm:text-4xl font-display font-semibold mb-6">
@@ -108,11 +109,11 @@ const Taxation = () => {
       </section>
 
       {/* Real Estate Tax Planning - Asymmetric Design */}
-      <section className="py-16 bg-background overflow-hidden">
+      <section className="py-12 bg-background overflow-hidden">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           {/* Centered title above the layout */}
-          <div ref={realEstateAnim.ref} className={cn("text-center mb-12 transition-all duration-700", isRTL && "font-hebrew", realEstateAnim.isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8")}>
-            <div className="w-16 h-1 bg-accent mx-auto mb-6" />
+          <div ref={realEstateAnim.ref} className={cn("text-center mb-8 transition-all duration-700", isRTL && "font-hebrew", realEstateAnim.isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8")}>
+            <div className="w-16 h-0.5 bg-accent mx-auto mb-6" />
             <h2 className="text-3xl sm:text-4xl font-display font-semibold text-foreground mb-4">
               {t('tax.realEstate.title')}
             </h2>
@@ -154,10 +155,10 @@ const Taxation = () => {
       </section>
 
       {/* Banking & AML Compliance - Asymmetric Design with Image */}
-      <section className="py-16 bg-background overflow-hidden">
+      <section className="py-12 bg-background overflow-hidden">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           {/* Centered title above the layout */}
-          <div ref={bankingAnim.ref} className={cn("text-center mb-16 transition-all duration-700", isRTL && "font-hebrew", bankingAnim.isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8")}>
+          <div ref={bankingAnim.ref} className={cn("text-center mb-8 transition-all duration-700", isRTL && "font-hebrew", bankingAnim.isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8")}>
             <h2 className="text-3xl sm:text-4xl font-display font-semibold text-foreground">
               {t('tax.banking.title')}
             </h2>
@@ -165,7 +166,7 @@ const Taxation = () => {
 
           {/* Asymmetric layout */}
           <div className={cn("relative max-w-6xl mx-auto transition-all duration-700", bankingAnim.isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8")}>
-            <div className={cn("grid grid-cols-1 lg:grid-cols-2 gap-8 items-stretch", isRTL && "direction-rtl")}>
+            <div className={cn("grid grid-cols-1 lg:grid-cols-2 gap-8 items-stretch")}>
               {/* Beige card with text */}
               <div className={cn("relative z-10 w-full bg-secondary p-8 md:p-12 shadow-sm", isRTL && "order-1")}>
                 <div className={cn(isRTL && "font-hebrew text-right")}>
@@ -180,7 +181,7 @@ const Taxation = () => {
               
               {/* Image */}
               <div className={cn("relative w-full", isRTL && "order-2")}>
-                <img alt="Banking compliance" className="w-full h-64 lg:h-full object-cover shadow-lg" src="/lovable-uploads/10c05b41-4184-42a1-bdf3-3b49d016c9bb.png" />
+                <img alt="Banking compliance" className="w-full h-64 lg:h-full object-cover shadow-lg" src="/lovable-uploads/10c05b41-4184-42a1-bdf3-3b49d016c9bb.png" loading="lazy" decoding="async" />
               </div>
             </div>
           </div>
@@ -191,7 +192,7 @@ const Taxation = () => {
       <section className="py-12 bg-background">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div ref={serveAnim.ref} className={cn("max-w-4xl mx-auto text-center transition-all duration-700", isRTL && "font-hebrew", serveAnim.isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8")}>
-            <div className="w-16 h-1 bg-accent mb-6 mx-auto" />
+            <div className="w-16 h-0.5 bg-accent mb-6 mx-auto" />
             <h2 className="text-3xl sm:text-4xl font-display font-semibold mb-6">
               {t('tax.serve.title')}
             </h2>
@@ -199,7 +200,7 @@ const Taxation = () => {
               {t('tax.serve.body')}
             </p>
             
-            <div className="grid md:grid-cols-2 gap-12 max-w-3xl mx-auto">
+            <div className="grid md:grid-cols-2 gap-8 max-w-3xl mx-auto">
               {serveItems.map((item, i) => <div key={i} className={cn("flex flex-col items-center text-center transition-all duration-500", serveAnim.isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8")} style={{
               transitionDelay: serveAnim.isVisible ? `${i * 150}ms` : '0ms'
             }}>
@@ -216,14 +217,14 @@ const Taxation = () => {
       </section>
 
       {/* Cross-Border Alignment */}
-      <section className="py-16 bg-background overflow-hidden">
+      <section className="py-12 bg-background overflow-hidden">
         <div className="container relative max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           {/* Background beige layer - absolute positioned */}
           <div className={cn("absolute -top-12 h-[calc(100%+9rem)] w-[95%] bg-secondary/50 rounded-sm", isRTL ? "-right-8 lg:-right-16" : "-left-8 lg:-left-16")} />
           
           {/* White content card - relative z-10 */}
           <div ref={crossBorderAnim.ref} className={cn("relative z-10 max-w-[92%] mt-8 bg-background shadow-sm rounded-lg p-8 md:p-12 transition-all duration-700", isRTL ? "mr-auto text-right font-hebrew" : "ml-auto", crossBorderAnim.isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8")}>
-            <div className={cn("w-16 h-1 bg-accent mb-6", isRTL && "mr-0")} />
+            <div className={cn("w-16 h-0.5 bg-accent mb-6", isRTL && "mr-0")} />
             <h2 className="text-3xl sm:text-4xl font-display font-semibold mb-6">
               {t('tax.crossBorder.title')}
             </h2>
@@ -289,7 +290,7 @@ const Taxation = () => {
       <RelatedServices currentPath="/taxation" />
 
       {/* CTA Section */}
-      <section className="py-16 bg-[#faf8f5]">
+      <section className="py-12 bg-[#faf8f5]">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div ref={ctaAnim.ref} className={cn("max-w-3xl mx-auto text-center transition-all duration-700", isRTL && "font-hebrew", ctaAnim.isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8")}>
             <div className="w-16 h-0.5 bg-accent mx-auto mb-6" />
@@ -302,6 +303,7 @@ const Taxation = () => {
             <Button asChild size="lg" className="bg-accent hover:bg-accent/90 text-accent-foreground font-medium px-6 sm:px-10 py-6 text-base group max-w-full">
               <Link to={localePath('/contact')} className={cn("flex items-center gap-2 whitespace-normal text-center", isRTL && "flex-row-reverse")}>
                 {t('tax.cta.button')}
+                <Arrow className="h-4 w-4 flex-shrink-0" />
               </Link>
             </Button>
           </div>

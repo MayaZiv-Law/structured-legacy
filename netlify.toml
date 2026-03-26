@@ -2,6 +2,12 @@
   publish = "dist"
   command = "npm run build"
 
+# Edge Function: Bot prerendering via Prerender.io free tier
+# Set PRERENDER_TOKEN in Netlify Environment Variables after signing up at https://prerender.io
+[[edge_functions]]
+  function = "bot-prerender"
+  path = "/*"
+
 # Proxy for Sitemap - must come before SPA fallback
 [[redirects]]
   from = "/sitemap.xml"

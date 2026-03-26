@@ -9,7 +9,7 @@ const Terms = () => {
   const content = {
     en: {
       title: 'Terms of Service',
-      lastUpdated: 'Last Updated: January 2025',
+      lastUpdated: 'Last Updated March 2026',
       sections: [
         {
           title: '1. Acceptance of Terms',
@@ -49,13 +49,13 @@ const Terms = () => {
         },
         {
           title: '10. Contact Information',
-          content: 'For questions about these Terms of Service, please contact us at: info@mayaziv.law or +972.544943597.'
+          content: 'For questions about these Terms of Service, please contact us at info@mayaziv-law.com or +972.544943597.'
         }
       ]
     },
     he: {
       title: 'תנאי שימוש',
-      lastUpdated: 'עדכון אחרון: ינואר 2025',
+      lastUpdated: 'עדכון אחרון מרץ 2026',
       sections: [
         {
           title: '1. קבלת התנאים',
@@ -95,7 +95,7 @@ const Terms = () => {
         },
         {
           title: '10. פרטי התקשרות',
-          content: 'לשאלות לגבי תנאי שימוש אלה, אנא פנו אלינו בכתובת: info@mayaziv.law או בטלפון +972.544943597.'
+          content: 'לשאלות לגבי תנאי שימוש אלה, אנא פנו אלינו בכתובת info@mayaziv-law.com או בטלפון +972.544943597.'
         }
       ]
     }
@@ -113,14 +113,14 @@ const Terms = () => {
         path="/terms"
       />
 
-      <section className="pt-32 pb-20 bg-background">
+      <section className="pt-28 pb-12 bg-background">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className={cn("max-w-3xl mx-auto", isRTL && "font-hebrew text-right")}>
             <div className="w-16 h-1 bg-accent mb-8" />
             <h1 className="text-4xl sm:text-5xl font-display font-semibold text-foreground mb-4">
               {t.title}
             </h1>
-            <p className="text-muted-foreground mb-12">{t.lastUpdated}</p>
+            <p className="text-muted-foreground mb-8">{t.lastUpdated}</p>
 
             <div className="space-y-8">
               {t.sections.map((section, index) => (

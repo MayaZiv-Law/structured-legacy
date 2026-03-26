@@ -55,9 +55,9 @@ const About = () => {
   return (
     <Layout>
       <SEO
-        titleEn="About Maya Ziv Law | Attorney & Notary in Tel Aviv"
+        titleEn="About Maya Ziv | Attorney with Legal and Financial Expertise | Tel Aviv"
         titleHe="מאיה זיו משרד עורכי דין | מקרקעין | מיסוי בינלאומי | ניהול עזבונות וצוואות"
-        descriptionEn="Maya Ziv Law combines legal expertise with financial discipline. Representing international clients in Israel with clarity, structure, and cross-border foresight."
+        descriptionEn="Maya Ziv holds an LLB and a BBA in Finance from Baruch College New York. Prior experience at Citi Innovation Lab and Vornado Realty Trust. Complex transactions where law and finance intersect."
         descriptionHe="ניהול סיכונים משפטי ואסטרטגיית מיסוי עבור תושבי ישראל ולקוחות בזירה הגלובלית. התמחות בבדיקת נאותות למקרקעין, ציות בנקאי וניהול עזבונות חוצי גבולות."
         path="/about"
         schema={attorneySchema}
@@ -70,7 +70,7 @@ const About = () => {
       />
 
       {/* Philosophy Section */}
-      <section className="pt-40 sm:pt-48 pb-12 gradient-stone">
+      <section className="pt-24 sm:pt-28 pb-12 gradient-stone">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div 
             ref={philosophyAnim.ref}
@@ -89,10 +89,10 @@ const About = () => {
               </>
             )}
             <div className="space-y-5">
-              <p className="text-xl text-muted-foreground leading-relaxed">
+              <p className="text-lg text-muted-foreground leading-relaxed">
                 {t('about.philosophy.body')}
               </p>
-              <p className="text-xl text-muted-foreground leading-relaxed">
+              <p className="text-lg text-muted-foreground leading-relaxed">
                 {t('about.philosophy.body2')}
               </p>
             </div>
@@ -106,7 +106,7 @@ const About = () => {
           <div 
             ref={attorneyAnim.ref}
             className={cn(
-              "max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center transition-all duration-700",
+              "max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center transition-all duration-700",
               isRTL && "lg:grid-flow-dense",
               attorneyAnim.isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
             )}
@@ -123,7 +123,7 @@ const About = () => {
                 <div className="aspect-[3/4] overflow-hidden rounded-sm shadow-premium">
                   <img
                     src={mayaPortrait}
-                    alt="Maya Ziv - Attorney & Notary"
+                    alt="Maya Ziv - Attorney and Notary"
                     className="w-full h-full object-cover object-top"
                   />
                 </div>
@@ -148,10 +148,10 @@ const About = () => {
               </h2>
               <div className={cn("w-16 h-0.5 bg-accent mb-6", isRTL && "mr-0 ml-auto")} />
               <div className="space-y-5">
-                <p className="text-xl text-muted-foreground leading-relaxed">
+                <p className="text-lg text-muted-foreground leading-relaxed">
                   {t('about.attorney.body')}
                 </p>
-                <p className="text-xl text-muted-foreground leading-relaxed">
+                <p className="text-lg text-muted-foreground leading-relaxed">
                   {t('about.attorney.body2')}
                 </p>
               </div>
@@ -179,7 +179,7 @@ const About = () => {
             
             {/* White content card - overlaps next section */}
             <div className={cn(
-              "relative z-10 bg-background py-12 px-8 lg:py-16 lg:px-12 w-[92%] shadow-sm",
+              "relative z-10 bg-background py-8 px-6 lg:py-10 lg:px-10 w-[92%] shadow-sm",
               isRTL ? "mr-auto ml-0" : "ml-auto mr-0"
             )}>
               <div className={cn(isRTL && "font-hebrew text-right")}>
@@ -201,7 +201,7 @@ const About = () => {
       </section>
 
       {/* What to Expect Section */}
-      <section className="pt-40 lg:pt-48 pb-12 lg:pb-16 bg-secondary/30 -mt-16">
+      <section className="pt-28 lg:pt-32 pb-10 lg:pb-12 bg-secondary/30 -mt-16">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div 
             ref={expectAnim.ref}
@@ -251,7 +251,7 @@ const About = () => {
       <MethodologySection />
 
       {/* CTA Section */}
-      <section className="py-16 bg-primary">
+      <section className="py-12 bg-primary">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div 
             ref={ctaAnim.ref}
@@ -267,7 +267,7 @@ const About = () => {
               {t('about.cta.title')}
             </h2>
             
-            <p className="text-primary-foreground/80 text-xl mb-8 max-w-xl mx-auto">
+            <p className="text-primary-foreground/80 text-lg mb-8 max-w-xl mx-auto">
               {t('about.cta.body')}
             </p>
 
