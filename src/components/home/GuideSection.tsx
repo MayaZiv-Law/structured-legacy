@@ -53,28 +53,34 @@ const GuideSection = () => {
           </div>
         </div>
 
-        {/* Desktop Layout: Asymmetric with offset */}
-        <div className="hidden lg:block relative max-w-6xl mx-auto mb-8">
+        {/* Desktop Layout: Side by side */}
+        <div className="hidden lg:grid lg:grid-cols-2 gap-10 max-w-6xl mx-auto mb-8 items-center">
           {/* Content Card */}
-          <div className={cn("relative z-10 lg:w-[55%]", isRTL ? "lg:ml-auto" : "lg:mr-auto")}>
+          <div className={cn(isRTL ? "order-2" : "order-1")}>
             <div className={cn("bg-secondary/50 p-8 sm:p-10 lg:py-12 lg:px-10", isRTL && "text-right font-hebrew")}>
-              <p className="text-muted-foreground leading-relaxed mb-5 text-base sm:text-lg lg:text-xl">
+              <p className="text-muted-foreground leading-relaxed mb-5 text-lg lg:text-xl">
                 {t('guide.bio')}
               </p>
 
               {/* Punchline */}
-              <p className={cn("text-foreground font-medium text-lg sm:text-xl italic", isRTL ? "border-r-2 border-accent pr-4" : "border-l-2 border-accent pl-4")}>
+              <p className={cn("text-foreground font-medium text-lg sm:text-xl italic mb-6", isRTL ? "border-r-2 border-accent pr-4" : "border-l-2 border-accent pl-4")}>
                 {t('guide.punchline')}
               </p>
+
+              {/* CTA Link - inside the card so it never gets cut off */}
+              <Link to={localePath('/about')} className={cn("inline-flex items-center gap-2 text-accent font-medium hover:gap-3 transition-all text-xl", isRTL && "flex-row-reverse")}>
+                {t('guide.cta')}
+                <Arrow className="h-5 w-5" />
+              </Link>
             </div>
           </div>
 
-          {/* Image - Positioned to touch the card */}
-          <div className={cn("lg:absolute lg:top-10 lg:w-[48%] lg:h-[calc(100%+2rem)] z-20", isRTL ? "lg:left-0" : "lg:right-0")}>
-            <div className="h-full min-h-[350px] lg:min-h-full">
-              <img 
-                src="/lovable-uploads/a50b3ae0-2451-4322-bcc9-b89b82add8d4.webp" 
-                alt="Maya Ziv - Attorney" 
+          {/* Image */}
+          <div className={cn(isRTL ? "order-1" : "order-2")}>
+            <div className="aspect-[3/4] overflow-hidden">
+              <img
+                src="/lovable-uploads/a50b3ae0-2451-4322-bcc9-b89b82add8d4.webp"
+                alt="Maya Ziv - Attorney"
                 className="w-full h-full object-cover object-top"
                 loading="lazy"
                 decoding="async"
@@ -85,13 +91,7 @@ const GuideSection = () => {
           </div>
         </div>
 
-        {/* Centered CTA Link - Desktop only */}
-        <div className="hidden lg:block text-center mt-10">
-          <Link to={localePath('/about')} className={cn("inline-flex items-center gap-2 text-accent font-medium hover:gap-3 transition-all text-xl", isRTL && "flex-row-reverse")}>
-            {t('guide.cta')}
-            <Arrow className="h-5 w-5" />
-          </Link>
-        </div>
+        {/* No separate CTA link needed - it's inside the card now */}
       </div>
     </section>;
 };

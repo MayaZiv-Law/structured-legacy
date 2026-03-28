@@ -89,7 +89,7 @@ const About = () => {
               </>
             )}
             <div className="space-y-5">
-              <p className="text-lg text-muted-foreground leading-relaxed">
+              <p className="text-lg sm:text-xl lg:text-2xl text-muted-foreground leading-relaxed">
                 {t('about.philosophy.body')}
               </p>
             </div>
@@ -145,10 +145,10 @@ const About = () => {
               </h2>
               <div className={cn("w-16 h-0.5 bg-accent mb-6", isRTL && "mr-0 ml-auto")} />
               <div className="space-y-5">
-                <p className="text-lg text-muted-foreground leading-relaxed">
+                <p className="text-lg sm:text-xl text-muted-foreground leading-relaxed">
                   {t('about.attorney.body')}
                 </p>
-                <p className="text-lg text-muted-foreground leading-relaxed">
+                <p className="text-lg sm:text-xl text-muted-foreground leading-relaxed">
                   {t('about.attorney.body2')}
                 </p>
               </div>
@@ -180,14 +180,14 @@ const About = () => {
               isRTL ? "mr-auto ml-0" : "ml-auto mr-0"
             )}>
               <div className={cn(isRTL && "font-hebrew text-right")}>
-                <h2 className="text-3xl sm:text-4xl font-display font-semibold text-foreground mb-5">
+                <h2 className="text-3xl sm:text-4xl lg:text-5xl font-display font-semibold text-foreground mb-5">
                   {t('about.serve.title')}
                 </h2>
                 <div className="space-y-4">
-                  <p className="text-muted-foreground leading-relaxed text-lg">
+                  <p className="text-muted-foreground leading-relaxed text-lg sm:text-xl">
                     {t('about.serve.body')}
                   </p>
-                  <p className="text-muted-foreground leading-relaxed text-lg">
+                  <p className="text-muted-foreground leading-relaxed text-lg sm:text-xl">
                     {t('about.serve.body2')}
                   </p>
                 </div>
@@ -235,7 +235,7 @@ const About = () => {
                 </h3>
                 
                 {/* Description */}
-                <p className="text-muted-foreground leading-relaxed text-lg">
+                <p className="text-muted-foreground leading-relaxed text-lg sm:text-xl">
                   {t(item.descKey)}
                 </p>
               </div>
