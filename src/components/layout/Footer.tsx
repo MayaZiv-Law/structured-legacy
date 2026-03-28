@@ -122,18 +122,18 @@ const Footer = () => {
       {/* Disclaimer & Copyright */}
       <div className="border-t border-primary-foreground/10">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-6">
-          <p className={cn("text-primary-foreground/50 text-xs leading-relaxed mb-4", isRTL && "font-hebrew")}>
+          <p className={cn("text-primary-foreground/50 text-xs sm:text-sm leading-relaxed mb-4", isRTL && "font-hebrew")}>
             {t('footer.disclaimerText')}
           </p>
           <div className="flex flex-col sm:flex-row justify-between items-center gap-4">
-            <p className={cn("text-primary-foreground/50 text-xs", isRTL && "font-hebrew")}>
+            <p className={cn("text-primary-foreground/50 text-xs sm:text-sm", isRTL && "font-hebrew")}>
               {t('footer.copyright').replace(/© \d{4}/, `© ${new Date().getFullYear()}`)}
             </p>
             <a 
               href="https://www.moonagency.ai" 
               target="_blank" 
               rel="noopener noreferrer"
-              className="text-primary-foreground/50 hover:text-accent transition-colors text-xs flex items-center gap-1"
+              className="text-primary-foreground/50 hover:text-accent transition-colors text-xs sm:text-sm flex items-center gap-1"
             >
               Designed by Moon Agency
             </a>

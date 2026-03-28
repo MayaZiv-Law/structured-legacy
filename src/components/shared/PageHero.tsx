@@ -22,7 +22,7 @@ const PageHero = ({
     isRTL
   } = useLanguage();
   const heroAnim = useScrollAnimation();
-  return <section className="relative min-h-[70vh] sm:min-h-[75vh] flex flex-col overflow-visible -mt-20">
+  return <section className="relative min-h-[70vh] sm:min-h-[75vh] flex flex-col overflow-visible -mt-0 lg:-mt-20">
       {/* Full Background Image - No overlay, sharp and sparkling */}
       <div className="absolute inset-0 z-0">
         <img 
@@ -42,7 +42,7 @@ const PageHero = ({
       <div className="flex-grow" />
 
       {/* Content Box - Overflows into next section */}
-      <div className="relative z-10 container mx-auto px-4 sm:px-6 lg:px-8 translate-y-12 sm:translate-y-16 lg:translate-y-20">
+      <div className="relative z-10 container mx-auto px-4 sm:px-6 lg:px-8 translate-y-4 sm:translate-y-12 lg:translate-y-20">
         <div ref={heroAnim.ref} className={cn("max-w-5xl mx-auto transition-all duration-700", heroAnim.isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8")}>
           {/* Text Box - wider and narrower */}
           <div className={cn("bg-primary/95 backdrop-blur-sm px-5 py-5 sm:px-8 sm:py-6 lg:px-12 lg:py-8 shadow-2xl", isRTL && "font-hebrew text-right")}>

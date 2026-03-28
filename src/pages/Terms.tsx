@@ -41,7 +41,7 @@ const Terms = () => {
         },
         {
           title: '8. Governing Law',
-          content: 'These Terms of Service shall be governed by and construed in accordance with the laws of the State of Israel. Any disputes arising from these terms shall be subject to the exclusive jurisdiction of the courts in Tel Aviv, Israel.'
+          content: 'These Terms of Service shall be governed by and construed in accordance with the laws of the State of Israel. Any disputes arising from these terms shall be subject to the exclusive jurisdiction of the courts in Israel.'
         },
         {
           title: '9. Changes to Terms',

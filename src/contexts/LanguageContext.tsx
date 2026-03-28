@@ -129,7 +129,7 @@ const translations: Record<Language, Record<string, string>> = {
     'footer.disclaimer': 'Disclaimer',
     'footer.privacy': 'Privacy Policy',
     'footer.terms': 'Terms of Service',
-    'footer.disclaimerText': 'This website is for informational purposes only and does not constitute legal advice. No attorney-client relationship is formed by use of this site.',
+    'footer.disclaimerText': 'This website is for informational purposes only and does not constitute legal advice. No attorney client relationship is formed by use of this site.',
     'footer.copyright': '© 2026 Maya Ziv Law. All rights reserved.',
 
     // Contact Page

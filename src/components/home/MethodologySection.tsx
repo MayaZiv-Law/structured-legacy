@@ -54,10 +54,10 @@ const MethodologySection = () => {
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         {/* Centered Title */}
         <div className={cn("text-center mb-10", isRTL && "font-hebrew")}>
-          <h2 className="text-4xl sm:text-5xl lg:text-6xl font-display font-semibold text-foreground mb-4">
+          <h2 className="text-3xl sm:text-5xl lg:text-6xl font-display font-semibold text-foreground mb-4">
             {t('method.title')}
           </h2>
-          <p className="text-muted-foreground text-xl max-w-3xl mx-auto">
+          <p className="text-muted-foreground text-lg sm:text-xl max-w-3xl mx-auto">
             {t('method.subtitle')}
           </p>
         </div>

@@ -123,7 +123,7 @@ const Contact = () => {
                         className={cn("w-full px-4 py-3 border border-border rounded-md bg-background text-foreground focus:outline-none focus:ring-2 focus:ring-accent/50 focus:border-accent transition-colors resize-none", isRTL && "text-right")}
                       />
                     </div>
-                    <Button type="submit" size="lg" className="w-full bg-accent hover:bg-accent/90 text-accent-foreground font-medium py-6 text-base">
+                    <Button type="submit" size="lg" className="w-full bg-accent hover:bg-accent/90 text-accent-foreground font-medium py-4 sm:py-6 text-base">
                       {t('contact.form.submit')}
                     </Button>
                   </form>
