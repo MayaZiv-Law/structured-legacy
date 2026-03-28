@@ -45,11 +45,11 @@ const InsightsSection = () => {
             const title = language === 'he' ? article.title_he : article.title_en;
             const excerpt = language === 'he' ? article.excerpt_he : article.excerpt_en;
             const category = language === 'he' ? article.category_he : article.category_en;
-            return <Link to={localePath(`/insights/${article.slug}`)} key={article.id} className={cn("group bg-card border border-border rounded-xl overflow-hidden hover:border-accent/50 transition-all duration-500 hover:shadow-lg block", isRTL && "font-hebrew text-right", "opacity-100 translate-y-0 animate-fade-in")} style={{
+            return <Link to={localePath(`/insights/${article.slug}`)} key={article.id} className={cn("group bg-card border border-border rounded-sm overflow-hidden hover:border-accent/50 transition-all duration-500 hover:shadow-lg block", isRTL && "font-hebrew text-right", "opacity-100 translate-y-0 animate-fade-in")} style={{
               animationDelay: `${index * 150}ms`
             }}>
                     {/* Image Container */}
-                    <div className="relative h-48 overflow-hidden">
+                    <div className="relative h-40 sm:h-48 md:h-52 overflow-hidden">
                       {article.image_url && <img src={article.image_url} alt={title} className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105" loading="lazy" decoding="async" />}
                       <div className={cn("absolute top-4", isRTL ? "right-4" : "left-4")}>
                         <span className="bg-accent text-accent-foreground text-xs font-medium px-3 py-1 rounded-full">

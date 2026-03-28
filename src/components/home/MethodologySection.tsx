@@ -71,12 +71,12 @@ const MethodologySection = () => {
             <div
               key={index}
               className={cn(
-                "group bg-background overflow-hidden transition-all duration-300 hover:shadow-xl border-b-4 border-accent",
+                "group bg-background overflow-hidden transition-all duration-300 hover:shadow-xl border border-border",
                 isRTL && "text-right"
               )}
             >
               {/* Image */}
-              <div className="relative h-48 overflow-hidden">
+              <div className="relative h-40 sm:h-44 md:h-48 overflow-hidden">
                 <img 
                   src={card.image} 
                   alt={t(card.titleKey)}

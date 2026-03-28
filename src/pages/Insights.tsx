@@ -8,12 +8,12 @@ import CTASection from '@/components/home/CTASection';
 import { useScrollAnimation } from '@/hooks/useScrollAnimation';
 import { useArticles } from '@/hooks/useArticles';
 import { SEO } from '@/components/SEO';
+import PageHero from '@/components/shared/PageHero';
+import insightsHeroBg from '@/assets/about-hero-bg.webp';
 
 const Insights = () => {
   const { t, isRTL, language } = useLanguage();
   const localePath = useLocalePath();
-  const heroAnim = useScrollAnimation();
-  const philosophyAnim = useScrollAnimation();
   const articlesAnim = useScrollAnimation();
   
   const { data: articles, isLoading } = useArticles();
@@ -27,50 +27,9 @@ const Insights = () => {
         descriptionHe="הנחיות מעשיות בנושאי נדל״ן בישראל, מיסוי חוצה גבולות, ציות ותכנון מורשת ממשרד מאיה זיו."
         path="/insights"
       />
-      <section className="pt-28 pb-10 bg-background">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <div 
-            ref={heroAnim.ref} 
-            className={cn(
-              "max-w-4xl transition-all duration-700", 
-              isRTL && "font-hebrew text-right mr-auto", 
-              heroAnim.isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
-            )}
-          >
-            <div className="w-16 h-0.5 bg-accent mb-8" />
-            <h1 className="text-4xl sm:text-5xl font-display font-semibold text-foreground mb-6">
-              {t('insights.hero.title')}
-            </h1>
-            <p className="text-xl text-muted-foreground">
-              {t('insights.hero.subtitle')}
-            </p>
-          </div>
-        </div>
-      </section>
+      <PageHero backgroundImage={insightsHeroBg} title={t('insights.hero.title')} />
 
-      <section className="py-12 bg-muted/30">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <div 
-            ref={philosophyAnim.ref} 
-            className={cn(
-              "max-w-3xl mx-auto transition-all duration-700", 
-              isRTL && "font-hebrew text-right", 
-              philosophyAnim.isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
-            )}
-          >
-            <h2 className="text-4xl sm:text-5xl font-display font-semibold text-foreground mb-6">
-              {t('insights.philosophy.title')}
-            </h2>
-            <div className="space-y-4 text-xl text-muted-foreground leading-relaxed">
-              <p>
-                {t('insights.philosophy.body')}
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section className="py-12 gradient-stone">
+      <section className="pt-24 sm:pt-28 pb-12 gradient-stone">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div ref={articlesAnim.ref}>
             {isLoading ? (
@@ -89,13 +48,13 @@ const Insights = () => {
                       to={localePath(`/insights/${article.slug}`)} 
                       key={article.id} 
                       className={cn(
-                        "group bg-card border border-border rounded-xl overflow-hidden hover:border-accent/50 transition-all hover:shadow-lg block duration-500", 
+                        "group bg-card border border-border rounded-sm overflow-hidden hover:border-accent/50 transition-all hover:shadow-lg block duration-500", 
                         isRTL && "font-hebrew text-right", 
                         articlesAnim.isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
                       )} 
                       style={{ transitionDelay: articlesAnim.isVisible ? `${i * 150}ms` : '0ms' }}
                     >
-                      <div className="relative h-52 overflow-hidden">
+                      <div className="relative h-40 sm:h-48 md:h-52 overflow-hidden">
                         {article.image_url && (
                           <img 
                             src={article.image_url} 

@@ -29,7 +29,7 @@ const FAQSection = () => {
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className={cn("max-w-3xl mx-auto", isRTL && "font-hebrew")}>
           {/* Title */}
-          <h2 className="text-4xl sm:text-5xl font-display font-semibold text-foreground mb-8 text-center">
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-display font-semibold text-foreground mb-8 text-center">
             {t('faq.title')}
           </h2>
           <div className="w-16 h-0.5 bg-accent mx-auto mb-8" />
