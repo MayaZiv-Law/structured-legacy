@@ -27,7 +27,7 @@ const PageHero = ({
       <div className="absolute inset-0 z-0">
         <img 
           src={backgroundImage} 
-          alt="" 
+          alt={title}
           className="w-full h-full object-cover" 
           style={{ objectPosition: imagePosition }}
           fetchPriority="high"

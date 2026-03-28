@@ -12,7 +12,7 @@ const HeroSection = () => {
       {/* Full Background Image - optimized for LCP */}
       <div className="absolute inset-0 z-0">
         <img 
-          alt="Tel Aviv skyline and coastline at dusk" 
+          alt="Israel skyline and coastline at dusk"
           className="w-full h-full object-cover" 
           src={heroImage}
           fetchPriority="high" 
