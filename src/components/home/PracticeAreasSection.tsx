@@ -3,6 +3,7 @@ import { useLanguage } from '@/contexts/LanguageContext';
 import { useLocalePath } from '@/hooks/useLocalePath';
 import { cn } from '@/lib/utils';
 import { useMemo } from 'react';
+import { ArrowRight, ArrowLeft } from 'lucide-react';
 
 // Import hero images
 import realEstateHero from '@/assets/real-estate-hero-new.webp';
@@ -14,6 +15,7 @@ import commercialHero from '@/assets/commercial-hero-new.jpg';
 const PracticeAreasSection = () => {
   const { t, isRTL } = useLanguage();
   const localePath = useLocalePath();
+  const Arrow = isRTL ? ArrowLeft : ArrowRight;
   
   // Memoize areas array to prevent recreating on each render
   const areas = useMemo(() => [
@@ -61,14 +63,14 @@ const PracticeAreasSection = () => {
         </div>
 
         {/* Cards Grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-6 max-w-7xl mx-auto">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-4 sm:gap-6 max-w-7xl mx-auto">
           {areas.map((area, index) => (
-            <Link key={index} to={localePath(area.link)} className="group relative block pb-16 hover:shadow-lg transition-shadow duration-300">
+            <Link key={index} to={localePath(area.link)} className="group relative block pb-12 sm:pb-16 hover:shadow-lg transition-shadow duration-300">
               {/* Image Container */}
               <div className="aspect-[4/5] overflow-hidden">
-                <img 
-                  src={area.image} 
-                  alt={t(area.titleKey)} 
+                <img
+                  src={area.image}
+                  alt={t(area.titleKey)}
                   className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
                   loading="lazy"
                   decoding="async"
@@ -78,11 +80,14 @@ const PracticeAreasSection = () => {
                 />
               </div>
 
-              {/* Bottom Label Card - Offset below image, top-aligned */}
-              <div className={cn("absolute top-[calc(100%-5.5rem)] left-1/2 -translate-x-1/2 w-[90%] bg-background shadow-md py-3 px-4 text-center", isRTL && "font-hebrew")}>
-                <h3 className="text-lg font-display font-medium text-foreground">
-                  {t(area.titleKey)}
-                </h3>
+              {/* Bottom Label Card - Offset below image */}
+              <div className={cn("absolute top-[calc(100%-4.5rem)] sm:top-[calc(100%-5.5rem)] left-1/2 -translate-x-1/2 w-[90%] bg-background shadow-md py-3 px-4", isRTL && "font-hebrew")}>
+                <div className={cn("flex items-center justify-center gap-2", isRTL && "flex-row-reverse")}>
+                  <h3 className="text-lg font-display font-medium text-foreground">
+                    {t(area.titleKey)}
+                  </h3>
+                  <Arrow className="h-4 w-4 text-accent flex-shrink-0 transition-transform group-hover:translate-x-1" />
+                </div>
               </div>
             </Link>
           ))}
@@ -90,7 +95,7 @@ const PracticeAreasSection = () => {
       </div>
 
       {/* Spacer for offset cards */}
-      <div className="h-8" />
+      <div className="h-4 sm:h-8" />
     </section>
   );
 };
