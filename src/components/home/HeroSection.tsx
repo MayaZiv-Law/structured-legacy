@@ -9,11 +9,11 @@ const HeroSection = () => {
   } = useLanguage();
 
   return <section className="relative z-10 -mt-20 pt-20 min-h-[100vh] flex flex-col overflow-visible" style={{ contain: 'layout style' }}>
-      {/* Full Background Image - THE STAR of the hero */}
+      {/* Full Background Image - NO overlay, NO fade, image shines */}
       <div className="absolute inset-0 z-0">
         <img
           alt="Israel coastline and city lights at dusk"
-          className="w-full h-full object-cover object-center"
+          className="w-full h-full object-cover object-center brightness-105 contrast-105"
           src={heroImage}
           fetchPriority="high"
           loading="eager"
@@ -24,20 +24,30 @@ const HeroSection = () => {
         />
       </div>
 
-      {/* Spacer - pushes text to very bottom so image fills the view */}
+      {/* Spacer - image fills the entire viewport */}
       <div className="flex-grow" />
 
-      {/* Compact text strip at the bottom */}
-      <div className="relative z-20 w-full">
-        <div className={cn("bg-primary/70 backdrop-blur-sm px-6 py-4 sm:px-10 sm:py-5", isRTL && "font-hebrew text-right")}>
-          <div className="container mx-auto flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2">
-            <h1 className={cn("text-2xl sm:text-3xl lg:text-4xl font-display font-semibold text-primary-foreground leading-tight", isRTL && "font-hebrew")}>
-              {t('hero.tagline')}
-            </h1>
-            <p className={cn("text-base sm:text-lg text-primary-foreground/80 font-medium", isRTL && "font-hebrew")}>
-              {t('hero.subtitle1')}
-            </p>
-          </div>
+      {/* Text floats at bottom - NO box, NO overlay, just glowing text */}
+      <div className="relative z-20 pb-8 sm:pb-12 lg:pb-16 px-6 sm:px-10 lg:px-16">
+        <div className={cn("max-w-3xl", isRTL ? "ml-auto" : "mr-auto")}>
+          <h1
+            className={cn(
+              "text-3xl sm:text-4xl lg:text-5xl xl:text-6xl font-display font-semibold text-white leading-tight mb-3",
+              isRTL && "font-hebrew text-right"
+            )}
+            style={{ textShadow: '0 2px 20px rgba(0,0,0,0.7), 0 1px 6px rgba(0,0,0,0.9)' }}
+          >
+            {t('hero.tagline')}
+          </h1>
+          <p
+            className={cn(
+              "text-lg sm:text-xl lg:text-2xl text-white/90 font-medium",
+              isRTL && "font-hebrew text-right"
+            )}
+            style={{ textShadow: '0 2px 15px rgba(0,0,0,0.7), 0 1px 4px rgba(0,0,0,0.8)' }}
+          >
+            {t('hero.subtitle1')}
+          </p>
         </div>
       </div>
     </section>;

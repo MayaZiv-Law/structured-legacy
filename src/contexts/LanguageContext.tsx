@@ -26,10 +26,10 @@ const translations: Record<Language, Record<string, string>> = {
     'nav.schedule': 'Schedule Consultation',
 
     // Hero
-    'hero.tagline': 'Where Legal Precision Meets Financial Judgment',
+    'hero.tagline': 'The Future Favors the Prepared',
     'hero.title': 'Attorney in Israel',
-    'hero.subtitle1': 'Complex transactions. Cross border matters. High stakes decisions. Advised with the legal depth and financial discipline they require.',
-    'hero.subtitle2': 'Real estate, taxation, and estate planning delivered with clarity, structure, and financial foresight.',
+    'hero.subtitle1': 'Guiding Every Client with Clarity, Insight, and Strategic Confidence',
+    'hero.subtitle2': '',
     'hero.cta': 'Schedule a Consultation',
 
     // Conflict Section
