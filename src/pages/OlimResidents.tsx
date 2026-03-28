@@ -1,7 +1,7 @@
 import Layout from '@/components/layout/Layout';
 import { useLanguage } from '@/contexts/LanguageContext';
 import { cn } from '@/lib/utils';
-import { Users, FileCheck, Home, Building, Clock, CheckCircle, ArrowRight, ArrowLeft, Shield } from 'lucide-react';
+import { Users, FileCheck, Home, Building, Clock, CheckCircle, ArrowRight, ArrowLeft, Shield, Globe } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Link } from 'react-router-dom';
 import { useLocalePath } from '@/hooks/useLocalePath';
@@ -32,6 +32,10 @@ const OlimResidents = () => {
     title: t('olim.framework.banking.title'),
     desc: t('olim.framework.banking.desc'),
     icon: Building
+  }, {
+    title: t('olim.framework.peace.title'),
+    desc: t('olim.framework.peace.desc'),
+    icon: Globe
   }];
   const expectItems = [t('olim.expect.item1'), t('olim.expect.item2'), t('olim.expect.item3')];
   const contextAnim = useScrollAnimation();

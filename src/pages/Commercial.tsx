@@ -28,10 +28,15 @@ const Commercial = () => {
       desc: t('commercial.services.negotiation.desc'), 
       icon: Scale 
     },
-    { 
-      title: t('commercial.services.dispute.title'), 
-      desc: t('commercial.services.dispute.desc'), 
-      icon: Shield 
+    {
+      title: t('commercial.services.dispute.title'),
+      desc: t('commercial.services.dispute.desc'),
+      icon: Shield
+    },
+    {
+      title: t('commercial.services.crossborder.title'),
+      desc: t('commercial.services.crossborder.desc'),
+      icon: Globe
     },
   ];
 

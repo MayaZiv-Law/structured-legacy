@@ -92,9 +92,6 @@ const About = () => {
               <p className="text-lg text-muted-foreground leading-relaxed">
                 {t('about.philosophy.body')}
               </p>
-              <p className="text-lg text-muted-foreground leading-relaxed">
-                {t('about.philosophy.body2')}
-              </p>
             </div>
           </div>
         </div>

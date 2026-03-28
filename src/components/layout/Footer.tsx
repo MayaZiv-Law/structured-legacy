@@ -127,7 +127,7 @@ const Footer = () => {
           </p>
           <div className="flex flex-col sm:flex-row justify-between items-center gap-4">
             <p className={cn("text-primary-foreground/50 text-xs", isRTL && "font-hebrew")}>
-              {t('footer.copyright')}
+              {t('footer.copyright').replace(/© \d{4}/, `© ${new Date().getFullYear()}`)}
             </p>
             <a 
               href="https://www.moonagency.ai" 
