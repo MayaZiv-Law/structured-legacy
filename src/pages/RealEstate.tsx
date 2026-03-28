@@ -185,7 +185,7 @@ const RealEstate = () => {
               {/* Image */}
               <div className={cn("relative transition-all duration-700 delay-300", isRTL ? "lg:col-start-2" : "lg:col-start-2", dueDiligenceAnim.isVisible ? "opacity-100 translate-x-0" : isRTL ? "opacity-0 translate-x-8" : "opacity-0 translate-x-8")}>
                 <div className="aspect-[3/4] max-w-sm mx-auto lg:mx-0 overflow-hidden rounded-sm shadow-premium">
-                  <img alt="Real estate due diligence" className="w-full h-full object-cover" src="/lovable-uploads/81459920-5f87-4bcb-8430-47c1c2edc6e4.png" loading="lazy" decoding="async" />
+                  <img alt="Real estate due diligence" className="w-full h-full object-cover" src="/lovable-uploads/81459920-5f87-4bcb-8430-47c1c2edc6e4.webp" loading="lazy" decoding="async" />
                 </div>
               </div>
             </div>
@@ -205,7 +205,7 @@ const RealEstate = () => {
               {/* Image - on left */}
               <div className={cn("relative transition-all duration-700 delay-200", isRTL ? "lg:col-start-2" : "lg:col-start-1", remoteAnim.isVisible ? "opacity-100 translate-x-0" : isRTL ? "opacity-0 translate-x-8" : "opacity-0 -translate-x-8")}>
                 <div className="aspect-[3/4] max-w-sm mx-auto lg:mx-0 overflow-hidden rounded-sm shadow-premium">
-                  <img alt="Remote real estate transaction" className="w-full h-full object-cover" src="/lovable-uploads/ba3c3a72-3db5-4141-9459-1f85fc39e53f.png" loading="lazy" decoding="async" />
+                  <img alt="Remote real estate transaction" className="w-full h-full object-cover" src="/lovable-uploads/ba3c3a72-3db5-4141-9459-1f85fc39e53f.webp" loading="lazy" decoding="async" />
                 </div>
               </div>
 

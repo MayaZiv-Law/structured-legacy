@@ -181,7 +181,7 @@ const Taxation = () => {
               
               {/* Image */}
               <div className={cn("relative w-full", isRTL && "order-2")}>
-                <img alt="Banking compliance" className="w-full h-64 lg:h-full object-cover shadow-lg" src="/lovable-uploads/10c05b41-4184-42a1-bdf3-3b49d016c9bb.png" loading="lazy" decoding="async" />
+                <img alt="Banking compliance" className="w-full h-64 lg:h-full object-cover shadow-lg" src="/lovable-uploads/10c05b41-4184-42a1-bdf3-3b49d016c9bb.webp" loading="lazy" decoding="async" />
               </div>
             </div>
           </div>

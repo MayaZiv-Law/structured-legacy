@@ -110,7 +110,7 @@ const OlimResidents = () => {
               {/* Image */}
               <div className={cn("relative", isRTL ? "lg:order-2" : "lg:order-2")}>
                 <div className="aspect-[3/4] max-w-sm mx-auto lg:mx-0 overflow-hidden rounded-sm shadow-premium">
-                  <img alt={language === 'he' ? 'תכנון מס לעולים' : 'Tax positioning for Olim'} className="w-full h-full object-cover" src="/lovable-uploads/8883ef4e-474d-45c3-bf10-74ce4eabdba0.png" loading="lazy" decoding="async" />
+                  <img alt={language === 'he' ? 'תכנון מס לעולים' : 'Tax positioning for Olim'} className="w-full h-full object-cover" src="/lovable-uploads/8883ef4e-474d-45c3-bf10-74ce4eabdba0.webp" loading="lazy" decoding="async" />
                 </div>
               </div>
             </div>
