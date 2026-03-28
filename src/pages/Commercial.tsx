@@ -214,7 +214,7 @@ const Commercial = () => {
       <RelatedServices currentPath="/commercial" />
 
       {/* CTA Section */}
-      <section className="py-12 bg-[#faf8f5]">
+      <section className="py-12 bg-primary">
         <div
           ref={ctaAnim.ref}
           className={cn(
@@ -224,10 +224,10 @@ const Commercial = () => {
         >
           <div className="max-w-3xl mx-auto text-center">
             <div className="w-16 h-0.5 bg-accent mx-auto mb-6" />
-            <h2 className={cn("text-4xl sm:text-5xl lg:text-6xl font-display font-semibold mb-5 text-primary", isRTL && "font-hebrew")}>
+            <h2 className={cn("text-4xl sm:text-5xl lg:text-6xl font-display font-semibold mb-5 text-primary-foreground", isRTL && "font-hebrew")}>
               {t('commercial.cta.title')}
             </h2>
-            <p className={cn("text-xl mb-8 max-w-xl mx-auto text-primary", isRTL && "font-hebrew")}>
+            <p className={cn("text-xl mb-8 max-w-xl mx-auto text-primary-foreground/80", isRTL && "font-hebrew")}>
               {t('commercial.cta.body')}
             </p>
             <Button asChild size="lg" className="bg-accent hover:bg-accent/90 text-accent-foreground font-medium px-4 sm:px-6 lg:px-10 py-4 sm:py-6 text-base group max-w-full">

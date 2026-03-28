@@ -272,16 +272,16 @@ const RealEstate = () => {
       <RelatedServices currentPath="/real-estate" />
 
       {/* CTA Section */}
-      <section className="py-12 text-primary bg-[#faf8f5]">
+      <section className="py-12 bg-primary">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div ref={ctaAnim.ref} className={cn("max-w-3xl mx-auto text-center transition-all duration-700", isRTL && "font-hebrew", ctaAnim.isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8")}>
             <div className="w-16 h-0.5 bg-accent mx-auto mb-6" />
-            
-            <h2 className="text-4xl sm:text-5xl lg:text-6xl font-display font-semibold mb-5 text-primary">
+
+            <h2 className="text-4xl sm:text-5xl lg:text-6xl font-display font-semibold mb-5 text-primary-foreground">
               {t('realestate.cta.title')}
             </h2>
-            
-            <p className="text-lg mb-8 max-w-xl mx-auto text-primary">
+
+            <p className="text-lg mb-8 max-w-xl mx-auto text-primary-foreground/80">
               {t('realestate.cta.body')}
             </p>
 

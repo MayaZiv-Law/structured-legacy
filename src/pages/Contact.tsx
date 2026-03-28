@@ -6,13 +6,14 @@ import { Mail, Phone, MapPin, CheckCircle } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { useScrollAnimation } from '@/hooks/useScrollAnimation';
 import { SEO } from '@/components/SEO';
+import PageHero from '@/components/shared/PageHero';
+import contactHeroImage from '@/assets/about-hero-globe.webp';
 
 const Contact = () => {
   const { t, isRTL, language } = useLanguage();
   const [formData, setFormData] = useState({ name: '', email: '', phone: '', inquiry: '', message: '' });
   const [submitted, setSubmitted] = useState(false);
 
-  const heroAnim = useScrollAnimation();
   const contentAnim = useScrollAnimation();
   const formAnim = useScrollAnimation();
 
@@ -42,17 +43,9 @@ const Contact = () => {
         descriptionHe="צרו קשר עם משרד מאיה זיו לייעוץ משפטי בנדל״ן, מיסוי, תכנון עיזבון ועסקאות בינלאומיות בישראל."
         path="/contact"
       />
-      <section className="pt-28 pb-10 bg-background">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <div ref={heroAnim.ref} className={cn("max-w-4xl transition-all duration-700", isRTL && "font-hebrew text-right mr-auto", heroAnim.isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8")}>
-            <div className="w-16 h-1 bg-accent mb-8" />
-            <h1 className="text-4xl sm:text-5xl font-display font-semibold text-foreground mb-6">{t('contact.title')}</h1>
-            <p className="text-xl text-muted-foreground">{t('contact.subtitle')}</p>
-          </div>
-        </div>
-      </section>
+      <PageHero backgroundImage={contactHeroImage} title={t('contact.title')} />
 
-      <section className="pb-12">
+      <section className="pt-24 sm:pt-28 pb-12">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-5xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-8">
             {/* Contact Form */}
@@ -134,7 +127,7 @@ const Contact = () => {
             {/* Contact Info */}
             <div ref={contentAnim.ref} className={cn("bg-card rounded-lg shadow-lg p-6 lg:p-10 transition-all duration-700", contentAnim.isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8")}>
               <div className={cn(isRTL && "font-hebrew text-right")}>
-                <h2 className="text-3xl font-display font-semibold text-foreground mb-8">{language === 'he' ? 'פרטי התקשרות' : 'Contact Info'}</h2>
+                <h2 className="text-2xl sm:text-3xl font-display font-semibold text-foreground mb-8">{language === 'he' ? 'פרטי התקשרות' : 'Contact Info'}</h2>
                 <div className="space-y-6">
                   <div className={cn("flex items-center gap-4", isRTL && "flex-row-reverse")}>
                     <Mail className="h-6 w-6 text-accent shrink-0" />
