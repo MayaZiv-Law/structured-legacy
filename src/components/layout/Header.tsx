@@ -83,31 +83,25 @@ const Header = () => {
                 <ChevronDown className="h-4 w-4" />
               </DropdownMenuTrigger>
               <DropdownMenuContent align="center" className={cn("w-56", isRTL && "text-right")}>
-                <DropdownMenuItem asChild className={cn(isRTL && "justify-end")}>
-                  <Link to={localePath('/real-estate')} className="w-full cursor-pointer">
-                    {t('nav.realEstate')}
-                  </Link>
-                </DropdownMenuItem>
-                <DropdownMenuItem asChild className={cn(isRTL && "justify-end")}>
-                  <Link to={localePath('/taxation')} className="w-full cursor-pointer">
-                    {t('nav.taxation')}
-                  </Link>
-                </DropdownMenuItem>
-                <DropdownMenuItem asChild className={cn(isRTL && "justify-end")}>
-                  <Link to={localePath('/estate-planning')} className="w-full cursor-pointer">
-                    {t('nav.estate')}
-                  </Link>
-                </DropdownMenuItem>
-                <DropdownMenuItem asChild className={cn(isRTL && "justify-end")}>
-                  <Link to={localePath('/olim-residents')} className="w-full cursor-pointer">
-                    {t('nav.olim')}
-                  </Link>
-                </DropdownMenuItem>
-                <DropdownMenuItem asChild className={cn(isRTL && "justify-end")}>
-                  <Link to={localePath('/commercial')} className="w-full cursor-pointer">
-                    {t('nav.commercial')}
-                  </Link>
-                </DropdownMenuItem>
+                {[
+                  { path: '/real-estate', label: 'nav.realEstate' },
+                  { path: '/taxation', label: 'nav.taxation' },
+                  { path: '/estate-planning', label: 'nav.estate' },
+                  { path: '/olim-residents', label: 'nav.olim' },
+                  { path: '/commercial', label: 'nav.commercial' },
+                ].map((item) => (
+                  <DropdownMenuItem key={item.path} asChild className={cn(isRTL && "justify-end")}>
+                    <Link
+                      to={localePath(item.path)}
+                      className={cn(
+                        "w-full cursor-pointer",
+                        isActive(item.path) && "text-accent font-semibold bg-accent/10"
+                      )}
+                    >
+                      {t(item.label)}
+                    </Link>
+                  </DropdownMenuItem>
+                ))}
               </DropdownMenuContent>
             </DropdownMenu>
 
@@ -168,41 +162,25 @@ const Header = () => {
                 
                 {isExpertiseOpen && (
                   <div className={cn("flex flex-col gap-3 mt-3 border-border", isRTL ? "pr-4 border-r" : "pl-4 border-l")}>
-                    <Link
-                      to={localePath('/real-estate')}
-                      className={navLinkClass('/real-estate')}
-                      onClick={() => setIsMenuOpen(false)}
-                    >
-                      {t('nav.realEstate')}
-                    </Link>
-                    <Link
-                      to={localePath('/taxation')}
-                      className={navLinkClass('/taxation')}
-                      onClick={() => setIsMenuOpen(false)}
-                    >
-                      {t('nav.taxation')}
-                    </Link>
-                    <Link
-                      to={localePath('/estate-planning')}
-                      className={navLinkClass('/estate-planning')}
-                      onClick={() => setIsMenuOpen(false)}
-                    >
-                      {t('nav.estate')}
-                    </Link>
-                    <Link
-                      to={localePath('/olim-residents')}
-                      className={navLinkClass('/olim-residents')}
-                      onClick={() => setIsMenuOpen(false)}
-                    >
-                      {t('nav.olim')}
-                    </Link>
-                    <Link
-                      to={localePath('/commercial')}
-                      className={navLinkClass('/commercial')}
-                      onClick={() => setIsMenuOpen(false)}
-                    >
-                      {t('nav.commercial')}
-                    </Link>
+                    {[
+                      { path: '/real-estate', label: 'nav.realEstate' },
+                      { path: '/taxation', label: 'nav.taxation' },
+                      { path: '/estate-planning', label: 'nav.estate' },
+                      { path: '/olim-residents', label: 'nav.olim' },
+                      { path: '/commercial', label: 'nav.commercial' },
+                    ].map((item) => (
+                      <Link
+                        key={item.path}
+                        to={localePath(item.path)}
+                        className={cn(
+                          navLinkClass(item.path),
+                          isActive(item.path) && "border-b-2 border-accent pb-1"
+                        )}
+                        onClick={() => setIsMenuOpen(false)}
+                      >
+                        {t(item.label)}
+                      </Link>
+                    ))}
                   </div>
                 )}
               </div>
