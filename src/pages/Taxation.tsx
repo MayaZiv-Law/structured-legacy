@@ -125,7 +125,7 @@ const Taxation = () => {
           {/* Asymmetric layout */}
           <div className="relative max-w-6xl mx-auto">
             {/* Beige background - 60% width, extends above/below */}
-            <div className={cn("absolute -top-8 h-[calc(100%+4rem)] w-[60%] bg-secondary/50 rounded-sm", isRTL ? "right-0 -mr-8 lg:-mr-16" : "left-0 -ml-8 lg:-ml-16")} />
+            <div className={cn("absolute -top-8 h-[calc(100%+4rem)] w-[60%] bg-secondary/50 rounded-sm", isRTL ? "right-0 -mr-4 lg:-mr-16" : "left-0 -ml-4 lg:-ml-16")} />
             
             {/* White card - 92% width, offset, z-10 */}
             <div className={cn("relative z-10 max-w-[92%] mt-8 bg-background shadow-sm rounded-lg p-8 md:p-12", isRTL ? "mr-auto" : "ml-auto")}>
@@ -300,7 +300,7 @@ const Taxation = () => {
             <p className="text-xl mb-8 max-w-xl mx-auto text-primary">
               {t('tax.cta.body')}
             </p>
-            <Button asChild size="lg" className="bg-accent hover:bg-accent/90 text-accent-foreground font-medium px-6 sm:px-10 py-6 text-base group max-w-full">
+            <Button asChild size="lg" className="bg-accent hover:bg-accent/90 text-accent-foreground font-medium px-4 sm:px-6 lg:px-10 py-4 sm:py-6 text-base group max-w-full">
               <Link to={localePath('/contact')} className={cn("flex items-center gap-2 whitespace-normal text-center", isRTL && "flex-row-reverse")}>
                 {t('tax.cta.button')}
                 <Arrow className="h-4 w-4 flex-shrink-0" />

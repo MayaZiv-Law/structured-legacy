@@ -158,7 +158,7 @@ const About = () => {
       </section>
 
       {/* Who We Serve Section - Bridges between sections */}
-      <section className="relative z-20 pb-0 pt-12 bg-background overflow-visible">
+      <section className="relative z-20 pb-0 pt-12 bg-background overflow-hidden">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div 
             ref={serveAnim.ref}
@@ -171,12 +171,12 @@ const About = () => {
             <div className={cn(
               "absolute -top-12 w-[95%] bg-secondary",
               "h-[calc(100%+9rem)]",
-              isRTL ? "left-0 -ml-8 lg:-ml-16" : "right-0 -mr-8 lg:-mr-16"
+              isRTL ? "left-0 -ml-4 lg:-ml-16" : "right-0 -mr-4 lg:-mr-16"
             )} />
             
             {/* White content card - overlaps next section */}
             <div className={cn(
-              "relative z-10 bg-background py-8 px-6 lg:py-10 lg:px-10 w-[92%] shadow-sm",
+              "relative z-10 bg-background py-8 px-6 lg:py-10 lg:px-10 w-full sm:w-[92%] shadow-sm",
               isRTL ? "mr-auto ml-0" : "ml-auto mr-0"
             )}>
               <div className={cn(isRTL && "font-hebrew text-right")}>
@@ -198,7 +198,7 @@ const About = () => {
       </section>
 
       {/* What to Expect Section */}
-      <section className="pt-28 lg:pt-32 pb-10 lg:pb-12 bg-secondary/30 -mt-16">
+      <section className="pt-16 sm:pt-20 lg:pt-32 pb-10 lg:pb-12 bg-secondary/30 -mt-0 sm:-mt-8 lg:-mt-16">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div 
             ref={expectAnim.ref}
@@ -213,7 +213,7 @@ const About = () => {
             </h2>
           </div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-6 lg:gap-8 max-w-6xl mx-auto">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-8 sm:gap-6 lg:gap-8 max-w-6xl mx-auto px-2 sm:px-0">
             {expectations.map((item, index) => (
               <div
                 key={index}
@@ -271,7 +271,7 @@ const About = () => {
             <Button
               asChild
               size="lg"
-              className="bg-accent hover:bg-accent/90 text-accent-foreground font-medium px-6 sm:px-10 py-6 text-base group max-w-full"
+              className="bg-accent hover:bg-accent/90 text-accent-foreground font-medium px-4 sm:px-6 lg:px-10 py-4 sm:py-6 text-base group max-w-full"
             >
               <Link to={localePath('/contact')} className={cn("flex items-center gap-2 whitespace-normal text-center", isRTL && "flex-row-reverse")}>
                 {t('about.cta.button')}

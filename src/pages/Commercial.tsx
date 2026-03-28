@@ -146,7 +146,7 @@ const Commercial = () => {
             {/* Offset beige background */}
             <div className={cn(
               "absolute -top-8 w-[60%] bg-secondary h-[calc(100%+4rem)]",
-              isRTL ? "right-0 -mr-8 lg:-mr-16" : "left-0 -ml-8 lg:-ml-16"
+              isRTL ? "right-0 -mr-4 lg:-mr-16" : "left-0 -ml-4 lg:-ml-16"
             )} />
             
             {/* Content grid */}
@@ -230,7 +230,7 @@ const Commercial = () => {
             <p className={cn("text-xl mb-8 max-w-xl mx-auto text-primary", isRTL && "font-hebrew")}>
               {t('commercial.cta.body')}
             </p>
-            <Button asChild size="lg" className="bg-accent hover:bg-accent/90 text-accent-foreground font-medium px-6 sm:px-10 py-6 text-base group max-w-full">
+            <Button asChild size="lg" className="bg-accent hover:bg-accent/90 text-accent-foreground font-medium px-4 sm:px-6 lg:px-10 py-4 sm:py-6 text-base group max-w-full">
               <Link to={localePath('/contact')} className={cn("flex items-center gap-2 whitespace-normal text-center", isRTL && "flex-row-reverse")}>
                 {t('commercial.cta.button')}
                 <Arrow className="h-4 w-4 flex-shrink-0 transition-transform group-hover:translate-x-1" />
