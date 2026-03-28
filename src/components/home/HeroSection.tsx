@@ -1,5 +1,6 @@
 import { useLanguage } from '@/contexts/LanguageContext';
 import { cn } from '@/lib/utils';
+import { useScrollAnimation } from '@/hooks/useScrollAnimation';
 import heroImage from '@/assets/tel-aviv-coastline-hero.webp';
 
 const HeroSection = () => {
@@ -7,47 +8,44 @@ const HeroSection = () => {
     t,
     isRTL
   } = useLanguage();
+  const heroAnim = useScrollAnimation();
 
-  return <section className="relative z-10 -mt-20 pt-20 min-h-[100vh] flex flex-col overflow-visible" style={{ contain: 'layout style' }}>
-      {/* Full Background Image - NO overlay, NO fade, image shines */}
+  return <section className="relative min-h-[70vh] sm:min-h-[75vh] flex flex-col overflow-visible -mt-20">
+      {/* Full Background Image - same style as expertise pages */}
       <div className="absolute inset-0 z-0">
         <img
           alt="Israel coastline and city lights at dusk"
-          className="w-full h-full object-cover object-center brightness-105 contrast-105"
+          className="w-full h-full object-cover"
+          style={{ objectPosition: 'center 30%' }}
           src={heroImage}
           fetchPriority="high"
           loading="eager"
           decoding="sync"
-          sizes="(max-width: 768px) 100vw, (max-width: 1200px) 100vw, 3237px"
           width={3237}
           height={2369}
         />
       </div>
 
-      {/* Spacer - image fills the entire viewport */}
+      {/* Spacer to push content box to bottom */}
       <div className="flex-grow" />
 
-      {/* Text floats at bottom - NO box, NO overlay, just glowing text */}
-      <div className="relative z-20 pb-8 sm:pb-12 lg:pb-16 px-6 sm:px-10 lg:px-16">
-        <div className={cn("max-w-3xl", isRTL ? "ml-auto" : "mr-auto")}>
-          <h1
-            className={cn(
-              "text-3xl sm:text-4xl lg:text-5xl xl:text-6xl font-display font-semibold text-white leading-tight mb-3",
-              isRTL && "font-hebrew text-right"
-            )}
-            style={{ textShadow: '0 2px 20px rgba(0,0,0,0.7), 0 1px 6px rgba(0,0,0,0.9)' }}
-          >
-            {t('hero.tagline')}
-          </h1>
-          <p
-            className={cn(
-              "text-lg sm:text-xl lg:text-2xl text-white/90 font-medium",
-              isRTL && "font-hebrew text-right"
-            )}
-            style={{ textShadow: '0 2px 15px rgba(0,0,0,0.7), 0 1px 4px rgba(0,0,0,0.8)' }}
-          >
-            {t('hero.subtitle1')}
-          </p>
+      {/* Content Box - same as PageHero on expertise pages */}
+      <div className="relative z-10 container mx-auto px-4 sm:px-6 lg:px-8 translate-y-12 sm:translate-y-16 lg:translate-y-20">
+        <div ref={heroAnim.ref} className={cn("max-w-5xl mx-auto transition-all duration-700", heroAnim.isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8")}>
+          <div className={cn("bg-primary/95 backdrop-blur-sm px-5 py-5 sm:px-8 sm:py-6 lg:px-12 lg:py-8 shadow-2xl", isRTL && "font-hebrew text-right")}>
+            {/* Gold accent line */}
+            <div className={cn("w-16 h-1 bg-accent mb-4", isRTL && "mr-0 ml-auto")} />
+
+            {/* Headline */}
+            <h1 className={cn("text-3xl sm:text-4xl lg:text-5xl font-display font-semibold text-primary-foreground mb-4 leading-tight", isRTL && "font-hebrew")}>
+              {t('hero.tagline')}
+            </h1>
+
+            {/* Subtitle */}
+            <p className={cn("text-lg sm:text-xl text-primary-foreground/80 font-medium", isRTL && "font-hebrew")}>
+              {t('hero.subtitle1')}
+            </p>
+          </div>
         </div>
       </div>
     </section>;
