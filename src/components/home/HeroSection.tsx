@@ -31,7 +31,7 @@ const HeroSection = () => {
       <div className="relative z-20 container mx-auto px-4 sm:px-6 lg:px-8 translate-y-12 sm:translate-y-16 lg:translate-y-20">
         <div className={cn("max-w-2xl", isRTL ? "ml-auto mr-4 lg:mr-8" : "mr-auto ml-4 lg:ml-8")}>
           {/* Text Box - optimized for faster render */}
-          <div className={cn("bg-primary/95 px-5 py-5 sm:px-10 sm:py-8 lg:px-12 lg:py-10 shadow-2xl", isRTL && "font-hebrew text-right")}>
+          <div className={cn("bg-primary/85 px-5 py-5 sm:px-10 sm:py-8 lg:px-12 lg:py-10 shadow-2xl", isRTL && "font-hebrew text-right")}>
             {/* Tagline */}
             <h1 className={cn("text-3xl sm:text-4xl lg:text-5xl font-display font-semibold text-primary-foreground mb-4 leading-tight", isRTL && "font-hebrew")}>
               {t('hero.tagline')}
