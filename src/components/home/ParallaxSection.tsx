@@ -89,7 +89,7 @@ const ParallaxSection = () => {
       >
         <img 
           src={azrieliNight}
-          alt="Azrieli towers Tel Aviv at night" 
+          alt="Israel cityscape at night" 
           className="w-full h-full object-cover"
           loading="lazy"
           decoding="async"

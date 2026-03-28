@@ -9,10 +9,10 @@ const HeroSection = () => {
   } = useLanguage();
 
   return <section className="relative z-10 -mt-20 pt-20 min-h-[100vh] flex flex-col overflow-visible" style={{ contain: 'layout style' }}>
-      {/* Full Background Image - show as much as possible */}
+      {/* Full Background Image - THE STAR of the hero */}
       <div className="absolute inset-0 z-0">
         <img
-          alt="Tel Aviv coastline and city lights at dusk"
+          alt="Israel coastline and city lights at dusk"
           className="w-full h-full object-cover object-center"
           src={heroImage}
           fetchPriority="high"
@@ -24,27 +24,19 @@ const HeroSection = () => {
         />
       </div>
 
-      {/* Spacer to push content box to bottom */}
+      {/* Spacer - pushes text to very bottom so image fills the view */}
       <div className="flex-grow" />
 
-      {/* Content Box - Overflows into next section */}
-      <div className="relative z-20 container mx-auto px-4 sm:px-6 lg:px-8 translate-y-12 sm:translate-y-16 lg:translate-y-20">
-        <div className={cn("max-w-2xl", isRTL ? "ml-auto mr-4 lg:mr-8" : "mr-auto ml-4 lg:ml-8")}>
-          {/* Text Box - semi-transparent to let city lights show through */}
-          <div className={cn("bg-primary/75 backdrop-blur-sm px-5 py-5 sm:px-10 sm:py-8 lg:px-12 lg:py-10 shadow-2xl", isRTL && "font-hebrew text-right")}>
-            {/* Tagline */}
-            <h1 className={cn("text-3xl sm:text-4xl lg:text-5xl font-display font-semibold text-primary-foreground mb-4 leading-tight", isRTL && "font-hebrew")}>
+      {/* Compact text strip at the bottom */}
+      <div className="relative z-20 w-full">
+        <div className={cn("bg-primary/70 backdrop-blur-sm px-6 py-4 sm:px-10 sm:py-5", isRTL && "font-hebrew text-right")}>
+          <div className="container mx-auto flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2">
+            <h1 className={cn("text-2xl sm:text-3xl lg:text-4xl font-display font-semibold text-primary-foreground leading-tight", isRTL && "font-hebrew")}>
               {t('hero.tagline')}
             </h1>
-
-            {/* Gold accent line */}
-            <div className={cn("w-16 h-1 bg-accent mb-6", isRTL && "mr-0 ml-auto")} />
-
-            {/* Sub-headline */}
-            <p className={cn("text-xl sm:text-2xl text-primary-foreground/90 font-medium mb-3", isRTL && "font-hebrew")}>
+            <p className={cn("text-base sm:text-lg text-primary-foreground/80 font-medium", isRTL && "font-hebrew")}>
               {t('hero.subtitle1')}
             </p>
-
           </div>
         </div>
       </div>

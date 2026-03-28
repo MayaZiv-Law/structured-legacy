@@ -121,7 +121,7 @@ export const organizationSchema = {
   "address": {
     "@type": "PostalAddress",
     "streetAddress": "18 Moshe Sneh",
-    "addressLocality": "Tel Aviv",
+    "addressLocality": "Israel",
     "addressCountry": "IL"
   },
   "geo": {
@@ -256,7 +256,7 @@ export const localBusinessSchema = {
   "address": {
     "@type": "PostalAddress",
     "streetAddress": "18 Moshe Sneh",
-    "addressLocality": "Tel Aviv",
+    "addressLocality": "Israel",
     "postalCode": "6970251",
     "addressCountry": "IL"
   },
