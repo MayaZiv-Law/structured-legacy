@@ -4,19 +4,17 @@ import { useLanguage } from '@/contexts/LanguageContext';
 import { useLocalePath } from '@/hooks/useLocalePath';
 import { cn } from '@/lib/utils';
 import { Calendar, ArrowRight, Loader2 } from 'lucide-react';
-import CTASection from '@/components/home/CTASection';
 import { useScrollAnimation } from '@/hooks/useScrollAnimation';
 import { useArticles } from '@/hooks/useArticles';
 import { SEO } from '@/components/SEO';
-import PageHero from '@/components/shared/PageHero';
-import insightsHeroBg from '@/assets/about-hero-bg.webp';
 import fallbackImage from '@/assets/about-hero-bg.webp';
 
 const Insights = () => {
   const { t, isRTL, language } = useLanguage();
   const localePath = useLocalePath();
+  const headerAnim = useScrollAnimation();
   const articlesAnim = useScrollAnimation();
-  
+
   const { data: articles, isLoading } = useArticles();
 
   return (
@@ -28,9 +26,31 @@ const Insights = () => {
         descriptionHe="הנחיות מעשיות בנושאי נדל״ן בישראל, מיסוי חוצה גבולות, ציות ותכנון מורשת ממשרד מאיה זיו."
         path="/insights"
       />
-      <PageHero backgroundImage={insightsHeroBg} title={t('insights.hero.title')} />
 
-      <section className="pt-24 sm:pt-28 pb-12 gradient-stone">
+      {/* Clean text header - no hero image */}
+      <section className="pt-28 sm:pt-32 pb-10 bg-background">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+          <div
+            ref={headerAnim.ref}
+            className={cn(
+              "max-w-4xl transition-all duration-700",
+              isRTL && "font-hebrew text-right ml-auto",
+              headerAnim.isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
+            )}
+          >
+            <div className={cn("w-16 h-0.5 bg-accent mb-6", isRTL && "mr-0 ml-auto")} />
+            <h1 className={cn("text-3xl sm:text-4xl lg:text-5xl font-display font-semibold text-foreground mb-4", isRTL && "font-hebrew")}>
+              {t('insights.hero.title')}
+            </h1>
+            <p className={cn("text-lg sm:text-xl text-muted-foreground", isRTL && "font-hebrew")}>
+              {t('insights.hero.subtitle')}
+            </p>
+          </div>
+        </div>
+      </section>
+
+      {/* Articles grid */}
+      <section className="pb-16 gradient-stone">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div ref={articlesAnim.ref}>
             {isLoading ? (
@@ -43,16 +63,16 @@ const Insights = () => {
                   const title = language === 'he' ? article.title_he : article.title_en;
                   const excerpt = language === 'he' ? article.excerpt_he : article.excerpt_en;
                   const category = language === 'he' ? article.category_he : article.category_en;
-                  
+
                   return (
-                    <Link 
-                      to={localePath(`/insights/${article.slug}`)} 
-                      key={article.id} 
+                    <Link
+                      to={localePath(`/insights/${article.slug}`)}
+                      key={article.id}
                       className={cn(
-                        "group bg-card border border-border rounded-sm overflow-hidden hover:border-accent/50 transition-all hover:shadow-lg block duration-500", 
-                        isRTL && "font-hebrew text-right", 
+                        "group bg-card border border-border rounded-sm overflow-hidden hover:border-accent/50 transition-all hover:shadow-lg block duration-500",
+                        isRTL && "font-hebrew text-right",
                         articlesAnim.isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
-                      )} 
+                      )}
                       style={{ transitionDelay: articlesAnim.isVisible ? `${i * 150}ms` : '0ms' }}
                     >
                       <div className="relative h-40 sm:h-48 md:h-52 overflow-hidden bg-secondary">
@@ -72,7 +92,7 @@ const Insights = () => {
                         <div className={cn("flex items-center gap-2 text-muted-foreground text-sm mb-3", isRTL && "flex-row-reverse")}>
                           <Calendar className="h-4 w-4" />
                           <span>
-                            {article.published_at 
+                            {article.published_at
                               ? new Date(article.published_at).toLocaleDateString(language === 'he' ? 'he-IL' : 'en-US')
                               : ''}
                           </span>
@@ -96,8 +116,6 @@ const Insights = () => {
           </div>
         </div>
       </section>
-      
-      <CTASection />
     </Layout>
   );
 };
