@@ -10,6 +10,7 @@ import { useArticles } from '@/hooks/useArticles';
 import { SEO } from '@/components/SEO';
 import PageHero from '@/components/shared/PageHero';
 import insightsHeroBg from '@/assets/about-hero-bg.webp';
+import fallbackImage from '@/assets/about-hero-bg.webp';
 
 const Insights = () => {
   const { t, isRTL, language } = useLanguage();
@@ -54,14 +55,13 @@ const Insights = () => {
                       )} 
                       style={{ transitionDelay: articlesAnim.isVisible ? `${i * 150}ms` : '0ms' }}
                     >
-                      <div className="relative h-40 sm:h-48 md:h-52 overflow-hidden">
-                        {article.image_url && (
-                          <img 
-                            src={article.image_url} 
-                            alt={title} 
-                            className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105" 
-                          />
-                        )}
+                      <div className="relative h-40 sm:h-48 md:h-52 overflow-hidden bg-secondary">
+                        <img
+                          src={article.image_url || fallbackImage}
+                          alt={title}
+                          className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
+                          onError={(e) => { (e.target as HTMLImageElement).src = fallbackImage; }}
+                        />
                         <div className={cn("absolute top-4", isRTL ? "right-4" : "left-4")}>
                           <span className="bg-accent text-accent-foreground text-xs font-medium px-3 py-1 rounded-full">
                             {category}

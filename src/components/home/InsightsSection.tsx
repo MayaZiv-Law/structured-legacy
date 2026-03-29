@@ -3,6 +3,7 @@ import { useLanguage } from '@/contexts/LanguageContext';
 import { useLocalePath } from '@/hooks/useLocalePath';
 import { cn } from '@/lib/utils';
 import { ArrowRight, ArrowLeft, Calendar, Loader2 } from 'lucide-react';
+import fallbackImage from '@/assets/about-hero-bg.webp';
 import { Button } from '@/components/ui/button';
 import { useScrollAnimation } from '@/hooks/useScrollAnimation';
 import { useLatestArticles } from '@/hooks/useArticles';
@@ -49,8 +50,8 @@ const InsightsSection = () => {
               animationDelay: `${index * 150}ms`
             }}>
                     {/* Image Container */}
-                    <div className="relative h-40 sm:h-48 md:h-52 overflow-hidden">
-                      {article.image_url && <img src={article.image_url} alt={title} className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105" loading="lazy" decoding="async" />}
+                    <div className="relative h-40 sm:h-48 md:h-52 overflow-hidden bg-secondary">
+                      <img src={article.image_url || fallbackImage} alt={title} className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105" loading="lazy" decoding="async" onError={(e) => { (e.target as HTMLImageElement).src = fallbackImage; }} />
                       <div className={cn("absolute top-4", isRTL ? "right-4" : "left-4")}>
                         <span className="bg-accent text-accent-foreground text-xs font-medium px-3 py-1 rounded-full">
                           {category}
