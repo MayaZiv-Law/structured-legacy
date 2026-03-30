@@ -3,7 +3,7 @@ import Layout from '@/components/layout/Layout';
 import HeroSection from '@/components/home/HeroSection';
 import ConflictSection from '@/components/home/ConflictSection';
 import GuideSection from '@/components/home/GuideSection';
-import { SEO, organizationSchema } from '@/components/SEO';
+import { SEO, organizationSchema, websiteSchema, localBusinessSchema } from '@/components/SEO';
 
 // Lazy load below-the-fold sections to improve TTI
 const ParallaxSection = lazy(() => import('@/components/home/ParallaxSection'));
@@ -24,7 +24,7 @@ const Index = () => {
         descriptionEn="Israeli law firm advising private clients and businesses on real estate, cross border transactions, taxation and estate planning in Israel. Legal and financial expertise combined."
         descriptionHe="ניהול סיכונים משפטי ואסטרטגיית מיסוי עבור תושבי ישראל ולקוחות בזירה הגלובלית. התמחות בבדיקת נאותות למקרקעין, ציות בנקאי וניהול עזבונות חוצי גבולות."
         path="/"
-        schema={organizationSchema}
+        schema={[organizationSchema, websiteSchema, localBusinessSchema]}
       />
       <HeroSection />
       <ConflictSection />
