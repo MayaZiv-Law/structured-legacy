@@ -89,7 +89,7 @@ const Taxation = () => {
         schema={[taxationSchema, faqSchema, breadcrumbSchema]}
       />
       {/* Hero Section */}
-      <PageHero backgroundImage={taxationHeroBg} title={t('tax.hero.title')} />
+      <PageHero backgroundImage={taxationHeroBg} title={t('tax.hero.title')} subtitle={t('tax.hero.subtitle')} />
 
       {/* The Context Section */}
       <section className="pt-24 sm:pt-28 pb-12 gradient-stone">

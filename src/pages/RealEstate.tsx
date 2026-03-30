@@ -78,7 +78,7 @@ const RealEstate = () => {
         schema={[realEstateSchema, faqSchema, breadcrumbSchema]}
       />
       {/* Hero Section */}
-      <PageHero backgroundImage={realEstateHeroBg} title={t('realestate.hero.title')} />
+      <PageHero backgroundImage={realEstateHeroBg} title={t('realestate.hero.title')} subtitle={t('realestate.hero.subtitle')} />
 
       {/* The Approach Section */}
       <section className="pt-24 sm:pt-28 pb-12 gradient-stone">
