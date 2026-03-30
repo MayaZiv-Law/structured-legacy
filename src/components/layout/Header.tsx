@@ -30,6 +30,12 @@ const Header = () => {
       isActive(path) ? 'text-accent' : 'text-foreground'
     );
 
+  const mobileNavLinkClass = (path: string) =>
+    cn(
+      'text-base font-semibold transition-colors hover:text-accent',
+      isActive(path) ? 'text-accent' : 'text-primary-foreground'
+    );
+
   const switchLanguage = () => {
     const newLang = language === 'en' ? 'he' : 'en';
     // Replace current lang prefix with new one
@@ -135,33 +141,33 @@ const Header = () => {
 
         {/* Mobile Menu */}
         {isMenuOpen && (
-          <div className="lg:hidden py-4 border-t border-border/20 bg-white/80 backdrop-blur-xl -mx-4 px-4 sm:-mx-6 sm:px-6 shadow-lg">
+          <div className="lg:hidden py-6 border-t border-accent/30 bg-primary -mx-4 px-6 sm:-mx-6 sm:px-8 shadow-2xl">
             <nav className="flex flex-col gap-4">
               <Link
                 to={localePath('/about')}
-                className={navLinkClass('/about')}
+                className={mobileNavLinkClass('/about')}
                 onClick={() => setIsMenuOpen(false)}
               >
                 {t('nav.firm')}
               </Link>
-              
+
               {/* Expertise Collapsible Section */}
               <div>
                 <button
                   onClick={() => setIsExpertiseOpen(!isExpertiseOpen)}
                   className={cn(
-                    "flex items-center justify-between w-full text-sm font-medium transition-colors hover:text-accent",
+                    "flex items-center justify-between w-full text-base font-semibold transition-colors hover:text-accent",
                     ['/real-estate', '/taxation', '/estate-planning', '/olim-residents', '/commercial'].some(p => isActive(p))
                       ? 'text-accent'
-                      : 'text-foreground/80'
+                      : 'text-primary-foreground'
                   )}
                 >
                   {t('nav.expertise')}
                   <ChevronDown className={cn("h-4 w-4 transition-transform", isExpertiseOpen && "rotate-180")} />
                 </button>
-                
+
                 {isExpertiseOpen && (
-                  <div className={cn("flex flex-col gap-3 mt-3 border-border", isRTL ? "pr-4 border-r" : "pl-4 border-l")}>
+                  <div className={cn("flex flex-col gap-3 mt-3 border-accent/30", isRTL ? "pr-4 border-r" : "pl-4 border-l")}>
                     {[
                       { path: '/real-estate', label: 'nav.realEstate' },
                       { path: '/taxation', label: 'nav.taxation' },
@@ -173,7 +179,7 @@ const Header = () => {
                         key={item.path}
                         to={localePath(item.path)}
                         className={cn(
-                          navLinkClass(item.path),
+                          mobileNavLinkClass(item.path),
                           isActive(item.path) && "border-b-2 border-accent pb-1"
                         )}
                         onClick={() => setIsMenuOpen(false)}
@@ -187,14 +193,14 @@ const Header = () => {
 
               <Link
                 to={localePath('/insights')}
-                className={navLinkClass('/insights')}
+                className={mobileNavLinkClass('/insights')}
                 onClick={() => setIsMenuOpen(false)}
               >
                 {t('nav.insights')}
               </Link>
               <Link
                 to={localePath('/contact')}
-                className={navLinkClass('/contact')}
+                className={mobileNavLinkClass('/contact')}
                 onClick={() => setIsMenuOpen(false)}
               >
                 {t('nav.contact')}
@@ -203,7 +209,7 @@ const Header = () => {
               {/* Language Switcher - Mobile */}
               <button
                 onClick={() => { switchLanguage(); setIsMenuOpen(false); }}
-                className="text-sm font-semibold border border-foreground/20 rounded px-3 py-2 hover:bg-accent hover:text-accent-foreground hover:border-accent transition-colors w-fit"
+                className="text-sm font-semibold border border-primary-foreground/30 text-primary-foreground rounded px-3 py-2 hover:bg-accent hover:text-accent-foreground hover:border-accent transition-colors w-fit"
               >
                 {language === 'en' ? 'עברית' : 'English'}
               </button>
