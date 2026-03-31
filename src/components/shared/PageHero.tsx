@@ -1,34 +1,32 @@
 import { cn } from '@/lib/utils';
 import { useLanguage } from '@/contexts/LanguageContext';
 import { useScrollAnimation } from '@/hooks/useScrollAnimation';
-import { ReactNode } from 'react';
+
 interface PageHeroProps {
   backgroundImage: string;
   title: string;
   subtitle?: string;
-  icon?: ReactNode;
+  icon?: React.ReactNode;
   iconLabel?: string;
   imagePosition?: string;
 }
+
 const PageHero = ({
   backgroundImage,
   title,
-  subtitle,
-  icon,
-  iconLabel,
   imagePosition = 'center'
 }: PageHeroProps) => {
-  const {
-    isRTL
-  } = useLanguage();
+  const { isRTL } = useLanguage();
   const heroAnim = useScrollAnimation();
-  return <section className="relative min-h-[70vh] sm:min-h-[75vh] flex flex-col overflow-visible -mt-0 lg:-mt-20">
-      {/* Full Background Image - No overlay, sharp and sparkling */}
+
+  return (
+    <section className="relative min-h-[70vh] sm:min-h-[75vh] flex flex-col overflow-visible -mt-0 lg:-mt-20">
+      {/* Full Background Image */}
       <div className="absolute inset-0 z-0">
-        <img 
-          src={backgroundImage} 
+        <img
+          src={backgroundImage}
           alt={title}
-          className="w-full h-full object-cover" 
+          className="w-full h-full object-cover"
           style={{ objectPosition: imagePosition }}
           fetchPriority="high"
           loading="eager"
@@ -41,30 +39,22 @@ const PageHero = ({
       {/* Spacer to push content box to bottom */}
       <div className="flex-grow" />
 
-      {/* Content Box - Overflows into next section */}
-      <div className="relative z-10 container mx-auto px-4 sm:px-6 lg:px-8 translate-y-4 sm:translate-y-12 lg:translate-y-20">
-        <div ref={heroAnim.ref} className={cn("max-w-5xl mx-auto transition-all duration-700", heroAnim.isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8")}>
-          {/* Text Box - wider and narrower */}
-          <div className={cn("bg-primary/95 backdrop-blur-sm px-5 py-5 sm:px-8 sm:py-6 lg:px-12 lg:py-8 shadow-2xl", isRTL && "font-hebrew text-right")}>
-            {/* Icon and Label */}
-            {icon && iconLabel && <div className={cn("flex items-center gap-3 mb-4", isRTL && "flex-row-reverse")}>
-                {icon}
-                <span className="text-accent font-medium">{iconLabel}</span>
-              </div>}
-
+      {/* Compact Content Box - title only */}
+      <div className="relative z-10 container mx-auto px-4 sm:px-6 lg:px-8 translate-y-4 sm:translate-y-8 lg:translate-y-12">
+        <div ref={heroAnim.ref} className={cn("max-w-3xl mx-auto transition-all duration-700", heroAnim.isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8")}>
+          <div className={cn("bg-primary/95 backdrop-blur-sm px-5 py-4 sm:px-8 sm:py-5 lg:px-10 lg:py-6 shadow-2xl", isRTL && "font-hebrew text-right")}>
             {/* Gold accent line */}
-            <div className={cn("w-16 h-1 bg-accent mb-4", isRTL && "mr-0 ml-auto")} />
+            <div className={cn("w-16 h-1 bg-accent mb-3", isRTL && "mr-0 ml-auto")} />
 
-            {/* Title */}
-            <h1 className="text-3xl sm:text-4xl lg:text-5xl font-display font-semibold text-primary-foreground mb-4 leading-tight">
+            {/* Title only - single line */}
+            <h1 className={cn("text-2xl sm:text-3xl lg:text-4xl font-display font-semibold text-primary-foreground leading-tight whitespace-nowrap", isRTL && "font-hebrew")}>
               {title}
             </h1>
-
-            {/* Subtitle */}
-            {subtitle && <p className="text-lg sm:text-xl text-primary-foreground/80 leading-relaxed">{subtitle}</p>}
           </div>
         </div>
       </div>
-    </section>;
+    </section>
+  );
 };
+
 export default PageHero;

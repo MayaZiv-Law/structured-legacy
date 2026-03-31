@@ -37,7 +37,7 @@ const HeroSection = () => {
             <div className={cn("w-16 h-1 bg-accent mb-3", isRTL && "mr-0 ml-auto")} />
 
             {/* Headline only */}
-            <h1 className={cn("text-3xl sm:text-4xl lg:text-5xl font-display font-semibold text-primary-foreground leading-tight", isRTL && "font-hebrew")}>
+            <h1 className={cn("text-2xl sm:text-3xl lg:text-4xl font-display font-semibold text-primary-foreground leading-tight whitespace-nowrap", isRTL && "font-hebrew")}>
               {t('hero.tagline')}
             </h1>
           </div>
