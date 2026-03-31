@@ -79,12 +79,12 @@ const translations: Record<Language, Record<string, string>> = {
     'article.readMore': 'Want to Read More?',
     'article.readMoreBody': 'Return to our insights page for more articles and professional content.',
     'article.allArticles': 'All Articles',
-    'insights.article1.title': 'Buying Property in Israel as a Foreign Resident Legal and Tax Essentials',
-    'insights.article1.snippet': 'Foreign residents must address unique legal tax and registration requirements when purchasing property in Israel. Clear due diligence and structured planning ensure a compliant and secure transaction.',
-    'insights.article2.title': 'Wills and Inheritance in Israel Ensuring Cross Border Validity',
+    'insights.article1.title': 'Buying Property in Israel as a Foreign Resident: Legal and Tax Essentials',
+    'insights.article1.snippet': 'Foreign residents must address unique legal, tax, and registration requirements when purchasing property in Israel. Clear due diligence and structured planning ensure a compliant and secure transaction.',
+    'insights.article2.title': 'Wills and Inheritance in Israel: Ensuring Cross Border Validity',
     'insights.article2.snippet': 'Cross border families must align Israeli inheritance procedures with foreign wills and overseas probate rules. Coordinated planning ensures enforceability and prevents unnecessary legal conflicts.',
-    'insights.article3.title': 'Buying Property in Israel Essential Legal Checks for Domestic Buyers',
-    'insights.article3.snippet': 'Domestic buyers must verify ownership rights planning status and contractual protections before committing to a property purchase. Structured legal checks reduce exposure and support a transparent and compliant transaction.',
+    'insights.article3.title': 'Buying Property in Israel: Essential Legal Checks for Domestic Buyers',
+    'insights.article3.snippet': 'Domestic buyers must verify ownership rights, planning status, and contractual protections before committing to a property purchase. Structured legal checks reduce exposure and support a transparent and compliant transaction.',
 
     // FAQ
     'faq.title': 'Frequently Asked Questions',

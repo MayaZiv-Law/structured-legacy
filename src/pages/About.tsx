@@ -59,7 +59,7 @@ const About = () => {
       </section>
 
       {/* Main Body */}
-      <section className="pt-12 sm:pt-16 pb-12 gradient-stone">
+      <section className="pt-24 sm:pt-28 pb-12 gradient-stone">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div
             ref={mainBodyAnim.ref}
@@ -92,7 +92,7 @@ const About = () => {
           >
             <div className="w-16 h-0.5 bg-accent mx-auto mb-6" />
 
-            <h2 className="text-4xl sm:text-5xl lg:text-6xl font-body font-semibold text-primary-foreground mb-5">
+            <h2 className="text-4xl sm:text-5xl lg:text-6xl font-display font-semibold text-primary-foreground mb-5">
               {t('about.cta.title')}
             </h2>
 
