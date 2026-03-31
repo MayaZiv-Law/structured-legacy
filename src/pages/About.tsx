@@ -3,7 +3,7 @@ import Layout from '@/components/layout/Layout';
 import { useLocalePath } from '@/hooks/useLocalePath';
 import { useLanguage } from '@/contexts/LanguageContext';
 import { cn } from '@/lib/utils';
-import { FileCheck, Clock, MessageCircle, ArrowRight, ArrowLeft, Target, Globe } from 'lucide-react';
+import { FileCheck, Clock, ArrowRight, ArrowLeft, Globe } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { useScrollAnimation } from '@/hooks/useScrollAnimation';
 import PageHero from '@/components/shared/PageHero';
@@ -32,16 +32,6 @@ const About = () => {
       icon: Clock,
       titleKey: 'about.expect.timeline.title',
       descKey: 'about.expect.timeline.desc',
-    },
-    {
-      icon: MessageCircle,
-      titleKey: 'about.expect.comm.title',
-      descKey: 'about.expect.comm.desc',
-    },
-    {
-      icon: Target,
-      titleKey: 'about.expect.foresight.title',
-      descKey: 'about.expect.foresight.desc',
     },
   ];
 
@@ -213,7 +203,7 @@ const About = () => {
             </h2>
           </div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-8 sm:gap-6 lg:gap-8 max-w-6xl mx-auto px-2 sm:px-0">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 sm:gap-6 lg:gap-8 max-w-6xl mx-auto px-2 sm:px-0">
             {expectations.map((item, index) => (
               <div
                 key={index}
