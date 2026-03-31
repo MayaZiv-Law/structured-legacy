@@ -5,12 +5,16 @@ import { cn } from '@/lib/utils';
 import { Mail, Phone, MapPin, CheckCircle } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { useScrollAnimation } from '@/hooks/useScrollAnimation';
-import { SEO } from '@/components/SEO';
+import { SEO, localBusinessSchema, createBreadcrumbSchema } from '@/components/SEO';
 import PageHero from '@/components/shared/PageHero';
 import contactHeroImage from '@/assets/about-hero-globe.webp';
 
 const Contact = () => {
   const { t, isRTL, language } = useLanguage();
+  const breadcrumbSchema = createBreadcrumbSchema([
+    { name: language === 'he' ? 'בית' : 'Home', url: 'https://mayaziv-law.com/' },
+    { name: language === 'he' ? 'צור קשר' : 'Contact', url: 'https://mayaziv-law.com/contact' },
+  ]);
   const [formData, setFormData] = useState({ name: '', email: '', phone: '', inquiry: '', message: '' });
   const [submitted, setSubmitted] = useState(false);
 
@@ -37,11 +41,12 @@ const Contact = () => {
   return (
     <Layout>
       <SEO
-        titleEn="Contact Maya Ziv Law | Attorney in Israel | Hebrew and English"
+        titleEn="Contact Maya Ziv Law | Attorney in Tel Aviv | Hebrew and English"
         titleHe="צור קשר | משרד מאיה זיו עו״ד"
-        descriptionEn="Reach Maya Ziv Law for inquiries about real estate, tax, estate planning and commercial matters. Based in Israel. Accepting clients in Israel and internationally."
+        descriptionEn="Reach Maya Ziv Law for inquiries about real estate, tax, estate planning and commercial matters. Based in Tel Aviv. Accepting clients in Israel and internationally."
         descriptionHe="צרו קשר עם משרד מאיה זיו לייעוץ משפטי בנדל״ן, מיסוי, תכנון עיזבון ועסקאות בינלאומיות בישראל."
         path="/contact"
+        schema={[localBusinessSchema, breadcrumbSchema]}
       />
       <PageHero backgroundImage={contactHeroImage} title={t('contact.title')} />
 

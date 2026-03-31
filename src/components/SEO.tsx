@@ -77,6 +77,7 @@ export const SEO = ({
       
       {/* Twitter Card */}
       <meta name="twitter:card" content="summary_large_image" />
+      <meta name="twitter:site" content="@MayaZivLaw" />
       <meta name="twitter:title" content={title} />
       <meta name="twitter:description" content={description} />
       <meta name="twitter:image" content={imageUrl} />
@@ -121,7 +122,7 @@ export const organizationSchema = {
   "address": {
     "@type": "PostalAddress",
     "streetAddress": "18 Moshe Sneh",
-    "addressLocality": "Israel",
+    "addressLocality": "Tel Aviv",
     "addressCountry": "IL"
   },
   "geo": {
@@ -131,12 +132,20 @@ export const organizationSchema = {
   },
   "areaServed": ["Israel", "United States", "United Kingdom", "Europe"],
   "priceRange": "$$",
-  "openingHoursSpecification": {
-    "@type": "OpeningHoursSpecification",
-    "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
-    "opens": "09:00",
-    "closes": "18:00"
-  }
+  "openingHoursSpecification": [
+    {
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday"],
+      "opens": "09:00",
+      "closes": "18:00"
+    },
+    {
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": "Friday",
+      "opens": "09:00",
+      "closes": "14:00"
+    }
+  ]
 };
 
 export const attorneySchema = {
@@ -144,7 +153,7 @@ export const attorneySchema = {
   "@type": "Attorney",
   "name": "Maya Ziv",
   "jobTitle": "Attorney",
-  "url": "https://mayaziv-law.com/about",
+  "url": "https://mayaziv-law.com/en/about",
   "image": `${SITE_URL}/lovable-uploads/81459920-5f87-4bcb-8430-47c1c2edc6e4.webp`,
   "worksFor": {
     "@type": "LegalService",
@@ -256,7 +265,7 @@ export const localBusinessSchema = {
   "address": {
     "@type": "PostalAddress",
     "streetAddress": "18 Moshe Sneh",
-    "addressLocality": "Israel",
+    "addressLocality": "Tel Aviv",
     "postalCode": "6970251",
     "addressCountry": "IL"
   },

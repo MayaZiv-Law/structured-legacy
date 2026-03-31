@@ -9,11 +9,15 @@ import { useScrollAnimation } from '@/hooks/useScrollAnimation';
 import PageHero from '@/components/shared/PageHero';
 import mayaPortrait from '@/assets/maya-portrait.webp';
 import aboutHeroBg from '@/assets/about-hero-globe.webp';
-import { SEO, attorneySchema } from '@/components/SEO';
+import { SEO, attorneySchema, createBreadcrumbSchema } from '@/components/SEO';
 import MethodologySection from '@/components/home/MethodologySection';
 
 const About = () => {
   const { t, isRTL, language } = useLanguage();
+  const breadcrumbSchema = createBreadcrumbSchema([
+    { name: language === 'he' ? 'בית' : 'Home', url: 'https://mayaziv-law.com/' },
+    { name: language === 'he' ? 'אודות' : 'About', url: 'https://mayaziv-law.com/about' },
+  ]);
   const localePath = useLocalePath();
   const Arrow = isRTL ? ArrowLeft : ArrowRight;
 
@@ -45,12 +49,12 @@ const About = () => {
   return (
     <Layout>
       <SEO
-        titleEn="About Maya Ziv | Attorney with Legal and Financial Expertise | Israel"
+        titleEn="About Maya Ziv | Attorney with Legal and Financial Expertise | Tel Aviv"
         titleHe="מאיה זיו משרד עורכי דין | מקרקעין | מיסוי בינלאומי | ניהול עזבונות וצוואות"
         descriptionEn="Maya Ziv holds an LLB and a BBA in Finance from Baruch College New York. Prior experience at Citi Innovation Lab and Vornado Realty Trust. Complex transactions where law and finance intersect."
         descriptionHe="ניהול סיכונים משפטי ואסטרטגיית מיסוי עבור תושבי ישראל ולקוחות בזירה הגלובלית. התמחות בבדיקת נאותות למקרקעין, ציות בנקאי וניהול עזבונות חוצי גבולות."
         path="/about"
-        schema={attorneySchema}
+        schema={[attorneySchema, breadcrumbSchema]}
       />
 
       {/* Hero Section */}

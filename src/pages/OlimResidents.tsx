@@ -65,7 +65,7 @@ const OlimResidents = () => {
         schema={[olimSchema, breadcrumbSchema]}
       />
       {/* Hero Section */}
-      <PageHero backgroundImage={olimHeroBg} title={t('olim.hero.title')} imagePosition="center 30%" />
+      <PageHero backgroundImage={olimHeroBg} title={t('olim.hero.title')} subtitle={t('olim.hero.subtitle')} imagePosition="center 30%" />
 
       <section className="pt-24 sm:pt-28 pb-12 gradient-stone">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">

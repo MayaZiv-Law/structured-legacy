@@ -72,13 +72,13 @@ const RealEstate = () => {
       <SEO
         titleEn="Real Estate Lawyer in Israel | Property Transactions for Local and Foreign Buyers"
         titleHe="עורכת דין נדל״ן בתל אביב | רכישת נכס בישראל"
-        descriptionEn="Legal advice on buying and selling property in Israel. Representing Israeli and international clients in residential and commercial real estate transactions. Maya Ziv Law."
+        descriptionEn="Legal advice on buying and selling property in Israel. Representing Israeli and international clients in residential and commercial real estate transactions. Maya Ziv Law Tel Aviv."
         descriptionHe="ייעוץ משפטי לרכישת נכס בישראל. בדיקת נאותות, תכנון מס רכישה וייצוג מרחוק לתושבי חוץ ומשקיעים."
         path="/real-estate"
         schema={[realEstateSchema, faqSchema, breadcrumbSchema]}
       />
       {/* Hero Section */}
-      <PageHero backgroundImage={realEstateHeroBg} title={t('realestate.hero.title')} />
+      <PageHero backgroundImage={realEstateHeroBg} title={t('realestate.hero.title')} subtitle={t('realestate.hero.subtitle')} />
 
       {/* The Approach Section */}
       <section className="pt-24 sm:pt-28 pb-12 gradient-stone">

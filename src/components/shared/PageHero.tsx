@@ -61,7 +61,7 @@ const PageHero = ({
             </h1>
 
             {/* Subtitle */}
-            {subtitle}
+            {subtitle && <p className="text-lg sm:text-xl text-primary-foreground/80 leading-relaxed">{subtitle}</p>}
           </div>
         </div>
       </div>
