@@ -3,11 +3,9 @@ import Layout from '@/components/layout/Layout';
 import { useLocalePath } from '@/hooks/useLocalePath';
 import { useLanguage } from '@/contexts/LanguageContext';
 import { cn } from '@/lib/utils';
-import { FileCheck, Clock, ArrowRight, ArrowLeft, Globe } from 'lucide-react';
+import { ArrowRight, ArrowLeft } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { useScrollAnimation } from '@/hooks/useScrollAnimation';
-import PageHero from '@/components/shared/PageHero';
-import mayaPortrait from '@/assets/maya-portrait.webp';
 import aboutHeroBg from '@/assets/about-hero-globe.webp';
 import { SEO, attorneySchema, createBreadcrumbSchema } from '@/components/SEO';
 import MethodologySection from '@/components/home/MethodologySection';
@@ -21,29 +19,9 @@ const About = () => {
   const localePath = useLocalePath();
   const Arrow = isRTL ? ArrowLeft : ArrowRight;
 
-  const expectations = [
-    {
-      icon: FileCheck,
-      titleKey: 'about.expect.doc.title',
-      descKey: 'about.expect.doc.desc',
-    },
-    {
-      icon: Globe,
-      titleKey: 'about.expect.intl.title',
-      descKey: 'about.expect.intl.desc',
-    },
-    {
-      icon: Clock,
-      titleKey: 'about.expect.timeline.title',
-      descKey: 'about.expect.timeline.desc',
-    },
-  ];
-
   // Scroll animations
   const philosophyAnim = useScrollAnimation();
-  const attorneyAnim = useScrollAnimation();
   const serveAnim = useScrollAnimation();
-  const expectAnim = useScrollAnimation();
   const ctaAnim = useScrollAnimation();
 
   return (
@@ -57,14 +35,24 @@ const About = () => {
         schema={[attorneySchema, breadcrumbSchema]}
       />
 
-      {/* Hero Section */}
-      <PageHero
-        backgroundImage={aboutHeroBg}
-        title={t('about.hero.title')}
-      />
+      {/* Hero Section - Clean image, no overlay box */}
+      <section className="relative min-h-[70vh] sm:min-h-[75vh] flex items-end overflow-visible -mt-0 lg:-mt-20">
+        <div className="absolute inset-0 z-0">
+          <img
+            src={aboutHeroBg}
+            alt={t('about.hero.title')}
+            className="w-full h-full object-cover"
+            fetchPriority="high"
+            loading="eager"
+            decoding="async"
+            width={1920}
+            height={1080}
+          />
+        </div>
+      </section>
 
       {/* Philosophy Section */}
-      <section className="pt-24 sm:pt-28 pb-12 gradient-stone">
+      <section className="pt-12 sm:pt-16 pb-12 gradient-stone">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div 
             ref={philosophyAnim.ref}
@@ -89,66 +77,6 @@ const About = () => {
               <p className="text-lg sm:text-xl lg:text-2xl text-muted-foreground leading-relaxed">
                 {t('about.philosophy.body2')}
               </p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Attorney Section */}
-      <section className="py-12 bg-background">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <div 
-            ref={attorneyAnim.ref}
-            className={cn(
-              "max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center transition-all duration-700",
-              isRTL && "lg:grid-flow-dense",
-              attorneyAnim.isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
-            )}
-          >
-            {/* Image */}
-            <div 
-              className={cn(
-                "w-full max-w-lg mx-auto lg:mx-0 transition-all duration-700 delay-200",
-                isRTL ? "lg:col-start-2" : "lg:col-start-1",
-                attorneyAnim.isVisible ? "opacity-100 translate-x-0" : isRTL ? "opacity-0 translate-x-8" : "opacity-0 -translate-x-8"
-              )}
-            >
-              <div className="relative">
-                <div className="aspect-[3/4] overflow-hidden rounded-sm shadow-premium">
-                  <img
-                    src={mayaPortrait}
-                    alt="Maya Ziv - Attorney"
-                    className="w-full h-full object-cover object-top"
-                  />
-                </div>
-                {/* Decorative accent */}
-                <div className={cn(
-                  "absolute -bottom-4 w-24 h-1 bg-accent",
-                  isRTL ? "-left-4" : "-right-4"
-                )} />
-              </div>
-            </div>
-
-            {/* Content */}
-            <div 
-              className={cn(
-                "transition-all duration-700 delay-300",
-                isRTL && "lg:col-start-1 font-hebrew text-right",
-                attorneyAnim.isVisible ? "opacity-100 translate-x-0" : isRTL ? "opacity-0 -translate-x-8" : "opacity-0 translate-x-8"
-              )}
-            >
-              <h2 className="text-4xl sm:text-5xl font-display font-semibold text-foreground mb-5">
-                {t('about.attorney.title')}
-              </h2>
-              <div className={cn("w-16 h-0.5 bg-accent mb-6", isRTL && "mr-0 ml-auto")} />
-              <div className="space-y-5">
-                <p className="text-lg sm:text-xl text-muted-foreground leading-relaxed">
-                  {t('about.attorney.body')}
-                </p>
-                <p className="text-lg sm:text-xl text-muted-foreground leading-relaxed">
-                  {t('about.attorney.body2')}
-                </p>
-              </div>
             </div>
           </div>
         </div>
@@ -190,53 +118,6 @@ const About = () => {
                 </div>
               </div>
             </div>
-          </div>
-        </div>
-      </section>
-
-      {/* What to Expect Section */}
-      <section className="pt-16 sm:pt-20 lg:pt-32 pb-10 lg:pb-12 bg-secondary/30 -mt-0 sm:-mt-8 lg:-mt-16">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <div 
-            ref={expectAnim.ref}
-            className={cn(
-              "text-center mb-10 transition-all duration-700",
-              isRTL && "font-hebrew",
-              expectAnim.isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
-            )}
-          >
-            <h2 className="text-4xl sm:text-5xl font-display font-semibold text-foreground">
-              {t('about.expect.title')}
-            </h2>
-          </div>
-
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 sm:gap-6 lg:gap-8 max-w-6xl mx-auto px-2 sm:px-0">
-            {expectations.map((item, index) => (
-              <div
-                key={index}
-                className={cn(
-                  "flex flex-col items-center text-center transition-all duration-500",
-                  isRTL && "font-hebrew",
-                  expectAnim.isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
-                )}
-                style={{ transitionDelay: expectAnim.isVisible ? `${index * 150}ms` : '0ms' }}
-              >
-                {/* Icon with outlined circle */}
-                <div className="w-12 h-12 rounded-full border border-accent flex items-center justify-center mb-4">
-                  <item.icon className="h-5 w-5 text-accent" strokeWidth={1.5} />
-                </div>
-                
-                {/* Title */}
-                <h3 className="text-2xl font-display font-medium text-foreground mb-3 italic">
-                  {t(item.titleKey)}
-                </h3>
-                
-                {/* Description */}
-                <p className="text-muted-foreground leading-relaxed text-lg sm:text-xl">
-                  {t(item.descKey)}
-                </p>
-              </div>
-            ))}
           </div>
         </div>
       </section>

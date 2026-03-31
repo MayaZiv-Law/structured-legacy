@@ -6,7 +6,6 @@ import { cn } from '@/lib/utils';
 import methodOwnership from '@/assets/method-ownership.webp';
 import methodCrossborder from '@/assets/method-crossborder.webp';
 import methodWills from '@/assets/method-wills.webp';
-import methodPrenup from '@/assets/method-prenup.webp';
 import methodTax from '@/assets/method-tax.webp';
 import methodStructure from '@/assets/method-structure.webp';
 
@@ -29,11 +28,6 @@ const MethodologySection = () => {
       titleKey: 'method.step3.title',
       descKey: 'method.step3.desc',
       image: methodWills,
-    },
-    {
-      titleKey: 'method.step4.title',
-      descKey: 'method.step4.desc',
-      image: methodPrenup,
     },
     {
       titleKey: 'method.step5.title',

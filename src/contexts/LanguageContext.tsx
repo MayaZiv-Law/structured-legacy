@@ -150,7 +150,7 @@ const translations: Record<Language, Record<string, string>> = {
     // About Page
     'about.hero.title': 'Maya Ziv Law',
     'about.hero.subtitle': 'Premier legal counsel must be as unique as the clients it serves. That is the conviction at the foundation of Maya Ziv Law.',
-    'about.philosophy.title': 'How Maya Ziv Law Works',
+    'about.philosophy.title': 'About the Firm',
     'about.philosophy.body': 'Maya Ziv Law was founded on a core conviction: that premier legal counsel must be as unique as the clients it serves. The firm operates as a dedicated partner to each client, creating original solutions for the most complex domestic and cross border matters. The firm is based in Israel.',
     'about.philosophy.body2': 'Every matter begins with listening. We take the time to understand what clients are truly trying to achieve, not just the immediate legal question. We then provide an honest assessment of what is realistically achievable, setting clear objectives together. Once the path is defined, we execute with precision and full accountability, turning client objectives into results.',
     'about.attorney.title': 'Areas of Practice',
