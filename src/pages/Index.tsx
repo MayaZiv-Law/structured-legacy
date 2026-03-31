@@ -1,7 +1,7 @@
 import { lazy, Suspense } from 'react';
 import Layout from '@/components/layout/Layout';
 import HeroSection from '@/components/home/HeroSection';
-import ConflictSection from '@/components/home/ConflictSection';
+import GuideSection from '@/components/home/GuideSection';
 import { SEO, organizationSchema, websiteSchema, localBusinessSchema } from '@/components/SEO';
 
 // Lazy load below-the-fold sections to improve TTI
@@ -26,7 +26,7 @@ const Index = () => {
         schema={[organizationSchema, websiteSchema, localBusinessSchema]}
       />
       <HeroSection />
-      <ConflictSection />
+      <GuideSection />
       <Suspense fallback={<SectionLoader />}>
         <ParallaxSection />
       </Suspense>

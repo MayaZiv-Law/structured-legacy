@@ -19,17 +19,8 @@ const About = () => {
   const localePath = useLocalePath();
   const Arrow = isRTL ? ArrowLeft : ArrowRight;
 
-  // Scroll animations
   const mainBodyAnim = useScrollAnimation();
-  const clientsAnim = useScrollAnimation();
-  const valuesAnim = useScrollAnimation();
   const ctaAnim = useScrollAnimation();
-
-  const valueProps = [
-    { titleKey: 'about.values.title', bodyKey: 'about.values.body' },
-    { titleKey: 'about.whoWeServe.title', bodyKey: 'about.whoWeServe.body' },
-    { titleKey: 'about.approach.title', bodyKey: 'about.approach.body' },
-  ];
 
   return (
     <Layout>
@@ -42,8 +33,8 @@ const About = () => {
         schema={[attorneySchema, breadcrumbSchema]}
       />
 
-      {/* Hero Section - Clean image, no overlay box */}
-      <section className="relative min-h-[70vh] sm:min-h-[75vh] flex items-end overflow-visible -mt-0 lg:-mt-20">
+      {/* Hero Section - Clean image with title overlay */}
+      <section className="relative min-h-[70vh] sm:min-h-[75vh] flex flex-col overflow-visible -mt-0 lg:-mt-20">
         <div className="absolute inset-0 z-0">
           <img
             src={aboutHeroBg}
@@ -56,9 +47,18 @@ const About = () => {
             height={1080}
           />
         </div>
+        <div className="flex-grow" />
+        <div className="relative z-10 container mx-auto px-4 sm:px-6 lg:px-8 mb-8">
+          <h1 className={cn(
+            "text-4xl sm:text-5xl lg:text-6xl font-display font-semibold text-white drop-shadow-lg",
+            isRTL && "font-hebrew text-right"
+          )}>
+            {t('about.hero.title')}
+          </h1>
+        </div>
       </section>
 
-      {/* Main Body - About the Firm intro */}
+      {/* Main Body */}
       <section className="pt-12 sm:pt-16 pb-12 gradient-stone">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div
@@ -76,61 +76,7 @@ const About = () => {
         </div>
       </section>
 
-      {/* Our Clients Section */}
-      <section className="py-12 bg-background">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <div
-            ref={clientsAnim.ref}
-            className={cn(
-              "max-w-4xl mx-auto transition-all duration-700",
-              isRTL && "font-hebrew text-right",
-              clientsAnim.isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
-            )}
-          >
-            <h2 className="text-4xl sm:text-5xl font-display font-semibold text-foreground mb-5">
-              {t('about.philosophy.title')}
-            </h2>
-            <div className={cn("w-16 h-0.5 bg-accent mb-6", isRTL && "mr-0 ml-auto")} />
-            <p className="text-lg sm:text-xl text-muted-foreground leading-relaxed">
-              {t('about.philosophy.body')}
-            </p>
-          </div>
-        </div>
-      </section>
-
-      {/* Value Propositions - Three text sections */}
-      <section className="py-12 bg-secondary/30">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <div
-            ref={valuesAnim.ref}
-            className={cn(
-              "grid grid-cols-1 lg:grid-cols-3 gap-10 lg:gap-8 max-w-6xl mx-auto transition-all duration-700",
-              valuesAnim.isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
-            )}
-          >
-            {valueProps.map((item, index) => (
-              <div
-                key={index}
-                className={cn(
-                  "transition-all duration-500",
-                  isRTL && "font-hebrew text-right",
-                )}
-                style={{ transitionDelay: valuesAnim.isVisible ? `${index * 150}ms` : '0ms' }}
-              >
-                <h3 className="text-2xl sm:text-3xl font-display font-semibold text-foreground mb-4">
-                  {t(item.titleKey)}
-                </h3>
-                <div className={cn("w-12 h-0.5 bg-accent mb-4", isRTL && "mr-0 ml-auto")} />
-                <p className="text-muted-foreground leading-relaxed text-lg sm:text-xl">
-                  {t(item.bodyKey)}
-                </p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Methodology Section */}
+      {/* 6 Image+Text Blocks */}
       <MethodologySection />
 
       {/* CTA Section */}

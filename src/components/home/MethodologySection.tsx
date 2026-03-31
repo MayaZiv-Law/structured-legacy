@@ -6,13 +6,13 @@ import { cn } from '@/lib/utils';
 import methodOwnership from '@/assets/method-ownership.webp';
 import methodCrossborder from '@/assets/method-crossborder.webp';
 import methodWills from '@/assets/method-wills.webp';
+import methodPrenup from '@/assets/method-prenup.webp';
 import methodTax from '@/assets/method-tax.webp';
 import methodStructure from '@/assets/method-structure.webp';
 
 const MethodologySection = () => {
   const { t, isRTL } = useLanguage();
 
-  // Memoize cards array to prevent recreating on each render
   const cards = useMemo(() => [
     {
       titleKey: 'method.step1.title',
@@ -30,6 +30,11 @@ const MethodologySection = () => {
       image: methodWills,
     },
     {
+      titleKey: 'method.step4.title',
+      descKey: 'method.step4.desc',
+      image: methodPrenup,
+    },
+    {
       titleKey: 'method.step5.title',
       descKey: 'method.step5.desc',
       image: methodTax,
@@ -42,21 +47,11 @@ const MethodologySection = () => {
   ], []);
 
   return (
-    <section 
+    <section
       className="py-12 bg-secondary/30 overflow-hidden"
     >
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-        {/* Centered Title */}
-        <div className={cn("text-center mb-10", isRTL && "font-hebrew")}>
-          <h2 className="text-3xl sm:text-5xl lg:text-6xl font-display font-semibold text-foreground mb-4">
-            {t('method.title')}
-          </h2>
-          <p className="text-muted-foreground text-lg sm:text-xl max-w-3xl mx-auto">
-            {t('method.subtitle')}
-          </p>
-        </div>
-
-        {/* 6 Cards Grid */}
+        {/* 6 Cards Grid - no section title */}
         <div className={cn(
           "grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto",
           isRTL && "font-hebrew"
@@ -71,8 +66,8 @@ const MethodologySection = () => {
             >
               {/* Image */}
               <div className="relative h-40 sm:h-44 md:h-48 overflow-hidden">
-                <img 
-                  src={card.image} 
+                <img
+                  src={card.image}
                   alt={t(card.titleKey)}
                   className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
                   loading="lazy"
