@@ -140,7 +140,7 @@ const translations: Record<Language, Record<string, string>> = {
     'contact.inquiry.other': 'Other Legal Matter',
 
     // About Page
-    'about.hero.title': 'Maya Ziv Law',
+    'about.hero.title': 'About Maya Ziv Law',
     'about.mainBody': 'Our clients bring us matters that require both legal precision and judgment. We treat each one as a unique situation with its own stakes, its own complexity, and its own required outcome.',
     'about.cta.title': 'Tell Us About Your Matter',
     'about.cta.body': 'From the first conversation, clients know exactly what their matter involves and what to expect next.',
