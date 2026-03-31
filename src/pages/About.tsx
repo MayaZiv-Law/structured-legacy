@@ -20,9 +20,16 @@ const About = () => {
   const Arrow = isRTL ? ArrowLeft : ArrowRight;
 
   // Scroll animations
-  const philosophyAnim = useScrollAnimation();
-  const serveAnim = useScrollAnimation();
+  const mainBodyAnim = useScrollAnimation();
+  const clientsAnim = useScrollAnimation();
+  const valuesAnim = useScrollAnimation();
   const ctaAnim = useScrollAnimation();
+
+  const valueProps = [
+    { titleKey: 'about.values.title', bodyKey: 'about.values.body' },
+    { titleKey: 'about.whoWeServe.title', bodyKey: 'about.whoWeServe.body' },
+    { titleKey: 'about.approach.title', bodyKey: 'about.approach.body' },
+  ];
 
   return (
     <Layout>
@@ -51,73 +58,74 @@ const About = () => {
         </div>
       </section>
 
-      {/* Philosophy Section */}
+      {/* Main Body - About the Firm intro */}
       <section className="pt-12 sm:pt-16 pb-12 gradient-stone">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <div 
-            ref={philosophyAnim.ref}
+          <div
+            ref={mainBodyAnim.ref}
             className={cn(
               "max-w-4xl mx-auto transition-all duration-700",
               isRTL && "font-hebrew text-right",
-              philosophyAnim.isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
+              mainBodyAnim.isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
             )}
           >
-            {t('about.philosophy.title') && (
-              <>
-                <h2 className="text-4xl sm:text-5xl font-display font-semibold text-foreground mb-5">
-                  {t('about.philosophy.title')}
-                </h2>
-                <div className={cn("w-16 h-0.5 bg-accent mb-6", isRTL && "mr-0 ml-auto")} />
-              </>
-            )}
-            <div className="space-y-5">
-              <p className="text-lg sm:text-xl lg:text-2xl text-muted-foreground leading-relaxed">
-                {t('about.philosophy.body')}
-              </p>
-              <p className="text-lg sm:text-xl lg:text-2xl text-muted-foreground leading-relaxed">
-                {t('about.philosophy.body2')}
-              </p>
-            </div>
+            <p className="text-lg sm:text-xl lg:text-2xl text-muted-foreground leading-relaxed">
+              {t('about.mainBody')}
+            </p>
           </div>
         </div>
       </section>
 
-      {/* Who We Serve Section - Bridges between sections */}
-      <section className="relative z-20 pb-0 pt-12 bg-background overflow-hidden">
+      {/* Our Clients Section */}
+      <section className="py-12 bg-background">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <div 
-            ref={serveAnim.ref}
+          <div
+            ref={clientsAnim.ref}
             className={cn(
-              "relative max-w-6xl mx-auto transition-all duration-700",
-              serveAnim.isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
+              "max-w-4xl mx-auto transition-all duration-700",
+              isRTL && "font-hebrew text-right",
+              clientsAnim.isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
             )}
           >
-            {/* Offset beige background that extends down into next section */}
-            <div className={cn(
-              "absolute -top-12 w-[95%] bg-secondary",
-              "h-[calc(100%+9rem)]",
-              isRTL ? "left-0 -ml-4 lg:-ml-16" : "right-0 -mr-4 lg:-mr-16"
-            )} />
-            
-            {/* White content card - overlaps next section */}
-            <div className={cn(
-              "relative z-10 bg-background py-8 px-6 lg:py-10 lg:px-10 w-full sm:w-[92%] shadow-sm",
-              isRTL ? "mr-auto ml-0" : "ml-auto mr-0"
-            )}>
-              <div className={cn(isRTL && "font-hebrew text-right")}>
-                <h2 className="text-3xl sm:text-4xl lg:text-5xl font-display font-semibold text-foreground mb-5">
-                  {t('about.serve.title')}
-                </h2>
-                <div className="space-y-4">
-                  <p className="text-muted-foreground leading-relaxed text-lg sm:text-xl">
-                    {t('about.serve.body')}
-                  </p>
-                  <p className="text-muted-foreground leading-relaxed text-lg sm:text-xl">
-                    {t('about.serve.body2')}
-                  </p>
-                </div>
+            <h2 className="text-4xl sm:text-5xl font-display font-semibold text-foreground mb-5">
+              {t('about.philosophy.title')}
+            </h2>
+            <div className={cn("w-16 h-0.5 bg-accent mb-6", isRTL && "mr-0 ml-auto")} />
+            <p className="text-lg sm:text-xl text-muted-foreground leading-relaxed">
+              {t('about.philosophy.body')}
+            </p>
+          </div>
+        </div>
+      </section>
+
+      {/* Value Propositions - Three text sections */}
+      <section className="py-12 bg-secondary/30">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+          <div
+            ref={valuesAnim.ref}
+            className={cn(
+              "grid grid-cols-1 lg:grid-cols-3 gap-10 lg:gap-8 max-w-6xl mx-auto transition-all duration-700",
+              valuesAnim.isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
+            )}
+          >
+            {valueProps.map((item, index) => (
+              <div
+                key={index}
+                className={cn(
+                  "transition-all duration-500",
+                  isRTL && "font-hebrew text-right",
+                )}
+                style={{ transitionDelay: valuesAnim.isVisible ? `${index * 150}ms` : '0ms' }}
+              >
+                <h3 className="text-2xl sm:text-3xl font-display font-semibold text-foreground mb-4">
+                  {t(item.titleKey)}
+                </h3>
+                <div className={cn("w-12 h-0.5 bg-accent mb-4", isRTL && "mr-0 ml-auto")} />
+                <p className="text-muted-foreground leading-relaxed text-lg sm:text-xl">
+                  {t(item.bodyKey)}
+                </p>
               </div>
-            </div>
+            ))}
           </div>
         </div>
       </section>
@@ -128,7 +136,7 @@ const About = () => {
       {/* CTA Section */}
       <section className="py-12 bg-primary">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <div 
+          <div
             ref={ctaAnim.ref}
             className={cn(
               "max-w-3xl mx-auto text-center transition-all duration-700",
@@ -137,11 +145,11 @@ const About = () => {
             )}
           >
             <div className="w-16 h-0.5 bg-accent mx-auto mb-6" />
-            
+
             <h2 className="text-4xl sm:text-5xl lg:text-6xl font-body font-semibold text-primary-foreground mb-5">
               {t('about.cta.title')}
             </h2>
-            
+
             <p className="text-primary-foreground/80 text-lg mb-8 max-w-xl mx-auto">
               {t('about.cta.body')}
             </p>

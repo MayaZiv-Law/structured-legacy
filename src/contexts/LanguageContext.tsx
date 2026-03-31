@@ -26,11 +26,11 @@ const translations: Record<Language, Record<string, string>> = {
     'nav.schedule': 'Schedule Consultation',
 
     // Hero
-    'hero.tagline': 'The Future Favors the Prepared',
+    'hero.tagline': 'Clarity in a Changing World',
     'hero.title': 'Attorney in Israel',
-    'hero.subtitle1': 'Guiding Every Client with Clarity, Insight, and Strategic Confidence',
+    'hero.subtitle1': 'Premier legal counsel must be as unique as the clients it serves. At Maya Ziv Law, every matter receives the personal focus it deserves and the depth and reach that serious work demands.',
     'hero.subtitle2': '',
-    'hero.cta': 'Schedule a Consultation',
+    'hero.cta': 'Start a Conversation',
 
     // Conflict Section
     'conflict.title': 'Clarity Where Details Decide Outcomes',
@@ -45,7 +45,7 @@ const translations: Record<Language, Record<string, string>> = {
     'parallax.quote': 'The details that seem technical are often the ones that determine the outcome.',
 
     // Methodology
-    'method.title': 'How Maya Ziv Law Works',
+    'method.title': 'Clarity in a Changing World',
     'method.subtitle': 'Clients receive a defined process, clear timelines, and rigorous due diligence with confidentiality and precision at every stage.',
     'method.step1.title': 'Deep Understanding',
     'method.step1.desc': 'Every matter begins with listening. We take the time to understand what clients are truly trying to achieve, not just the immediate legal question.',
@@ -150,15 +150,15 @@ const translations: Record<Language, Record<string, string>> = {
     // About Page
     'about.hero.title': 'Maya Ziv Law',
     'about.hero.subtitle': 'Premier legal counsel must be as unique as the clients it serves. That is the conviction at the foundation of Maya Ziv Law.',
-    'about.philosophy.title': 'About the Firm',
-    'about.philosophy.body': 'Maya Ziv Law was founded on a core conviction: that premier legal counsel must be as unique as the clients it serves. The firm operates as a dedicated partner to each client, creating original solutions for the most complex domestic and cross border matters. The firm is based in Israel.',
-    'about.philosophy.body2': 'Every matter begins with listening. We take the time to understand what clients are truly trying to achieve, not just the immediate legal question. We then provide an honest assessment of what is realistically achievable, setting clear objectives together. Once the path is defined, we execute with precision and full accountability, turning client objectives into results.',
-    'about.attorney.title': 'Areas of Practice',
-    'about.attorney.body': 'Real estate transactions and due diligence. Taxation and cross border compliance. Estate planning, wills, and succession. Commercial agreements and civil disputes. Domestic and international clients, in Israel and across borders.',
-    'about.attorney.body2': '',
-    'about.serve.title': 'Our Clients',
-    'about.serve.body': 'Our clients are private individuals, families, and businesses who bring us their most important matters, knowing they will receive the personal attention their situation deserves. Some are based in Israel. Others come from across the world. All of them leave with clarity, a defined path forward, and counsel they can rely on.',
-    'about.serve.body2': 'Whether the matter is commercial or personal, local or cross border, we provide clear legal guidance focused on practical and reliable outcomes.',
+    'about.mainBody': 'Maya Ziv Law was founded on a core conviction: that premier legal counsel must be as unique as the clients it serves. The firm operates as a dedicated partner to each client, creating original solutions for the most complex domestic and cross border matters. The firm is based in Israel.',
+    'about.philosophy.title': 'Our Clients',
+    'about.philosophy.body': 'Our clients are private individuals, families, and businesses who bring us their most important matters, knowing they will receive the personal attention their situation deserves. Some are based in Israel. Others come from across the world. All of them leave with clarity, a defined path forward, and counsel they can rely on.',
+    'about.values.title': 'No Detail Overlooked',
+    'about.values.body': 'We bring insight and judgment to every situation. Whether navigating a real estate acquisition, managing cross border compliance, or structuring an estate, every matter is handled with the attention it deserves and built to hold up as circumstances evolve.',
+    'about.whoWeServe.title': 'Fully Informed, Always',
+    'about.whoWeServe.body': 'Our clients know exactly where their matter stands at every stage. What has been resolved, what is in progress, what requires their input. That clarity is what allows them to act with confidence, at every step.',
+    'about.approach.title': 'Full Coverage, One Relationship',
+    'about.approach.body': 'Our clients receive the expansive reach and technical depth of a premier practice, with the individual attention their situation requires. Through a network of trusted advisors across jurisdictions, every matter is coordinated through a single point of contact who understands it completely. Counsel available in Hebrew and English.',
     'about.expect.title': 'Why Clients Choose Us',
     'about.expect.intro': '',
     'about.expect.doc.title': 'No Detail Overlooked',
