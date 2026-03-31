@@ -49,9 +49,9 @@ const About = () => {
   return (
     <Layout>
       <SEO
-        titleEn="About Maya Ziv | Attorney with Legal and Financial Expertise | Tel Aviv"
+        titleEn="About Maya Ziv Law | Premier Legal Counsel in Israel"
         titleHe="מאיה זיו משרד עורכי דין | מקרקעין | מיסוי בינלאומי | ניהול עזבונות וצוואות"
-        descriptionEn="Maya Ziv holds an LLB and a BBA in Finance from Baruch College New York. Prior experience at Citi Innovation Lab and Vornado Realty Trust. Complex transactions where law and finance intersect."
+        descriptionEn="Maya Ziv Law operates as a dedicated partner to each client, creating original solutions for complex domestic and cross border matters. Real estate, taxation, estate planning, and commercial law in Israel."
         descriptionHe="ניהול סיכונים משפטי ואסטרטגיית מיסוי עבור תושבי ישראל ולקוחות בזירה הגלובלית. התמחות בבדיקת נאותות למקרקעין, ציות בנקאי וניהול עזבונות חוצי גבולות."
         path="/about"
         schema={[attorneySchema, breadcrumbSchema]}
@@ -85,6 +85,9 @@ const About = () => {
             <div className="space-y-5">
               <p className="text-lg sm:text-xl lg:text-2xl text-muted-foreground leading-relaxed">
                 {t('about.philosophy.body')}
+              </p>
+              <p className="text-lg sm:text-xl lg:text-2xl text-muted-foreground leading-relaxed">
+                {t('about.philosophy.body2')}
               </p>
             </div>
           </div>
