@@ -33,8 +33,8 @@ const translations: Record<Language, Record<string, string>> = {
     'hero.cta': 'Start a Conversation',
 
     // Conflict Section
-    'conflict.title': 'Clarity Where Details Decide Outcomes',
-    'conflict.body': 'We bring an international perspective shaped by financial training abroad and Israeli legal practice. Our bilingual counsel on domestic and cross border matters turns complex situations into clear, confident decisions.',
+    'conflict.title': 'Clarity in a Changing World',
+    'conflict.body': 'Our clients bring us matters that require both legal precision and judgment. We treat each one as a unique situation with its own stakes, its own complexity, and its own required outcome.',
     'conflict.body2': 'We begin with verification and documentation so decisions are made with facts, not assumptions. Our role is to turn complex requirements into clear, structured decisions that protect your assets.',
 
     // Guide Section
@@ -159,18 +159,6 @@ const translations: Record<Language, Record<string, string>> = {
     'about.whoWeServe.body': 'Our clients know exactly where their matter stands at every stage. What has been resolved, what is in progress, what requires their input. That clarity is what allows them to act with confidence, at every step.',
     'about.approach.title': 'Full Coverage, One Relationship',
     'about.approach.body': 'Our clients receive the expansive reach and technical depth of a premier practice, with the individual attention their situation requires. Through a network of trusted advisors across jurisdictions, every matter is coordinated through a single point of contact who understands it completely. Counsel available in Hebrew and English.',
-    'about.expect.title': 'Why Clients Choose Us',
-    'about.expect.intro': '',
-    'about.expect.doc.title': 'No Detail Overlooked',
-    'about.expect.doc.desc': 'We bring insight and judgment to every situation. Whether navigating a real estate acquisition, managing cross border compliance, or structuring an estate, every matter is handled with the attention it deserves and built to hold up as circumstances evolve.',
-    'about.expect.intl.title': 'Fully Informed, Always',
-    'about.expect.intl.desc': 'Our clients know exactly where their matter stands at every stage. What has been resolved, what is in progress, what requires their input. That clarity is what allows them to act with confidence, at every step.',
-    'about.expect.timeline.title': 'Full Coverage, One Relationship',
-    'about.expect.timeline.desc': 'Our clients receive the expansive reach and technical depth of a premier practice, with the individual attention their situation requires. Through a network of trusted advisors across jurisdictions, every matter is coordinated through a single point of contact who understands it completely. Counsel available in Hebrew and English.',
-    'about.expect.comm.title': '',
-    'about.expect.comm.desc': '',
-    'about.expect.foresight.title': '',
-    'about.expect.foresight.desc': '',
     'about.cta.title': 'Tell Us About Your Matter',
     'about.cta.body': 'We begin by listening. From the first conversation, clients know exactly what their matter involves and what to expect next.',
     'about.cta.button': 'Get in Touch',
