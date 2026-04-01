@@ -50,7 +50,7 @@ const Contact = () => {
       />
       <PageHero backgroundImage={contactHeroImage} title={t('contact.title')} />
 
-      <section className="pt-24 sm:pt-28 pb-12">
+      <section className="pt-16 sm:pt-24 pb-12">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-5xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-8">
             {/* Contact Form */}

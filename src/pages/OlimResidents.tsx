@@ -67,7 +67,7 @@ const OlimResidents = () => {
       {/* Hero Section */}
       <PageHero backgroundImage={olimHeroBg} title={t('olim.hero.title')} subtitle={t('olim.hero.subtitle')} imagePosition="center 30%" />
 
-      <section className="pt-24 sm:pt-28 pb-12 gradient-stone">
+      <section className="pt-16 sm:pt-24 pb-12 gradient-stone">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div ref={contextAnim.ref} className={cn("max-w-4xl mx-auto transition-all duration-700", isRTL && "font-hebrew text-right", contextAnim.isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8")}>
             <div className={cn("w-16 h-0.5 bg-accent mb-6", isRTL && "ml-auto")} />
@@ -83,7 +83,7 @@ const OlimResidents = () => {
             <div className={cn("w-16 h-0.5 bg-accent mb-6", isRTL && "ml-auto")} />
             <h2 className="text-3xl sm:text-4xl font-display font-semibold mb-6">{t('olim.framework.title')}</h2>
           </div>
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto">
             {frameworkItems.map((item, i) => <div key={i} className={cn("p-6 bg-card rounded-lg border border-border transition-all duration-500", isRTL && "font-hebrew text-right", frameworkAnim.isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8")} style={{
             transitionDelay: frameworkAnim.isVisible ? `${i * 150}ms` : '0ms'
           }}>

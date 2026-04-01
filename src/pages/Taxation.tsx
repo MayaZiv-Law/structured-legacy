@@ -92,7 +92,7 @@ const Taxation = () => {
       <PageHero backgroundImage={taxationHeroBg} title={t('tax.hero.title')} subtitle={t('tax.hero.subtitle')} />
 
       {/* The Context Section */}
-      <section className="pt-24 sm:pt-28 pb-12 gradient-stone">
+      <section className="pt-16 sm:pt-24 pb-12 gradient-stone">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div ref={contextAnim.ref} className={cn("max-w-4xl mx-auto transition-all duration-700", isRTL && "font-hebrew text-right", contextAnim.isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8")}>
             <h2 className="text-3xl sm:text-4xl font-display font-semibold mb-6">
@@ -200,7 +200,7 @@ const Taxation = () => {
               {t('tax.serve.body')}
             </p>
             
-            <div className="grid md:grid-cols-2 gap-8 max-w-3xl mx-auto">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-3xl mx-auto">
               {serveItems.map((item, i) => <div key={i} className={cn("flex flex-col items-center text-center transition-all duration-500", serveAnim.isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8")} style={{
               transitionDelay: serveAnim.isVisible ? `${i * 150}ms` : '0ms'
             }}>

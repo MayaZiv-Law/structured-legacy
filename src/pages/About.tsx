@@ -59,7 +59,7 @@ const About = () => {
       </section>
 
       {/* Main Body */}
-      <section className="pt-24 sm:pt-28 pb-12 gradient-stone">
+      <section className="pt-16 sm:pt-24 pb-12 gradient-stone">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div
             ref={mainBodyAnim.ref}

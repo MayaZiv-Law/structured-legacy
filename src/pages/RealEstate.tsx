@@ -81,7 +81,7 @@ const RealEstate = () => {
       <PageHero backgroundImage={realEstateHeroBg} title={t('realestate.hero.title')} subtitle={t('realestate.hero.subtitle')} />
 
       {/* The Approach Section */}
-      <section className="pt-24 sm:pt-28 pb-12 gradient-stone">
+      <section className="pt-16 sm:pt-24 pb-12 gradient-stone">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div ref={approachAnim.ref} className={cn("max-w-4xl mx-auto transition-all duration-700", isRTL && "font-hebrew text-right", approachAnim.isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8")}>
             <h2 className="text-4xl sm:text-5xl font-display font-semibold text-foreground mb-5">
