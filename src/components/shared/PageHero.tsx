@@ -47,7 +47,7 @@ const PageHero = ({
             <div className={cn("w-16 h-1 bg-accent mb-3", isRTL && "mr-0 ml-auto")} />
 
             {/* Title only - single line */}
-            <h1 className={cn("text-2xl sm:text-3xl lg:text-4xl font-display font-semibold text-primary-foreground leading-tight lg:whitespace-nowrap", isRTL && "font-hebrew")}>
+            <h1 className={cn("text-2xl sm:text-3xl lg:text-4xl font-display font-semibold text-primary-foreground leading-tight", isRTL && "font-hebrew")}>
               {title}
             </h1>
           </div>

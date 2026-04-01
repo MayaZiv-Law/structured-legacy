@@ -167,7 +167,7 @@ const Header = () => {
                 </button>
 
                 {isExpertiseOpen && (
-                  <div className={cn("flex flex-col gap-3 mt-3 border-accent/30", isRTL ? "pr-4 border-r" : "pl-4 border-l")}>
+                  <div className={cn("flex flex-col gap-3 mt-3", isRTL ? "pr-4" : "pl-4")}>
                     {[
                       { path: '/real-estate', label: 'nav.realEstate' },
                       { path: '/taxation', label: 'nav.taxation' },
