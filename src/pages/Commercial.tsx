@@ -223,7 +223,6 @@ const Commercial = () => {
           )}
         >
           <div className="max-w-3xl mx-auto text-center">
-            <div className="w-16 h-0.5 bg-accent mx-auto mb-6" />
             <h2 className={cn("text-4xl sm:text-5xl lg:text-6xl font-display font-semibold mb-5 text-primary-foreground", isRTL && "font-hebrew")}>
               {t('commercial.cta.title')}
             </h2>

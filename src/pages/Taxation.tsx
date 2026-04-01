@@ -113,7 +113,6 @@ const Taxation = () => {
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           {/* Centered title above the layout */}
           <div ref={realEstateAnim.ref} className={cn("text-center mb-8 transition-all duration-700", isRTL && "font-hebrew", realEstateAnim.isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8")}>
-            <div className="w-16 h-0.5 bg-accent mx-auto mb-6" />
             <h2 className="text-3xl sm:text-4xl font-display font-semibold text-foreground mb-4">
               {t('tax.realEstate.title')}
             </h2>
@@ -192,7 +191,6 @@ const Taxation = () => {
       <section className="py-12 bg-background">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div ref={serveAnim.ref} className={cn("max-w-4xl mx-auto text-center transition-all duration-700", isRTL && "font-hebrew", serveAnim.isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8")}>
-            <div className="w-16 h-0.5 bg-accent mb-6 mx-auto" />
             <h2 className="text-3xl sm:text-4xl font-display font-semibold mb-6">
               {t('tax.serve.title')}
             </h2>
@@ -224,7 +222,6 @@ const Taxation = () => {
           
           {/* White content card - relative z-10 */}
           <div ref={crossBorderAnim.ref} className={cn("relative z-10 max-w-[92%] mt-8 bg-background shadow-sm rounded-lg p-8 md:p-12 transition-all duration-700", isRTL ? "mr-auto text-right font-hebrew" : "ml-auto", crossBorderAnim.isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8")}>
-            <div className={cn("w-16 h-0.5 bg-accent mb-6", isRTL && "mr-0")} />
             <h2 className="text-3xl sm:text-4xl font-display font-semibold mb-6">
               {t('tax.crossBorder.title')}
             </h2>
@@ -293,7 +290,6 @@ const Taxation = () => {
       <section className="py-12 bg-primary">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div ref={ctaAnim.ref} className={cn("max-w-3xl mx-auto text-center transition-all duration-700", isRTL && "font-hebrew", ctaAnim.isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8")}>
-            <div className="w-16 h-0.5 bg-accent mx-auto mb-6" />
             <h2 className="text-4xl sm:text-5xl lg:text-6xl font-display font-semibold mb-5 text-primary-foreground">
               {t('tax.cta.title')}
             </h2>

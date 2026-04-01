@@ -38,7 +38,6 @@ const Insights = () => {
               headerAnim.isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
             )}
           >
-            <div className={cn("w-16 h-0.5 bg-accent mb-6", isRTL && "mr-0 ml-auto")} />
             <h1 className={cn("text-3xl sm:text-4xl lg:text-5xl font-display font-semibold text-foreground mb-4", isRTL && "font-hebrew")}>
               {t('insights.hero.title')}
             </h1>

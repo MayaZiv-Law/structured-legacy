@@ -70,7 +70,6 @@ const OlimResidents = () => {
       <section className="pt-24 sm:pt-28 pb-12 gradient-stone">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div ref={contextAnim.ref} className={cn("max-w-4xl mx-auto transition-all duration-700", isRTL && "font-hebrew text-right", contextAnim.isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8")}>
-            <div className={cn("w-16 h-0.5 bg-accent mb-6", isRTL && "ml-auto")} />
             <h2 className="text-3xl sm:text-4xl font-display font-semibold mb-6">{t('olim.context.title')}</h2>
             <p className="text-lg text-muted-foreground leading-relaxed">{t('olim.context.body')}</p>
           </div>
@@ -80,7 +79,6 @@ const OlimResidents = () => {
       <section className="py-12 bg-background">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div ref={frameworkAnim.ref} className={cn("max-w-4xl mx-auto mb-10 transition-all duration-700", isRTL && "font-hebrew text-right", frameworkAnim.isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8")}>
-            <div className={cn("w-16 h-0.5 bg-accent mb-6", isRTL && "ml-auto")} />
             <h2 className="text-3xl sm:text-4xl font-display font-semibold mb-6">{t('olim.framework.title')}</h2>
           </div>
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto">
@@ -102,7 +100,6 @@ const OlimResidents = () => {
             <div className={cn("relative z-10 grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center")}>
               {/* Text card */}
               <div className={cn("bg-background py-8 px-6 lg:py-10 lg:px-10 shadow-sm", isRTL ? "font-hebrew text-right lg:order-1" : "lg:order-1")}>
-                <div className={cn("w-16 h-0.5 bg-accent mb-6", isRTL && "ml-auto")} />
                 <h2 className="text-3xl sm:text-4xl font-display font-semibold mb-6 text-foreground">{t('olim.tax.title')}</h2>
                 <p className="text-lg text-muted-foreground mb-4 leading-relaxed">{t('olim.tax.body')}</p>
                 <p className="text-lg text-muted-foreground leading-relaxed">{t('olim.tax.body2')}</p>
@@ -121,7 +118,6 @@ const OlimResidents = () => {
       <section className="py-12 gradient-stone">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div ref={clientsAnim.ref} className={cn("max-w-4xl mx-auto transition-all duration-700", isRTL && "font-hebrew text-right", clientsAnim.isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8")}>
-            <div className={cn("w-16 h-0.5 bg-accent mb-6", isRTL && "ml-auto")} />
             <h2 className="text-3xl sm:text-4xl font-display font-semibold mb-6">{t('olim.clients.title')}</h2>
             <p className="text-lg text-muted-foreground leading-relaxed">{t('olim.clients.body')}</p>
           </div>
@@ -131,7 +127,6 @@ const OlimResidents = () => {
       <section className="py-12 bg-background">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div ref={expectAnim.ref} className={cn("max-w-4xl mx-auto transition-all duration-700", isRTL && "font-hebrew text-right", expectAnim.isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8")}>
-            <div className={cn("w-16 h-0.5 bg-accent mb-6", isRTL && "ml-auto")} />
             <h2 className="text-3xl sm:text-4xl font-display font-semibold mb-6">{t('olim.expect.title')}</h2>
             <p className="text-lg text-muted-foreground mb-6 leading-relaxed">{t('olim.expect.body')}</p>
             <ul className="space-y-3">
@@ -152,7 +147,6 @@ const OlimResidents = () => {
       <section className="py-12 bg-primary">
         <div ref={ctaAnim.ref} className={cn("container mx-auto px-4 sm:px-6 lg:px-8 transition-all duration-700", ctaAnim.isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8")}>
           <div className="max-w-3xl mx-auto text-center">
-            <div className="w-16 h-0.5 bg-accent mx-auto mb-6" />
             <h2 className={cn("text-4xl sm:text-5xl lg:text-6xl font-display font-semibold mb-5 text-primary-foreground", isRTL && "font-hebrew")}>{t('olim.cta.title')}</h2>
             <p className={cn("text-xl mb-8 max-w-xl mx-auto text-primary-foreground/80", isRTL && "font-hebrew")}>{t('olim.cta.body')}</p>
             <Button asChild size="lg" className="bg-accent hover:bg-accent/90 text-accent-foreground font-medium px-4 sm:px-6 lg:px-10 py-4 sm:py-6 text-base group max-w-full">

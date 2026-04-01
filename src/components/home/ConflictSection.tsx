@@ -12,7 +12,6 @@ const ConflictSection = () => {
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-display font-semibold text-foreground mb-6">
             {t('conflict.title')}
           </h2>
-          <div className={cn("w-16 h-0.5 bg-accent mb-8", isRTL && "mr-0 ml-auto")} />
 
           {/* Body Paragraphs */}
           <div className="space-y-5">

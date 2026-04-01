@@ -90,7 +90,6 @@ const About = () => {
               ctaAnim.isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
             )}
           >
-            <div className="w-16 h-0.5 bg-accent mx-auto mb-6" />
 
             <h2 className="text-4xl sm:text-5xl lg:text-6xl font-display font-semibold text-primary-foreground mb-5">
               {t('about.cta.title')}

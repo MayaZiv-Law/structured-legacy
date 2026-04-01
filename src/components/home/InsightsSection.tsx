@@ -37,8 +37,6 @@ const InsightsSection = () => {
             </Button>
           </div>
 
-          <div className={cn("w-16 h-0.5 bg-accent mb-6", isRTL && "ml-auto")} />
-
           {isLoading ? <div className="flex justify-center py-12">
               <Loader2 className="h-8 w-8 animate-spin text-accent" />
             </div> : <div className="grid grid-cols-1 md:grid-cols-3 gap-8">

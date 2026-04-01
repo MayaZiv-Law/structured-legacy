@@ -21,8 +21,6 @@ const Footer = () => {
                 {isRTL ? 'מאיה זיו עו"ד' : 'MAYA ZIV LAW'}
               </span>
             </Link>
-            
-            <div className="w-12 h-0.5 bg-accent" />
           </div>
 
           <div>

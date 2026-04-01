@@ -87,7 +87,6 @@ const RealEstate = () => {
             <h2 className="text-4xl sm:text-5xl font-display font-semibold text-foreground mb-5">
               {t('realestate.approach.title')}
             </h2>
-            <div className={cn("w-16 h-0.5 bg-accent mb-6", isRTL && "mr-0 ml-auto")} />
             <div className="space-y-5">
               <p className="text-lg text-muted-foreground leading-relaxed">
                 {t('realestate.approach.body')}
@@ -107,7 +106,6 @@ const RealEstate = () => {
             <h2 className="text-4xl sm:text-5xl font-display font-semibold text-foreground mb-5">
               {t('realestate.risk.title')}
             </h2>
-            <div className={cn("w-16 h-0.5 bg-accent mb-6", isRTL && "mr-0 ml-auto")} />
             <p className="text-lg text-muted-foreground leading-relaxed mb-8">
               {t('realestate.risk.intro')}
             </p>
@@ -143,7 +141,6 @@ const RealEstate = () => {
             <h2 className="text-4xl sm:text-5xl font-display font-semibold text-foreground mb-5">
               {t('realestate.tax.title')}
             </h2>
-            <div className={cn("w-16 h-0.5 bg-accent mb-6", isRTL && "mr-0 ml-auto")} />
             <div className="space-y-5">
               <p className="text-lg text-muted-foreground leading-relaxed">
                 {t('realestate.tax.body')}
@@ -237,7 +234,6 @@ const RealEstate = () => {
             <h2 className="text-4xl sm:text-5xl font-display font-semibold text-foreground mb-4">
               {t('service.faq')}
             </h2>
-            <div className="w-16 h-0.5 bg-accent mx-auto" />
           </div>
           
           {isPrerender() ? (
@@ -275,8 +271,6 @@ const RealEstate = () => {
       <section className="py-12 bg-primary">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div ref={ctaAnim.ref} className={cn("max-w-3xl mx-auto text-center transition-all duration-700", isRTL && "font-hebrew", ctaAnim.isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8")}>
-            <div className="w-16 h-0.5 bg-accent mx-auto mb-6" />
-
             <h2 className="text-4xl sm:text-5xl lg:text-6xl font-display font-semibold mb-5 text-primary-foreground">
               {t('realestate.cta.title')}
             </h2>

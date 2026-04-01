@@ -100,7 +100,6 @@ const Privacy = () => {
       <section className="pt-28 pb-12 bg-background">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className={cn("max-w-3xl mx-auto", isRTL && "font-hebrew text-right")}>
-            <div className="w-16 h-1 bg-accent mb-8" />
             <h1 className="text-4xl sm:text-5xl font-display font-semibold text-foreground mb-4">
               {t.title}
             </h1>
