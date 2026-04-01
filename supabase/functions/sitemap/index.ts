@@ -5,7 +5,7 @@ const corsHeaders = {
 
 const SITE_URL = 'https://mayaziv-law.com'
 const LANGUAGES = ['en', 'he']
-const STATIC_LASTMOD = '2025-02-28'
+const STATIC_LASTMOD = '2026-04-01'
 
 const staticPages = [
   { path: '', priority: '1.0', changefreq: 'weekly' },

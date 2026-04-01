@@ -53,8 +53,8 @@ const Commercial = () => {
   });
 
   const breadcrumbSchema = createBreadcrumbSchema([
-    { name: language === 'he' ? 'בית' : 'Home', url: 'https://mayaziv-law.com/' },
-    { name: language === 'he' ? 'מסחרי ואזרחי' : 'Commercial and Civil', url: 'https://mayaziv-law.com/commercial' },
+    { name: language === 'he' ? 'בית' : 'Home', url: `https://mayaziv-law.com/${language}` },
+    { name: language === 'he' ? 'מסחרי ואזרחי' : 'Commercial and Civil', url: `https://mayaziv-law.com/${language}/commercial` },
   ]);
 
   return (

@@ -5,7 +5,7 @@ import { useLocalePath } from '@/hooks/useLocalePath';
 import { cn } from '@/lib/utils';
 import { Calendar, ArrowRight, Loader2 } from 'lucide-react';
 import { useScrollAnimation } from '@/hooks/useScrollAnimation';
-import { useLatestArticles } from '@/hooks/useArticles';
+import { useArticles } from '@/hooks/useArticles';
 import { SEO } from '@/components/SEO';
 import fallbackImage from '@/assets/about-hero-bg.webp';
 
@@ -15,7 +15,7 @@ const Insights = () => {
   const headerAnim = useScrollAnimation();
   const articlesAnim = useScrollAnimation();
 
-  const { data: articles, isLoading } = useLatestArticles(3);
+  const { data: articles, isLoading } = useArticles();
 
   return (
     <Layout>

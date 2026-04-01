@@ -64,8 +64,8 @@ const RealEstate = () => {
   })));
 
   const breadcrumbSchema = createBreadcrumbSchema([
-    { name: language === 'he' ? 'בית' : 'Home', url: 'https://mayaziv-law.com/' },
-    { name: language === 'he' ? 'נדל"ן' : 'Real Estate', url: 'https://mayaziv-law.com/real-estate' },
+    { name: language === 'he' ? 'בית' : 'Home', url: `https://mayaziv-law.com/${language}` },
+    { name: language === 'he' ? 'נדל"ן' : 'Real Estate', url: `https://mayaziv-law.com/${language}/real-estate` },
   ]);
 
   return <Layout>

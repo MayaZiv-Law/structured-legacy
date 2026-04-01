@@ -30,7 +30,12 @@ export const LanguageRouter = ({ children }: { children: React.ReactNode }) => {
  * Redirects from / to /en/ or /he/ based on localStorage preference or browser language.
  */
 export const RedirectToLang = () => {
-  return <Navigate to="/en" replace />;
+  const stored = localStorage.getItem('language');
+  if (stored === 'he' || stored === 'en') {
+    return <Navigate to={`/${stored}`} replace />;
+  }
+  const browserLang = navigator.language?.startsWith('he') ? 'he' : 'en';
+  return <Navigate to={`/${browserLang}`} replace />;
 };
 
 /**

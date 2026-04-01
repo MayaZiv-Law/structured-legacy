@@ -8,9 +8,12 @@ const AccessibilityWidget = () => {
   const { language } = useLanguage();
   const isRTL = language === "he";
   const [isOpen, setIsOpen] = useState(false);
-  const [fontSize, setFontSize] = useState(100);
-  const [highContrast, setHighContrast] = useState(false);
-  const [highlightLinks, setHighlightLinks] = useState(false);
+  const [fontSize, setFontSize] = useState(() => {
+    const stored = localStorage.getItem('a11y-fontSize');
+    return stored ? Number(stored) : 100;
+  });
+  const [highContrast, setHighContrast] = useState(() => localStorage.getItem('a11y-highContrast') === 'true');
+  const [highlightLinks, setHighlightLinks] = useState(() => localStorage.getItem('a11y-highlightLinks') === 'true');
 
   const content = {
     en: {
@@ -33,6 +36,7 @@ const AccessibilityWidget = () => {
 
   useEffect(() => {
     document.documentElement.style.fontSize = `${fontSize}%`;
+    localStorage.setItem('a11y-fontSize', String(fontSize));
   }, [fontSize]);
 
   useEffect(() => {
@@ -41,6 +45,7 @@ const AccessibilityWidget = () => {
     } else {
       document.documentElement.classList.remove("high-contrast");
     }
+    localStorage.setItem('a11y-highContrast', String(highContrast));
   }, [highContrast]);
 
   useEffect(() => {
@@ -49,6 +54,7 @@ const AccessibilityWidget = () => {
     } else {
       document.documentElement.classList.remove("highlight-links");
     }
+    localStorage.setItem('a11y-highlightLinks', String(highlightLinks));
   }, [highlightLinks]);
 
   const increaseFontSize = () => {
@@ -63,6 +69,9 @@ const AccessibilityWidget = () => {
     setFontSize(100);
     setHighContrast(false);
     setHighlightLinks(false);
+    localStorage.removeItem('a11y-fontSize');
+    localStorage.removeItem('a11y-highContrast');
+    localStorage.removeItem('a11y-highlightLinks');
   };
 
   return (
@@ -110,10 +119,10 @@ const AccessibilityWidget = () => {
 
             {/* Font Size */}
             <div className="mb-4">
-              <label className="text-sm text-muted-foreground mb-2 block flex items-center gap-2">
+              <span className="text-sm text-muted-foreground mb-2 block flex items-center gap-2">
                 <Type className="h-4 w-4" />
                 {t.fontSize}: {fontSize}%
-              </label>
+              </span>
               <div className="flex items-center gap-2">
                 <Button
                   variant="outline"

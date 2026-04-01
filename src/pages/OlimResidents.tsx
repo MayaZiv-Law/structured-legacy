@@ -51,8 +51,8 @@ const OlimResidents = () => {
   });
 
   const breadcrumbSchema = createBreadcrumbSchema([
-    { name: language === 'he' ? 'בית' : 'Home', url: 'https://mayaziv-law.com/' },
-    { name: language === 'he' ? 'עולים ותושבים חוזרים' : 'Olim and Returning Residents', url: 'https://mayaziv-law.com/olim-residents' },
+    { name: language === 'he' ? 'בית' : 'Home', url: `https://mayaziv-law.com/${language}` },
+    { name: language === 'he' ? 'עולים ותושבים חוזרים' : 'Olim and Returning Residents', url: `https://mayaziv-law.com/${language}/olim-residents` },
   ]);
 
   return <Layout>

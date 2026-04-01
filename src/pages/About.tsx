@@ -13,8 +13,8 @@ import MethodologySection from '@/components/home/MethodologySection';
 const About = () => {
   const { t, isRTL, language } = useLanguage();
   const breadcrumbSchema = createBreadcrumbSchema([
-    { name: language === 'he' ? 'בית' : 'Home', url: 'https://mayaziv-law.com/' },
-    { name: language === 'he' ? 'אודות' : 'About', url: 'https://mayaziv-law.com/about' },
+    { name: language === 'he' ? 'בית' : 'Home', url: `https://mayaziv-law.com/${language}` },
+    { name: language === 'he' ? 'אודות' : 'About', url: `https://mayaziv-law.com/${language}/about` },
   ]);
   const localePath = useLocalePath();
   const Arrow = isRTL ? ArrowLeft : ArrowRight;

@@ -22,79 +22,105 @@ const Article = () => {
     );
   };
 
-  const renderContent = (content: string[]) => {
-    return content.map((paragraph, index) => {
-      // H1 heading
-      if (paragraph.startsWith('# ') && !paragraph.startsWith('## ')) {
-        return (
-          <h1 key={index} className="text-4xl font-display font-bold text-foreground mt-10 mb-6">
-            {paragraph.replace('# ', '')}
-          </h1>
-        );
-      }
-      // H2 heading
-      if (paragraph.startsWith('## ')) {
-        return (
-          <h2 key={index} className="text-3xl font-display font-semibold text-foreground mt-10 mb-4">
-            {paragraph.replace('## ', '')}
-          </h2>
-        );
-      }
-      // H3 heading
-      if (paragraph.startsWith('### ')) {
-        return (
-          <h3 key={index} className="text-2xl font-display font-medium text-foreground mt-8 mb-3">
-            {paragraph.replace('### ', '')}
-          </h3>
-        );
-      }
-      // Italic disclaimer
-      if (paragraph.startsWith('*') && paragraph.endsWith('*') && !paragraph.startsWith('**')) {
-        return (
-          <p key={index} className="text-muted-foreground italic text-base border-l-2 border-accent/30 pl-4 my-6">
-            {paragraph.slice(1, -1)}
-          </p>
-        );
-      }
-      // Bullet list item
-      if (paragraph.startsWith('- ') || paragraph.startsWith('• ')) {
-        return (
-          <li key={index} className="text-lg text-muted-foreground leading-relaxed ml-4 mb-2">
-            {renderBoldText(paragraph.replace(/^[-•]\s*/, ''))}
-          </li>
-        );
-      }
-      // Numbered list
-      if (paragraph.match(/^\d+\./)) {
-        return (
-          <li key={index} className="text-lg text-muted-foreground leading-relaxed ml-4 mb-2 list-decimal">
-            {renderBoldText(paragraph.replace(/^\d+\.\s*/, ''))}
-          </li>
-        );
-      }
-      // Bold only paragraph
-      if (paragraph.startsWith('**') && paragraph.endsWith('**')) {
-        return (
-          <p key={index} className="text-lg text-foreground font-medium mt-6 mb-2">
-            {paragraph.replace(/\*\*/g, '')}
-          </p>
-        );
-      }
-      // Paragraph with inline bold
-      if (paragraph.includes('**')) {
-        return (
-          <p key={index} className="text-lg text-muted-foreground leading-relaxed mb-4">
-            {renderBoldText(paragraph)}
-          </p>
-        );
-      }
-      // Regular paragraph
+  const getItemType = (paragraph: string): 'bullet' | 'numbered' | 'other' => {
+    if (paragraph.startsWith('- ') || paragraph.startsWith('• ')) return 'bullet';
+    if (paragraph.match(/^\d+\./)) return 'numbered';
+    return 'other';
+  };
+
+  const renderSingleItem = (paragraph: string, index: number) => {
+    // H1 heading
+    if (paragraph.startsWith('# ') && !paragraph.startsWith('## ')) {
       return (
-        <p key={index} className="text-lg text-muted-foreground leading-relaxed mb-4">
-          {paragraph}
+        <h1 key={index} className="text-4xl font-display font-bold text-foreground mt-10 mb-6">
+          {paragraph.replace('# ', '')}
+        </h1>
+      );
+    }
+    // H2 heading
+    if (paragraph.startsWith('## ')) {
+      return (
+        <h2 key={index} className="text-3xl font-display font-semibold text-foreground mt-10 mb-4">
+          {paragraph.replace('## ', '')}
+        </h2>
+      );
+    }
+    // H3 heading
+    if (paragraph.startsWith('### ')) {
+      return (
+        <h3 key={index} className="text-2xl font-display font-medium text-foreground mt-8 mb-3">
+          {paragraph.replace('### ', '')}
+        </h3>
+      );
+    }
+    // Italic disclaimer
+    if (paragraph.startsWith('*') && paragraph.endsWith('*') && !paragraph.startsWith('**')) {
+      return (
+        <p key={index} className="text-muted-foreground italic text-base border-l-2 border-accent/30 pl-4 my-6">
+          {paragraph.slice(1, -1)}
         </p>
       );
-    });
+    }
+    // Bold only paragraph
+    if (paragraph.startsWith('**') && paragraph.endsWith('**')) {
+      return (
+        <p key={index} className="text-lg text-foreground font-medium mt-6 mb-2">
+          {paragraph.replace(/\*\*/g, '')}
+        </p>
+      );
+    }
+    // Paragraph with inline bold
+    if (paragraph.includes('**')) {
+      return (
+        <p key={index} className="text-lg text-muted-foreground leading-relaxed mb-4">
+          {renderBoldText(paragraph)}
+        </p>
+      );
+    }
+    // Regular paragraph
+    return (
+      <p key={index} className="text-lg text-muted-foreground leading-relaxed mb-4">
+        {paragraph}
+      </p>
+    );
+  };
+
+  const renderContent = (content: string[]) => {
+    const result: React.ReactNode[] = [];
+    let i = 0;
+
+    while (i < content.length) {
+      const type = getItemType(content[i]);
+
+      if (type === 'bullet') {
+        const items: React.ReactNode[] = [];
+        while (i < content.length && getItemType(content[i]) === 'bullet') {
+          items.push(
+            <li key={i} className="text-lg text-muted-foreground leading-relaxed ml-4 mb-2">
+              {renderBoldText(content[i].replace(/^[-•]\s*/, ''))}
+            </li>
+          );
+          i++;
+        }
+        result.push(<ul key={`ul-${i}`} className="list-disc mb-4">{items}</ul>);
+      } else if (type === 'numbered') {
+        const items: React.ReactNode[] = [];
+        while (i < content.length && getItemType(content[i]) === 'numbered') {
+          items.push(
+            <li key={i} className="text-lg text-muted-foreground leading-relaxed ml-4 mb-2">
+              {renderBoldText(content[i].replace(/^\d+\.\s*/, ''))}
+            </li>
+          );
+          i++;
+        }
+        result.push(<ol key={`ol-${i}`} className="list-decimal mb-4">{items}</ol>);
+      } else {
+        result.push(renderSingleItem(content[i], i));
+        i++;
+      }
+    }
+
+    return result;
   };
 
   if (isLoading) {

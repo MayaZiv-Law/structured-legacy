@@ -4,6 +4,8 @@ import { useLanguage } from '@/contexts/LanguageContext';
 import { cn } from '@/lib/utils';
 import { Mail, Phone, MapPin, CheckCircle } from 'lucide-react';
 import { Button } from '@/components/ui/button';
+import { supabase } from '@/integrations/supabase/client';
+import { toast } from 'sonner';
 import { useScrollAnimation } from '@/hooks/useScrollAnimation';
 import { SEO, localBusinessSchema, createBreadcrumbSchema } from '@/components/SEO';
 import PageHero from '@/components/shared/PageHero';
@@ -12,8 +14,8 @@ import contactHeroImage from '@/assets/about-hero-globe.webp';
 const Contact = () => {
   const { t, isRTL, language } = useLanguage();
   const breadcrumbSchema = createBreadcrumbSchema([
-    { name: language === 'he' ? 'בית' : 'Home', url: 'https://mayaziv-law.com/' },
-    { name: language === 'he' ? 'צור קשר' : 'Contact', url: 'https://mayaziv-law.com/contact' },
+    { name: language === 'he' ? 'בית' : 'Home', url: `https://mayaziv-law.com/${language}` },
+    { name: language === 'he' ? 'צור קשר' : 'Contact', url: `https://mayaziv-law.com/${language}/contact` },
   ]);
   const [formData, setFormData] = useState({ name: '', email: '', phone: '', inquiry: '', message: '' });
   const [submitted, setSubmitted] = useState(false);
@@ -28,13 +30,20 @@ const Contact = () => {
     { value: 'other', label: t('contact.inquiry.other') },
   ];
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    const subject = encodeURIComponent(`New Inquiry: ${formData.inquiry}`);
-    const body = encodeURIComponent(
-      `Name: ${formData.name}\nEmail: ${formData.email}\nPhone: ${formData.phone}\nInquiry: ${formData.inquiry}\n\nMessage:\n${formData.message}`
-    );
-    window.location.href = `mailto:info@mayaziv-law.com?subject=${subject}&body=${body}`;
+    const { error } = await supabase.from('contact_submissions').insert({
+      name: formData.name,
+      email: formData.email,
+      phone: formData.phone || null,
+      inquiry_type: formData.inquiry,
+      message: formData.message,
+      preferred_language: language,
+    });
+    if (error) {
+      toast.error(language === 'he' ? 'שליחת הטופס נכשלה. נסו שוב.' : 'Failed to submit. Please try again.');
+      return;
+    }
     setSubmitted(true);
   };
 

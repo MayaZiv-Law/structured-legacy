@@ -75,8 +75,8 @@ const Taxation = () => {
   })));
 
   const breadcrumbSchema = createBreadcrumbSchema([
-    { name: language === 'he' ? 'בית' : 'Home', url: 'https://mayaziv-law.com/' },
-    { name: language === 'he' ? 'מיסוי ותאימות' : 'Tax and Compliance', url: 'https://mayaziv-law.com/taxation' },
+    { name: language === 'he' ? 'בית' : 'Home', url: `https://mayaziv-law.com/${language}` },
+    { name: language === 'he' ? 'מיסוי ותאימות' : 'Tax and Compliance', url: `https://mayaziv-law.com/${language}/taxation` },
   ]);
 
   return <Layout>

@@ -85,8 +85,8 @@ const EstatePlanning = () => {
   })));
 
   const breadcrumbSchema = createBreadcrumbSchema([
-    { name: language === 'he' ? 'בית' : 'Home', url: 'https://mayaziv-law.com/' },
-    { name: language === 'he' ? 'משפחה ומורשת' : 'Family and Legacy', url: 'https://mayaziv-law.com/estate-planning' },
+    { name: language === 'he' ? 'בית' : 'Home', url: `https://mayaziv-law.com/${language}` },
+    { name: language === 'he' ? 'משפחה ומורשת' : 'Family and Legacy', url: `https://mayaziv-law.com/${language}/estate-planning` },
   ]);
 
   return <Layout>
