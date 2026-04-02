@@ -1,7 +1,6 @@
 import { lazy, Suspense } from 'react';
 import Layout from '@/components/layout/Layout';
 import HeroSection from '@/components/home/HeroSection';
-import IntroSection from '@/components/home/IntroSection';
 import GuideSection from '@/components/home/GuideSection';
 import { SEO, organizationSchema, websiteSchema, localBusinessSchema } from '@/components/SEO';
 
@@ -27,7 +26,6 @@ const Index = () => {
         schema={[organizationSchema, websiteSchema, localBusinessSchema]}
       />
       <HeroSection />
-      <IntroSection />
       <GuideSection />
       <Suspense fallback={<SectionLoader />}>
         <ParallaxSection />
