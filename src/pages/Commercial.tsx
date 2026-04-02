@@ -75,7 +75,7 @@ const Commercial = () => {
       />
 
       {/* Philosophy Section */}
-      <section className="pt-16 sm:pt-24 pb-12 gradient-stone">
+      <section className="pt-24 sm:pt-28 pb-12 gradient-stone">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div 
             ref={philosophyAnim.ref}
@@ -113,7 +113,7 @@ const Commercial = () => {
               {t('commercial.services.title')}
             </h2>
           </div>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-4xl mx-auto">
+          <div className="grid md:grid-cols-2 gap-6 max-w-4xl mx-auto">
             {coreServices.map((service, i) => (
               <div 
                 key={i} 

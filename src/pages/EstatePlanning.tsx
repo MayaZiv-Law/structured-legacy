@@ -96,7 +96,7 @@ const EstatePlanning = () => {
       <PageHero backgroundImage={estateHeroBg} title={t('estate.hero.title')} subtitle={t('estate.hero.subtitle')} imagePosition="center 70%" />
 
       {/* Cross-Border Wills Section */}
-      <section className="pt-16 sm:pt-24 pb-12 bg-background">
+      <section className="pt-24 sm:pt-28 pb-12 bg-background">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div ref={willsAnim.ref} className={cn("max-w-4xl mx-auto mb-8 transition-all duration-700", isRTL && "font-hebrew text-right", willsAnim.isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8")}>
             <div className={cn("w-16 h-0.5 bg-accent mb-6", isRTL && "ml-auto")} />
@@ -107,7 +107,7 @@ const EstatePlanning = () => {
               {t('estate.wills.body')}
             </p>
           </div>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-4xl mx-auto">
+          <div className="grid md:grid-cols-3 gap-6 max-w-4xl mx-auto">
             {willsFocusAreas.map((area, i) => <div key={i} className={cn("p-6 bg-card rounded-lg border border-border transition-all duration-500", isRTL && "font-hebrew text-right", willsAnim.isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8")} style={{
             transitionDelay: willsAnim.isVisible ? `${i * 150}ms` : '0ms'
           }}>

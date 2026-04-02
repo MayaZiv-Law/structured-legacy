@@ -28,7 +28,7 @@ const Insights = () => {
       />
 
       {/* Clean text header - no hero image */}
-      <section className="pt-20 sm:pt-28 pb-10 bg-background">
+      <section className="pt-28 sm:pt-32 pb-10 bg-background">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div
             ref={headerAnim.ref}
@@ -58,7 +58,7 @@ const Insights = () => {
                 <Loader2 className="h-8 w-8 animate-spin text-accent" />
               </div>
             ) : (
-              <div className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
+              <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
                 {articles?.map((article, i) => {
                   const title = language === 'he' ? article.title_he : article.title_en;
                   const excerpt = language === 'he' ? article.excerpt_he : article.excerpt_en;
