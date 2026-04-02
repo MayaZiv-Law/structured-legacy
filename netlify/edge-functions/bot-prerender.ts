@@ -96,7 +96,7 @@ export default async (request: Request, context: Context) => {
         status: 200,
         headers: {
           'Content-Type': 'text/html; charset=utf-8',
-          'Cache-Control': 'public, max-age=86400, s-maxage=604800',
+          'Cache-Control': 'public, max-age=86400, s-maxage=3600',
           'X-Prerendered': 'true',
         },
       });
