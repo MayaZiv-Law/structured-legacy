@@ -1,77 +1,88 @@
 #!/usr/bin/env node
 /**
- * Fetches all English text from the live site mayaziv-law.com/en/*
- * and translates it to Hebrew using DeepL API, then updates LanguageContext.tsx.
+ * Standalone script - run from ANY folder.
+ * 1. Fetches all English pages from the live site
+ * 2. Sends text to DeepL for Hebrew translation
+ * 3. Outputs deepl-translations.json
  *
  * Usage:
- *   npm install node-fetch cheerio
+ *   npm install node-fetch cheerio  (already done)
  *   node translate-site.mjs
  */
 
 import fetch from 'node-fetch';
 import * as cheerio from 'cheerio';
 import fs from 'fs';
-import path from 'path';
 
 const DEEPL_API_KEY = 'e4c2d924-f456-4f15-8cbf-dc5412b0868a:fx';
 const DEEPL_URL = 'https://api-free.deepl.com/v2/translate';
 const SITE_BASE = 'https://mayaziv-law.com';
 
 const PAGES = [
-  '/en',
-  '/en/about',
-  '/en/real-estate',
-  '/en/taxation',
-  '/en/estate-planning',
-  '/en/olim-residents',
-  '/en/commercial',
-  '/en/insights',
-  '/en/contact',
-  '/en/privacy',
-  '/en/terms',
+  { path: '/en', name: 'Homepage' },
+  { path: '/en/about', name: 'About' },
+  { path: '/en/real-estate', name: 'Real Estate' },
+  { path: '/en/taxation', name: 'Taxation' },
+  { path: '/en/estate-planning', name: 'Estate Planning' },
+  { path: '/en/olim-residents', name: 'Olim & Returning Residents' },
+  { path: '/en/commercial', name: 'Commercial & Civil' },
+  { path: '/en/insights', name: 'Insights' },
+  { path: '/en/contact', name: 'Contact' },
+  { path: '/en/privacy', name: 'Privacy' },
+  { path: '/en/terms', name: 'Terms' },
 ];
 
-// ── 1. Fetch page text ──────────────────────────────────────────────
+// ── Fetch & extract ─────────────────────────────────────────────────
 async function fetchPageText(url) {
-  console.log(`  Fetching ${url} ...`);
   const res = await fetch(url, {
     headers: {
-      'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36',
+      'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/125.0.0.0 Safari/537.36',
       'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8',
       'Accept-Language': 'en-US,en;q=0.9',
     },
   });
-  if (!res.ok) throw new Error(`HTTP ${res.status} for ${url}`);
+  if (!res.ok) throw new Error(`HTTP ${res.status}`);
   return res.text();
 }
 
 function extractTexts(html) {
   const $ = cheerio.load(html);
-  // Remove script/style
-  $('script, style, noscript, svg').remove();
+  $('script, style, noscript, svg, link, meta').remove();
 
-  const texts = new Set();
-  const walk = (el) => {
-    $(el).contents().each((_, node) => {
-      if (node.type === 'text') {
-        const t = $(node).text().trim();
-        if (t && t.length > 1) texts.add(t);
-      } else if (node.type === 'tag') {
-        walk(node);
-      }
-    });
-  };
-  walk($('body'));
-  return [...texts];
+  const texts = [];
+  const seen = new Set();
+
+  // Get text from meaningful elements
+  $('h1, h2, h3, h4, h5, h6, p, li, a, button, span, label, option, td, th, dt, dd, figcaption, blockquote').each((_, el) => {
+    const $el = $(el);
+    // Get direct text only (not children's text) for inline elements
+    let t;
+    if (['SPAN', 'A', 'BUTTON', 'LABEL', 'OPTION'].includes(el.tagName?.toUpperCase())) {
+      t = $el.clone().children().remove().end().text().trim();
+      if (!t) t = $el.text().trim();
+    } else {
+      t = $el.text().trim();
+    }
+    // Filter out very short or numeric-only strings
+    if (t && t.length > 1 && !/^\d+$/.test(t) && !seen.has(t)) {
+      seen.add(t);
+      texts.push(t);
+    }
+  });
+
+  return texts;
 }
 
-// ── 2. Translate via DeepL ──────────────────────────────────────────
+// ── DeepL translate ─────────────────────────────────────────────────
 async function translateBatch(texts) {
-  // DeepL allows up to 50 texts per request
   const results = [];
-  for (let i = 0; i < texts.length; i += 50) {
-    const batch = texts.slice(i, i + 50);
-    console.log(`  Translating batch ${Math.floor(i / 50) + 1} (${batch.length} texts)...`);
+  // DeepL limit: 50 texts per request, 128KB body
+  for (let i = 0; i < texts.length; i += 40) {
+    const batch = texts.slice(i, i + 40);
+    const batchNum = Math.floor(i / 40) + 1;
+    const total = Math.ceil(texts.length / 40);
+    console.log(`  DeepL batch ${batchNum}/${total} (${batch.length} texts)...`);
+
     const res = await fetch(DEEPL_URL, {
       method: 'POST',
       headers: {
@@ -84,121 +95,113 @@ async function translateBatch(texts) {
         target_lang: 'HE',
       }),
     });
+
     if (!res.ok) {
       const body = await res.text();
       throw new Error(`DeepL error ${res.status}: ${body}`);
     }
     const data = await res.json();
     results.push(...data.translations.map((t) => t.text));
+
+    // Small delay between batches to respect rate limits
+    if (i + 40 < texts.length) await new Promise(r => setTimeout(r, 500));
   }
   return results;
 }
 
-// ── 3. Read current LanguageContext and map EN keys → values ────────
-function readTranslationKeys(filePath) {
-  const src = fs.readFileSync(filePath, 'utf8');
-  const enBlock = src.match(/en:\s*\{([\s\S]*?)\n\s*\},\s*\n\s*he:/);
-  if (!enBlock) throw new Error('Could not parse EN translations block');
-
-  const entries = [];
-  const re = /^\s*'([^']+)':\s*'((?:[^'\\]|\\.)*)'/gm;
-  let m;
-  while ((m = re.exec(enBlock[1]))) {
-    const key = m[1];
-    const value = m[2].replace(/\\'/g, "'");
-    if (value.trim()) entries.push({ key, value });
-  }
-  return entries;
-}
-
-// ── 4. Update HE block in LanguageContext.tsx ───────────────────────
-function updateHeTranslations(filePath, keyValueMap) {
-  let src = fs.readFileSync(filePath, 'utf8');
-
-  for (const [key, heValue] of Object.entries(keyValueMap)) {
-    // Escape single quotes for JS string
-    const escaped = heValue.replace(/\\/g, '\\\\').replace(/'/g, "\\'");
-    // Match the HE key line and replace its value
-    const regex = new RegExp(`('${key.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')}':\\s*')(?:[^'\\\\]|\\\\.)*'`);
-    src = src.replace(regex, `$1${escaped}'`);
-  }
-
-  fs.writeFileSync(filePath, src, 'utf8');
-}
-
 // ── Main ────────────────────────────────────────────────────────────
 async function main() {
-  const langCtxPath = path.resolve('src/contexts/LanguageContext.tsx');
+  console.log('\n========================================');
+  console.log('  Maya Ziv Law - DeepL Translation Tool');
+  console.log('========================================\n');
 
-  console.log('\n=== Step 1: Reading translation keys from LanguageContext.tsx ===');
-  const enEntries = readTranslationKeys(langCtxPath);
-  console.log(`  Found ${enEntries.length} English translation keys.\n`);
+  const allPageData = [];
 
-  console.log('=== Step 2: Fetching live site pages ===');
-  const liveTexts = new Map(); // text → Set<pages>
-  for (const pagePath of PAGES) {
+  // Step 1: Fetch all pages
+  for (const page of PAGES) {
+    const url = `${SITE_BASE}${page.path}`;
+    console.log(`[${page.name}] Fetching ${url}...`);
     try {
-      const html = await fetchPageText(`${SITE_BASE}${pagePath}`);
+      const html = await fetchPageText(url);
       const texts = extractTexts(html);
-      for (const t of texts) {
-        if (!liveTexts.has(t)) liveTexts.set(t, new Set());
-        liveTexts.get(t).add(pagePath);
-      }
+      console.log(`  -> Found ${texts.length} text fragments\n`);
+      allPageData.push({ page: page.name, path: page.path, texts });
     } catch (err) {
-      console.error(`  ERROR on ${pagePath}: ${err.message}`);
-    }
-  }
-  console.log(`  Extracted ${liveTexts.size} unique text fragments from live site.\n`);
-
-  // Match live texts to EN keys
-  const enValueToKey = new Map();
-  for (const { key, value } of enEntries) {
-    // Use the value as-is for matching
-    enValueToKey.set(value, key);
-    // Also try first 80 chars for partial matching on long texts
-    if (value.length > 80) {
-      enValueToKey.set(value.substring(0, 80), key);
+      console.error(`  -> ERROR: ${err.message}\n`);
+      allPageData.push({ page: page.name, path: page.path, texts: [], error: err.message });
     }
   }
 
-  // Collect EN values that appear on the live site
-  const toTranslate = [];
-  const keysToTranslate = [];
-  for (const { key, value } of enEntries) {
-    toTranslate.push(value);
-    keysToTranslate.push(key);
+  // Step 2: Collect unique texts across all pages
+  const uniqueTexts = [];
+  const seen = new Set();
+  for (const pd of allPageData) {
+    for (const t of pd.texts) {
+      if (!seen.has(t)) {
+        seen.add(t);
+        uniqueTexts.push(t);
+      }
+    }
+  }
+  console.log(`\nTotal unique texts to translate: ${uniqueTexts.length}\n`);
+
+  if (uniqueTexts.length === 0) {
+    console.error('No texts found! The site may be using client-side rendering.');
+    console.log('Saving raw HTML for inspection...');
+    // Try to save raw HTML for debugging
+    try {
+      const html = await fetchPageText(`${SITE_BASE}/en`);
+      fs.writeFileSync('debug-homepage.html', html, 'utf8');
+      console.log('Saved debug-homepage.html - check if content is there.');
+    } catch (e) {
+      console.error('Could not fetch even for debug:', e.message);
+    }
+    return;
   }
 
-  console.log(`=== Step 3: Translating ${toTranslate.length} texts via DeepL ===`);
-  const heTranslations = await translateBatch(toTranslate);
-  console.log(`  Received ${heTranslations.length} Hebrew translations.\n`);
+  // Step 3: Translate via DeepL
+  console.log('Sending to DeepL for Hebrew translation...');
+  const heTexts = await translateBatch(uniqueTexts);
 
-  // Build key → HE value map
-  const keyHeMap = {};
-  for (let i = 0; i < keysToTranslate.length; i++) {
-    keyHeMap[keysToTranslate[i]] = heTranslations[i];
-  }
-
-  // Save raw translations for review
-  const reviewPath = path.resolve('deepl-translations.json');
-  const reviewData = keysToTranslate.map((key, i) => ({
-    key,
-    en: toTranslate[i],
-    he: heTranslations[i],
+  // Step 4: Build output
+  const translations = uniqueTexts.map((en, i) => ({
+    english: en,
+    hebrew: heTexts[i],
   }));
-  fs.writeFileSync(reviewPath, JSON.stringify(reviewData, null, 2), 'utf8');
-  console.log(`  Saved translations for review: ${reviewPath}`);
 
-  console.log('\n=== Step 4: Updating LanguageContext.tsx HE translations ===');
-  updateHeTranslations(langCtxPath, keyHeMap);
-  console.log('  Done! Hebrew translations updated.\n');
+  // Also build per-page output
+  const perPage = allPageData.map((pd) => ({
+    page: pd.page,
+    path: pd.path,
+    translations: pd.texts.map((t) => {
+      const idx = uniqueTexts.indexOf(t);
+      return { english: t, hebrew: heTexts[idx] };
+    }),
+  }));
 
-  console.log('=== Summary ===');
-  console.log(`  Pages fetched:       ${PAGES.length}`);
-  console.log(`  Live text fragments: ${liveTexts.size}`);
-  console.log(`  Keys translated:     ${keysToTranslate.length}`);
-  console.log(`  Review file:         ${reviewPath}`);
-  console.log('\nPlease review deepl-translations.json and verify the changes in LanguageContext.tsx');
+  const output = {
+    generated: new Date().toISOString(),
+    totalTexts: uniqueTexts.length,
+    allTranslations: translations,
+    byPage: perPage,
+  };
+
+  const outPath = 'deepl-translations.json';
+  fs.writeFileSync(outPath, JSON.stringify(output, null, 2), 'utf8');
+
+  console.log(`\n========================================`);
+  console.log(`  DONE!`);
+  console.log(`  ${uniqueTexts.length} texts translated`);
+  console.log(`  Output: ${outPath}`);
+  console.log(`========================================\n`);
+
+  // Print a preview
+  console.log('Preview (first 10):');
+  for (let i = 0; i < Math.min(10, translations.length); i++) {
+    console.log(`  EN: ${translations[i].english.substring(0, 60)}...`);
+    console.log(`  HE: ${translations[i].hebrew.substring(0, 60)}...`);
+    console.log('');
+  }
 }
 
 main().catch((err) => {
