@@ -26,15 +26,15 @@ const translations: Record<Language, Record<string, string>> = {
     'nav.schedule': 'Schedule Consultation',
 
     // Hero
-    'hero.tagline': 'Clarity in a Changing World',
+    'hero.tagline': 'Maya Ziv Law',
     'hero.title': 'Attorney in Israel',
-    'hero.subtitle1': 'Premier legal counsel must be as unique as the clients it serves. At Maya Ziv Law, every matter receives the personal focus it deserves and the depth and reach that serious work demands.',
+    'hero.subtitle1': 'We operate as a dedicated legal partner to our clients who trust us with matters that require both legal precision and strategic judgment. In an ever changing world the firm provides a solid legal ground shaped by international perspective, led by the firm\'s founder Maya Ziv whose global professionalism enriches the Israeli legal environment. The firm is based in Tel Aviv and serves both Hebrew and English speaking clients located both domestically and abroad.',
     'hero.subtitle2': '',
 
     // Guide Section
     'guide.title': 'About Maya Ziv Law',
-    'guide.bio': 'The firm operates as a dedicated partner to each client, creating original solutions for the most complex domestic and cross border matters. The firm is based in Israel.',
-    'guide.punchline': 'We think ahead for our clients, using insight and judgment to anticipate their needs.',
+    'guide.bio': '',
+    'guide.punchline': 'We think ahead for our clients, using insight and judgment to anticipate their needs and challenges of the future.',
     'guide.cta': 'More About the Firm',
     'parallax.quote': 'The details that seem technical are often the ones that determine the outcome.',
 
@@ -64,7 +64,7 @@ const translations: Record<Language, Record<string, string>> = {
     'practice.olim.desc': 'Legal guidance for new immigrants and returning residents.',
     'practice.commercial.desc': 'Contracts, risk allocation, and business advisory.',
     'practice.additional.olim': 'Olim Hadashim and Returning Residents',
-    'practice.additional.commercial': 'Commercial and Civil',
+    'practice.additional.commercial': 'Commercial and Finance',
 
     // Insights
     'insights.title': 'Insights',
@@ -108,7 +108,7 @@ const translations: Record<Language, Record<string, string>> = {
     'faq.a9': 'A Probate Order (Kiyum Tzava\'a) is issued by the Israeli Registrar of Inheritance when the deceased left a valid will. It confirms the will\'s validity and authorizes its execution. An Inheritance Order (Tzav Yerusha) is issued when there is no valid will, and estate distribution then follows the statutory provisions of Israel\'s Succession Law. In cross border estates, coordinating the Israeli process with foreign proceedings is essential to avoid conflicts between jurisdictions.',
 
     // CTA
-    'cta.title': 'When the Matter Requires Both Legal and Financial Judgment',
+    'cta.title': 'Our Clients Matter',
     'cta.subtitle': 'Clients in Israel and abroad turn to Maya Ziv Law for transactions where precision matters. Inquiries welcome in Hebrew and English.',
     'cta.button': 'Schedule a Consultation',
     'cta.buttonSecondary': 'Initial Fit Assessment',
@@ -140,8 +140,8 @@ const translations: Record<Language, Record<string, string>> = {
     'contact.inquiry.other': 'Other Legal Matter',
 
     // About Page
-    'about.hero.title': 'About Maya Ziv Law',
-    'about.mainBody': 'Our clients bring us matters that require both legal precision and judgment. We treat each one as a unique situation with its own stakes, its own complexity, and its own required outcome.',
+    'about.hero.title': 'About the Firm',
+    'about.mainBody': 'The firm was founded by Maya Ziv whose core belief is that legal counsel is first built on clear communication, strategic decisions that are based on the client needs and analytic discipline. With an international academic background and early professional experience in finance and accounting, the practice brings analytical discipline and global professionalism into the Israeli legal environment. Clients benefit from structured, transparent guidance in matters that shape property, family planning, and long term personal decisions.',
     'about.cta.title': 'Tell Us About Your Matter',
     'about.cta.body': 'From the first conversation, clients know exactly what their matter involves and what to expect next.',
     'about.cta.button': 'Get in Touch',
@@ -334,11 +334,11 @@ const translations: Record<Language, Record<string, string>> = {
     'nav.schedule': 'תיאום פגישת ייעוץ',
 
     // Hero
-    'hero.tagline': 'העתיד מחייך למי שמתכונן מראש',
+    'hero.tagline': 'מאיה זיו עורכי דין',
     'hero.title': 'מאיה זיו | עורכת דין בישראל',
-    'hero.subtitle1': 'מלווים כל לקוח בבהירות, בבטחון ובמצוינות',
+    'hero.subtitle1': 'המשרד פועל כשותף משפטי מסור ללקוחותיו, בדיוק משפטי ושיקול דעת אסטרטגי. בעולם המשתנה ללא הרף, המשרד דוגל בגישה משפטית המושתתת על קדמה ופרספקטיבה גלובלית. בהובלתה של מייסדת המשרד, מאיה זיו, המביאה מקצועיות בינלאומית לסביבה המשפטית הישראלית. המשרד ממוקם בתל אביב ומספק שירותים ללקוחות דוברי עברית ואנגלית, בישראל ומחוץ לה.',
     'hero.subtitle2': 'החלטות אסטרטגיות בעולם גלובאלי',
-    'hero.cta': 'בקשת ייעוץ חסוי',
+    'hero.cta': '',
 
     // Conflict Section
     'conflict.title': 'בהירות במקום שהפרטים קובעים את התוצאה',
@@ -347,9 +347,9 @@ const translations: Record<Language, Record<string, string>> = {
 
     // Guide Section
     'guide.title': 'אודות המשרד',
-    'guide.bio': 'המשרד הוקם כדי להעניק ללקוחות ליווי משפטי מקומי ובינלאומי, המבוסס על רקע אקדמי בהיר. המשרד מביא ניסיון מקצועי ותקשורת פיננסית קפדנית, על מנת לתכנן משפטית וגלובלית בהתאם לסטנדרטים אנליטיים. לקוחות המשרד נהנים מליווי שקוף ומובנה בסוגיות תכנון נכסיהם, לטווח הארוך, תוך שמירה על ההחלטות האישיות והמשפחתיות שלהם.',
-    'guide.punchline': 'אנו חושבים צעד אחד קדימה עבור לקוחותינו ומקבלים החלטות אסטרטגיות לחזות את אתגרי המחר.',
-    'guide.cta': 'קראו עוד על המשרד',
+    'guide.bio': '',
+    'guide.punchline': 'אנו חושבים צעד אחד קדימה עבור לקוחותינו ועוזרים להם לקבל החלטות שחוזות את אתגרי המחר',
+    'guide.cta': 'עוד על המשרד',
     'parallax.quote': 'תכנון משפטי המעוגן בהשלכות כלכליות ארוכות טווח, מהיום הראשון.',
 
     // Methodology
@@ -380,7 +380,7 @@ const translations: Record<Language, Record<string, string>> = {
     'practice.olim.desc': 'ליווי משפטי לעולים חדשים ותושבים חוזרים.',
     'practice.commercial.desc': 'חוזים, הקצאת סיכונים וייעוץ עסקי.',
     'practice.additional.olim': 'עולים חדשים ותושבים חוזרים',
-    'practice.additional.commercial': 'משפט מסחרי ואזרחי',
+    'practice.additional.commercial': 'פיננסי ומסחרי',
 
     // Insights
     'insights.title': 'מאמרים נבחרים',
@@ -457,9 +457,9 @@ const translations: Record<Language, Record<string, string>> = {
 
     // About Page
     'about.hero.title': 'אודות המשרד',
-    'about.hero.subtitle': 'פרקטיקת בוטיק המגשרת בין אסטרטגיה משפטית למשמעת פיננסית עבור לקוחות בינלאומיים בישראל.',
+    'about.hero.subtitle': '',
     'about.philosophy.title': 'גישה שונה לפרקטיקה משפטית',
-    'about.philosophy.body': 'המשרד הוקם כדי להעניק ללקוחות מקומיים ובינלאומיים ליווי משפטי דו-לשוני, המבוסס על תכנון משפטי קפדני, ראייה פיננסית ותקשורת בהירה. מתוך רקע אקדמי בינלאומי וניסיון מקצועי בפיננסים ובחשבונאות, המשרד מביא משמעת אנליטית וסטנדרטים גלובליים אל עולם המשפט הישראלי.',
+    'about.philosophy.body': 'המשרד הוקם על ידי מאיה זיו, מתוך אמונה כי ייעוץ משפטי מבוסס בראש ובראשונה על תקשורת ברורה והחלטות אסטרטגיות המתבססות על צרכי הלקוח. בזכות הרקע האקדמי הבינלאומי וניסיונה המקצועי המוקדם בתחום הפיננסים והחשבונאות, המשרד מביא עמו משמעת אנליטית ומקצועיות בינלאומית לסביבה המשפטית הישראלית. הלקוחות נהנים מליווי מובנה ושקוף בעניינים המשפיעים על נכסים, תכנון משפחתי והחלטות אישיות לטווח ארוך.',
     'about.philosophy.body2': 'לקוחות המשרד נהנים מליווי מובנה ושקוף בסוגיות המעצבות את נכסיהם, את התכנון המשפחתי ואת ההחלטות האישיות לטווח הארוך.',
     'about.attorney.title': 'הערכים שלנו',
     'about.attorney.body': 'מאיה זיו מביאה פרספקטיבה ייחודית לתחום המשפט. עם הכשרה בינלאומית וניסיון מקצועי בפיננסים ובחשבונאות, היא ניגשת לכל תיק עם קפדנות פיננסית וראייה אסטרטגית של התוצאה.',
@@ -472,16 +472,16 @@ const translations: Record<Language, Record<string, string>> = {
     'about.expect.doc.title': 'פרספקטיבה מקומית ובינלאומית',
     'about.expect.doc.desc': 'המשרד מלווה תושבי ישראל ולקוחות העולים לישראל או מתגוררים מעבר לים, תוך הקפדה על תקשורת ברורה, תיאום ציפיות ושילוב חלק בין מערכות משפט שונות.',
     'about.expect.intl.title': 'מומחיות בעסקאות בינלאומיות',
-    'about.expect.intl.desc': 'שילוב של השכלה בין לאומית, הכשרה פיננסית ופרקטיקה משפטית בישראל מאפשר גישור מדויק בין תרבויות, רגולציות ומערכות דין.',
-    'about.expect.timeline.title': 'שקיפות ובהירות',
+    'about.expect.intl.desc': 'שילוב של השכלה בינלאומית, הכשרה פיננסית ופרקטיקה משפטית בישראל מאפשר גישור מדויק בין תרבויות, רגולציות ומערכות דין.',
+    'about.expect.timeline.title': 'שקיפות לאורך כל הדרך',
     'about.expect.timeline.desc': 'אנו מאמינים במערכות יחסים ארוכות טווח, כל התקשרות נפתחת בהגדרת מסגרת ברורה, לוחות זמנים מדויקים ושקיפות שמייצרת בעבור לקוחותינו ביטחון.',
     'about.expect.comm.title': 'חשיבה אסטרטגית',
-    'about.expect.comm.desc': 'כל סוגיה נבחנת בדיוק משפטי, בהיגיון פיננסי ובתכנון פתרונות עמידים וארוכי טווח.',
+    'about.expect.comm.desc': 'כל סוגיה נבחנת בדיוק משפטי, פיננסי ובתכנון פתרונות עמידים וארוכי טווח.',
     'about.expect.foresight.title': 'מחויבות אישית',
-    'about.expect.foresight.desc': 'לקוחותינו מקבלים ליווי מעורכת הדין הבכירה, בשיקול דעת מקצועי ומחויבות מלאה למטרותיהם.',
-    'about.cta.title': 'התחילו שיחה',
-    'about.cta.body': 'תוכנית ברורה היא הצעד הראשון להגנה על נכסים ומורשת.',
-    'about.cta.button': 'תיאום שיחת ייעוץ',
+    'about.expect.foresight.desc': 'לקוחותינו מקבלים ליווי אישי, בשיקול דעת מקצועי ומחויבות מלאה למטרותיהם.',
+    'about.cta.title': 'נשמח לשמוע מכם',
+    'about.cta.body': 'כבר בפגישה הראשונה תקבלו תמונה ברורה והבנה מלאה של המצב המשפטי.',
+    'about.cta.button': 'דברו איתנו',
 
     // Service Pages - General
     'service.faq': 'שאלות נפוצות',
