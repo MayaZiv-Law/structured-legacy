@@ -98,6 +98,56 @@ const Commercial = () => {
         </div>
       </section>
 
+      {/* Cross-Border Section */}
+      <section className="relative z-20 py-12 bg-background overflow-hidden">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+          <div 
+            ref={crossBorderAnim.ref}
+            className={cn(
+              "relative max-w-6xl mx-auto transition-all duration-700",
+              crossBorderAnim.isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
+            )}
+          >
+            <div className={cn(
+              "absolute -top-8 w-[60%] bg-secondary h-[calc(100%+4rem)]",
+              isRTL ? "right-0 -mr-4 lg:-mr-16" : "left-0 -ml-4 lg:-ml-16"
+            )} />
+            <div className={cn(
+              "relative z-10 grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center"
+            )}>
+              <div className={cn(
+                "bg-background py-8 px-6 lg:py-10 lg:px-10 shadow-sm",
+                isRTL && "font-hebrew text-right"
+              )}>
+                <h2 className="text-3xl sm:text-4xl font-display font-semibold mb-6 text-foreground">
+                  {t('commercial.crossborder.title')}
+                </h2>
+                <p className="text-lg text-muted-foreground mb-4 leading-relaxed">
+                  {t('commercial.crossborder.body')}
+                </p>
+                <p className="text-lg text-muted-foreground leading-relaxed">
+                  {t('commercial.crossborder.body2')}
+                </p>
+              </div>
+              <div className={cn(
+                "relative",
+                isRTL ? "lg:order-first" : ""
+              )}>
+                <div className="aspect-[3/4] max-w-sm mx-auto lg:mx-0 overflow-hidden rounded-sm shadow-premium">
+                  <img
+                    src={crossBorderImage}
+                    alt={language === 'he' ? 'עסקים חוצי גבולות' : 'Cross border business'}
+                    className="w-full h-full object-cover"
+                    loading="lazy"
+                    decoding="async"
+                  />
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Core Services Section */}
       <section className="py-12 bg-background">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
@@ -129,62 +179,6 @@ const Commercial = () => {
                 <p className="text-lg text-muted-foreground">{service.desc}</p>
               </div>
             ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Cross-Border Section */}
-      <section className="relative z-20 py-12 bg-background overflow-hidden">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <div 
-            ref={crossBorderAnim.ref}
-            className={cn(
-              "relative max-w-6xl mx-auto transition-all duration-700",
-              crossBorderAnim.isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
-            )}
-          >
-            {/* Offset beige background */}
-            <div className={cn(
-              "absolute -top-8 w-[60%] bg-secondary h-[calc(100%+4rem)]",
-              isRTL ? "right-0 -mr-4 lg:-mr-16" : "left-0 -ml-4 lg:-ml-16"
-            )} />
-            
-            {/* Content grid */}
-            <div className={cn(
-              "relative z-10 grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center"
-            )}>
-              {/* Text content in white card */}
-              <div className={cn(
-                "bg-background py-8 px-6 lg:py-10 lg:px-10 shadow-sm",
-                isRTL && "font-hebrew text-right"
-              )}>
-                <h2 className="text-3xl sm:text-4xl font-display font-semibold mb-6 text-foreground">
-                  {t('commercial.crossborder.title')}
-                </h2>
-                <p className="text-lg text-muted-foreground mb-4 leading-relaxed">
-                  {t('commercial.crossborder.body')}
-                </p>
-                <p className="text-lg text-muted-foreground leading-relaxed">
-                  {t('commercial.crossborder.body2')}
-                </p>
-              </div>
-
-              {/* Image */}
-              <div className={cn(
-                "relative",
-                isRTL ? "lg:order-first" : ""
-              )}>
-                <div className="aspect-[3/4] max-w-sm mx-auto lg:mx-0 overflow-hidden rounded-sm shadow-premium">
-                  <img
-                    src={crossBorderImage}
-                    alt={language === 'he' ? 'עסקים חוצי גבולות' : 'Cross border business'}
-                    className="w-full h-full object-cover"
-                    loading="lazy"
-                    decoding="async"
-                  />
-                </div>
-              </div>
-            </div>
           </div>
         </div>
       </section>

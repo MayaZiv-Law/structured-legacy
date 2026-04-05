@@ -100,42 +100,6 @@ const RealEstate = () => {
         </div>
       </section>
 
-      {/* Risk Map Section */}
-      <section className="py-12 bg-background">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <div ref={riskAnim.ref} className={cn("max-w-4xl mx-auto transition-all duration-700", isRTL && "font-hebrew text-right", riskAnim.isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8")}>
-            <h2 className="text-4xl sm:text-5xl font-display font-semibold text-foreground mb-5">
-              {t('realestate.risk.title')}
-            </h2>
-            <div className={cn("w-16 h-0.5 bg-accent mb-6", isRTL && "mr-0 ml-auto")} />
-            <p className="text-lg text-muted-foreground leading-relaxed mb-8">
-              {t('realestate.risk.intro')}
-            </p>
-            
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8">
-              {risks.map((risk, index) => <div key={index} className={cn("flex flex-col items-center text-center transition-all duration-500", isRTL && "font-hebrew", riskAnim.isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8")} style={{
-              transitionDelay: riskAnim.isVisible ? `${index * 150}ms` : '0ms'
-            }}>
-                  {/* Icon with outlined circle */}
-                  <div className="w-14 h-14 rounded-full border border-accent flex items-center justify-center mb-5">
-                    <AlertTriangle className="h-6 w-6 text-accent" strokeWidth={1.5} />
-                  </div>
-                  
-                  {/* Title */}
-                  <h3 className="text-2xl font-display font-medium text-foreground mb-4">
-                    {t(risk.titleKey)}
-                  </h3>
-                  
-                  {/* Description */}
-                  <p className="text-muted-foreground leading-relaxed text-lg">
-                    {t(risk.descKey)}
-                  </p>
-                </div>)}
-            </div>
-          </div>
-        </div>
-      </section>
-
       {/* Tax Planning Section */}
       <section className="py-12 gradient-stone">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
@@ -225,6 +189,37 @@ const RealEstate = () => {
                   </div>
                 </div>
               </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Risk Map Section */}
+      <section className="py-12 bg-background">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+          <div ref={riskAnim.ref} className={cn("max-w-4xl mx-auto transition-all duration-700", isRTL && "font-hebrew text-right", riskAnim.isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8")}>
+            <h2 className="text-4xl sm:text-5xl font-display font-semibold text-foreground mb-5">
+              {t('realestate.risk.title')}
+            </h2>
+            <div className={cn("w-16 h-0.5 bg-accent mb-6", isRTL && "mr-0 ml-auto")} />
+            <p className="text-lg text-muted-foreground leading-relaxed mb-8">
+              {t('realestate.risk.intro')}
+            </p>
+            
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8">
+              {risks.map((risk, index) => <div key={index} className={cn("flex flex-col items-center text-center transition-all duration-500", isRTL && "font-hebrew", riskAnim.isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8")} style={{
+              transitionDelay: riskAnim.isVisible ? `${index * 150}ms` : '0ms'
+            }}>
+                  <div className="w-14 h-14 rounded-full border border-accent flex items-center justify-center mb-5">
+                    <AlertTriangle className="h-6 w-6 text-accent" strokeWidth={1.5} />
+                  </div>
+                  <h3 className="text-2xl font-display font-medium text-foreground mb-4">
+                    {t(risk.titleKey)}
+                  </h3>
+                  <p className="text-muted-foreground leading-relaxed text-lg">
+                    {t(risk.descKey)}
+                  </p>
+                </div>)}
             </div>
           </div>
         </div>
