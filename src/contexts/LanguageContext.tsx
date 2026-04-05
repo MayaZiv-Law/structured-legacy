@@ -28,11 +28,11 @@ const translations: Record<Language, Record<string, string>> = {
     // Hero
     'hero.tagline': 'Maya Ziv Law',
     'hero.title': 'Attorney in Israel',
-    'hero.subtitle1': 'We operate as a dedicated legal partner to our clients who trust us with matters that require both legal precision and strategic judgment. In an ever changing world the firm provides a solid legal ground shaped by international perspective, led by the firm\'s founder Maya Ziv whose global professionalism enriches the Israeli legal environment. The firm is based in Tel Aviv and serves both Hebrew and English speaking clients located both domestically and abroad.',
+    'hero.subtitle1': 'In an ever changing world, the firm is a dedicated partner to its clients, providing legal counsel shaped by global perspective.',
     'hero.subtitle2': '',
 
     // Guide Section
-    'guide.title': 'About Maya Ziv Law',
+    'guide.title': '',
     'guide.bio': '',
     'guide.punchline': 'We think ahead for our clients, using insight and judgment to anticipate their needs and challenges of the future.',
     'guide.cta': 'More About the Firm',
@@ -336,7 +336,7 @@ const translations: Record<Language, Record<string, string>> = {
     // Hero
     'hero.tagline': 'מאיה זיו עורכי דין',
     'hero.title': 'מאיה זיו | עורכת דין בישראל',
-    'hero.subtitle1': 'המשרד פועל כשותף משפטי מסור ללקוחותיו, בדיוק משפטי ושיקול דעת אסטרטגי. בעולם המשתנה ללא הרף, המשרד דוגל בגישה משפטית המושתתת על קדמה ופרספקטיבה גלובלית. בהובלתה של מייסדת המשרד, מאיה זיו, המביאה מקצועיות בינלאומית לסביבה המשפטית הישראלית. המשרד ממוקם בתל אביב ומספק שירותים ללקוחות דוברי עברית ואנגלית, בישראל ומחוץ לה.',
+    'hero.subtitle1': 'בעולם המשתנה ללא הרף, המשרד פועל כשותף מסור ללקוחותיו, ומספק ליווי ויעוץ משפטי המעוגן בפרספקטיבה גלובלית.',
     'hero.subtitle2': 'החלטות אסטרטגיות בעולם גלובאלי',
     'hero.cta': '',
 
