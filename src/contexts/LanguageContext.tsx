@@ -19,22 +19,22 @@ const translations: Record<Language, Record<string, string>> = {
     'nav.taxation': 'Tax and Compliance',
     'nav.estate': 'Family and Legacy',
     'nav.olim': 'Olim Hadashim and Returning Residents',
-    'nav.commercial': 'Commercial and Civil',
+    'nav.commercial': 'Commercial and Finance',
     'nav.insights': 'Insights',
     'nav.globalClients': 'Global Clients',
     'nav.contact': 'Contact',
     'nav.schedule': 'Schedule Consultation',
 
     // Hero
-    'hero.tagline': 'Clarity in a Changing World',
+    'hero.tagline': 'Maya Ziv Law',
     'hero.title': 'Attorney in Israel',
-    'hero.subtitle1': 'Premier legal counsel must be as unique as the clients it serves. At Maya Ziv Law, every matter receives the personal focus it deserves and the depth and reach that serious work demands.',
+    'hero.subtitle1': 'We operate as a dedicated legal partner to our clients who trust us with matters that require both legal precision and strategic judgment. In an ever changing world the firm provides a solid legal ground shaped by international perspective, led by the firm\'s founder Maya Ziv whose global professionalism enriches the Israeli legal environment. The firm is based in Tel Aviv and serves both Hebrew and English speaking clients located both domestically and abroad.',
     'hero.subtitle2': '',
 
     // Guide Section
     'guide.title': 'About Maya Ziv Law',
-    'guide.bio': 'The firm operates as a dedicated partner to each client, creating original solutions for the most complex domestic and cross border matters. The firm is based in Israel.',
-    'guide.punchline': 'We think ahead for our clients, using insight and judgment to anticipate their needs.',
+    'guide.bio': '',
+    'guide.punchline': 'We think ahead for our clients, using insight and judgment to anticipate their needs and challenges of the future.',
     'guide.cta': 'More About the Firm',
     'parallax.quote': 'The details that seem technical are often the ones that determine the outcome.',
 
@@ -64,7 +64,7 @@ const translations: Record<Language, Record<string, string>> = {
     'practice.olim.desc': 'Legal guidance for new immigrants and returning residents.',
     'practice.commercial.desc': 'Contracts, risk allocation, and business advisory.',
     'practice.additional.olim': 'Olim Hadashim and Returning Residents',
-    'practice.additional.commercial': 'Commercial and Civil',
+    'practice.additional.commercial': 'Commercial and Finance',
 
     // Insights
     'insights.title': 'Insights',
@@ -108,7 +108,7 @@ const translations: Record<Language, Record<string, string>> = {
     'faq.a9': 'A Probate Order (Kiyum Tzava\'a) is issued by the Israeli Registrar of Inheritance when the deceased left a valid will. It confirms the will\'s validity and authorizes its execution. An Inheritance Order (Tzav Yerusha) is issued when there is no valid will, and estate distribution then follows the statutory provisions of Israel\'s Succession Law. In cross border estates, coordinating the Israeli process with foreign proceedings is essential to avoid conflicts between jurisdictions.',
 
     // CTA
-    'cta.title': 'When the Matter Requires Both Legal and Financial Judgment',
+    'cta.title': 'Our Clients Matter',
     'cta.subtitle': 'Clients in Israel and abroad turn to Maya Ziv Law for transactions where precision matters. Inquiries welcome in Hebrew and English.',
     'cta.button': 'Schedule a Consultation',
     'cta.buttonSecondary': 'Initial Fit Assessment',
@@ -140,8 +140,8 @@ const translations: Record<Language, Record<string, string>> = {
     'contact.inquiry.other': 'Other Legal Matter',
 
     // About Page
-    'about.hero.title': 'About Maya Ziv Law',
-    'about.mainBody': 'Our clients bring us matters that require both legal precision and judgment. We treat each one as a unique situation with its own stakes, its own complexity, and its own required outcome.',
+    'about.hero.title': 'About the Firm',
+    'about.mainBody': 'The firm was founded by Maya Ziv whose core belief is that legal counsel is first built on clear communication, strategic decisions that are based on the client needs and analytic discipline. With an international academic background and early professional experience in finance and accounting, the practice brings analytical discipline and global professionalism into the Israeli legal environment. Clients benefit from structured, transparent guidance in matters that shape property, family planning, and long term personal decisions.',
     'about.cta.title': 'Tell Us About Your Matter',
     'about.cta.body': 'From the first conversation, clients know exactly what their matter involves and what to expect next.',
     'about.cta.button': 'Get in Touch',
@@ -295,7 +295,7 @@ const translations: Record<Language, Record<string, string>> = {
     'olim.cta.button': 'Plan Your Arrival',
 
     // Commercial & Civil Page
-    'commercial.hero.title': 'Commercial and Civil',
+    'commercial.hero.title': 'Commercial and Finance',
     'commercial.hero.subtitle': 'Protecting business interests through disciplined contracts, structured risk allocation, and Israel based representation for cross border matters.',
     'commercial.philosophy.title': 'Precision Before Disputes',
     'commercial.philosophy.body': 'In commercial engagements, the strength of your position depends on the quality of your contracts. Whether drafting a shareholders\' agreement, negotiating an exit, or structuring a cross border arrangement, we evaluate each matter through three lenses. Contractual rights, financial exposure, and future enforceability.',
@@ -327,18 +327,18 @@ const translations: Record<Language, Record<string, string>> = {
     'nav.taxation': 'מיסוי',
     'nav.estate': 'תכנון עזבונות, ירושות וצוואות',
     'nav.olim': 'עולים חדשים ותושבים חוזרים',
-    'nav.commercial': 'דיני מסחר ואזרחי',
+    'nav.commercial': 'פיננסי ומסחרי',
     'nav.insights': 'מאמרים',
     'nav.globalClients': 'לקוחות בינלאומיים',
     'nav.contact': 'צור קשר',
     'nav.schedule': 'תיאום פגישת ייעוץ',
 
     // Hero
-    'hero.tagline': 'העתיד מחייך למי שמתכונן מראש',
+    'hero.tagline': 'מאיה זיו עורכי דין',
     'hero.title': 'מאיה זיו | עורכת דין בישראל',
-    'hero.subtitle1': 'מלווים כל לקוח בבהירות, בבטחון ובמצוינות',
+    'hero.subtitle1': 'המשרד פועל כשותף משפטי מסור ללקוחותיו, בדיוק משפטי ושיקול דעת אסטרטגי. בעולם המשתנה ללא הרף, המשרד דוגל בגישה משפטית המושתתת על קדמה ופרספקטיבה גלובלית. בהובלתה של מייסדת המשרד, מאיה זיו, המביאה מקצועיות בינלאומית לסביבה המשפטית הישראלית. המשרד ממוקם בתל אביב ומספק שירותים ללקוחות דוברי עברית ואנגלית, בישראל ומחוץ לה.',
     'hero.subtitle2': 'החלטות אסטרטגיות בעולם גלובאלי',
-    'hero.cta': 'בקשת ייעוץ חסוי',
+    'hero.cta': '',
 
     // Conflict Section
     'conflict.title': 'בהירות במקום שהפרטים קובעים את התוצאה',
@@ -347,9 +347,9 @@ const translations: Record<Language, Record<string, string>> = {
 
     // Guide Section
     'guide.title': 'אודות המשרד',
-    'guide.bio': 'המשרד הוקם כדי להעניק ללקוחות ליווי משפטי מקומי ובינלאומי, המבוסס על רקע אקדמי בהיר. המשרד מביא ניסיון מקצועי ותקשורת פיננסית קפדנית, על מנת לתכנן משפטית וגלובלית בהתאם לסטנדרטים אנליטיים. לקוחות המשרד נהנים מליווי שקוף ומובנה בסוגיות תכנון נכסיהם, לטווח הארוך, תוך שמירה על ההחלטות האישיות והמשפחתיות שלהם.',
-    'guide.punchline': 'אנו חושבים צעד אחד קדימה עבור לקוחותינו ומקבלים החלטות אסטרטגיות לחזות את אתגרי המחר.',
-    'guide.cta': 'קראו עוד על המשרד',
+    'guide.bio': '',
+    'guide.punchline': 'אנו חושבים צעד אחד קדימה עבור לקוחותינו ועוזרים להם לקבל החלטות שחוזות את אתגרי המחר',
+    'guide.cta': 'עוד על המשרד',
     'parallax.quote': 'תכנון משפטי המעוגן בהשלכות כלכליות ארוכות טווח, מהיום הראשון.',
 
     // Methodology
@@ -380,7 +380,7 @@ const translations: Record<Language, Record<string, string>> = {
     'practice.olim.desc': 'ליווי משפטי לעולים חדשים ותושבים חוזרים.',
     'practice.commercial.desc': 'חוזים, הקצאת סיכונים וייעוץ עסקי.',
     'practice.additional.olim': 'עולים חדשים ותושבים חוזרים',
-    'practice.additional.commercial': 'משפט מסחרי ואזרחי',
+    'practice.additional.commercial': 'פיננסי ומסחרי',
 
     // Insights
     'insights.title': 'מאמרים נבחרים',
@@ -457,9 +457,9 @@ const translations: Record<Language, Record<string, string>> = {
 
     // About Page
     'about.hero.title': 'אודות המשרד',
-    'about.hero.subtitle': 'פרקטיקת בוטיק המגשרת בין אסטרטגיה משפטית למשמעת פיננסית עבור לקוחות בינלאומיים בישראל.',
+    'about.hero.subtitle': '',
     'about.philosophy.title': 'גישה שונה לפרקטיקה משפטית',
-    'about.philosophy.body': 'המשרד הוקם כדי להעניק ללקוחות מקומיים ובינלאומיים ליווי משפטי דו-לשוני, המבוסס על תכנון משפטי קפדני, ראייה פיננסית ותקשורת בהירה. מתוך רקע אקדמי בינלאומי וניסיון מקצועי בפיננסים ובחשבונאות, המשרד מביא משמעת אנליטית וסטנדרטים גלובליים אל עולם המשפט הישראלי.',
+    'about.philosophy.body': 'המשרד הוקם על ידי מאיה זיו, מתוך אמונה כי ייעוץ משפטי מבוסס בראש ובראשונה על תקשורת ברורה והחלטות אסטרטגיות המתבססות על צרכי הלקוח. בזכות הרקע האקדמי הבינלאומי וניסיונה המקצועי המוקדם בתחום הפיננסים והחשבונאות, המשרד מביא עמו משמעת אנליטית ומקצועיות בינלאומית לסביבה המשפטית הישראלית. הלקוחות נהנים מליווי מובנה ושקוף בעניינים המשפיעים על נכסים, תכנון משפחתי והחלטות אישיות לטווח ארוך.',
     'about.philosophy.body2': 'לקוחות המשרד נהנים מליווי מובנה ושקוף בסוגיות המעצבות את נכסיהם, את התכנון המשפחתי ואת ההחלטות האישיות לטווח הארוך.',
     'about.attorney.title': 'הערכים שלנו',
     'about.attorney.body': 'מאיה זיו מביאה פרספקטיבה ייחודית לתחום המשפט. עם הכשרה בינלאומית וניסיון מקצועי בפיננסים ובחשבונאות, היא ניגשת לכל תיק עם קפדנות פיננסית וראייה אסטרטגית של התוצאה.',
@@ -472,23 +472,23 @@ const translations: Record<Language, Record<string, string>> = {
     'about.expect.doc.title': 'פרספקטיבה מקומית ובינלאומית',
     'about.expect.doc.desc': 'המשרד מלווה תושבי ישראל ולקוחות העולים לישראל או מתגוררים מעבר לים, תוך הקפדה על תקשורת ברורה, תיאום ציפיות ושילוב חלק בין מערכות משפט שונות.',
     'about.expect.intl.title': 'מומחיות בעסקאות בינלאומיות',
-    'about.expect.intl.desc': 'שילוב של השכלה בין לאומית, הכשרה פיננסית ופרקטיקה משפטית בישראל מאפשר גישור מדויק בין תרבויות, רגולציות ומערכות דין.',
-    'about.expect.timeline.title': 'שקיפות ובהירות',
+    'about.expect.intl.desc': 'שילוב של השכלה בינלאומית, הכשרה פיננסית ופרקטיקה משפטית בישראל מאפשר גישור מדויק בין תרבויות, רגולציות ומערכות דין.',
+    'about.expect.timeline.title': 'שקיפות לאורך כל הדרך',
     'about.expect.timeline.desc': 'אנו מאמינים במערכות יחסים ארוכות טווח, כל התקשרות נפתחת בהגדרת מסגרת ברורה, לוחות זמנים מדויקים ושקיפות שמייצרת בעבור לקוחותינו ביטחון.',
     'about.expect.comm.title': 'חשיבה אסטרטגית',
-    'about.expect.comm.desc': 'כל סוגיה נבחנת בדיוק משפטי, בהיגיון פיננסי ובתכנון פתרונות עמידים וארוכי טווח.',
+    'about.expect.comm.desc': 'כל סוגיה נבחנת בדיוק משפטי, פיננסי ובתכנון פתרונות עמידים וארוכי טווח.',
     'about.expect.foresight.title': 'מחויבות אישית',
-    'about.expect.foresight.desc': 'לקוחותינו מקבלים ליווי מעורכת הדין הבכירה, בשיקול דעת מקצועי ומחויבות מלאה למטרותיהם.',
-    'about.cta.title': 'התחילו שיחה',
-    'about.cta.body': 'תוכנית ברורה היא הצעד הראשון להגנה על נכסים ומורשת.',
-    'about.cta.button': 'תיאום שיחת ייעוץ',
+    'about.expect.foresight.desc': 'לקוחותינו מקבלים ליווי אישי, בשיקול דעת מקצועי ומחויבות מלאה למטרותיהם.',
+    'about.cta.title': 'נשמח לשמוע מכם',
+    'about.cta.body': 'כבר בפגישה הראשונה תקבלו תמונה ברורה והבנה מלאה של המצב המשפטי.',
+    'about.cta.button': 'דברו איתנו',
 
     // Service Pages - General
     'service.faq': 'שאלות נפוצות',
 
     // Estate Planning Page
-    'estate.hero.title': 'משפחות עם נכסים בישראל וזיקה בינלאומית',
-    'estate.hero.subtitle': 'אסטרטגיות משפטיות להעברת עושר חוצה גבולות, צוואות דו-לשוניות וייפוי כוח מתמשך (ישראל).',
+    'estate.hero.title': 'תכנון עזבונות, ירושות וצואות',
+    'estate.hero.subtitle': 'משפחות בעלות נכסים בישראל וזיקה בינלאומית',
     'estate.challenge.title': 'ניהול הון משפחתי בין תחומי שיפוט',
     'estate.challenge.body': 'משפחות עם נכסים בישראל וזיקות לחו"ל מתמודדות עם נוף משפטי ייחודי. הליכי ירושה ישראליים לעתים קרובות מתממשקים עם חוקים זרים, יוצרים קונפליקטים פוטנציאליים בנוגע לסמכות שיפוט וחבות מס. צוואה ישראלית סטנדרטית לעתים רחוקות מספיקה לעיזבון רב-לאומי.',
     'estate.challenge.body2': 'המשרד מפתח תוכניות עיזבון מובנות ללקוחות ישראליים ובינלאומיים למניעת סכסוכים, הימנעות מעיכובי פרובייט והפחתת חשיפה למיסוי כפול. התהליך משלב דיני ירושה ישראליים עם מסגרות משפטיות זרות רלוונטיות, תומך בלקוחות המתגוררים בישראל או בחו"ל המחזיקים בנכסים או קשרים משפחתיים במספר תחומי שיפוט. גישה מתואמת זו מבטיחה שכל ירושה מועברת ביעילות ובהתאם לכוונת הלקוח.',
@@ -526,14 +526,14 @@ const translations: Record<Language, Record<string, string>> = {
     'estate.faq.a3': 'צו קיום צוואה ניתן כאשר המנוח הותיר צוואה תקפה. צו ירושה ניתן כאשר אין צוואה תקפה, ובמקרה זה הנכסים מחולקים לפי דיני הירושה הישראליים.',
     'estate.faq.q4': 'האם ניתן לנהל הליכי פרובייט מרחוק?',
     'estate.faq.a4': 'כן. אנו מטפלים בתהליך מול הרשם והבנקים באמצעות ייפוי כוח, כך שאינכם נדרשים להיות נוכחים בישראל לקבלת הצו.',
-    'estate.cta.title': 'תכנון לעתיד',
+    'estate.cta.title': 'תכנון שמגן על מה שחשוב',
     'estate.cta.body': 'תכנון משפטי ברור שתומך באינטרסים שלכם היום ולאורך זמן.',
-    'estate.cta.button': 'תיאום שיחת ייעוץ',
+    'estate.cta.button': 'התחילו תכנון עיזבון',
     'estate.cta.note': 'מענה תוך 1-2 ימי עסקים',
 
     // Real Estate Page
-    'realestate.hero.title': 'מקרקעין ונדל"ן',
-    'realestate.hero.subtitle': 'ייעוץ מקיף לקונים בינלאומיים. בדיקת נאותות, אסטרטגיית מס ורישום מאובטח.',
+    'realestate.hero.title': 'נדל"ן',
+    'realestate.hero.subtitle': 'יותר מעסקה: השקעה אסטרטגית',
     'realestate.approach.title': 'יותר מעסקה. השקעה אסטרטגית',
     'realestate.approach.body': 'עבור לקוחות רבים רכישת נכס בישראל היא יותר מהשקעה; זהו ציון דרך אישי והחלטה פיננסית לטווח ארוך. המשרד מעניק ליווי משפטי מלא הכולל ביצוע בדיקת נאותות (Due Diligence), סקירה חוזית ורישום בלשכת רישום המקרקעין. התהליך כולו מנוהל בבהירות, משמעת וראיית הנולד במטרה לקדם עסקה בטוחה ושקופה.',
     'realestate.approach.body2': 'הניסיון המקצועי של עו״ד מאיה זיו בתפקידים פיננסיים ותפעוליים, כולל עבודה ב-Citi Innovation Lab ו-Vornado Realty Trust, מעצב את הגישה של המשרד לעסקאות נדל״ן. התוצאה היא ייעוץ משפטי המתחשב לא רק בציות רגולטורי, אלא גם במבנה הפיננסי, בתזמון ובהשלכות ארוכות הטווח של כל החלטה.',
@@ -560,14 +560,14 @@ const translations: Record<Language, Record<string, string>> = {
     'realestate.faq.a2': 'כספים מוחזקים בדרך כלל בנאמנות (Escrow) ומשוחררים לפי לוח זמנים קפדני המקושר לאבני דרך משפטיות, כגון רישום "הערת אזהרה" לטובתכם.',
     'realestate.faq.q3': 'האם אני יכול לקנות נכס לפני עלייה?',
     'realestate.faq.a3': 'כן. תושבי חוץ יכולים לרכוש נכס. אנו מייעצים כיצד תזמון הרכישה ביחס לתאריך העלייה שלכם משפיע על הטבות מס הרכישה שלכם.',
-    'realestate.cta.title': 'אבטחו את ההשקעה שלכם',
+    'realestate.cta.title': 'הנכס שלכם, העדיפות שלנו',
     'realestate.cta.body': 'התחילו את הרכישה עם אסטרטגיה משפטית ופיננסית ברורה.',
     'realestate.cta.button': 'תיאום שיחת ייעוץ',
 
     // Taxation Page
-    'tax.hero.title': 'מיסוי ותאימות',
-    'tax.hero.subtitle': '',
-    'tax.context.title': 'עדשה פיננסית על אסטרטגיה משפטית',
+    'tax.hero.title': 'מיסוי',
+    'tax.hero.subtitle': 'אסטרטגיית מס וניהול הון',
+    'tax.context.title': 'אסטרטגיית מס וניהול הון',
     'tax.context.body': 'מיסוי ותאימות מעצבים האם עסקאות מאושרות, ממומנות ומושלמות. בין אם רוכשים נכס או מעבירים כספים, כל עסקה נושאת השלכות בישראל ופוטנציאלית בחו"ל.',
     'tax.context.body2': 'אנו ניגשים לכל מקרה עם משמעת פיננסית. על ידי שילוב תכנון מס בתהליך המשפטי, אנו ממזערים חיכוך רגולטורי, תומכים בתאימות מלאה ותומכים במעמדכם מול מוסדות פיננסיים.',
     'tax.realEstate.title': 'אסטרטגיית מס וניהול הון',
@@ -578,7 +578,7 @@ const translations: Record<Language, Record<string, string>> = {
     'tax.realEstate.ownership.desc': 'העברת הון לישראל דורשת עמידה ברגולציה מחמירה של איסור הלבנת הון. המשרד מלווה את הלקוח בבניית תיק מקור כספים (Source of Funds) סדור להבטחת קליטת הכספים במערכת הבנקאית.',
     'tax.realEstate.filing.title': 'תיאום מס בינלאומי',
     'tax.realEstate.filing.desc': 'בחינת השלכות המס בישראל אל מול חובות דיווח זרות במטרה למנוע כפל מס ולהגן על הערך הכלכלי של ההשקעה.',
-    'tax.banking.title': 'רגולציה בנקאית ומקור כספים',
+    'tax.banking.title': 'ציות בנקאי',
     'tax.banking.body': 'העברת כספים לישראל או ממנה דורשת הקפדה על רגולציה בנקאית ותקני מניעת הלבנת הון. כל עסקה מנוהלת בתיאום עם מוסדות פיננסיים ישראליים כדי להבטיח תאימות ל-FATCA, דרישות AML והנחיות בנקאות מקומיות.',
     'tax.banking.body2': 'המשרד גם מסייע בהכנה והגשה של הצהרות מס שוטפות, מתאם דיווח ישראלי עם התחייבויות בינלאומיות ואמנות רלוונטיות, מפחית את הסיכון למיסוי כפול ותומך ביציבות פיננסית ומשפטית לטווח ארוך בין תחומי שיפוט.',
     'tax.serve.title': 'האם שירות זה מתאים לכם?',
@@ -587,7 +587,7 @@ const translations: Record<Language, Record<string, string>> = {
     'tax.serve.compliance.desc': 'כל התקשרות מבוססת על אימות מתועד, לוחות זמנים שקופים ותהליך מובנה המעדיף דיוק רגולטורי.',
     'tax.serve.firstStep': 'צעד ראשון',
     'tax.serve.firstStep.desc': 'ההתקשרות מתחילה בהערכה מובנית של מעמד המס, סטטוס התושבות וחובות הדיווח שלכם, לצורך בניית מפת דרכים ברורה לתאימות.',
-    'tax.crossBorder.title': 'תיאום עם התחייבויות בינלאומיות',
+    'tax.crossBorder.title': 'תיאום מס בינלאומי',
     'tax.crossBorder.body': 'רשת האמנות של ישראל עשויה להשפיע על אופן הטיפול בהכנסות מסוימות וחובות דיווח, בהתאם לתחום השיפוט שלכם.',
     'tax.crossBorder.body2': 'אנו מסמנים שיקולים פוטנציאליים הקשורים לאמנות ומתאמים עם יועצי המס הזרים שלכם. בעוד שאנו לא מגישים דוחות מס זרים, אנו מבטיחים שהפעולות המשפטיות הישראליות שלכם מתקשרות בבהירות לצוות הגלובלי שלכם לשמירה על עמדת מס עקבית.',
     'tax.olim.title': 'תכנון לעולים חדשים ותושבים חוזרים',
@@ -598,13 +598,13 @@ const translations: Record<Language, Record<string, string>> = {
     'tax.faq.a2': 'תאימות לעולם אינה אוטומטית. העברות גדולות מפעילות בדיקות. אנו מכינים את תיק "מקור הכספים" מראש כדי להפחית את הסיכון להקפאה או דחייה של כספים.',
     'tax.faq.q3': 'מתי אני הופך לתושב מס בישראל?',
     'tax.faq.a3': 'תושבות נקבעת על ידי מבחן "מרכז החיים", לא רק אזרחות. אנו מייעצים לגבי הקריטריונים המשפטיים וכיצד הנוכחות שלכם בישראל משפיעה על הסטטוס שלכם.',
-    'tax.cta.title': 'תאימות אסטרטגית',
+    'tax.cta.title': 'בהירות לפני התחייבות',
     'tax.cta.body': 'התחילו עם בהירות, תוכנית שהופכת אי ודאות למציאות.',
-    'tax.cta.button': 'תיאום שיחת ייעוץ',
+    'tax.cta.button': 'תיאום בדיקת מס',
 
     // Olim & Returning Residents Page
     'olim.hero.title': 'ייעוץ משפטי לעולים חדשים ותושבים חוזרים',
-    'olim.hero.subtitle': 'מסגרת משפטית מובנית למעבר שלכם לישראל. מיצוב מס, רכישת נכס ושילוב נכסים.',
+    'olim.hero.subtitle': 'ניהול משפטי של תהליך המעבר',
     'olim.context.title': 'פרק חדש מובנה מהיום הראשון',
     'olim.context.body': 'התחלת פרק חדש בישראל מביאה הזדמנות, מורכבות ובחירות משפטיות חשובות. המשרד מספק הדרכה משפטית סבלנית, אישית ומובנית לעולים חדשים ותושבים חוזרים, מבטיח שכל לקוח מרגיש נתמך, מיודע ובטוח מהצעד הראשון ואילך.',
     'olim.context.body2': '',
@@ -627,13 +627,13 @@ const translations: Record<Language, Record<string, string>> = {
     'olim.expect.item1': 'רשימת תיעוד מותאמת למצבכם',
     'olim.expect.item2': 'מיפוי סטטוס תושבות ומס',
     'olim.expect.item3': 'מפת דרכים מתואמת עם שלבים מוגדרים',
-    'olim.cta.title': 'התחילו את המעבר על בסיס יציב',
+    'olim.cta.title': 'התחילו את המעבר על קרקע יציבה',
     'olim.cta.body': 'התחילו עם מפת דרכים מובנית ורשימת תיעוד.',
     'olim.cta.button': 'תיאום שיחת ייעוץ',
 
     // Commercial & Civil Page
-    'commercial.hero.title': 'מסחרי ואזרחי',
-    'commercial.hero.subtitle': 'הגנה על אינטרסים עסקיים באמצעות חוזים ממושמעים וייצוג בישראל לעניינים חוצי גבולות.',
+    'commercial.hero.title': 'פיננסי ומסחרי',
+    'commercial.hero.subtitle': 'ניהול סיכונים',
     'commercial.philosophy.title': 'דיוק לפני סכסוכים',
     'commercial.philosophy.body': 'בהתקשרויות מסחריות, עוצמת העמדה שלכם תלויה בדיוק החוזים שלכם. בין אם מנסחים הסכם שותפות או מנהלים משא ומתן על יציאה, אנו מעריכים כל עניין דרך שלוש עדשות. זכויות חוזיות, חשיפה פיננסית ואכיפה עתידית.',
     'commercial.philosophy.body2': 'המשרד מספק ניתוח משפטי ממושמע בסכסוכים חוזיים ועסקיים. כל עניין נבחן דרך זכויות חוזיות, חשיפה פיננסית וסעדים זמינים. הלקוחות מקבלים הדרכה מובנית שתומכת במשא ומתן, יישוב סכסוכים או הליכים משפטיים רשמיים בעת הצורך.',
@@ -644,14 +644,14 @@ const translations: Record<Language, Record<string, string>> = {
     'commercial.services.negotiation.desc': 'המשרד משמש נציגות משפטית אופרטיבית בישראל עבור גופים הפועלים מחוץ למדינה הכולל אכיפת פסקי חוץ וניהול זכויות בעלי מניות.',
     'commercial.services.dispute.title': 'אסטרטגיית יישוב סכסוכים',
     'commercial.services.dispute.desc': 'ניהול מחלוקות חוזיים מתוך ראייה עסקית רחבה המעדפת את האינטרס הכלכלי של הלקוח בין אם בליטיגציה נחושה ובין אם בחתירה לפשרה מושכלת.',
-    'commercial.services.crossborder.title': 'תיעוד חוצה גבולות',
+    'commercial.services.crossborder.title': 'ייצוג חברות ומשקיעים זרים',
     'commercial.services.crossborder.desc': 'תיאום עם עורכי דין בחו"ל והתאמת חוזים ופסקי דין זרים לאכיפה או הכרה בישראל.',
     'commercial.crossborder.title': 'אינטרסים עסקיים מעבר לגבולות',
     'commercial.crossborder.body': 'אנו מנהלים עניינים מסחריים עם מרכיבים בינלאומיים, משמשים כזרוע המשפטית המקומית עבור המשקיעים והעסקים של לקוחותינו. גישה מובנית זו תומכת בלקוחות המתגוררים בחו"ל אך שומרים על אינטרסים פעילים בישראל.',
     'commercial.crossborder.body2': 'בין אם אוכפים חוזה זר בישראל או מגנים על אינטרסים של בעל מניות מקומי בזמן שהייה בחו"ל, אנו מספקים ייצוג מעשי על הקרקע לעניינים אזרחיים עם מימדים בינלאומיים. הפרקטיקה מתאמת דרישות משפטיות ישראליות עם עורכי דין זרים ואסטרטגיה חוצית גבולות, תומכת בלקוחות המתגוררים בחו"ל או שומרים על קשרים משפטיים ופיננסיים במספר תחומי שיפוט.',
     'commercial.clients.title': 'עם מי אנחנו בדרך כלל עובדים',
     'commercial.clients.body': 'הפרקטיקה המסחרית שלנו מתמקדת בחוזים, הגנה על נכסים וסכסוכים מורכבים, ומשרתת הן עסקים והן יחידים פרטיים. אנו עובדים עם בעלי עסקים, משקיעים, מנהלים ולקוחות פרטיים הזקוקים לייעוץ משפטי שוטף או פתרון אסטרטגי לעניינים מסחריים ואזרחיים משמעותיים.',
-    'commercial.cta.title': 'הגנו על האינטרסים המסחריים שלכם',
+    'commercial.cta.title': 'הגנו על הפוזיציה המסחרית שלכם',
     'commercial.cta.body': 'התחילו בסקירת חוזה או הערכת אסטרטגיית סכסוך. חסוי ומתועד.',
     'commercial.cta.button': 'תיאום שיחת ייעוץ',
   },
