@@ -33,9 +33,9 @@ const PracticeAreasSection = () => {
           </h2>
         </div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-5 max-w-5xl mx-auto justify-items-center [&>*:nth-child(4)]:sm:col-start-1 [&>*:nth-child(4)]:lg:col-start-1 [&>*:nth-child(5)]:sm:col-start-2 [&>*:nth-child(5)]:lg:col-start-2 sm:[&>*:nth-child(4)]:justify-self-end sm:[&>*:nth-child(5)]:justify-self-start lg:[&>*:nth-child(4)]:justify-self-end lg:[&>*:nth-child(5)]:justify-self-start">
+        <div className="flex flex-wrap justify-center gap-4 sm:gap-5 max-w-5xl mx-auto">
           {areas.map((area, index) => (
-            <Link key={index} to={localePath(area.link)} className="group relative block pb-10 sm:pb-12 hover:shadow-lg transition-shadow duration-300">
+            <Link key={index} to={localePath(area.link)} className="group relative block pb-10 sm:pb-12 hover:shadow-lg transition-shadow duration-300 w-full sm:w-[calc(50%-0.625rem)] lg:w-[calc(33.333%-0.875rem)]">
               <div className="aspect-[4/5] overflow-hidden">
                 <img
                   src={area.image}
@@ -60,8 +60,6 @@ const PracticeAreasSection = () => {
           ))}
         </div>
       </div>
-
-      <div className="h-2 sm:h-4" />
     </section>
   );
 };
