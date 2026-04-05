@@ -9,6 +9,7 @@ import { useScrollAnimation } from '@/hooks/useScrollAnimation';
 import aboutHeroBg from '@/assets/about-hero-globe.webp';
 import { SEO, attorneySchema, createBreadcrumbSchema } from '@/components/SEO';
 import MethodologySection from '@/components/home/MethodologySection';
+import PageHero from '@/components/shared/PageHero';
 
 const About = () => {
   const { t, isRTL, language } = useLanguage();
@@ -33,30 +34,8 @@ const About = () => {
         schema={[attorneySchema, breadcrumbSchema]}
       />
 
-      {/* Hero Section - Clean image with title overlay */}
-      <section className="relative min-h-[70vh] sm:min-h-[75vh] flex flex-col overflow-visible -mt-0 lg:-mt-20">
-        <div className="absolute inset-0 z-0">
-          <img
-            src={aboutHeroBg}
-            alt={t('about.hero.title')}
-            className="w-full h-full object-cover"
-            fetchPriority="high"
-            loading="eager"
-            decoding="async"
-            width={1920}
-            height={1080}
-          />
-        </div>
-        <div className="flex-grow" />
-        <div className="relative z-10 container mx-auto px-4 sm:px-6 lg:px-8 mb-8">
-          <h1 className={cn(
-            "text-4xl sm:text-5xl lg:text-6xl font-display font-semibold text-white drop-shadow-lg",
-            isRTL && "font-hebrew text-right"
-          )}>
-            {t('about.hero.title')}
-          </h1>
-        </div>
-      </section>
+      {/* Hero Section - Same style as expertise pages */}
+      <PageHero backgroundImage={aboutHeroBg} title={t('about.hero.title')} />
 
       {/* Main Body */}
       <section className="pt-24 sm:pt-28 pb-12 gradient-stone">
