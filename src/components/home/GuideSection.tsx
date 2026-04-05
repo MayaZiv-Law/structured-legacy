@@ -10,7 +10,7 @@ const GuideSection = () => {
   } = useLanguage();
   const localePath = useLocalePath();
   const Arrow = isRTL ? ArrowLeft : ArrowRight;
-  return <section className="py-12 lg:py-16 bg-background overflow-hidden">
+  return <section className="py-6 lg:py-8 bg-background overflow-hidden">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="max-w-3xl mx-auto">
           <div className={cn("bg-secondary/50 p-6 sm:p-8 lg:py-10 lg:px-10", isRTL && "text-right font-hebrew")}>
