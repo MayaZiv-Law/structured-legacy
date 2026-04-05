@@ -77,24 +77,6 @@ const OlimResidents = () => {
         </div>
       </section>
 
-      <section className="py-12 bg-background">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <div ref={frameworkAnim.ref} className={cn("max-w-4xl mx-auto mb-10 transition-all duration-700", isRTL && "font-hebrew text-right", frameworkAnim.isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8")}>
-            <div className={cn("w-16 h-0.5 bg-accent mb-6", isRTL && "ml-auto")} />
-            <h2 className="text-3xl sm:text-4xl font-display font-semibold mb-6">{t('olim.framework.title')}</h2>
-          </div>
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto">
-            {frameworkItems.map((item, i) => <div key={i} className={cn("p-6 bg-card rounded-lg border border-border transition-all duration-500", isRTL && "font-hebrew text-right", frameworkAnim.isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8")} style={{
-            transitionDelay: frameworkAnim.isVisible ? `${i * 150}ms` : '0ms'
-          }}>
-                <item.icon className="h-6 w-6 text-accent mb-4" />
-                <h3 className="text-xl font-medium mb-2">{item.title}</h3>
-                <p className="text-lg text-muted-foreground">{item.desc}</p>
-              </div>)}
-          </div>
-        </div>
-      </section>
-
       <section className="relative z-20 py-12 bg-background overflow-hidden">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div ref={taxAnim.ref} className={cn("relative max-w-6xl mx-auto transition-all duration-700", taxAnim.isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8")}>
@@ -114,6 +96,24 @@ const OlimResidents = () => {
                 </div>
               </div>
             </div>
+          </div>
+        </div>
+      </section>
+
+      <section className="py-12 bg-background">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+          <div ref={frameworkAnim.ref} className={cn("max-w-4xl mx-auto mb-10 transition-all duration-700", isRTL && "font-hebrew text-right", frameworkAnim.isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8")}>
+            <div className={cn("w-16 h-0.5 bg-accent mb-6", isRTL && "ml-auto")} />
+            <h2 className="text-3xl sm:text-4xl font-display font-semibold mb-6">{t('olim.framework.title')}</h2>
+          </div>
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto">
+            {frameworkItems.map((item, i) => <div key={i} className={cn("p-6 bg-card rounded-lg border border-border transition-all duration-500", isRTL && "font-hebrew text-right", frameworkAnim.isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8")} style={{
+            transitionDelay: frameworkAnim.isVisible ? `${i * 150}ms` : '0ms'
+          }}>
+                <item.icon className="h-6 w-6 text-accent mb-4" />
+                <h3 className="text-xl font-medium mb-2">{item.title}</h3>
+                <p className="text-lg text-muted-foreground">{item.desc}</p>
+              </div>)}
           </div>
         </div>
       </section>

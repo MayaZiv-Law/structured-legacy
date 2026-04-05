@@ -28,15 +28,15 @@ const translations: Record<Language, Record<string, string>> = {
     // Hero
     'hero.tagline': 'Maya Ziv Law',
     'hero.title': 'Attorney in Israel',
-    'hero.subtitle1': 'We operate as a dedicated legal partner to our clients who trust us with matters that require both legal precision and strategic judgment. In an ever changing world the firm provides a solid legal ground shaped by international perspective, led by the firm\'s founder Maya Ziv whose global professionalism enriches the Israeli legal environment. The firm is based in Tel Aviv and serves both Hebrew and English speaking clients located both domestically and abroad.',
+    'hero.subtitle1': 'In an ever changing world, the firm is a dedicated partner to its clients, providing legal counsel shaped by global perspective.',
     'hero.subtitle2': '',
 
     // Guide Section
-    'guide.title': 'About Maya Ziv Law',
+    'guide.title': '',
     'guide.bio': '',
     'guide.punchline': 'We think ahead for our clients, using insight and judgment to anticipate their needs and challenges of the future.',
     'guide.cta': 'More About the Firm',
-    'parallax.quote': 'The details that seem technical are often the ones that determine the outcome.',
+    'parallax.quote': '',
 
     // Methodology
     'method.step1.title': 'Our Clients',

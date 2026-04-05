@@ -115,6 +115,7 @@ const Commercial = () => {
             <div className={cn(
               "relative z-10 grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center"
             )}>
+
               <div className={cn(
                 "bg-background py-8 px-6 lg:py-10 lg:px-10 shadow-sm",
                 isRTL && "font-hebrew text-right"
@@ -129,6 +130,8 @@ const Commercial = () => {
                   {t('commercial.crossborder.body2')}
                 </p>
               </div>
+
+
               <div className={cn(
                 "relative",
                 isRTL ? "lg:order-first" : ""
@@ -151,7 +154,7 @@ const Commercial = () => {
       {/* Core Services Section */}
       <section className="py-12 bg-background">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <div 
+          <div
             ref={servicesAnim.ref}
             className={cn(
               "max-w-4xl mx-auto mb-10 transition-all duration-700",
@@ -165,8 +168,8 @@ const Commercial = () => {
           </div>
           <div className="grid md:grid-cols-2 gap-6 max-w-4xl mx-auto">
             {coreServices.map((service, i) => (
-              <div 
-                key={i} 
+              <div
+                key={i}
                 className={cn(
                   "p-6 bg-card rounded-lg border border-border transition-all duration-500",
                   isRTL && "font-hebrew text-right",
