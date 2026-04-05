@@ -33,7 +33,7 @@ const PracticeAreasSection = () => {
           </h2>
         </div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-4 sm:gap-5 max-w-7xl mx-auto">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-5 max-w-5xl mx-auto justify-items-center [&>*:nth-child(4)]:sm:col-start-1 [&>*:nth-child(4)]:lg:col-start-1 [&>*:nth-child(5)]:sm:col-start-2 [&>*:nth-child(5)]:lg:col-start-2 sm:[&>*:nth-child(4)]:justify-self-end sm:[&>*:nth-child(5)]:justify-self-start lg:[&>*:nth-child(4)]:justify-self-end lg:[&>*:nth-child(5)]:justify-self-start">
           {areas.map((area, index) => (
             <Link key={index} to={localePath(area.link)} className="group relative block pb-10 sm:pb-12 hover:shadow-lg transition-shadow duration-300">
               <div className="aspect-[4/5] overflow-hidden">
