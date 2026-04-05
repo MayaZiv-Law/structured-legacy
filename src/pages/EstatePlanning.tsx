@@ -95,32 +95,8 @@ const EstatePlanning = () => {
       {/* Hero Section */}
       <PageHero backgroundImage={estateHeroBg} title={t('estate.hero.title')} subtitle={t('estate.hero.subtitle')} imagePosition="center 70%" />
 
-      {/* Enduring Power of Attorney Section */}
-      <section className="pt-24 sm:pt-28 pb-12 bg-background overflow-visible">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <div ref={epaAnim.ref} className={cn("max-w-6xl mx-auto transition-all duration-700", epaAnim.isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8")}>
-            <div className={cn("grid grid-cols-1 lg:grid-cols-2 gap-8 items-stretch")}>
-              {/* Text card */}
-              <div className={cn("p-8 sm:p-10 bg-card rounded-2xl shadow-lg border border-border/50", isRTL ? "font-hebrew text-right order-1" : "order-1")}>
-                <div className={cn("w-16 h-0.5 bg-accent mb-6", isRTL && "ml-auto")} />
-                <h2 className="text-3xl sm:text-4xl font-display font-semibold mb-5 text-foreground">
-                  {t('estate.epa.title')}
-                </h2>
-                <p className="text-muted-foreground mb-4 leading-relaxed text-lg">
-                  {t('estate.epa.body')}
-                </p>
-              </div>
-              {/* Image */}
-              <div className={cn("rounded-xl overflow-hidden shadow-xl transition-all duration-700 delay-200 h-64 sm:h-80 lg:h-full", isRTL ? "order-2" : "order-2", epaAnim.isVisible ? "opacity-100 translate-x-0" : isRTL ? "opacity-0 -translate-x-8" : "opacity-0 translate-x-8")}>
-                <img alt="Estate planning documents" className="w-full h-full object-cover" src="/lovable-uploads/e3b93eb0-b8af-4d3d-96e5-15a47306753b.webp" loading="lazy" decoding="async" />
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
       {/* Cross-Border Wills Section */}
-      <section className="py-12 bg-background">
+      <section className="pt-24 sm:pt-28 pb-12 bg-background">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div ref={willsAnim.ref} className={cn("max-w-4xl mx-auto mb-8 transition-all duration-700", isRTL && "font-hebrew text-right", willsAnim.isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8")}>
             <div className={cn("w-16 h-0.5 bg-accent mb-6", isRTL && "ml-auto")} />
@@ -139,6 +115,30 @@ const EstatePlanning = () => {
                 <h3 className="font-medium mb-2 text-lg">{area.title}</h3>
                 <p className="text-base text-muted-foreground">{area.desc}</p>
               </div>)}
+          </div>
+        </div>
+      </section>
+
+      {/* Enduring Power of Attorney Section */}
+      <section className="py-12 bg-background overflow-visible">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+          <div ref={epaAnim.ref} className={cn("max-w-6xl mx-auto transition-all duration-700", epaAnim.isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8")}>
+            <div className={cn("grid grid-cols-1 lg:grid-cols-2 gap-8 items-stretch")}>
+              {/* Text card */}
+              <div className={cn("p-8 sm:p-10 bg-card rounded-2xl shadow-lg border border-border/50", isRTL ? "font-hebrew text-right order-1" : "order-1")}>
+                <div className={cn("w-16 h-0.5 bg-accent mb-6", isRTL && "ml-auto")} />
+                <h2 className="text-3xl sm:text-4xl font-display font-semibold mb-5 text-foreground">
+                  {t('estate.epa.title')}
+                </h2>
+                <p className="text-muted-foreground mb-4 leading-relaxed text-lg">
+                  {t('estate.epa.body')}
+                </p>
+              </div>
+              {/* Image */}
+              <div className={cn("rounded-xl overflow-hidden shadow-xl transition-all duration-700 delay-200 h-64 sm:h-80 lg:h-full", isRTL ? "order-2" : "order-2", epaAnim.isVisible ? "opacity-100 translate-x-0" : isRTL ? "opacity-0 -translate-x-8" : "opacity-0 translate-x-8")}>
+                <img alt="Estate planning documents" className="w-full h-full object-cover" src="/lovable-uploads/e3b93eb0-b8af-4d3d-96e5-15a47306753b.webp" loading="lazy" decoding="async" />
+              </div>
+            </div>
           </div>
         </div>
       </section>

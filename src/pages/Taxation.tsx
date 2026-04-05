@@ -108,6 +108,52 @@ const Taxation = () => {
         </div>
       </section>
 
+      {/* Real Estate Tax Planning - Asymmetric Design */}
+      <section className="py-12 bg-background overflow-hidden">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+          {/* Centered title above the layout */}
+          <div ref={realEstateAnim.ref} className={cn("text-center mb-8 transition-all duration-700", isRTL && "font-hebrew", realEstateAnim.isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8")}>
+            <div className="w-16 h-0.5 bg-accent mx-auto mb-6" />
+            <h2 className="text-3xl sm:text-4xl font-display font-semibold text-foreground mb-4">
+              {t('tax.realEstate.title')}
+            </h2>
+            <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
+              {t('tax.realEstate.body')}
+            </p>
+          </div>
+
+          {/* Asymmetric layout */}
+          <div className="relative max-w-6xl mx-auto">
+            {/* Beige background - 60% width, extends above/below */}
+            <div className={cn("absolute -top-8 h-[calc(100%+4rem)] w-[60%] bg-secondary/50 rounded-sm", isRTL ? "right-0 -mr-4 lg:-mr-16" : "left-0 -ml-4 lg:-ml-16")} />
+            
+            {/* White card - 92% width, offset, z-10 */}
+            <div className={cn("relative z-10 max-w-[92%] mt-8 bg-background shadow-sm rounded-lg p-8 md:p-12", isRTL ? "mr-auto" : "ml-auto")}>
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+                {realEstateServices.map((service, i) => <div key={i} className={cn("flex flex-col items-center text-center transition-all duration-500", isRTL && "font-hebrew", realEstateAnim.isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8")} style={{
+                transitionDelay: realEstateAnim.isVisible ? `${i * 150}ms` : '0ms'
+              }}>
+                    {/* Icon with filled circle */}
+                    <div className="w-16 h-16 rounded-full bg-accent/20 flex items-center justify-center mb-4">
+                      <service.icon className="h-6 w-6 text-accent" strokeWidth={1.5} />
+                    </div>
+                    
+                    {/* Title */}
+                    <h3 className="text-xl font-display font-medium text-foreground mb-2">
+                      {service.title}
+                    </h3>
+                    
+                    {/* Description */}
+                    <p className="text-muted-foreground text-lg leading-relaxed">
+                      {service.desc}
+                    </p>
+                  </div>)}
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Banking & AML Compliance - Asymmetric Design with Image */}
       <section className="py-12 bg-background overflow-hidden">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
@@ -137,6 +183,34 @@ const Taxation = () => {
               <div className={cn("relative w-full", isRTL && "order-2")}>
                 <img alt="Banking compliance" className="w-full h-64 lg:h-full object-cover shadow-lg" src="/lovable-uploads/10c05b41-4184-42a1-bdf3-3b49d016c9bb.webp" loading="lazy" decoding="async" />
               </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Who We Serve */}
+      <section className="py-12 bg-background">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+          <div ref={serveAnim.ref} className={cn("max-w-4xl mx-auto text-center transition-all duration-700", isRTL && "font-hebrew", serveAnim.isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8")}>
+            <div className="w-16 h-0.5 bg-accent mb-6 mx-auto" />
+            <h2 className="text-3xl sm:text-4xl font-display font-semibold mb-6">
+              {t('tax.serve.title')}
+            </h2>
+            <p className="text-lg text-muted-foreground mb-8 leading-relaxed">
+              {t('tax.serve.body')}
+            </p>
+            
+            <div className="grid md:grid-cols-2 gap-8 max-w-3xl mx-auto">
+              {serveItems.map((item, i) => <div key={i} className={cn("flex flex-col items-center text-center transition-all duration-500", serveAnim.isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8")} style={{
+              transitionDelay: serveAnim.isVisible ? `${i * 150}ms` : '0ms'
+            }}>
+                  {/* Circular icon */}
+                  <div className="w-16 h-16 rounded-full bg-accent flex items-center justify-center mb-5">
+                    <item.icon className="w-7 h-7 text-accent-foreground" strokeWidth={1.5} />
+                  </div>
+                  <h3 className="text-xl font-display font-medium text-foreground mb-3">{item.title}</h3>
+                  <p className="text-lg text-muted-foreground leading-relaxed">{item.desc}</p>
+                </div>)}
             </div>
           </div>
         </div>
@@ -174,34 +248,6 @@ const Taxation = () => {
             <p className="text-lg text-muted-foreground leading-relaxed">
               {t('tax.olim.body')}
             </p>
-          </div>
-        </div>
-      </section>
-
-      {/* Who We Serve */}
-      <section className="py-12 bg-background">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <div ref={serveAnim.ref} className={cn("max-w-4xl mx-auto text-center transition-all duration-700", isRTL && "font-hebrew", serveAnim.isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8")}>
-            <div className="w-16 h-0.5 bg-accent mb-6 mx-auto" />
-            <h2 className="text-3xl sm:text-4xl font-display font-semibold mb-6">
-              {t('tax.serve.title')}
-            </h2>
-            <p className="text-lg text-muted-foreground mb-8 leading-relaxed">
-              {t('tax.serve.body')}
-            </p>
-
-            <div className="grid md:grid-cols-2 gap-8 max-w-3xl mx-auto">
-              {serveItems.map((item, i) => <div key={i} className={cn("flex flex-col items-center text-center transition-all duration-500", serveAnim.isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8")} style={{
-              transitionDelay: serveAnim.isVisible ? `${i * 150}ms` : '0ms'
-            }}>
-                  {/* Circular icon */}
-                  <div className="w-16 h-16 rounded-full bg-accent flex items-center justify-center mb-5">
-                    <item.icon className="w-7 h-7 text-accent-foreground" strokeWidth={1.5} />
-                  </div>
-                  <h3 className="text-xl font-display font-medium text-foreground mb-3">{item.title}</h3>
-                  <p className="text-lg text-muted-foreground leading-relaxed">{item.desc}</p>
-                </div>)}
-            </div>
           </div>
         </div>
       </section>
