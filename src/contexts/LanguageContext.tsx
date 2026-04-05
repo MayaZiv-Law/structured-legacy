@@ -28,7 +28,7 @@ const translations: Record<Language, Record<string, string>> = {
     // Hero
     'hero.tagline': 'Maya Ziv Law',
     'hero.title': 'Attorney in Israel',
-    'hero.subtitle1': 'In an ever changing world, the firm is a dedicated partner to its clients, providing legal counsel shaped by global perspective.',
+    'hero.subtitle1': 'In an ever changing world, the firm operates as a dedicated legal partner shaped by global perspective.',
     'hero.subtitle2': '',
 
     // Guide Section
