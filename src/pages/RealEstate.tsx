@@ -92,9 +92,11 @@ const RealEstate = () => {
               <p className="text-lg text-muted-foreground leading-relaxed">
                 {t('realestate.approach.body')}
               </p>
-              <p className="text-lg text-muted-foreground leading-relaxed">
-                {t('realestate.approach.body2')}
-              </p>
+              {t('realestate.approach.body2') !== 'realestate.approach.body2' && (
+                <p className="text-lg text-muted-foreground leading-relaxed">
+                  {t('realestate.approach.body2')}
+                </p>
+              )}
             </div>
           </div>
         </div>
