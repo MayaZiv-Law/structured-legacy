@@ -87,7 +87,7 @@ const translations: Record<Language, Record<string, string>> = {
     'insights.article3.snippet': 'Domestic buyers must verify ownership rights, planning status, and contractual protections before committing to a property purchase. Structured legal checks reduce exposure and support a transparent and compliant transaction.',
 
     // FAQ
-    'faq.title': 'Frequently Asked Questions',
+    'faq.title': 'Commonly Asked Questions',
     'faq.q1': 'When should I start tax planning?',
     'faq.a1': 'Tax planning on an Israeli property transaction must begin before any document is signed, ideally at the negotiation stage. The applicable Purchase Tax rate depends on your residency status, whether this is your first property in Israel, and the timing of the transaction relative to any Aliyah or relocation. Getting this wrong after the fact is expensive and in some cases irreversible. We assess your tax position at the outset, as part of the transaction structure.',
     'faq.q2': 'How are buyer funds protected during the transaction?',
@@ -147,7 +147,7 @@ const translations: Record<Language, Record<string, string>> = {
     'about.cta.button': 'Get in Touch',
 
     // Service Pages - General
-    'service.faq': 'Common Questions',
+    'service.faq': 'Commonly Asked Questions',
 
     // Estate Planning Page
     'estate.hero.title': 'Protecting Your Family Across Borders',
