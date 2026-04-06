@@ -1,6 +1,7 @@
 import { useLanguage } from '@/contexts/LanguageContext';
 import { cn } from '@/lib/utils';
 import { isPrerender } from '@/lib/isPrerender';
+import { useScrollAnimation } from '@/hooks/useScrollAnimation';
 import {
   Accordion,
   AccordionContent,
@@ -11,6 +12,8 @@ import {
 const FAQSection = () => {
   const { t, isRTL } = useLanguage();
   const isPrerenderEnv = isPrerender();
+  const titleAnim = useScrollAnimation(0.1);
+  const contentAnim = useScrollAnimation(0.05);
 
   const faqs = [
     { qKey: 'faq.q1', aKey: 'faq.a1' },
@@ -24,64 +27,67 @@ const FAQSection = () => {
     { qKey: 'faq.q9', aKey: 'faq.a9' },
   ];
 
+  const accordionContent = (
+    <Accordion type={isPrerenderEnv ? "multiple" : "single"} {...(isPrerenderEnv ? { defaultValue: faqs.map((_, i) => `item-${i}`) } : { collapsible: true })} className="w-full">
+      {faqs.map((faq, index) => (
+        <AccordionItem key={index} value={`item-${index}`} className="border-b border-border/60 group/item">
+          <AccordionTrigger
+            className={cn(
+              "text-left py-5 sm:py-6 text-fluid-base font-medium hover:no-underline hover:text-accent transition-colors",
+              isRTL && "text-right"
+            )}
+          >
+            <span className={cn("flex items-baseline gap-3 sm:gap-4", isRTL && "flex-row-reverse")}>
+              <span className="text-accent/40 text-sm font-display tabular-nums flex-shrink-0">
+                {String(index + 1).padStart(2, '0')}
+              </span>
+              <span>{t(faq.qKey)}</span>
+            </span>
+          </AccordionTrigger>
+          <AccordionContent
+            className={cn(
+              "text-muted-foreground leading-relaxed pb-6 text-fluid-sm",
+              isRTL ? "text-right pr-8 sm:pr-10" : "pl-8 sm:pl-10"
+            )}
+          >
+            {t(faq.aKey)}
+          </AccordionContent>
+        </AccordionItem>
+      ))}
+    </Accordion>
+  );
+
   return (
-    <section className="py-12 bg-background">
+    <section className="section-spacer-lg bg-secondary/30">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className={cn("max-w-3xl mx-auto", isRTL && "font-hebrew")}>
           {/* Title */}
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-display font-semibold text-foreground mb-8 text-center">
-            {t('faq.title')}
-          </h2>
-          <div className="w-16 h-0.5 bg-accent mx-auto mb-8" />
+          <div
+            ref={titleAnim.ref}
+            className={cn(
+              "text-center mb-10 sm:mb-12 transition-all duration-700",
+              titleAnim.isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
+            )}
+          >
+            <h2 className="text-fluid-4xl font-display font-semibold text-foreground mb-6">
+              {t('faq.title')}
+            </h2>
+            <div className={cn(
+              "w-12 h-[2px] bg-accent mx-auto origin-center",
+              titleAnim.isVisible ? "animate-line-grow" : "scale-x-0"
+            )} />
+          </div>
 
           {/* FAQ Accordion */}
-          {isPrerenderEnv ? (
-          <Accordion type="multiple" defaultValue={faqs.map((_, i) => `item-${i}`)} className="w-full">
-            {faqs.map((faq, index) => (
-              <AccordionItem key={index} value={`item-${index}`} className="border-b border-border">
-                <AccordionTrigger 
-                  className={cn(
-                    "text-left py-5 text-lg sm:text-xl font-medium hover:no-underline",
-                    isRTL && "text-right"
-                  )}
-                >
-                  {t(faq.qKey)}
-                </AccordionTrigger>
-                <AccordionContent 
-                  className={cn(
-                    "text-muted-foreground leading-relaxed pb-5 text-base sm:text-lg",
-                    isRTL && "text-right"
-                  )}
-                >
-                  {t(faq.aKey)}
-                </AccordionContent>
-              </AccordionItem>
-            ))}
-          </Accordion>
-          ) : (
-          <Accordion type="single" collapsible className="w-full">
-            {faqs.map((faq, index) => (
-              <AccordionItem key={index} value={`item-${index}`} className="border-b border-border">
-                <AccordionTrigger 
-                  className={cn(
-                    "text-left py-5 text-lg sm:text-xl font-medium hover:no-underline",
-                    isRTL && "text-right"
-                  )}
-                >
-                  {t(faq.qKey)}
-                </AccordionTrigger>
-                <AccordionContent 
-                  className={cn(
-                    "text-muted-foreground leading-relaxed pb-5 text-base sm:text-lg",
-                    isRTL && "text-right"
-                  )}
-                >
-                  {t(faq.aKey)}
-                </AccordionContent>
-              </AccordionItem>
-            ))}
-          </Accordion>
-          )}
+          <div
+            ref={contentAnim.ref}
+            className={cn(
+              "transition-all duration-700 delay-200",
+              contentAnim.isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-6"
+            )}
+          >
+            {accordionContent}
+          </div>
         </div>
       </div>
     </section>

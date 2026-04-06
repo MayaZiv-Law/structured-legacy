@@ -26,8 +26,8 @@ const Header = () => {
 
   const navLinkClass = (path: string) =>
     cn(
-      'text-base font-semibold transition-colors hover:text-accent',
-      isActive(path) ? 'text-accent' : 'text-foreground'
+      'text-sm font-semibold tracking-wide uppercase transition-colors duration-300 hover:text-accent',
+      isActive(path) ? 'text-accent' : 'text-foreground/80'
     );
 
   const mobileNavLinkClass = (path: string) =>
@@ -77,7 +77,7 @@ const Header = () => {
             <DropdownMenu>
               <DropdownMenuTrigger
                 className={cn(
-                  "flex items-center gap-1 text-base font-semibold transition-colors hover:text-accent",
+                  "flex items-center gap-1 text-sm font-semibold tracking-wide uppercase transition-colors duration-300 hover:text-accent",
                   ['/real-estate', '/taxation', '/estate-planning', '/olim-residents', '/commercial'].some(p =>
                     isActive(p)
                   )
@@ -122,7 +122,7 @@ const Header = () => {
             {/* Language Switcher - Desktop */}
             <button
               onClick={switchLanguage}
-              className="text-sm font-semibold border border-foreground/20 rounded px-3 py-1.5 hover:bg-accent hover:text-accent-foreground hover:border-accent transition-colors"
+              className="text-xs font-semibold tracking-wider uppercase border border-foreground/20 px-3 py-1.5 hover:bg-accent hover:text-accent-foreground hover:border-accent transition-all duration-300"
             >
               {language === 'en' ? 'עברית' : 'English'}
             </button>
