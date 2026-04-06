@@ -57,12 +57,12 @@ const PracticeAreasSection = () => {
   const staggerDelays = ['delay-100', 'delay-200', 'delay-300', 'delay-400', 'delay-500'];
 
   return (
-    <section className="section-spacer-lg bg-background">
+    <section className="section-spacer-md bg-background">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section title with animated rule */}
         <div
           ref={titleAnim.ref}
-          className={cn("text-center mb-12 sm:mb-16", isRTL && "font-hebrew")}
+          className={cn("text-center mb-8 sm:mb-10", isRTL && "font-hebrew")}
         >
           <div className={cn(
             "w-12 h-[2px] bg-accent mx-auto mb-6 origin-center",
