@@ -50,7 +50,7 @@ const translations: Record<Language, Record<string, string>> = {
     'method.step5.title': 'Deep Understanding',
     'method.step5.desc': 'Every matter begins with listening. We take the time to understand what clients are truly trying to achieve, not just the immediate legal question.',
     'method.step6.title': 'Areas of Practice',
-    'method.step6.desc': 'We specialize in real estate transactions and due diligence. Taxation, cross border compliance. Estate planning, wills, and succession. Commercial agreements and civil disputes. Both domestic and international.',
+    'method.step6.desc': 'Real estate transactions and due diligence. Taxation, cross border compliance. Estate planning, wills, and succession. Commercial agreements and finance.',
 
     // Practice Areas
     'practice.title': 'Areas of Practice',
