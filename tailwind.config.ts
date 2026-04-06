@@ -14,10 +14,10 @@ export default {
     },
     extend: {
       fontFamily: {
-        display: ['Cinzel', 'serif'],
-        body: ['Lora', 'serif'],
-        hebrew: ['Heebo', 'sans-serif'],
-        sans: ['Lora', 'serif'],
+        display: ['Cinzel', 'Georgia', 'Times New Roman', 'serif'],
+        body: ['Lora', 'Georgia', 'Times New Roman', 'serif'],
+        hebrew: ['Heebo', 'Arial', 'Helvetica', 'sans-serif'],
+        sans: ['Lora', 'Georgia', 'Times New Roman', 'serif'],
       },
       colors: {
         border: "hsl(var(--border))",

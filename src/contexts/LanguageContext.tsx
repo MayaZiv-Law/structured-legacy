@@ -690,7 +690,7 @@ export const LanguageProvider = ({ children }: { children: ReactNode }) => {
   }, [language, isRTL]);
 
   const t = useCallback((key: string): string => {
-    return translations[language][key] || key;
+    return translations[language][key] || translations['en'][key] || key;
   }, [language]);
 
   const contextValue = useMemo(() => ({

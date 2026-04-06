@@ -87,11 +87,11 @@ const About = () => {
             <Button
               asChild
               size="lg"
-              className="bg-accent hover:bg-accent/90 text-accent-foreground font-medium px-4 sm:px-6 lg:px-10 py-4 sm:py-6 text-base group max-w-full"
+              className="bg-accent hover:bg-accent/90 text-accent-foreground font-medium px-6 sm:px-8 lg:px-12 py-5 sm:py-6 text-base group max-w-full transition-shadow hover:shadow-premium"
             >
               <Link to={localePath('/contact')} className={cn("flex items-center gap-2 whitespace-normal text-center", isRTL && "flex-row-reverse")}>
                 {t('about.cta.button')}
-                <Arrow className="h-4 w-4 flex-shrink-0 transition-transform group-hover:translate-x-1" />
+                <Arrow className={cn("h-4 w-4 flex-shrink-0 transition-transform duration-300", isRTL ? "group-hover:-translate-x-1" : "group-hover:translate-x-1")} />
               </Link>
             </Button>
           </div>

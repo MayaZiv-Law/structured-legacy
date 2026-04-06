@@ -20,12 +20,12 @@ const InsightsSection = () => {
     data: articles,
     isLoading
   } = useLatestArticles(3);
-  return <section className="bg-background py-12">
+  return <section aria-label="Insights" className="bg-background section-spacer-md">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div ref={sectionAnim.ref} className={cn("transition-all duration-700", sectionAnim.isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8")}>
           <div className={cn("flex flex-col sm:flex-row justify-between items-start sm:items-center mb-6 gap-4", isRTL && "font-hebrew")}>
             <div>
-              <h2 className="text-4xl sm:text-5xl font-display font-semibold text-foreground mb-2">
+              <h2 className="text-fluid-4xl font-display font-semibold text-foreground mb-2">
                 {t('insights.title')}
               </h2>
             </div>
@@ -37,7 +37,7 @@ const InsightsSection = () => {
             </Button>
           </div>
 
-          <div className={cn("w-16 h-0.5 bg-accent mb-6", isRTL && "ml-auto")} />
+          <div className={cn("w-12 h-[2px] bg-accent mb-6", isRTL && "ml-auto")} />
 
           {isLoading ? <div className="flex justify-center py-12">
               <Loader2 className="h-8 w-8 animate-spin text-accent" />
