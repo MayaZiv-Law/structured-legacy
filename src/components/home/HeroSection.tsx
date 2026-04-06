@@ -10,7 +10,7 @@ const HeroSection = () => {
   } = useLanguage();
   const heroAnim = useScrollAnimation();
 
-  return <section className="relative min-h-[75vh] sm:min-h-[82vh] lg:min-h-[88vh] flex flex-col overflow-visible -mt-0 lg:-mt-20">
+  return <section aria-label="Hero" className="relative min-h-[75vh] sm:min-h-[82vh] lg:min-h-[88vh] flex flex-col overflow-visible -mt-0 lg:-mt-20">
       {/* Full Background Image */}
       <div className="absolute inset-0 z-0">
         <img

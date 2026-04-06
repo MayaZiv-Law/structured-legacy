@@ -157,12 +157,9 @@
     background: linear-gradient(135deg, hsl(var(--gold)) 0%, hsl(var(--gold-dark)) 100%);
   }
 
-  /* Gold gradient text fill — for statement typography */
+  /* Gold accent text — meets WCAG 4.5:1 contrast on light backgrounds */
   .text-gradient-gold {
-    background: linear-gradient(135deg, hsl(var(--gold)) 0%, hsl(var(--gold-dark)) 100%);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
+    color: hsl(38, 35%, 32%);
   }
 
   /* Subtle stone gradient for sections */
@@ -323,6 +320,15 @@
     border-color: hsl(var(--accent));
     box-shadow: 0 0 0 1px hsl(var(--accent) / 0.3);
     outline: none;
+  }
+}
+
+/* Reduced motion — respect user preference (WCAG 2.1 SC 2.3.3) */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
   }
 }
 

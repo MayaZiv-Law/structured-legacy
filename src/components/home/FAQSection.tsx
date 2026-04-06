@@ -58,7 +58,7 @@ const FAQSection = () => {
   );
 
   return (
-    <section className="section-spacer-md bg-secondary/30">
+    <section aria-label="Commonly Asked Questions" className="section-spacer-md bg-secondary/30">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className={cn("max-w-3xl mx-auto", isRTL && "font-hebrew")}>
           {/* Title */}

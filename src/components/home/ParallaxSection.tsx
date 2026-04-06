@@ -4,24 +4,22 @@ import { cn } from '@/lib/utils';
 
 import azrieliNight from '@/assets/azrieli-night.webp';
 
+const prefersReducedMotion = () =>
+  typeof window !== 'undefined' && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
 const ParallaxSection = () => {
   const { isRTL, t } = useLanguage();
   const sectionRef = useRef<HTMLDivElement>(null);
-  const [offsetY, setOffsetY] = useState(0);
+  const bgRef = useRef<HTMLDivElement>(null);
+  const quoteRef = useRef<HTMLDivElement>(null);
   const [isVisible, setIsVisible] = useState(false);
-  const [isMobile, setIsMobile] = useState(true); // Default to mobile for SSR
-  const [imageLoaded, setImageLoaded] = useState(false);
+  const [isMobile, setIsMobile] = useState(true);
   const rafRef = useRef<number | null>(null);
 
   // Detect mobile on mount
   useEffect(() => {
     const checkMobile = () => window.matchMedia('(max-width: 768px)').matches;
     setIsMobile(checkMobile());
-    
-    // Image is imported, so always set as loaded on desktop
-    if (!checkMobile()) {
-      setImageLoaded(true);
-    }
   }, []);
 
   // Use IntersectionObserver instead of scroll for visibility
@@ -45,26 +43,28 @@ const ParallaxSection = () => {
     };
   }, []);
 
-  // Only run scroll handler when section is visible and on desktop
+  // Only run scroll handler when section is visible, on desktop, and motion allowed
   const handleScroll = useCallback(() => {
-    if (!isVisible || !sectionRef.current || isMobile) return;
-    
+    if (!isVisible || !sectionRef.current || isMobile || prefersReducedMotion()) return;
+
     if (rafRef.current) {
       cancelAnimationFrame(rafRef.current);
     }
-    
+
     rafRef.current = requestAnimationFrame(() => {
       if (sectionRef.current) {
         const rect = sectionRef.current.getBoundingClientRect();
         const scrollProgress = -rect.top / window.innerHeight;
-        setOffsetY(scrollProgress * 100);
+        const offset = scrollProgress * 100;
+        if (bgRef.current) bgRef.current.style.transform = `translateY(${offset * 0.4}px)`;
+        if (quoteRef.current) quoteRef.current.style.transform = `translateY(${offset * 0.15}px)`;
       }
     });
   }, [isVisible, isMobile]);
 
   useEffect(() => {
-    if (!isVisible || isMobile) return;
-    
+    if (!isVisible || isMobile || prefersReducedMotion()) return;
+
     window.addEventListener('scroll', handleScroll, { passive: true });
     return () => {
       window.removeEventListener('scroll', handleScroll);
@@ -75,15 +75,16 @@ const ParallaxSection = () => {
   }, [isVisible, isMobile, handleScroll]);
 
   return (
-    <section 
-      ref={sectionRef} 
+    <section
+      ref={sectionRef}
+      aria-label="Quote"
       className="relative min-h-[50vh] md:min-h-[60vh] overflow-hidden flex items-center justify-center"
     >
       {/* Background image with parallax on desktop, static on mobile */}
-      <div 
-        className="absolute inset-0 w-full h-full md:h-[130%] md:-top-[15%]" 
+      <div
+        ref={bgRef}
+        className="absolute inset-0 w-full h-full md:h-[130%] md:-top-[15%]"
         style={{
-          transform: !isMobile ? `translateY(${offsetY * 0.4}px)` : 'none',
           willChange: isVisible && !isMobile ? 'transform' : 'auto'
         }}
       >
@@ -102,10 +103,10 @@ const ParallaxSection = () => {
       <div className="absolute inset-0 bg-black/20" />
       
       {/* Quote with parallax effect on desktop */}
-      <div 
-        className="relative z-10 text-center px-6 max-w-4xl mx-auto" 
+      <div
+        ref={quoteRef}
+        className="relative z-10 text-center px-6 max-w-4xl mx-auto"
         style={{
-          transform: !isMobile ? `translateY(${offsetY * 0.15}px)` : 'none',
           willChange: isVisible && !isMobile ? 'transform' : 'auto'
         }}
       >

@@ -7,7 +7,7 @@ const IntroSection = () => {
   const anim = useScrollAnimation(0.15);
 
   return (
-    <section className="pt-10 sm:pt-14 pb-8 bg-background">
+    <section aria-label="Introduction" className="pt-10 sm:pt-14 pb-8 bg-background">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div
           ref={anim.ref}

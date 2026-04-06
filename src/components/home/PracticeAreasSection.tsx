@@ -57,7 +57,7 @@ const PracticeAreasSection = () => {
   const staggerDelays = ['delay-100', 'delay-200', 'delay-300', 'delay-400', 'delay-500'];
 
   return (
-    <section className="section-spacer-md bg-background">
+    <section aria-label="Practice Areas" className="section-spacer-md bg-background">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section title with animated rule */}
         <div

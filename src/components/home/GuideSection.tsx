@@ -14,7 +14,7 @@ const GuideSection = () => {
   const Arrow = isRTL ? ArrowLeft : ArrowRight;
   const anim = useScrollAnimation(0.15);
 
-  return <section className="section-spacer-sm bg-background overflow-hidden">
+  return <section aria-label="About the Firm" className="section-spacer-sm bg-background overflow-hidden">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="max-w-3xl mx-auto">
           <div
@@ -42,7 +42,7 @@ const GuideSection = () => {
                 <span className="border-b border-accent/0 group-hover:border-accent/60 transition-colors pb-0.5">
                   {t('guide.cta')}
                 </span>
-                <Arrow className="h-5 w-5 transition-transform group-hover:translate-x-0.5" />
+                <Arrow className={cn("h-5 w-5 transition-transform", isRTL ? "group-hover:-translate-x-0.5" : "group-hover:translate-x-0.5")} />
               </Link>
             </div>
           </div>

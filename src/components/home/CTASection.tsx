@@ -15,7 +15,7 @@ const CTASection = () => {
   const Arrow = isRTL ? ArrowLeft : ArrowRight;
   const anim = useScrollAnimation(0.15);
 
-  return <section className="section-spacer-lg bg-primary">
+  return <section aria-label="Contact" className="section-spacer-lg bg-primary">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div
           ref={anim.ref}

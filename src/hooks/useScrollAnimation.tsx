@@ -1,12 +1,15 @@
 import { useEffect, useRef, useState } from 'react';
 import { isPrerender } from '@/lib/isPrerender';
 
+const prefersReducedMotion = () =>
+  typeof window !== 'undefined' && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
 export const useScrollAnimation = (threshold = 0.1) => {
   const ref = useRef<HTMLDivElement>(null);
-  const [isVisible, setIsVisible] = useState(() => isPrerender());
+  const [isVisible, setIsVisible] = useState(() => isPrerender() || prefersReducedMotion());
 
   useEffect(() => {
-    if (isVisible) return; // Already visible (prerender or previously triggered)
+    if (isVisible) return; // Already visible (prerender, reduced-motion, or previously triggered)
 
     const observer = new IntersectionObserver(
       ([entry]) => {
