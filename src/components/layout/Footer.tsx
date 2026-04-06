@@ -12,8 +12,8 @@ const Footer = () => {
   const localePath = useLocalePath();
   return <footer className="bg-primary text-primary-foreground">
       {/* Main Footer */}
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-12">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-14 sm:py-16 lg:py-20">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 lg:gap-12">
           {/* Brand Column */}
           <div className="lg:col-span-1">
             <Link to={localePath('/')} className="inline-block mb-4">
@@ -26,7 +26,7 @@ const Footer = () => {
           </div>
 
           <div>
-            <h4 className={cn("font-display text-sm font-semibold uppercase tracking-wider mb-6", isRTL && "font-hebrew")}>
+            <h4 className={cn("font-display text-xs font-semibold uppercase tracking-[0.15em] mb-6 text-primary-foreground/60", isRTL && "font-hebrew")}>
               {isRTL ? 'תחומי התמחות' : 'Expertise'}
             </h4>
             <ul className="space-y-3">
@@ -60,7 +60,7 @@ const Footer = () => {
 
           {/* Contact Column */}
           <div>
-            <h4 className={cn("font-display text-sm font-semibold uppercase tracking-wider mb-6", isRTL && "font-hebrew")}>
+            <h4 className={cn("font-display text-xs font-semibold uppercase tracking-[0.15em] mb-6 text-primary-foreground/60", isRTL && "font-hebrew")}>
               {t('footer.contact')}
             </h4>
             <ul className="space-y-4">
@@ -87,7 +87,7 @@ const Footer = () => {
 
           {/* Links Column */}
           <div>
-            <h4 className={cn("font-display text-sm font-semibold uppercase tracking-wider mb-6", isRTL && "font-hebrew")}>
+            <h4 className={cn("font-display text-xs font-semibold uppercase tracking-[0.15em] mb-6 text-primary-foreground/60", isRTL && "font-hebrew")}>
               {isRTL ? 'קישורים' : 'Links'}
             </h4>
             <ul className="space-y-3">
