@@ -49,7 +49,12 @@ const About = () => {
             )}
           >
             <p className="text-lg sm:text-xl lg:text-2xl text-muted-foreground leading-relaxed">
-              {t('about.mainBody')}
+              {t('about.mainBody').split('. ').map((sentence, i, arr) => (
+                <span key={i}>
+                  {sentence}{i < arr.length - 1 ? '.' : ''}
+                  {i < arr.length - 1 && <><br /><br /></>}
+                </span>
+              ))}
             </p>
           </div>
         </div>

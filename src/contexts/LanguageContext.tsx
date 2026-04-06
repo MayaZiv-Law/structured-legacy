@@ -348,7 +348,7 @@ const translations: Record<Language, Record<string, string>> = {
     // Guide Section
     'guide.title': 'אודות המשרד',
     'guide.bio': '',
-    'guide.punchline': 'אנו חושבים צעד אחד קדימה עבור לקוחותינו ועוזרים להם לקבל החלטות שחוזות את אתגרי המחר',
+    'guide.punchline': 'אנו תמיד חושבים קדימה בעבור לקוחותינו ומלווים אותם בקבלת החלטות שחוזות את אתגרי המחר.',
     'guide.cta': 'עוד על המשרד',
     'parallax.quote': 'תכנון משפטי המעוגן בהשלכות כלכליות ארוכות טווח, מהיום הראשון.',
 
