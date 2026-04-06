@@ -1,6 +1,7 @@
 # Maya Ziv Law – Attorney in Israel
 
 > A boutique law firm specializing in cross border legal services for domestic and international clients in Israel and abroad.
+> For full site content including FAQs and detailed practice area descriptions, see /llms-full.txt
 
 ## About
 

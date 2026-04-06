@@ -1,0 +1,97 @@
+# Maya Ziv Law – Full Site Content for LLMs
+
+> A boutique Israeli law firm specializing in cross border legal services for domestic and international clients.
+> This file provides comprehensive site content for AI tools that cannot render JavaScript (CSR).
+> For a shorter summary, see /llms.txt
+
+## About the Firm
+
+Maya Ziv Law provides premium legal counsel at the intersection of Israeli and international law. The firm serves domestic clients, foreign investors, new immigrants (Olim), and multinational businesses operating in or with Israel. Founded by Maya Ziv, Attorney, the practice combines deep Israeli legal expertise with fluency in cross border matters.
+
+First-rate legal advice must be as unique as the clients it serves. At Maya Ziv Law, every matter receives the personal attention it deserves, as well as the depth and scope required for professional work.
+
+In a constantly changing world, the firm serves as a dedicated partner to its clients, providing legal counsel and guidance anchored in a global perspective.
+
+## Practice Areas
+
+### Real Estate and Investments
+Safe acquisitions and tax planning. Purchase and sale transactions, due diligence, title verification, remote transactions for overseas buyers, urban renewal (TAMA 38/Pinui-Binui).
+
+### International Taxation
+Cross-border reporting and banking regulation. Israeli tax positioning, cross border tax planning, FATCA/CRS compliance, capital gains, tax treaties (US-Israel, EU-Israel).
+
+### Estate Planning and Family Succession
+Wills, inheritance and intergenerational asset transfer. Drafting wills under Israeli law, inheritance orders, cross border estate administration, probate, lasting powers of attorney.
+
+### New Olim and Returning Residents
+Legal counsel for newcomers and returning residents. Tax benefits guidance, property acquisition, bank account setup, legal orientation for relocation to Israel.
+
+### Commercial and Civil
+Contracts, risk allocation and business counsel. Corporate structuring, commercial contracts, joint ventures, business licensing, partnership agreements.
+
+## Frequently Asked Questions
+
+### When should tax planning begin?
+Tax planning in real estate transactions must begin before document signing, ideally during negotiation, as acquisition tax rates depend on residency status, whether it's your first property, and timing relative to moving or becoming a resident. Errors after the fact are costly and sometimes irreversible. Tax position is examined at the start of every transaction as part of deal structure.
+
+### How are buyer funds protected during a transaction?
+In Israeli real estate transactions, buyer funds are transferred to the seller in stages according to specific legal milestones, not as a lump sum. At each stage, a charge is registered in the land registry to protect the buyer. This mechanism ensures that if the transaction doesn't complete, buyer exposure is limited. The payment schedule and its relationship to milestones is one of the most important parts of the purchase agreement.
+
+### Can I purchase property before making Aliyah?
+Yes. Foreigners can purchase property in Israel. The more important question is timing of purchase relative to Aliyah, as this affects your acquisition tax entitlement. In some cases, pre-Aliyah purchase preserves certain benefits; in others, waiting is preferable. This analysis is tailored to each client's specific situation and must be done before accepting any commitment.
+
+### Can Israeli acquisition tax be paid in foreign currency?
+No. Payments to Israeli tax authorities are made in New Shekels. For clients transferring funds from abroad, this requires coordinating currency exchange, timing the transfer to minimize exchange rate exposure, and ensuring the Israeli receiving bank accepts the funds.
+
+### Will an Israeli bank automatically accept my transfer?
+No. Israeli banks operate under strict anti-money-laundering requirements. A transfer received without prior documentation proving fund source, transfer purpose, and underlying transaction is likely to be stopped or returned. Preparing a fund source documentation package in advance and coordinating with the bank before the transfer is standard procedure in every cross-border transaction.
+
+### When am I considered a tax resident of Israel?
+Israeli tax residency is determined by the "center of life test" — a factual assessment including physical presence exceeding 183 days in a tax year or exceeding 425 days over three consecutive years, plus the location of your economic and personal relationships. It is not determined by citizenship or Aliyah status alone. The consequences of acquiring tax resident status in Israel are significant and affect worldwide income reporting obligations.
+
+### Is a will drafted abroad valid in Israel?
+A foreign will can be recognized in Israel but must go through a probate validation process including expert opinion on the relevant foreign law. This process involves time, cost and uncertainty, especially when the estate includes Israeli real property. The more reliable approach is to prepare a separate Israeli will addressing Israeli assets specifically, coordinated with your foreign will so the two documents don't contradict each other.
+
+### Can I appoint an estate executor living outside Israel?
+Yes, although Israeli courts may require additional procedural steps, including posting bonds, before appointing a non-resident executor. Practical implications depend on estate composition and procedural complexity.
+
+### What's the difference between a succession order and a probate order?
+A probate order (Kiyum Tzava'a) is issued by the Israeli probate registrar when the deceased left a valid will, confirming the will's validity and authority for execution. A succession order is issued when there is no valid will, and then estate distribution is made according to Israeli succession law. In cross-border estates, coordinating the Israeli process with foreign proceedings is essential to avoid conflicts between jurisdictions.
+
+## Contact Information
+
+- **Attorney:** Maya Ziv
+- **Phone:** +972-54-494-3597
+- **Email:** info@mayaziv-law.com
+- **Address:** 18 Moshe Sneh Street, Tel Aviv, Israel
+- **Website:** https://mayaziv-law.com
+- **Languages:** English, Hebrew (עברית)
+- **Operating Hours:** Mon–Thu 9:00–18:00, Fri 9:00–14:00
+
+## Key Pages (English)
+
+- Home: https://mayaziv-law.com/en/
+- About: https://mayaziv-law.com/en/about
+- Real Estate: https://mayaziv-law.com/en/real-estate
+- Taxation: https://mayaziv-law.com/en/taxation
+- Estate Planning: https://mayaziv-law.com/en/estate-planning
+- Commercial Law: https://mayaziv-law.com/en/commercial
+- Services for Olim: https://mayaziv-law.com/en/olim-residents
+- Legal Insights & Articles: https://mayaziv-law.com/en/insights
+- Contact: https://mayaziv-law.com/en/contact
+
+## Key Pages (Hebrew)
+
+- דף הבית: https://mayaziv-law.com/he/
+- אודות: https://mayaziv-law.com/he/about
+- נדל"ן: https://mayaziv-law.com/he/real-estate
+- מיסוי: https://mayaziv-law.com/he/taxation
+- צוואות ועיזבונות: https://mayaziv-law.com/he/estate-planning
+- מסחרי ואזרחי: https://mayaziv-law.com/he/commercial
+- עולים ותושבים חוזרים: https://mayaziv-law.com/he/olim-residents
+- תובנות משפטיות: https://mayaziv-law.com/he/insights
+- צור קשר: https://mayaziv-law.com/he/contact
+
+## Jurisdiction
+
+Israel (with cross border expertise covering the United States, United Kingdom, and the European Union)

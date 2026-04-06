@@ -64,3 +64,4 @@ Sitemap: https://mayaziv-law.com/sitemap.xml
 # LLM-readable site summary
 # See https://llmstxt.org for specification
 # https://mayaziv-law.com/llms.txt
+# https://mayaziv-law.com/llms-full.txt (comprehensive version with full page content)
