@@ -21,6 +21,7 @@ const HeroSection = () => {
           fetchPriority="high"
           loading="eager"
           decoding="sync"
+          sizes="100vw"
           width={3237}
           height={2369}
         />

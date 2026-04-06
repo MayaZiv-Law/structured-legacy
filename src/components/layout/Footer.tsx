@@ -31,27 +31,27 @@ const Footer = () => {
             </h4>
             <ul className="space-y-3">
               <li>
-                <Link to={localePath('/real-estate')} className="text-primary-foreground/70 hover:text-accent transition-colors text-sm">
+                <Link to={localePath('/real-estate')} className="text-primary-foreground/70 hover:text-accent transition-colors text-sm py-1 inline-block">
                   {t('nav.realEstate')}
                 </Link>
               </li>
               <li>
-                <Link to={localePath('/taxation')} className="text-primary-foreground/70 hover:text-accent transition-colors text-sm">
+                <Link to={localePath('/taxation')} className="text-primary-foreground/70 hover:text-accent transition-colors text-sm py-1 inline-block">
                   {t('nav.taxation')}
                 </Link>
               </li>
               <li>
-                <Link to={localePath('/estate-planning')} className="text-primary-foreground/70 hover:text-accent transition-colors text-sm">
+                <Link to={localePath('/estate-planning')} className="text-primary-foreground/70 hover:text-accent transition-colors text-sm py-1 inline-block">
                   {t('nav.estate')}
                 </Link>
               </li>
               <li>
-                <Link to={localePath('/olim-residents')} className="text-primary-foreground/70 hover:text-accent transition-colors text-sm">
+                <Link to={localePath('/olim-residents')} className="text-primary-foreground/70 hover:text-accent transition-colors text-sm py-1 inline-block">
                   {t('nav.olim')}
                 </Link>
               </li>
               <li>
-                <Link to={localePath('/commercial')} className="text-primary-foreground/70 hover:text-accent transition-colors text-sm">
+                <Link to={localePath('/commercial')} className="text-primary-foreground/70 hover:text-accent transition-colors text-sm py-1 inline-block">
                   {t('nav.commercial')}
                 </Link>
               </li>
@@ -72,13 +72,13 @@ const Footer = () => {
               </li>
               <li className="flex items-center gap-3">
                 <Phone className="h-4 w-4 text-accent flex-shrink-0" />
-                <a href="tel:+972544943597" className="text-primary-foreground/70 hover:text-accent transition-colors text-sm">
+                <a href="tel:+972544943597" className="text-primary-foreground/70 hover:text-accent transition-colors text-sm py-1 inline-block">
                   +972.544943597
                 </a>
               </li>
               <li className="flex items-center gap-3">
                 <Mail className="h-4 w-4 text-accent flex-shrink-0" />
-                <a href="mailto:info@mayaziv-law.com" className="text-primary-foreground/70 hover:text-accent transition-colors text-sm">
+                <a href="mailto:info@mayaziv-law.com" className="text-primary-foreground/70 hover:text-accent transition-colors text-sm py-1 inline-block">
                   info@mayaziv-law.com
                 </a>
               </li>
@@ -92,22 +92,22 @@ const Footer = () => {
             </h4>
             <ul className="space-y-3">
               <li>
-                <Link to={localePath('/about')} className="text-primary-foreground/70 hover:text-accent transition-colors text-sm">
+                <Link to={localePath('/about')} className="text-primary-foreground/70 hover:text-accent transition-colors text-sm py-1 inline-block">
                   {t('nav.about')}
                 </Link>
               </li>
               <li>
-                <Link to={localePath('/insights')} className="text-primary-foreground/70 hover:text-accent transition-colors text-sm">
+                <Link to={localePath('/insights')} className="text-primary-foreground/70 hover:text-accent transition-colors text-sm py-1 inline-block">
                   {t('nav.insights')}
                 </Link>
               </li>
               <li>
-                <Link to={localePath('/privacy')} className="text-primary-foreground/70 hover:text-accent transition-colors text-sm">
+                <Link to={localePath('/privacy')} className="text-primary-foreground/70 hover:text-accent transition-colors text-sm py-1 inline-block">
                   {t('footer.privacy')}
                 </Link>
               </li>
               <li>
-                <Link to={localePath('/terms')} className="text-primary-foreground/70 hover:text-accent transition-colors text-sm">
+                <Link to={localePath('/terms')} className="text-primary-foreground/70 hover:text-accent transition-colors text-sm py-1 inline-block">
                   {t('footer.terms')}
                 </Link>
               </li>

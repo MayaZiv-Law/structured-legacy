@@ -100,7 +100,7 @@ const ParallaxSection = () => {
       </div>
       
       {/* Subtle overlay for text readability */}
-      <div className="absolute inset-0 bg-black/20" />
+      <div className="absolute inset-0 bg-black/40" />
       
       {/* Quote with parallax effect on desktop */}
       <div

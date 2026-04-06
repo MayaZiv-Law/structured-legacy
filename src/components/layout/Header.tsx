@@ -32,7 +32,7 @@ const Header = () => {
 
   const mobileNavLinkClass = (path: string) =>
     cn(
-      'text-base font-semibold transition-colors hover:text-accent',
+      'text-base font-semibold transition-colors hover:text-accent py-2',
       isActive(path) ? 'text-accent' : 'text-primary-foreground'
     );
 
@@ -131,7 +131,7 @@ const Header = () => {
 
           {/* Mobile Menu Button */}
           <button
-            className="lg:hidden p-2 text-foreground"
+            className="lg:hidden p-3 min-h-[44px] min-w-[44px] flex items-center justify-center text-foreground"
             onClick={() => setIsMenuOpen(!isMenuOpen)}
             aria-label="Toggle menu"
           >
@@ -142,7 +142,7 @@ const Header = () => {
         {/* Mobile Menu */}
         {isMenuOpen && (
           <div className="lg:hidden py-6 border-t border-accent/30 bg-primary -mx-4 px-6 sm:-mx-6 sm:px-8 shadow-2xl">
-            <nav className="flex flex-col gap-4">
+            <nav className="flex flex-col gap-1">
               <Link
                 to={localePath('/about')}
                 className={mobileNavLinkClass('/about')}
@@ -209,7 +209,7 @@ const Header = () => {
               {/* Language Switcher - Mobile */}
               <button
                 onClick={() => { switchLanguage(); setIsMenuOpen(false); }}
-                className="text-sm font-semibold border border-primary-foreground/30 text-primary-foreground rounded px-3 py-2 hover:bg-accent hover:text-accent-foreground hover:border-accent transition-colors w-fit"
+                className="text-sm font-semibold border border-primary-foreground/30 text-primary-foreground rounded px-4 py-3 hover:bg-accent hover:text-accent-foreground hover:border-accent transition-colors w-fit"
               >
                 {language === 'en' ? 'עברית' : 'English'}
               </button>

@@ -31,7 +31,8 @@ const PageHero = ({
           style={{ objectPosition: imagePosition }}
           fetchPriority="high"
           loading="eager"
-          decoding="async"
+          decoding="sync"
+          sizes="100vw"
           width={1920}
           height={1080}
         />
