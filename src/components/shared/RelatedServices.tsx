@@ -43,8 +43,8 @@ const allServices: RelatedService[] = [
   },
   {
     path: '/commercial',
-    titleEn: 'Commercial and Civil',
-    titleHe: 'מסחרי ואזרחי',
+    titleEn: 'Commercial and Finance',
+    titleHe: 'פיננסי ומסחרי',
     descEn: 'Contracts and dispute resolution',
     descHe: 'חוזים ויישוב סכסוכים',
   },
