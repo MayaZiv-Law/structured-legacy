@@ -92,10 +92,10 @@ const Taxation = () => {
       <PageHero backgroundImage={taxationHeroBg} title={t('tax.hero.title')} subtitle={t('tax.hero.subtitle')} />
 
       {/* The Context Section */}
-      <section className="pt-24 sm:pt-28 pb-12 gradient-stone">
+      <section className="section-spacer-md gradient-stone">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div ref={contextAnim.ref} className={cn("max-w-4xl mx-auto transition-all duration-700", isRTL && "font-hebrew text-right", contextAnim.isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8")}>
-            <h2 className="text-3xl sm:text-4xl font-display font-semibold mb-6">
+            <h2 className="text-fluid-3xl font-display font-semibold mb-6">
               {t('tax.context.title')}
             </h2>
             <p className="text-lg text-muted-foreground mb-4 leading-relaxed">
@@ -109,12 +109,12 @@ const Taxation = () => {
       </section>
 
       {/* Real Estate Tax Planning - Asymmetric Design */}
-      <section className="py-12 bg-background overflow-hidden">
+      <section className="section-spacer-md bg-background overflow-hidden">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           {/* Centered title above the layout */}
           <div ref={realEstateAnim.ref} className={cn("text-center mb-8 transition-all duration-700", isRTL && "font-hebrew", realEstateAnim.isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8")}>
-            <div className="w-16 h-0.5 bg-accent mx-auto mb-6" />
-            <h2 className="text-3xl sm:text-4xl font-display font-semibold text-foreground mb-4">
+            <div className="w-12 h-[2px] bg-accent mx-auto mb-6" />
+            <h2 className="text-fluid-3xl font-display font-semibold text-foreground mb-4">
               {t('tax.realEstate.title')}
             </h2>
             <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
@@ -155,11 +155,11 @@ const Taxation = () => {
       </section>
 
       {/* Banking & AML Compliance - Asymmetric Design with Image */}
-      <section className="py-12 bg-background overflow-hidden">
+      <section className="section-spacer-md bg-background overflow-hidden">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           {/* Centered title above the layout */}
           <div ref={bankingAnim.ref} className={cn("text-center mb-8 transition-all duration-700", isRTL && "font-hebrew", bankingAnim.isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8")}>
-            <h2 className="text-3xl sm:text-4xl font-display font-semibold text-foreground">
+            <h2 className="text-fluid-3xl font-display font-semibold text-foreground">
               {t('tax.banking.title')}
             </h2>
           </div>
@@ -181,7 +181,7 @@ const Taxation = () => {
               
               {/* Image */}
               <div className={cn("relative w-full", isRTL && "order-2")}>
-                <img alt="Banking compliance" className="w-full h-64 lg:h-full object-cover shadow-lg" src="/lovable-uploads/10c05b41-4184-42a1-bdf3-3b49d016c9bb.webp" loading="lazy" decoding="async" />
+                <img alt="Banking compliance" className="w-full h-64 lg:h-full object-cover shadow-lg img-vibrant" src="/lovable-uploads/10c05b41-4184-42a1-bdf3-3b49d016c9bb.webp" loading="lazy" decoding="async" />
               </div>
             </div>
           </div>
@@ -189,11 +189,11 @@ const Taxation = () => {
       </section>
 
       {/* Who We Serve */}
-      <section className="py-12 bg-background">
+      <section className="section-spacer-md bg-background">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div ref={serveAnim.ref} className={cn("max-w-4xl mx-auto text-center transition-all duration-700", isRTL && "font-hebrew", serveAnim.isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8")}>
-            <div className="w-16 h-0.5 bg-accent mb-6 mx-auto" />
-            <h2 className="text-3xl sm:text-4xl font-display font-semibold mb-6">
+            <div className="w-12 h-[2px] bg-accent mb-6 mx-auto" />
+            <h2 className="text-fluid-3xl font-display font-semibold mb-6">
               {t('tax.serve.title')}
             </h2>
             <p className="text-lg text-muted-foreground mb-8 leading-relaxed">
@@ -217,15 +217,15 @@ const Taxation = () => {
       </section>
 
       {/* Cross-Border Alignment */}
-      <section className="py-12 bg-background overflow-hidden">
+      <section className="section-spacer-md bg-background overflow-hidden">
         <div className="container relative max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           {/* Background beige layer - absolute positioned */}
           <div className={cn("absolute -top-12 h-[calc(100%+9rem)] w-[95%] bg-secondary/50 rounded-sm", isRTL ? "-right-8 lg:-right-16" : "-left-8 lg:-left-16")} />
           
           {/* White content card - relative z-10 */}
           <div ref={crossBorderAnim.ref} className={cn("relative z-10 max-w-[92%] mt-8 bg-background shadow-sm rounded-lg p-8 md:p-12 transition-all duration-700", isRTL ? "mr-auto text-right font-hebrew" : "ml-auto", crossBorderAnim.isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8")}>
-            <div className={cn("w-16 h-0.5 bg-accent mb-6", isRTL && "mr-0")} />
-            <h2 className="text-3xl sm:text-4xl font-display font-semibold mb-6">
+            <div className={cn("w-12 h-[2px] bg-accent mb-6", isRTL && "mr-0")} />
+            <h2 className="text-fluid-3xl font-display font-semibold mb-6">
               {t('tax.crossBorder.title')}
             </h2>
             <p className="text-lg text-muted-foreground mb-4 leading-relaxed">
@@ -239,10 +239,10 @@ const Taxation = () => {
       </section>
 
       {/* Olim Planning */}
-      <section className="py-12 bg-background">
+      <section className="section-spacer-md bg-background">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div ref={olimAnim.ref} className={cn("max-w-4xl mx-auto text-center transition-all duration-700", isRTL && "font-hebrew", olimAnim.isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8")}>
-            <h2 className="text-3xl sm:text-4xl font-display font-semibold mb-6">
+            <h2 className="text-fluid-3xl font-display font-semibold mb-6">
               {t('tax.olim.title')}
             </h2>
             <p className="text-lg text-muted-foreground leading-relaxed">
@@ -253,9 +253,9 @@ const Taxation = () => {
       </section>
 
       {/* FAQ Section */}
-      <section className="py-12 gradient-stone">
+      <section className="section-spacer-md gradient-stone">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-3xl">
-          <h2 ref={faqAnim.ref} className={cn("text-3xl sm:text-4xl font-display font-semibold mb-8 text-center transition-all duration-700", isRTL && "font-hebrew", faqAnim.isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8")}>
+          <h2 ref={faqAnim.ref} className={cn("text-fluid-3xl font-display font-semibold mb-8 text-center transition-all duration-700", isRTL && "font-hebrew", faqAnim.isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8")}>
             {t('service.faq')}
           </h2>
           {isPrerender() ? (
@@ -290,11 +290,11 @@ const Taxation = () => {
       <RelatedServices currentPath="/taxation" />
 
       {/* CTA Section */}
-      <section className="py-12 bg-primary">
+      <section className="section-spacer-lg bg-primary">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div ref={ctaAnim.ref} className={cn("max-w-3xl mx-auto text-center transition-all duration-700", isRTL && "font-hebrew", ctaAnim.isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8")}>
-            <div className="w-16 h-0.5 bg-accent mx-auto mb-6" />
-            <h2 className="text-4xl sm:text-5xl lg:text-6xl font-display font-semibold mb-5 text-primary-foreground">
+            <div className="w-12 h-[2px] bg-accent mx-auto mb-6" />
+            <h2 className="text-fluid-4xl font-display font-semibold mb-5 text-primary-foreground">
               {t('tax.cta.title')}
             </h2>
             <p className="text-xl mb-8 max-w-xl mx-auto text-primary-foreground/80">

@@ -96,11 +96,11 @@ const EstatePlanning = () => {
       <PageHero backgroundImage={estateHeroBg} title={t('estate.hero.title')} subtitle={t('estate.hero.subtitle')} imagePosition="center 70%" />
 
       {/* Cross-Border Wills Section */}
-      <section className="pt-24 sm:pt-28 pb-12 bg-background">
+      <section className="section-spacer-md bg-background">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div ref={willsAnim.ref} className={cn("max-w-4xl mx-auto mb-8 transition-all duration-700", isRTL && "font-hebrew text-right", willsAnim.isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8")}>
-            <div className={cn("w-16 h-0.5 bg-accent mb-6", isRTL && "ml-auto")} />
-            <h2 className="text-3xl sm:text-4xl font-display font-semibold mb-5">
+            <div className={cn("w-12 h-[2px] bg-accent mb-6", isRTL && "ml-auto")} />
+            <h2 className="text-fluid-3xl font-display font-semibold mb-5">
               {t('estate.wills.title')}
             </h2>
             <p className="text-muted-foreground leading-relaxed text-lg">
@@ -108,7 +108,7 @@ const EstatePlanning = () => {
             </p>
           </div>
           <div className="grid md:grid-cols-3 gap-6 max-w-4xl mx-auto">
-            {willsFocusAreas.map((area, i) => <div key={i} className={cn("p-6 bg-card rounded-lg border border-border transition-all duration-500", isRTL && "font-hebrew text-right", willsAnim.isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8")} style={{
+            {willsFocusAreas.map((area, i) => <div key={i} className={cn("p-6 bg-card rounded-lg card-premium transition-all duration-500", isRTL && "font-hebrew text-right", willsAnim.isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8")} style={{
             transitionDelay: willsAnim.isVisible ? `${i * 150}ms` : '0ms'
           }}>
                 <area.icon className="h-6 w-6 text-accent mb-4" />
@@ -120,18 +120,18 @@ const EstatePlanning = () => {
       </section>
 
       {/* The Process Section */}
-      <section className="py-12 bg-background">
+      <section className="section-spacer-md bg-background">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div ref={processAnim.ref} className={cn("max-w-4xl mx-auto transition-all duration-700", isRTL && "font-hebrew text-right", processAnim.isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8")}>
-            <div className={cn("w-16 h-0.5 bg-accent mb-6", isRTL && "ml-auto")} />
-            <h2 className="text-3xl sm:text-4xl font-display font-semibold mb-8">
+            <div className={cn("w-12 h-[2px] bg-accent mb-6", isRTL && "ml-auto")} />
+            <h2 className="text-fluid-3xl font-display font-semibold mb-8">
               {t('estate.process.title')}
             </h2>
             <div className="space-y-6">
               {processSteps.map((step, i) => <div key={i} className={cn("flex gap-4 transition-all duration-500", processAnim.isVisible ? "opacity-100 translate-x-0" : isRTL ? "opacity-0 translate-x-8" : "opacity-0 -translate-x-8")} style={{
               transitionDelay: processAnim.isVisible ? `${i * 100}ms` : '0ms'
             }}>
-                  <div className="flex-shrink-0 w-10 h-10 rounded-full bg-accent/10 flex items-center justify-center">
+                  <div className="flex-shrink-0 w-10 h-10 rounded-full bg-accent/15 flex items-center justify-center">
                     <span className="text-accent font-semibold">{step.num}</span>
                   </div>
                   <div className="pt-1">
@@ -148,11 +148,11 @@ const EstatePlanning = () => {
       </section>
 
       {/* Tax Considerations Section */}
-      <section className="py-12 gradient-stone">
+      <section className="section-spacer-md gradient-stone">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div ref={taxAnim.ref} className={cn("max-w-4xl mx-auto transition-all duration-700", isRTL && "font-hebrew text-right", taxAnim.isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8")}>
-            <div className={cn("w-16 h-0.5 bg-accent mb-6", isRTL && "ml-auto")} />
-            <h2 className="text-3xl sm:text-4xl font-display font-semibold mb-5">
+            <div className={cn("w-12 h-[2px] bg-accent mb-6", isRTL && "ml-auto")} />
+            <h2 className="text-fluid-3xl font-display font-semibold mb-5">
               {t('estate.tax.title')}
             </h2>
             <p className="text-muted-foreground mb-4 leading-relaxed text-lg">
@@ -168,7 +168,7 @@ const EstatePlanning = () => {
       {/* Financial Agreements Section */}
       <section className="py-10 bg-background">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <div ref={financialAnim.ref} className={cn("max-w-4xl mx-auto p-6 bg-card rounded-lg border border-border transition-all duration-700", isRTL && "font-hebrew text-right", financialAnim.isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8")}>
+          <div ref={financialAnim.ref} className={cn("max-w-4xl mx-auto p-6 bg-card rounded-lg card-premium transition-all duration-700", isRTL && "font-hebrew text-right", financialAnim.isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8")}>
             <h3 className="text-xl font-display font-medium mb-3">
               {t('estate.financial.title')}
             </h3>
@@ -180,14 +180,14 @@ const EstatePlanning = () => {
       </section>
 
       {/* Enduring Power of Attorney Section */}
-      <section className="py-12 bg-background overflow-visible">
+      <section className="section-spacer-md bg-background overflow-visible">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div ref={epaAnim.ref} className={cn("max-w-6xl mx-auto transition-all duration-700", epaAnim.isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8")}>
             <div className={cn("grid grid-cols-1 lg:grid-cols-2 gap-8 items-stretch")}>
               {/* Text card */}
               <div className={cn("p-8 sm:p-10 bg-card rounded-2xl shadow-lg border border-border/50", isRTL ? "font-hebrew text-right order-1" : "order-1")}>
-                <div className={cn("w-16 h-0.5 bg-accent mb-6", isRTL && "ml-auto")} />
-                <h2 className="text-3xl sm:text-4xl font-display font-semibold mb-5 text-foreground">
+                <div className={cn("w-12 h-[2px] bg-accent mb-6", isRTL && "ml-auto")} />
+                <h2 className="text-fluid-3xl font-display font-semibold mb-5 text-foreground">
                   {t('estate.epa.title')}
                 </h2>
                 <p className="text-muted-foreground mb-4 leading-relaxed text-lg">
@@ -196,7 +196,7 @@ const EstatePlanning = () => {
               </div>
               {/* Image */}
               <div className={cn("rounded-xl overflow-hidden shadow-xl transition-all duration-700 delay-200 h-64 sm:h-80 lg:h-full", isRTL ? "order-2" : "order-2", epaAnim.isVisible ? "opacity-100 translate-x-0" : isRTL ? "opacity-0 -translate-x-8" : "opacity-0 translate-x-8")}>
-                <img alt="Estate planning documents" className="w-full h-full object-cover" src="/lovable-uploads/e3b93eb0-b8af-4d3d-96e5-15a47306753b.webp" loading="lazy" decoding="async" />
+                <img alt="Estate planning documents" className="w-full h-full object-cover img-vibrant" src="/lovable-uploads/e3b93eb0-b8af-4d3d-96e5-15a47306753b.webp" loading="lazy" decoding="async" />
               </div>
             </div>
           </div>
@@ -204,9 +204,9 @@ const EstatePlanning = () => {
       </section>
 
       {/* FAQ Section */}
-      <section className="py-12 gradient-stone">
+      <section className="section-spacer-md gradient-stone">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-3xl">
-          <h2 ref={faqAnim.ref} className={cn("text-3xl sm:text-4xl font-display font-semibold mb-6 transition-all duration-700", isRTL && "font-hebrew text-right", faqAnim.isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8")}>
+          <h2 ref={faqAnim.ref} className={cn("text-fluid-3xl font-display font-semibold mb-6 transition-all duration-700", isRTL && "font-hebrew text-right", faqAnim.isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8")}>
             {t('service.faq')}
           </h2>
           {isPrerender() ? (
@@ -241,11 +241,11 @@ const EstatePlanning = () => {
       <RelatedServices currentPath="/estate-planning" />
 
       {/* CTA Section */}
-      <section className="py-12 bg-primary">
+      <section className="section-spacer-lg bg-primary">
         <div ref={ctaAnim.ref} className={cn("container mx-auto px-4 sm:px-6 lg:px-8 transition-all duration-700", ctaAnim.isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8")}>
           <div className="max-w-3xl mx-auto text-center">
-            <div className="w-16 h-0.5 bg-accent mx-auto mb-6" />
-            <h2 className={cn("text-4xl sm:text-5xl lg:text-6xl font-display font-semibold mb-5 text-primary-foreground", isRTL && "font-hebrew")}>
+            <div className="w-12 h-[2px] bg-accent mx-auto mb-6" />
+            <h2 className={cn("text-fluid-4xl font-display font-semibold mb-5 text-primary-foreground", isRTL && "font-hebrew")}>
               {t('estate.cta.title')}
             </h2>
             <p className={cn("text-xl mb-8 max-w-xl mx-auto text-primary-foreground/80", isRTL && "font-hebrew")}>

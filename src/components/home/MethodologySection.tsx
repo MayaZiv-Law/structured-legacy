@@ -60,7 +60,7 @@ const MethodologySection = () => {
             <div
               key={index}
               className={cn(
-                "group bg-background overflow-hidden transition-all duration-300 hover:shadow-xl border border-border",
+                "group bg-background overflow-hidden transition-all duration-300 hover:shadow-premium card-premium",
                 isRTL && "text-right"
               )}
             >
@@ -69,7 +69,7 @@ const MethodologySection = () => {
                 <img
                   src={card.image}
                   alt={t(card.titleKey)}
-                  className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                  className="w-full h-full object-cover img-vibrant transition-transform duration-500 group-hover:scale-105"
                   loading="lazy"
                 />
               </div>

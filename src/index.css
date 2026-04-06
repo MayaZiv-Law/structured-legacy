@@ -288,6 +288,34 @@
   .section-spacer-md { padding-top: clamp(3rem, 5vw, 5rem); padding-bottom: clamp(3rem, 5vw, 5rem); }
   .section-spacer-lg { padding-top: clamp(4rem, 7vw, 7rem); padding-bottom: clamp(4rem, 7vw, 7rem); }
   .section-spacer-xl { padding-top: clamp(5rem, 9vw, 9rem); padding-bottom: clamp(5rem, 9vw, 9rem); }
+
+  /* Image vibrancy filter — makes photos pop */
+  .img-vibrant {
+    filter: saturate(1.25) contrast(1.08) brightness(1.03);
+  }
+
+  /* Premium card treatment — unified across all service pages */
+  .card-premium {
+    border: 1px solid hsl(var(--border) / 0.4);
+    transition: box-shadow 0.5s cubic-bezier(0.16, 1, 0.3, 1), transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+  .card-premium:hover {
+    box-shadow: 0 4px 20px -4px hsl(var(--gold) / 0.15),
+                0 8px 40px -8px hsl(var(--foreground) / 0.1);
+  }
+
+  /* Premium form input styling */
+  .input-premium {
+    background-color: hsl(var(--secondary) / 0.15);
+    border: 1px solid hsl(var(--border) / 0.5);
+    transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+  .input-premium:focus {
+    background-color: hsl(var(--background));
+    border-color: hsl(var(--accent));
+    box-shadow: 0 0 0 1px hsl(var(--accent) / 0.3);
+    outline: none;
+  }
 }
 
 /* Accessibility Styles */

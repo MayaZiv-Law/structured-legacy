@@ -38,8 +38,8 @@ const Insights = () => {
               headerAnim.isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
             )}
           >
-            <div className={cn("w-16 h-0.5 bg-accent mb-6", isRTL && "mr-0 ml-auto")} />
-            <h1 className={cn("text-3xl sm:text-4xl lg:text-5xl font-display font-semibold text-foreground mb-4", isRTL && "font-hebrew")}>
+            <div className={cn("w-12 h-[2px] bg-accent mb-6", isRTL && "mr-0 ml-auto")} />
+            <h1 className={cn("text-fluid-4xl font-display font-semibold text-foreground mb-4", isRTL && "font-hebrew")}>
               {t('insights.hero.title')}
             </h1>
             <p className={cn("text-lg sm:text-xl text-muted-foreground", isRTL && "font-hebrew")}>
@@ -69,7 +69,7 @@ const Insights = () => {
                       to={localePath(`/insights/${article.slug}`)}
                       key={article.id}
                       className={cn(
-                        "group bg-card border border-border rounded-sm overflow-hidden hover:border-accent/50 transition-all hover:shadow-lg block duration-500",
+                        "group bg-card card-premium rounded-sm overflow-hidden hover:border-accent/40 block duration-500",
                         isRTL && "font-hebrew text-right",
                         articlesAnim.isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
                       )}

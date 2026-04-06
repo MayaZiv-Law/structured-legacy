@@ -177,7 +177,7 @@ const Article = () => {
               {category}
             </span>
 
-            <h1 className="text-3xl sm:text-4xl lg:text-5xl font-display font-semibold text-foreground mb-6 leading-tight">
+            <h1 className="text-fluid-4xl font-display font-semibold text-foreground mb-6 leading-tight">
               {title}
             </h1>
 
@@ -236,10 +236,10 @@ const Article = () => {
       </section>
 
       {/* Related Articles CTA */}
-      <section className="py-12 bg-muted/30">
+      <section className="section-spacer-md bg-muted/30">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className={cn("text-center", isRTL && "font-hebrew")}>
-            <h2 className="text-3xl font-display font-semibold text-foreground mb-4">
+            <h2 className="text-fluid-2xl font-display font-semibold text-foreground mb-4">
               {t('article.readMore')}
             </h2>
             <p className="text-lg text-muted-foreground mb-6">

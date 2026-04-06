@@ -81,13 +81,13 @@ const RealEstate = () => {
       <PageHero backgroundImage={realEstateHeroBg} title={t('realestate.hero.title')} subtitle={t('realestate.hero.subtitle')} />
 
       {/* The Approach Section */}
-      <section className="pt-24 sm:pt-28 pb-12 gradient-stone">
+      <section className="section-spacer-md gradient-stone">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div ref={approachAnim.ref} className={cn("max-w-4xl mx-auto transition-all duration-700", isRTL && "font-hebrew text-right", approachAnim.isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8")}>
-            <h2 className="text-4xl sm:text-5xl font-display font-semibold text-foreground mb-5">
+            <h2 className="text-fluid-4xl font-display font-semibold text-foreground mb-5">
               {t('realestate.approach.title')}
             </h2>
-            <div className={cn("w-16 h-0.5 bg-accent mb-6", isRTL && "mr-0 ml-auto")} />
+            <div className={cn("w-12 h-[2px] bg-accent mb-6", isRTL && "mr-0 ml-auto")} />
             <div className="space-y-5">
               <p className="text-lg text-muted-foreground leading-relaxed">
                 {t('realestate.approach.body')}
@@ -103,13 +103,13 @@ const RealEstate = () => {
       </section>
 
       {/* Risk Map Section */}
-      <section className="py-12 bg-background">
+      <section className="section-spacer-md bg-background">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div ref={riskAnim.ref} className={cn("max-w-4xl mx-auto transition-all duration-700", isRTL && "font-hebrew text-right", riskAnim.isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8")}>
-            <h2 className="text-4xl sm:text-5xl font-display font-semibold text-foreground mb-5">
+            <h2 className="text-fluid-4xl font-display font-semibold text-foreground mb-5">
               {t('realestate.risk.title')}
             </h2>
-            <div className={cn("w-16 h-0.5 bg-accent mb-6", isRTL && "mr-0 ml-auto")} />
+            <div className={cn("w-12 h-[2px] bg-accent mb-6", isRTL && "mr-0 ml-auto")} />
             <p className="text-lg text-muted-foreground leading-relaxed mb-8">
               {t('realestate.risk.intro')}
             </p>
@@ -139,13 +139,13 @@ const RealEstate = () => {
       </section>
 
       {/* Tax Planning Section */}
-      <section className="py-12 gradient-stone">
+      <section className="section-spacer-md gradient-stone">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div ref={taxAnim.ref} className={cn("max-w-4xl mx-auto transition-all duration-700", isRTL && "font-hebrew text-right", taxAnim.isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8")}>
-            <h2 className="text-4xl sm:text-5xl font-display font-semibold text-foreground mb-5">
+            <h2 className="text-fluid-4xl font-display font-semibold text-foreground mb-5">
               {t('realestate.tax.title')}
             </h2>
-            <div className={cn("w-16 h-0.5 bg-accent mb-6", isRTL && "mr-0 ml-auto")} />
+            <div className={cn("w-12 h-[2px] bg-accent mb-6", isRTL && "mr-0 ml-auto")} />
             <div className="space-y-5">
               <p className="text-lg text-muted-foreground leading-relaxed">
                 {t('realestate.tax.body')}
@@ -159,7 +159,7 @@ const RealEstate = () => {
       </section>
 
       {/* Due Diligence Section - Asymmetric Design */}
-      <section className="relative z-20 py-12 bg-background overflow-hidden">
+      <section className="relative z-20 section-spacer-md bg-background overflow-hidden">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div ref={dueDiligenceAnim.ref} className={cn("relative max-w-6xl mx-auto transition-all duration-700", dueDiligenceAnim.isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8")}>
             {/* Offset beige background */}
@@ -170,7 +170,7 @@ const RealEstate = () => {
               {/* Text content in white card */}
               <div className={cn("bg-background py-8 px-6 lg:py-10 lg:px-10 shadow-sm transition-all duration-700 delay-200", isRTL ? "lg:col-start-1" : "lg:col-start-1", dueDiligenceAnim.isVisible ? "opacity-100 translate-x-0" : isRTL ? "opacity-0 -translate-x-8" : "opacity-0 -translate-x-8")}>
                 <div className={cn(isRTL && "font-hebrew text-right")}>
-                  <h2 className="text-3xl sm:text-4xl font-display font-semibold text-foreground mb-5">
+                  <h2 className="text-fluid-3xl font-display font-semibold text-foreground mb-5">
                     {t('realestate.diligence.title')}
                   </h2>
                   <div className="space-y-4">
@@ -187,7 +187,7 @@ const RealEstate = () => {
               {/* Image */}
               <div className={cn("relative transition-all duration-700 delay-300", isRTL ? "lg:col-start-2" : "lg:col-start-2", dueDiligenceAnim.isVisible ? "opacity-100 translate-x-0" : isRTL ? "opacity-0 translate-x-8" : "opacity-0 translate-x-8")}>
                 <div className="aspect-[3/4] max-w-sm mx-auto lg:mx-0 overflow-hidden rounded-sm shadow-premium">
-                  <img alt="Real estate due diligence" className="w-full h-full object-cover" src="/lovable-uploads/81459920-5f87-4bcb-8430-47c1c2edc6e4.webp" loading="lazy" decoding="async" />
+                  <img alt="Real estate due diligence" className="w-full h-full object-cover img-vibrant" src="/lovable-uploads/81459920-5f87-4bcb-8430-47c1c2edc6e4.webp" loading="lazy" decoding="async" />
                 </div>
               </div>
             </div>
@@ -196,7 +196,7 @@ const RealEstate = () => {
       </section>
 
       {/* Remote Execution Section - Same layout as Due Diligence */}
-      <section className="relative z-20 py-12 bg-background overflow-hidden">
+      <section className="relative z-20 section-spacer-md bg-background overflow-hidden">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div ref={remoteAnim.ref} className={cn("relative max-w-6xl mx-auto transition-all duration-700", remoteAnim.isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8")}>
             {/* Offset beige background - same position as Due Diligence */}
@@ -207,14 +207,14 @@ const RealEstate = () => {
               {/* Image - on left */}
               <div className={cn("relative transition-all duration-700 delay-200", isRTL ? "lg:col-start-2" : "lg:col-start-1", remoteAnim.isVisible ? "opacity-100 translate-x-0" : isRTL ? "opacity-0 translate-x-8" : "opacity-0 -translate-x-8")}>
                 <div className="aspect-[3/4] max-w-sm mx-auto lg:mx-0 overflow-hidden rounded-sm shadow-premium">
-                  <img alt="Remote real estate transaction" className="w-full h-full object-cover" src="/lovable-uploads/ba3c3a72-3db5-4141-9459-1f85fc39e53f.webp" loading="lazy" decoding="async" />
+                  <img alt="Remote real estate transaction" className="w-full h-full object-cover img-vibrant" src="/lovable-uploads/ba3c3a72-3db5-4141-9459-1f85fc39e53f.webp" loading="lazy" decoding="async" />
                 </div>
               </div>
 
               {/* Text content in white card - on right */}
               <div className={cn("bg-background py-8 px-6 lg:py-10 lg:px-10 shadow-sm transition-all duration-700 delay-300", isRTL ? "lg:col-start-1" : "lg:col-start-2", remoteAnim.isVisible ? "opacity-100 translate-x-0" : isRTL ? "opacity-0 -translate-x-8" : "opacity-0 translate-x-8")}>
                 <div className={cn(isRTL && "font-hebrew text-right")}>
-                  <h2 className="text-3xl sm:text-4xl font-display font-semibold text-foreground mb-5">
+                  <h2 className="text-fluid-3xl font-display font-semibold text-foreground mb-5">
                     {t('realestate.remote.title')}
                   </h2>
                   <div className="space-y-4">
@@ -233,13 +233,13 @@ const RealEstate = () => {
       </section>
 
       {/* FAQ Section */}
-      <section className="py-12 bg-background">
+      <section className="section-spacer-md bg-background">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-3xl">
           <div ref={faqAnim.ref} className={cn("text-center mb-10 transition-all duration-700", isRTL && "font-hebrew", faqAnim.isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8")}>
-            <h2 className="text-4xl sm:text-5xl font-display font-semibold text-foreground mb-4">
+            <h2 className="text-fluid-4xl font-display font-semibold text-foreground mb-4">
               {t('service.faq')}
             </h2>
-            <div className="w-16 h-0.5 bg-accent mx-auto" />
+            <div className="w-12 h-[2px] bg-accent mx-auto" />
           </div>
           
           {isPrerender() ? (
@@ -274,12 +274,12 @@ const RealEstate = () => {
       <RelatedServices currentPath="/real-estate" />
 
       {/* CTA Section */}
-      <section className="py-12 bg-primary">
+      <section className="section-spacer-lg bg-primary">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div ref={ctaAnim.ref} className={cn("max-w-3xl mx-auto text-center transition-all duration-700", isRTL && "font-hebrew", ctaAnim.isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8")}>
-            <div className="w-16 h-0.5 bg-accent mx-auto mb-6" />
+            <div className="w-12 h-[2px] bg-accent mx-auto mb-6" />
 
-            <h2 className="text-4xl sm:text-5xl lg:text-6xl font-display font-semibold mb-5 text-primary-foreground">
+            <h2 className="text-fluid-4xl font-display font-semibold mb-5 text-primary-foreground">
               {t('realestate.cta.title')}
             </h2>
 

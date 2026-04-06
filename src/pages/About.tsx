@@ -38,7 +38,7 @@ const About = () => {
       <PageHero backgroundImage={aboutHeroBg} title={t('about.hero.title')} />
 
       {/* Main Body */}
-      <section className="pt-24 sm:pt-28 pb-12 gradient-stone">
+      <section className="section-spacer-md gradient-stone">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div
             ref={mainBodyAnim.ref}
@@ -59,7 +59,7 @@ const About = () => {
       <MethodologySection />
 
       {/* CTA Section */}
-      <section className="py-12 bg-primary">
+      <section className="section-spacer-lg bg-primary">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div
             ref={ctaAnim.ref}
@@ -69,9 +69,9 @@ const About = () => {
               ctaAnim.isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
             )}
           >
-            <div className="w-16 h-0.5 bg-accent mx-auto mb-6" />
+            <div className="w-12 h-[2px] bg-accent mx-auto mb-6" />
 
-            <h2 className="text-4xl sm:text-5xl lg:text-6xl font-display font-semibold text-primary-foreground mb-5">
+            <h2 className="text-fluid-4xl font-display font-semibold text-primary-foreground mb-5">
               {t('about.cta.title')}
             </h2>
 
