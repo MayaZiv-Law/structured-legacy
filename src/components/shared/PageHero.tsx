@@ -67,15 +67,6 @@ const PageHero = ({
               {title}
             </h1>
 
-            {/* Subtitle */}
-            {subtitle && (
-              <p className={cn(
-                "text-fluid-base text-primary-foreground/70 mt-3 leading-relaxed",
-                isRTL && "font-hebrew"
-              )}>
-                {subtitle}
-              </p>
-            )}
           </div>
         </div>
       </div>

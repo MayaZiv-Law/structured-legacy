@@ -58,18 +58,18 @@ const FAQSection = () => {
   );
 
   return (
-    <section className="section-spacer-lg bg-secondary/30">
+    <section className="section-spacer-md bg-secondary/30">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className={cn("max-w-3xl mx-auto", isRTL && "font-hebrew")}>
           {/* Title */}
           <div
             ref={titleAnim.ref}
             className={cn(
-              "text-center mb-10 sm:mb-12 transition-all duration-700",
+              "text-center mb-8 transition-all duration-700",
               titleAnim.isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
             )}
           >
-            <h2 className="text-fluid-4xl font-display font-semibold text-foreground mb-6">
+            <h2 className="text-fluid-3xl font-display font-semibold text-foreground mb-6">
               {t('faq.title')}
             </h2>
             <div className={cn(

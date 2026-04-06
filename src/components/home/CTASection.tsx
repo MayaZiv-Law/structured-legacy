@@ -15,7 +15,7 @@ const CTASection = () => {
   const Arrow = isRTL ? ArrowLeft : ArrowRight;
   const anim = useScrollAnimation(0.15);
 
-  return <section className="section-spacer-xl bg-primary">
+  return <section className="section-spacer-lg bg-primary">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div
           ref={anim.ref}
@@ -35,7 +35,7 @@ const CTASection = () => {
           </h2>
 
           <p className={cn(
-            "text-fluid-lg mb-10 max-w-xl mx-auto text-primary-foreground/75 leading-relaxed transition-all duration-700 delay-150",
+            "text-fluid-lg mb-8 max-w-xl mx-auto text-primary-foreground/75 leading-relaxed transition-all duration-700 delay-150",
             anim.isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
           )}>
             {t('cta.subtitle')}

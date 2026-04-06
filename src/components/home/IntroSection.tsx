@@ -7,7 +7,7 @@ const IntroSection = () => {
   const anim = useScrollAnimation(0.15);
 
   return (
-    <section className="section-spacer-md bg-background">
+    <section className="pt-10 sm:pt-14 pb-8 bg-background">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div
           ref={anim.ref}
@@ -30,7 +30,7 @@ const IntroSection = () => {
           </div>
 
           <p className={cn(
-            "text-fluid-xl text-muted-foreground leading-relaxed transition-all duration-700 delay-200",
+            "text-fluid-2xl font-display font-medium text-gradient-gold leading-relaxed transition-all duration-700 delay-200",
             anim.isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
           )}>
             {t('hero.subtitle1')}

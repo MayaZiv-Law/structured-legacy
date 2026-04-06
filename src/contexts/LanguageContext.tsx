@@ -141,7 +141,7 @@ const translations: Record<Language, Record<string, string>> = {
 
     // About Page
     'about.hero.title': 'About the Firm',
-    'about.mainBody': 'The firm was founded by Maya Ziv whose core belief is that legal counsel is first built on clear communication, strategic decisions that are based on the client needs and analytic discipline. With an international academic background and early professional experience in finance and accounting, the practice brings analytical discipline and global professionalism into the Israeli legal environment. Clients benefit from structured, transparent guidance in matters that shape property, family planning, and long term personal decisions.',
+    'about.mainBody': 'The firm was founded by Maya Ziv whose core belief is that legal counsel is built on clear communication, analytic discipline and strategic decisions that are based on the client needs. With an international academic background and early professional experience in finance and accounting, the practice brings global professionalism into the Israeli legal environment. The firm\'s clients benefit from structured, transparent guidance in matters that shape property, family planning, and long term personal decisions.',
     'about.cta.title': 'Tell Us About Your Matter',
     'about.cta.body': 'From the first conversation, clients know exactly what their matter involves and what to expect next.',
     'about.cta.button': 'Get in Touch',
