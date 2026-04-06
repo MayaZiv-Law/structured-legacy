@@ -196,7 +196,7 @@ const EstatePlanning = () => {
               </div>
               {/* Image */}
               <div className={cn("rounded-xl overflow-hidden shadow-xl transition-all duration-700 delay-200 h-64 sm:h-80 lg:h-full", isRTL ? "order-2" : "order-2", epaAnim.isVisible ? "opacity-100 translate-x-0" : isRTL ? "opacity-0 -translate-x-8" : "opacity-0 translate-x-8")}>
-                <img alt="Estate planning documents" className="w-full h-full object-cover img-vibrant" src="/lovable-uploads/e3b93eb0-b8af-4d3d-96e5-15a47306753b.webp" loading="lazy" decoding="async" />
+                <img alt="Estate planning documents" className="w-full h-full object-cover img-vibrant" src={epaImage} loading="lazy" decoding="async" />
               </div>
             </div>
           </div>
