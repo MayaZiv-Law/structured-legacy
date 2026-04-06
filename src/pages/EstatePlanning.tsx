@@ -10,7 +10,7 @@ import { Link } from 'react-router-dom';
 import { useScrollAnimation } from '@/hooks/useScrollAnimation';
 import PageHero from '@/components/shared/PageHero';
 import epaImage from '@/assets/epa-section-image.webp';
-import estateHeroBg from '@/assets/estate-hero-new.webp';
+import estateHeroBg from '@/assets/estate-zigzag.jpeg';
 import { SEO, createServiceSchema, createFAQSchema, createBreadcrumbSchema } from '@/components/SEO';
 import RelatedServices from '@/components/shared/RelatedServices';
 const EstatePlanning = () => {
