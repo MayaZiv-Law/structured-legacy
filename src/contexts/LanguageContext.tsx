@@ -28,7 +28,7 @@ const translations: Record<Language, Record<string, string>> = {
     // Hero
     'hero.tagline': 'Maya Ziv Law',
     'hero.title': 'Attorney in Israel',
-    'hero.subtitle1': 'In an ever changing world, the firm operates as a dedicated legal partner shaped by global perspective.',
+    'hero.subtitle1': 'In an ever changing world, \nMaya Ziv Law stands as a dedicated legal partner, combining on-the-ground knowledge with global perspective.',
     'hero.subtitle2': '',
 
     // Guide Section
@@ -336,7 +336,7 @@ const translations: Record<Language, Record<string, string>> = {
     // Hero
     'hero.tagline': 'מאיה זיו עורכי דין',
     'hero.title': 'מאיה זיו | עורכת דין בישראל',
-    'hero.subtitle1': 'בעולם המשתנה ללא הרף, המשרד פועל כשותף מסור ללקוחותיו, ומספק ליווי ויעוץ משפטי המעוגן בפרספקטיבה גלובלית.',
+    'hero.subtitle1': 'בעולם המשתנה ללא הרף, \nמשרד מאיה זיו עומד לצד לקוחותיו כשותף משפטי מסור, המשלב היכרות מעמיקה עם המציאות המקומית, עם ידע ונסיון בזירה הבינלאומית.',
     'hero.subtitle2': 'החלטות אסטרטגיות בעולם גלובאלי',
     'hero.cta': '',
 
