@@ -12,8 +12,8 @@ import contactHeroImage from '@/assets/about-hero-globe.webp';
 const Contact = () => {
   const { t, isRTL, language } = useLanguage();
   const breadcrumbSchema = createBreadcrumbSchema([
-    { name: language === 'he' ? 'בית' : 'Home', url: 'https://mayaziv-law.com/' },
-    { name: language === 'he' ? 'צור קשר' : 'Contact', url: 'https://mayaziv-law.com/contact' },
+    { name: language === 'he' ? 'בית' : 'Home', url: `https://mayaziv-law.com/${language}/` },
+    { name: language === 'he' ? 'צור קשר' : 'Contact', url: `https://mayaziv-law.com/${language}/contact` },
   ]);
   const [formData, setFormData] = useState({ name: '', email: '', phone: '', inquiry: '', message: '' });
   const [submitted, setSubmitted] = useState(false);

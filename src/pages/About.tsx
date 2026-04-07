@@ -14,8 +14,8 @@ import PageHero from '@/components/shared/PageHero';
 const About = () => {
   const { t, isRTL, language } = useLanguage();
   const breadcrumbSchema = createBreadcrumbSchema([
-    { name: language === 'he' ? 'בית' : 'Home', url: 'https://mayaziv-law.com/' },
-    { name: language === 'he' ? 'אודות' : 'About', url: 'https://mayaziv-law.com/about' },
+    { name: language === 'he' ? 'בית' : 'Home', url: `https://mayaziv-law.com/${language}/` },
+    { name: language === 'he' ? 'אודות' : 'About', url: `https://mayaziv-law.com/${language}/about` },
   ]);
   const localePath = useLocalePath();
   const Arrow = isRTL ? ArrowLeft : ArrowRight;
@@ -27,7 +27,7 @@ const About = () => {
     <Layout>
       <SEO
         titleEn="About Maya Ziv Law | Premier Legal Counsel in Israel"
-        titleHe="מאיה זיו משרד עורכי דין | מקרקעין | מיסוי בינלאומי | ניהול עזבונות וצוואות"
+        titleHe="אודות המשרד | מאיה זיו | מקרקעין, פיננסי ומסחרי, ניהול עזבונות"
         descriptionEn="Maya Ziv Law operates as a dedicated partner to each client, creating original solutions for complex domestic and cross border matters. Real estate, taxation, estate planning, and commercial law in Israel."
         descriptionHe="ניהול סיכונים משפטי ואסטרטגיית מיסוי עבור תושבי ישראל ולקוחות בזירה הגלובלית. התמחות בבדיקת נאותות למקרקעין, ציות בנקאי וניהול עזבונות חוצי גבולות."
         path="/about"

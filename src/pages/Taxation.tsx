@@ -66,7 +66,7 @@ const Taxation = () => {
   const taxationSchema = createServiceSchema({
     name: 'Taxation and Compliance Legal Services',
     description: 'Legal counsel for Israeli taxation and banking regulation. Purchase tax planning, source of funds compliance (AML), and cross border alignment.',
-    url: 'https://mayaziv-law.com/taxation',
+    url: `https://mayaziv-law.com/${language}/taxation`,
   });
 
   const faqSchema = createFAQSchema(faqs.map(faq => ({
@@ -75,8 +75,8 @@ const Taxation = () => {
   })));
 
   const breadcrumbSchema = createBreadcrumbSchema([
-    { name: language === 'he' ? 'בית' : 'Home', url: 'https://mayaziv-law.com/' },
-    { name: language === 'he' ? 'מיסוי ותאימות' : 'Tax and Compliance', url: 'https://mayaziv-law.com/taxation' },
+    { name: language === 'he' ? 'בית' : 'Home', url: `https://mayaziv-law.com/${language}/` },
+    { name: language === 'he' ? 'מיסוי ותאימות' : 'Tax and Compliance', url: `https://mayaziv-law.com/${language}/taxation` },
   ]);
 
   return <Layout>

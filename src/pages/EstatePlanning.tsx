@@ -76,7 +76,7 @@ const EstatePlanning = () => {
   const estateSchema = createServiceSchema({
     name: 'Estate Planning and Inheritance Legal Services',
     description: 'Estate planning for international families in Israel. Drafting bilingual wills, probate orders, and Enduring Power of Attorney with cross border validity.',
-    url: 'https://mayaziv-law.com/estate-planning'
+    url: `https://mayaziv-law.com/${language}/estate-planning`
   });
 
   const faqSchema = createFAQSchema(faqs.map(faq => ({
@@ -85,8 +85,8 @@ const EstatePlanning = () => {
   })));
 
   const breadcrumbSchema = createBreadcrumbSchema([
-    { name: language === 'he' ? 'בית' : 'Home', url: 'https://mayaziv-law.com/' },
-    { name: language === 'he' ? 'משפחה ומורשת' : 'Family and Legacy', url: 'https://mayaziv-law.com/estate-planning' },
+    { name: language === 'he' ? 'בית' : 'Home', url: `https://mayaziv-law.com/${language}/` },
+    { name: language === 'he' ? 'משפחה ומורשת' : 'Family and Legacy', url: `https://mayaziv-law.com/${language}/estate-planning` },
   ]);
 
   return <Layout>
