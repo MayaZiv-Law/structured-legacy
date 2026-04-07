@@ -22,7 +22,7 @@ const Insights = () => {
       <SEO
         titleEn="Legal Insights and Articles | Maya Ziv Law"
         titleHe="תובנות משפטיות ומאמרים | משרד מאיה זיו"
-        descriptionEn="Practical guidance on Israeli real estate, cross border taxation, compliance, and legacy planning from Maya Ziv Law."
+        descriptionEn="Practical guidance on Israeli real estate, cross-border taxation, compliance, and legacy planning from Maya Ziv Law."
         descriptionHe="הנחיות מעשיות בנושאי נדל״ן בישראל, מיסוי חוצה גבולות, ציות ותכנון מורשת ממשרד מאיה זיו."
         path="/insights"
       />

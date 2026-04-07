@@ -24,7 +24,7 @@ const allServices: RelatedService[] = [
     path: '/taxation',
     titleEn: 'Tax and Compliance',
     titleHe: 'מיסוי ותאימות',
-    descEn: 'Cross border tax planning',
+    descEn: 'Cross-border tax planning',
     descHe: 'תכנון מס חוצה גבולות',
   },
   {

@@ -18,9 +18,9 @@ const Index = () => {
   return (
     <Layout>
       <SEO
-        titleEn="Maya Ziv Law | Real Estate, Commercial, Cross Border | International Legal Counsel in Israel"
-        titleHe="משרד עורכי דין מאיה זיו | מקרקעין | פיננסי ומסחרי | ניהול עזבונות | בינלאומי"
-        descriptionEn="Israeli law firm advising private clients and businesses on real estate, commercial transactions, cross border matters and estate planning. International legal and financial expertise combined."
+        titleEn="Maya Ziv Law | Israel Real Estate, Commercial & Cross-Border Counsel"
+        titleHe="מאיה זיו עורכי דין | מקרקעין, פיננסי ומסחרי בינלאומי | ניהול עזבונות"
+        descriptionEn="Israeli law firm advising private clients and businesses on real estate, commercial transactions, cross-border matters and estate planning, combining international legal and financial expertise."
         descriptionHe="ייעוץ משפטי ואסטרטגיה מסחרית עבור תושבי ישראל ולקוחות בזירה הגלובלית. התמחות במקרקעין, פיננסי ומסחרי בינלאומי, וניהול עזבונות חוצי גבולות."
         path="/"
         schema={[organizationSchema, websiteSchema, localBusinessSchema]}

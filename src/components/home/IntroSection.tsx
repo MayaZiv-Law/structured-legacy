@@ -12,7 +12,7 @@ const IntroSection = () => {
         <div
           ref={anim.ref}
           className={cn(
-            "max-w-4xl mx-auto",
+            "max-w-3xl mx-auto",
             isRTL && "font-hebrew text-right",
             anim.isVisible ? "opacity-100" : "opacity-0"
           )}
@@ -29,12 +29,12 @@ const IntroSection = () => {
             )} />
           </div>
 
-          <p className={cn(
-            "text-fluid-2xl font-display font-medium text-gradient-gold leading-relaxed whitespace-pre-line transition-all duration-700 delay-200",
+          <h1 className={cn(
+            "text-xl md:text-2xl lg:text-3xl font-display font-medium text-foreground leading-relaxed tracking-normal transition-all duration-700 delay-200",
             anim.isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
           )}>
-            {t('hero.subtitle1')}
-          </p>
+            {t('hero.h1')}
+          </h1>
         </div>
       </div>
     </section>

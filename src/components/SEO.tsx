@@ -113,7 +113,7 @@ export const organizationSchema = {
   "@context": "https://schema.org",
   "@type": "LegalService",
   "name": "Maya Ziv Law",
-  "description": "Attorney in Israel specializing in cross border legal matters, real estate, taxation, and estate planning.",
+  "description": "Attorney in Israel specializing in cross-border legal matters, real estate, taxation, and estate planning.",
   "url": "https://mayaziv-law.com",
   "logo": `${SITE_URL}/og-image.webp`,
   "image": `${SITE_URL}/og-image.webp`,
@@ -161,7 +161,7 @@ export const attorneySchema = {
   },
   "knowsAbout": [
     "Real Estate Law",
-    "Cross Border Transactions",
+    "Cross-Border Transactions",
     "Tax Law",
     "Estate Planning",
     "Commercial Law",
@@ -297,7 +297,7 @@ export const websiteSchema = {
   "@type": "WebSite",
   "name": "Maya Ziv Law",
   "url": "https://mayaziv-law.com",
-  "description": "Attorney in Israel specializing in cross border legal matters, real estate, taxation, and estate planning.",
+  "description": "Attorney in Israel specializing in cross-border legal matters, real estate, taxation, and estate planning.",
   "inLanguage": ["en", "he"],
   "publisher": {
     "@type": "LegalService",
