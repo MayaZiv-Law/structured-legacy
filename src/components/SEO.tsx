@@ -17,7 +17,7 @@ interface SEOProps {
 }
 
 const SITE_URL = 'https://mayaziv-law.com';
-const DEFAULT_IMAGE = '/lovable-uploads/ba3c3a72-3db5-4141-9459-1f85fc39e53f.webp';
+const DEFAULT_IMAGE = '/og-image.webp';
 
 export const SEO = ({
   titleEn,
@@ -115,8 +115,8 @@ export const organizationSchema = {
   "name": "Maya Ziv Law",
   "description": "Attorney in Israel specializing in cross-border legal matters, real estate, taxation, and estate planning.",
   "url": "https://mayaziv-law.com",
-  "logo": `${SITE_URL}/lovable-uploads/ba3c3a72-3db5-4141-9459-1f85fc39e53f.webp`,
-  "image": `${SITE_URL}/lovable-uploads/ba3c3a72-3db5-4141-9459-1f85fc39e53f.webp`,
+  "logo": `${SITE_URL}/og-image.webp`,
+  "image": `${SITE_URL}/og-image.webp`,
   "telephone": "+972544943597",
   "email": "info@mayaziv-law.com",
   "address": {
@@ -154,7 +154,7 @@ export const attorneySchema = {
   "name": "Maya Ziv",
   "jobTitle": "Attorney",
   "url": "https://mayaziv-law.com/en/about",
-  "image": `${SITE_URL}/lovable-uploads/81459920-5f87-4bcb-8430-47c1c2edc6e4.webp`,
+  "image": `${SITE_URL}/og-image.webp`,
   "worksFor": {
     "@type": "LegalService",
     "name": "Maya Ziv Law"
@@ -194,7 +194,7 @@ export const createArticleSchema = (article: {
     "name": "Maya Ziv Law",
     "logo": {
       "@type": "ImageObject",
-      "url": `${SITE_URL}/lovable-uploads/ba3c3a72-3db5-4141-9459-1f85fc39e53f.webp`
+      "url": `${SITE_URL}/og-image.webp`
     }
   },
   "mainEntityOfPage": {
@@ -257,7 +257,7 @@ export const localBusinessSchema = {
   "@context": "https://schema.org",
   "@type": "LocalBusiness",
   "name": "Maya Ziv Law",
-  "image": `${SITE_URL}/lovable-uploads/ba3c3a72-3db5-4141-9459-1f85fc39e53f.webp`,
+  "image": `${SITE_URL}/og-image.webp`,
   "@id": "https://mayaziv-law.com",
   "url": "https://mayaziv-law.com",
   "telephone": "+972544943597",

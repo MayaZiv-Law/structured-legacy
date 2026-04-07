@@ -49,12 +49,12 @@ const Commercial = () => {
   const commercialSchema = createServiceSchema({
     name: 'Commercial Legal Services',
     description: 'Commercial legal counsel in Israel. Drafting contracts, partnership agreements, and managing cross-border business disputes for international clients.',
-    url: 'https://mayaziv-law.com/commercial',
+    url: `https://mayaziv-law.com/${language}/commercial`,
   });
 
   const breadcrumbSchema = createBreadcrumbSchema([
-    { name: language === 'he' ? 'בית' : 'Home', url: 'https://mayaziv-law.com/' },
-    { name: language === 'he' ? 'פיננסי ומסחרי' : 'Commercial and Finance', url: 'https://mayaziv-law.com/commercial' },
+    { name: language === 'he' ? 'בית' : 'Home', url: `https://mayaziv-law.com/${language}/` },
+    { name: language === 'he' ? 'פיננסי ומסחרי' : 'Commercial and Finance', url: `https://mayaziv-law.com/${language}/commercial` },
   ]);
 
   return (

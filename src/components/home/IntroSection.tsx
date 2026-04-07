@@ -30,7 +30,7 @@ const IntroSection = () => {
           </div>
 
           <h1 className={cn(
-            "text-fluid-2xl font-display font-medium text-gradient-gold leading-relaxed transition-all duration-700 delay-200",
+            "text-fluid-2xl font-display font-medium text-gradient-gold leading-relaxed whitespace-pre-line transition-all duration-700 delay-200",
             anim.isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
           )}>
             {t('hero.subtitle1')}

@@ -47,12 +47,12 @@ const OlimResidents = () => {
   const olimSchema = createServiceSchema({
     name: 'Legal Services for Olim and Returning Residents',
     description: 'A structured legal framework for your transition to Israel. Tax positioning, property acquisition, and asset integration for Olim and Returning Residents.',
-    url: 'https://mayaziv-law.com/olim-residents',
+    url: `https://mayaziv-law.com/${language}/olim-residents`,
   });
 
   const breadcrumbSchema = createBreadcrumbSchema([
-    { name: language === 'he' ? 'בית' : 'Home', url: 'https://mayaziv-law.com/' },
-    { name: language === 'he' ? 'עולים ותושבים חוזרים' : 'Olim and Returning Residents', url: 'https://mayaziv-law.com/olim-residents' },
+    { name: language === 'he' ? 'בית' : 'Home', url: `https://mayaziv-law.com/${language}/` },
+    { name: language === 'he' ? 'עולים ותושבים חוזרים' : 'Olim and Returning Residents', url: `https://mayaziv-law.com/${language}/olim-residents` },
   ]);
 
   return <Layout>
