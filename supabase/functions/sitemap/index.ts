@@ -5,7 +5,10 @@ const corsHeaders = {
 
 const SITE_URL = 'https://mayaziv-law.com'
 const LANGUAGES = ['en', 'he']
-const STATIC_LASTMOD = '2025-02-28'
+// Dynamic lastmod: reports today's date every time the function runs, so
+// Google sees the sitemap as fresh and recrawls instead of relying on a
+// hardcoded stale date.
+const STATIC_LASTMOD = new Date().toISOString().split('T')[0]
 
 const staticPages = [
   { path: '', priority: '1.0', changefreq: 'weekly' },
