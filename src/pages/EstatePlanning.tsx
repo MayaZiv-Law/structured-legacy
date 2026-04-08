@@ -75,7 +75,7 @@ const EstatePlanning = () => {
   const ctaAnim = useScrollAnimation();
   const estateSchema = createServiceSchema({
     name: 'Estate Planning and Inheritance Legal Services',
-    description: 'Estate planning for international families in Israel. Drafting bilingual wills, probate orders, and Enduring Power of Attorney with cross border validity.',
+    description: 'Estate planning for international families in Israel. Drafting bilingual wills, probate orders, and Enduring Power of Attorney with cross-border validity.',
     url: 'https://mayaziv-law.com/estate-planning'
   });
 
@@ -90,7 +90,7 @@ const EstatePlanning = () => {
   ]);
 
   return <Layout>
-      <SEO titleEn="Estate Planning Lawyer Israel | Wills, Inheritance and Cross Border Succession" titleHe="ירושות ותכנון עיזבון בתל אביב | צוואות חוצות גבולות" descriptionEn="Drafting wills and inheritance plans with cross border validity. Advising Israeli and international families on estate structure and succession planning." descriptionHe="תכנון עיזבון למשפחות בינלאומיות בישראל. ניסוח צוואות דו-לשוניות, צווי ירושה וייפוי כוח מתמשך עם תוקף חוצה גבולות." path="/estate-planning" schema={[estateSchema, faqSchema, breadcrumbSchema]} />
+      <SEO titleEn="Estate Planning Lawyer Israel | Wills, Inheritance and Cross-Border Succession" titleHe="ירושות ותכנון עיזבון בתל אביב | צוואות חוצות גבולות" descriptionEn="Drafting wills and inheritance plans with cross-border validity. Advising Israeli and international families on estate structure and succession planning." descriptionHe="תכנון עיזבון למשפחות בינלאומיות בישראל. ניסוח צוואות דו-לשוניות, צווי ירושה וייפוי כוח מתמשך עם תוקף חוצה גבולות." path="/estate-planning" schema={[estateSchema, faqSchema, breadcrumbSchema]} />
 
       {/* Hero Section */}
       <PageHero backgroundImage={estateHeroBg} title={t('estate.hero.title')} subtitle={t('estate.hero.subtitle')} imagePosition="center 70%" />

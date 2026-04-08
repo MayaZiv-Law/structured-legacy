@@ -59,7 +59,7 @@ const OlimResidents = () => {
       <SEO
         titleEn="Lawyer for Olim Hadashim and Returning Residents | Israeli Legal Guidance"
         titleHe="עורך דין לעולים ותושבים חוזרים בתל אביב"
-        descriptionEn="Legal support for new immigrants and returning residents navigating Israeli law. Real estate, tax benefits, financial planning and cross border matters."
+        descriptionEn="Legal support for new immigrants and returning residents navigating Israeli law. Real estate, tax benefits, financial planning and cross-border matters."
         descriptionHe="מסגרת משפטית מובנית למעבר לישראל. מיצוב מס, רכישת נכס ושילוב נכסים לעולים ותושבים חוזרים."
         path="/olim-residents"
         schema={[olimSchema, breadcrumbSchema]}

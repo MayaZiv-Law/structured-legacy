@@ -87,7 +87,7 @@ function buildFallbackHtml(url: URL): string {
   const content = isHebrew ? {
     siteTitle: 'משרד עורכי דין מאיה זיו',
     tagline: 'מאיה זיו עורכי דין',
-    heroText: 'בעולם המשתנה ללא הרף, המשרד פועל כשותף מסור ללקוחותיו, ומספק ליווי ויעוץ משפטי המעוגן בפרספקטיבה גלובלית.',
+    heroText: 'בעולם המשתנה ללא הרף, משרד מאיה זיו עומד לצד לקוחותיו כשותף משפטי מסור, המשלב היכרות מעמיקה עם המציאות המקומית, עם ידע ונסיון בזירה הבינלאומית.',
     introText: 'ייעוץ משפטי מהשורה הראשונה חייב להיות ייחודי לא פחות מהלקוחות שהוא משרת. במשרד עורכי הדין מאיה זיו, כל תיק זוכה לתשומת הלב האישית המגיעה לו, כמו גם לעומק ולהיקף הנדרשים לעבודה מקצועית.',
     practiceTitle: 'תחומי עיסוק',
     practices: [
@@ -112,9 +112,9 @@ function buildFallbackHtml(url: URL): string {
       { label: 'צור קשר', href: '/he/contact' },
     ],
   } : {
-    siteTitle: 'Maya Ziv Law | Israeli Attorney for Real Estate, Tax and Cross Border Transactions',
+    siteTitle: 'Maya Ziv Law | Israeli Attorney for Real Estate, Tax and Cross-Border Transactions',
     tagline: 'Maya Ziv Attorney at Law',
-    heroText: 'In a constantly changing world, the firm serves as a dedicated partner to its clients, providing legal counsel and guidance anchored in a global perspective.',
+    heroText: 'In an ever-changing world, Maya Ziv Law stands as a dedicated legal partner, combining on-the-ground knowledge with global perspective.',
     introText: 'First-rate legal advice must be as unique as the clients it serves. At Maya Ziv Law, every matter receives the personal attention it deserves, as well as the depth and scope required for professional work.',
     practiceTitle: 'Practice Areas',
     practices: [

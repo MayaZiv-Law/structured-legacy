@@ -1,16 +1,16 @@
 # Maya Ziv Law – Full Site Content for LLMs
 
-> A boutique Israeli law firm specializing in cross border legal services for domestic and international clients.
+> Israeli law firm specializing in cross-border legal matters: real estate, taxation, estate planning, and commercial transactions for domestic and international clients.
 > This file provides comprehensive site content for AI tools that cannot render JavaScript (CSR).
 > For a shorter summary, see /llms.txt
 
 ## About the Firm
 
-Maya Ziv Law provides premium legal counsel at the intersection of Israeli and international law. The firm serves domestic clients, foreign investors, new immigrants (Olim), and multinational businesses operating in or with Israel. Founded by Maya Ziv, Attorney, the practice combines deep Israeli legal expertise with fluency in cross border matters.
+Maya Ziv Law provides premium legal counsel at the intersection of Israeli and international law. The firm serves domestic clients, foreign investors, new immigrants (Olim), and multinational businesses operating in or with Israel. Founded by Maya Ziv, Attorney, the practice combines deep Israeli legal expertise with fluency in cross-border matters.
 
 First-rate legal advice must be as unique as the clients it serves. At Maya Ziv Law, every matter receives the personal attention it deserves, as well as the depth and scope required for professional work.
 
-In a constantly changing world, the firm serves as a dedicated partner to its clients, providing legal counsel and guidance anchored in a global perspective.
+In an ever-changing world, Maya Ziv Law stands as a dedicated legal partner, combining on-the-ground knowledge with global perspective.
 
 ## Practice Areas
 
@@ -18,10 +18,10 @@ In a constantly changing world, the firm serves as a dedicated partner to its cl
 Safe acquisitions and tax planning. Purchase and sale transactions, due diligence, title verification, remote transactions for overseas buyers, urban renewal (TAMA 38/Pinui-Binui).
 
 ### International Taxation
-Cross-border reporting and banking regulation. Israeli tax positioning, cross border tax planning, FATCA/CRS compliance, capital gains, tax treaties (US-Israel, EU-Israel).
+Cross-border reporting and banking regulation. Israeli tax positioning, cross-border tax planning, FATCA/CRS compliance, capital gains, tax treaties (US-Israel, EU-Israel).
 
 ### Estate Planning and Family Succession
-Wills, inheritance and intergenerational asset transfer. Drafting wills under Israeli law, inheritance orders, cross border estate administration, probate, lasting powers of attorney.
+Wills, inheritance and intergenerational asset transfer. Drafting wills under Israeli law, inheritance orders, cross-border estate administration, probate, lasting powers of attorney.
 
 ### New Olim and Returning Residents
 Legal counsel for newcomers and returning residents. Tax benefits guidance, property acquisition, bank account setup, legal orientation for relocation to Israel.
@@ -94,4 +94,4 @@ A probate order (Kiyum Tzava'a) is issued by the Israeli probate registrar when 
 
 ## Jurisdiction
 
-Israel (with cross border expertise covering the United States, United Kingdom, and the European Union)
+Israel (with cross-border expertise covering the United States, United Kingdom, and the European Union)
