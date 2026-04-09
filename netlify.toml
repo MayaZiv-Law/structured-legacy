@@ -2,18 +2,19 @@
   publish = "dist"
   command = "npm run build"
 
+# Edge Function: Sitemap
+# Generates sitemap.xml dynamically on every request with today's lastmod
+# date, so Google always sees the sitemap as fresh. Runs before bot-prerender
+# (order matters here).
+[[edge_functions]]
+  function = "sitemap"
+  path = "/sitemap.xml"
+
 # Edge Function: Bot prerendering via Prerender.io free tier
 # Set PRERENDER_TOKEN in Netlify Environment Variables after signing up at https://prerender.io
 [[edge_functions]]
   function = "bot-prerender"
   path = "/*"
-
-# Proxy for Sitemap - must come before SPA fallback
-[[redirects]]
-  from = "/sitemap.xml"
-  to = "https://hqvagogzltdyacwocjhr.supabase.co/functions/v1/sitemap"
-  status = 200
-  force = true
 
 # SPA fallback - must be last
 [[redirects]]
