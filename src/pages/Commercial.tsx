@@ -48,13 +48,13 @@ const Commercial = () => {
 
   const commercialSchema = createServiceSchema({
     name: 'Commercial Legal Services',
-    description: 'Commercial legal counsel in Israel. Drafting contracts, partnership agreements, and managing cross border business disputes for international clients.',
-    url: 'https://mayaziv-law.com/commercial',
+    description: 'Commercial legal counsel in Israel. Drafting contracts, partnership agreements, and managing cross-border business disputes for international clients.',
+    url: `https://mayaziv-law.com/${language}/commercial`,
   });
 
   const breadcrumbSchema = createBreadcrumbSchema([
-    { name: language === 'he' ? 'בית' : 'Home', url: 'https://mayaziv-law.com/' },
-    { name: language === 'he' ? 'פיננסי ומסחרי' : 'Commercial and Finance', url: 'https://mayaziv-law.com/commercial' },
+    { name: language === 'he' ? 'בית' : 'Home', url: `https://mayaziv-law.com/${language}/` },
+    { name: language === 'he' ? 'פיננסי ומסחרי' : 'Commercial and Finance', url: `https://mayaziv-law.com/${language}/commercial` },
   ]);
 
   return (
@@ -177,7 +177,7 @@ const Commercial = () => {
                 <div className="aspect-[3/4] max-w-sm mx-auto lg:mx-0 overflow-hidden rounded-sm shadow-premium">
                   <img
                     src={crossBorderImage}
-                    alt={language === 'he' ? 'עסקים חוצי גבולות' : 'Cross border business'}
+                    alt={language === 'he' ? 'עסקים חוצי גבולות' : 'Cross-border business'}
                     className="w-full h-full object-cover img-vibrant"
                     loading="lazy"
                     decoding="async"

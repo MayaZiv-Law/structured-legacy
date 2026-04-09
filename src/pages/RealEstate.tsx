@@ -55,7 +55,7 @@ const RealEstate = () => {
   const realEstateSchema = createServiceSchema({
     name: 'Real Estate Legal Services',
     description: 'Legal counsel for buying property in Israel. Due diligence, purchase tax planning, and remote representation for foreign residents and investors.',
-    url: 'https://mayaziv-law.com/real-estate',
+    url: `https://mayaziv-law.com/${language}/real-estate`,
   });
 
   const faqSchema = createFAQSchema(faqs.map(faq => ({
@@ -64,8 +64,8 @@ const RealEstate = () => {
   })));
 
   const breadcrumbSchema = createBreadcrumbSchema([
-    { name: language === 'he' ? 'בית' : 'Home', url: 'https://mayaziv-law.com/' },
-    { name: language === 'he' ? 'נדל"ן' : 'Real Estate', url: 'https://mayaziv-law.com/real-estate' },
+    { name: language === 'he' ? 'בית' : 'Home', url: `https://mayaziv-law.com/${language}/` },
+    { name: language === 'he' ? 'נדל"ן' : 'Real Estate', url: `https://mayaziv-law.com/${language}/real-estate` },
   ]);
 
   return <Layout>

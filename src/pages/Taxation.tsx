@@ -65,8 +65,8 @@ const Taxation = () => {
   const ctaAnim = useScrollAnimation();
   const taxationSchema = createServiceSchema({
     name: 'Taxation and Compliance Legal Services',
-    description: 'Legal counsel for Israeli taxation and banking regulation. Purchase tax planning, source of funds compliance (AML), and cross border alignment.',
-    url: 'https://mayaziv-law.com/taxation',
+    description: 'Legal counsel for Israeli taxation and banking regulation. Purchase tax planning, source of funds compliance (AML), and cross-border alignment.',
+    url: `https://mayaziv-law.com/${language}/taxation`,
   });
 
   const faqSchema = createFAQSchema(faqs.map(faq => ({
@@ -75,15 +75,15 @@ const Taxation = () => {
   })));
 
   const breadcrumbSchema = createBreadcrumbSchema([
-    { name: language === 'he' ? 'בית' : 'Home', url: 'https://mayaziv-law.com/' },
-    { name: language === 'he' ? 'מיסוי ותאימות' : 'Tax and Compliance', url: 'https://mayaziv-law.com/taxation' },
+    { name: language === 'he' ? 'בית' : 'Home', url: `https://mayaziv-law.com/${language}/` },
+    { name: language === 'he' ? 'מיסוי ותאימות' : 'Tax and Compliance', url: `https://mayaziv-law.com/${language}/taxation` },
   ]);
 
   return <Layout>
       <SEO
-        titleEn="International Tax Lawyer Israel | Cross Border Tax Planning and Compliance"
+        titleEn="International Tax Lawyer Israel | Cross-Border Tax Planning and Compliance"
         titleHe="מיסוי ורגולציה בנקאית בישראל | תל אביב"
-        descriptionEn="Tax planning and compliance for individuals and businesses with connections to Israel. Expertise in cross border tax matters, Israeli tax law, and international financial structures."
+        descriptionEn="Tax planning and compliance for individuals and businesses with connections to Israel. Expertise in cross-border tax matters, Israeli tax law, and international financial structures."
         descriptionHe="ייעוץ משפטי למיסוי ורגולציה בנקאית בישראל. תכנון מס רכישה, תאימות מקור כספים והלבנת הון, ותיאום חוצה גבולות."
         path="/taxation"
         schema={[taxationSchema, faqSchema, breadcrumbSchema]}
