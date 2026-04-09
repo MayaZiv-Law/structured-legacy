@@ -26,7 +26,7 @@ Wills, inheritance and intergenerational asset transfer. Drafting wills under Is
 ### New Olim and Returning Residents
 Legal counsel for newcomers and returning residents. Tax benefits guidance, property acquisition, bank account setup, legal orientation for relocation to Israel.
 
-### Commercial and Civil
+### Commercial and Finance
 Contracts, risk allocation and business counsel. Corporate structuring, commercial contracts, joint ventures, business licensing, partnership agreements.
 
 ## Frequently Asked Questions
@@ -75,7 +75,7 @@ A probate order (Kiyum Tzava'a) is issued by the Israeli probate registrar when 
 - Real Estate: https://mayaziv-law.com/en/real-estate
 - Taxation: https://mayaziv-law.com/en/taxation
 - Estate Planning: https://mayaziv-law.com/en/estate-planning
-- Commercial Law: https://mayaziv-law.com/en/commercial
+- Commercial and Finance: https://mayaziv-law.com/en/commercial
 - Services for Olim: https://mayaziv-law.com/en/olim-residents
 - Legal Insights & Articles: https://mayaziv-law.com/en/insights
 - Contact: https://mayaziv-law.com/en/contact
@@ -87,7 +87,7 @@ A probate order (Kiyum Tzava'a) is issued by the Israeli probate registrar when 
 - נדל"ן: https://mayaziv-law.com/he/real-estate
 - מיסוי: https://mayaziv-law.com/he/taxation
 - צוואות ועיזבונות: https://mayaziv-law.com/he/estate-planning
-- מסחרי ואזרחי: https://mayaziv-law.com/he/commercial
+- פיננסי ומסחרי: https://mayaziv-law.com/he/commercial
 - עולים ותושבים חוזרים: https://mayaziv-law.com/he/olim-residents
 - תובנות משפטיות: https://mayaziv-law.com/he/insights
 - צור קשר: https://mayaziv-law.com/he/contact
