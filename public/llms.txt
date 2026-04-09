@@ -12,7 +12,7 @@ Maya Ziv Law provides premium legal counsel at the intersection of Israeli and i
 - **Real Estate Law**: Purchase and sale transactions, due diligence, title verification, remote transactions for overseas buyers, urban renewal (TAMA 38/Pinui-Binui).
 - **Taxation**: Israeli tax positioning, cross-border tax planning, FATCA/CRS compliance, capital gains, tax treaties (US-Israel, EU-Israel).
 - **Estate Planning and Wills**: Drafting wills under Israeli law, inheritance orders, cross-border estate administration, probate, lasting powers of attorney.
-- **Commercial & Civil Law**: Corporate structuring, commercial contracts, joint ventures, business licensing, partnership agreements.
+- **Commercial and Finance**: Corporate structuring, commercial contracts, joint ventures, business licensing, partnership agreements.
 - **Services for New Immigrants (Olim)**: Tax benefits guidance, property acquisition, bank account setup, legal orientation for relocation to Israel.
 
 ## Key Pages (English)
@@ -22,7 +22,7 @@ Maya Ziv Law provides premium legal counsel at the intersection of Israeli and i
 - Real Estate: https://mayaziv-law.com/en/real-estate
 - Taxation: https://mayaziv-law.com/en/taxation
 - Estate Planning: https://mayaziv-law.com/en/estate-planning
-- Commercial Law: https://mayaziv-law.com/en/commercial
+- Commercial and Finance: https://mayaziv-law.com/en/commercial
 - Services for Olim: https://mayaziv-law.com/en/olim-residents
 - Legal Insights & Articles: https://mayaziv-law.com/en/insights
 - Contact: https://mayaziv-law.com/en/contact
@@ -34,7 +34,7 @@ Maya Ziv Law provides premium legal counsel at the intersection of Israeli and i
 - נדל"ן: https://mayaziv-law.com/he/real-estate
 - מיסוי: https://mayaziv-law.com/he/taxation
 - צוואות ועיזבונות: https://mayaziv-law.com/he/estate-planning
-- מסחרי ואזרחי: https://mayaziv-law.com/he/commercial
+- פיננסי ומסחרי: https://mayaziv-law.com/he/commercial
 - עולים ותושבים חוזרים: https://mayaziv-law.com/he/olim-residents
 - תובנות משפטיות: https://mayaziv-law.com/he/insights
 - צור קשר: https://mayaziv-law.com/he/contact
