@@ -154,7 +154,7 @@ function buildFallbackHtml(url: URL): string {
   <meta name="description" content="${content.heroText}">
   <meta property="og:title" content="${content.siteTitle}">
   <meta property="og:description" content="${content.heroText}">
-  <meta property="og:image" content="${baseUrl}/lovable-uploads/ba3c3a72-3db5-4141-9459-1f85fc39e53f.webp">
+  <meta property="og:image" content="${baseUrl}/og-image.webp">
   <meta property="og:url" content="${baseUrl}${path}">
   <link rel="alternate" hreflang="en" href="${baseUrl}/en/${path.replace(/^\/(en|he)\/?/, '')}">
   <link rel="alternate" hreflang="he" href="${baseUrl}/he/${path.replace(/^\/(en|he)\/?/, '')}">
