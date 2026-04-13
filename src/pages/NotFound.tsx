@@ -1,3 +1,4 @@
+import { Helmet } from 'react-helmet-async';
 import { Link } from 'react-router-dom';
 import Layout from '@/components/layout/Layout';
 import { useLanguage } from '@/contexts/LanguageContext';
@@ -10,6 +11,9 @@ const NotFound = () => {
 
   return (
     <Layout>
+      <Helmet>
+        <meta name="prerender-status-code" content="404" />
+      </Helmet>
       <section className="pt-32 pb-20 bg-background min-h-[60vh] flex items-center">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h1 className={cn("text-4xl sm:text-5xl font-display font-semibold text-foreground mb-6", isRTL && "font-hebrew")}>
