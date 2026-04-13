@@ -1,6 +1,7 @@
 import { ReactNode, useEffect } from 'react';
 import Header from './Header';
 import Footer from './Footer';
+import CookieConsent from '@/components/CookieConsent';
 import { useLanguage } from '@/contexts/LanguageContext';
 import { cn } from '@/lib/utils';
 
@@ -58,6 +59,7 @@ const Layout = ({ children }: LayoutProps) => {
       <Header />
       <main id="main-content" className="flex-1 pt-20">{children}</main>
       <Footer />
+      <CookieConsent />
     </div>
   );
 };
