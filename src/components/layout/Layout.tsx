@@ -52,8 +52,11 @@ const Layout = ({ children }: LayoutProps) => {
 
   return (
     <div className={cn("min-h-screen flex flex-col", isRTL && "font-hebrew")}>
+      <a href="#main-content" className="sr-only focus:not-sr-only focus:absolute focus:top-2 focus:left-2 focus:z-[100] focus:bg-accent focus:text-accent-foreground focus:px-4 focus:py-2 focus:rounded">
+        {isRTL ? 'דלג לתוכן' : 'Skip to content'}
+      </a>
       <Header />
-      <main className="flex-1 pt-20">{children}</main>
+      <main id="main-content" className="flex-1 pt-20">{children}</main>
       <Footer />
     </div>
   );
