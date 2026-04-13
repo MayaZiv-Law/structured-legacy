@@ -67,6 +67,8 @@ const Contact = () => {
                       <label htmlFor="name" className="block text-sm font-medium text-foreground mb-1.5">{t('contact.form.name')}</label>
                       <input
                         id="name"
+                        name="name"
+                        autoComplete="name"
                         type="text"
                         required
                         value={formData.name}
@@ -78,6 +80,8 @@ const Contact = () => {
                       <label htmlFor="email" className="block text-sm font-medium text-foreground mb-1.5">{t('contact.form.email')}</label>
                       <input
                         id="email"
+                        name="email"
+                        autoComplete="email"
                         type="email"
                         required
                         value={formData.email}
@@ -89,6 +93,8 @@ const Contact = () => {
                       <label htmlFor="phone" className="block text-sm font-medium text-foreground mb-1.5">{t('contact.form.phone')}</label>
                       <input
                         id="phone"
+                        name="phone"
+                        autoComplete="tel"
                         type="tel"
                         value={formData.phone}
                         onChange={(e) => setFormData(prev => ({ ...prev, phone: e.target.value }))}
@@ -99,6 +105,7 @@ const Contact = () => {
                       <label htmlFor="inquiry" className="block text-sm font-medium text-foreground mb-1.5">{t('contact.form.inquiry')}</label>
                       <select
                         id="inquiry"
+                        name="inquiry"
                         required
                         value={formData.inquiry}
                         onChange={(e) => setFormData(prev => ({ ...prev, inquiry: e.target.value }))}
@@ -114,6 +121,7 @@ const Contact = () => {
                       <label htmlFor="message" className="block text-sm font-medium text-foreground mb-1.5">{t('contact.form.message')}</label>
                       <textarea
                         id="message"
+                        name="message"
                         required
                         rows={5}
                         value={formData.message}
