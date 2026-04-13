@@ -69,7 +69,7 @@ const Header = () => {
           </Link>
 
           {/* Desktop Navigation */}
-          <nav className="hidden lg:flex items-center gap-8">
+          <nav aria-label="Main navigation" className="hidden lg:flex items-center gap-8">
             <Link to={localePath('/about')} className={navLinkClass('/about')}>
               {t('nav.firm')}
             </Link>
@@ -142,7 +142,7 @@ const Header = () => {
         {/* Mobile Menu */}
         {isMenuOpen && (
           <div className="lg:hidden py-6 border-t border-accent/30 bg-primary -mx-4 px-6 sm:-mx-6 sm:px-8 shadow-2xl">
-            <nav className="flex flex-col gap-1">
+            <nav aria-label="Mobile navigation" className="flex flex-col gap-1">
               <Link
                 to={localePath('/about')}
                 className={mobileNavLinkClass('/about')}
