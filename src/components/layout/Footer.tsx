@@ -66,9 +66,9 @@ const Footer = () => {
             <ul className="space-y-4">
               <li className="flex items-start gap-3">
                 <MapPin className="h-4 w-4 mt-1 text-accent flex-shrink-0" />
-                <span className="text-primary-foreground/70 text-sm">
+                <address className="text-primary-foreground/70 text-sm not-italic">
                   {isRTL ? 'משה סנה 18, תל אביב' : '18 Moshe Sneh, Tel Aviv Israel'}
-                </span>
+                </address>
               </li>
               <li className="flex items-center gap-3">
                 <Phone className="h-4 w-4 text-accent flex-shrink-0" />
