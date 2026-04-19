@@ -24,7 +24,8 @@ dist-ssr
 *.sw?
 
 # Ruflo / Claude Code
-.claude/
+.claude/*
+!.claude/skills/
 .claude-flow/
 .mcp.json
 CLAUDE.md
